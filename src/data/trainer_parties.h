@@ -3368,23 +3368,26 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     {
     .iv = 100,
     .lvl = 12,
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_TIMBURR,
+	.ability = ABILITY_SLOT_1,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
+    .moves = {MOVE_BULK_UP, MOVE_FOCUS_ENERGY, MOVE_ROCK_TOMB, MOVE_LOW_SWEEP}
     },
     {
     .iv = 100,
     .lvl = 12,
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_MAKUHITA,
+	.ability = ABILITY_SLOT_1,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
+    .moves = {MOVE_BULK_UP, MOVE_SAND_ATTACK, MOVE_KNOCK_OFF, MOVE_FORCE_PALM}
     },
     {
     .iv = 200,
     .lvl = 15,
-    .species = SPECIES_NOSEPASS,
+    .species = SPECIES_MIENFOO,
+	.ability = ABILITY_SLOT_2,
     .heldItem = ITEM_ORAN_BERRY,
-    .moves = {MOVE_BLOCK, MOVE_HARDEN, MOVE_TACKLE, MOVE_ROCK_TOMB}
+    .moves = {MOVE_BULK_UP, MOVE_AERIAL_ACE, MOVE_FAKE_OUT, MOVE_LOW_SWEEP}
     }
 };
 

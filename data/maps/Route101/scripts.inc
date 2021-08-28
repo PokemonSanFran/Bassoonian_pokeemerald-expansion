@@ -299,6 +299,6 @@ Route101_Text_WildPokemonInTallGrass:
 	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:
-	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "Route 1\n"
+	.string "{LEFT_ARROW} Borago City$"
 

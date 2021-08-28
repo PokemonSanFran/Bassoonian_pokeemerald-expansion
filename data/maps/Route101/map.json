@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE101",
   "name": "Route101",
   "layout": "LAYOUT_ROUTE101",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_RG_ROUTE1",
   "region_map_section": "MAPSEC_ROUTE_101",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 16,
-      "y": 8,
+      "x": 13,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -40,10 +40,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 9,
-      "y": 13,
+      "x": 19,
+      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -53,8 +53,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 7,
-      "y": 14,
+      "x": 11,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -65,11 +65,11 @@
       "flag": "FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
-      "x": 10,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 0,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -79,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 5,
-      "y": 11,
+      "x": 12,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -92,8 +92,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 2,
-      "y": 13,
+      "x": 5,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -111,7 +111,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 19,
+      "y": 12,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "1",
@@ -120,7 +120,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 19,
+      "y": 12,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "1",
@@ -129,7 +129,7 @@
     {
       "type": "trigger",
       "x": 10,
-      "y": 18,
+      "y": 11,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
@@ -138,7 +138,7 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 18,
+      "y": 11,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
@@ -146,8 +146,8 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 16,
+      "x": 11,
+      "y": 14,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
@@ -155,7 +155,16 @@
     },
     {
       "type": "trigger",
-      "x": 6,
+      "x": 10,
+      "y": 14,
+      "elevation": 3,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "2",
+      "script": "Route101_EventScript_PreventExitWest"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
       "y": 15,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
@@ -164,8 +173,8 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 17,
+      "x": 11,
+      "y": 15,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "2",
@@ -173,16 +182,7 @@
     },
     {
       "type": "trigger",
-      "x": 6,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
+      "x": 10,
       "y": 13,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
@@ -193,8 +193,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 5,
-      "y": 9,
+      "x": 10,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route101_EventScript_RouteSign"
