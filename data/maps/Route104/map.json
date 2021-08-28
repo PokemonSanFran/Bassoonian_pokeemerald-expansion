@@ -16,17 +16,12 @@
     {
       "direction": "up",
       "offset": 0,
-      "map": "MAP_RUSTBORO_CITY"
+      "map": "MAP_EVER_GRANDE_CITY"
     },
     {
       "direction": "down",
-      "offset": 0,
-      "map": "MAP_ROUTE105"
-    },
-    {
-      "direction": "right",
-      "offset": 50,
-      "map": "MAP_PETALBURG_CITY"
+      "offset": 9,
+      "map": "MAP_DEWFORD_TOWN"
     }
   ],
   "object_events": [

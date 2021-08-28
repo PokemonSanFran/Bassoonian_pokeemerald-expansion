@@ -24,11 +24,6 @@
       "map": "MAP_ROUTE129"
     },
     {
-      "direction": "right",
-      "offset": -40,
-      "map": "MAP_EVER_GRANDE_CITY"
-    },
-    {
       "direction": "dive",
       "offset": 0,
       "map": "MAP_UNDERWATER_ROUTE128"
@@ -166,8 +161,12 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

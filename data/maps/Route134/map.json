@@ -16,12 +16,7 @@
     {
       "direction": "left",
       "offset": 0,
-      "map": "MAP_SLATEPORT_CITY"
-    },
-    {
-      "direction": "right",
-      "offset": 0,
-      "map": "MAP_ROUTE133"
+      "map": "MAP_LITTLEROOT_TOWN"
     }
   ],
   "object_events": [
@@ -169,7 +164,13 @@
       "flag": "FLAG_ITEM_ROUTE_134_STAR_PIECE"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -17,11 +17,6 @@
       "direction": "up",
       "offset": 0,
       "map": "MAP_ROUTE105"
-    },
-    {
-      "direction": "down",
-      "offset": 60,
-      "map": "MAP_DEWFORD_TOWN"
     }
   ],
   "object_events": [
@@ -100,7 +95,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
