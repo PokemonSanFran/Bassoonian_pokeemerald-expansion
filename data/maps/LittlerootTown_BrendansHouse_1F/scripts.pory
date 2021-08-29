@@ -1,3 +1,19 @@
+text PlayersHouse_1F_Text_TheresAMovieOnTV {
+	"There is a movie on TV.\p"
+	"Two men are dancing on a big piano\n"
+	"keyboard.\p"
+	"Better get going!"
+}
+
+text PlayersHouse_1F_Text_Vigoroth1 {
+	"Staraptor noises!"
+}
+
+text PlayersHouse_1F_Text_Vigoroth2 {
+	"Floatzel squirms…"
+}
+
+raw `
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
 .set LOCALID_RIVAL, 7
@@ -439,14 +455,4 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 @	.string "MOM: Well, isn't that something!\n"
 @	.string "There are still unknown POKéMON.$"
 
-PlayersHouse_1F_Text_TheresAMovieOnTV::
-	.string "There is a movie on TV.\p"
-	.string "Two men are dancing on a big piano\n"
-	.string "keyboard.\p"
-	.string "Better get going!$"
-
-PlayersHouse_1F_Text_Vigoroth1::
-	.string "Staraptor noises!$"
-
-PlayersHouse_1F_Text_Vigoroth2::
-	.string "Floatzel squirms…$"
+`
