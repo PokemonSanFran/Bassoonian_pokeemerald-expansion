@@ -925,7 +925,7 @@ bool8 CanUseDigOrEscapeRopeOnCurMap(void)
     if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;
     
-    if (gMapHeader.flags & MAP_ALLOW_ESCAPING)
+    if (gMapHeader.allowEscaping)
         return TRUE;
     else
         return FALSE;

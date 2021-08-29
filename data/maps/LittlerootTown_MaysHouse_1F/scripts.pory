@@ -1,45 +1,42 @@
-LittlerootTown_MaysHouse_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Turpia_RivalHouse_onTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Turpia_RivalHouse_Frame
-	.byte 0
+mapscripts LittlerootTown_MaysHouse_1F_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION: Turpia_RivalHouse_onTransition
+	MAP_SCRIPT_ON_FRAME_TABLE: Turpia_RivalHouse_Frame
+}
 
-
-Turpia_RivalHouse_pickuprival::
-	setvar VAR_LITTLEROOT_INTRO_STATE, 2
+script Turpia_RivalHouse_pickuprival {
+	setvar(VAR_LITTLEROOT_INTRO_STATE,2)
 	lockall
-	turnobject 7, DIR_SOUTH
-	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
-	waitmovement 0
-	msgbox Turpia_RivalHouse_pickuprival_Text_0
-	loadword 0, Turpia_Follower_Rival
-	setfollower 7, 0x100
+	turnobject(7,DIR_SOUTH)
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
+	waitmovement(0)
+	msgbox(format("Interaction with Basil or Alyssa and Parents"))
+	loadword(0,Turpia_Follower_Rival)
+	setfollower(7,0x100)
 	releaseall
-	return
+}
 
-
-Turpia_Rival_Player_Movement:
-	walk_right
-	walk_right
-	walk_right
+movement Turpia_Rival_Player_Movement {
+	walk_right * 3
 	walk_up
-	step_end
+}
 
-Turpia_Rival_Mom::
+script Turpia_Rival_Mom
+{
 	lock
 	faceplayer
-	msgbox Turpia_Rival_Mom_Text_0
+	msgbox(format("Very proud"))
 	release
-	return
+}
 
-
-Turpia_Rival_Dad::
+script Turpia_Rival_Dad
+{
 	lock
 	faceplayer
-	msgbox Turpia_Rival_Dad_Text_0
+	msgbox(format("You go lad"))
 	release
-	return
+}
 
-
+raw `
 Turpia_RivalHouse_onTransition:
 	call Common_EventScript_SetupRivalGfxId
 	end
@@ -57,7 +54,9 @@ Turpia_Follower_Rival::
 	
 Turpia_Follower_Rival_text::
 	.string "imma follow you$"
+`
 
+raw `
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
 .set LOCALID_RIVAL, 7
@@ -481,12 +480,4 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 @	.string "Do you already have your\n"
 @	.string "own POKéMON?$"
 
-Turpia_RivalHouse_pickuprival_Text_0:
-	.string "Interaction with Basil or Alyssa and\n"
-	.string "Parents$"
-
-Turpia_Rival_Mom_Text_0:
-	.string "Very proud$"
-
-Turpia_Rival_Dad_Text_0:
-	.string "You go lad$"
+` 

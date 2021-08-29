@@ -1,47 +1,44 @@
-LittlerootTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Turpia_Outside_OnTransition
-	.byte 0
+mapscripts LittlerootTown_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION: Turpia_Outside_OnTransition
+}
 
-
-Turpia_NoAccessR1::
+script Turpia_NoAccessR1 {
 	lockall
-	applymovement 5, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	applymovement 5, Common_Movement_ExclamationMark
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Turpia_NoAccessR1_Text_0
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	applymovement(5,Common_Movement_ExclamationMark)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Nuh uh"))
 	closemessage
 	checkfollower
-	compare VAR_RESULT, 0
-	goto_if_ne Turpia_NoAccessR1_2
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
-	waitmovement 0
-Turpia_NoAccessR1_1:
+	if (var(VAR_RESULT)) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkRight)
+		waitmovement(0)
+		facefollower
+	}
+	else {
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkRight)
+		waitmovement(0)
+	}
 	releaseall
-	return
+}
 
-Turpia_NoAccessR1_2:
-	applymovement OBJ_EVENT_ID_FOLLOWER, Common_Movement_WalkRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
-	waitmovement 0
-	facefollower
-	goto Turpia_NoAccessR1_1
-
-
-Turpia_ScientistR1Block::
+script Turpia_ScientistR1Block {
 	lock
 	faceplayer
-	msgbox Turpia_ScientistR1Block_Text_0
+	msgbox("Nop sorry bro")
 	release
-	return
+}
 
-
+raw `
 Turpia_Outside_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	end
+`
 
- 
+raw ` 
 .set LOCALID_TWIN, 1
 .set LOCALID_MOM, 4
 .set LOCALID_RIVAL, 7
@@ -1114,8 +1111,4 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "I have something to show you.\n"
 @	.string "Let's go to my LAB.$"
 
-Turpia_NoAccessR1_Text_0:
-	.string "Nuh uh$"
-
-Turpia_ScientistR1Block_Text_0:
-	.string "Nop sorry bro$"
+`

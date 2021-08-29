@@ -92,6 +92,10 @@ Common_Movement_Delay32:
 Common_Movement_WalkUp:
 	walk_up
 	step_end
+	
+Common_Movement_WalkRight:
+	walk_right
+	step_end
 
 @ Unused
 Common_Movement_WalkUp2::

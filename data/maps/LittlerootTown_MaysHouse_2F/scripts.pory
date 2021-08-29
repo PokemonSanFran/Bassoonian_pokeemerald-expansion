@@ -1,23 +1,23 @@
-LittlerootTown_MaysHouse_2F_MapScripts::
-	.byte 0
+mapscripts LittlerootTown_MaysHouse_2F_MapScripts {
+}
 
-
-Turpia_Tori_Mom::
+script Turpia_Tori_Mom
+{
 	lock
 	faceplayer
-	msgbox Turpia_Tori_Mom_Text_0
+	msgbox(format("I'm E4"))
 	release
-	return
+}
 
-
-Turpia_Tori_Dad::
+script Turpia_Tori_Dad
+{
 	lock
 	faceplayer
-	msgbox Turpia_Tori_Dad_Text_0
+	msgbox(format("I'm E4 2"))
 	release
-	return
+}
 
-
+raw `
 .set LOCALID_RIVAL, 1
 
 @ LittlerootTown_MaysHouse_2F_MapScripts::
@@ -437,8 +437,4 @@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 @	.string "catching POKéMON, I can pitch you a\l"
 @	.string "battle if you'd like.$"
 
-Turpia_Tori_Mom_Text_0:
-	.string "I'm E4$"
-
-Turpia_Tori_Dad_Text_0:
-	.string "I'm E4 2$"
+`
