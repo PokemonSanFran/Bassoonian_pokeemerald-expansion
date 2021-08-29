@@ -1,8 +1,51 @@
+LittlerootTown_BrendansHouse_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Turpia_Breakfast_FacePlayer
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Turpia_Breakfast_Opening
+	.byte 0
+
+
+Turpia_Breakfast_FacePlayer_Occur::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	end
+
+
+Turpia_Breakfast_Opening_Occur::
+	lock
+	setvar VAR_LITTLEROOT_INTRO_STATE, 1
+	msgbox Turpia_Breakfast_Opening_Occur_Text_0
+	release
+	end
+
+
+Turpia_Mom::
+	lock
+	faceplayer
+	msgbox Turpia_Mom_Text_0
+	release
+	return
+
+
+Turpia_Dad::
+	lock
+	faceplayer
+	msgbox Turpia_Dad_Text_0
+	release
+	return
+
+
+Turpia_Breakfast_Opening:
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 0, Turpia_Breakfast_Opening_Occur
+	.2byte 0
+	
+Turpia_Breakfast_FacePlayer:
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 0, Turpia_Breakfast_FacePlayer_Occur
+	.2byte 0
+
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4
 .set LOCALID_RIVAL, 7
 
-LittlerootTown_BrendansHouse_1F_MapScripts::
+@ LittlerootTown_BrendansHouse_1F_MapScripts::
 @	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
 @	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
 @	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
@@ -64,16 +107,16 @@ LittlerootTown_BrendansHouse_1F_OnFrame:
 @	.2byte 0
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
-@	lockall
-@	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
-@	closemessage
-@	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-@	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-@	waitmovement 0
-@	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 255, 7, 1
-@	waitstate
-@	releaseall
-@	end
+	lockall
+	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
+	waitmovement 0
+	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 255, 7, 1
+	waitstate
+	releaseall
+	end
 
 LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs:
 @	walk_up
@@ -438,6 +481,15 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 @	.string "MOM: Well, isn't that something!\n"
 @	.string "There are still unknown POKéMON.$"
+
+Turpia_Breakfast_Opening_Occur_Text_0:
+	.string "This is the opening breakfast script.$"
+
+Turpia_Mom_Text_0:
+	.string "Omg bb so proud xoxo$"
+
+Turpia_Dad_Text_0:
+	.string "way to go bro$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV::
 	.string "There is a movie on TV.\p"
