@@ -30,7 +30,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 @	call_if_lt LittlerootTown_MaysHouse_2F_EventScript_CheckSetReadyToMeetMay
 @	compare VAR_LITTLEROOT_RIVAL_STATE, 3
 @	call_if_ge LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos
-@	compare VAR_LITTLEROOT_INTRO_STATE, 4
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 4
 @	call_if_eq PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
 @	call SecretBase_EventScript_SetDecorationFlags
 @	setvar VAR_SECRET_BASE_INITIALIZED, 0

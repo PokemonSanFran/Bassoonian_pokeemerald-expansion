@@ -11,7 +11,7 @@ Turpia_Breakfast_FacePlayer_Occur::
 
 Turpia_Breakfast_Opening_Occur::
 	lock
-	setvar VAR_LITTLEROOT_INTRO_STATE, 1
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 1
 	msgbox Turpia_Breakfast_Opening_Occur_Text_0
 	release
 	end
@@ -34,11 +34,11 @@ Turpia_Dad::
 
 
 Turpia_Breakfast_Opening:
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 0, Turpia_Breakfast_Opening_Occur
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 0, Turpia_Breakfast_Opening_Occur
 	.2byte 0
 	
 Turpia_Breakfast_FacePlayer:
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 0, Turpia_Breakfast_FacePlayer_Occur
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 0, Turpia_Breakfast_FacePlayer_Occur
 	.2byte 0
 
 .set LOCALID_MOM, 1
@@ -52,7 +52,7 @@ Turpia_Breakfast_FacePlayer:
 @	.byte 0
 
 LittlerootTown_BrendansHouse_1F_OnLoad:
-@	compare VAR_LITTLEROOT_INTRO_STATE, 6
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 6
 @	call_if_lt LittlerootTown_BrendansHouse_1F_EventScript_SetMovingBoxes
 @	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual
 @	end
@@ -73,11 +73,11 @@ LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
 @	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
-@	compare VAR_LITTLEROOT_INTRO_STATE, 3
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 3
 @	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor
-@	compare VAR_LITTLEROOT_INTRO_STATE, 5
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 5
 @	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs
-@	compare VAR_LITTLEROOT_INTRO_STATE, 6
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 6
 @	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV
 @	end
 
@@ -99,9 +99,9 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
 LittlerootTown_BrendansHouse_1F_OnFrame:
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
 @	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 1, LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor
 @	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 @	.2byte 0

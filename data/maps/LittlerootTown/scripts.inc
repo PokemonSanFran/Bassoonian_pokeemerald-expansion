@@ -37,6 +37,30 @@ Turpia_ScientistR1Block::
 	return
 
 
+Turpia_RealEstateGuy::
+	showmoneybox 0, 0, 0
+	lock
+	msgbox Turpia_RealEstateGuy_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Turpia_RealEstateGuy_2
+	msgbox Turpia_RealEstateGuy_Text_3
+Turpia_RealEstateGuy_1:
+	release
+	hidemoneybox
+	return
+
+Turpia_RealEstateGuy_2:
+	checkmoney 500000, 0
+	compare VAR_RESULT, 0
+	goto_if_ne Turpia_RealEstateGuy_5
+	msgbox Turpia_RealEstateGuy_Text_2
+	goto Turpia_RealEstateGuy_1
+
+Turpia_RealEstateGuy_5:
+	msgbox Turpia_RealEstateGuy_Text_1
+	goto Turpia_RealEstateGuy_1
+
+
 Turpia_Outside_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	end
@@ -59,7 +83,7 @@ Turpia_Outside_OnTransition:
 	@ 3: Received Pokedex
 	@ 4: Received Running Shoes
 
-	@ State descriptions for VAR_LITTLEROOT_INTRO_STATE
+	@ State descriptions for VAR_GRC_TURPIA_INTRO_STATE
 	@ 1: In truck male
 	@ 2: In truck female
 	@ 3: Entered house
@@ -86,7 +110,7 @@ Turpia_Outside_OnTransition:
 LittlerootTown_OnTransition:
 @	setflag FLAG_VISITED_LITTLEROOT_TOWN
 @	call Common_EventScript_SetupRivalGfxId
-@	compare VAR_LITTLEROOT_INTRO_STATE, 2
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 2
 @	call_if_eq LittlerootTown_EventScript_MoveMomToMaysDoor
 @	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
 @	compare VAR_LITTLEROOT_TOWN_STATE, 3
@@ -162,8 +186,8 @@ LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
 @	return
 
 LittlerootTown_OnFrame:
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
 @	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
 @	.2byte 0
 
@@ -215,7 +239,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 @	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
 @	waitmovement 0
 @	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
-@	setvar VAR_LITTLEROOT_INTRO_STATE, 3
+@	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
 @	hideobjectat OBJ_EVENT_ID_PLAYER, 0
 @	closedoor VAR_0x8004, VAR_0x8005
 @	waitdooranim
@@ -1119,3 +1143,15 @@ Turpia_NoAccessR1_Text_0:
 
 Turpia_ScientistR1Block_Text_0:
 	.string "Nop sorry bro$"
+
+Turpia_RealEstateGuy_Text_0:
+	.string "Oy u want a villa only 500k$"
+
+Turpia_RealEstateGuy_Text_1:
+	.string "U have money but this dont work yet$"
+
+Turpia_RealEstateGuy_Text_2:
+	.string "U dont have enough soz$"
+
+Turpia_RealEstateGuy_Text_3:
+	.string "If u change ur mind lemme kno$"

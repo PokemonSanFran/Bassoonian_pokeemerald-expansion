@@ -5,7 +5,7 @@ LittlerootTown_MaysHouse_1F_MapScripts::
 
 
 Turpia_RivalHouse_pickuprival::
-	setvar VAR_LITTLEROOT_INTRO_STATE, 2
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
 	lockall
 	turnobject 7, DIR_SOUTH
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
@@ -45,7 +45,7 @@ Turpia_RivalHouse_onTransition:
 	end
 	
 Turpia_RivalHouse_Frame:
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, Turpia_RivalHouse_pickuprival
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, Turpia_RivalHouse_pickuprival
 	.2byte 0
 	
 Turpia_Follower_Rival::
@@ -69,7 +69,7 @@ Turpia_Follower_Rival_text::
 @	.byte 0
 
 LittlerootTown_MaysHouse_1F_OnLoad:
-@	compare VAR_LITTLEROOT_INTRO_STATE, 6
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 6
 @	call_if_lt LittlerootTown_MaysHouse_1F_EventScript_SetMovingBoxes
 @	call_if_set FLAG_RECEIVED_RUNNING_SHOES, LittlerootTown_MaysHouse_1F_EventScript_CheckShowShoesManual
 @	end
@@ -90,11 +90,11 @@ LittlerootTown_MaysHouse_1F_EventScript_ShowRunningShoesManual::
 @	return
 
 LittlerootTown_MaysHouse_1F_OnTransition:
-@	compare VAR_LITTLEROOT_INTRO_STATE, 3
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 3
 @	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor
-@	compare VAR_LITTLEROOT_INTRO_STATE, 5
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 5
 @	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
-@	compare VAR_LITTLEROOT_INTRO_STATE, 6
+@	compare VAR_GRC_TURPIA_INTRO_STATE, 6
 @	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
 @	end
 
@@ -115,9 +115,9 @@ LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 LittlerootTown_MaysHouse_1F_OnFrame:
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
-@	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
+@	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
 @	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
 @	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 @	.2byte 0
