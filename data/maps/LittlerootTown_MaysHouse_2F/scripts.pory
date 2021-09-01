@@ -3,18 +3,12 @@ mapscripts LittlerootTown_MaysHouse_2F_MapScripts {
 
 script Turpia_Tori_Mom
 {
-	lock
-	faceplayer
-	msgbox(format("I'm E4"))
-	release
+	msgbox(format("I'm E4"),MSGBOX_NPC)
 }
 
 script Turpia_Tori_Dad
 {
-	lock
-	faceplayer
-	msgbox(format("I'm E4 2"))
-	release
+	msgbox(format("I'm E4 2"),MSGBOX_NPC)
 }
 
 raw `

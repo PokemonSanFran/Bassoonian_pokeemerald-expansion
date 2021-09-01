@@ -95,7 +95,7 @@ Route111_EventScript_EndCheckSetSandstorm::
 Route111_EventScript_SetWinstratesNotDefeated::
 	clearflag FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
 	setflag FLAG_GRC_HIDE_TURPIA_POPULATION
-	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
+	setflag FLAG_GRC_ALWAYSTRUE
 	setflag FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE
 	cleartrainerflag TRAINER_VICTOR
 	cleartrainerflag TRAINER_VICTORIA

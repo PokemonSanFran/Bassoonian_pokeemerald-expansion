@@ -20,18 +20,12 @@ script Turpia_Breakfast_Opening_Occur
 
 script Turpia_Mom
 {
-	lock
-	faceplayer
-	msgbox(format("Omg bb so proud xoxo"))
-	release
+	msgbox(format("Omg bb so proud xoxo"),MSGBOX_NPC)
 }
 
 script Turpia_Dad
 {
-	lock
-	faceplayer
-	msgbox(format("way to go bro"))
-	release
+	msgbox(format("way to go bro"),MSGBOX_NPC)
 }
 
 raw `

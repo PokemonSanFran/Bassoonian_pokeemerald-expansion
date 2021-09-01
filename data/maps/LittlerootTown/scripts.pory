@@ -26,10 +26,7 @@ script Turpia_NoAccessR1 {
 }
 
 script Turpia_ScientistR1Block {
-	lock
-	faceplayer
-	msgbox("Nop sorry bro")
-	release
+	msgbox("Nop sorry bro",MSGBOX_NPC)
 }
 
 script Turpia_RealEstateGuy {

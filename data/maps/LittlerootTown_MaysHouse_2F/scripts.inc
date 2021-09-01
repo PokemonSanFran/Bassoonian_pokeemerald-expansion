@@ -3,18 +3,12 @@ LittlerootTown_MaysHouse_2F_MapScripts::
 
 
 Turpia_Tori_Mom::
-	lock
-	faceplayer
-	msgbox Turpia_Tori_Mom_Text_0
-	release
+	msgbox Turpia_Tori_Mom_Text_0, MSGBOX_NPC
 	return
 
 
 Turpia_Tori_Dad::
-	lock
-	faceplayer
-	msgbox Turpia_Tori_Dad_Text_0
-	release
+	msgbox Turpia_Tori_Dad_Text_0, MSGBOX_NPC
 	return
 
 

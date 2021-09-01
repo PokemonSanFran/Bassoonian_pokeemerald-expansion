@@ -25,18 +25,12 @@ Turpia_Rival_Player_Movement:
 	step_end
 
 Turpia_Rival_Mom::
-	lock
-	faceplayer
-	msgbox Turpia_Rival_Mom_Text_0
-	release
+	msgbox Turpia_Rival_Mom_Text_0, MSGBOX_NPC
 	return
 
 
 Turpia_Rival_Dad::
-	lock
-	faceplayer
-	msgbox Turpia_Rival_Dad_Text_0
-	release
+	msgbox Turpia_Rival_Dad_Text_0, MSGBOX_NPC
 	return
 
 

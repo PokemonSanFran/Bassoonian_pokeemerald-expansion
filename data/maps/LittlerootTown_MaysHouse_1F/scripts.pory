@@ -22,18 +22,12 @@ movement Turpia_Rival_Player_Movement {
 
 script Turpia_Rival_Mom
 {
-	lock
-	faceplayer
-	msgbox(format("Very proud"))
-	release
+	msgbox(format("Very proud"),MSGBOX_NPC)
 }
 
 script Turpia_Rival_Dad
 {
-	lock
-	faceplayer
-	msgbox(format("You go lad"))
-	release
+	msgbox(format("You go lad"),MSGBOX_NPC)
 }
 
 raw `

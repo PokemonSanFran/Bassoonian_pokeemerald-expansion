@@ -49,7 +49,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_EventScript_FatMan",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN"
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
@@ -88,7 +88,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Turpia_ScientistR1Block",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK"
+      "flag": "FLAG_GRC_HIDE_TURPIA_SCIENTIST"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
@@ -101,7 +101,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_RIVAL"
+      "flag": "FLAG_GRC_ALWAYSTRUE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -114,7 +114,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_RIVAL"
+      "flag": "FLAG_GRC_ALWAYSTRUE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",

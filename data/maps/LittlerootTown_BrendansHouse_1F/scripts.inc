@@ -18,18 +18,12 @@ Turpia_Breakfast_Opening_Occur::
 
 
 Turpia_Mom::
-	lock
-	faceplayer
-	msgbox Turpia_Mom_Text_0
-	release
+	msgbox Turpia_Mom_Text_0, MSGBOX_NPC
 	return
 
 
 Turpia_Dad::
-	lock
-	faceplayer
-	msgbox Turpia_Dad_Text_0
-	release
+	msgbox Turpia_Dad_Text_0, MSGBOX_NPC
 	return
 
 

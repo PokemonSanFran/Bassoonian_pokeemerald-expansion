@@ -30,10 +30,7 @@ Turpia_NoAccessR1_2:
 
 
 Turpia_ScientistR1Block::
-	lock
-	faceplayer
-	msgbox Turpia_ScientistR1Block_Text_0
-	release
+	msgbox Turpia_ScientistR1Block_Text_0, MSGBOX_NPC
 	return
 
 
