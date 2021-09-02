@@ -4,19 +4,41 @@ mapscripts LittlerootTown_MaysHouse_1F_MapScripts {
 }
 
 script Turpia_RivalHouse_pickuprival {
-	setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
 	lockall
-	turnobject(7,DIR_SOUTH)
-	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
 	waitmovement(0)
-	msgbox(format("Interaction with Basil or Alyssa and Parents"))
-	loadword(0,Turpia_Follower_Rival)
-	setfollower(7,0x100)
+	applymovement(7,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	if(var(VAR_GRC_TURPIA_INTRO_STATE)==1)
+	{
+		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
+		waitmovement(0)
+		msgbox(format("Interaction with Basil or Alyssa and Parents alone"))
+		loadword(0,Turpia_Follower_Rival)
+		setfollower(7,0x100)
+		setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
+	}
+	else
+	{
+		destroyfollower
+		addobject(6)
+		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
+		applymovement(6,Turpia_Rival_Tori_Movement)
+		waitmovement(0)
+		msgbox(format("Interaction with Basil or Alyssa and Parents with Tori"))
+		setvar(VAR_GRC_TURPIA_INTRO_STATE,4)
+	}
 	releaseall
 }
 
 movement Turpia_Rival_Player_Movement {
 	walk_right * 3
+	walk_up
+}
+
+movement Turpia_Rival_Tori_Movement {
+	delay_16
+	walk_right * 2
 	walk_up
 }
 
@@ -37,6 +59,7 @@ Turpia_RivalHouse_onTransition:
 	
 Turpia_RivalHouse_Frame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, Turpia_RivalHouse_pickuprival
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, Turpia_RivalHouse_pickuprival
 	.2byte 0
 	
 Turpia_Follower_Rival::

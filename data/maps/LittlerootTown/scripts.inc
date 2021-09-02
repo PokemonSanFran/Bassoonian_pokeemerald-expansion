@@ -60,6 +60,7 @@ Turpia_RealEstateGuy_5:
 
 Turpia_Outside_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
+	setflag FLAG_VISITED_LITTLEROOT_TOWN
 	end
 
  
@@ -105,7 +106,7 @@ Turpia_Outside_OnTransition:
 
 
 LittlerootTown_OnTransition:
-@	setflag FLAG_VISITED_LITTLEROOT_TOWN
+@	
 @	call Common_EventScript_SetupRivalGfxId
 @	compare VAR_GRC_TURPIA_INTRO_STATE, 2
 @	call_if_eq LittlerootTown_EventScript_MoveMomToMaysDoor

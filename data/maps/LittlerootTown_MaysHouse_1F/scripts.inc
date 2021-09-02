@@ -5,20 +5,43 @@ LittlerootTown_MaysHouse_1F_MapScripts::
 
 
 Turpia_RivalHouse_pickuprival::
-	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
 	lockall
-	turnobject 7, DIR_SOUTH
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 7, Common_Movement_ExclamationMark
+	waitmovement 0
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_eq Turpia_RivalHouse_pickuprival_2
+	destroyfollower
+	addobject 6
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
+	applymovement 6, Turpia_Rival_Tori_Movement
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_1
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 4
+Turpia_RivalHouse_pickuprival_1:
+	releaseall
+	return
+
+Turpia_RivalHouse_pickuprival_2:
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
 	waitmovement 0
 	msgbox Turpia_RivalHouse_pickuprival_Text_0
 	loadword 0, Turpia_Follower_Rival
 	setfollower 7, 0x100
-	releaseall
-	return
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
+	goto Turpia_RivalHouse_pickuprival_1
 
 
 Turpia_Rival_Player_Movement:
 	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Turpia_Rival_Tori_Movement:
+	delay_16
 	walk_right
 	walk_right
 	walk_up
@@ -40,6 +63,7 @@ Turpia_RivalHouse_onTransition:
 	
 Turpia_RivalHouse_Frame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, Turpia_RivalHouse_pickuprival
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, Turpia_RivalHouse_pickuprival
 	.2byte 0
 	
 Turpia_Follower_Rival::
@@ -477,7 +501,11 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 
 Turpia_RivalHouse_pickuprival_Text_0:
 	.string "Interaction with Basil or Alyssa and\n"
-	.string "Parents$"
+	.string "Parents alone$"
+
+Turpia_RivalHouse_pickuprival_Text_1:
+	.string "Interaction with Basil or Alyssa and\n"
+	.string "Parents with Tori$"
 
 Turpia_Rival_Mom_Text_0:
 	.string "Very proud$"

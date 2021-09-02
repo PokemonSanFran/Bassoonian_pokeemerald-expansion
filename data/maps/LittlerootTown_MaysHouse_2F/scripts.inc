@@ -1,6 +1,32 @@
 LittlerootTown_MaysHouse_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Turpia_ToriHouse_Frame
 	.byte 0
 
+
+Turpia_ToriHouse_pickuprival::
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
+	lockall
+	msgbox Turpia_ToriHouse_pickuprival_Text_0
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Tori_Player_Movement
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_1
+	loadword 0, Turpia_Follower_Tori
+	setfollower 4, 0x100
+	releaseall
+	return
+
+
+Turpia_Tori_Player_Movement:
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
 
 Turpia_Tori_Mom::
 	msgbox Turpia_Tori_Mom_Text_0, MSGBOX_NPC
@@ -11,6 +37,20 @@ Turpia_Tori_Dad::
 	msgbox Turpia_Tori_Dad_Text_0, MSGBOX_NPC
 	return
 
+
+Turpia_ToriHouse_Frame:
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, Turpia_ToriHouse_pickuprival
+	.2byte 0
+	
+Turpia_Follower_Tori::
+	lock
+	facefollower
+	msgbox Turpia_Follower_Tori_text
+	release
+	end
+	
+Turpia_Follower_Tori_text::
+	.string "imma follow you 2$"
 
 .set LOCALID_RIVAL, 1
 
@@ -430,6 +470,14 @@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 @	.string "Hey, {PLAYER}, if I see you while I'm out\n"
 @	.string "catching POKéMON, I can pitch you a\l"
 @	.string "battle if you'd like.$"
+
+Turpia_ToriHouse_pickuprival_Text_0:
+	.string "Tori fighting with parents\p"
+	.string "Tis pretty long$"
+
+Turpia_ToriHouse_pickuprival_Text_1:
+	.string "Interaction with Tori before he joins\n"
+	.string "you$"
 
 Turpia_Tori_Mom_Text_0:
 	.string "I'm E4$"
