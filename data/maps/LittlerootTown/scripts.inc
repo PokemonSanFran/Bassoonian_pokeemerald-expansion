@@ -13,7 +13,21 @@ Turpia_Outside_OnTransition:
 Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 4, Turpia_ProtaSquad_A
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, Turpia_ProtaSquad_B
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
+
+Turpia_Celebration::
+	lockall
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
+	setflag FLAG_SYS_POKEMON_GET
+	msgbox Turpia_Celebration_Text_0
+	closemessage
+	fadescreen FADE_TO_BLACK
+	special ChooseStarter
+	waitstate
+	releaseall
+	end
+
 
 Turpia_NoAccessR1::
 	lockall
@@ -80,7 +94,10 @@ Turpia_ShowRivals_Start_Movement::
 	goto_if_eq Turpia_ShowRivals_Start_Movement_2
 Turpia_ShowRivals_Start_Movement_1:
 	compare VAR_GRC_TURPIA_INTRO_STATE, 5
-	goto_if_eq Turpia_ShowRivals_Start_Movement_4
+	goto_if_eq Turpia_ShowRivals_Start_Movement_5
+Turpia_ShowRivals_Start_Movement_4:
+	compare VAR_GRC_TURPIA_INTRO_STATE, 6
+	goto_if_eq Turpia_ShowRivals_Start_Movement_7
 	return
 
 Turpia_ShowRivals_Start_Movement_2:
@@ -89,10 +106,17 @@ Turpia_ShowRivals_Start_Movement_2:
 	setobjectxyperm 7, 21, 9
 	goto Turpia_ShowRivals_Start_Movement_1
 
-Turpia_ShowRivals_Start_Movement_4:
+Turpia_ShowRivals_Start_Movement_5:
 	clearflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
 	setobjectxyperm 6, 14, 17
 	setobjectxyperm 7, 13, 17
+	goto Turpia_ShowRivals_Start_Movement_4
+
+Turpia_ShowRivals_Start_Movement_7:
+	setobjectxyperm 6, 7, 14
+	setobjectxyperm 7, 6, 14
+	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 
@@ -121,12 +145,33 @@ Turpia_ProtaSquad_C::
 	applymovement 7, Turpia_ProtaSquad_C_Rival
 	applymovement 6, Turpia_ProtaSquad_C_Tori
 	waitmovement 0
+	delay 30
+	msgbox Turpia_ProtaSquad_C_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement 6, Common_Movement_ExclamationMark, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	applymovement 5, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	waitmovement 5, MAP_LITTLEROOT_TOWN
+	applymovement 5, Common_Movement_ExclamationMark, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_1
+	closemessage
+	applymovement 5, R1_Scientist_Save, MAP_LITTLEROOT_TOWN
+	waitmovement 5, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_2
+	closemessage
 	special SavePlayerParty
 	special PutZigzagoonInPlayerParty
 	special StartWallyTutorialBattle
 	waitstate
 	special LoadPlayerParty
-	msgbox Turpia_ProtaSquad_C_Text_0
+	msgbox Turpia_ProtaSquad_C_Text_3
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_D_Player
+	applymovement 7, Turpia_ProtaSquad_D_Rival, MAP_LITTLEROOT_TOWN
+	applymovement 6, Turpia_ProtaSquad_D_Tori, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_4
 	closemessage
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 6
 	setvar VAR_ROUTE101_STATE, 1
@@ -138,6 +183,13 @@ Turpia_ProtaSquad_C::
 	releaseall
 	return
 
+
+R1_Scientist_Save:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
 
 Turpia_ProtaSquad_A_Player:
 	walk_down
@@ -255,20 +307,11 @@ Turpia_ProtaSquad_C_Player:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_in_place_fastest_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
 	step_end
 
 Turpia_ProtaSquad_C_Rival:
@@ -285,20 +328,11 @@ Turpia_ProtaSquad_C_Rival:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_in_place_fastest_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
 	step_end
 
 Turpia_ProtaSquad_C_Tori:
@@ -315,11 +349,38 @@ Turpia_ProtaSquad_C_Tori:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	walk_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	step_end
+
+Turpia_ProtaSquad_D_Player:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_up
+	walk_up
+	walk_in_place_fastest_left
+	step_end
+
+Turpia_ProtaSquad_D_Rival:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_fastest_left
+	step_end
+
+Turpia_ProtaSquad_D_Tori:
 	walk_up
 	walk_up
 	walk_up
@@ -1404,6 +1465,9 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "I have something to show you.\n"
 @	.string "Let's go to my LAB.$"
 
+Turpia_Celebration_Text_0:
+	.string "grats all lol$"
+
 Turpia_NoAccessR1_Text_0:
 	.string "Nuh uh$"
 
@@ -1426,4 +1490,16 @@ Turpia_RealEstateGuy_Text_3:
 	.string "If u change ur mind lemme kno$"
 
 Turpia_ProtaSquad_C_Text_0:
+	.string "Tori says hm$"
+
+Turpia_ProtaSquad_C_Text_1:
+	.string "Tori says aaaaa$"
+
+Turpia_ProtaSquad_C_Text_2:
+	.string "Scientist says lemme help$"
+
+Turpia_ProtaSquad_C_Text_3:
+	.string "Scientist says ur ok$"
+
+Turpia_ProtaSquad_C_Text_4:
 	.string "Prof dialogue$"

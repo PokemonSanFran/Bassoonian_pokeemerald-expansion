@@ -53,6 +53,11 @@ void SetSafariZoneFlag(void)
     FlagSet(FLAG_SYS_SAFARI_MODE);
 }
 
+void GRC_EnablePartyFlag(void)
+{
+    FlagSet(FLAG_SYS_POKEMON_GET);
+}
+
 void ResetSafariZoneFlag(void)
 {
     FlagClear(FLAG_SYS_SAFARI_MODE);
@@ -115,7 +120,10 @@ void CB2_EndSafariBattle(void)
 {
     sSafariZonePkblkUses += gBattleResults.pokeblockThrows;
     if (gBattleOutcome == B_OUTCOME_CAUGHT)
+	{
+		GRC_EnablePartyFlag();
         sSafariZoneCaughtMons++;
+	}
     if (gNumSafariBalls != 0)
     {
         SetMainCallback2(CB2_ReturnToField);

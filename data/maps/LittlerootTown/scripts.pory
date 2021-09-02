@@ -13,8 +13,22 @@ Turpia_Outside_OnTransition:
 Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 4, Turpia_ProtaSquad_A
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, Turpia_ProtaSquad_B
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
 `
+script Turpia_Celebration
+{
+	lockall
+	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
+	setflag(FLAG_SYS_POKEMON_GET)
+	msgbox(format("grats all lol"))
+	closemessage
+	fadescreen(FADE_TO_BLACK)
+	special(ChooseStarter)
+	waitstate
+	releaseall
+	end
+}
 
 script Turpia_NoAccessR1 {
 	lockall
@@ -85,6 +99,13 @@ script Turpia_ShowRivals_Start_Movement
 		setobjectxyperm(6,14,17)
 		setobjectxyperm(7,13,17)
 	}
+	if(var(VAR_GRC_TURPIA_INTRO_STATE)==6)
+	{
+		setobjectxyperm(6,7,14)
+		setobjectxyperm(7,6,14)
+		setobjectmovementtype(6,MOVEMENT_TYPE_FACE_DOWN)
+		setobjectmovementtype(7,MOVEMENT_TYPE_FACE_DOWN)
+	}
 }
 
 script Turpia_ProtaSquad_A
@@ -113,11 +134,32 @@ script Turpia_ProtaSquad_C
 	applymovement(7,Turpia_ProtaSquad_C_Rival)
 	applymovement(6,Turpia_ProtaSquad_C_Tori)
 	waitmovement(0)
+	delay(30)
+	msgbox(format("Tori says hm"))
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	applymovement(6,Common_Movement_ExclamationMark,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	applymovement(5,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+	waitmovement(5,MAP_LITTLEROOT_TOWN)
+	applymovement(5,Common_Movement_ExclamationMark,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori says aaaaa"))
+	closemessage
+	applymovement(5,R1_Scientist_Save,MAP_LITTLEROOT_TOWN)
+	waitmovement(5,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Scientist says lemme help"))
+	closemessage
 	special(SavePlayerParty)
 	special(PutZigzagoonInPlayerParty)
 	special(StartWallyTutorialBattle)
 	waitstate
 	special(LoadPlayerParty)
+	msgbox(format("Scientist says ur ok"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_D_Player)
+	applymovement(7,Turpia_ProtaSquad_D_Rival,MAP_LITTLEROOT_TOWN)
+	applymovement(6,Turpia_ProtaSquad_D_Tori,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
 	msgbox(format("Prof dialogue"))
 	closemessage
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,6)
@@ -128,6 +170,11 @@ script Turpia_ProtaSquad_C
 	warp(MAP_ROUTE101,255,13,3)
 	waitstate
 	releaseall
+}
+
+movement R1_Scientist_Save
+{
+	walk_fast_left * 4
 }
 
 movement Turpia_ProtaSquad_A_Player
@@ -181,30 +228,48 @@ movement Turpia_ProtaSquad_C_Player
 {
 	walk_left * 6
 	walk_down * 2
-	walk_left * 8
-	walk_up * 6
-	walk_left * 2
-	walk_up * 2
-	walk_in_place_fastest_left
+	walk_left * 5
+	walk_slow_left * 3
+	walk_slow_up * 2
 }
 
 movement Turpia_ProtaSquad_C_Rival
 {
 	walk_left * 5
 	walk_down * 2
-	walk_left * 8
-	walk_up * 6
-	walk_left * 2
-	walk_up * 3
-	walk_in_place_fastest_left
+	walk_left * 6
+	walk_slow_left * 2
+	walk_slow_up * 3
 }
 
 movement Turpia_ProtaSquad_C_Tori
 {
 	walk_left * 7
 	walk_down * 2
-	walk_left * 8
-	walk_up * 6
+	walk_left * 4
+	walk_slow_left * 4
+	walk_slow_up
+}
+
+movement Turpia_ProtaSquad_D_Player
+{
+	walk_up * 4
+	walk_left * 2
+	walk_up * 2
+	walk_in_place_fastest_left
+}
+
+movement Turpia_ProtaSquad_D_Rival
+{
+	walk_up * 3
+	walk_left * 2
+	walk_up * 3
+	walk_in_place_fastest_left
+}
+
+movement Turpia_ProtaSquad_D_Tori
+{
+	walk_up * 5
 	walk_left * 2
 	walk_up
 	walk_in_place_fastest_left

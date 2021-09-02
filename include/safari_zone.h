@@ -6,6 +6,7 @@ extern u8 gNumSafariBalls;
 bool32 GetSafariZoneFlag(void);
 bool32 GetPastTutorialFlag(void);
 void SetSafariZoneFlag(void);
+void GRC_EnablePartyFlag(void);
 void ResetSafariZoneFlag(void);
 
 void EnterSafariMode(void);

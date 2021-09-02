@@ -1,5 +1,7 @@
 Route101_MapScripts::
+	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route1_FacePlayer
 	map_script MAP_SCRIPT_ON_TRANSITION, Route1_onTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route1_onFrame
 	.byte 0
 
 
@@ -8,13 +10,46 @@ Route1_onTransition:
 	call Route1_GatherPeeps
 	call ProfBirch_EventScript_UpdateLocation
 	end
+	
+Route1_onFrame:
+	map_script_2 VAR_ROUTE101_STATE, 2, Route1_finalisetutorial
+	.2byte 0
+
+Route1_FacePlayer:
+	map_script_2 VAR_ROUTE101_STATE, 2, Route1_FacePlayerOccur
+	.2byte 0
+
+Route1_FacePlayerOccur::
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
+	end
+
+
+Route1_finalisetutorial::
+	lockall
+	msgbox Route1_finalisetutorial_Text_0
+	closemessage
+	setvar VAR_ROUTE101_STATE, 3
+	setvar VAR_LITTLEROOT_TOWN_STATE, 1
+	setflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
+	clearflag FLAG_GRC_TURPIA_HIDE_RIVALS
+	warp MAP_LITTLEROOT_TOWN, 255, 4, 14
+	waitstate
+	releaseall
+	return
+
 
 Route1_GatherPeeps::
 	compare VAR_ROUTE101_STATE, 0
-	goto_if_eq Route1_GatherPeeps_1
+	goto_if_eq Route1_GatherPeeps_2
+	compare VAR_ROUTE101_STATE, 2
+	goto_if_eq Route1_GatherPeeps_2
+Route1_GatherPeeps_1:
+	compare VAR_ROUTE101_STATE, 2
+	goto_if_eq Route1_GatherPeeps_6
 	return
 
-Route1_GatherPeeps_1:
+Route1_GatherPeeps_2:
 	setobjectxyperm 2, 10, 3
 	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm 8, 12, 3
@@ -23,6 +58,53 @@ Route1_GatherPeeps_1:
 	setobjectmovementtype 9, MOVEMENT_TYPE_FACE_LEFT
 	setobjectxyperm 10, 12, 4
 	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_LEFT
+	goto Route1_GatherPeeps_1
+
+Route1_GatherPeeps_6:
+	setobjectxyperm 3, 13, 2
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 7, 13, 4
+	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+
+R1_NoAccess_City::
+	lockall
+	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 4, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox R1_NoAccess_City_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+	releaseall
+	return
+
+
+R1_ScientistCityBlock::
+	msgbox R1_ScientistCityBlock_Text_0, MSGBOX_NPC
+	return
+
+
+R1_NoAccess_Home::
+	lockall
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 2, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox R1_NoAccess_City_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	waitmovement 0
+	releaseall
+	return
+
+
+R1_ProfHomeBlock::
+	msgbox R1_ProfHomeBlock_Text_0, MSGBOX_NPC
 	return
 
 
@@ -329,3 +411,15 @@ Route101_Text_WildPokemonInTallGrass:
 Route101_Text_RouteSign:
 @	.string "Route 1\n"
 @	.string "{LEFT_ARROW} Borago City$"
+
+Route1_finalisetutorial_Text_0:
+	.string "congrats winners win & losers lose$"
+
+R1_NoAccess_City_Text_0:
+	.string "Nuh uh$"
+
+R1_ScientistCityBlock_Text_0:
+	.string "Science says no$"
+
+R1_ProfHomeBlock_Text_0:
+	.string "Prof says no$"

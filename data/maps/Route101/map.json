@@ -48,7 +48,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "R1_ProfHomeBlock",
       "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
@@ -74,7 +74,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "R1_ScientistCityBlock",
       "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
@@ -167,7 +167,7 @@
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
+      "script": "R1_NoAccess_City"
     },
     {
       "type": "trigger",
@@ -176,7 +176,7 @@
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
       "var_value": "1",
-      "script": "Route101_EventScript_StartBirchRescue"
+      "script": "R1_NoAccess_Home"
     },
     {
       "type": "trigger",
@@ -184,8 +184,8 @@
       "y": 15,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
+      "var_value": "1",
+      "script": "R1_NoAccess_City"
     },
     {
       "type": "trigger",
@@ -193,8 +193,8 @@
       "y": 11,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitSouth"
+      "var_value": "1",
+      "script": "R1_NoAccess_Home"
     },
     {
       "type": "trigger",
@@ -211,8 +211,8 @@
       "y": 13,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitWest"
+      "var_value": "1",
+      "script": "R1_NoAccess_Home"
     },
     {
       "type": "trigger",
@@ -238,8 +238,8 @@
       "y": 17,
       "elevation": 3,
       "var": "VAR_ROUTE101_STATE",
-      "var_value": "2",
-      "script": "Route101_EventScript_PreventExitNorth"
+      "var_value": "1",
+      "script": "R1_NoAccess_City"
     }
   ],
   "bg_events": [
