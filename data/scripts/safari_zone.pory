@@ -9,7 +9,7 @@ script SafariZone_EventScript_OutOfBallsMidBattle
 	}
 	else
 	{
-		setvar(VAR_ROUTE101_STATE,2)
+		setvar(VAR_GRC_ROUTE1_STATE,2)
 		special(ExitSafariMode)
 		setwarp(MAP_ROUTE101,255,13,3)
 		end
@@ -28,7 +28,7 @@ script SafariZone_EventScript_Exit
 	}
 	else
 	{
-		setvar(VAR_ROUTE101_STATE,2)
+		setvar(VAR_GRC_ROUTE1_STATE,2)
 		special(ExitSafariMode)
 		warp(MAP_ROUTE101,255,13,3)
 		waitstate

@@ -23,12 +23,55 @@ Turpia_Celebration::
 	setflag FLAG_SYS_POKEMON_GET
 	msgbox Turpia_Celebration_Text_0
 	closemessage
+	applymovement 9, Turpia_Prof_MovesUp
+	waitmovement 0
+	addobject 10
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_1
+	closemessage
+	applymovement 9, Turpia_Prof_MovesSide
+	waitmovement 0
+	applymovement 6, Common_Movement_WalkLeft
+	applymovement 7, Turpia_Rival_MovesToBox
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_2
+	closemessage
 	fadescreen FADE_TO_BLACK
 	special ChooseStarter
 	waitstate
+	msgbox Turpia_Celebration_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Turpia_Celebration_2
+Turpia_Celebration_1:
 	releaseall
 	end
 
+Turpia_Celebration_2:
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto Turpia_Celebration_1
+
+
+Turpia_Prof_MovesUp:
+	walk_up
+	walk_in_place_fastest_down
+	step_end
+
+Turpia_Prof_MovesSide:
+	walk_left
+	walk_left
+	walk_down
+	walk_in_place_fastest_right
+	step_end
+
+Turpia_Rival_MovesToBox:
+	walk_up
+	walk_left
+	walk_in_place_fastest_down
+	step_end
 
 Turpia_NoAccessR1::
 	lockall
@@ -175,7 +218,7 @@ Turpia_ProtaSquad_C::
 	msgbox Turpia_ProtaSquad_C_Text_4
 	closemessage
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 6
-	setvar VAR_ROUTE101_STATE, 1
+	setvar VAR_GRC_ROUTE1_STATE, 1
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	clearflag FLAG_GRC_R1_HIDE_RIVALS
 	special EnterSafariModeR1
@@ -1468,6 +1511,16 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 Turpia_Celebration_Text_0:
 	.string "grats all lol$"
+
+Turpia_Celebration_Text_1:
+	.string "Here is a bag pick a pokemon$"
+
+Turpia_Celebration_Text_2:
+	.string "I think {PLAYER} should go first$"
+
+Turpia_Celebration_Text_3:
+	.string "congrats u have a pokemon do u want to\n"
+	.string "nickname it$"
 
 Turpia_NoAccessR1_Text_0:
 	.string "Nuh uh$"

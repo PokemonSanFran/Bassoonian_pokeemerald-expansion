@@ -1,6 +1,6 @@
 SafariZone_EventScript_OutOfBallsMidBattle::
 	goto_if_set FLAG_GRC_TURPIA_HIDE_PARENTS, SafariZone_EventScript_OutOfBallsMidBattle_1
-	setvar VAR_ROUTE101_STATE, 2
+	setvar VAR_GRC_ROUTE1_STATE, 2
 	special ExitSafariMode
 	setwarp MAP_ROUTE101, 255, 13, 3
 	end
@@ -14,7 +14,7 @@ SafariZone_EventScript_OutOfBallsMidBattle_1:
 
 SafariZone_EventScript_Exit::
 	goto_if_set FLAG_GRC_TURPIA_HIDE_PARENTS, SafariZone_EventScript_Exit_1
-	setvar VAR_ROUTE101_STATE, 2
+	setvar VAR_GRC_ROUTE1_STATE, 2
 	special ExitSafariMode
 	warp MAP_ROUTE101, 255, 13, 3
 	waitstate

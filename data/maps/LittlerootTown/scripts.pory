@@ -24,11 +24,53 @@ script Turpia_Celebration
 	setflag(FLAG_SYS_POKEMON_GET)
 	msgbox(format("grats all lol"))
 	closemessage
+	applymovement(9,Turpia_Prof_MovesUp)
+	waitmovement(0)
+	addobject(10)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Here is a bag pick a pokemon"))
+	closemessage
+	applymovement(9,Turpia_Prof_MovesSide)
+	waitmovement(0)
+	applymovement(6,Common_Movement_WalkLeft)
+	applymovement(7,Turpia_Rival_MovesToBox)
+	waitmovement(0)
+	msgbox(format("I think {PLAYER} should go first"))
+	closemessage
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
 	waitstate
+	msgbox(format("congrats u have a pokemon do u want to nickname it"),MSGBOX_YESNO)
+	if(var(VAR_RESULT))
+	{
+		setvar(VAR_0x8004,0)
+		call(Common_EventScript_NameReceivedPartyMon)
+	}
 	releaseall
 	end
+}
+
+movement Turpia_Prof_MovesUp
+{
+	walk_up
+	walk_in_place_fastest_down
+}
+
+movement Turpia_Prof_MovesSide
+{
+	walk_left * 2
+	walk_down
+	walk_in_place_fastest_right
+}
+
+movement Turpia_Rival_MovesToBox
+{
+	walk_up
+	walk_left
+	walk_in_place_fastest_down
 }
 
 script Turpia_NoAccessR1 {
@@ -164,7 +206,7 @@ script Turpia_ProtaSquad_C
 	msgbox(format("Prof dialogue"))
 	closemessage
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,6)
-	setvar(VAR_ROUTE101_STATE,1)
+	setvar(VAR_GRC_ROUTE1_STATE,1)
 	setflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
 	clearflag(FLAG_GRC_R1_HIDE_RIVALS)
 	special(EnterSafariModeR1)
