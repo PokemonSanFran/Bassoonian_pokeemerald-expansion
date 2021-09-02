@@ -19,6 +19,7 @@ Turpia_Outside_OnFrame:
 script Turpia_Celebration
 {
 	lockall
+	special(FullPartyToPC)
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
 	setflag(FLAG_SYS_POKEMON_GET)
 	msgbox(format("grats all lol"))

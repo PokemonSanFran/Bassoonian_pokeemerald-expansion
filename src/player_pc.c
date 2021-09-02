@@ -29,6 +29,7 @@
 #include "task.h"
 #include "window.h"
 #include "menu_specialized.h"
+#include "pokemon_storage_system.h"
 
 // Top level PC menu options
 enum {
@@ -1499,4 +1500,16 @@ static void ItemStorage_ReturnToListInput(u8 taskId)
 {
     ItemStorage_AddScrollIndicator();
     gTasks[taskId].func = ItemStorage_ProcessInput;
+}
+
+//Custom script
+void FullPartyToPC(void)
+{
+	u32 i = 0;
+	for(i=0;i<gPlayerPartyCount;i++)
+	{
+		SendMonToPC(&gPlayerParty[i]);
+		ZeroMonData(&gPlayerParty[i]);
+	}
+	CompactPartySlots();
 }

@@ -537,3 +537,5 @@ gSpecials::
 	def_special CloseDeptStoreElevatorWindow
 	def_special TrySetBattleTowerLinkType
 	def_special SetTotemBoost
+	@Custom specials
+	def_special FullPartyToPC

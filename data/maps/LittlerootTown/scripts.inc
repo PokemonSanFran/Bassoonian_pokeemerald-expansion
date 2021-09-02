@@ -18,6 +18,7 @@ Turpia_Outside_OnFrame:
 
 Turpia_Celebration::
 	lockall
+	special FullPartyToPC
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
 	setflag FLAG_SYS_POKEMON_GET
 	msgbox Turpia_Celebration_Text_0
