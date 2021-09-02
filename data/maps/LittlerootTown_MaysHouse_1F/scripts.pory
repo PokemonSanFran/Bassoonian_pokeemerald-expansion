@@ -27,6 +27,10 @@ script Turpia_RivalHouse_pickuprival {
 		waitmovement(0)
 		msgbox(format("Interaction with Basil or Alyssa and Parents with Tori"))
 		setvar(VAR_GRC_TURPIA_INTRO_STATE,4)
+		//
+		clearflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
+		warp(MAP_LITTLEROOT_TOWN,0,0,0)
+		waitstate
 	}
 	releaseall
 }

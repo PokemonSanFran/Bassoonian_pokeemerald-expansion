@@ -217,6 +217,7 @@ gSpecials::
 	def_special SetSSTidalFlag
 	def_special ResetSSTidalFlag
 	def_special EnterSafariMode
+	def_special EnterSafariModeR1
 	def_special ExitSafariMode
 	def_special GetPokeblockFeederInFront
 	def_special OpenPokeblockCaseOnFeeder

@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Turpia_Rival_Mom",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM"
+      "flag": "FLAG_GRC_TURPIA_HIDE_PARENTS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Turpia_Rival_Dad",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM"
+      "flag": "FLAG_GRC_TURPIA_HIDE_PARENTS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NORMAN",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM"
+      "flag": "FLAG_GRC_HIDE_TURPIA_SCIENTIST"
     }
   ],
   "warp_events": [

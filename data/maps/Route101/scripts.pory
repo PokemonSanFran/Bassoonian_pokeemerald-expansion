@@ -1,31 +1,32 @@
-Route101_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route1_onTransition
-	.byte 0
+mapscripts Route101_MapScripts
+{
+	MAP_SCRIPT_ON_TRANSITION: Route1_onTransition
+}
 
-
+raw `
 Route1_onTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Route1_GatherPeeps
 	call ProfBirch_EventScript_UpdateLocation
 	end
+` 
 
-Route1_GatherPeeps::
-	compare VAR_ROUTE101_STATE, 0
-	goto_if_eq Route1_GatherPeeps_1
-	return
+script Route1_GatherPeeps
+{
+	if(var(VAR_ROUTE101_STATE)==0)
+	{
+		setobjectxyperm(2,10,3)
+		setobjectmovementtype(2,MOVEMENT_TYPE_FACE_RIGHT)
+		setobjectxyperm(8,12,3)
+		setobjectmovementtype(8,MOVEMENT_TYPE_FACE_LEFT)
+		setobjectxyperm(9,12,2)
+		setobjectmovementtype(9,MOVEMENT_TYPE_FACE_LEFT)
+		setobjectxyperm(10,12,4)
+		setobjectmovementtype(10,MOVEMENT_TYPE_FACE_LEFT)
+	}
+}
 
-Route1_GatherPeeps_1:
-	setobjectxyperm 2, 10, 3
-	setobjectmovementtype 2, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm 8, 12, 3
-	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm 9, 12, 2
-	setobjectmovementtype 9, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm 10, 12, 4
-	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_LEFT
-	return
-
-
+raw `
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4
 
@@ -329,3 +330,4 @@ Route101_Text_WildPokemonInTallGrass:
 Route101_Text_RouteSign:
 @	.string "Route 1\n"
 @	.string "{LEFT_ARROW} Borago City$"
+` 

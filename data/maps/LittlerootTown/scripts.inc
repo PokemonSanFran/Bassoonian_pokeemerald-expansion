@@ -1,7 +1,19 @@
 LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Turpia_Outside_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Turpia_Outside_OnFrame
 	.byte 0
 
+
+Turpia_Outside_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
+	call Turpia_ShowRivals_Start_Movement
+	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	end
+	
+Turpia_Outside_OnFrame:
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 4, Turpia_ProtaSquad_A
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, Turpia_ProtaSquad_B
+	.2byte 0
 
 Turpia_NoAccessR1::
 	lockall
@@ -34,6 +46,11 @@ Turpia_ScientistR1Block::
 	return
 
 
+Turpia_SigurdCameo::
+	msgbox Turpia_SigurdCameo_Text_0, MSGBOX_NPC
+	return
+
+
 Turpia_RealEstateGuy::
 	showmoneybox 0, 0, 0
 	lock
@@ -58,10 +75,261 @@ Turpia_RealEstateGuy_5:
 	goto Turpia_RealEstateGuy_1
 
 
-Turpia_Outside_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
-	end
+Turpia_ShowRivals_Start_Movement::
+	compare VAR_GRC_TURPIA_INTRO_STATE, 4
+	goto_if_eq Turpia_ShowRivals_Start_Movement_2
+Turpia_ShowRivals_Start_Movement_1:
+	compare VAR_GRC_TURPIA_INTRO_STATE, 5
+	goto_if_eq Turpia_ShowRivals_Start_Movement_4
+	return
+
+Turpia_ShowRivals_Start_Movement_2:
+	clearflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
+	setobjectxyperm 6, 22, 9
+	setobjectxyperm 7, 21, 9
+	goto Turpia_ShowRivals_Start_Movement_1
+
+Turpia_ShowRivals_Start_Movement_4:
+	clearflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
+	setobjectxyperm 6, 14, 17
+	setobjectxyperm 7, 13, 17
+	return
+
+
+Turpia_ProtaSquad_A::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_A_Player
+	applymovement 7, Turpia_ProtaSquad_A_Rival
+	applymovement 6, Turpia_ProtaSquad_A_Tori
+	waitmovement 0
+	goto Turpia_ProtaSquad_C
+	return
+
+
+Turpia_ProtaSquad_B::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_B_Player
+	applymovement 7, Turpia_ProtaSquad_B_Rival
+	applymovement 6, Turpia_ProtaSquad_B_Tori
+	waitmovement 0
+	goto Turpia_ProtaSquad_C
+	return
+
+
+Turpia_ProtaSquad_C::
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_C_Player
+	applymovement 7, Turpia_ProtaSquad_C_Rival
+	applymovement 6, Turpia_ProtaSquad_C_Tori
+	waitmovement 0
+	special SavePlayerParty
+	special PutZigzagoonInPlayerParty
+	special StartWallyTutorialBattle
+	waitstate
+	special LoadPlayerParty
+	msgbox Turpia_ProtaSquad_C_Text_0
+	closemessage
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 6
+	setvar VAR_ROUTE101_STATE, 1
+	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
+	clearflag FLAG_GRC_R1_HIDE_RIVALS
+	special EnterSafariModeR1
+	warp MAP_ROUTE101, 255, 13, 3
+	waitstate
+	releaseall
+	return
+
+
+Turpia_ProtaSquad_A_Player:
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_A_Rival:
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_A_Tori:
+	delay_16
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_B_Player:
+	walk_left
+	delay_16
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_B_Rival:
+	walk_left
+	walk_up
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_B_Tori:
+	delay_16
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+Turpia_ProtaSquad_C_Player:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_in_place_fastest_left
+	step_end
+
+Turpia_ProtaSquad_C_Rival:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_in_place_fastest_left
+	step_end
+
+Turpia_ProtaSquad_C_Tori:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_up
+	walk_in_place_fastest_left
+	step_end
 
  
 .set LOCALID_TWIN, 1
@@ -1142,6 +1410,9 @@ Turpia_NoAccessR1_Text_0:
 Turpia_ScientistR1Block_Text_0:
 	.string "Nop sorry bro$"
 
+Turpia_SigurdCameo_Text_0:
+	.string "Hmm nice house lol$"
+
 Turpia_RealEstateGuy_Text_0:
 	.string "Oy u want a villa only 500k$"
 
@@ -1153,3 +1424,6 @@ Turpia_RealEstateGuy_Text_2:
 
 Turpia_RealEstateGuy_Text_3:
 	.string "If u change ur mind lemme kno$"
+
+Turpia_ProtaSquad_C_Text_0:
+	.string "Prof dialogue$"

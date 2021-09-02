@@ -1,10 +1,10 @@
 LittlerootTown_MaysHouse_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Turpia_ToriHouse_onTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Turpia_ToriHouse_Frame
 	.byte 0
 
 
 Turpia_ToriHouse_pickuprival::
-	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
 	lockall
 	msgbox Turpia_ToriHouse_pickuprival_Text_0
 	closemessage
@@ -12,17 +12,41 @@ Turpia_ToriHouse_pickuprival::
 	waitmovement 0
 	applymovement 4, Common_Movement_ExclamationMark
 	waitmovement 0
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_eq Turpia_ToriHouse_pickuprival_2
+	destroyfollower
+	addobject 3
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Tori_Player_Movement
+	applymovement 3, Turpia_Tori_Rival_Movement
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_2
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 5
+	clearflag FLAG_GRC_TURPIA_HIDE_RIVALS
+	warp MAP_LITTLEROOT_TOWN, 3, 0, 0
+	waitstate
+Turpia_ToriHouse_pickuprival_1:
+	releaseall
+	return
+
+Turpia_ToriHouse_pickuprival_2:
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Tori_Player_Movement
 	waitmovement 0
 	msgbox Turpia_ToriHouse_pickuprival_Text_1
 	loadword 0, Turpia_Follower_Tori
 	setfollower 4, 0x100
-	releaseall
-	return
+	goto Turpia_ToriHouse_pickuprival_1
 
 
 Turpia_Tori_Player_Movement:
 	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Turpia_Tori_Rival_Movement:
+	delay_16
 	walk_right
 	walk_right
 	walk_up
@@ -38,8 +62,13 @@ Turpia_Tori_Dad::
 	return
 
 
+Turpia_ToriHouse_onTransition:
+	call Common_EventScript_SetupRivalGfxId
+	end
+
 Turpia_ToriHouse_Frame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 1, Turpia_ToriHouse_pickuprival
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 2, Turpia_ToriHouse_pickuprival
 	.2byte 0
 	
 Turpia_Follower_Tori::
@@ -478,6 +507,9 @@ Turpia_ToriHouse_pickuprival_Text_0:
 Turpia_ToriHouse_pickuprival_Text_1:
 	.string "Interaction with Tori before he joins\n"
 	.string "you$"
+
+Turpia_ToriHouse_pickuprival_Text_2:
+	.string "Interaction with Tori with rival around$"
 
 Turpia_Tori_Mom_Text_0:
 	.string "I'm E4$"

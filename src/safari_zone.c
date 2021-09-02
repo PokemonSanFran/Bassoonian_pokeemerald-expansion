@@ -42,6 +42,12 @@ bool32 GetSafariZoneFlag(void)
     return FlagGet(FLAG_SYS_SAFARI_MODE);
 }
 
+bool32 GetPastTutorialFlag(void)
+{
+    return FlagGet(FLAG_GRC_TURPIA_HIDE_PARENTS);
+	//Check if the parents have departed yet. Before the tutorial, this is false, so there is no step limit
+}
+
 void SetSafariZoneFlag(void)
 {
     FlagSet(FLAG_SYS_SAFARI_MODE);
@@ -63,6 +69,17 @@ void EnterSafariMode(void)
     sSafariZonePkblkUses = 0;
 }
 
+void EnterSafariModeR1(void)
+{
+    IncrementGameStat(GAME_STAT_ENTERED_SAFARI_ZONE);
+    SetSafariZoneFlag();
+    ClearAllPokeblockFeeders();
+    gNumSafariBalls = 5;
+    sSafariZoneStepCounter = 500;
+    sSafariZoneCaughtMons = 0;
+    sSafariZonePkblkUses = 0;
+}
+
 void ExitSafariMode(void)
 {
     TryPutSafariFanClubOnAir(sSafariZoneCaughtMons, sSafariZonePkblkUses);
@@ -74,7 +91,7 @@ void ExitSafariMode(void)
 
 bool8 SafariZoneTakeStep(void)
 {
-    if (GetSafariZoneFlag() == FALSE)
+    if (GetSafariZoneFlag() == FALSE || GetPastTutorialFlag() == FALSE)
     {
         return FALSE;
     }

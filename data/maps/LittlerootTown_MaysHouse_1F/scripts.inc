@@ -19,6 +19,9 @@ Turpia_RivalHouse_pickuprival::
 	waitmovement 0
 	msgbox Turpia_RivalHouse_pickuprival_Text_1
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 4
+	clearflag FLAG_GRC_TURPIA_HIDE_RIVALS
+	warp MAP_LITTLEROOT_TOWN, 0, 0, 0
+	waitstate
 Turpia_RivalHouse_pickuprival_1:
 	releaseall
 	return

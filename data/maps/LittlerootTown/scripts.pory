@@ -1,6 +1,20 @@
 mapscripts LittlerootTown_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION: Turpia_Outside_OnTransition
+	MAP_SCRIPT_ON_FRAME_TABLE: Turpia_Outside_OnFrame
 }
+
+raw `
+Turpia_Outside_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
+	call Turpia_ShowRivals_Start_Movement
+	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	end
+	
+Turpia_Outside_OnFrame:
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 4, Turpia_ProtaSquad_A
+	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 5, Turpia_ProtaSquad_B
+	.2byte 0
+`
 
 script Turpia_NoAccessR1 {
 	lockall
@@ -29,6 +43,10 @@ script Turpia_ScientistR1Block {
 	msgbox("Nop sorry bro",MSGBOX_NPC)
 }
 
+script Turpia_SigurdCameo {
+	msgbox("Hmm nice house lol",MSGBOX_NPC)
+}
+
 script Turpia_RealEstateGuy {
 	showmoneybox(0,0,0)
 	lock
@@ -53,12 +71,144 @@ script Turpia_RealEstateGuy {
 	hidemoneybox
 }
 
-raw `
-Turpia_Outside_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
-	end
-`
+script Turpia_ShowRivals_Start_Movement
+{
+	if(var(VAR_GRC_TURPIA_INTRO_STATE)==4)
+	{
+		clearflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
+		setobjectxyperm(6,22,9)
+		setobjectxyperm(7,21,9)
+	}
+	if(var(VAR_GRC_TURPIA_INTRO_STATE)==5)
+	{
+		clearflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
+		setobjectxyperm(6,14,17)
+		setobjectxyperm(7,13,17)
+	}
+}
+
+script Turpia_ProtaSquad_A
+{
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_A_Player)
+	applymovement(7,Turpia_ProtaSquad_A_Rival)
+	applymovement(6,Turpia_ProtaSquad_A_Tori)
+	waitmovement(0)
+	goto(Turpia_ProtaSquad_C)
+}
+
+script Turpia_ProtaSquad_B
+{
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_B_Player)
+	applymovement(7,Turpia_ProtaSquad_B_Rival)
+	applymovement(6,Turpia_ProtaSquad_B_Tori)
+	waitmovement(0)
+	goto(Turpia_ProtaSquad_C)
+}
+
+script Turpia_ProtaSquad_C
+{
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_C_Player)
+	applymovement(7,Turpia_ProtaSquad_C_Rival)
+	applymovement(6,Turpia_ProtaSquad_C_Tori)
+	waitmovement(0)
+	special(SavePlayerParty)
+	special(PutZigzagoonInPlayerParty)
+	special(StartWallyTutorialBattle)
+	waitstate
+	special(LoadPlayerParty)
+	msgbox(format("Prof dialogue"))
+	closemessage
+	setvar(VAR_GRC_TURPIA_INTRO_STATE,6)
+	setvar(VAR_ROUTE101_STATE,1)
+	setflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
+	clearflag(FLAG_GRC_R1_HIDE_RIVALS)
+	special(EnterSafariModeR1)
+	warp(MAP_ROUTE101,255,13,3)
+	waitstate
+	releaseall
+}
+
+movement Turpia_ProtaSquad_A_Player
+{
+	walk_down
+	walk_left
+	walk_down
+	walk_left * 12
+}
+
+movement Turpia_ProtaSquad_A_Rival
+{
+	delay_16 * 2
+	walk_left * 13
+}
+
+movement Turpia_ProtaSquad_A_Tori
+{
+	delay_16 * 3
+	walk_left * 12
+}
+
+movement Turpia_ProtaSquad_B_Player
+{
+	walk_left
+	delay_16
+	walk_left * 2
+	walk_up * 7
+	walk_left * 2
+}
+
+movement Turpia_ProtaSquad_B_Rival
+{
+	walk_left
+	walk_up
+	walk_left
+	walk_up * 7
+	walk_left * 3
+}
+
+movement Turpia_ProtaSquad_B_Tori
+{
+	delay_16
+	walk_up
+	walk_left * 3
+	walk_up * 7
+	walk_left
+}
+
+movement Turpia_ProtaSquad_C_Player
+{
+	walk_left * 6
+	walk_down * 2
+	walk_left * 8
+	walk_up * 6
+	walk_left * 2
+	walk_up * 2
+	walk_in_place_fastest_left
+}
+
+movement Turpia_ProtaSquad_C_Rival
+{
+	walk_left * 5
+	walk_down * 2
+	walk_left * 8
+	walk_up * 6
+	walk_left * 2
+	walk_up * 3
+	walk_in_place_fastest_left
+}
+
+movement Turpia_ProtaSquad_C_Tori
+{
+	walk_left * 7
+	walk_down * 2
+	walk_left * 8
+	walk_up * 6
+	walk_left * 2
+	walk_up
+	walk_in_place_fastest_left
+}
 
 raw ` 
 .set LOCALID_TWIN, 1

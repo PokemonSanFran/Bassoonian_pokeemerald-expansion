@@ -35,8 +35,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_HIDE_ROUTE_101_BOY",
-      "flag": "0"
+      "script": "Route101_EventScript_Boy",
+      "flag": "FLAG_GRC_R1_HIDE_NPCS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
@@ -49,7 +49,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE"
+      "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -62,7 +62,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_BirchsBag",
-      "flag": "FLAG_GRC_HIDE_TURPIA_SCIENTIST"
+      "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
@@ -75,7 +75,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_101_ZIGZAGOON"
+      "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
@@ -101,7 +101,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route101_EventScript_Boy",
-      "flag": "FLAG_HIDE_ROUTE_101_BOY"
+      "flag": "FLAG_GRC_R1_HIDE_NPCS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
@@ -114,7 +114,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
@@ -127,7 +127,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
@@ -140,7 +140,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -153,7 +153,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     }
   ],
   "warp_events": [

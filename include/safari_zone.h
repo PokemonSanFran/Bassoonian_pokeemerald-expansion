@@ -4,10 +4,12 @@
 extern u8 gNumSafariBalls;
 
 bool32 GetSafariZoneFlag(void);
+bool32 GetPastTutorialFlag(void);
 void SetSafariZoneFlag(void);
 void ResetSafariZoneFlag(void);
 
 void EnterSafariMode(void);
+void EnterSafariModeR1(void);
 void ExitSafariMode(void);
 
 bool8 SafariZoneTakeStep(void);
