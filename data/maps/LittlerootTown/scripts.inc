@@ -66,18 +66,15 @@ Turpia_Celebration_2:
 	goto Turpia_Celebration_1
 
 Turpia_Celebration_5:
-	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
 Turpia_Celebration_6:
-	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
 Turpia_Celebration_7:
-	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
 
@@ -102,33 +99,27 @@ Turia_Celebration_Cont_A_1:
 	return
 
 Turia_Celebration_Cont_A_5:
-	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 Turia_Celebration_Cont_A_6:
-	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 Turia_Celebration_Cont_A_7:
-	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 Turia_Celebration_Cont_A_9:
-	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 Turia_Celebration_Cont_A_10:
-	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 Turia_Celebration_Cont_A_11:
-	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
-	goto Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
 	return
 
 

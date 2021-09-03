@@ -60,14 +60,11 @@ script Turpia_Celebration
 	switch(var(VAR_STARTER_MON))
 	{
 		case 0:
-			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-			goto(Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
 		case 1:
-			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-			goto(Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
 		case 2:
-			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-			goto(Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
 	}
 }
 
@@ -82,14 +79,11 @@ script Turia_Celebration_Cont_A
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 			case 1:
-				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 			case 2:
-				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 		}
 	}
 	else
@@ -97,14 +91,11 @@ script Turia_Celebration_Cont_A
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				//goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 			case 1:
-				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				//goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 			case 2:
-				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
-				//goto(Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
 		}
 	}
 }

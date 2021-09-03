@@ -18,6 +18,19 @@ EventScript_TryDoNormalTrainerBattle::
 	special PlayTrainerEncounterMusic
 	special SetTrainerFacingDirection
 	goto EventScript_ShowTrainerIntroMsg
+	
+EventScript_LoseableBattleNoIntro::
+ 	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
+ 	waitmovement 0
+ 	specialvar VAR_RESULT, GetTrainerFlag
+ 	compare VAR_RESULT, FALSE
+ 	goto_if_ne EventScript_NoNormalTrainerBattle
+ 	special PlayTrainerEncounterMusic
+ 	special SetTrainerFacingDirection
+ 	special TryPrepareSecondApproachingTrainer
+ 	compare VAR_RESULT, TRUE
+ 	goto_if_eq EventScript_TrainerApproach
+ 	goto EventScript_DoTrainerBattle
 
 EventScript_NoNormalTrainerBattle::
 	gotopostbattlescript
