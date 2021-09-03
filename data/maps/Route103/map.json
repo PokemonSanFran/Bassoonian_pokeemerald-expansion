@@ -15,7 +15,7 @@
   "connections": [
     {
       "direction": "right",
-      "offset": -58,
+      "offset": -38,
       "map": "MAP_EVER_GRANDE_CITY"
     }
   ],

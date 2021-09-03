@@ -127,6 +127,10 @@ Turia_Celebration_Cont_B::
 	special HealPlayerParty
 	msgbox Turia_Celebration_Cont_B_Text_0, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
+	setflag FLAG_GRC_R1_HIDE_RIVALS
+	clearflag FLAG_GRC_R1_HIDE_NPCS
 	releaseall
 	end
 

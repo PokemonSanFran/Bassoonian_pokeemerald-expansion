@@ -1,13 +1,16 @@
-EverGrandeCity_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Borago_Outside_OnTransition
-	.byte 0
+mapscripts EverGrandeCity_MapScripts
+{
+	MAP_SCRIPT_ON_TRANSITION: Borago_Outside_OnTransition
+}
 
-
+raw `
 Borago_Outside_OnTransition:
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
 	call Common_EventScript_SetupRivalGfxId
 	end
+` 
 
+raw `
 @EverGrandeCity_MapScripts::
 @	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
 @	.byte 0
@@ -44,3 +47,4 @@ EverGrandeCity_Text_CitySign:
 @	.string "EVER GRANDE CITY\p"
 @	.string "“The paradise of flowers, the sea,\n"
 @	.string "and POKéMON.”$"
+` 

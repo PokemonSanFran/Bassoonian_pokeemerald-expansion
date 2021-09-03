@@ -1,12 +1,15 @@
-EverGrandeCity_PokemonCenter_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Borago_PokemonCenter_OnTransition
-	.byte 0
+mapscripts EverGrandeCity_PokemonCenter_1F_MapScripts
+{
+	MAP_SCRIPT_ON_TRANSITION: Borago_PokemonCenter_OnTransition
+}
 
-
+raw `
 Borago_PokemonCenter_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
 	end
+` 
 
+raw `
 .set LOCALID_NURSE, 1
 .set LOCALID_SCOTT, 4
 
@@ -111,3 +114,4 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 @	.string "I'll get in touch with you then.\p"
 @	.string "Okay, {PLAYER}{KUN}.\n"
 @	.string "Go for greatness!$"
+` 

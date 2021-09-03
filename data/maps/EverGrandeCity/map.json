@@ -15,7 +15,7 @@
   "connections": [
     {
       "direction": "right",
-      "offset": 60,
+      "offset": 40,
       "map": "MAP_ROUTE101"
     },
     {
@@ -25,84 +25,81 @@
     },
     {
       "direction": "left",
-      "offset": 58,
+      "offset": 38,
       "map": "MAP_ROUTE103"
     }
   ],
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 25,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_12"
+    }
   ],
   "warp_events": [
     {
-      "x": 18,
-      "y": 5,
+      "x": 9,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
       "dest_warp_id": 0
     },
     {
-      "x": 27,
-      "y": 48,
+      "x": 22,
+      "y": 62,
       "elevation": 0,
       "dest_map": "MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F",
       "dest_warp_id": 0
     },
     {
       "x": 18,
-      "y": 41,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_VICTORY_ROAD_1F",
       "dest_warp_id": 0
     },
     {
       "x": 18,
-      "y": 27,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_VICTORY_ROAD_1F",
       "dest_warp_id": 1
+    },
+    {
+      "x": 9,
+      "y": 62,
+      "elevation": 0,
+      "dest_map": "MAP_LILYCOVE_CITY_CONTEST_LOBBY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 33,
+      "y": 71,
+      "elevation": 0,
+      "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 21,
+      "y": 71,
+      "elevation": 0,
+      "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
     {
       "type": "trigger",
-      "x": 17,
-      "y": 58,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 58,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
-    },
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 58,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 58,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
-    },
-    {
-      "type": "trigger",
-      "x": 20,
-      "y": 58,
+      "x": 21,
+      "y": 37,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -111,7 +108,7 @@
     {
       "type": "trigger",
       "x": 21,
-      "y": 58,
+      "y": 36,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -120,7 +117,7 @@
     {
       "type": "trigger",
       "x": 22,
-      "y": 58,
+      "y": 37,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -129,7 +126,25 @@
     {
       "type": "trigger",
       "x": 23,
-      "y": 58,
+      "y": 37,
+      "elevation": 1,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 36,
+      "elevation": 1,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 36,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -138,7 +153,7 @@
     {
       "type": "trigger",
       "x": 24,
-      "y": 58,
+      "y": 36,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -146,8 +161,8 @@
     },
     {
       "type": "trigger",
-      "x": 25,
-      "y": 58,
+      "x": 24,
+      "y": 37,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -156,7 +171,25 @@
     {
       "type": "trigger",
       "x": 26,
-      "y": 58,
+      "y": 38,
+      "elevation": 1,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 36,
+      "elevation": 1,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 36,
       "elevation": 1,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -167,22 +200,22 @@
     {
       "type": "sign",
       "x": 19,
-      "y": 43,
+      "y": 27,
       "elevation": 5,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EverGrandeCity_EventScript_VictoryRoadSign"
     },
     {
       "type": "sign",
-      "x": 29,
-      "y": 48,
+      "x": 24,
+      "y": 62,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
     },
     {
       "type": "sign",
-      "x": 18,
+      "x": 23,
       "y": 52,
       "elevation": 5,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -191,18 +224,34 @@
     {
       "type": "sign",
       "x": 23,
-      "y": 15,
+      "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EverGrandeCity_EventScript_PokemonLeagueSign"
     },
     {
       "type": "sign",
-      "x": 28,
-      "y": 48,
+      "x": 23,
+      "y": 62,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 50,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 50,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemartSign"
     }
   ]
 }
