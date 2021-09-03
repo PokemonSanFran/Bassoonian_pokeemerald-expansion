@@ -17,6 +17,11 @@
       "direction": "right",
       "offset": -38,
       "map": "MAP_EVER_GRANDE_CITY"
+    },
+    {
+      "direction": "left",
+      "offset": 0,
+      "map": "MAP_OLDALE_TOWN"
     }
   ],
   "object_events": [

@@ -16,12 +16,17 @@
     {
       "direction": "down",
       "offset": 80,
-      "map": "MAP_VERDANTURF_TOWN"
+      "map": "MAP_OLDALE_TOWN"
     },
     {
       "direction": "left",
-      "offset": 0,
+      "offset": -40,
       "map": "MAP_RUSTBORO_CITY"
+    },
+    {
+      "direction": "up",
+      "offset": 28,
+      "map": "MAP_ROUTE122"
     }
   ],
   "object_events": [
