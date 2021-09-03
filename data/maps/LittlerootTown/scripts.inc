@@ -16,11 +16,25 @@ Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
 
+Turpia_DontRunAway::
+	lockall
+	applymovement 9, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_DontRunAway_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement 9, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	releaseall
+	return
+
+
 Turpia_Celebration::
 	lockall
 	special FullPartyToPC
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
-	setflag FLAG_SYS_POKEMON_GET
+	clearflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_GRC_R1_HIDE_BADDIES
 	msgbox Turpia_Celebration_Text_0
 	closemessage
@@ -40,40 +54,52 @@ Turpia_Celebration::
 	waitmovement 0
 	msgbox Turpia_Celebration_Text_2
 	closemessage
+	releaseall
+	end
+
+
+Turpia_BagPickStarter::
+	lockall
 	fadescreen FADE_TO_BLACK
 	special ChooseStarter
 	waitstate
-	msgbox Turpia_Celebration_Text_3, MSGBOX_YESNO
+	bufferleadmonspeciesname 0
+	message Turpia_BagPickStarter_Text_0
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	msgbox Turpia_BagPickStarter_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne Turpia_Celebration_2
-Turpia_Celebration_1:
-	msgbox Turpia_Celebration_Text_4
+	goto_if_ne Turpia_BagPickStarter_2
+Turpia_BagPickStarter_1:
+	msgbox Turpia_BagPickStarter_Text_2
 	closemessage
 	applymovement 9, Turpia_Prof_Runsoff
 	waitmovement 0
 	removeobject 9
-	msgbox Turpia_Celebration_Text_5
+	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	msgbox Turpia_BagPickStarter_Text_3
 	closemessage
 	switch VAR_STARTER_MON
-	case 0, Turpia_Celebration_5
-	case 1, Turpia_Celebration_6
-	case 2, Turpia_Celebration_7
+	case 0, Turpia_BagPickStarter_5
+	case 1, Turpia_BagPickStarter_6
+	case 2, Turpia_BagPickStarter_7
 	return
 
-Turpia_Celebration_2:
+Turpia_BagPickStarter_2:
 	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
-	goto Turpia_Celebration_1
+	goto Turpia_BagPickStarter_1
 
-Turpia_Celebration_5:
+Turpia_BagPickStarter_5:
 	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
-Turpia_Celebration_6:
+Turpia_BagPickStarter_6:
 	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
-Turpia_Celebration_7:
+Turpia_BagPickStarter_7:
 	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
@@ -131,6 +157,7 @@ Turia_Celebration_Cont_B::
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	setflag FLAG_GRC_R1_HIDE_RIVALS
 	clearflag FLAG_GRC_R1_HIDE_NPCS
+	setflag FLAG_SYS_POKEMON_GET
 	releaseall
 	end
 
@@ -196,9 +223,16 @@ Turpia_ScientistR1Block::
 	return
 
 
-StarterBag::
-	msgbox StarterBag_Text_0, MSGBOX_NPC
+Turpia_StarterBag::
+	compare VAR_LITTLEROOT_TOWN_STATE, 2
+	goto_if_lt Turpia_StarterBag_2
+Turpia_StarterBag_1:
+	msgbox Turpia_StarterBag_Text_0, MSGBOX_NPC
 	return
+
+Turpia_StarterBag_2:
+	goto Turpia_BagPickStarter
+	goto Turpia_StarterBag_1
 
 
 Turpia_SigurdCameo::
@@ -1606,6 +1640,9 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "I have something to show you.\n"
 @	.string "Let's go to my LAB.$"
 
+Turpia_DontRunAway_Text_0:
+	.string "yo wassu u dont want???$"
+
 Turpia_Celebration_Text_0:
 	.string "grats all lol$"
 
@@ -1615,15 +1652,19 @@ Turpia_Celebration_Text_1:
 Turpia_Celebration_Text_2:
 	.string "I think {PLAYER} should go first$"
 
-Turpia_Celebration_Text_3:
-	.string "congrats u have a pokemon do u want to\n"
-	.string "nickname it$"
+Turpia_BagPickStarter_Text_0:
+	.string "oy here's your pkmn\p"
+	.string "{PLAYER} received the\n"
+	.string "{STR_VAR_1}!$"
 
-Turpia_Celebration_Text_4:
+Turpia_BagPickStarter_Text_1:
+	.string "congrats do u want to nickname it$"
+
+Turpia_BagPickStarter_Text_2:
 	.string "the others also pick their pokemon\p"
 	.string "prof says oops gtg bai$"
 
-Turpia_Celebration_Text_5:
+Turpia_BagPickStarter_Text_3:
 	.string "battle 1$"
 
 Turia_Celebration_Cont_A_Text_0:
@@ -1638,7 +1679,7 @@ Turpia_NoAccessR1_Text_0:
 Turpia_ScientistR1Block_Text_0:
 	.string "Nop sorry bro$"
 
-StarterBag_Text_0:
+Turpia_StarterBag_Text_0:
 	.string "pkmn were here$"
 
 Turpia_SigurdCameo_Text_0:

@@ -16,12 +16,26 @@ Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
 `
+script Turpia_DontRunAway
+{
+	lockall
+	applymovement(9,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("yo wassu u dont want???"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(9,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	releaseall
+}
+
 script Turpia_Celebration
 {
 	lockall
 	special(FullPartyToPC)
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
-	setflag(FLAG_SYS_POKEMON_GET)
+	clearflag(FLAG_SYS_POKEMON_GET)
 	setflag(FLAG_GRC_R1_HIDE_BADDIES)
 	msgbox(format("grats all lol"))
 	closemessage
@@ -41,10 +55,22 @@ script Turpia_Celebration
 	waitmovement(0)
 	msgbox(format("I think {PLAYER} should go first"))
 	closemessage
+	releaseall
+	end
+}
+
+script Turpia_BagPickStarter
+{
+	lockall
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
 	waitstate
-	msgbox(format("congrats u have a pokemon do u want to nickname it"),MSGBOX_YESNO)
+	bufferleadmonspeciesname(0)
+	message(format("oy here's your pkmn\p{PLAYER} received the {STR_VAR_1}!"))
+	waitmessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	msgbox(format("congrats do u want to nickname it"),MSGBOX_YESNO)
 	if(var(VAR_RESULT))
 	{
 		setvar(VAR_0x8004,0)
@@ -55,6 +81,7 @@ script Turpia_Celebration
 	applymovement(9,Turpia_Prof_Runsoff)
 	waitmovement(0)
 	removeobject(9)
+	setvar(VAR_LITTLEROOT_TOWN_STATE,2)
 	msgbox(format("battle 1"))
 	closemessage
 	switch(var(VAR_STARTER_MON))
@@ -109,6 +136,7 @@ script Turia_Celebration_Cont_B
 	setflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
 	setflag(FLAG_GRC_R1_HIDE_RIVALS)
 	clearflag(FLAG_GRC_R1_HIDE_NPCS)
+	setflag(FLAG_SYS_POKEMON_GET)
 	releaseall
 	end
 }
@@ -166,7 +194,11 @@ script Turpia_ScientistR1Block {
 	msgbox("Nop sorry bro",MSGBOX_NPC)
 }
 
-script StarterBag {
+script Turpia_StarterBag {
+	if (var(VAR_LITTLEROOT_TOWN_STATE)<2)
+	{
+		goto(Turpia_BagPickStarter)
+	}
 	msgbox("pkmn were here",MSGBOX_NPC)
 }
 
