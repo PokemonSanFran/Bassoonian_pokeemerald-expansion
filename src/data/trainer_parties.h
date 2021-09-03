@@ -7048,6 +7048,30 @@ static const struct TrainerMon sParty_MayRoute119Torchic[] = {
     }
 };
 
+static const struct TrainerMon sParty_WallyRoute103Mudkip[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_TORCHIC,
+    }
+};
+
+static const struct TrainerMon sParty_WallyRoute103Treecko[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_MUDKIP,
+    }
+};
+
+static const struct TrainerMon sParty_WallyRoute103Torchic[] = {
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_TREECKO,
+    }
+};
+
 static const struct TrainerMon sParty_Isaac1[] = {
     {
     .iv = 0,

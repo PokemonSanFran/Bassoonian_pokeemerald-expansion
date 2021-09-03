@@ -21,6 +21,7 @@ Turpia_Celebration::
 	special FullPartyToPC
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
 	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_GRC_R1_HIDE_BADDIES
 	msgbox Turpia_Celebration_Text_0
 	closemessage
 	applymovement 9, Turpia_Prof_MovesUp
@@ -46,14 +47,110 @@ Turpia_Celebration::
 	compare VAR_RESULT, 0
 	goto_if_ne Turpia_Celebration_2
 Turpia_Celebration_1:
-	releaseall
-	end
+	msgbox Turpia_Celebration_Text_4
+	closemessage
+	applymovement 9, Turpia_Prof_Runsoff
+	waitmovement 0
+	removeobject 9
+	msgbox Turpia_Celebration_Text_5
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, Turpia_Celebration_5
+	case 1, Turpia_Celebration_6
+	case 2, Turpia_Celebration_7
+	return
 
 Turpia_Celebration_2:
 	setvar VAR_0x8004, 0
 	call Common_EventScript_NameReceivedPartyMon
 	goto Turpia_Celebration_1
 
+Turpia_Celebration_5:
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_A
+	return
+
+Turpia_Celebration_6:
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_A
+	return
+
+Turpia_Celebration_7:
+	trainerbattle_continue_after_lose TRAINER_WALLY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_A
+	return
+
+
+Turia_Celebration_Cont_A::
+	special HealPlayerParty
+	msgbox Turia_Celebration_Cont_A_Text_0
+	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turia_Celebration_Cont_A_1
+	switch VAR_STARTER_MON
+	case 0, Turia_Celebration_Cont_A_9
+	case 1, Turia_Celebration_Cont_A_10
+	case 2, Turia_Celebration_Cont_A_11
+	return
+
+Turia_Celebration_Cont_A_1:
+	switch VAR_STARTER_MON
+	case 0, Turia_Celebration_Cont_A_5
+	case 1, Turia_Celebration_Cont_A_6
+	case 2, Turia_Celebration_Cont_A_7
+	return
+
+Turia_Celebration_Cont_A_5:
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+Turia_Celebration_Cont_A_6:
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+Turia_Celebration_Cont_A_7:
+	trainerbattle_continue_after_lose TRAINER_MAY_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+Turia_Celebration_Cont_A_9:
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+Turia_Celebration_Cont_A_10:
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+Turia_Celebration_Cont_A_11:
+	trainerbattle_continue_after_lose TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_MayDefeated, Route103_Text_BrendanDefeated
+	goto Turia_Celebration_Cont_B
+	return
+
+
+Turia_Celebration_Cont_B::
+	special HealPlayerParty
+	msgbox Turia_Celebration_Cont_B_Text_0, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+
+Turpia_Prof_Runsoff:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
 
 Turpia_Prof_MovesUp:
 	walk_up
@@ -101,6 +198,11 @@ Turpia_NoAccessR1_2:
 
 Turpia_ScientistR1Block::
 	msgbox Turpia_ScientistR1Block_Text_0, MSGBOX_NPC
+	return
+
+
+StarterBag::
+	msgbox StarterBag_Text_0, MSGBOX_NPC
 	return
 
 
@@ -1522,11 +1624,27 @@ Turpia_Celebration_Text_3:
 	.string "congrats u have a pokemon do u want to\n"
 	.string "nickname it$"
 
+Turpia_Celebration_Text_4:
+	.string "the others also pick their pokemon\p"
+	.string "prof says oops gtg bai$"
+
+Turpia_Celebration_Text_5:
+	.string "battle 1$"
+
+Turia_Celebration_Cont_A_Text_0:
+	.string "battle 2$"
+
+Turia_Celebration_Cont_B_Text_0:
+	.string "The end$"
+
 Turpia_NoAccessR1_Text_0:
 	.string "Nuh uh$"
 
 Turpia_ScientistR1Block_Text_0:
 	.string "Nop sorry bro$"
+
+StarterBag_Text_0:
+	.string "pkmn were here$"
 
 Turpia_SigurdCameo_Text_0:
 	.string "Hmm nice house lol$"

@@ -22,6 +22,7 @@ script Turpia_Celebration
 	special(FullPartyToPC)
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
 	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_GRC_R1_HIDE_BADDIES)
 	msgbox(format("grats all lol"))
 	closemessage
 	applymovement(9,Turpia_Prof_MovesUp)
@@ -49,8 +50,78 @@ script Turpia_Celebration
 		setvar(VAR_0x8004,0)
 		call(Common_EventScript_NameReceivedPartyMon)
 	}
+	msgbox(format("the others also pick their pokemon\pprof says oops gtg bai"))
+	closemessage
+	applymovement(9,Turpia_Prof_Runsoff)
+	waitmovement(0)
+	removeobject(9)
+	msgbox(format("battle 1"))
+	closemessage
+	switch(var(VAR_STARTER_MON))
+	{
+		case 0:
+			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+			goto(Turia_Celebration_Cont_A)
+		case 1:
+			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+			goto(Turia_Celebration_Cont_A)
+		case 2:
+			//trainerbattle_continue_after_lose(TRAINER_WALLY_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+			goto(Turia_Celebration_Cont_A)
+	}
+}
+
+script Turia_Celebration_Cont_A
+{
+	special(HealPlayerParty)
+	msgbox(format("battle 2"))
+	closemessage
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		switch(var(VAR_STARTER_MON))
+		{
+			case 0:
+				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				goto(Turia_Celebration_Cont_B)
+			case 1:
+				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				goto(Turia_Celebration_Cont_B)
+			case 2:
+				//trainerbattle_continue_after_lose(TRAINER_MAY_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				goto(Turia_Celebration_Cont_B)
+		}
+	}
+	else
+	{
+		switch(var(VAR_STARTER_MON))
+		{
+			case 0:
+				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TREECKO,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				//goto(Turia_Celebration_Cont_B)
+			case 1:
+				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_TORCHIC,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				//goto(Turia_Celebration_Cont_B)
+			case 2:
+				//trainerbattle_continue_after_lose(TRAINER_BRENDAN_ROUTE_103_MUDKIP,Route103_Text_MayDefeated,Route103_Text_BrendanDefeated)
+				//goto(Turia_Celebration_Cont_B)
+		}
+	}
+}
+
+script Turia_Celebration_Cont_B
+{
+	special(HealPlayerParty)
+	msgbox(format("The end"),MSGBOX_DEFAULT)
+	closemessage
 	releaseall
 	end
+}
+
+movement Turpia_Prof_Runsoff
+{
+	walk_fast_up * 2
+	walk_fast_left * 7
 }
 
 movement Turpia_Prof_MovesUp
@@ -98,6 +169,10 @@ script Turpia_NoAccessR1 {
 
 script Turpia_ScientistR1Block {
 	msgbox("Nop sorry bro",MSGBOX_NPC)
+}
+
+script StarterBag {
+	msgbox("pkmn were here",MSGBOX_NPC)
 }
 
 script Turpia_SigurdCameo {

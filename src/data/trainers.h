@@ -6992,6 +6992,45 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_MayRoute119Torchic),
         .party = {.TrainerMon = sParty_MayRoute119Torchic},
     },
+	
+    [TRAINER_WALLY_ROUTE_103_TORCHIC] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_WallyRoute103Torchic),
+        .party = {.TrainerMon = sParty_WallyRoute103Torchic},
+    },
+	
+    [TRAINER_WALLY_ROUTE_103_TREECKO] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_WallyRoute103Treecko),
+        .party = {.TrainerMon = sParty_WallyRoute103Treecko},
+    },
+	
+    [TRAINER_WALLY_ROUTE_103_MUDKIP] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_WallyRoute103Mudkip),
+        .party = {.TrainerMon = sParty_WallyRoute103Mudkip},
+    },
 
     [TRAINER_ISAAC_1] =
     {
