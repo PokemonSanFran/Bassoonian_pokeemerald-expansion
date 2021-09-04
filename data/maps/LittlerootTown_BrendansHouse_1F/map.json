@@ -122,8 +122,8 @@
       "dest_warp_id": 1
     },
     {
-      "x": 7,
-      "y": 1,
+      "x": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
       "dest_warp_id": 0
