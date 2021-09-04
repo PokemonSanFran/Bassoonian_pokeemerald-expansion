@@ -316,6 +316,7 @@ Turpia_ProtaSquad_B::
 
 
 Turpia_ProtaSquad_C::
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_C_Player
 	applymovement 7, Turpia_ProtaSquad_C_Rival
 	applymovement 6, Turpia_ProtaSquad_C_Tori
