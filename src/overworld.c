@@ -31,7 +31,6 @@
 #include "malloc.h"
 #include "m4a.h"
 #include "map_name_popup.h"
-#include "map_preview.h"
 #include "match_call.h"
 #include "menu.h"
 #include "metatile_behavior.h"
@@ -1945,15 +1944,8 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 11:
-		if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && MapHasPreviewScreen(gMapHeader.regionMapSectionId, MPS_TYPE_FOREST) == TRUE)
-        {
-            MapPreview_LoadGfx(gMapHeader.regionMapSectionId);
-            MapPreview_StartForestTransition(gMapHeader.regionMapSectionId);
-        }
-        else if (SHOW_MAP_NAME_ENABLED)
-        {
+        if (gMapHeader.showMapName == TRUE && SecretBaseMapPopupEnabled() == TRUE)
             ShowMapNamePopup();
-        }
         (*state)++;
         break;
     case 12:
@@ -3238,9 +3230,3 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
         sprite->data[7]++;
     }
 }
-
-u8 GetLastUsedWarpMapSectionId(void)
-{
-    return Overworld_GetMapHeaderByGroupAndId(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum)->regionMapSectionId;
-}
-

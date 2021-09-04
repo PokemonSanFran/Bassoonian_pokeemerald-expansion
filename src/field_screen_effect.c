@@ -17,7 +17,6 @@
 #include "link_rfu.h"
 #include "load_save.h"
 #include "main.h"
-#include "map_preview.h"
 #include "menu.h"
 #include "mirage_tower.h"
 #include "metatile_behavior.h"
@@ -43,6 +42,7 @@ static void Task_ExitNonDoor(u8);
 static void Task_DoContestHallWarp(u8);
 static void FillPalBufferWhite(void);
 static void Task_ExitDoor(u8);
+static bool32 WaitForWeatherFadeIn(void);
 static void Task_SpinEnterWarp(u8 taskId);
 static void Task_EnableScriptAfterMusicFade(u8 taskId);
 
@@ -66,7 +66,7 @@ static void FillPalBufferWhite(void)
     CpuFastFill16(RGB_WHITE, gPlttBufferFaded, PLTT_SIZE);
 }
 
-void FillPalBufferBlack(void)
+static void FillPalBufferBlack(void)
 {
     CpuFastFill16(RGB_BLACK, gPlttBufferFaded, PLTT_SIZE);
 }
@@ -100,22 +100,14 @@ void FadeInFromBlack(void)
 
 void WarpFadeOutScreen(void)
 {
-    const struct MapHeader *header = GetDestinationWarpMapHeader();
-    
-    if (header->regionMapSectionId != gMapHeader.regionMapSectionId && MapHasPreviewScreen(header->regionMapSectionId, MPS_TYPE_CAVE))
+    u8 currentMapType = GetCurrentMapType();
+    switch (GetMapPairFadeToType(currentMapType, GetDestinationWarpMapHeader()->mapType))
     {
+    case 0:
         FadeScreen(FADE_TO_BLACK, 0);
-    }
-    else
-    {
-        switch (GetMapPairFadeToType(GetCurrentMapType(), header->mapType))
-        {
-        case 0:
-            FadeScreen(FADE_TO_BLACK, 0);
-            break;
-        case 1:
-            FadeScreen(FADE_TO_WHITE, 0);
-        }
+        break;
+    case 1:
+        FadeScreen(FADE_TO_WHITE, 0);
     }
 }
 
@@ -494,9 +486,9 @@ static bool32 PaletteFadeActive(void)
     return gPaletteFade.active;
 }
 
-bool32 WaitForWeatherFadeIn(void)
+static bool32 WaitForWeatherFadeIn(void)
 {
-    if (IsWeatherNotFadingIn() == TRUE && ForestMapPreviewScreenIsRunning())
+    if (IsWeatherNotFadingIn() == TRUE)
         return TRUE;
     else
         return FALSE;
@@ -1291,4 +1283,3 @@ static void Task_EnableScriptAfterMusicFade(u8 taskId)
         EnableBothScriptContexts();
     }
 }
-
