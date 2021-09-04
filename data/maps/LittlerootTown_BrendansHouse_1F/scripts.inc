@@ -12,7 +12,29 @@ Turpia_Breakfast_FacePlayer_Occur::
 Turpia_Breakfast_Opening_Occur::
 	lock
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 1
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
 	msgbox Turpia_Breakfast_Opening_Occur_Text_0
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_Breakfast_Opening_Occur_Text_1
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_Breakfast_Opening_Occur_Text_2
+	applymovement 1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_Breakfast_Opening_Occur_Text_3
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_Breakfast_Opening_Occur_Text_4
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_Breakfast_Opening_Occur_Text_5
+	closemessage
 	release
 	end
 
@@ -477,7 +499,35 @@ PlayersHouse_1F_Text_StillUnknownPokemon:
 @	.string "There are still unknown POKéMON.$"
 
 Turpia_Breakfast_Opening_Occur_Text_0:
-	.string "This is the opening breakfast script.$"
+	.string "Dad: Hey, {PLAYER}! We've got some\n"
+	.string "great news for you!$"
+
+Turpia_Breakfast_Opening_Occur_Text_1:
+	.string "Mom: You've made it through to the final\n"
+	.string "six of the competition!\p"
+	.string "We knew you could do it! You are our\n"
+	.string "child, after all.$"
+
+Turpia_Breakfast_Opening_Occur_Text_2:
+	.string "Dad: Now, now, dear… Let's not fuel\n"
+	.string "{PLAYER}'s ego, okay? The final round\l"
+	.string "still needs to start.$"
+
+Turpia_Breakfast_Opening_Occur_Text_3:
+	.string "Mom: Oh, don't mind me, {PLAYER}. Your\n"
+	.string "mother's just excited to see how you'll\l"
+	.string "be doing.$"
+
+Turpia_Breakfast_Opening_Occur_Text_4:
+	.string "Dad: Not to mention, you've made some\n"
+	.string "friends, right? {RIVAL} and Tori, if\l"
+	.string "I'm not mistaken…\p"
+	.string "Anyway, they're through to the finals\n"
+	.string "as well!$"
+
+Turpia_Breakfast_Opening_Occur_Text_5:
+	.string "Mom: We'll be rooting for you, sweetie.\n"
+	.string "Best of luck!$"
 
 Turpia_Mom_Text_0:
 	.string "Omg bb so proud xoxo$"

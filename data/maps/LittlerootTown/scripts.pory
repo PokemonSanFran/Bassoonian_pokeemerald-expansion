@@ -174,7 +174,7 @@ script Turpia_NoAccessR1 {
 	applymovement(5,Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("Nuh uh"))
+	msgbox(format("Oh, hey! The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"))
 	closemessage
 	checkfollower
 	if (var(VAR_RESULT)) {
@@ -191,7 +191,7 @@ script Turpia_NoAccessR1 {
 }
 
 script Turpia_ScientistR1Block {
-	msgbox("Nop sorry bro",MSGBOX_NPC)
+	msgbox(format("The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"),MSGBOX_NPC)
 }
 
 script Turpia_StarterBag {

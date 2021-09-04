@@ -1675,10 +1675,16 @@ Turia_Celebration_Cont_B_Text_0:
 	.string "The end$"
 
 Turpia_NoAccessR1_Text_0:
-	.string "Nuh uh$"
+	.string "Oh, hey! The Professor is still getting\n"
+	.string "things ready.\p"
+	.string "Why don't you go look for your pals in\n"
+	.string "the meantime?$"
 
 Turpia_ScientistR1Block_Text_0:
-	.string "Nop sorry bro$"
+	.string "The Professor is still getting things\n"
+	.string "ready.\p"
+	.string "Why don't you go look for your pals in\n"
+	.string "the meantime?$"
 
 Turpia_StarterBag_Text_0:
 	.string "pkmn were here$"

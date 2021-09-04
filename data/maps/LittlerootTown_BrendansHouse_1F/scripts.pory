@@ -13,7 +13,29 @@ script Turpia_Breakfast_Opening_Occur
 {
 	lock
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,1)
-	msgbox(format("This is the opening breakfast script."))
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Dad: Hey, {PLAYER}! We've got some great news for you!"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Mom: You've made it through to the final six of the competition!\pWe knew you could do it! You are our child, after all."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Dad: Now, now, dear… Let's not fuel {PLAYER}'s ego, okay? The final round still needs to start."))
+	applymovement(1,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Mom: Oh, don't mind me, {PLAYER}. Your mother's just excited to see how you'll be doing."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Dad: Not to mention, you've made some friends, right? {RIVAL} and Tori, if I'm not mistaken…\pAnyway, they're through to the finals as well!"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Mom: We'll be rooting for you, sweetie. Best of luck!"))
+	closemessage
 	release
 	end
 }
