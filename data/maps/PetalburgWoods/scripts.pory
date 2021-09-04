@@ -1,7 +1,6 @@
-PetalburgWoods_MapScripts::
-	.byte 0
+mapscripts PetalburgWoods_MapScripts {}
 
-
+raw `
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4
 
@@ -481,3 +480,5 @@ PetalburgWoods_Text_TrainerTipsPP:
 @	.string "make moves during battle.\p"
 @	.string "If a POKéMON runs out of PP, it must be\n"
 @	.string "taken to a POKéMON CENTER.$"
+
+`

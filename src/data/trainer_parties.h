@@ -6784,7 +6784,7 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
+static const struct TrainerMon sParty_BasilTurpiaMudkip[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -6828,7 +6828,7 @@ static const struct TrainerMon sParty_BrendanRoute119Mudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Treecko[] = {
+static const struct TrainerMon sParty_BasilTurpiaTreecko[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -6872,7 +6872,7 @@ static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
+static const struct TrainerMon sParty_BasilTurpiaTorchic[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -6916,7 +6916,7 @@ static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Mudkip[] = {
+static const struct TrainerMon sParty_AlyssaTurpiaMudkip[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -6960,7 +6960,7 @@ static const struct TrainerMon sParty_MayRoute119Mudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Treecko[] = {
+static const struct TrainerMon sParty_AlyssaTurpiaTreecko[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -7004,7 +7004,7 @@ static const struct TrainerMon sParty_MayRoute119Treecko[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Torchic[] = {
+static const struct TrainerMon sParty_AlyssaTurpiaTorchic[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -7048,7 +7048,7 @@ static const struct TrainerMon sParty_MayRoute119Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_WallyRoute103Mudkip[] = {
+static const struct TrainerMon sParty_ToriTurpiaMudkip[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -7056,7 +7056,7 @@ static const struct TrainerMon sParty_WallyRoute103Mudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_WallyRoute103Treecko[] = {
+static const struct TrainerMon sParty_ToriTurpiaTreecko[] = {
     {
     .iv = 0,
     .lvl = 5,
@@ -7064,7 +7064,7 @@ static const struct TrainerMon sParty_WallyRoute103Treecko[] = {
     }
 };
 
-static const struct TrainerMon sParty_WallyRoute103Torchic[] = {
+static const struct TrainerMon sParty_ToriTurpiaTorchic[] = {
     {
     .iv = 0,
     .lvl = 5,

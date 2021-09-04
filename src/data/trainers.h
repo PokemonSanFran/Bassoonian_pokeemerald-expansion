@@ -6759,7 +6759,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_WallyVR1},
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+    [TRAINER_GRC_BASIL_TURPIA_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6768,8 +6768,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_BrendanRoute103Mudkip),
-        .party = {.TrainerMon = sParty_BrendanRoute103Mudkip},
+        .partySize = ARRAY_COUNT(sParty_BasilTurpiaMudkip),
+        .party = {.TrainerMon = sParty_BasilTurpiaMudkip},
     },
 
     [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
@@ -6798,7 +6798,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_BrendanRoute119Mudkip},
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+    [TRAINER_GRC_BASIL_TURPIA_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6807,8 +6807,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
-        .partySize = ARRAY_COUNT(sParty_BrendanRoute103Treecko),
-        .party = {.TrainerMon = sParty_BrendanRoute103Treecko},
+        .partySize = ARRAY_COUNT(sParty_BasilTurpiaTreecko),
+        .party = {.TrainerMon = sParty_BasilTurpiaTreecko},
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TREECKO] =
@@ -6837,7 +6837,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_BrendanRoute119Treecko},
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+    [TRAINER_GRC_BASIL_TURPIA_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6846,8 +6846,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_BrendanRoute103Torchic),
-        .party = {.TrainerMon = sParty_BrendanRoute103Torchic},
+        .partySize = ARRAY_COUNT(sParty_BasilTurpiaTorchic),
+        .party = {.TrainerMon = sParty_BasilTurpiaTorchic},
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
@@ -6876,7 +6876,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_BrendanRoute119Torchic},
     },
 
-    [TRAINER_MAY_ROUTE_103_MUDKIP] =
+    [TRAINER_GRC_ALYSSA_TURPIA_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6885,8 +6885,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayRoute103Mudkip),
-        .party = {.TrainerMon = sParty_MayRoute103Mudkip},
+        .partySize = ARRAY_COUNT(sParty_AlyssaTurpiaMudkip),
+        .party = {.TrainerMon = sParty_AlyssaTurpiaMudkip},
     },
 
     [TRAINER_MAY_ROUTE_110_MUDKIP] =
@@ -6915,7 +6915,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_MayRoute119Mudkip},
     },
 
-    [TRAINER_MAY_ROUTE_103_TREECKO] =
+    [TRAINER_GRC_ALYSSA_TURPIA_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6924,8 +6924,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayRoute103Treecko),
-        .party = {.TrainerMon = sParty_MayRoute103Treecko},
+        .partySize = ARRAY_COUNT(sParty_AlyssaTurpiaTreecko),
+        .party = {.TrainerMon = sParty_AlyssaTurpiaTreecko},
     },
 
     [TRAINER_MAY_ROUTE_110_TREECKO] =
@@ -6954,7 +6954,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_MayRoute119Treecko},
     },
 
-    [TRAINER_MAY_ROUTE_103_TORCHIC] =
+    [TRAINER_GRC_ALYSSA_TURPIA_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6963,8 +6963,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayRoute103Torchic),
-        .party = {.TrainerMon = sParty_MayRoute103Torchic},
+        .partySize = ARRAY_COUNT(sParty_AlyssaTurpiaTorchic),
+        .party = {.TrainerMon = sParty_AlyssaTurpiaTorchic},
     },
 
     [TRAINER_MAY_ROUTE_110_TORCHIC] =
@@ -6993,7 +6993,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_MayRoute119Torchic},
     },
 	
-    [TRAINER_WALLY_ROUTE_103_TORCHIC] =
+    [TRAINER_GRC_TORI_TURPIA_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7002,11 +7002,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_WallyRoute103Torchic),
-        .party = {.TrainerMon = sParty_WallyRoute103Torchic},
+        .partySize = ARRAY_COUNT(sParty_ToriTurpiaTorchic),
+        .party = {.TrainerMon = sParty_ToriTurpiaTorchic},
     },
 	
-    [TRAINER_WALLY_ROUTE_103_TREECKO] =
+    [TRAINER_GRC_TORI_TURPIA_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7015,11 +7015,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_WallyRoute103Treecko),
-        .party = {.TrainerMon = sParty_WallyRoute103Treecko},
+        .partySize = ARRAY_COUNT(sParty_ToriTurpiaTreecko),
+        .party = {.TrainerMon = sParty_ToriTurpiaTreecko},
     },
 	
-    [TRAINER_WALLY_ROUTE_103_MUDKIP] =
+    [TRAINER_GRC_TORI_TURPIA_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -7028,8 +7028,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_WallyRoute103Mudkip),
-        .party = {.TrainerMon = sParty_WallyRoute103Mudkip},
+        .partySize = ARRAY_COUNT(sParty_ToriTurpiaMudkip),
+        .party = {.TrainerMon = sParty_ToriTurpiaMudkip},
     },
 
     [TRAINER_ISAAC_1] =
