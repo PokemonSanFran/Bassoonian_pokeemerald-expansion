@@ -34,6 +34,7 @@
 #include "rayquaza_scene.h"
 #include "region_map.h"
 #include "rtc.h"
+#include "safari_zone.h"
 #include "script.h"
 #include "script_menu.h"
 #include "sound.h"
@@ -1294,6 +1295,11 @@ void IsGrassTypeInParty(void)
         }
     }
     gSpecialVar_Result = FALSE;
+}
+
+void SafariBallsLeft(void)
+{
+	gSpecialVar_Result = gNumSafariBalls;
 }
 
 void SpawnCameraObject(void)
