@@ -5,32 +5,146 @@ mapscripts LittlerootTown_MaysHouse_2F_MapScripts {
 
 script Turpia_ToriHouse_pickuprival {
 	lockall
-	msgbox(format("Tori fighting with parents\pTis pretty long"))
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: Ugh, won't you just give me a rest? You said we'd be going on a vacation, not some kind of bootcamp!\pIf I'd known, I'd just have stayed home!"))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Claudia: I am not having any of your foul tongue, young lady. Be grateful that we've given you a head start to becoming a Trainer."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: How many times do I have to say it, Mom? I don't want to be a Trainer!"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Edmond: Look, Tori, we thought this would be a good way to ease you into things.\pThat's why we thought it would be a good idea to take you on this trip."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: That doesn't change the fact you've lied to me, Dad. Again."))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Edmond: …"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: No. Don't apologize. I don't want your apology, anyway."))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Claudia: For goodness's sake, Tori! Show some respect for your father!"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: What?!"))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Claudia: One more word, and there will be consequences!\pYou will attend the finals now that you've come this far, and you'll behave on your way there.\pDon't you know how you'll tarnish our reputation with that petulant attitude of yours?"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: Shut! Up! It's always about you! You, yourself and you!\pLeave me be already!"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Edmond: Stop it, Tori. Just go attend the finals, and then we'll let you do whatever you please."))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Claudia: You're expected to win this competition, young lady.\p No, you will win."))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Edmond: Cut it out, Claudia. You know drilling won't make a difference."))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Claudia: Ed, please! Don't you know what's at stake here?"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Edmond: Of course I do! Do you think I don't want Tori to win this thing?"))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Claudia: You're being much too lenient again. That just won't do."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: Oh, that just won't do, huh."))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Claudia: Tori!"))
 	closemessage
 	applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(1,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
 	waitmovement(0)
 	applymovement(4,Common_Movement_ExclamationMark)
+	applymovement(1,Common_Movement_ExclamationMark)
+	applymovement(2,Common_Movement_ExclamationMark)
 	waitmovement(0)
 	if(var(VAR_GRC_TURPIA_INTRO_STATE)==1)
 	{
 		setvar(VAR_GRC_TURPIA_INTRO_STATE,3)
 		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Tori_Player_Movement)
 		waitmovement(0)
-		msgbox(format("Interaction with Tori before he joins you"))
+		applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+		applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+		msgbox(format("Tori: Oh. Hi, {PLAYER}. Sorry for the noise. Let's get outta here."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Claudia: Oh! H-hello, {PLAYER}! Thank you for picking up our little girl!\lDo your best out there, sweetie!"))
+		closemessage
+		applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Edmond: …Best of luck, both of you. You know what's at stake, Tori."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Tori: Ugh…"))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
 		loadword(0,Turpia_Follower_Tori)
 		setfollower(4,0x100)
 	}
 	else
 	{
+		setvar(VAR_GRC_TURPIA_INTRO_STATE,5)
 		destroyfollower
 		addobject(3)
 		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Tori_Player_Movement)
 		applymovement(3,Turpia_Tori_Rival_Movement)
 		waitmovement(0)
-		msgbox(format("Interaction with Tori with rival around"))
-		setvar(VAR_GRC_TURPIA_INTRO_STATE,5)
+		applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+		applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+		msgbox(format("Tori: Oh. Hi, {PLAYER} and {RIVAL}. Sorry for the noise. Let's get outta here."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(3,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Claudia: Oh! H-hello, {PLAYER} and {RIVAL}! Thank you for picking up our little girl! Do your best out there, sweetie!"))
+		closemessage
+		applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Edmond: …Best of luck, all of you. You know what's at stake, Tori."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Tori: Ugh…"))
+		closemessage
 		clearflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
-		//
 		warp(MAP_LITTLEROOT_TOWN,3,0,0)
 		waitstate
 	}

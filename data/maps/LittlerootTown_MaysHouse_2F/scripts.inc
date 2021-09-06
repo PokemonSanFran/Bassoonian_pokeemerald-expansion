@@ -6,21 +6,117 @@ LittlerootTown_MaysHouse_2F_MapScripts::
 
 Turpia_ToriHouse_pickuprival::
 	lockall
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
 	msgbox Turpia_ToriHouse_pickuprival_Text_0
 	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_1
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_2
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_3
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_4
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_5
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_6
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_7
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_8
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_9
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_10
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_11
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_12
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_13
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_14
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_15
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_16
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_17
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_18
+	closemessage
 	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	applymovement 4, Common_Movement_ExclamationMark
+	applymovement 1, Common_Movement_ExclamationMark
+	applymovement 2, Common_Movement_ExclamationMark
 	waitmovement 0
 	compare VAR_GRC_TURPIA_INTRO_STATE, 1
 	goto_if_eq Turpia_ToriHouse_pickuprival_2
+	setvar VAR_GRC_TURPIA_INTRO_STATE, 5
 	destroyfollower
 	addobject 3
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Tori_Player_Movement
 	applymovement 3, Turpia_Tori_Rival_Movement
 	waitmovement 0
-	msgbox Turpia_ToriHouse_pickuprival_Text_2
-	setvar VAR_GRC_TURPIA_INTRO_STATE, 5
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	msgbox Turpia_ToriHouse_pickuprival_Text_23
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement 3, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_24
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_25
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_22
+	closemessage
 	clearflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	warp MAP_LITTLEROOT_TOWN, 3, 0, 0
 	waitstate
@@ -32,7 +128,26 @@ Turpia_ToriHouse_pickuprival_2:
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Tori_Player_Movement
 	waitmovement 0
-	msgbox Turpia_ToriHouse_pickuprival_Text_1
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	msgbox Turpia_ToriHouse_pickuprival_Text_19
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement 2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_20
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_21
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Turpia_ToriHouse_pickuprival_Text_22
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
 	loadword 0, Turpia_Follower_Tori
 	setfollower 4, 0x100
 	goto Turpia_ToriHouse_pickuprival_1
@@ -501,15 +616,123 @@ RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 @	.string "battle if you'd like.$"
 
 Turpia_ToriHouse_pickuprival_Text_0:
-	.string "Tori fighting with parents\p"
-	.string "Tis pretty long$"
+	.string "Tori: Ugh, won't you just give me a rest?\n"
+	.string "You said we'd be going on a vacation,\l"
+	.string "not some kind of bootcamp!\p"
+	.string "If I'd known, I'd just have stayed home!$"
 
 Turpia_ToriHouse_pickuprival_Text_1:
-	.string "Interaction with Tori before he joins\n"
-	.string "you$"
+	.string "Claudia: I am not having any of your\n"
+	.string "foul tongue, young lady. Be grateful\l"
+	.string "that we've given you a head start to\l"
+	.string "becoming a Trainer.$"
 
 Turpia_ToriHouse_pickuprival_Text_2:
-	.string "Interaction with Tori with rival around$"
+	.string "Tori: How many times do I have to say it,\n"
+	.string "Mom? I don't want to be a Trainer!$"
+
+Turpia_ToriHouse_pickuprival_Text_3:
+	.string "Edmond: Look, Tori, we thought this\n"
+	.string "would be a good way to ease you into\l"
+	.string "things.\p"
+	.string "That's why we thought it would be a\n"
+	.string "good idea to take you on this trip.$"
+
+Turpia_ToriHouse_pickuprival_Text_4:
+	.string "Tori: That doesn't change the fact\n"
+	.string "you've lied to me, Dad. Again.$"
+
+Turpia_ToriHouse_pickuprival_Text_5:
+	.string "Edmond: …$"
+
+Turpia_ToriHouse_pickuprival_Text_6:
+	.string "Tori: No. Don't apologize. I don't want\n"
+	.string "your apology, anyway.$"
+
+Turpia_ToriHouse_pickuprival_Text_7:
+	.string "Claudia: For goodness's sake, Tori! Show\n"
+	.string "some respect for your father!$"
+
+Turpia_ToriHouse_pickuprival_Text_8:
+	.string "Tori: What?!$"
+
+Turpia_ToriHouse_pickuprival_Text_9:
+	.string "Claudia: One more word, and there will be\n"
+	.string "consequences!\p"
+	.string "You will attend the finals now that\n"
+	.string "you've come this far, and you'll behave\l"
+	.string "on your way there.\p"
+	.string "Don't you know how you'll tarnish our\n"
+	.string "reputation with that petulant\l"
+	.string "attitude of yours?$"
+
+Turpia_ToriHouse_pickuprival_Text_10:
+	.string "Tori: Shut! Up! It's always about you!\n"
+	.string "You, yourself and you!\p"
+	.string "Leave me be already!$"
+
+Turpia_ToriHouse_pickuprival_Text_11:
+	.string "Edmond: Stop it, Tori. Just go attend\n"
+	.string "the finals, and then we'll let you do\l"
+	.string "whatever you please.$"
+
+Turpia_ToriHouse_pickuprival_Text_12:
+	.string "Claudia: You're expected to win this\n"
+	.string "competition, young lady.\p"
+	.string "No, you will win.$"
+
+Turpia_ToriHouse_pickuprival_Text_13:
+	.string "Edmond: Cut it out, Claudia. You know\n"
+	.string "drilling won't make a difference.$"
+
+Turpia_ToriHouse_pickuprival_Text_14:
+	.string "Claudia: Ed, please! Don't you know\n"
+	.string "what's at stake here?$"
+
+Turpia_ToriHouse_pickuprival_Text_15:
+	.string "Edmond: Of course I do! Do you think I\n"
+	.string "don't want Tori to win this thing?$"
+
+Turpia_ToriHouse_pickuprival_Text_16:
+	.string "Claudia: You're being much too lenient\n"
+	.string "again. That just won't do.$"
+
+Turpia_ToriHouse_pickuprival_Text_17:
+	.string "Tori: Oh, that just won't do, huh.$"
+
+Turpia_ToriHouse_pickuprival_Text_18:
+	.string "Claudia: Tori!$"
+
+Turpia_ToriHouse_pickuprival_Text_19:
+	.string "Tori: Oh. Hi, {PLAYER}. Sorry for the\n"
+	.string "noise. Let's get outta here.$"
+
+Turpia_ToriHouse_pickuprival_Text_20:
+	.string "Claudia: Oh! H-hello, {PLAYER}! Thank\n"
+	.string "you for picking up our little girl!\l"
+	.string "Do your best out there, sweetie!$"
+
+Turpia_ToriHouse_pickuprival_Text_21:
+	.string "Edmond: …Best of luck, both of you. You\n"
+	.string "know what's at stake, Tori.$"
+
+Turpia_ToriHouse_pickuprival_Text_22:
+	.string "Tori: Ugh…$"
+
+Turpia_ToriHouse_pickuprival_Text_23:
+	.string "Tori: Oh. Hi, {PLAYER} and {RIVAL}.\n"
+	.string "Sorry for the noise. Let's get outta\l"
+	.string "here.$"
+
+Turpia_ToriHouse_pickuprival_Text_24:
+	.string "Claudia: Oh! H-hello, {PLAYER} and\n"
+	.string "{RIVAL}! Thank you for picking up\l"
+	.string "our little girl! Do your best out there,\l"
+	.string "sweetie!$"
+
+Turpia_ToriHouse_pickuprival_Text_25:
+	.string "Edmond: …Best of luck, all of you. You\n"
+	.string "know what's at stake, Tori.$"
 
 Turpia_Tori_Mom_Text_0:
 	.string "I'm E4$"

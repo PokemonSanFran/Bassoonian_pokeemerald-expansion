@@ -236,32 +236,58 @@ Turpia_StarterBag_2:
 
 
 Turpia_SigurdCameo::
-	msgbox Turpia_SigurdCameo_Text_0, MSGBOX_NPC
+	lock
+	goto_if_unset FLAG_TEMP_1F, Turpia_SigurdCameo_2
+	msgbox Turpia_SigurdCameo_Text_2, MSGBOX_NPC
+Turpia_SigurdCameo_1:
+	release
+	return
+
+Turpia_SigurdCameo_2:
+	setflag FLAG_TEMP_1F
+	msgbox Turpia_SigurdCameo_Text_0
+	closemessage
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Turpia_SigurdCameo_Text_1, MSGBOX_NPC
+	goto Turpia_SigurdCameo_1
+
+
+Turpia_BeachLady::
+	msgbox Turpia_BeachLady_Text_0, MSGBOX_NPC
 	return
 
 
 Turpia_RealEstateGuy::
 	showmoneybox 0, 0, 0
 	lock
-	msgbox Turpia_RealEstateGuy_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_ne Turpia_RealEstateGuy_2
-	msgbox Turpia_RealEstateGuy_Text_3
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RealEstateGuy_2
+	msgbox Turpia_RealEstateGuy_Text_1, MSGBOX_YESNO
 Turpia_RealEstateGuy_1:
+	compare VAR_RESULT, 0
+	goto_if_ne Turpia_RealEstateGuy_6
+	msgbox Turpia_RealEstateGuy_Text_4
+Turpia_RealEstateGuy_5:
 	release
 	hidemoneybox
 	return
 
 Turpia_RealEstateGuy_2:
-	checkmoney 500000, 0
-	compare VAR_RESULT, 0
-	goto_if_ne Turpia_RealEstateGuy_5
-	msgbox Turpia_RealEstateGuy_Text_2
+	msgbox Turpia_RealEstateGuy_Text_0, MSGBOX_YESNO
 	goto Turpia_RealEstateGuy_1
 
-Turpia_RealEstateGuy_5:
-	msgbox Turpia_RealEstateGuy_Text_1
-	goto Turpia_RealEstateGuy_1
+Turpia_RealEstateGuy_6:
+	checkmoney 500000, 0
+	compare VAR_RESULT, 0
+	goto_if_ne Turpia_RealEstateGuy_9
+	msgbox Turpia_RealEstateGuy_Text_3
+	goto Turpia_RealEstateGuy_5
+
+Turpia_RealEstateGuy_9:
+	msgbox Turpia_RealEstateGuy_Text_2
+	goto Turpia_RealEstateGuy_5
 
 
 Turpia_ShowRivals_Start_Movement::
@@ -1690,19 +1716,58 @@ Turpia_StarterBag_Text_0:
 	.string "pkmn were here$"
 
 Turpia_SigurdCameo_Text_0:
-	.string "Hmm nice house lol$"
+	.string "Hmmm… Quite a fine piece of\n"
+	.string "architecture, indeed…$"
+
+Turpia_SigurdCameo_Text_1:
+	.string "Ah, hello, young one. I see this villa has\n"
+	.string "piqued your interest, too.\p"
+	.string "Now that I take another look at you, I'm\n"
+	.string "reminded…\p"
+	.string "Isn't there some sort of competition\n"
+	.string "going on?$"
+
+Turpia_SigurdCameo_Text_2:
+	.string "Now that I take another look at you, I'm\n"
+	.string "reminded…\p"
+	.string "Isn't there some sort of competition\n"
+	.string "going on?$"
+
+Turpia_BeachLady_Text_0:
+	.string "Aaaah… Gentle waves, rustling grass, a\n"
+	.string "pleasant breeze…\p"
+	.string "This really is the place to be, holiday\n"
+	.string "or not.$"
 
 Turpia_RealEstateGuy_Text_0:
-	.string "Oy u want a villa only 500k$"
+	.string "Would you look at this, young man! This\n"
+	.string "brand-new villa's construction\l"
+	.string "finished mere weeks ago.\p"
+	.string "It's the perfect vacation getaway,\n"
+	.string "right by the quiet beach of Turpia…\l"
+	.string "Isn't it just idyllic?\p"
+	.string "And it can be yours for only ¥500,000!\n"
+	.string "What do you say?$"
 
 Turpia_RealEstateGuy_Text_1:
-	.string "U have money but this dont work yet$"
+	.string "Would you look at this, young lady! This\n"
+	.string "brand-new villa's construction\l"
+	.string "finished mere weeks ago.\p"
+	.string "It's the perfect vacation getaway,\n"
+	.string "right by the quiet beach of Turpia…\l"
+	.string "Isn't it just idyllic?\p"
+	.string "And it can be yours for only ¥500,000!\n"
+	.string "What do you say?$"
 
 Turpia_RealEstateGuy_Text_2:
-	.string "U dont have enough soz$"
+	.string "U have money but this dont work yet$"
 
 Turpia_RealEstateGuy_Text_3:
-	.string "If u change ur mind lemme kno$"
+	.string "Hmm, it seems you need to save up some\n"
+	.string "more…$"
+
+Turpia_RealEstateGuy_Text_4:
+	.string "Ah… I see.$"
 
 Turpia_ProtaSquad_C_Text_0:
 	.string "Tori says hm$"

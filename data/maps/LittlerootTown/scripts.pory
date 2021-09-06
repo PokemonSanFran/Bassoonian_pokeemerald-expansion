@@ -203,13 +203,41 @@ script Turpia_StarterBag {
 }
 
 script Turpia_SigurdCameo {
-	msgbox("Hmm nice house lol",MSGBOX_NPC)
+	lock
+	if (!flag(FLAG_TEMP_1F))
+	{
+		setflag(FLAG_TEMP_1F)
+		msgbox(format("Hmmm… Quite a fine piece of architecture, indeed…"))
+		closemessage
+		applymovement(4,Common_Movement_ExclamationMark)
+		waitmovement(0)
+		//GRCTODO: walk fastest in place into right direction
+		msgbox(format("Ah, hello, young one. I see this villa has piqued your interest, too.\pNow that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+	}
+	else
+	{
+		msgbox(format("Now that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+	}
+	release
+}
+
+script Turpia_BeachLady
+{
+	msgbox(format("Aaaah… Gentle waves, rustling grass, a pleasant breeze…\pThis really is the place to be, holiday or not."),MSGBOX_NPC)
 }
 
 script Turpia_RealEstateGuy {
 	showmoneybox(0,0,0)
 	lock
-	msgbox(format("Oy u want a villa only 500k"),MSGBOX_YESNO)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Would you look at this, young man! This brand-new villa's construction finished mere weeks ago.\pIt's the perfect vacation getaway, right by the quiet beach of Turpia… Isn't it just idyllic?\pAnd it can be yours for only ¥500,000! What do you say?"),MSGBOX_YESNO)
+	}
+	else
+	{
+		msgbox(format("Would you look at this, young lady! This brand-new villa's construction finished mere weeks ago.\pIt's the perfect vacation getaway, right by the quiet beach of Turpia… Isn't it just idyllic?\pAnd it can be yours for only ¥500,000! What do you say?"),MSGBOX_YESNO)
+	}
 	if(var(VAR_RESULT))
 	{
 		checkmoney(500000,0)
@@ -219,12 +247,12 @@ script Turpia_RealEstateGuy {
 		}
 		else
 		{
-			msgbox(format("U dont have enough soz"))
+			msgbox(format("Hmm, it seems you need to save up some more…"))
 		}
 	}
 	else
 	{
-		msgbox(format("If u change ur mind lemme kno"))
+		msgbox(format("Ah… I see."))
 	}
 	release
 	hidemoneybox
