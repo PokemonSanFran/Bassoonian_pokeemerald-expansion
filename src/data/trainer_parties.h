@@ -4240,7 +4240,7 @@ static const struct TrainerMon sParty_Billy[] = {
     },
 	{
 		.iv = 0,
-		.lvl = 0,
+		.lvl = 4,
 		.species = SPECIES_SHROOMISH,
 	}
 };
