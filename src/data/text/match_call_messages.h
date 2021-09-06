@@ -48,10 +48,10 @@ const u8 gText_MatchCallHexManiac_Valerie_Pokemon[] = _("Scary to meet at night.
 const u8 gText_MatchCallHexManiac_Valerie_Intro1[] = _("I see things that others");
 const u8 gText_MatchCallHexManiac_Valerie_Intro2[] = _("can't see...");
 
-const u8 gText_MatchCallLady_Cindy_Strategy[] = _("Anything to win.");
-const u8 gText_MatchCallLady_Cindy_Pokemon[] = _("Gorgeous type!");
-const u8 gText_MatchCallLady_Cindy_Intro1[] = _("I have a pool specially for");
-const u8 gText_MatchCallLady_Cindy_Intro2[] = _("my Pokémon at home.");
+const u8 gText_MatchCallLady_Cindy_Strategy[] = _("Dave strats");
+const u8 gText_MatchCallLady_Cindy_Pokemon[] = _("Dave mons");
+const u8 gText_MatchCallLady_Cindy_Intro1[] = _("Dave intro 1");
+const u8 gText_MatchCallLady_Cindy_Intro2[] = _("Dave intro 2");
 
 const u8 gText_MatchCallBeauty_Thalia_Strategy[] = _("You'll fall under my spell!");
 const u8 gText_MatchCallBeauty_Thalia_Pokemon[] = _("Mature Water type.");
@@ -63,10 +63,10 @@ const u8 gText_MatchCallBeauty_Jessica_Pokemon[] = _("Cute, of course.");
 const u8 gText_MatchCallBeauty_Jessica_Intro1[] = _("I love the Safari Zone.");
 const u8 gText_MatchCallBeauty_Jessica_Intro2[] = _("I seem to end up there.");
 
-const u8 gText_MatchCallRichBoy_Winston_Strategy[] = _("Strategy? Who needs it?");
-const u8 gText_MatchCallRichBoy_Winston_Pokemon[] = _("I spent big money on it!");
-const u8 gText_MatchCallRichBoy_Winston_Intro1[] = _("I, being rich, sleep in a");
-const u8 gText_MatchCallRichBoy_Winston_Intro2[] = _("custom Pokémon bed.");
+const u8 gText_MatchCallRichBoy_Winston_Strategy[] = _("Maxime strats");
+const u8 gText_MatchCallRichBoy_Winston_Pokemon[] = _("Maxime mons");
+const u8 gText_MatchCallRichBoy_Winston_Intro1[] = _("Maxime intro 1");
+const u8 gText_MatchCallRichBoy_Winston_Intro2[] = _("Maxime intro 2");
 
 const u8 gText_MatchCallPokeManiac_Steve_Strategy[] = _("Wrestle down with power.");
 const u8 gText_MatchCallPokeManiac_Steve_Pokemon[] = _("Took all night to catch.");
@@ -293,15 +293,15 @@ const u8 gText_MatchCallPkmnRanger_Jackson_Pokemon[] = _("I use different types.
 const u8 gText_MatchCallPkmnRanger_Jackson_Intro1[] = _("Those who destroy nature");
 const u8 gText_MatchCallPkmnRanger_Jackson_Intro2[] = _("must never be forgiven!");
 
-const u8 gText_MatchCallLass_Haley_Strategy[] = _("I'll show you some guts!");
-const u8 gText_MatchCallLass_Haley_Pokemon[] = _("Cute Pokémon are my faves!");
-const u8 gText_MatchCallLass_Haley_Intro1[] = _("After a battle, I always");
-const u8 gText_MatchCallLass_Haley_Intro2[] = _("bathe with my Pokémon.");
+const u8 gText_MatchCallLass_Haley_Strategy[] = _("Juliet strats");
+const u8 gText_MatchCallLass_Haley_Pokemon[] = _("Juliet mons");
+const u8 gText_MatchCallLass_Haley_Intro1[] = _("Juliet intro 1");
+const u8 gText_MatchCallLass_Haley_Intro2[] = _("Juliet intro 2");
 
-const u8 gText_MatchCallBugCatcher_James_Strategy[] = _("Lightning-fast attack!");
-const u8 gText_MatchCallBugCatcher_James_Pokemon[] = _("Bug Pokémon are number 1!");
-const u8 gText_MatchCallBugCatcher_James_Intro1[] = _("If you want to catch Bug");
-const u8 gText_MatchCallBugCatcher_James_Intro2[] = _("Pokémon, wake up early.");
+const u8 gText_MatchCallBugCatcher_James_Strategy[] = _("Wayne strats");
+const u8 gText_MatchCallBugCatcher_James_Pokemon[] = _("Wayne mons");
+const u8 gText_MatchCallBugCatcher_James_Intro1[] = _("Wayne intro 1");
+const u8 gText_MatchCallBugCatcher_James_Intro2[] = _("Wayne intro 2");
 
 const u8 gText_MatchCallHiker_Trent_Strategy[] = _("I battle with power.");
 const u8 gText_MatchCallHiker_Trent_Pokemon[] = _("Hard-bodied Pokémon.");

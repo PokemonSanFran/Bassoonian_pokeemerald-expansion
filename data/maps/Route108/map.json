@@ -15,8 +15,18 @@
   "connections": [
     {
       "direction": "up",
-      "offset": 7,
+      "offset": 8,
       "map": "MAP_DEWFORD_TOWN"
+    },
+    {
+      "direction": "left",
+      "offset": 0,
+      "map": "MAP_ROUTE112"
+    },
+    {
+      "direction": "right",
+      "offset": -9,
+      "map": "MAP_PACIFIDLOG_TOWN"
     }
   ],
   "object_events": [

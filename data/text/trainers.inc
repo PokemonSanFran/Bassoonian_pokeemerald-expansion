@@ -246,186 +246,127 @@ Route103_Text_MarcosPostBattle: @ 8295246
 	.string "Heh, maybe I should turn pro.$"
 
 Route104_Text_GinaIntro: @ 82952BB
-	.string "Gina: Okay, let's battle with our\n"
-	.string "Pokémon!$"
+	.string "Meg intro$"
 
 Route104_Text_GinaDefeat: @ 82952E6
-	.string "Gina: Losing upsets me!$"
+	.string "Meg defeat$"
 
 Route104_Text_GinaPostBattle: @ 82952FE
-	.string "Gina: You are strong!\n"
-	.string "We have to train lots more!$"
+	.string "Meg post$"
 
 Route104_Text_GinaNotEnoughMons: @ 8295330
-	.string "Gina: Oh? Only one Pokémon?\n"
-	.string "Then, we don't battle with you.\p"
-	.string "If there's only one Pokémon, it will\n"
-	.string "be lonesome. That's not nice.$"
+	.string "Meg not enough$"
 
 Route104_Text_MiaIntro: @ 82953AF
-	.string "Mia: We are twins, so we battle\n"
-	.string "Pokémon together.$"
+	.string "Mia intro$"
 
 Route104_Text_MiaDefeat: @ 82953E1
-	.string "Mia: We battled together, but we\n"
-	.string "both lost…$"
+	.string "Mia defeat$"
 
 Route104_Text_MiaPostBattle: @ 829540D
-	.string "Mia: We will train our Pokémon more\n"
-	.string "and be strong like you.$"
+	.string "Mia post$"
 
 Route104_Text_MiaNotEnoughMons: @ 8295449
-	.string "Mia: You want to battle with us?\p"
-	.string "It's a big no-no if you don't have two\n"
-	.string "Pokémon with you.\l"
-	.string "We're too strong for you!$"
+	.string "Mia not enough$"
 
 Route104_Text_IvanIntro: @ 82954BD
-	.string "Why keep it a secret?\n"
-	.string "I'm the Water Pokémon expert!\p"
-	.string "Huh?\n"
-	.string "You don't know me?$"
+	.string "Kyle intro$"
 
 Route104_Text_IvanDefeat: @ 8295509
-	.string "I thought I wasn't too bad, if I may\n"
-	.string "say so, but I guess not… Bleah…$"
+	.string "Kyle defeat$"
 
 Route104_Text_IvanPostBattle: @ 829554E
-	.string "I got too into fishing.\n"
-	.string "I forgot I had to raise my Pokémon…$"
+	.string "Kyle post$"
 
 Route104_Text_BillyIntro: @ 829558A
-	.string "Leaving footprints in the sand is\n"
-	.string "so fun!$"
+	.string "Krissy intro$"
 
 Route104_Text_BillyDefeat: @ 82955B4
-	.string "Waah! I got sand in my runners!\n"
-	.string "They're all gritty!$"
+	.string "Krissy defeat$"
 
 Route104_Text_BillyPostBattle: @ 82955E8
-	.string "I want to leave my footprints in\n"
-	.string "the sand everywhere, but they\l"
-	.string "disappear quickly…$"
+	.string "Krissy post$"
 
 Route104_Text_HaleyIntro: @ 829563A
-	.string "Should I…\n"
-	.string "Or shouldn't I?\p"
-	.string "Okay, sure, I will battle!$"
+	.string "Juliet intro$"
 
 Route104_Text_HaleyDefeat: @ 829566F
-	.string "I shouldn't have battled…$"
+	.string "Juliet defeat$"
 
 Route104_Text_HaleyPostBattle: @ 8295689
-	.string "If you're faced with a decision and\n"
-	.string "you let someone else choose for you,\l"
-	.string "you will regret it, however things\l"
-	.string "turn out.$"
+	.string "Juliet post$"
 
 Route104_Text_HaleyRegister1: @ 82956FF
-	.string "You're strong, but should I register\n"
-	.string "you in my Pokénav?\l"
-	.string "Maybe I shouldn't…\p"
-	.string "Okay, sure, I will register you!$"
+	.string "Juliet register 1$"
 
 Route104_Text_HaleyRegister2: @ 829576B
-	.string "You're strong, but should I register\n"
-	.string "you in my Pokénav?\l"
-	.string "Maybe I shouldn't…\p"
-	.string "Okay, sure, I will register you!$"
+	.string "Juliet register 2$"
 
 Route104_Text_HaleyRematchIntro: @ 82957D7
-	.string "Come on, battle with me!$"
+	.string "Juliet rematch intro$"
 
 Route104_Text_HaleyRematchDefeat: @ 82957F0
-	.string "Ohh…\n"
-	.string "I thought I could win…$"
+	.string "Juliet rematch defeat$"
 
 Route104_Text_HaleyPostRematch: @ 829580C
-	.string "I made the decision to battle, so\n"
-	.string "I can accept this loss with grace.\p"
-	.string "I am still upset about losing!$"
+	.string "Juliet rematch post$"
 
 Route104_Text_WinstonIntro: @ 8295870
-	.string "Oh, sure, I'll accept your challenge.\n"
-	.string "I have a lot of money.$"
+	.string "Maxime intro$"
 
 Route104_Text_WinstonDefeat: @ 82958AD
-	.string "Why couldn't I win?$"
+	.string "Maxime defeat$"
 
 Route104_Text_WinstonPostBattle: @ 82958C1
-	.string "There are some things money can't buy.\n"
-	.string "That's Pokémon…$"
+	.string "Maxime post$"
 
 Route104_Text_WinstonRegister1: @ 82958F8
-	.string "Hm?\n"
-	.string "Ah, you've obtained a Pokénav.\p"
-	.string "I will gladly register you.\n"
-	.string "After all, I have plenty of money.$"
+	.string "Maxime register 1$"
 
 Route104_Text_WinstonRegister2: @ 829595A
-	.string "Hm?\n"
-	.string "Ah, you've obtained a Pokénav.\p"
-	.string "I will gladly register you.\n"
-	.string "After all, I have plenty of money.$"
+	.string "Maxime register 2$"
 
 Route104_Text_WinstonRematchIntro: @ 82959BC
-	.string "After I lost to you, I learned a bunch\n"
-	.string "of things about Pokémon.$"
+	.string "Maxime rematch intro$"
 
 Route104_Text_WinstonRematchDefeat: @ 82959FC
-	.string "I lost again?\n"
-	.string "Why couldn't I win?$"
+	.string "Maxime rematch defeat$"
 
 Route104_Text_WinstonPostRematch: @ 8295A1E
-	.string "I'm fabulously wealthy, but I can't\n"
-	.string "seem to win at Pokémon…\p"
-	.string "It's so deep, the world of Pokémon…$"
+	.string "Maxime post rematch$"
 
 Route104_Text_CindyIntro: @ 8295A7E
-	.string "We must have been fated to meet.\n"
-	.string "May I ask you for a battle?$"
+	.string "Dave see$"
 
 Route104_Text_CindyDefeat: @ 8295ABB
-	.string "Oh, my!$"
+	.string "Dave defeat$"
 
 Route104_Text_CindyPostBattle: @ 8295AC3
-	.string "“Hello” is the beginning of “good-bye.”\n"
-	.string "I hope we meet again.$"
+	.string "Dave post$"
 
 Route104_Text_CindyRegister1: @ 8295B01
-	.string "Hello, we meet again.\p"
-	.string "We seem to be drawn together. Let's\n"
-	.string "register each other in our Pokénavs.$"
+	.string "Dave register 1$"
 
 Route104_Text_CindyRegister2: @ 8295B60
-	.string "We should commemorate how we seem\n"
-	.string "to be drawn to each other.\p"
-	.string "Let's register each other in our\n"
-	.string "Pokénavs.$"
+	.string "Dave register 2$"
 
 Route104_Text_CindyRematchIntro: @ 8295BC8
-	.string "Hello, we meet again.\n"
-	.string "May I ask you for a battle?$"
+	.string "Dave rematch intro$"
 
 Route104_Text_CindyRematchDefeat: @ 8295BFA
-	.string "Oh, my…\n"
-	.string "I did the best that I could…$"
+	.string "Dave rematch defeat$"
 
 Route104_Text_CindyPostRematch: @ 8295C1F
-	.string "“Hello” is the beginning of “good-bye.”\n"
-	.string "I hope we meet again.$"
+	.string "Dave post rematch$"
 
 Route104_Text_DarianIntro: @ 8295C5D
-	.string "I fished up a tough-looking Pokémon!\p"
-	.string "It has this magical quality to it!\n"
-	.string "It surely looks tough, yes it does!$"
+	.string "Finn intro$"
 
 Route104_Text_DarianDefeat: @ 8295CC9
-	.string "What the…$"
+	.string "Finn defeat$"
 
 Route104_Text_DarianPostBattle: @ 8295CD3
-	.string "Hey, Magikarp, you sure don't live up\n"
-	.string "to your name, do you?$"
+	.string "Finn post$"
 
 Route105_Text_FosterIntro: @ 8295D0F
 	.string "There's supposed to be a mystical\n"
