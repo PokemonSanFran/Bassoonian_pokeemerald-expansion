@@ -3,6 +3,139 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 
+SpotByAide1::
+	call SpotByAide_PartA
+	applymovement 2, SpotByAide_MoveFastLeft
+	waitmovement 0
+	call SpotByAide_PartB
+	applymovement OBJ_EVENT_ID_PLAYER, SpotByAide_Player_MovLeft
+	applymovement 2, SpotByAide_Aide_MovLeft
+	call SpotByAide_PartC
+	return
+
+
+SpotByAide2::
+	call SpotByAide_PartA
+	call SpotByAide_PartB
+	applymovement OBJ_EVENT_ID_PLAYER, SpotByAide_Player_MovRight
+	applymovement 2, SpotByAide_Aide_MovRight
+	call SpotByAide_PartC
+	return
+
+
+SpotByAide_PartA::
+	lockall
+	setvar VAR_BIRCH_LAB_STATE, 1
+	applymovement 2, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	return
+
+
+SpotByAide_PartB::
+	applymovement 2, SpotByAideMovementA
+	waitmovement 0
+	msgbox SpotByAide_PartB_Text_0
+	closemessage
+	return
+
+
+SpotByAide_PartC::
+	waitmovement 0
+	opendoor 21, 69
+	waitdooranim
+	applymovement 2, SpotByAide_Aide_MoveInside
+	applymovement OBJ_EVENT_ID_PLAYER, SpotByAide_Player_MoveInside
+	waitmovement 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, 0
+	closedoor 21, 69
+	waitdooranim
+	warpsilent MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0, 0, 0
+	waitstate
+	releaseall
+	return
+
+
+SpotByAide_Aide_MoveInside:
+	walk_up
+	set_invisible
+	step_end
+
+SpotByAide_Player_MoveInside:
+	walk_right
+	walk_up
+	step_end
+
+SpotByAide_MoveFastLeft:
+	walk_fast_left
+	step_end
+
+SpotByAideMovementA:
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+SpotByAide_Aide_MovRight:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_in_place_fast_up
+	step_end
+
+SpotByAide_Aide_MovLeft:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_in_place_fast_up
+	step_end
+
+SpotByAide_Player_MovRight:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+SpotByAide_Player_MovLeft:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
 Borago_Outside_OnTransition:
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
 	call Common_EventScript_SetupRivalGfxId
@@ -44,3 +177,6 @@ EverGrandeCity_Text_CitySign:
 @	.string "EVER GRANDE CITY\p"
 @	.string "“The paradise of flowers, the sea,\n"
 @	.string "and POKéMON.”$"
+
+SpotByAide_PartB_Text_0:
+	.string "omg u so late hurry up already$"

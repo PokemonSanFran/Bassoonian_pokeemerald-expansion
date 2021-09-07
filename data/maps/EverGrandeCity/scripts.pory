@@ -3,6 +3,108 @@ mapscripts EverGrandeCity_MapScripts
 	MAP_SCRIPT_ON_TRANSITION: Borago_Outside_OnTransition
 }
 
+script SpotByAide1
+{
+	call(SpotByAide_PartA)
+	applymovement(2,SpotByAide_MoveFastLeft)
+	waitmovement(0)
+	call(SpotByAide_PartB)
+	applymovement(OBJ_EVENT_ID_PLAYER,SpotByAide_Player_MovLeft)
+	applymovement(2,SpotByAide_Aide_MovLeft)
+	call(SpotByAide_PartC)
+}
+
+script SpotByAide2
+{
+	call(SpotByAide_PartA)
+	call(SpotByAide_PartB)
+	applymovement(OBJ_EVENT_ID_PLAYER,SpotByAide_Player_MovRight)
+	applymovement(2,SpotByAide_Aide_MovRight)
+	call(SpotByAide_PartC)
+}
+
+script SpotByAide_PartA
+{
+	lockall
+	setvar(VAR_BIRCH_LAB_STATE,1)
+	applymovement(2,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	applymovement(2,Common_Movement_ExclamationMark)
+	waitmovement(0)
+}
+
+script SpotByAide_PartB
+{
+	applymovement(2,SpotByAideMovementA)
+	waitmovement(0)
+	msgbox(format("omg u so late hurry up already"))
+	closemessage
+}
+
+script SpotByAide_PartC
+{
+	waitmovement(0)
+	opendoor(21,69)
+	waitdooranim
+	applymovement(2,SpotByAide_Aide_MoveInside)
+	applymovement(OBJ_EVENT_ID_PLAYER,SpotByAide_Player_MoveInside)
+	waitmovement(0)
+	hideobjectat(OBJ_EVENT_ID_PLAYER,0)
+	closedoor(21,69)
+	waitdooranim
+	warpsilent(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB,0,0,0)
+	waitstate
+	releaseall
+}
+
+movement SpotByAide_Aide_MoveInside
+{
+	walk_up
+	set_invisible
+}
+
+movement SpotByAide_Player_MoveInside
+{
+	walk_right
+	walk_up
+}
+
+movement SpotByAide_MoveFastLeft
+{
+	walk_fast_left
+}
+
+movement SpotByAideMovementA
+{
+	walk_fast_up * 2
+}
+
+movement SpotByAide_Aide_MovRight
+{
+	walk_fast_down * 2
+	walk_fast_right * 9
+	walk_in_place_fast_up
+}
+
+movement SpotByAide_Aide_MovLeft
+{
+	walk_fast_down * 2
+	walk_fast_right * 10
+	walk_in_place_fast_up
+}
+
+movement SpotByAide_Player_MovRight
+{
+	walk_fast_down * 3
+	walk_fast_right * 8
+}
+
+movement SpotByAide_Player_MovLeft
+{
+	walk_fast_down * 3
+	walk_fast_right * 9
+}
+
 raw `
 Borago_Outside_OnTransition:
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
