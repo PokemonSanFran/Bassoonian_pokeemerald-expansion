@@ -1,5 +1,65 @@
 LittlerootTown_ProfessorBirchsLab_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Borago_Lab_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Borago_Lab_OnFrame
 	.byte 0
+
+
+Borago_Lab_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
+	call Borago_Lab_Move_Aide
+	@ call ProfBirch_EventScript_UpdateLocation > need to figure out how to implement this later
+	end
+	
+Borago_Lab_OnFrame:
+	map_script_2 VAR_BIRCH_LAB_STATE, 1, Borago_Get_Dex
+	.2byte 0
+
+Borago_Get_Dex::
+	lockall
+	applymovement 1, Borago_Get_Dex_Aide_Movement
+	applymovement OBJ_EVENT_ID_PLAYER, Borago_Get_Dex_Player_Movement
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_0
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	message Borago_Get_Dex_Text_1
+	waitfanfare
+	setflag FLAG_SYS_POKEDEX_GET
+	setvar VAR_BIRCH_LAB_STATE, 2
+	releaseall
+	return
+
+
+Borago_Get_Dex_Aide_Movement:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_left
+	walk_up
+	walk_in_place_fastest_down
+	step_end
+
+Borago_Get_Dex_Player_Movement:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Borago_Lab_Move_Aide::
+	compare VAR_BIRCH_LAB_STATE, 1
+	goto_if_eq Borago_Lab_Move_Aide_1
+	return
+
+Borago_Lab_Move_Aide_1:
+	setobjectxyperm 1, 6, 11
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	return
 
 
 .set LOCALID_AIDE, 1
@@ -1054,3 +1114,10 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 @	.string "we meet. I'll be waiting!\p"
 @	.string "… … … … … …\n"
 @	.string "… … … … … Click!$"
+
+Borago_Get_Dex_Text_0:
+	.string "This is where we say cool thanks here's\n"
+	.string "a dex$"
+
+Borago_Get_Dex_Text_1:
+	.string "Uaui u got pokedex$"
