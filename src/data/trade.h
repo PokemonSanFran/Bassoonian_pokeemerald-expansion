@@ -1003,69 +1003,85 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] = 
+    [INGAME_TRADE_KRABBY] = 
     {
-        .nickname = _("Dots"), 
-        .species = SPECIES_SEEDOT,
-        .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1, 
-        .otId = 38726,
+        .nickname = _("Kookie"), 
+        .species = SPECIES_KRABBY,
+        .ivs = {20, 31, 20, 20, 20, 20},
+        .abilityNum = 2,
+        .otId = 19352,
         .conditions = {30, 5, 5, 5, 5},
-        .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY, 
+        .personality = 0x4E,
+        .heldItem = ITEM_ORAN_BERRY, 
         .mailNum = -1,
-        .otName = _("KOBE"), 
-        .otGender = MALE, 
-        .sheen = 10,
-        .requestedSpecies = SPECIES_RALTS
-    }, 
-    [INGAME_TRADE_PLUSLE] = 
-    {
-        .nickname = _("Pluses"), 
-        .species = SPECIES_PLUSLE,
-        .ivs = {4, 4, 4, 5, 5, 4},
-        .abilityNum = 0, 
-        .otId = 73996,
-        .conditions = {5, 5, 30, 5, 5},
-        .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL, 
-        .mailNum = 0,
-        .otName = _("ROMAN"), 
-        .otGender = MALE, 
-        .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
-    }, 
-    [INGAME_TRADE_HORSEA] = 
-    {
-        .nickname = _("Seasor"),
-        .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
-        .abilityNum = 0, 
-        .otId = 46285,
-        .conditions = {5, 5, 5, 5, 30},
-        .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL, 
-        .mailNum = 1,
-        .otName = _("SKYLAR"), 
-        .otGender = MALE, 
-        .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
-    }, 
-    [INGAME_TRADE_MEOWTH] = 
-    {
-        .nickname = _("Meowow"),
-        .species = SPECIES_MEOWTH,
-        .ivs = {4, 5, 4, 5, 4, 4},
-        .abilityNum = 0, 
-        .otId = 91481,
-        .conditions = {5, 5, 5, 30, 5},
-        .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL, 
-        .mailNum = 2,
-        .otName = _("ISIS"), 
+        .otName = _("Lola"), 
         .otGender = FEMALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_SKITTY
+        .requestedSpecies = SPECIES_DWEBBLE
+    }, 
+    [INGAME_TRADE_CROAGUNK] = 
+    {
+        .nickname = _("Dartolomew"), 
+        .species = SPECIES_CROAGUNK,
+        .ivs = {20, 20, 20, 31, 20, 20},
+        .abilityNum = 2,
+        .otId = 46673,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x8D,
+        .heldItem = ITEM_LUM_BERRY, 
+        .mailNum = -1,
+        .otName = _("Jayce"), 
+        .otGender = MALE, 
+        .sheen = 10,
+        .requestedSpecies = SPECIES_STUNKY
+    }, 
+    [INGAME_TRADE_NOIBAT] = 
+    {
+        .nickname = _("Fafnir"),
+        .species = SPECIES_NOIBAT,
+        .ivs = {20, 20, 20, 20, 20, 31},
+        .abilityNum = 1, 
+        .otId = 9048,
+        .conditions = {5, 5, 5, 5, 30},
+        .personality = 0xBA,
+        .heldItem = ITEM_METRONOME, 
+        .mailNum = -1,
+        .otName = _("Sharon"), 
+        .otGender = FEMALE, 
+        .sheen = 10,
+        .requestedSpecies = SPECIES_WOOBAT
+    }, 
+    [INGAME_TRADE_SPOINK] = 
+    {
+        .nickname = _("Perlie"),
+        .species = SPECIES_SPOINK,
+        .ivs = {20, 20, 20, 20, 31, 20},
+        .abilityNum = 0, 
+        .otId = 31337,
+        .conditions = {5, 5, 30, 5, 5},
+        .personality = 0x2D,
+        .heldItem = ITEM_BIG_PEARL, 
+        .mailNum = -1,
+        .otName = _("Madelyn"), 
+        .otGender = FEMALE, 
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MANKEY
+    },
+    [INGAME_TRADE_SALAZZLE] = 
+    {
+        .nickname = _("Lizzie"),
+        .species = SPECIES_SALAZZLE,
+        .ivs = {20, 10, 20, 30, 20, 31},
+        .abilityNum = 2, 
+        .otId = 51639,
+        .conditions = {5, 30, 5, 5, 5},
+        .personality = 0xA0,
+        .heldItem = ITEM_SHUCA_BERRY, 
+        .mailNum = -1,
+        .otName = _("Rufus"), 
+        .otGender = MALE, 
+        .sheen = 10,
+        .requestedSpecies = SPECIES_CAMERUPT
     }
 };
 
