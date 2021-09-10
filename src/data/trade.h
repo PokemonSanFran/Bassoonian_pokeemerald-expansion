@@ -1022,7 +1022,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_CROAGUNK] = 
     {
         .nickname = _("Dartolomew"), 
-        .species = SPECIES_CROAGUNK,
+        .species = SPECIES_CROAGUNK, //Needs to be regional variant!
         .ivs = {20, 20, 20, 31, 20, 20},
         .abilityNum = 2,
         .otId = 46673,
