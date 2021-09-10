@@ -5,6 +5,13 @@ script PoppyGym_Trigger1
 	setmetatile(9,12,0x209,0)
 }
 
+script PoppyGym_Trigger2
+{
+	setvar(VAR_TEMP_1,1)
+	setmetatile(1,6,0x209,0)
+	setmetatile(1,7,0x209,0)
+}
+
 raw ` 
 RustboroCity_Gym_MapScripts::
 	.byte 0

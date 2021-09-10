@@ -5,6 +5,13 @@ PoppyGym_Trigger1::
 	return
 
 
+PoppyGym_Trigger2::
+	setvar VAR_TEMP_1, 1
+	setmetatile 1, 6, 0x209, 0
+	setmetatile 1, 7, 0x209, 0
+	return
+
+
  
 RustboroCity_Gym_MapScripts::
 	.byte 0

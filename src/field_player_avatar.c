@@ -1508,11 +1508,25 @@ static bool8 PushBoulder_Move(struct Task *task, struct ObjectEvent *playerObjec
 
 static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *playerObject, struct ObjectEvent *strengthObject)
 {
+	u32 n, i;
+	const struct CoordEvent * events = gMapHeader.events->coordEvents;
     if (ObjectEventCheckHeldMovementStatus(playerObject)
      && ObjectEventCheckHeldMovementStatus(strengthObject))
     {
         ObjectEventClearHeldMovementIfFinished(playerObject);
         ObjectEventClearHeldMovementIfFinished(strengthObject);
+		//check for script
+		n = gMapHeader.events->coordEventCount;
+		for(i = 0; i < n; ++i)
+		        {
+		            if(events[i].x + 7 == strengthObject->currentCoords.x && events[i].y + 7 == strengthObject->currentCoords.y)
+		            {
+		                gSpecialVar_0x8000 = strengthObject->localId;
+		                ScriptContext1_SetupScript(events[i].script);
+		                ScriptContext2_Enable();
+		            }
+		        }
+		//back to vanilla code
         gPlayerAvatar.preventStep = FALSE;
         ScriptContext2_Disable();
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
