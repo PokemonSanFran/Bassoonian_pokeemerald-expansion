@@ -189,6 +189,38 @@ Text_CantStrength: @ 82909D6
 Text_StrengthActivated: @ 8290A16
 	.string "Strength made it possible to move\n"
 	.string "boulders around.$"
+	
+EventScript_StrengthBoulder_SandBag:: @ 82908BA
+	lockall
+	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder_SandBag
+	msgbox Text_WantToStrength_SandBag, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_CancelStrength
+	closemessage
+	goto EventScript_ActivateStrength_SandBag
+	end
+
+EventScript_ActivateStrength_SandBag:: @ 8290908
+	setflag FLAG_SYS_USE_STRENGTH
+	msgbox Text_MonUsedStrength_SandBag, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_CheckActivatedBoulder_SandBag:: @ 829091F
+	msgbox Text_StrengthActivated_SandBag, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Text_WantToStrength_SandBag: @ 829092C
+	.string "It's a sand bag shaped like\n"
+	.string "a Pokémon.\p"
+	.string "Would you like to push it around?$"
+
+Text_MonUsedStrength_SandBag: @ 829098C
+	.string "{PLAYER} started pushing\nthe sand bags around.$"
+
+Text_StrengthActivated_SandBag: @ 8290A16
+	.string "The sand bags may be pushed around.$"
 
 EventScript_UseWaterfall:: @ 8290A49
 	lockall
