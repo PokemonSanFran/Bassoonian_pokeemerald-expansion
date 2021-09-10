@@ -85,7 +85,7 @@ static const struct FollowerSpriteGraphics gFollowerAlternateSprites[] =
         .machBikeId = OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
         .acroBikeId = OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
         .surfId = OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
-        .underwaterId = OBJ_EVENT_GFX_MAY_UNDERWATER,
+        .underwaterId = OBJ_EVENT_GFX_ALYSSA_UNDERWATER,
     },
     
 };

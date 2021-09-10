@@ -51,7 +51,7 @@ SpotByAide_PartC::
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
 	closedoor 21, 69
 	waitdooranim
-	setflag FLAG_MET_RIVAL_MOM
+	setflag FLAG_GRC_HIDE_AIDE_BORAGO
 	warpsilent MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0, 0, 0
 	waitstate
 	releaseall

@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_DRAKE",
+      "graphics_id": "OBJ_EVENT_GFX_EDMOND",
       "x": 8,
       "y": 7,
       "elevation": 0,
@@ -28,7 +28,7 @@
       "flag": "FLAG_GRC_TURPIA_HIDE_PARENTS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PHOEBE",
+      "graphics_id": "OBJ_EVENT_GFX_CLAUDIA",
       "x": 8,
       "y": 6,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "FLAG_GRC_ALWAYSTRUE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_TORI",
       "x": 5,
       "y": 6,
       "elevation": 0,
