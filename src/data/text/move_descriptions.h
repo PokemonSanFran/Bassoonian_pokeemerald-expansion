@@ -2945,6 +2945,14 @@ static const u8 sEERIE_SPELLDescription[] = _(
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
+static const u8 sSUNSPARKDescription[] = _(
+	"Blasts with superheated plasmatic energy.\n"
+	"Stronger in sunlight, but weaker in rain.");
+
+static const u8 sSAURTOOTHDescription[] = _(
+	"Crunches down with the ferocity of a\n"
+	"dragon. May lower foe's Defense.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3704,4 +3712,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_GLACIAL_LANCE - 1] = sGLACIAL_LANCEDescription,
     [MOVE_ASTRAL_BARRAGE - 1] = sASTRAL_BARRAGEDescription,
     [MOVE_EERIE_SPELL - 1] = sEERIE_SPELLDescription,
+	
+	[MOVE_SUNSPARK - 1] = sSUNSPARKDescription,
+	[MOVE_SAURTOOTH - 1] = sSAURTOOTHDescription,
 };

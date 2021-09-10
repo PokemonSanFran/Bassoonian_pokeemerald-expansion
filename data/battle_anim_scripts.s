@@ -776,6 +776,9 @@ gBattleAnims_Moves::
 	.4byte Move_GLACIAL_LANCE
 	.4byte Move_ASTRAL_BARRAGE
 	.4byte Move_EERIE_SPELL
+	@@@ Custom
+	.4byte Move_SUNSPARK
+	.4byte Move_SAURTOOTH
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
 	.align 2
@@ -14041,6 +14044,12 @@ Move_ASTRAL_BARRAGE::
 	end @to do:
 
 Move_EERIE_SPELL::
+	end @to do:
+	
+Move_SUNSPARK::
+	end @to do:
+
+Move_SAURTOOTH::
 	end @to do:
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
