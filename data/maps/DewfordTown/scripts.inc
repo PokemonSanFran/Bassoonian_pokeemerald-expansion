@@ -39,8 +39,11 @@ Poppy_GetSeenByRivalC_1:
 	applymovement 2, Poppy_Rival_RunAway
 	waitmovement 0
 	removeobject 2
-	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
-	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
+	setflag FLAG_GRC_HIDE_RIVAL_POPPY
+	setflag FLAG_GRC_HIDE_TORI_R2
+	clearflag FLAG_GRC_HIDE_EVENT_BORAGO_GROVE
+	clearflag FLAG_GRC_HIDE_FAMILY_BORAGO
+	setvar VAR_PETALBURG_WOODS_STATE, 2
 	releaseall
 	return
 
@@ -77,7 +80,6 @@ Poppy_GetSeenByRivalC_12:
 
 
 Poppy_Rival_WalkDown:
-	walk_down
 	walk_down
 	walk_down
 	step_end

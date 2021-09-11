@@ -153,7 +153,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Turpia_BagPickStarter",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+      "flag": "FLAG_GRC_ALWAYSTRUE"
     }
   ],
   "warp_events": [

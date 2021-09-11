@@ -414,7 +414,7 @@ Route104_EventScript_ArriveInDewford::
 @	setobjectxyperm LOCALID_BRINEY_DEWFORD, 12, 8
 @	addobject LOCALID_BRINEY_DEWFORD
 @	setobjectpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
-@	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
+@	clearflag FLAG_GRC_HIDE_RIVAL_POPPY
 @	applymovement LOCALID_BRINEY_DEWFORD, Route104_Movement_BrineyExitBoat
 @	waitmovement 0
 @	addobject LOCALID_BOAT_DEWFORD

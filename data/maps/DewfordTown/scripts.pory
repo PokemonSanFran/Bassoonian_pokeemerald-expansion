@@ -58,14 +58,17 @@ script Poppy_GetSeenByRivalC
 	applymovement(2,Poppy_Rival_RunAway)
 	waitmovement(0)
 	removeobject(2)
-	setflag(FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN)
-	setvar(VAR_BOARD_BRINEY_BOAT_STATE,2)
+	setflag(FLAG_GRC_HIDE_RIVAL_POPPY)
+	setflag(FLAG_GRC_HIDE_TORI_R2)
+	clearflag(FLAG_GRC_HIDE_EVENT_BORAGO_GROVE)
+	clearflag(FLAG_GRC_HIDE_FAMILY_BORAGO)
+	setvar(VAR_PETALBURG_WOODS_STATE,2)
 	releaseall
 }
 
 movement Poppy_Rival_WalkDown
 {
-	walk_down * 3
+	walk_down * 2
 }
 
 movement Poppy_Rival_RunAway

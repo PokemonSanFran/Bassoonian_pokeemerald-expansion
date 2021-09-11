@@ -2,6 +2,7 @@ Route101_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route1_FacePlayer
 	map_script MAP_SCRIPT_ON_TRANSITION, Route1_onTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route1_onFrame
+	map_script MAP_SCRIPT_ON_RESUME, Route1_onResume
 	.byte 0
 
 
@@ -18,6 +19,113 @@ Route1_onFrame:
 Route1_FacePlayer:
 	map_script_2 VAR_GRC_ROUTE1_STATE, 2, Route1_FacePlayerOccur
 	.2byte 0
+
+Route1_onResume::
+	compare VAR_GRC_ROUTE1_STATE, 1
+	goto_if_eq Route1_onResume_1
+	return
+
+Route1_onResume_1:
+	setvar VAR_TEMP_1, 0
+	special SafariBallsLeft
+	compare VAR_RESULT, 5
+	goto_if_eq Route1_onResume_4
+	compare VAR_RESULT, 4
+	goto_if_eq Route1_onResume_8
+Route1_onResume_6:
+	compare VAR_RESULT, 3
+	goto_if_eq Route1_onResume_13
+Route1_onResume_11:
+	compare VAR_RESULT, 2
+	goto_if_eq Route1_onResume_18
+Route1_onResume_16:
+	compare VAR_RESULT, 3
+	goto_if_eq Route1_onResume_22
+	return
+
+Route1_onResume_4:
+	end
+
+Route1_onResume_7:
+	setobjectxyperm 11, 1, 5
+	setobjectxyperm 12, 1, 4
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_LEFT
+	setvar VAR_TEMP_1, 1
+	end
+
+Route1_onResume_8:
+	compare VAR_TEMP_0, 1
+	goto_if_ne Route1_onResume_7
+	goto Route1_onResume_6
+
+Route1_onResume_12:
+	setobjectxyperm 11, 9, 6
+	setobjectxyperm 12, 8, 6
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_DOWN
+	setvar VAR_TEMP_1, 2
+	end
+
+Route1_onResume_13:
+	compare VAR_TEMP_0, 2
+	goto_if_ne Route1_onResume_12
+	goto Route1_onResume_11
+
+Route1_onResume_17:
+	setobjectxyperm 11, 14, 10
+	setobjectxyperm 12, 14, 9
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
+	setvar VAR_TEMP_1, 3
+	end
+
+Route1_onResume_18:
+	compare VAR_TEMP_0, 3
+	goto_if_ne Route1_onResume_17
+	goto Route1_onResume_16
+
+Route1_onResume_21:
+	setobjectxyperm 11, 13, 19
+	setobjectxyperm 12, 12, 19
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_DOWN
+	setvar VAR_TEMP_1, 4
+	end
+
+Route1_onResume_22:
+	compare VAR_TEMP_0, 4
+	goto_if_ne Route1_onResume_21
+	return
+
+
+Route1_ResetGrassPatch::
+	setvar VAR_TEMP_0, 0
+	return
+
+
+Route1_SetGrassPatchA::
+	setvar VAR_TEMP_0, 1
+	return
+
+
+Route1_SetGrassPatchB::
+	setvar VAR_TEMP_0, 2
+	return
+
+
+Route1_SetGrassPatchC::
+	setvar VAR_TEMP_0, 3
+	return
+
+
+Route1_SetGrassPatchD::
+	setvar VAR_TEMP_0, 4
+	return
+
 
 Route1_FacePlayerOccur::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
@@ -58,6 +166,9 @@ Route1_GatherPeeps_2:
 	setobjectmovementtype 9, MOVEMENT_TYPE_FACE_LEFT
 	setobjectxyperm 10, 12, 4
 	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm 11, 11, 2
+	setobjectxyperm 12, 10, 4
+	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_RIGHT
 	goto Route1_GatherPeeps_1
 
 Route1_GatherPeeps_6:

@@ -77,18 +77,29 @@ Turpia_BagPickStarter::
 	compare VAR_RESULT, 0
 	goto_if_ne Turpia_BagPickStarter_2
 Turpia_BagPickStarter_1:
+	switch VAR_STARTER_MON
+	case 0, Turpia_BagPickStarter_6
+	case 1, Turpia_BagPickStarter_7
+	case 2, Turpia_BagPickStarter_8
+Turpia_BagPickStarter_4:
 	msgbox Turpia_BagPickStarter_Text_2
 	closemessage
+	msgbox Turpia_BagPickStarter_Text_3
+	closemessage
+	applymovement 9, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Prof_MovesUp
+	waitmovement 0
+	removeobject 10
 	applymovement 9, Turpia_Prof_Runsoff
 	waitmovement 0
 	removeobject 9
 	setvar VAR_LITTLEROOT_TOWN_STATE, 2
-	msgbox Turpia_BagPickStarter_Text_3
+	msgbox Turpia_BagPickStarter_Text_4
 	closemessage
 	switch VAR_STARTER_MON
-	case 0, Turpia_BagPickStarter_5
-	case 1, Turpia_BagPickStarter_6
-	case 2, Turpia_BagPickStarter_7
+	case 0, Turpia_BagPickStarter_10
+	case 1, Turpia_BagPickStarter_11
+	case 2, Turpia_BagPickStarter_12
 	return
 
 Turpia_BagPickStarter_2:
@@ -96,15 +107,30 @@ Turpia_BagPickStarter_2:
 	call Common_EventScript_NameReceivedPartyMon
 	goto Turpia_BagPickStarter_1
 
-Turpia_BagPickStarter_5:
+Turpia_BagPickStarter_6:
+	bufferspeciesname 1, SPECIES_TORCHIC
+	bufferspeciesname 2, SPECIES_MUDKIP
+	goto Turpia_BagPickStarter_4
+
+Turpia_BagPickStarter_7:
+	bufferspeciesname 1, SPECIES_MUDKIP
+	bufferspeciesname 2, SPECIES_TREECKO
+	goto Turpia_BagPickStarter_4
+
+Turpia_BagPickStarter_8:
+	bufferspeciesname 1, SPECIES_TREECKO
+	bufferspeciesname 2, SPECIES_TORCHIC
+	goto Turpia_BagPickStarter_4
+
+Turpia_BagPickStarter_10:
 	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
-Turpia_BagPickStarter_6:
+Turpia_BagPickStarter_11:
 	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
-Turpia_BagPickStarter_7:
+Turpia_BagPickStarter_12:
 	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
 	return
 
@@ -158,7 +184,6 @@ Turia_Celebration_Cont_B::
 	special HealPlayerParty
 	msgbox Turia_Celebration_Cont_B_Text_0, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	setflag FLAG_GRC_R1_HIDE_RIVALS
 	clearflag FLAG_GRC_R1_HIDE_NPCS
@@ -168,6 +193,7 @@ Turia_Celebration_Cont_B::
 
 
 Turpia_Prof_Runsoff:
+	walk_fast_left
 	walk_fast_up
 	walk_fast_up
 	walk_fast_left
@@ -1684,10 +1710,13 @@ Turpia_BagPickStarter_Text_1:
 	.string "congrats do u want to nickname it$"
 
 Turpia_BagPickStarter_Text_2:
-	.string "the others also pick their pokemon\p"
-	.string "prof says oops gtg bai$"
+	.string "BA takes {STR_VAR_2} and Tori takes\n"
+	.string "{STR_VAR_3}$"
 
 Turpia_BagPickStarter_Text_3:
+	.string "prof says oops gtg bai$"
+
+Turpia_BagPickStarter_Text_4:
 	.string "battle 1$"
 
 Turia_Celebration_Cont_A_Text_0:
