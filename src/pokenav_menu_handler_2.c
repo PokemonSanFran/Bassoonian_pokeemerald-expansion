@@ -183,19 +183,31 @@ static const struct OptionsLabelGfx sPokenavMenuOptionLabelGfx[POKENAV_MENU_TYPE
     {
         .yStart = 42,
         .deltaY = 20,
-        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_Condition, sOptionsLabelGfx_SwitchOff}
+        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_SwitchOff}
     },
     [POKENAV_MENU_TYPE_UNLOCK_MC] = 
     {
         .yStart = 42,
         .deltaY = 20,
-        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_Condition, sOptionsLabelGfx_MatchCall, sOptionsLabelGfx_SwitchOff}
+        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_MatchCall, sOptionsLabelGfx_SwitchOff}
     },
     [POKENAV_MENU_TYPE_UNLOCK_MC_RIBBONS] = 
     {
         .yStart = 42,
         .deltaY = 20,
         {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_Condition, sOptionsLabelGfx_MatchCall, sOptionsLabelGfx_Ribbons, sOptionsLabelGfx_SwitchOff}
+    },
+    [POKENAV_MENU_TYPE_UNLOCK_CONDITION] = 
+    {
+        .yStart = 42,
+        .deltaY = 20,
+        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_Condition, sOptionsLabelGfx_SwitchOff}
+    },
+    [POKENAV_MENU_TYPE_UNLOCK_MC_CONDITION] = 
+    {
+        .yStart = 42,
+        .deltaY = 20,
+        {sOptionsLabelGfx_RegionMap, sOptionsLabelGfx_Condition, sOptionsLabelGfx_MatchCall, sOptionsLabelGfx_SwitchOff}
     },
     [POKENAV_MENU_TYPE_CONDITION] = 
     {

@@ -15,11 +15,11 @@ Route102_Text_CalvinRegister: @ 82945EB
 	.string "I've been working hard at this since\n"
 	.string "I saw you before.\p"
 	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your Pokénav?$"
+	.string "you register me in your P-Drive?$"
 
 Route102_Text_CalvinRegisterShort: @ 8294668
 	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your Pokénav?$"
+	.string "you register me in your P-Drive?$"
 
 Route102_Text_CalvinRematchIntro: @ 82946AE
 	.string "Ever since I lost to you, I desperately\n"
@@ -447,7 +447,7 @@ Route105_Text_AndresPostBattle: @ 82960FA
 
 Route105_Text_AndresRegister: @ 8296159
 	.string "Huh? I'm so weak, but you're willing\n"
-	.string "to register me in your Pokénav?$"
+	.string "to register me in your P-Drive?$"
 
 Route105_Text_AndresRematchIntro: @ 829619E
 	.string "I've told you that I'm weak…\n"
@@ -713,7 +713,7 @@ Route108_Text_CoryPostBattle: @ 8296FB0
 
 Route108_Text_CoryRegister: @ 8296FD8
 	.string "I love tough Trainers, too!\n"
-	.string "Register me in your Pokénav!$"
+	.string "Register me in your P-Drive!$"
 
 Route108_Text_CoryRematchIntro: @ 8297011
 	.string "Win or lose, I love battling at sea!$"
@@ -1242,7 +1242,7 @@ Route111_Text_DustyRegister: @ 8298C00
 	.string "I haven't been searching for any\n"
 	.string "tough Pokémon.\p"
 	.string "But, for some reason, I sure do like\n"
-	.string "Pokénavs.$"
+	.string "P-Drives.$"
 
 Route111_Text_DustyRematchIntro: @ 8298C5F
 	.string "For thirty years I have searched for\n"
@@ -1482,7 +1482,7 @@ Route112_Text_TrentRegister: @ 829993C
 	.string "Ow, my legs have cramped up.\n"
 	.string "Can you grab me some bandages from\l"
 	.string "my backpack?\p"
-	.string "No, that's my Pokénav!\n"
+	.string "No, that's my P-Drive!\n"
 	.string "Oh, fine, I'll register you.$"
 
 Route112_Text_TrentRematchIntro: @ 82999BD
@@ -1589,7 +1589,7 @@ Route113_Text_MadelinePostBattle: @ 8299F15
 
 Route113_Text_MadelineRegister: @ 8299F49
 	.string "Here, slide under my parasol.\n"
-	.string "Let me register you in my Pokénav.$"
+	.string "Let me register you in my P-Drive.$"
 
 Route113_Text_MadelineRematchIntro: @ 8299F8A
 	.string "Oh, hello, hasn't it been a while?\n"
@@ -1615,7 +1615,7 @@ Route113_Text_LaoPostBattle: @ 829A067
 
 Route113_Text_LaoRegister: @ 829A0A2
 	.string "Yiiyaah! Witness the ancient ninja\n"
-	.string "technique of Pokénav registration!$"
+	.string "technique of P-Drive registration!$"
 
 Route113_Text_LaoRematchIntro: @ 829A0E8
 	.string "From out of the ashes I leap! Hiyah!\n"
@@ -2171,13 +2171,13 @@ Route116_Text_JerryPostBattle: @ 829BD92
 
 Route116_Text_JerryRegister1: @ 829BDEF
 	.string "I learned at the Trainer's School\n"
-	.string "that a Pokénav can register Trainers.\p"
+	.string "that a P-Drive can register Trainers.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
 Route116_Text_JerryRegister2: @ 829BE71
 	.string "I learned at the Trainer's School\n"
-	.string "that a Pokénav can register Trainers.\p"
+	.string "that a P-Drive can register Trainers.\p"
 	.string "I don't really get what that means,\n"
 	.string "so can I just try it?$"
 
@@ -2207,11 +2207,11 @@ Route116_Text_KarenPostBattle: @ 829C010
 	.string "Trainer like Roxanne this way!$"
 
 Route116_Text_KarenRegister1: @ 829C052
-	.string "Oh, wow! Isn't that a Pokénav?\n"
+	.string "Oh, wow! Isn't that a P-Drive?\n"
 	.string "I have one, too! Please register me!$"
 
 Route116_Text_KarenRegister2: @ 829C096
-	.string "Oh, wow! Isn't that a Pokénav?\n"
+	.string "Oh, wow! Isn't that a P-Drive?\n"
 	.string "I have one, too! Please register me!$"
 
 Route116_Text_KarenRematchIntro: @ 829C0DA
@@ -2528,7 +2528,7 @@ Route118_Text_RosePostBattle: @ 829D2FA
 	.string "I'll pass.$"
 
 Route118_Text_RoseRegister: @ 829D343
-	.string "Sniff… That odor--it's a Pokénav!\n"
+	.string "Sniff… That odor--it's a P-Drive!\n"
 	.string "We must register each other!$"
 
 Route118_Text_RoseRematchIntro: @ 829D382
@@ -2747,7 +2747,7 @@ Route119_Text_CatherinePostBattle: @ 829DE88
 	.string "physically, too.$"
 
 Route119_Text_CatherineRegister: @ 829DEF7
-	.string "Do you have a Pokénav?\n"
+	.string "Do you have a P-Drive?\n"
 	.string "It's a must-have tool for any Trainer.\p"
 	.string "Oh, you do have one!\n"
 	.string "Let's register each other, then!$"
@@ -2905,7 +2905,7 @@ Route120_Text_RobertPostBattle: @ 829E726
 
 Route120_Text_RobertRegister: @ 829E75D
 	.string "You can be counted on to get better.\n"
-	.string "I'd like to register you in my Pokénav!$"
+	.string "I'd like to register you in my P-Drive!$"
 
 Route120_Text_RobertRematchIntro: @ 829E7AA
 	.string "A Pokémon that grows steadily is one\n"
@@ -2959,7 +2959,7 @@ Route120_Text_JeffreyPostBattle: @ 829EA08
 Route120_Text_JeffreyRegister: @ 829EA31
 	.string "… … … … … …\n"
 	.string "… … … … … …\l"
-	.string "Do you have a Pokénav…?$"
+	.string "Do you have a P-Drive…?$"
 
 Route120_Text_JeffreyRematchIntro: @ 829EA61
 	.string "… … … … … …\n"
@@ -3208,7 +3208,7 @@ Route121_Text_CristinPostBattle: @ 829F7D4
 Route121_Text_CristinRegister: @ 829F80D
 	.string "That was total humiliation!\n"
 	.string "I won't forget you…\l"
-	.string "Hand over your Pokénav!$"
+	.string "Hand over your P-Drive!$"
 
 Route121_Text_CristinRematchIntro: @ 829F855
 	.string "I have this new routine.\n"
@@ -3327,7 +3327,7 @@ Route123_Text_CameronRegister: @ 829FE70
 	.string "I sense it!\n"
 	.string "You and I shall battle again!\l"
 	.string "I can't tell if I'll win, though…\p"
-	.string "Let's see your Pokénav.$"
+	.string "Let's see your P-Drive.$"
 
 Route123_Text_CameronRematchIntro: @ 829FED4
 	.string "I've convinced myself that I won't\n"
@@ -3539,7 +3539,7 @@ Route124_Text_SpencerDefeat: @ 82A0A02
 Route124_Text_SpencerPostBattle: @ 82A0A20
 	.string "Many people lose their bearings at sea.\p"
 	.string "If you're that sort, you should refer\n"
-	.string "to the Pokénav's Map.$"
+	.string "to the P-Drive's Map.$"
 
 Route124_Text_RolandIntro: @ 82A0A84
 	.string "Hm! You're riding a Pokémon instead\n"
@@ -3571,7 +3571,7 @@ Route124_Text_JennyPostBattle: @ 82A0B9A
 
 Route124_Text_JennyRegister: @ 82A0C14
 	.string "It's only on a whim, but maybe I'll get\n"
-	.string "you to register me in your Pokénav.$"
+	.string "you to register me in your P-Drive.$"
 
 Route124_Text_JennyRematchIntro: @ 82A0C60
 	.string "If you just float in the sea like this,\n"
@@ -3778,7 +3778,7 @@ Route125_Text_ErnestPostBattle: @ 82A1755
 	.string "high tide to low tide. Did you know?$"
 
 Route125_Text_ErnestRegister: @ 82A17CF
-	.string "Register me in your Pokénav,\n"
+	.string "Register me in your P-Drive,\n"
 	.string "and I'll tell you something good.$"
 
 Route125_Text_ErnestRematchIntro: @ 82A180E
@@ -4099,7 +4099,7 @@ Route128_Text_IsaiahPostBattle: @ 82A28D7
 Route128_Text_IsaiahRegister: @ 82A2916
 	.string "I know I'm not good now, but I think\n"
 	.string "I can win eventually.\p"
-	.string "Please register me in your Pokénav.$"
+	.string "Please register me in your P-Drive.$"
 
 Route128_Text_IsaiahRematchIntro: @ 82A2975
 	.string "I'm still feeling good. I'll keep on\n"

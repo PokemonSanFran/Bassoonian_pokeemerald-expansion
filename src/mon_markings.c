@@ -572,7 +572,7 @@ static void SpriteCB_Cursor(struct Sprite *sprite)
 
 #undef sCursorYOffset
 
-// Creates a mon marking combination sprite with a spritesheet that holds every possible combination, used by the summary screen / Pokénav
+// Creates a mon marking combination sprite with a spritesheet that holds every possible combination, used by the summary screen / P-Drive
 struct Sprite *CreateMonMarkingAllCombosSprite(u16 tileTag, u16 paletteTag, const u16 *palette)
 {
     if (!palette)
