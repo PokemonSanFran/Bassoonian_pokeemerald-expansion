@@ -129,7 +129,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Gabrielle1},
     },
 
-    [TRAINER_GRUNT_PETALBURG_WOODS] =
+    [TRAINER_GRC_GRUNT_BORAGO_GROVE] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -138,8 +138,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntPetalburgWoods),
-        .party = {.TrainerMon = sParty_GruntPetalburgWoods},
+        .partySize = ARRAY_COUNT(sParty_GRC_GruntBoragoGrove),
+        .party = {.TrainerMon = sParty_GRC_GruntBoragoGrove},
     },
 
     [TRAINER_MARCEL] =
@@ -2040,17 +2040,17 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Jerome},
     },
 
-    [TRAINER_MATTHEW] =
+    [TRAINER_GRC_MIKEY] =
     {
-        .trainerClass = TRAINER_CLASS_SWIMMER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMER_M,
-        .trainerName = _("Matthew"),
+        .trainerClass = TRAINER_CLASS_TUBER_M,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_TUBER_M,
+        .trainerName = _("Mikey"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Matthew),
-        .party = {.TrainerMon = sParty_Matthew},
+        .partySize = ARRAY_COUNT(sParty_GRC_Mikey),
+        .party = {.TrainerMon = sParty_GRC_Mikey},
     },
 
     [TRAINER_DAVID] =

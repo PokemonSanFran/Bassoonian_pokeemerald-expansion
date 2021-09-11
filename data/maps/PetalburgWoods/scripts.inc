@@ -2,6 +2,21 @@ PetalburgWoods_MapScripts::
 	.byte 0
 
 
+BoragoGroveGruntFight::
+	lockall
+	msgbox BoragoGroveGruntFight_Text_0
+	closemessage
+	trainerbattle_no_intro TRAINER_GRC_GRUNT_BORAGO_GROVE, PetalburgWoods_Text_YoureKiddingMe
+	giveitem ITEM_HM01
+	setvar VAR_PETALBURG_WOODS_STATE, 3
+	setflag FLAG_GRC_HIDE_EVENT_BORAGO_GROVE
+	setflag FLAG_GRC_TURPIA_HIDE_PARENTS
+	removeobject 3
+	removeobject 4
+	releaseall
+	return
+
+
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4
 
@@ -33,7 +48,7 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 @	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaApproachPlayer
 @	waitmovement 0
 @	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
-@	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+@	trainerbattle_no_intro TRAINER_GRC_GRUNT_BORAGO_GROVE, PetalburgWoods_Text_YoureKiddingMe
 @	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
 @	waitmovement 0
 @	call PetalburgWoods_EventScript_DevonResearcherPostBattle
@@ -69,7 +84,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 @	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 @	waitmovement 0
 @	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
-@	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+@	trainerbattle_no_intro TRAINER_GRC_GRUNT_BORAGO_GROVE, PetalburgWoods_Text_YoureKiddingMe
 @	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
 @	waitmovement 0
 @	call PetalburgWoods_EventScript_DevonResearcherPostBattle
@@ -358,7 +373,7 @@ PetalburgWoods_Text_NoOneCrossesTeamAqua:
 @	.string "Come on and battle me!$"
 
 PetalburgWoods_Text_YoureKiddingMe:
-@	.string "You're kidding me! You're tough!$"
+	.string "You're kidding me! You're tough!$"
 
 PetalburgWoods_Text_YouveGotSomeNerve:
 @	.string "Grrr… You've got some nerve\n"
@@ -468,3 +483,6 @@ PetalburgWoods_Text_TrainerTipsPP:
 @	.string "make moves during battle.\p"
 @	.string "If a POKéMON runs out of PP, it must be\n"
 @	.string "taken to a POKéMON CENTER.$"
+
+BoragoGroveGruntFight_Text_0:
+	.string "battle$"

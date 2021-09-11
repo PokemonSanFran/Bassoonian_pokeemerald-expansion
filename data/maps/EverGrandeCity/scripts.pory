@@ -3,6 +3,37 @@ mapscripts EverGrandeCity_MapScripts
 	MAP_SCRIPT_ON_TRANSITION: Borago_Outside_OnTransition
 }
 
+script FamilyEventA
+{
+	lockall
+	applymovement(5,Common_Movement_ExclamationMark)
+	applymovement(6,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	goto(FamilyEventC)
+}
+
+script FamilyEventB
+{
+	lockall
+	applymovement(5,Common_Movement_ExclamationMark)
+	applymovement(6,Common_Movement_ExclamationMark)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkLeft)
+	waitmovement(0)
+	goto(FamilyEventC)
+}
+
+script FamilyEventC
+{
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
+	waitmovement(0)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received a Pokénav.")
+	waitfanfare
+	setflag(FLAG_SYS_POKENAV_GET)
+	setvar(VAR_PETALBURG_WOODS_STATE,4)
+	releaseall
+}
+
 script SpotByAide1
 {
 	call(SpotByAide_PartA)
@@ -53,6 +84,7 @@ script SpotByAide_PartC
 	closedoor(21,69)
 	waitdooranim
 	setflag(FLAG_GRC_HIDE_AIDE_BORAGO)
+	setflag(FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE)
 	warpsilent(MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB,0,0,0)
 	waitstate
 	releaseall

@@ -3,6 +3,37 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 
+FamilyEventA::
+	lockall
+	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 6, Common_Movement_ExclamationMark
+	waitmovement 0
+	goto FamilyEventC
+	return
+
+
+FamilyEventB::
+	lockall
+	applymovement 5, Common_Movement_ExclamationMark
+	applymovement 6, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
+	waitmovement 0
+	goto FamilyEventC
+	return
+
+
+FamilyEventC::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	playfanfare MUS_OBTAIN_ITEM
+	message FamilyEventC_Text_0
+	waitfanfare
+	setflag FLAG_SYS_POKENAV_GET
+	setvar VAR_PETALBURG_WOODS_STATE, 4
+	releaseall
+	return
+
+
 SpotByAide1::
 	call SpotByAide_PartA
 	applymovement 2, SpotByAide_MoveFastLeft
@@ -52,6 +83,7 @@ SpotByAide_PartC::
 	closedoor 21, 69
 	waitdooranim
 	setflag FLAG_GRC_HIDE_AIDE_BORAGO
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
 	warpsilent MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0, 0, 0
 	waitstate
 	releaseall
@@ -178,6 +210,9 @@ EverGrandeCity_Text_CitySign:
 @	.string "EVER GRANDE CITY\p"
 @	.string "“The paradise of flowers, the sea,\n"
 @	.string "and POKéMON.”$"
+
+FamilyEventC_Text_0:
+	.string "{PLAYER} received a Pokénav.$"
 
 SpotByAide_PartB_Text_0:
 	.string "omg u so late hurry up already$"

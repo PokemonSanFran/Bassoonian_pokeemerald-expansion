@@ -100,11 +100,16 @@ static const struct TrainerMon sParty_Gabrielle1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntPetalburgWoods[] = {
+static const struct TrainerMon sParty_GRC_GruntBoragoGrove[] = {
     {
     .iv = 0,
-    .lvl = 9,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 13,
+    .species = SPECIES_PARAS,
+    },
+    {
+    .iv = 0,
+    .lvl = 13,
+    .species = SPECIES_SHROOMISH,
     }
 };
 
@@ -1934,11 +1939,16 @@ static const struct TrainerMon sParty_Jerome[] = {
     }
 };
 
-static const struct TrainerMon sParty_Matthew[] = {
+static const struct TrainerMon sParty_GRC_Mikey[] = {
     {
     .iv = 0,
-    .lvl = 26,
-    .species = SPECIES_CARVANHA,
+    .lvl = 12,
+    .species = SPECIES_SANDYGAST,
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_POLIWAG,
     }
 };
 

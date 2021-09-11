@@ -8,7 +8,7 @@ Route108_EventScript_Jerome::
 	end
 
 Route108_EventScript_Matthew::
-	trainerbattle_single TRAINER_MATTHEW, Route108_Text_MatthewIntro, Route108_Text_MatthewDefeated
+	trainerbattle_single TRAINER_GRC_MIKEY, Route108_Text_MatthewIntro, Route108_Text_MatthewDefeated
 	msgbox Route108_Text_MatthewPostBattle, MSGBOX_AUTOCLOSE
 	end
 

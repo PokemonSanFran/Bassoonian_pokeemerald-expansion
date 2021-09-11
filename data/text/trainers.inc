@@ -667,16 +667,13 @@ Route108_Text_JeromePostBattle: @ 8296D6E
 	.string "the pleasures of swimming!$"
 
 Route108_Text_MatthewIntro: @ 8296DAF
-	.string "Ahoy, there! Are you going out to\n"
-	.string "the Abandoned Ship, too?$"
+	.string "Mikey see$"
 
 Route108_Text_MatthewDefeated: @ 8296DEA
-	.string "I'm sinking!\n"
-	.string "Glub… Glub…$"
+	.string "Mikey defeated$"
 
 Route108_Text_MatthewPostBattle: @ 8296E03
-	.string "Some people even go inside that\n"
-	.string "Abandoned Ship.$"
+	.string "Mikey post$"
 
 Route108_Text_TaraIntro: @ 8296E33
 	.string "My liar of a boyfriend told me that\n"

@@ -58,10 +58,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 3,
-      "y": 59,
+      "x": 2,
+      "y": 58,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -72,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TORI",
       "x": 5,
-      "y": 59,
+      "y": 57,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -85,7 +85,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 5,
-      "y": 57,
+      "y": 59,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_DAD",
       "x": 4,
-      "y": 57,
+      "y": 59,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -110,8 +110,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CLAUDIA",
-      "x": 1,
-      "y": 55,
+      "x": 4,
+      "y": 56,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -123,8 +123,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EDMOND",
-      "x": 2,
-      "y": 55,
+      "x": 5,
+      "y": 56,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -136,10 +136,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
-      "x": 0,
-      "y": 55,
+      "x": 1,
+      "y": 57,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -149,10 +149,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNION_ROOM_NURSE",
-      "x": 0,
-      "y": 56,
+      "x": 1,
+      "y": 58,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -294,12 +294,12 @@
     },
     {
       "type": "trigger",
-      "x": 26,
-      "y": 36,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+      "x": 5,
+      "y": 61,
+      "elevation": 3,
+      "var": "VAR_PETALBURG_WOODS_STATE",
+      "var_value": "3",
+      "script": "FamilyEventB"
     },
     {
       "type": "trigger",
@@ -312,12 +312,12 @@
     },
     {
       "type": "trigger",
-      "x": 28,
-      "y": 34,
-      "elevation": 1,
-      "var": "VAR_TEMP_1",
-      "var_value": "0",
-      "script": "EverGrandeCity_EventScript_SetVisitedEverGrande"
+      "x": 4,
+      "y": 61,
+      "elevation": 3,
+      "var": "VAR_PETALBURG_WOODS_STATE",
+      "var_value": "3",
+      "script": "FamilyEventA"
     }
   ],
   "bg_events": [

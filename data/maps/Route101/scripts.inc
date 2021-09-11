@@ -30,16 +30,16 @@ Route1_onResume_1:
 	special SafariBallsLeft
 	compare VAR_RESULT, 5
 	goto_if_eq Route1_onResume_4
-	compare VAR_RESULT, 4
-	goto_if_eq Route1_onResume_8
+	compare VAR_RESULT, 3
+	goto_if_gt Route1_onResume_8
 Route1_onResume_6:
-	compare VAR_RESULT, 3
-	goto_if_eq Route1_onResume_13
-Route1_onResume_11:
 	compare VAR_RESULT, 2
-	goto_if_eq Route1_onResume_18
+	goto_if_gt Route1_onResume_13
+Route1_onResume_11:
+	compare VAR_RESULT, 1
+	goto_if_gt Route1_onResume_18
 Route1_onResume_16:
-	compare VAR_RESULT, 3
+	compare VAR_RESULT, 1
 	goto_if_eq Route1_onResume_22
 	return
 

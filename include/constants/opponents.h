@@ -11,7 +11,7 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_PETALBURG_WOODS        10
+#define TRAINER_GRC_GRUNT_BORAGO_GROVE        10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
@@ -158,7 +158,7 @@
 #define TRAINER_DARRIN                      154
 #define TRAINER_TONY_1                      155
 #define TRAINER_JEROME                      156
-#define TRAINER_MATTHEW                     157
+#define TRAINER_GRC_MIKEY                     157
 #define TRAINER_DAVID                       158
 #define TRAINER_SPENCER                     159
 #define TRAINER_ROLAND                      160
