@@ -256,7 +256,7 @@ script Turpia_LittleKiddo
 
 script Turpia_Fisherman
 {
-	msgbox(format("Always a fresh bite in Turpia! There's nothing the people of Borago won't do for some fresh fish, and I'm here to deliver!"),MSGBOX_NPC)
+	msgbox(format("Always a fresh bite in Turpia!\pThere's nothing the people of Borago won't do for some fresh fish, and I'm here to deliver!"),MSGBOX_NPC)
 }
 
 script Turpia_RealEstateGuy {
