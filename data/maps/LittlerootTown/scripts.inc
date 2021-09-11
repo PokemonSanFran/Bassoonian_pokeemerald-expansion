@@ -16,6 +16,11 @@ Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
 
+Turpia_SloganBoard::
+	msgbox Turpia_SloganBoard_Text_0, MSGBOX_SIGN
+	return
+
+
 Turpia_DontRunAway::
 	lockall
 	applymovement 9, Common_Movement_WalkInPlaceFastestUp
@@ -221,18 +226,6 @@ Turpia_NoAccessR1_2:
 Turpia_ScientistR1Block::
 	msgbox Turpia_ScientistR1Block_Text_0, MSGBOX_NPC
 	return
-
-
-Turpia_StarterBag::
-	compare VAR_LITTLEROOT_TOWN_STATE, 2
-	goto_if_lt Turpia_StarterBag_2
-Turpia_StarterBag_1:
-	msgbox Turpia_StarterBag_Text_0, MSGBOX_NPC
-	return
-
-Turpia_StarterBag_2:
-	goto Turpia_BagPickStarter
-	goto Turpia_StarterBag_1
 
 
 Turpia_SigurdCameo::
@@ -1003,8 +996,8 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 @	end
 
 LittlerootTown_EventScript_TownSign::
-	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
-	end
+@	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
+@	end
 
 LittlerootTown_EventScript_BirchsLabSign::
 @	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN
@@ -1644,17 +1637,17 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 @	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+@	.string "LITTLEROOT TOWN\n"
+@	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+@	.string "PROF. BIRCH'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+@	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+@	.string "PROF. BIRCH'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
@@ -1666,6 +1659,9 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "I gave you?\p"
 @	.string "I have something to show you.\n"
 @	.string "Let's go to my LAB.$"
+
+Turpia_SloganBoard_Text_0:
+	.string "Turpia Town\n“A Peaceful Passage”$"
 
 Turpia_DontRunAway_Text_0:
 	.string "yo wassu u dont want???$"
@@ -1711,9 +1707,6 @@ Turpia_ScientistR1Block_Text_0:
 	.string "ready.\p"
 	.string "Why don't you go look for your pals in\n"
 	.string "the meantime?$"
-
-Turpia_StarterBag_Text_0:
-	.string "pkmn were here$"
 
 Turpia_SigurdCameo_Text_0:
 	.string "Hmmm… Quite a fine piece of\n"

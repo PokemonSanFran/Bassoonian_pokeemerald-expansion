@@ -16,6 +16,12 @@ Turpia_Outside_OnFrame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 6, Turpia_Celebration
 	.2byte 0
 `
+
+script Turpia_SloganBoard
+{
+	msgbox("Turpia Town\n“A Peaceful Passage”",MSGBOX_SIGN)
+}
+
 script Turpia_DontRunAway
 {
 	lockall
@@ -192,14 +198,6 @@ script Turpia_NoAccessR1 {
 
 script Turpia_ScientistR1Block {
 	msgbox(format("The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"),MSGBOX_NPC)
-}
-
-script Turpia_StarterBag {
-	if (var(VAR_LITTLEROOT_TOWN_STATE)<2)
-	{
-		goto(Turpia_BagPickStarter)
-	}
-	msgbox("pkmn were here",MSGBOX_NPC)
 }
 
 script Turpia_SigurdCameo {
@@ -858,8 +856,8 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 @	end
 
 LittlerootTown_EventScript_TownSign::
-	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
-	end
+@	msgbox LittlerootTown_Text_TownSign, MSGBOX_SIGN
+@	end
 
 LittlerootTown_EventScript_BirchsLabSign::
 @	msgbox LittlerootTown_Text_ProfBirchsLab, MSGBOX_SIGN
@@ -1499,17 +1497,17 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 @	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+@	.string "LITTLEROOT TOWN\n"
+@	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+@	.string "PROF. BIRCH'S POKéMON LAB$"
 
 LittlerootTown_Text_PlayersHouse:
-	.string "{PLAYER}'s HOUSE$"
+@	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+@	.string "PROF. BIRCH'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
