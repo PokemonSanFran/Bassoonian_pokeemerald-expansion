@@ -4870,6 +4870,20 @@ bool8 MonKnowsMove(struct Pokemon *mon, u16 move)
     return FALSE;
 }
 
+bool8 MonCanLearnHMMove(struct Pokemon *mon, u16 move)
+{
+    switch (CanMonLearnTMTutor(mon, 0, move))
+    {
+    case CANNOT_LEARN_MOVE:
+        return FALSE;
+    case ALREADY_KNOWS_MOVE:
+        return TRUE;
+    default:
+		return TRUE;
+    }
+    return FALSE;
+}
+
 static void DisplayLearnMoveMessage(const u8 *str)
 {
     StringExpandPlaceholders(gStringVar4, str);
