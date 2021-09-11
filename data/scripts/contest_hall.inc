@@ -31,7 +31,10 @@ LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 
 LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
-	giveitem ITEM_POKEBLOCK_CASE
+	setflag FLAG_SYS_CONDITION_GET
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(LilycoveCity_ContestLobby_Text_ContestDrive)
+	waitfanfare
 	setflag FLAG_RECEIVED_POKEBLOCK_CASE
 	msgbox LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp, MSGBOX_DEFAULT
 	return
@@ -1482,7 +1485,7 @@ LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase:
 	.string "This is the reception counter for\n"
 	.string "Pokémon Contests.\p"
 	.string "Oh? It appears that you don't have\n"
-	.string "a {POKEBLOCK} Case yet.\p"
+	.string "a Condition Drive yet.\p"
 	.string "In that case, we need to provide you\n"
 	.string "with this!$"
 
@@ -1905,3 +1908,6 @@ ContestHall_Text_SecondStageOfJudging:
 ContestHall_Text_LetsAppeal:
 	.string "Let's see a little enthusiasm!\n"
 	.string "Let's appeal!$"
+
+LilycoveCity_ContestLobby_Text_ContestDrive:
+	.string "{PLAYER} received the Condition Drive!$"

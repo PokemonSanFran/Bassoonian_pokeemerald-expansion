@@ -27,9 +27,9 @@ script FamilyEventC
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
 	waitmovement(0)
 	playfanfare(MUS_OBTAIN_ITEM)
-	message("{PLAYER} received a Pokénav.")
+	message("{PLAYER} received the Match Call Drive!")
 	waitfanfare
-	setflag(FLAG_SYS_POKENAV_GET)
+	setflag(FLAG_SYS_MATCH_CALL_GET)
 	setvar(VAR_PETALBURG_WOODS_STATE,4)
 	releaseall
 }

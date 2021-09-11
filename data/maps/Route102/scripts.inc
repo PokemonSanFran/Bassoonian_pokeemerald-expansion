@@ -33,7 +33,7 @@ Route102_EventScript_Calvin::
 Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route102_EventScript_CalvinRegisterMatchCall
 	release
 	end
 
@@ -44,7 +44,7 @@ Route102_EventScript_CalvinRegisterMatchCall::
 	end
 
 Route102_EventScript_CalvinTryRegister::
-	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegister
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route102_EventScript_CalvinRegister
 	msgbox Route102_Text_CalvinPostBattle, MSGBOX_DEFAULT
 	release
 	end

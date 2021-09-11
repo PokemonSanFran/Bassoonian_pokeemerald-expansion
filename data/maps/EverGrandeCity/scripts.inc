@@ -28,7 +28,7 @@ FamilyEventC::
 	playfanfare MUS_OBTAIN_ITEM
 	message FamilyEventC_Text_0
 	waitfanfare
-	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_SYS_MATCH_CALL_GET
 	setvar VAR_PETALBURG_WOODS_STATE, 4
 	releaseall
 	return
@@ -212,7 +212,7 @@ EverGrandeCity_Text_CitySign:
 @	.string "and POKéMON.”$"
 
 FamilyEventC_Text_0:
-	.string "{PLAYER} received a Pokénav.$"
+	.string "{PLAYER} received the Match Call Drive!$"
 
 SpotByAide_PartB_Text_0:
 	.string "omg u so late hurry up already$"

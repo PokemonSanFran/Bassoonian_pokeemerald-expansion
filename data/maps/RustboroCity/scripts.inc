@@ -59,7 +59,7 @@ RustboroCity_EventScript_ScientistAddMatchCall::
 	waitmovement 0
 	msgbox RustboroCity_Text_DevelopedNewPokenavFeature, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_HAS_MATCH_CALL
+	setflag FLAG_SYS_MATCH_CALL_GET
 	applymovement LOCALID_SCIENTIST, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	playse SE_CLICK
@@ -84,7 +84,7 @@ RustboroCity_EventScript_PleaseSelectPokenav::
 	goto RustboroCity_EventScript_MatchCallTutorial
 
 RustboroCity_EventScript_MatchCallTutorial::
-	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
+	setflag FLAG_SYS_MATCH_CALL_GET
 	special ScriptMenu_CreateStartMenuForPokenavTutorial
 	waitstate
 	switch VAR_RESULT

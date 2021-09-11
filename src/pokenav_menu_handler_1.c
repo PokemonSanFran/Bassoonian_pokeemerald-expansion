@@ -86,7 +86,7 @@ static u8 GetPokenavMainMenuType(void)
 {
     u8 menuType = POKENAV_MENU_TYPE_DEFAULT;
 
-    if (FlagGet(FLAG_ADDED_MATCH_CALL_TO_POKENAV))
+    if (FlagGet(FLAG_SYS_MATCH_CALL_GET))
     {
         menuType = POKENAV_MENU_TYPE_UNLOCK_MC;
 
