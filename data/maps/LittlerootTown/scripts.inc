@@ -1787,10 +1787,10 @@ Turpia_LittleKiddo_Text_0:
 	.string "Aw, I wish I had my own Pokémon!$"
 
 Turpia_Fisherman_Text_0:
-	.string "Always a fresh bite in Turpia! There's\n"
-	.string "nothing the people of Borago won't do\l"
-	.string "for some fresh fish, and I'm here to\l"
-	.string "deliver!$"
+	.string "Always a fresh bite in Turpia!\p"
+	.string "There's nothing the people of Borago\n"
+	.string "won't do for some fresh fish, and I'm\l"
+	.string "here to deliver!$"
 
 Turpia_RealEstateGuy_Text_0:
 	.string "Would you look at this, young man! This\n"

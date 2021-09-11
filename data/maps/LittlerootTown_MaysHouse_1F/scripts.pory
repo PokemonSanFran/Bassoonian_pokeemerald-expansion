@@ -41,9 +41,11 @@ script Turpia_RivalHouse_pickuprival {
 		}
 	}
 	closemessage
+	applymovement(7,Common_Movement_ExclamationMark)
+	waitmovement(0)
 	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
 	waitmovement(0)
-	msgbox(format("{RIVAL}: Oh, man… I can't believe I've made it through to the finals. I'm so excited!"))
+	msgbox(format("{RIVAL}: Oh, man… I can't believe I've made it through to the finals.\lI'm so excited!"))
 	closemessage
 	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
@@ -84,15 +86,15 @@ script Turpia_RivalHouse_pickuprival {
 	checkplayergender
 	if (var(VAR_RESULT)==MALE)
 	{
-		msgbox(format("{RIVAL}: You're the best parents I could ask for… Just watch my back, Pa, Ma!\pOnce I'm back home, I'll be the Champion of the region!"))
+		msgbox(format("{RIVAL}: You're the best parents I could ask for…\pJust watch my back, Pa, Ma! Once I'm back home, I'll be the Champion of the region!"))
 	}
 	else
 	{
-		msgbox(format("{RIVAL}: I'm lucky to have you both. Watch me go, Pa, Ma! I'm gonna give this my all!\pAnd once I come back home, I'll be the Champion!"))
+		msgbox(format("{RIVAL}: I'm lucky to have you both. Watch me go, Pa, Ma!\pI'm gonna give this my all! And once I come back home, I'll be the Champion!"))
 	}
 	closemessage
 	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
-	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
 	{
 		applymovement(6,Common_Movement_WalkInPlaceFastestUp)
@@ -129,7 +131,7 @@ script Turpia_RivalHouse_pickuprival {
 		msgbox(format("Do your best, all of you!"))
 	}
 	closemessage
-	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
 	waitmovement(0)
 	msgbox(format("{RIVAL}: See you soon!"))
 	closemessage

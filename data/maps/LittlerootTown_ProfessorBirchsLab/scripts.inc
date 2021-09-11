@@ -25,6 +25,7 @@ Borago_Get_Dex::
 	message Borago_Get_Dex_Text_1
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_DEXNAV_GET
 	setvar VAR_BIRCH_LAB_STATE, 2
 	releaseall
 	return
