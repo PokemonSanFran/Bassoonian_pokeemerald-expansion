@@ -42,12 +42,12 @@ script Turpia_Breakfast_Opening_Occur
 
 script Turpia_Mom
 {
-	msgbox(format("Omg bb so proud xoxo"),MSGBOX_NPC)
+	msgbox(format("Mom: We'll see you soon enough, dear. You just make sure you're having the time of your life out there, okay?"),MSGBOX_NPC)
 }
 
 script Turpia_Dad
 {
-	msgbox(format("way to go bro"),MSGBOX_NPC)
+	msgbox(format("Dad: I didn't think you'd be growing up this fast, {PLAYER}. Still, I'm so happy you'll get to go on your own adventure."),MSGBOX_NPC)
 }
 
 raw `

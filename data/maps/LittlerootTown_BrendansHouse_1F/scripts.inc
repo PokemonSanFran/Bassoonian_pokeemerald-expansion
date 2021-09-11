@@ -530,10 +530,15 @@ Turpia_Breakfast_Opening_Occur_Text_5:
 	.string "Best of luck!$"
 
 Turpia_Mom_Text_0:
-	.string "Omg bb so proud xoxo$"
+	.string "Mom: We'll see you soon enough, dear. You\n"
+	.string "just make sure you're having the time\l"
+	.string "of your life out there, okay?$"
 
 Turpia_Dad_Text_0:
-	.string "way to go bro$"
+	.string "Dad: I didn't think you'd be growing up\n"
+	.string "this fast, {PLAYER}. Still, I'm so\l"
+	.string "happy you'll get to go on your own\l"
+	.string "adventure.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV::
 	.string "There is a movie on TV.\p"

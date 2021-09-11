@@ -13,10 +13,15 @@ script Turpia_RivalHouse_pickuprival {
 	{
 		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
 		waitmovement(0)
-		msgbox(format("Interaction with Basil or Alyssa and Parents alone"))
-		loadword(0,Turpia_Follower_Rival)
-		setfollower(7,0x100)
-		setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
+		checkplayergender
+		if (var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("{RIVAL}: Oh! Hi, {PLAYER}! I can't believe the finals are coming right up...\pWe better hustle, then! I'll follow your lead!"))
+		}
+		else
+		{
+			msgbox(format("{RIVAL}: Oh! Hey, {PLAYER}. I guess the finals are about to start, huh?\pWe better get going, then! I'll be right behind you!"))
+		}
 	}
 	else
 	{
@@ -25,9 +30,118 @@ script Turpia_RivalHouse_pickuprival {
 		applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Rival_Player_Movement)
 		applymovement(6,Turpia_Rival_Tori_Movement)
 		waitmovement(0)
-		msgbox(format("Interaction with Basil or Alyssa and Parents with Tori"))
+		checkplayergender
+		if (var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("{RIVAL}: Oh! Hi, {PLAYER} and Tori! I can't believe the finals are coming right up…\pWe better hustle, then! I'll follow your lead!"))
+		}
+		else
+		{
+			msgbox(format("{RIVAL}: Oh! Hey, {PLAYER} and Tori. I guess the finals are about to start, huh?\pWe better get going, then! I'll be right behind you!"))
+		}
+	}
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("{RIVAL}: Oh, man… I can't believe I've made it through to the finals. I'm so excited!"))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
+	{
+		applymovement(6,Common_Movement_WalkInPlaceFastestRight)
+	}
+	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("We're so proud of you, {RIVAL}!"))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("It did surprise us when you said you wanted to become a Trainer, but we're happy you've found your calling, dear."))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	checkplayergender
+	if (var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("{RIVAL}: Aw, Ma, you're making me blush! Now I gotta give it more than my all!"))
+	}
+	else
+	{
+		msgbox(format("{RIVAL}: Aw, shucks, Ma... Now I have to do even more than my best!"))
+	}
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Now, now, don't push yourself. All that matters to us is that you're enjoying yourself doing what you do best."))
+	closemessage
+	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("No matter where you plan to go, we'll always support you, {RIVAL}. We only want the best for our children."))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	checkplayergender
+	if (var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("{RIVAL}: You're the best parents I could ask for… Just watch my back, Pa, Ma!\pOnce I'm back home, I'll be the Champion of the region!"))
+	}
+	else
+	{
+		msgbox(format("{RIVAL}: I'm lucky to have you both. Watch me go, Pa, Ma! I'm gonna give this my all!\pAnd once I come back home, I'll be the Champion!"))
+	}
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown)
+	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
+	{
+		applymovement(6,Common_Movement_WalkInPlaceFastestUp)
+	}
+	waitmovement(0)
+	checkplayergender
+	if (var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't wanna show up too late for the big moment!"))
+	}
+	else
+	{
+		msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't want to keep everyone waiting!"))
+	}
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
+	{
+		applymovement(6,Common_Movement_WalkInPlaceFastestRight)
+	}
+	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Have fun, dears!"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	if (var(VAR_GRC_TURPIA_INTRO_STATE)==1)
+	{
+		msgbox(format("Do your best, both of you!"))
+	}
+	else
+	{
+		msgbox(format("Do your best, all of you!"))
+	}
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("{RIVAL}: See you soon!"))
+	closemessage
+	if(var(VAR_GRC_TURPIA_INTRO_STATE)==1)
+	{
+		loadword(0,Turpia_Follower_Rival)
+		setfollower(7,0x100)
+		setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
+	}
+	else
+	{
 		setvar(VAR_GRC_TURPIA_INTRO_STATE,4)
-		//
 		clearflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
 		warp(MAP_LITTLEROOT_TOWN,0,0,0)
 		waitstate
@@ -48,12 +162,12 @@ movement Turpia_Rival_Tori_Movement {
 
 script Turpia_Rival_Mom
 {
-	msgbox(format("Very proud"),MSGBOX_NPC)
+	msgbox(format("Don't you worry about us! We'll be cheering you on from the sidelines."),MSGBOX_NPC)
 }
 
 script Turpia_Rival_Dad
 {
-	msgbox(format("You go lad"),MSGBOX_NPC)
+	msgbox(format("To think all three of our kids have grown up so much… Oh, don't mind me. Just being a sentimental old man, hahaha!"),MSGBOX_NPC)
 }
 
 raw `

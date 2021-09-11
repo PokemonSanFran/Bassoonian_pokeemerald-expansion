@@ -220,19 +220,26 @@ script Turpia_ScientistR1Block {
 
 script Turpia_SigurdCameo {
 	lock
-	if (!flag(FLAG_TEMP_1F))
+	if (flag(FLAG_GRC_TURPIA_HIDE_RIVALS))
 	{
-		setflag(FLAG_TEMP_1F)
-		msgbox(format("Hmmm… Quite a fine piece of architecture, indeed…"))
-		closemessage
-		applymovement(4,Common_Movement_ExclamationMark)
-		waitmovement(0)
-		//GRCTODO: walk fastest in place into right direction
-		msgbox(format("Ah, hello, young one. I see this villa has piqued your interest, too.\pNow that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+		msgbox(format("{PLAYER}, {RIVAL}, Tori… Something tells me I will hear from you again."),MSGBOX_NPC)
 	}
 	else
 	{
-		msgbox(format("Now that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+		if (!flag(FLAG_TEMP_1F))
+		{
+			setflag(FLAG_TEMP_1F)
+			msgbox(format("Hmmm… Quite a fine piece of architecture, indeed…"))
+			closemessage
+			applymovement(4,Common_Movement_ExclamationMark)
+			waitmovement(0)
+			//GRCTODO: walk fastest in place into right direction
+			msgbox(format("Ah, hello, young one. I see this villa has piqued your interest, too.\pNow that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+		}
+		else
+		{
+			msgbox(format("Now that I take another look at you, I'm reminded…\pIsn't there some sort of competition going on?"),MSGBOX_NPC)
+		}
 	}
 	release
 }
@@ -240,6 +247,16 @@ script Turpia_SigurdCameo {
 script Turpia_BeachLady
 {
 	msgbox(format("Aaaah… Gentle waves, rustling grass, a pleasant breeze…\pThis really is the place to be, holiday or not."),MSGBOX_NPC)
+}
+
+script Turpia_LittleKiddo
+{
+	msgbox(format("I'd love to cross the sea someday. I want to know what lies on the other side of the water…\pAw, I wish I had my own Pokémon!"),MSGBOX_NPC)
+}
+
+script Turpia_Fisherman
+{
+	msgbox(format("Always a fresh bite in Turpia! There's nothing the people of Borago won't do for some fresh fish, and I'm here to deliver!"),MSGBOX_NPC)
 }
 
 script Turpia_RealEstateGuy {

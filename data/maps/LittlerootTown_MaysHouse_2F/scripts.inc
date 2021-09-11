@@ -168,11 +168,21 @@ Turpia_Tori_Rival_Movement:
 	step_end
 
 Turpia_Tori_Mom::
+	goto_if_set FLAG_GRC_TURPIA_HIDE_RIVALS, Turpia_Tori_Mom_1
+	msgbox Turpia_Tori_Mom_Text_1, MSGBOX_NPC
+	return
+
+Turpia_Tori_Mom_1:
 	msgbox Turpia_Tori_Mom_Text_0, MSGBOX_NPC
 	return
 
 
 Turpia_Tori_Dad::
+	goto_if_set FLAG_GRC_TURPIA_HIDE_RIVALS, Turpia_Tori_Dad_1
+	msgbox Turpia_Tori_Dad_Text_1, MSGBOX_NPC
+	return
+
+Turpia_Tori_Dad_1:
 	msgbox Turpia_Tori_Dad_Text_0, MSGBOX_NPC
 	return
 
@@ -735,7 +745,19 @@ Turpia_ToriHouse_pickuprival_Text_25:
 	.string "know what's at stake, Tori.$"
 
 Turpia_Tori_Mom_Text_0:
-	.string "I'm E4$"
+	.string "Claudia: And here I told Tori to win this\n"
+	.string "little affair…\p"
+	.string "O-oh! N-no, you won fair and square,\n"
+	.string "darling. Ahahahaha…$"
+
+Turpia_Tori_Mom_Text_1:
+	.string "Claudia: We're expecting your best. Do\n"
+	.string "not dis- ah, have fun, darlings!$"
 
 Turpia_Tori_Dad_Text_0:
-	.string "I'm E4 2$"
+	.string "Edmond: Congratulations, {PLAYER}.\n"
+	.string "Perhaps we'll see each other again\l"
+	.string "someday.$"
+
+Turpia_Tori_Dad_Text_1:
+	.string "Edmond: …Do your best out there.$"

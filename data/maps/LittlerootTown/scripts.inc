@@ -256,24 +256,39 @@ Turpia_ScientistR1Block::
 
 Turpia_SigurdCameo::
 	lock
-	goto_if_unset FLAG_TEMP_1F, Turpia_SigurdCameo_2
-	msgbox Turpia_SigurdCameo_Text_2, MSGBOX_NPC
+	goto_if_set FLAG_GRC_TURPIA_HIDE_RIVALS, Turpia_SigurdCameo_2
+	goto_if_unset FLAG_TEMP_1F, Turpia_SigurdCameo_5
+	msgbox Turpia_SigurdCameo_Text_3, MSGBOX_NPC
 Turpia_SigurdCameo_1:
 	release
 	return
 
 Turpia_SigurdCameo_2:
+	msgbox Turpia_SigurdCameo_Text_0, MSGBOX_NPC
+	goto Turpia_SigurdCameo_1
+
+Turpia_SigurdCameo_5:
 	setflag FLAG_TEMP_1F
-	msgbox Turpia_SigurdCameo_Text_0
+	msgbox Turpia_SigurdCameo_Text_1
 	closemessage
 	applymovement 4, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox Turpia_SigurdCameo_Text_1, MSGBOX_NPC
+	msgbox Turpia_SigurdCameo_Text_2, MSGBOX_NPC
 	goto Turpia_SigurdCameo_1
 
 
 Turpia_BeachLady::
 	msgbox Turpia_BeachLady_Text_0, MSGBOX_NPC
+	return
+
+
+Turpia_LittleKiddo::
+	msgbox Turpia_LittleKiddo_Text_0, MSGBOX_NPC
+	return
+
+
+Turpia_Fisherman::
+	msgbox Turpia_Fisherman_Text_0, MSGBOX_NPC
 	return
 
 
@@ -1738,10 +1753,14 @@ Turpia_ScientistR1Block_Text_0:
 	.string "the meantime?$"
 
 Turpia_SigurdCameo_Text_0:
+	.string "{PLAYER}, {RIVAL}, Tori… Something\n"
+	.string "tells me I will hear from you again.$"
+
+Turpia_SigurdCameo_Text_1:
 	.string "Hmmm… Quite a fine piece of\n"
 	.string "architecture, indeed…$"
 
-Turpia_SigurdCameo_Text_1:
+Turpia_SigurdCameo_Text_2:
 	.string "Ah, hello, young one. I see this villa has\n"
 	.string "piqued your interest, too.\p"
 	.string "Now that I take another look at you, I'm\n"
@@ -1749,7 +1768,7 @@ Turpia_SigurdCameo_Text_1:
 	.string "Isn't there some sort of competition\n"
 	.string "going on?$"
 
-Turpia_SigurdCameo_Text_2:
+Turpia_SigurdCameo_Text_3:
 	.string "Now that I take another look at you, I'm\n"
 	.string "reminded…\p"
 	.string "Isn't there some sort of competition\n"
@@ -1760,6 +1779,18 @@ Turpia_BeachLady_Text_0:
 	.string "pleasant breeze…\p"
 	.string "This really is the place to be, holiday\n"
 	.string "or not.$"
+
+Turpia_LittleKiddo_Text_0:
+	.string "I'd love to cross the sea someday. I\n"
+	.string "want to know what lies on the other\l"
+	.string "side of the water…\p"
+	.string "Aw, I wish I had my own Pokémon!$"
+
+Turpia_Fisherman_Text_0:
+	.string "Always a fresh bite in Turpia! There's\n"
+	.string "nothing the people of Borago won't do\l"
+	.string "for some fresh fish, and I'm here to\l"
+	.string "deliver!$"
 
 Turpia_RealEstateGuy_Text_0:
 	.string "Would you look at this, young man! This\n"

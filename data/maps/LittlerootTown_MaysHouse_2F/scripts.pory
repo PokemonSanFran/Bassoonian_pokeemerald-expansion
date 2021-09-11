@@ -164,12 +164,26 @@ movement Turpia_Tori_Rival_Movement {
 
 script Turpia_Tori_Mom
 {
-	msgbox(format("I'm E4"),MSGBOX_NPC)
+	if (flag(FLAG_GRC_TURPIA_HIDE_RIVALS))
+	{
+		msgbox(format("Claudia: And here I told Tori to win this little affair…\pO-oh! N-no, you won fair and square, darling. Ahahahaha…"),MSGBOX_NPC)
+	}
+	else
+	{
+		msgbox(format("Claudia: We're expecting your best. Do not dis- ah, have fun, darlings!"),MSGBOX_NPC)
+	}
 }
 
 script Turpia_Tori_Dad
 {
-	msgbox(format("I'm E4 2"),MSGBOX_NPC)
+	if (flag(FLAG_GRC_TURPIA_HIDE_RIVALS))
+	{
+		msgbox(format("Edmond: Congratulations, {PLAYER}. Perhaps we'll see each other again someday."),MSGBOX_NPC)
+	}
+	else
+	{
+		msgbox(format("Edmond: …Do your best out there."),MSGBOX_NPC)
+	}
 }
 
 raw `

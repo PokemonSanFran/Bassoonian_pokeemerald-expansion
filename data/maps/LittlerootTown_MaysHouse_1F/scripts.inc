@@ -17,23 +17,145 @@ Turpia_RivalHouse_pickuprival::
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
 	applymovement 6, Turpia_Rival_Tori_Movement
 	waitmovement 0
-	msgbox Turpia_RivalHouse_pickuprival_Text_1
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_11
+	msgbox Turpia_RivalHouse_pickuprival_Text_3
+Turpia_RivalHouse_pickuprival_1:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_4
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_ne Turpia_RivalHouse_pickuprival_6
+Turpia_RivalHouse_pickuprival_5:
+	applymovement 4, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_5
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_6
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_15
+	msgbox Turpia_RivalHouse_pickuprival_Text_8
+Turpia_RivalHouse_pickuprival_14:
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_9
+	closemessage
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_10
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_19
+	msgbox Turpia_RivalHouse_pickuprival_Text_12
+Turpia_RivalHouse_pickuprival_18:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_ne Turpia_RivalHouse_pickuprival_23
+Turpia_RivalHouse_pickuprival_22:
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_26
+	msgbox Turpia_RivalHouse_pickuprival_Text_14
+Turpia_RivalHouse_pickuprival_25:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_ne Turpia_RivalHouse_pickuprival_30
+Turpia_RivalHouse_pickuprival_29:
+	applymovement 1, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_15
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_eq Turpia_RivalHouse_pickuprival_33
+	msgbox Turpia_RivalHouse_pickuprival_Text_17
+Turpia_RivalHouse_pickuprival_32:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Turpia_RivalHouse_pickuprival_Text_18
+	closemessage
+	compare VAR_GRC_TURPIA_INTRO_STATE, 1
+	goto_if_eq Turpia_RivalHouse_pickuprival_37
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 4
 	clearflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	warp MAP_LITTLEROOT_TOWN, 0, 0, 0
 	waitstate
-Turpia_RivalHouse_pickuprival_1:
+Turpia_RivalHouse_pickuprival_36:
 	releaseall
 	return
 
 Turpia_RivalHouse_pickuprival_2:
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Rival_Player_Movement
 	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_8
+	msgbox Turpia_RivalHouse_pickuprival_Text_1
+	goto Turpia_RivalHouse_pickuprival_1
+
+Turpia_RivalHouse_pickuprival_6:
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	goto Turpia_RivalHouse_pickuprival_5
+
+Turpia_RivalHouse_pickuprival_8:
 	msgbox Turpia_RivalHouse_pickuprival_Text_0
+	goto Turpia_RivalHouse_pickuprival_1
+
+Turpia_RivalHouse_pickuprival_11:
+	msgbox Turpia_RivalHouse_pickuprival_Text_2
+	goto Turpia_RivalHouse_pickuprival_1
+
+Turpia_RivalHouse_pickuprival_15:
+	msgbox Turpia_RivalHouse_pickuprival_Text_7
+	goto Turpia_RivalHouse_pickuprival_14
+
+Turpia_RivalHouse_pickuprival_19:
+	msgbox Turpia_RivalHouse_pickuprival_Text_11
+	goto Turpia_RivalHouse_pickuprival_18
+
+Turpia_RivalHouse_pickuprival_23:
+	applymovement 6, Common_Movement_WalkInPlaceFastestUp
+	goto Turpia_RivalHouse_pickuprival_22
+
+Turpia_RivalHouse_pickuprival_26:
+	msgbox Turpia_RivalHouse_pickuprival_Text_13
+	goto Turpia_RivalHouse_pickuprival_25
+
+Turpia_RivalHouse_pickuprival_30:
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	goto Turpia_RivalHouse_pickuprival_29
+
+Turpia_RivalHouse_pickuprival_33:
+	msgbox Turpia_RivalHouse_pickuprival_Text_16
+	goto Turpia_RivalHouse_pickuprival_32
+
+Turpia_RivalHouse_pickuprival_37:
 	loadword 0, Turpia_Follower_Rival
 	setfollower 7, 0x100
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
-	goto Turpia_RivalHouse_pickuprival_1
+	goto Turpia_RivalHouse_pickuprival_36
 
 
 Turpia_Rival_Player_Movement:
@@ -503,15 +625,104 @@ RivalsHouse_1F_Text_DoYouHavePokemon:
 @	.string "own POKéMON?$"
 
 Turpia_RivalHouse_pickuprival_Text_0:
-	.string "Interaction with Basil or Alyssa and\n"
-	.string "Parents alone$"
+	.string "{RIVAL}: Oh! Hi, {PLAYER}! I can't\n"
+	.string "believe the finals are coming right up...\p"
+	.string "We better hustle, then! I'll follow your\n"
+	.string "lead!$"
 
 Turpia_RivalHouse_pickuprival_Text_1:
-	.string "Interaction with Basil or Alyssa and\n"
-	.string "Parents with Tori$"
+	.string "{RIVAL}: Oh! Hey, {PLAYER}. I guess\n"
+	.string "the finals are about to start, huh?\p"
+	.string "We better get going, then! I'll be right\n"
+	.string "behind you!$"
+
+Turpia_RivalHouse_pickuprival_Text_2:
+	.string "{RIVAL}: Oh! Hi, {PLAYER} and Tori!\n"
+	.string "I can't believe the finals are coming\l"
+	.string "right up…\p"
+	.string "We better hustle, then! I'll follow your\n"
+	.string "lead!$"
+
+Turpia_RivalHouse_pickuprival_Text_3:
+	.string "{RIVAL}: Oh! Hey, {PLAYER} and\n"
+	.string "Tori. I guess the finals are about to\l"
+	.string "start, huh?\p"
+	.string "We better get going, then! I'll be right\n"
+	.string "behind you!$"
+
+Turpia_RivalHouse_pickuprival_Text_4:
+	.string "{RIVAL}: Oh, man… I can't believe I've\n"
+	.string "made it through to the finals. I'm so\l"
+	.string "excited!$"
+
+Turpia_RivalHouse_pickuprival_Text_5:
+	.string "We're so proud of you, {RIVAL}!$"
+
+Turpia_RivalHouse_pickuprival_Text_6:
+	.string "It did surprise us when you said you\n"
+	.string "wanted to become a Trainer, but we're\l"
+	.string "happy you've found your calling, dear.$"
+
+Turpia_RivalHouse_pickuprival_Text_7:
+	.string "{RIVAL}: Aw, Ma, you're making me\n"
+	.string "blush! Now I gotta give it more than my\l"
+	.string "all!$"
+
+Turpia_RivalHouse_pickuprival_Text_8:
+	.string "{RIVAL}: Aw, shucks, Ma... Now I have\n"
+	.string "to do even more than my best!$"
+
+Turpia_RivalHouse_pickuprival_Text_9:
+	.string "Now, now, don't push yourself. All that\n"
+	.string "matters to us is that you're enjoying\l"
+	.string "yourself doing what you do best.$"
+
+Turpia_RivalHouse_pickuprival_Text_10:
+	.string "No matter where you plan to go, we'll\n"
+	.string "always support you, {RIVAL}. We only\l"
+	.string "want the best for our children.$"
+
+Turpia_RivalHouse_pickuprival_Text_11:
+	.string "{RIVAL}: You're the best parents I\n"
+	.string "could ask for… Just watch my back, Pa,\l"
+	.string "Ma!\p"
+	.string "Once I'm back home, I'll be the Champion\n"
+	.string "of the region!$"
+
+Turpia_RivalHouse_pickuprival_Text_12:
+	.string "{RIVAL}: I'm lucky to have you both.\n"
+	.string "Watch me go, Pa, Ma! I'm gonna give this\l"
+	.string "my all!\p"
+	.string "And once I come back home, I'll be the\n"
+	.string "Champion!$"
+
+Turpia_RivalHouse_pickuprival_Text_13:
+	.string "{RIVAL}: Anyway, we'll be off now!\n"
+	.string "Don't wanna show up too late for the\l"
+	.string "big moment!$"
+
+Turpia_RivalHouse_pickuprival_Text_14:
+	.string "{RIVAL}: Anyway, we'll be off now!\n"
+	.string "Don't want to keep everyone waiting!$"
+
+Turpia_RivalHouse_pickuprival_Text_15:
+	.string "Have fun, dears!$"
+
+Turpia_RivalHouse_pickuprival_Text_16:
+	.string "Do your best, both of you!$"
+
+Turpia_RivalHouse_pickuprival_Text_17:
+	.string "Do your best, all of you!$"
+
+Turpia_RivalHouse_pickuprival_Text_18:
+	.string "{RIVAL}: See you soon!$"
 
 Turpia_Rival_Mom_Text_0:
-	.string "Very proud$"
+	.string "Don't you worry about us! We'll be\n"
+	.string "cheering you on from the sidelines.$"
 
 Turpia_Rival_Dad_Text_0:
-	.string "You go lad$"
+	.string "To think all three of our kids have\n"
+	.string "grown up so much… Oh, don't mind me.\l"
+	.string "Just being a sentimental old man,\l"
+	.string "hahaha!$"
