@@ -1,3 +1,83 @@
+script Poppy_GetSeenByRivalA
+{
+	lockall
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	applymovement(2,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	goto(Poppy_GetSeenByRivalC)
+}
+
+script Poppy_GetSeenByRivalB
+{
+	lockall
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	applymovement(2,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(2,Common_Movement_WalkRight)
+	waitmovement(0)
+	goto(Poppy_GetSeenByRivalC)
+}
+
+script Poppy_GetSeenByRivalC
+{
+	//Set the respawn point to Poppy to ensure the player doesn't skip the battle & events by losing
+	setrespawn(HEAL_LOCATION_DEWFORD_TOWN)
+	applymovement(2,Poppy_Rival_WalkDown)
+	waitmovement(0)
+	msgbox(format("oy hi oh cool badge lez go"))
+	closemessage
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		switch(var(VAR_STARTER_MON))
+		{
+			case 0:
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TREECKO,Poppy_RivalDefeatedText)
+			case 1:
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TORCHIC,Poppy_RivalDefeatedText)
+			case 2:
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_MUDKIP,Poppy_RivalDefeatedText)
+		}	
+	}
+	else
+	{
+		switch(var(VAR_STARTER_MON))
+		{
+			case 0:
+				trainerbattle_no_intro(TRAINER_GRC_BASIL_POPPY_TREECKO,Poppy_RivalDefeatedText)
+			case 1:
+				trainerbattle_no_intro(TRAINER_GRC_BASIL_POPPY_TORCHIC,Poppy_RivalDefeatedText)
+			case 2:
+				trainerbattle_no_intro(TRAINER_GRC_BASIL_POPPY_MUDKIP,Poppy_RivalDefeatedText)
+		}	
+	}
+	msgbox(format("damn u gud well see u around"))
+	closemessage
+	applymovement(2,Poppy_Rival_RunAway)
+	waitmovement(0)
+	removeobject(2)
+	setflag(FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN)
+	setvar(VAR_BOARD_BRINEY_BOAT_STATE,2)
+	releaseall
+}
+
+movement Poppy_Rival_WalkDown
+{
+	walk_down * 3
+}
+
+movement Poppy_Rival_RunAway
+{
+	player_run_up * 5
+}
+
+text Poppy_RivalDefeatedText
+{
+	"Oh no u gud"
+}
+
 raw ` 
 @ Sailing to and from Dewford uses local IDs from different maps
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map

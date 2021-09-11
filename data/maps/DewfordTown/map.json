@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 21,
-      "y": 13,
+      "x": 23,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -43,7 +43,7 @@
       "x": 15,
       "y": -4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -66,8 +66,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
-      "x": 13,
-      "y": 1,
+      "x": 22,
+      "y": 16,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -129,7 +129,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_BOARD_BRINEY_BOAT_STATE",
+      "var_value": "1",
+      "script": "Poppy_GetSeenByRivalA"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 0,
+      "elevation": 3,
+      "var": "VAR_BOARD_BRINEY_BOAT_STATE",
+      "var_value": "1",
+      "script": "Poppy_GetSeenByRivalB"
+    }
   ],
   "bg_events": [
     {

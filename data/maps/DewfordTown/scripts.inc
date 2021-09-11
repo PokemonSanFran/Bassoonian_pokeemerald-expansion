@@ -1,3 +1,95 @@
+Poppy_GetSeenByRivalA::
+	lockall
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	goto Poppy_GetSeenByRivalC
+	return
+
+
+Poppy_GetSeenByRivalB::
+	lockall
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 2, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement 2, Common_Movement_WalkRight
+	waitmovement 0
+	goto Poppy_GetSeenByRivalC
+	return
+
+
+Poppy_GetSeenByRivalC::
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
+	applymovement 2, Poppy_Rival_WalkDown
+	waitmovement 0
+	msgbox Poppy_GetSeenByRivalC_Text_0
+	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Poppy_GetSeenByRivalC_2
+	switch VAR_STARTER_MON
+	case 0, Poppy_GetSeenByRivalC_10
+	case 1, Poppy_GetSeenByRivalC_11
+	case 2, Poppy_GetSeenByRivalC_12
+Poppy_GetSeenByRivalC_1:
+	msgbox Poppy_GetSeenByRivalC_Text_1
+	closemessage
+	applymovement 2, Poppy_Rival_RunAway
+	waitmovement 0
+	removeobject 2
+	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
+	setvar VAR_BOARD_BRINEY_BOAT_STATE, 2
+	releaseall
+	return
+
+Poppy_GetSeenByRivalC_2:
+	switch VAR_STARTER_MON
+	case 0, Poppy_GetSeenByRivalC_6
+	case 1, Poppy_GetSeenByRivalC_7
+	case 2, Poppy_GetSeenByRivalC_8
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_6:
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TREECKO, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_7:
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TORCHIC, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_8:
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_MUDKIP, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_10:
+	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TREECKO, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_11:
+	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TORCHIC, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+Poppy_GetSeenByRivalC_12:
+	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_MUDKIP, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_1
+
+
+Poppy_Rival_WalkDown:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Poppy_Rival_RunAway:
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	step_end
+
  
 @ Sailing to and from Dewford uses local IDs from different maps
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map
@@ -811,3 +903,12 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+Poppy_GetSeenByRivalC_Text_0:
+	.string "oy hi oh cool badge lez go$"
+
+Poppy_GetSeenByRivalC_Text_1:
+	.string "damn u gud well see u around$"
+
+Poppy_RivalDefeatedText::
+	.string "Oh no u gud$"
