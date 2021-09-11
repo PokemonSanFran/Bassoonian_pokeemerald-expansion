@@ -32,6 +32,14 @@ LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
 	setflag FLAG_SYS_CONDITION_GET
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 20
 	playfanfare(MUS_OBTAIN_ITEM)
 	message(LilycoveCity_ContestLobby_Text_ContestDrive)
 	waitfanfare

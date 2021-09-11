@@ -318,15 +318,15 @@ const u8 gText_MatchCallYoungCouple_LoisAndHal_Pokemon[] = _("Lovey-dovey Pokém
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Intro1[] = _("We're lovey-dovey!");
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Intro2[] = _("Forever lovey-dovey!");
 
-const u8 gText_MatchCallPkmnTrainer_Wally_Strategy[] = _("We let it all hang out.");
-const u8 gText_MatchCallPkmnTrainer_Wally_Pokemon[] = _("The 1st Pokémon I caught.");
-const u8 gText_MatchCallPkmnTrainer_Wally_Intro1[] = _("Pokémon and I have grown");
-const u8 gText_MatchCallPkmnTrainer_Wally_Intro2[] = _("stronger together.");
+const u8 gText_MatchCallPkmnTrainer_Wally_Strategy[] = _("Tori strats");
+const u8 gText_MatchCallPkmnTrainer_Wally_Pokemon[] = _("Tori mons");
+const u8 gText_MatchCallPkmnTrainer_Wally_Intro1[] = _("Tori intro 1");
+const u8 gText_MatchCallPkmnTrainer_Wally_Intro2[] = _("Tori intro 2");
 
-const u8 gText_MatchCallRockinWhiz_Roxanne_Strategy[] = _("Rock-type power attack.");
-const u8 gText_MatchCallRockinWhiz_Roxanne_Pokemon[] = _("I prefer rock-hard Pokémon.");
-const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("A Leader of a big Gym bears");
-const u8 gText_MatchCallRockinWhiz_Roxanne_Intro2[] = _("a lot of responsibility.");
+const u8 gText_MatchCallRockinWhiz_Roxanne_Strategy[] = _("Talia strats");
+const u8 gText_MatchCallRockinWhiz_Roxanne_Pokemon[] = _("Talia mons");
+const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("Talia intro 1");
+const u8 gText_MatchCallRockinWhiz_Roxanne_Intro2[] = _("Talia intro 2");
 
 const u8 gText_MatchCallTheBigHit_Brawly_Strategy[] = _("Direct physical action!");
 const u8 gText_MatchCallTheBigHit_Brawly_Pokemon[] = _("Fighting Pokémon rule!");

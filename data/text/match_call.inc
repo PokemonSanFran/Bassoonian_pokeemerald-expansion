@@ -2013,8 +2013,11 @@ MatchCall_BattlePyramidText14:: @ 82B21FC
 	.string "in the {STR_VAR_2}?\p"
 	.string "You're an inspiration!\n"
 	.string "See you again!$"
-
+	
 MatchCall_Text_Mom1:: @ 82B227B
+	.string "Mom: i hear it$"
+
+MatchCall_Text_MomD:: @ 82B227B
 	.string "Mom: Your father and you…\n"
 	.string "Everyone is captivated by Pokémon.\p"
 	.string "What is the charm of Pokémon?\p"
@@ -2852,19 +2855,7 @@ MatchCall_Text_UnusedProfBirch:
 	.string "Pokémon becomes more fun, eh?$"
 
 MatchCall_Text_MrStone1:: @ 82B60C0
-	.string "Mr. Stone: Oh? {PLAYER}{KUN}!\p"
-	.string "Since you called me, the P-Drive\n"
-	.string "must be working properly!\p"
-	.string "Other people will be registered,\n"
-	.string "so try calling them up, too!\p"
-	.string "Good! Good!\n"
-	.string "You seem to be quite happy!\p"
-	.string "Hm…\n"
-	.string "How could I know that?\p"
-	.string "It's because I'm looking down at\n"
-	.string "you from my office window!\p"
-	.string "Wahahaha!\n"
-	.string "See you again!$"
+	.string "Dad: I hear it$"
 
 MatchCall_Text_MrStone2:: @ 82B61E6
 	.string "Mr. Stone: Oh? {PLAYER}{KUN}!\p"

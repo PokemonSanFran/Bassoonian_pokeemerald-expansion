@@ -25,14 +25,135 @@ FamilyEventB::
 FamilyEventC::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
+	msgbox FamilyEventC_Text_0
+	closemessage
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 10
+	playse SE_CLICK
+	delay 20
 	playfanfare MUS_OBTAIN_ITEM
-	message FamilyEventC_Text_0
-	waitfanfare
+	message FamilyEventC_Text_1
 	setflag FLAG_SYS_MATCH_CALL_GET
+	waitfanfare
+	msgbox FamilyEventC_Text_2
+	closemessage
+	delay 20
+	special OpenPokenavForTutorial
+	waitstate
+	delay 20
+	applymovement 3, FamilyEvent_RivalMove1
+	applymovement 4, FamilyEvent_ToriMove1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox FamilyEventC_Text_3
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FamilyEventC_Text_4, MSGBOX_DEFAULT
+	waitfanfare
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FamilyEventC_Text_5, MSGBOX_DEFAULT
+	waitfanfare
+	delay 30
+	closemessage
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveA
+	waitmovement 0
+	applymovement 8, Common_Movement_WalkLeft
+	waitmovement 0
+	removeobject 8
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject 7
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveB
+	waitmovement 0
+	applymovement 10, Common_Movement_WalkUp
+	waitmovement 0
+	removeobject 10
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject 9
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveC
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox FamilyEventC_Text_6
+	closemessage
+	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveD
+	waitmovement 0
+	applymovement 5, Common_Movement_WalkLeft
+	waitmovement 0
+	removeobject 5
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject 6
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveE
+	waitmovement 0
+	special RemoveCameraObject
+	msgbox FamilyEventC_Text_7
+	closemessage
 	setvar VAR_PETALBURG_WOODS_STATE, 4
+	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
+	setflag FLAG_ENABLE_WALLY_MATCH_CALL
+	setflag FLAG_GRC_HIDE_FAMILY_BORAGO
 	releaseall
 	return
 
+
+Family_Event_CameraMoveA:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Family_Event_CameraMoveB:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_diag_southwest
+	step_end
+
+Family_Event_CameraMoveC:
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	step_end
+
+Family_Event_CameraMoveD:
+	walk_slow_up
+	step_end
+
+Family_Event_CameraMoveE:
+	walk_slow_down
+	step_end
+
+FamilyEvent_RivalMove1:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_fastest_right
+	step_end
+
+FamilyEvent_ToriMove1:
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_in_place_fastest_right
+	step_end
 
 SpotByAide1::
 	call SpotByAide_PartA
@@ -212,7 +333,28 @@ EverGrandeCity_Text_CitySign:
 @	.string "and POKéMON.”$"
 
 FamilyEventC_Text_0:
+	.string "hey here's a match call$"
+
+FamilyEventC_Text_1:
 	.string "{PLAYER} received the Match Call Drive!$"
+
+FamilyEventC_Text_2:
+	.string "please call either of us to try it$"
+
+FamilyEventC_Text_3:
+	.string "oy we should register too$"
+
+FamilyEventC_Text_4:
+	.string "Registered {RIVAL} in the P-Drive.$"
+
+FamilyEventC_Text_5:
+	.string "Registered Tori in the P-Drive.$"
+
+FamilyEventC_Text_6:
+	.string "aye we be off too$"
+
+FamilyEventC_Text_7:
+	.string "end$"
 
 SpotByAide_PartB_Text_0:
 	.string "omg u so late hurry up already$"

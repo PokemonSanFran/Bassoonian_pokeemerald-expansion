@@ -71,7 +71,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TORI",
-      "x": 5,
+      "x": 4,
       "y": 57,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",

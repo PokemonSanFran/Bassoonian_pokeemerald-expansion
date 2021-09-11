@@ -1,5 +1,18 @@
+GlobalEvent_PlayRivalMusic::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq GlobalEvent_PlayRivalMusic_1
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	return
+
+GlobalEvent_PlayRivalMusic_1:
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	return
+
+
 Poppy_GetSeenByRivalA::
 	lockall
+	call GlobalEvent_PlayRivalMusic
 	applymovement 2, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	applymovement 2, Common_Movement_ExclamationMark
@@ -10,6 +23,7 @@ Poppy_GetSeenByRivalA::
 
 Poppy_GetSeenByRivalB::
 	lockall
+	call GlobalEvent_PlayRivalMusic
 	applymovement 2, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	applymovement 2, Common_Movement_ExclamationMark
@@ -44,6 +58,7 @@ Poppy_GetSeenByRivalC_1:
 	clearflag FLAG_GRC_HIDE_EVENT_BORAGO_GROVE
 	clearflag FLAG_GRC_HIDE_FAMILY_BORAGO
 	setvar VAR_PETALBURG_WOODS_STATE, 2
+	fadedefaultbgm
 	releaseall
 	return
 

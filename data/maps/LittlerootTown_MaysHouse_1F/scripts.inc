@@ -23,6 +23,8 @@ Turpia_RivalHouse_pickuprival::
 	msgbox Turpia_RivalHouse_pickuprival_Text_3
 Turpia_RivalHouse_pickuprival_1:
 	closemessage
+	applymovement 7, Common_Movement_ExclamationMark
+	waitmovement 0
 	applymovement 7, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	msgbox Turpia_RivalHouse_pickuprival_Text_4
@@ -65,7 +67,7 @@ Turpia_RivalHouse_pickuprival_14:
 Turpia_RivalHouse_pickuprival_18:
 	closemessage
 	applymovement 7, Common_Movement_WalkInPlaceFastestDown
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	compare VAR_GRC_TURPIA_INTRO_STATE, 1
 	goto_if_ne Turpia_RivalHouse_pickuprival_23
 Turpia_RivalHouse_pickuprival_22:
@@ -92,7 +94,7 @@ Turpia_RivalHouse_pickuprival_29:
 	msgbox Turpia_RivalHouse_pickuprival_Text_17
 Turpia_RivalHouse_pickuprival_32:
 	closemessage
-	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox Turpia_RivalHouse_pickuprival_Text_18
 	closemessage
@@ -652,8 +654,8 @@ Turpia_RivalHouse_pickuprival_Text_3:
 
 Turpia_RivalHouse_pickuprival_Text_4:
 	.string "{RIVAL}: Oh, man… I can't believe I've\n"
-	.string "made it through to the finals. I'm so\l"
-	.string "excited!$"
+	.string "made it through to the finals.\l"
+	.string "I'm so excited!$"
 
 Turpia_RivalHouse_pickuprival_Text_5:
 	.string "We're so proud of you, {RIVAL}!$"
@@ -684,17 +686,16 @@ Turpia_RivalHouse_pickuprival_Text_10:
 
 Turpia_RivalHouse_pickuprival_Text_11:
 	.string "{RIVAL}: You're the best parents I\n"
-	.string "could ask for… Just watch my back, Pa,\l"
-	.string "Ma!\p"
-	.string "Once I'm back home, I'll be the Champion\n"
-	.string "of the region!$"
+	.string "could ask for…\p"
+	.string "Just watch my back, Pa, Ma! Once I'm\n"
+	.string "back home, I'll be the Champion of the\l"
+	.string "region!$"
 
 Turpia_RivalHouse_pickuprival_Text_12:
 	.string "{RIVAL}: I'm lucky to have you both.\n"
-	.string "Watch me go, Pa, Ma! I'm gonna give this\l"
-	.string "my all!\p"
-	.string "And once I come back home, I'll be the\n"
-	.string "Champion!$"
+	.string "Watch me go, Pa, Ma!\p"
+	.string "I'm gonna give this my all! And once I\n"
+	.string "come back home, I'll be the Champion!$"
 
 Turpia_RivalHouse_pickuprival_Text_13:
 	.string "{RIVAL}: Anyway, we'll be off now!\n"
