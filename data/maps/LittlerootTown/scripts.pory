@@ -111,15 +111,20 @@ script Turpia_BagPickStarter
 	switch(var(VAR_STARTER_MON))
 	{
 		case 0:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
 		case 1:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
 		case 2:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
 	}
 }
 
-script Turia_Celebration_Cont_A
+text Turpia_Defeat_Rival
+{
+	"Ouchie"
+}
+
+script Turpia_Celebration_Cont_A
 {
 	special(HealPlayerParty)
 	msgbox(format("battle 2"))
@@ -130,11 +135,11 @@ script Turia_Celebration_Cont_A
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 			case 1:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 			case 2:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 		}
 	}
 	else
@@ -142,11 +147,11 @@ script Turia_Celebration_Cont_A
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TREECKO,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 			case 1:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TORCHIC,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 			case 2:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_MUDKIP,0,Route103_Text_MayDefeated,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
 		}
 	}
 }

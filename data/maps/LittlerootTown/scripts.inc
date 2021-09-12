@@ -123,60 +123,60 @@ Turpia_BagPickStarter_8:
 	goto Turpia_BagPickStarter_4
 
 Turpia_BagPickStarter_10:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
 	return
 
 Turpia_BagPickStarter_11:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
 	return
 
 Turpia_BagPickStarter_12:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_A
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
 	return
 
 
-Turia_Celebration_Cont_A::
+Turpia_Celebration_Cont_A::
 	special HealPlayerParty
-	msgbox Turia_Celebration_Cont_A_Text_0
+	msgbox Turpia_Celebration_Cont_A_Text_0
 	closemessage
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Turia_Celebration_Cont_A_1
+	goto_if_eq Turpia_Celebration_Cont_A_1
 	switch VAR_STARTER_MON
-	case 0, Turia_Celebration_Cont_A_9
-	case 1, Turia_Celebration_Cont_A_10
-	case 2, Turia_Celebration_Cont_A_11
+	case 0, Turpia_Celebration_Cont_A_9
+	case 1, Turpia_Celebration_Cont_A_10
+	case 2, Turpia_Celebration_Cont_A_11
 	return
 
-Turia_Celebration_Cont_A_1:
+Turpia_Celebration_Cont_A_1:
 	switch VAR_STARTER_MON
-	case 0, Turia_Celebration_Cont_A_5
-	case 1, Turia_Celebration_Cont_A_6
-	case 2, Turia_Celebration_Cont_A_7
+	case 0, Turpia_Celebration_Cont_A_5
+	case 1, Turpia_Celebration_Cont_A_6
+	case 2, Turpia_Celebration_Cont_A_7
 	return
 
-Turia_Celebration_Cont_A_5:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_5:
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
-Turia_Celebration_Cont_A_6:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_6:
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
-Turia_Celebration_Cont_A_7:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_7:
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
-Turia_Celebration_Cont_A_9:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TREECKO, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_9:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
-Turia_Celebration_Cont_A_10:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TORCHIC, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_10:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
-Turia_Celebration_Cont_A_11:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_MUDKIP, 0, Route103_Text_MayDefeated, Turia_Celebration_Cont_B
+Turpia_Celebration_Cont_A_11:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
 	return
 
 
@@ -1734,7 +1734,7 @@ Turpia_BagPickStarter_Text_3:
 Turpia_BagPickStarter_Text_4:
 	.string "battle 1$"
 
-Turia_Celebration_Cont_A_Text_0:
+Turpia_Celebration_Cont_A_Text_0:
 	.string "battle 2$"
 
 Turia_Celebration_Cont_B_Text_0:
@@ -1836,3 +1836,6 @@ Turpia_ProtaSquad_C_Text_3:
 
 Turpia_ProtaSquad_C_Text_4:
 	.string "Prof dialogue$"
+
+Turpia_Defeat_Rival::
+	.string "Ouchie$"
