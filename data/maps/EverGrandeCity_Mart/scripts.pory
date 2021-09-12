@@ -1,1 +1,6 @@
 mapscripts EverGrandeCity_Mart_MapScripts {}
+
+script Borago_Map_Employee_NPC
+{
+	msgbox(format("Welcome, welcome! We've got a nice array of products on sale! And here's another pro tip from your friendly neighborhood clerk!\pThe more Badges you earn, the more our offers will expand to cover your ever-increasing needs. Isn't that great?"),MSGBOX_NPC)
+}
