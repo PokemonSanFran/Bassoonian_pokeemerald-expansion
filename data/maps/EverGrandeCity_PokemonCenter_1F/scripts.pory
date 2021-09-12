@@ -3,6 +3,16 @@ mapscripts EverGrandeCity_PokemonCenter_1F_MapScripts
 	MAP_SCRIPT_ON_TRANSITION: Borago_PokemonCenter_OnTransition
 }
 
+script EverGrandeCity_PokemonCenter_1F_EventScript_Woman
+{
+	msgbox(format("Hey, Trainer! I guess you know how this place works, huh? I can tell by that look on your face.\pAnyway, the nurses are always so nice to everyone. Their hard work really isn't appreciated enough.\pOops, don't mind me! Just thinking out loud."),MSGBOX_NPC)
+}
+
+script EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM
+{
+	msgbox(format("The PC is so convenient! I haven't caught many Pokémon yet, but just knowing they'll be safe and sound in the PC really puts me at ease.\pI do wonder, though… Don't Pokémon grow bored if all they do is lounge in the PC?"),MSGBOX_NPC)
+}
+
 raw `
 Borago_PokemonCenter_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
@@ -35,14 +45,6 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
 	waitbuttonpress
 	release
 	end
-
-EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
-@	msgbox EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad, MSGBOX_NPC
-@	end
-
-EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
-@	msgbox EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon, MSGBOX_NPC
-@	end
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 @	lock

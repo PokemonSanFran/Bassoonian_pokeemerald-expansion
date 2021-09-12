@@ -1,3 +1,38 @@
+LilycoveCity_ContestLobby_EventScript_FatMan::
+	msgbox LilycoveCity_ContestLobby_EventScript_FatMan_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_Artist::
+	msgbox LilycoveCity_ContestLobby_EventScript_Artist_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_BlackBelt::
+	msgbox LilycoveCity_ContestLobby_EventScript_BlackBelt_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_LittleGirl::
+	msgbox LilycoveCity_ContestLobby_EventScript_LittleGirl_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_Girl::
+	msgbox LilycoveCity_ContestLobby_EventScript_Girl_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_NinjaBoy::
+	msgbox LilycoveCity_ContestLobby_EventScript_NinjaBoy_Text_0, MSGBOX_NPC
+	return
+
+
+LilycoveCity_ContestLobby_EventScript_Fisherman::
+	msgbox LilycoveCity_ContestLobby_EventScript_Fisherman_Text_0, MSGBOX_NPC
+	return
+
+
  
 @ Note: data/scripts/berry_blender.inc is for the same map, so shares local IDs
 .set LOCALID_RECEPTIONIST, 1
@@ -481,30 +516,6 @@ LilycoveCity_ContestLobby_Movement_ReceptionistWalkToContestHall:
 LilycoveCity_ContestLobby_Movement_ReceptionistFacePlayer:
 	walk_in_place_fastest_right
 	step_end
-
-LilycoveCity_ContestLobby_EventScript_BlackBelt::
-	msgbox LilycoveCity_ContestLobby_Text_MasterRankHereICome, MSGBOX_NPC
-	end
-
-LilycoveCity_ContestLobby_EventScript_Girl::
-	msgbox LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere, MSGBOX_NPC
-	end
-
-LilycoveCity_ContestLobby_EventScript_Artist::
-	msgbox LilycoveCity_ContestLobby_Text_ContestFeastForEyes, MSGBOX_NPC
-	end
-
-LilycoveCity_ContestLobby_EventScript_FatMan::
-	msgbox LilycoveCity_ContestLobby_Text_ToughContestIsExtreme, MSGBOX_NPC
-	end
-
-LilycoveCity_ContestLobby_EventScript_Fisherman::
-	msgbox LilycoveCity_ContestLobby_Text_LavishedCareOnMon, MSGBOX_NPC
-	end
-
-LilycoveCity_ContestLobby_EventScript_NinjaBoy::
-	msgbox LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily, MSGBOX_NPC
-	end
 
 LilycoveCity_ContestLobby_EventScript_ContestWinner1::
 	lockall
@@ -1007,19 +1018,6 @@ LilycoveCity_ContestLobby_Movement_LinkReceptionistFacePlayer:
 	walk_in_place_fastest_left
 	step_end
 
-LilycoveCity_ContestLobby_EventScript_LittleGirl::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_LittleGirlHaveCase
-	msgbox LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase, MSGBOX_DEFAULT
-	release
-	end
-
-LilycoveCity_ContestLobby_EventScript_LittleGirlHaveCase::
-	msgbox LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries, MSGBOX_DEFAULT
-	release
-	end
-
 LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase:
 	.string "Yippee!\p"
 	.string "The lady at the reception counter\n"
@@ -1085,39 +1083,91 @@ LilycoveCity_ContestLobby_Text_FineThatsTheWayItIs:
 	.string "Well, be seeing you.$"
 
 LilycoveCity_ContestLobby_Text_MasterRankHereICome:
-	.string "Hoo, boy… Master Rank CONTESTS,\n"
-	.string "here I come.\p"
-	.string "The world will know that my dearest\n"
-	.string "POKéMON is the cutest being in all\l"
-	.string "existence. The time has come!\l"
-	.string "Uheheheh.$"
+@	.string "Hoo, boy… Master Rank CONTESTS,\n"
+@	.string "here I come.\p"
+@	.string "The world will know that my dearest\n"
+@	.string "POKéMON is the cutest being in all\l"
+@	.string "existence. The time has come!\l"
+@	.string "Uheheheh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere:
-	.string "You can see a whole variety of\n"
-	.string "POKéMON here.\p"
-	.string "That's why I make this place a regular\n"
-	.string "part of my daily stroll.$"
+@	.string "You can see a whole variety of\n"
+@	.string "POKéMON here.\p"
+@	.string "That's why I make this place a regular\n"
+@	.string "part of my daily stroll.$"
 
 LilycoveCity_ContestLobby_Text_ContestFeastForEyes:
-	.string "Wow, coming out to a CONTEST is\n"
-	.string "a feast for these eyes!\p"
-	.string "Would you look at all the POKéMON\n"
-	.string "that just scream to be painted?$"
+@	.string "Wow, coming out to a CONTEST is\n"
+@	.string "a feast for these eyes!\p"
+@	.string "Would you look at all the POKéMON\n"
+@	.string "that just scream to be painted?$"
 
 LilycoveCity_ContestLobby_Text_ToughContestIsExtreme:
-	.string "The TOUGHNESS CONTEST is like\n"
-	.string "extreme, man!\p"
-	.string "Those muscular appeals…\n"
-	.string "Cascading sweat… I swoon!$"
+@	.string "The TOUGHNESS CONTEST is like\n"
+@	.string "extreme, man!\p"
+@	.string "Those muscular appeals…\n"
+@	.string "Cascading sweat… I swoon!$"
 
 LilycoveCity_ContestLobby_Text_LavishedCareOnMon:
-	.string "Day in and day out, I lavished my care\n"
-	.string "on this POKéMON.\p"
-	.string "Its condition is peaking.\n"
-	.string "Today, victory is mine!$"
+@	.string "Day in and day out, I lavished my care\n"
+@	.string "on this POKéMON.\p"
+@	.string "Its condition is peaking.\n"
+@	.string "Today, victory is mine!$"
 
 LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
-	.string "I made Ponuts with Mom, Dad, and\n"
-	.string "Big Sister. They turned out great!\p"
-	.string "I bet you can make smoother, better\n"
-	.string "Ponuts if you have more people.$"
+@	.string "I made Ponuts with Mom, Dad, and\n"
+@	.string "Big Sister. They turned out great!\p"
+@	.string "I bet you can make smoother, better\n"
+@	.string "Ponuts if you have more people.$"
+
+LilycoveCity_ContestLobby_EventScript_FatMan_Text_0:
+	.string "Sometimes, a Pokémon will strike a huge\n"
+	.string "appeal, but that leaves it wide open.\p"
+	.string "Use that opening to punish 'em extra\n"
+	.string "hard!$"
+
+LilycoveCity_ContestLobby_EventScript_Artist_Text_0:
+	.string "If you change the weather in an Appeal\n"
+	.string "Round, you should try forming a combo\l"
+	.string "with another move!\p"
+	.string "For example, if you use Sunny Day, you'll\n"
+	.string "get a much higher score with\l"
+	.string "Flamethrower. Convenient, huh?$"
+
+LilycoveCity_ContestLobby_EventScript_BlackBelt_Text_0:
+	.string "I thought I'd start things off with a\n"
+	.string "bang, using my Roggenrola's awesome\l"
+	.string "Self-Destruct!\p"
+	.string "But then it couldn't participate for\n"
+	.string "the rest of the round… I lost…$"
+
+LilycoveCity_ContestLobby_EventScript_LittleGirl_Text_0:
+	.string "Yay! I got a Ribbon! But there are many\n"
+	.string "other types of Ribbons out there…\p"
+	.string "We're gonna get 'em all, my Pokémon and\n"
+	.string "I! We'll take the Contest world by\l"
+	.string "storm!$"
+
+LilycoveCity_ContestLobby_EventScript_Girl_Text_0:
+	.string "Did you know? When Hanauan vacationers\n"
+	.string "first saw a Contest in Hoenn, they\l"
+	.string "immediately took them home with them.\p"
+	.string "Now they've been a booming trend for\n"
+	.string "the past few years! Awesome, huh?$"
+
+LilycoveCity_ContestLobby_EventScript_NinjaBoy_Text_0:
+	.string "Pfff… I don't know what people see in\n"
+	.string "these pageantries. Battles are where\l"
+	.string "it's at, don't you agree?\p"
+	.string "Ah, well, can't ask someone to change\n"
+	.string "their mind. Don't mind me.$"
+
+LilycoveCity_ContestLobby_EventScript_Fisherman_Text_0:
+	.string "Do you see the machines there? They're\n"
+	.string "Ponut Ovens, used to bake Ponuts!\p"
+	.string "They improve your Pokémon's Condition,\n"
+	.string "which lets them pull their weight even\l"
+	.string "better in Contests! They're really\l"
+	.string "tasty!\p"
+	.string "Uh… what's with the long face? Don't\n"
+	.string "judge!$"

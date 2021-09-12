@@ -3,6 +3,16 @@ EverGrandeCity_PokemonCenter_1F_MapScripts::
 	.byte 0
 
 
+EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
+	msgbox EverGrandeCity_PokemonCenter_1F_EventScript_Woman_Text_0, MSGBOX_NPC
+	return
+
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
+	msgbox EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_Text_0, MSGBOX_NPC
+	return
+
+
 Borago_PokemonCenter_OnTransition:
 	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
 	end
@@ -32,14 +42,6 @@ EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
 	waitbuttonpress
 	release
 	end
-
-EverGrandeCity_PokemonCenter_1F_EventScript_Woman::
-@	msgbox EverGrandeCity_PokemonCenter_1F_Text_LeagueAfterVictoryRoad, MSGBOX_NPC
-@	end
-
-EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM::
-@	msgbox EverGrandeCity_PokemonCenter_1F_Text_BelieveInYourPokemon, MSGBOX_NPC
-@	end
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Scott::
 @	lock
@@ -111,3 +113,22 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 @	.string "I'll get in touch with you then.\p"
 @	.string "Okay, {PLAYER}{KUN}.\n"
 @	.string "Go for greatness!$"
+
+EverGrandeCity_PokemonCenter_1F_EventScript_Woman_Text_0:
+	.string "Hey, Trainer! I guess you know how this\n"
+	.string "place works, huh? I can tell by that\l"
+	.string "look on your face.\p"
+	.string "Anyway, the nurses are always so nice\n"
+	.string "to everyone. Their hard work really\l"
+	.string "isn't appreciated enough.\p"
+	.string "Oops, don't mind me! Just thinking out\n"
+	.string "loud.$"
+
+EverGrandeCity_PokemonCenter_1F_EventScript_ExpertM_Text_0:
+	.string "The PC is so convenient! I haven't\n"
+	.string "caught many Pokémon yet, but just\l"
+	.string "knowing they'll be safe and sound in\l"
+	.string "the PC really puts me at ease.\p"
+	.string "I do wonder, though… Don't Pokémon grow\n"
+	.string "bored if all they do is lounge in the\l"
+	.string "PC?$"

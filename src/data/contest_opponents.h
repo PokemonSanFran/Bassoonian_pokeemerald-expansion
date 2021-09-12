@@ -162,7 +162,7 @@ const struct ContestWinner gDefaultContestWinners[] =
         .species = SPECIES_FLOETTE,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .monName = _("Faye"),
-        .trainerName = _("Francin"),
+        .trainerName = _("Fran"),
         .contestRank = CONTEST_RANK_HYPER
     },
     [CONTEST_WINNER_HALL_4 - 1] = {
