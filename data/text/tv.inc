@@ -575,8 +575,8 @@ gTVMassOutbreakText00:: @ 0828178A
 
 gTV3CheersForPokeblocksText00:: @ 082818F4
 	.string "MC: We hope you're in good cheer,\n"
-	.string "“3 Cheers For {POKEBLOCK}s” is here!\p"
-	.string "Today, we examine the {POKEBLOCK} blended\n"
+	.string "“3 Cheers For Ponuts” is here!\p"
+	.string "Today, we examine the Ponut blended\n"
 	.string "by {STR_VAR_1} and associates.\p"
 	.string "Without any delay, let me feed it\n"
 	.string "to my gourmet Pokémon Gulpin.\p"
@@ -593,7 +593,7 @@ gTV3CheersForPokeblocksText02:: @ 08281A2F
 	.string "{STR_VAR_1}'s blending performance\n"
 	.string "left something to be desired.\p"
 	.string "If this Trainer could blend better,\n"
-	.string "the {POKEBLOCK} would be much tastier.$"
+	.string "the Ponut would be much tastier.$"
 
 gTV3CheersForPokeblocksText03:: @ 08281AAC
 	.string "Gulpin: Gubi! Gubii!\p"
@@ -610,7 +610,7 @@ gTV3CheersForPokeblocksText04:: @ 08281B28
 
 gTV3CheersForPokeblocksText05:: @ 08281B93
 	.string "Tune in next time!\n"
-	.string "Our slogan is “3 Cheers For {POKEBLOCK}s!”$"
+	.string "Our slogan is “3 Cheers For Ponuts!”$"
 
 LilycoveCity_PokemonTrainerFanClub_Text_WhatsYourOpinionOfTrainer:: @ 8281BCB
 	.string "Hi, there!\p"
@@ -2041,7 +2041,7 @@ gTVWhatsNo1InHoennTodayText03:: @ 0828821A
 
 gTVWhatsNo1InHoennTodayText04:: @ 082882BE
 	.string "In just one day, {STR_VAR_1} spun\n"
-	.string "the Berry Blender {STR_VAR_2} times!\p"
+	.string "the Ponut Baker {STR_VAR_2} times!\p"
 	.string "Toward the end, even {STR_VAR_1}\n"
 	.string "seemed to get dizzy.\p"
 	.string "The Trainer appeared to totter\n"
@@ -2384,12 +2384,12 @@ gTVSafariFanClubText01:: @ 0828992F
 	.string "{STR_VAR_2} Pokémon.$"
 
 gTVSafariFanClubText02:: @ 0828999D
-	.string "The Trainer is clever with {POKEBLOCK}s.\n"
+	.string "The Trainer is clever with Ponuts.\n"
 	.string "Used {STR_VAR_2} that time, I think.$"
 
 gTVSafariFanClubText03:: @ 082899DC
 	.string "The Trainer didn't use a single\n"
-	.string "{POKEBLOCK}! Not a one!\p"
+	.string "Ponut! Not a one!\p"
 	.string "There's an expert for you.$"
 
 gTVSafariFanClubText04:: @ 08289A29
@@ -2414,14 +2414,14 @@ gTVSafariFanClubText06:: @ 08289B42
 	.string "catch one Pokémon. Not a one!$"
 
 gTVSafariFanClubText07:: @ 08289BC5
-	.string "The Trainer does use {POKEBLOCK}s.\n"
+	.string "The Trainer does use Ponuts.\n"
 	.string "Used {STR_VAR_2} that time, I think.\p"
 	.string "But, boy, I wish the Trainer would\n"
 	.string "get a bit better at this.$"
 
 gTVSafariFanClubText08:: @ 08289C3B
 	.string "I think the Trainer would have better\n"
-	.string "luck using {POKEBLOCK}s, which weren't\l"
+	.string "luck using Ponuts, which weren't\l"
 	.string "used at all that time.$"
 
 gTVSafariFanClubText09:: @ 08289C99

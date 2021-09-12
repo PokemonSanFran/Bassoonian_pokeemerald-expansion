@@ -1,0 +1,16 @@
+mapscripts EverGrandeCity_House2_LowerFloor_MapScripts {}
+
+script Borago_H2_Gentleman
+{
+	msgbox(format("We've made the right choice in retiring here.\pThis city gives us plenty to do, and our grandchildren love the hustle and bustle like nothing else.\pQuality entertainment all year round, what more could you want?"),MSGBOX_NPC)
+}
+
+script Borago_H2_Socialite
+{
+	msgbox(format("My husband and I have earned a lot of money, but we don't want to show off.\pWe'd much rather enjoy our time together, my husband and I.\pAfter all, we're not growing any younger, are we? Hohohoho!"),MSGBOX_NPC)
+}
+
+script Borago_H2_Grandson
+{
+	msgbox(format("My parents live in Callune City. It's a little boring for me there, so my grandparents picked me up to stay here.\pI love Contests! I really want to become a Top Coordinator later, so I think I'm staying here a while longer."),MSGBOX_NPC)
+}

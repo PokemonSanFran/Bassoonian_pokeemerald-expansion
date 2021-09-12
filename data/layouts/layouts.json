@@ -4410,6 +4410,46 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_HOUSE1_LOWER_FLOOR",
+      "name": "EverGrandeCity_House1_LowerFloor_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EverGrandeCity_House1_LowerFloor/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_House1_LowerFloor/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_HOUSE2_LOWER_FLOOR",
+      "name": "EverGrandeCity_House2_LowerFloor_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EverGrandeCity_House2_LowerFloor/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_House2_LowerFloor/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_HOUSE1_UPPER_FLOOR",
+      "name": "EverGrandeCity_House1_UpperFloor_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EverGrandeCity_House1_UpperFloor/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_House1_UpperFloor/map.bin"
+    },
+    {
+      "id": "LAYOUT_EVER_GRANDE_CITY_HOUSE2_UPPER_FLOOR",
+      "name": "EverGrandeCity_House2_UpperFloor_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EverGrandeCity_House2_UpperFloor/border.bin",
+      "blockdata_filepath": "data/layouts/EverGrandeCity_House2_UpperFloor/map.bin"
     }
   ]
 }

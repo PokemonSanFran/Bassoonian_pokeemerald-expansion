@@ -780,20 +780,20 @@ static void DrawPokeblockInfo(s32 pkblId)
         {
             if (GetPokeblockData(pokeblock, PBLOCK_SPICY + i) > 0)
             {
-                // Pokéblock has this flavor, draw Pokéblock icon next to it
+                // Ponut has this flavor, draw Ponut icon next to it
                 rectTilemapSrc[0] = (i << 12) + 0x17;
                 rectTilemapSrc[1] = (i << 12) + 0x18;
             }
             else
             {
-                // Pokéblock doesn't have this flavor, draw regular tiles
+                // Ponut doesn't have this flavor, draw regular tiles
                 rectTilemapSrc[0] = 0xF;
                 rectTilemapSrc[1] = 0xF;
             }
             CopyToBgTilemapBufferRect(2, rectTilemapSrc, (i / 3 * 6) + 1, (i % 3 * 2) + 13, 1, 2);
         }
         
-        // Print the Pokéblock's feel
+        // Print the Ponut's feel
         ConvertIntToDecimalStringN(gStringVar1, GetPokeblocksFeel(pokeblock), STR_CONV_MODE_RIGHT_ALIGN, 2);
         PrintOnPokeblockWindow(WIN_FEEL, gStringVar1, 4);
     }
@@ -1047,7 +1047,7 @@ static void Task_HandlePokeblockMenuInput(u8 taskId)
                 FadePaletteAndSetTaskToClosePokeblockCase(taskId);
                 break;
             default:
-                // Selected Pokéblock
+                // Selected Ponut
                 PlaySE(SE_SELECT);
                 gSpecialVar_ItemId = input;
                 ShowPokeblockActionsWindow(taskId);

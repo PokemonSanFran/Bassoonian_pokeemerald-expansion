@@ -25,7 +25,7 @@ BerryBlender_Text_BlendMasterKnowHowToMakePokeblocks: @ 82C43FA
 	.string "Of course!\n"
 	.string "Of course!\p"
 	.string "Incidentally…\n"
-	.string "You do know how to blend {POKEBLOCK}s\l"
+	.string "You do know how to blend Ponuts\l"
 	.string "from Berries?$"
 
 BerryBlender_Text_BlendMasterExplainBerryBlending: @ 82C444C
@@ -41,20 +41,20 @@ BerryBlender_Text_BlendMasterLetsBerryBlender: @ 82C451B
 	.string "Fine!\p"
 	.string "Let's get started, then!\p"
 	.string "All together with the Blend Master,\n"
-	.string "let's Berry Blender!$"
+	.string "let's Ponut Baker!$"
 
 BerryBlender_Text_BlendMasterNoPokeblockCase: @ 82C4573
 	.string "Hmmm!\p"
 	.string "You don't appear to have gotten\n"
-	.string "the {POKEBLOCK} Case!\p"
+	.string "the Ponut Case!\p"
 	.string "I shall be here all day!\n"
-	.string "Obtain the {POKEBLOCK} Case and hurry back!$"
+	.string "Obtain the Ponut Case and hurry back!$"
 
 BerryBlender_Text_BlendMasterPokeblockCaseFull: @ 82C45E8
 	.string "Hmmm!\p"
-	.string "Your {POKEBLOCK} Case appears to be full!\p"
+	.string "Your Ponut Case appears to be full!\p"
 	.string "I shall be here all day!\n"
-	.string "Use some {POKEBLOCK}s and hurry back!$"
+	.string "Use some Ponuts and hurry back!$"
 
 BerryBlender_Text_WhoaAwesome: @ 82C464B
 	.string "Whoa!\n"
@@ -68,7 +68,7 @@ BerryBlender_Text_WhatAnExpert: @ 82C4669
 
 BerryBlender_Text_MadeAmazingPokeblocksWithMaster: @ 82C4679
 	.string "When I blended with the Master,\n"
-	.string "we made amazing {POKEBLOCK}s!$"
+	.string "we made amazing Ponuts!$"
 
 BerryBlender_Text_QualitiesOfBlendMaster: @ 82C46B1
 	.string "Eyes that track the arrow with\n"

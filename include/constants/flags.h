@@ -1216,15 +1216,15 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
+#define FLAG_GRC_GYM1_FRESHWATER                                    0x493 // Unused Flag
+#define FLAG_GRC_GYM2_FRESHWATER                                    0x494 // Unused Flag
+#define FLAG_GRC_GYM3_FRESHWATER                                    0x495 // Unused Flag
+#define FLAG_GRC_GYM4_FRESHWATER                                    0x496 // Unused Flag
+#define FLAG_GRC_GYM5_FRESHWATER                                    0x497 // Unused Flag
+#define FLAG_GRC_GYM6_FRESHWATER                                    0x498 // Unused Flag
+#define FLAG_GRC_GYM7_FRESHWATER                                    0x499 // Unused Flag
+#define FLAG_GRC_GYM8_FRESHWATER                                    0x49A // Unused Flag
+#define FLAG_GRC_BORAGO_SUPERPOTION                                 0x49B // Unused Flag
 #define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
 #define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
 #define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag

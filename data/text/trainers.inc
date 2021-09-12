@@ -2279,7 +2279,7 @@ Route117_Text_LydiaRematchDefeat: @ 829C73E
 
 Route117_Text_LydiaPostRematch: @ 829C75A
 	.string "Pokémon seem to like different kinds\n"
-	.string "of {POKEBLOCK}s, depending on their nature.$"
+	.string "of Ponuts, depending on their nature.$"
 
 Route117_Text_DylanIntro: @ 829C7A5
 	.string "I'm in the middle of a triathlon, but,\n"

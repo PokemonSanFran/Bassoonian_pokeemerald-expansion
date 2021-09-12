@@ -269,6 +269,20 @@
       "elevation": 0,
       "dest_map": "MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE",
       "dest_warp_id": 0
+    },
+    {
+      "x": 15,
+      "y": 59,
+      "elevation": 0,
+      "dest_map": "MAP_EVER_GRANDE_CITY_HOUSE1_LOWER_FLOOR",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 7,
+      "y": 68,
+      "elevation": 0,
+      "dest_map": "MAP_EVER_GRANDE_CITY_HOUSE2_LOWER_FLOOR",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [
@@ -412,6 +426,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 40,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Borago_POTSign"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 49,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Borago_NameRaterSign"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 60,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Borago_ContestHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 69,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Borago_LabSign"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 69,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Borago_DriveLabsSign"
     }
   ]
 }

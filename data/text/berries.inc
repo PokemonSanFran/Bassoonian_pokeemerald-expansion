@@ -86,7 +86,7 @@ LilycoveCity_Text_BecauseYoureTrainer: @ 82A72E3
 LilycoveCity_Text_PokeblocksSuitPokemon: @ 82A7321
 	.string "When it gets right down to it…\p"
 	.string "The way dignified simplicity suits me,\n"
-	.string "{POKEBLOCK}s perfectly suit Pokémon.$"
+	.string "Ponuts perfectly suit Pokémon.$"
 
 Route123_BerryMastersHouse_Text_YoureDeservingOfBerry: @ 82A7386
 	.string "You may call me the Berry Master.\p"

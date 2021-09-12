@@ -737,12 +737,12 @@ LilycoveCity_Text_FasterSpinBetterPokeblocks:
 	.string "People have to work together to get it\n"
 	.string "to spin faster.\p"
 	.string "The faster you can make it spin, the\n"
-	.string "better {POKEBLOCK}S you can get, I've heard.$"
+	.string "better Ponuts you can get, I've heard.$"
 
 LilycoveCity_Text_ExplainBerryBlender:
 	.string "It's used for making a kind of candy\n"
-	.string "called a {POKEBLOCK}.\p"
-	.string "If you give a good {POKEBLOCK} to a POKéMON,\n"
+	.string "called a Ponut.\p"
+	.string "If you give a good Ponut to a POKéMON,\n"
 	.string "its condition will improve by a lot.$"
 
 LilycoveCity_Text_HeardTowerCalledSkyPillar:

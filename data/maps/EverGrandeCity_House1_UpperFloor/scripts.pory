@@ -1,0 +1,25 @@
+mapscripts EverGrandeCity_House1_UpperFloor_MapScripts {}
+
+script Borago_H1_BabyBoy
+{
+	msgbox(format("Trainer! Trainer! Can I see your Pokémon? Please?"),MSGBOX_NPC)
+}
+
+script Borago_H1_BabyGirl
+{
+	msgbox(format("My mommy told me to be a Coordinator, but I wanna be a Trainer like my big sis!\pI'm gonna train the coolest Pokémon out there, just like her!"),MSGBOX_NPC)
+}
+
+script Borago_H1_SuperPotionGirl
+{
+	lock
+	if (!flag(FLAG_GRC_BORAGO_SUPERPOTION))
+	{
+		faceplayer
+		msgbox(format("Hey, you look like you're off to a good start. Nice going!\pHere's a little something that might help you."),MSGBOX_DEFAULT)
+		giveitem(ITEM_SUPER_POTION)
+		setflag(FLAG_GRC_BORAGO_SUPERPOTION)
+	}
+	msgbox(format("This one's more effective than your average Potion: it's a Super Potion!\pUse it wisely, since these are more pricey than ordinary Potions.\pGood luck out there!"),MSGBOX_NPC)
+	release
+}

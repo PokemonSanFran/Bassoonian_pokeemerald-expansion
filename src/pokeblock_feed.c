@@ -174,7 +174,7 @@ static const u8 sNatureToMonPokeblockAnim[NUM_NATURES][2] =
     [NATURE_QUIRKY]  = { ANIM_QUIRKY,  AFFINE_NONE },
 };
 
-// Data for the animation the Pokémon does while readying to jump for the Pokéblock
+// Data for the animation the Pokémon does while readying to jump for the Ponut
 // Each nature can have up to 8 anim 'stages' it progresses through, and each stage has its own array of data.
 // The elements in each array correspond in order to the following:
 // - ANIMDATA_ROT_IDX      : Index into sin/cos table for circular movement
@@ -904,7 +904,7 @@ static void Task_FadeOutPokeblockFeed(u8 taskId)
 #undef tState
 #undef tHorizontalThrow
 
-// Sprite data for Pokéblock and Pokémon
+// Sprite data for Ponut and Pokémon
 #define sSpeed   data[0]
 #define sAccel   data[1]
 #define sSpecies data[2]

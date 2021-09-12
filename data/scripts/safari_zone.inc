@@ -116,8 +116,8 @@ SafariZone_Text_OutOfBalls: @ 82A4C56
 	.string "Your Safari Game is over.$"
 
 SafariZone_Text_PlacePokeblockOnFeeder: @ 82A4C90
-	.string "Would you like to place a {POKEBLOCK}\n"
-	.string "on the {POKEBLOCK} Feeder?$"
+	.string "Would you like to place a Ponut\n"
+	.string "on the Ponut Feeder?$"
 
 SafariZone_Text_PokeblockStillHere: @ 82A4CC5
 	.string "The {STR_VAR_1} you left\n"
@@ -125,7 +125,7 @@ SafariZone_Text_PokeblockStillHere: @ 82A4CC5
 
 SafariZone_Text_PokeblockWasPlaced: @ 82A4CEB
 	.string "The {STR_VAR_1} was placed\n"
-	.string "on the {POKEBLOCK} Feeder.$"
+	.string "on the Ponut Feeder.$"
 
 Route121_SafariZoneEntrance_Text_WelcomeToSafariZone: @ 82A4D12
 	.string "Welcome to the Safari Zone!\p"
@@ -189,11 +189,11 @@ Route121_SafariZoneEntrance_Text_PCIsFull: @ 82A50E5
 
 Route121_SafariZoneEntrance_Text_YouNeedPokeblockCase: @ 82A5105
 	.string "Excuse me!\n"
-	.string "You seem to be without a {POKEBLOCK} Case.\p"
+	.string "You seem to be without a Ponut Case.\p"
 	.string "Your Safari Game will be much more\n"
-	.string "fruitful if you use {POKEBLOCK}s.\p"
-	.string "Please come back with a {POKEBLOCK} Case.\p"
-	.string "You may obtain a {POKEBLOCK} Case from\n"
+	.string "fruitful if you use Ponuts.\p"
+	.string "Please come back with a Ponut Case.\p"
+	.string "You may obtain a Ponut Case from\n"
 	.string "the Lilycove Contest Hall.$"
 
 SafariZone_South_Text_StillHaveTimeExit: @ 82A51D4
@@ -218,7 +218,7 @@ SafariZone_South_Text_GoodLuck: @ 82A52AB
 
 SafariZone_South_Text_Boy: @ 82A52EF
 	.string "Did you know?\p"
-	.string "If you put a {POKEBLOCK} in that square box,\n"
+	.string "If you put a Ponut in that square box,\n"
 	.string "Pokémon gather around.$"
 
 SafariZone_South_Text_Man: @ 82A533B
@@ -228,7 +228,7 @@ SafariZone_South_Text_Man: @ 82A533B
 	.string "live in the outlying areas.$"
 
 SafariZone_Southwest_Text_Woman: @ 82A53B7
-	.string "Sometimes, when I toss a {POKEBLOCK} at \n"
+	.string "Sometimes, when I toss a Ponut at \n"
 	.string "Pokémon, it gets ignored.\p"
 	.string "Do Pokémon have likes and dislikes\n"
 	.string "about what they eat?$"
@@ -249,14 +249,14 @@ SafariZone_North_Text_Man: @ 82A54F0
 	.string "here and trade them with my friends!$"
 
 SafariZone_South_Text_Youngster: @ 82A553E
-	.string "I put a {POKEBLOCK} on the {POKEBLOCK} Feeder.\n"
+	.string "I put a Ponut on the Ponut Feeder.\n"
 	.string "But it seems to have disappeared.\p"
 	.string "I guess Pokémon must have eaten it\n"
 	.string "without me noticing.$"
 
 Route121_SafariZoneEntrance_Text_TrainerTip: @ 82A55BB
 	.string "Safari Zone Trainer Tip!\p"
-	.string "Throw {POKEBLOCK}s at wild Pokémon to make\n"
+	.string "Throw Ponuts at wild Pokémon to make\n"
 	.string "them less likely to flee.$"
 
 SafariZone_Southwest_Text_RestHouseSign: @ 82A5613
@@ -264,23 +264,23 @@ SafariZone_Southwest_Text_RestHouseSign: @ 82A5613
 	.string "Rest House$"
 
 SafariZone_RestHouse_Text_Youngster: @ 82A5639
-	.string "I don't have any {POKEBLOCK}s, but I caught\n"
+	.string "I don't have any Ponuts, but I caught\n"
 	.string "a good number of Pokémon.\p"
 	.string "You can improve your chances of making\n"
 	.string "a catch by getting closer to them\l"
 	.string "before throwing a Safari Ball.$"
 
 SafariZone_RestHouse_Text_PsychicM: @ 82A56E1
-	.string "If you use {POKEBLOCK}s, wild Pokémon won't\n"
+	.string "If you use Ponuts, wild Pokémon won't\n"
 	.string "be so quick to run away.\p"
-	.string "It's not much use to give {POKEBLOCK}s to\n"
+	.string "It's not much use to give Ponuts to\n"
 	.string "Pokémon that don't flee easily.$"
 
 SafariZone_RestHouse_Text_FatMan: @ 82A5764
-	.string "If you put a {POKEBLOCK} on the Feeder,\n"
+	.string "If you put a Ponut on the Feeder,\n"
 	.string "Pokémon are attracted to it.\p"
 	.string "I think Pokémon with the same sort of\n"
-	.string "nature are drawn by a certain {POKEBLOCK}.$"
+	.string "nature are drawn by a certain Ponut.$"
 
 SafariZone_South_Text_AreaOffLimits1: @ 82A57EE
 	.string "This area is still under construction.\n"

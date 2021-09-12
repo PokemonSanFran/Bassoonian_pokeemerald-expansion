@@ -9,7 +9,7 @@
 .set NUM_OPPONENTS, VAR_0x8009
 
 BerryBlender_Text_WantToMakePokeblocks:
-	.string "Oh? Did you want to make some {POKEBLOCK}s\n"
+	.string "Oh? Did you want to make some Ponuts\n"
 	.string "with this old-timer?$"
 
 BerryBlender_Text_Excellent:
@@ -20,11 +20,11 @@ BerryBlender_Text_MadeOldTimerSad:
 	.string "You've made this old-timer sad…$"
 
 BerryBlender_Text_KnowHowToMakePokeblocks:
-	.string "Do you know how to make a {POKEBLOCK}?$"
+	.string "Do you know how to make a Ponut?$"
 
 BerryBlender_Text_LetsBerryBlender:
 	.string "Let's get started, then!\p"
-	.string "Let's Berry Blender!$"
+	.string "Let's Ponut Baker!$"
 
 BerryBlender_Text_ExplainBerryBlending:
 	.string "Okay, a little explanation, then.\p"
@@ -38,14 +38,14 @@ BerryBlender_Text_DontHaveAnyBerries:
 	.string "Oh?\n"
 	.string "You don't have any Berries?\p"
 	.string "If you don't have any Berries,\n"
-	.string "you can't make any {POKEBLOCK}s.$"
+	.string "you can't make any Ponuts.$"
 
 BerryBlender_Text_CanHaveOneOfMyBerries:
 	.string "Well, that won't do at all now, will it?\p"
 	.string "If you don't mind leftovers, you can\n"
 	.string "have one of my Berries.\p"
-	.string "That way, we could make some {POKEBLOCK}s\n"
-	.string "together using the Berry Blender.$"
+	.string "That way, we could make some Ponuts\n"
+	.string "together using the Ponut Baker.$"
 
 BerryBlender_Text_DontHaveAnyBerriesToSpare:
 	.string "If I had some Berries left over,\n"
@@ -54,25 +54,25 @@ BerryBlender_Text_DontHaveAnyBerriesToSpare:
 	.string "We'll have to do this another time.$"
 
 BerryBlender_Text_PokeblockCaseIsFull:
-	.string "But your {POKEBLOCK} Case is full.\p"
-	.string "You should use some {POKEBLOCK}s before\n"
+	.string "But your Ponut Case is full.\p"
+	.string "You should use some Ponuts before\n"
 	.string "you come see me again.$"
 
 BerryBlender_Text_DontHavePokeblockCase:
-	.string "But you don't have a {POKEBLOCK} Case.\p"
-	.string "You should get a {POKEBLOCK} Case and then\n"
+	.string "But you don't have a Ponut Case.\p"
+	.string "You should get a Ponut Case and then\n"
 	.string "come see me.$"
 
 BerryBlender_Text_LetsGetBlendingAlready:
 	.string "Let's get blending already!$"
 
 BerryBlender_Text_WhatKindOfPokeblockWillIGet:
-	.string "I wonder what kind of {POKEBLOCK} I'll get?\n"
+	.string "I wonder what kind of Ponut I'll get?\n"
 	.string "This is so exciting!$"
 
 BerryBlender_Text_WantToBlendPokeblocksWithUs:
 	.string "Hi, there! Did you want to blend some\n"
-	.string "{POKEBLOCK}s with us?$"
+	.string "Ponuts with us?$"
 
 BerryBlender_Text_Okay:
 	.string "Okay!$"
@@ -84,11 +84,11 @@ BerryBlender_Text_ThatsTooBad:
 
 BerryBlender_Text_KnowHowToMakePokeblocks2:
 	.string "Of course, you do know how to\n"
-	.string "blend {POKEBLOCK}s, don't you?$"
+	.string "blend Ponuts, don't you?$"
 
 BerryBlender_Text_LetsBerryBlender2:
 	.string "Let's get started, then!\p"
-	.string "Let's Berry Blender!$"
+	.string "Let's Ponut Baker!$"
 
 BerryBlender_Text_ExplainBerryBlending2:
 	.string "Okay!\n"
@@ -102,27 +102,27 @@ BerryBlender_Text_ExplainBerryBlending2:
 BerryBlender_Text_DontHaveAnyBerries2:
 	.string "Oh, but wait a second here…\n"
 	.string "You don't have any Berries.\p"
-	.string "You can't make any {POKEBLOCK}s without\n"
+	.string "You can't make any Ponuts without\n"
 	.string "Berries…\p"
 	.string "We'll always be around whenever you\n"
 	.string "get hold of some Berries to blend.$"
 
 BerryBlender_Text_PokeblockCaseIsFull2:
 	.string "Oh, but wait a second here…\n"
-	.string "Your {POKEBLOCK} Case is full.\p"
-	.string "You should use some {POKEBLOCK}s and\n"
+	.string "Your Ponut Case is full.\p"
+	.string "You should use some Ponuts and\n"
 	.string "then come back.$"
 
 BerryBlender_Text_DontHavePokeblockCase2:
 	.string "Oh, but wait a second here…\n"
-	.string "You don't have a {POKEBLOCK} Case.\p"
-	.string "You should get a {POKEBLOCK} Case and\n"
+	.string "You don't have a Ponut Case.\p"
+	.string "You should get a Ponut Case and\n"
 	.string "then come back.$"
 
 @ Unused
 BerryBlender_Text_MakePokeblocksWithOurGroup:
 	.string "Oh, hello! Did you want to make some\n"
-	.string "{POKEBLOCK}s with our little group?$"
+	.string "Ponuts with our little group?$"
 
 BerryBlender_Text_OhDear:
 	.string "Oh, dear!$"
@@ -133,12 +133,12 @@ BerryBlender_Text_LeftUsInShock:
 
 BerryBlender_Text_KnowHowToMakePokeblocks3:
 	.string "Naturally, you know how to make\n"
-	.string "{POKEBLOCK}s, don't you?$"
+	.string "Ponuts, don't you?$"
 
 BerryBlender_Text_LetsBerryBlender3:
 	.string "Okay, dear!\n"
 	.string "Let's get started!\p"
-	.string "Let's Berry Blender!$"
+	.string "Let's Ponut Baker!$"
 
 BerryBlender_Text_ExplainBerryBlending3:
 	.string "Oh, dear!\p"
@@ -152,21 +152,21 @@ BerryBlender_Text_DontHaveAnyBerries3:
 	.string "You don't have any Berries,\n"
 	.string "do you?\p"
 	.string "If you don't have any Berries,\n"
-	.string "you can't make any {POKEBLOCK}s.\p"
-	.string "We'll always be making {POKEBLOCK}s here,\n"
+	.string "you can't make any Ponuts.\p"
+	.string "We'll always be making Ponuts here,\n"
 	.string "so let's make some together when\l"
 	.string "you get a Berry or two.$"
 
 BerryBlender_Text_PokeblockCaseIsFull3:
-	.string "Your {POKEBLOCK} Case is full,\n"
+	.string "Your Ponut Case is full,\n"
 	.string "it looks like.\p"
-	.string "You should use some {POKEBLOCK}s up\n"
+	.string "You should use some Ponuts up\n"
 	.string "and then come back.$"
 
 BerryBlender_Text_DontHavePokeblockCase3:
-	.string "You haven't gotten a {POKEBLOCK} Case\n"
+	.string "You haven't gotten a Ponut Case\n"
 	.string "yet, it looks like.\p"
-	.string "You need to get a {POKEBLOCK} Case before\n"
+	.string "You need to get a Ponut Case before\n"
 	.string "you come back.$"
 
 BerryBlender_Text_SetNewBlenderRecord:
@@ -179,12 +179,12 @@ BerryBlender_Text_LookGoodAtBlendingJoinUs:
 	.string "Would you like to join us?$"
 
 BerryBlender_Text_MakeDeliciousPokeblocks:
-	.string "I'm going to make delicious {POKEBLOCK}s\n"
+	.string "I'm going to make delicious Ponuts\n"
 	.string "and make my Pokémon cuter.$"
 
 BerryBlender_Text_SaveGameBeforeBerryBlenderLink:
-	.string "{POKEBLOCK}s will be made with your friends \n"
-	.string "from Berries in the Berry Blender.\p"
+	.string "Ponuts will be made with your friends \n"
+	.string "from Berries in the Ponut Baker.\p"
 	.string "Is it okay to save the game before\n"
 	.string "linking with your friends?$"
 
@@ -204,24 +204,24 @@ BerryBlender_Text_AllPlayersArrived:
 
 BerryBlender_Text_NoBerriesLink:
 	.string "You have no Berries.\n"
-	.string "The Berry Blender can't be used.$"
+	.string "The Ponut Baker can't be used.$"
 
 BerryBlender_Text_PokeblockCaseIsFullLink:
-	.string "Your {POKEBLOCK} Case is full.\n"
-	.string "The Berry Blender can't be used.$"
+	.string "Your Ponut Case is full.\n"
+	.string "The Ponut Baker can't be used.$"
 
 BerryBlender_Text_DontHavePokeblockCaseLink:
-	.string "You don't have a {POKEBLOCK} Case.\n"
-	.string "The Berry Blender can't be used.$"
+	.string "You don't have a Ponut Case.\n"
+	.string "The Ponut Baker can't be used.$"
 
 BerryBlender_Text_LoveMakingPokeblocks:
-	.string "I love making {POKEBLOCK}s.\p"
+	.string "I love making Ponuts.\p"
 	.string "I always have some Berries with me.$"
 
 BerryBlender_Text_MakePokeblocksUsingBerryBlender:
 	.string "If you'd like, we could make some\n"
-	.string "{POKEBLOCK}s together using the\l"
-	.string "Berry Blender.$"
+	.string "Ponuts together using the\l"
+	.string "Ponut Baker.$"
 
 BerryBlender_Text_DontHaveAnyBerriesHaveOne:
 	.string "Oh?\n"
@@ -231,8 +231,8 @@ BerryBlender_Text_DontHaveAnyBerriesHaveOne:
 	.string "have one of my Berries.$"
 
 BerryBlender_Text_UseItToMakePokeblocksTogether:
-	.string "We'll use it to make {POKEBLOCK}s together\n"
-	.string "using the Berry Blender.$"
+	.string "We'll use it to make Ponuts together\n"
+	.string "using the Ponut Baker.$"
 
 BerryBlender_Text_DontHaveAnyBerriesNoneToSpare:
 	.string "Oh?\n"

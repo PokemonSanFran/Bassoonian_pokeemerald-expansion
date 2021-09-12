@@ -1074,3 +1074,11 @@ Common_EventScript_Mart_EventScript_Clerk::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/EverGrandeCity_Mart/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House1_LowerFloor/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House2_LowerFloor/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House1_UpperFloor/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House2_UpperFloor/scripts.inc"

@@ -577,7 +577,7 @@ void CB2_ChooseBerry(void)
     GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, BERRIES_POCKET, CB2_ReturnToFieldContinueScript);
 }
 
-// Choosing berry for Berry Blender or Berry Crush
+// Choosing berry for Ponut Baker or Berry Crush
 void ChooseBerryForMachine(void (*exitCallback)(void))
 {
     GoToBagMenu(ITEMMENULOCATION_BERRY_BLENDER_CRUSH, BERRIES_POCKET, exitCallback);

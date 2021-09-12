@@ -27,6 +27,31 @@ Borago_TownSign::
 	return
 
 
+Borago_POTSign::
+	msgbox Borago_POTSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Borago_NameRaterSign::
+	msgbox Borago_NameRaterSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Borago_ContestHallSign::
+	msgbox Borago_ContestHallSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Borago_LabSign::
+	msgbox Borago_LabSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Borago_DriveLabsSign::
+	msgbox Borago_DriveLabsSign_Text_0, MSGBOX_SIGN
+	return
+
+
 Borago_Psychic::
 	msgbox Borago_Psychic_Text_0, MSGBOX_NPC
 	return
@@ -417,6 +442,25 @@ Borago_POT_Keeper_Text_3:
 Borago_TownSign_Text_0:
 	.string "Borago City\n"
 	.string "“The First and Last Destination”$"
+
+Borago_POTSign_Text_0:
+	.string "{UP_ARROW} Pass of Trials$"
+
+Borago_NameRaterSign_Text_0:
+	.string "Name Rater's House\n"
+	.string "“Pokémon nicknames rated.”$"
+
+Borago_ContestHallSign_Text_0:
+	.string "Pokémon Contest Hall\n"
+	.string "“The gathering place for Trainers!”$"
+
+Borago_LabSign_Text_0:
+	.string "Prof. Spruce's Pokémon Lab\n"
+	.string "“The authority on conservation!”$"
+
+Borago_DriveLabsSign_Text_0:
+	.string "Drive Labs\n"
+	.string "“We make your future.”$"
 
 Borago_Psychic_Text_0:
 	.string "This place really has everything a city\n"

@@ -30,6 +30,31 @@ script Borago_TownSign
 	msgbox(format("Borago City\n“The First and Last Destination”"),MSGBOX_SIGN)
 }
 
+script Borago_POTSign
+{
+	msgbox(format("{UP_ARROW} Pass of Trials"),MSGBOX_SIGN)
+}
+
+script Borago_NameRaterSign
+{
+	msgbox(format("Name Rater's House\n“Pokémon nicknames rated.”"),MSGBOX_SIGN)
+}
+
+script Borago_ContestHallSign
+{
+	msgbox(format("Pokémon Contest Hall\n“The gathering place for Trainers!”"),MSGBOX_SIGN)
+}
+
+script Borago_LabSign
+{
+	msgbox(format("Prof. Spruce's Pokémon Lab\n“The authority on conservation!”"),MSGBOX_SIGN)
+}
+
+script Borago_DriveLabsSign
+{
+	msgbox(format("Drive Labs\n“We make your future.”"),MSGBOX_SIGN)
+}
+
 script Borago_Psychic
 {
 	msgbox(format("This place really has everything a city could offer.\pFrom entertainment to daily needs, Borago just has it all. Don't you agree?"),MSGBOX_NPC)

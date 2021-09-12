@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
-      "x": 14,
+      "x": 5,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -29,10 +29,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
-      "x": 15,
-      "y": 2,
+      "x": 28,
+      "y": 0,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -55,7 +55,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 9,
+      "x": 7,
       "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
-      "x": 3,
-      "y": 4,
+      "x": 13,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -147,7 +147,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 21,
-      "y": 1,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -356,15 +356,15 @@
       "dest_warp_id": 4
     },
     {
-      "x": 9,
+      "x": 7,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_CONTEST_HALL",
       "dest_warp_id": 0
     },
     {
-      "x": 21,
-      "y": 1,
+      "x": 20,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_LILYCOVE_CITY_CONTEST_HALL",
       "dest_warp_id": 1
@@ -392,7 +392,7 @@
     },
     {
       "type": "sign",
-      "x": 23,
+      "x": 21,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -400,7 +400,7 @@
     },
     {
       "type": "sign",
-      "x": 25,
+      "x": 23,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -409,7 +409,7 @@
     {
       "type": "sign",
       "x": 27,
-      "y": 1,
+      "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LilycoveCity_ContestLobby_EventScript_ContestWinner6"
@@ -417,14 +417,14 @@
     {
       "type": "sign",
       "x": 30,
-      "y": 1,
+      "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LilycoveCity_ContestLobby_EventScript_BerryBlenderSpeedRecords"
     },
     {
       "type": "sign",
-      "x": 3,
+      "x": 15,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -432,7 +432,7 @@
     },
     {
       "type": "sign",
-      "x": 5,
+      "x": 17,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -440,7 +440,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 19,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -464,8 +464,8 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 3,
+      "x": 29,
+      "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LilycoveCity_ContestLobby_EventScript_LinkContestResults"

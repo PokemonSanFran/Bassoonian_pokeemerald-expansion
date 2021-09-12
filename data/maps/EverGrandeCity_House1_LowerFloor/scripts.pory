@@ -1,0 +1,11 @@
+mapscripts EverGrandeCity_House1_LowerFloor_MapScripts {}
+
+script Borago_H1_Mother
+{
+	msgbox(format("Oh, hello! My daughter is a Pokémon Trainer.\pIf you're looking for a little help, she's the right person for the job."),MSGBOX_NPC)
+}
+
+script Borago_H1_Father
+{
+	msgbox(format("Hey, Trainer! Have you checked out Drive Labs yet?\pThey're in the south of the city, and they make all kinds of nifty gadgets for Trainers. Should be of help to you!"),MSGBOX_NPC)
+}
