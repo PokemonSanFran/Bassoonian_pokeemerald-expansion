@@ -1044,7 +1044,7 @@
     {
       "id": "LAYOUT_LILYCOVE_CITY_CONTEST_LOBBY",
       "name": "LilycoveCity_ContestLobby_Layout",
-      "width": 31,
+      "width": 25,
       "height": 12,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Contest",

@@ -2,6 +2,9 @@
 EventScript_CutTree:: @ 82906BB
 	lockall
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
+	checkitem ITEM_HM_01, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_CheckTreeCantCut
 	checkpartyhmlearnable MOVE_CUT
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_CheckTreeCantCut
