@@ -227,11 +227,12 @@ gScriptCmdTable::
 	.4byte ScrCmd_warpsootopolislegend      @ 0xe0
 	.4byte ScrCmd_buffercontesttype         @ 0xe1
 	.4byte ScrCmd_bufferitemnameplural      @ 0xe2
-    .4byte ScrCmd_setfollower					@ 0xe3
+    .4byte ScrCmd_setfollower			    @ 0xe3
     .4byte ScrCmd_destroyfollower			@ 0xe4
     .4byte ScrCmd_facefollower				@ 0xe5
     .4byte ScrCmd_checkfollower				@ 0xe6
 	.4byte ScrCmd_checkpartyhmlearnable     @ 0xe7
-
-gScriptCmdTableEnd::
+    .4byte ScrCmd_showitemdesc				@ 0xe8
+    .4byte ScrCmd_hideitemdesc				@ 0xe9
+gScriptCmdTableEnd:: @ 81DBA08
 	.4byte ScrCmd_nop

@@ -510,6 +510,8 @@ struct Follower
     /*0x14*/ u16 flags;
     /*0x15*/ u8 locked;
 }; /* size = 0x18 */
+#include "constants/items.h"
+#define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
 struct SaveBlock2
 {
@@ -548,6 +550,7 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
     /*0xF2C*/ struct Follower follower;
+    /*0xF2C + struct of Follower*/ u8 itemFlags[ITEM_FLAGS_COUNT];
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
