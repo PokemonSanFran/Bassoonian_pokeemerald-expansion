@@ -11,7 +11,7 @@ Borago_Lab_OnTransition:
 	end
 	
 Borago_Lab_OnFrame:
-	map_script_2 VAR_BIRCH_LAB_STATE, 1, Borago_Get_Dex
+	map_script_2 VAR_BIRCH_LAB_STATE, 2, Borago_Get_Dex
 	.2byte 0
 
 Borago_Get_Dex::
@@ -26,7 +26,7 @@ Borago_Get_Dex::
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_SYS_DEXNAV_GET
-	setvar VAR_BIRCH_LAB_STATE, 2
+	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	return
 

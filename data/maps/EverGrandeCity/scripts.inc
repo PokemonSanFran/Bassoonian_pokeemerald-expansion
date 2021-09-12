@@ -3,6 +3,28 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 
+Borago_PushAwayPlayerWithoutDrive::
+	lockall
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_PushAwayPlayerWithoutDrive_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight
+	waitmovement 0
+	releaseall
+	return
+
+
+Borago_MoveAideIfNecessary::
+	compare VAR_BIRCH_LAB_STATE, 0
+	goto_if_eq Borago_MoveAideIfNecessary_1
+	return
+
+Borago_MoveAideIfNecessary_1:
+	setobjectxyperm 2, 18, 62
+	return
+
+
 Borago_POT_Keeper::
 	lock
 	faceplayer
@@ -258,7 +280,7 @@ SpotByAide2::
 
 SpotByAide_PartA::
 	lockall
-	setvar VAR_BIRCH_LAB_STATE, 1
+	setvar VAR_BIRCH_LAB_STATE, 2
 	applymovement 2, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	applymovement 2, Common_Movement_ExclamationMark
@@ -374,6 +396,7 @@ SpotByAide_Player_MovLeft:
 Borago_Outside_OnTransition:
 	setflag FLAG_VISITED_EVER_GRANDE_CITY
 	call Common_EventScript_SetupRivalGfxId
+	call Borago_MoveAideIfNecessary
 	end
 
 @EverGrandeCity_MapScripts::
@@ -412,6 +435,9 @@ EverGrandeCity_Text_CitySign:
 @	.string "EVER GRANDE CITY\p"
 @	.string "“The paradise of flowers, the sea,\n"
 @	.string "and POKéMON.”$"
+
+Borago_PushAwayPlayerWithoutDrive_Text_0:
+	.string "nuh uh still preparin'$"
 
 Borago_POT_Keeper_Text_0:
 	.string "Whoa, buster! I don't think it's a good\n"
@@ -498,7 +524,7 @@ FamilyEventC_Text_0:
 	.string "hey here's a match call$"
 
 FamilyEventC_Text_1:
-	.string "{PLAYER} received the Match Call Drive!$"
+	.string "{PLAYER}'s P-Drive was upgraded\pwith the TeleDrive!$"
 
 FamilyEventC_Text_2:
 	.string "please call either of us to try it$"

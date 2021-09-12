@@ -1,6 +1,20 @@
 mapscripts EverGrandeCity_Mart_MapScripts {}
 
-script Borago_Map_Employee_NPC
+script Borago_Mart_Employee_NPC
 {
 	msgbox(format("Welcome, welcome! We've got a nice array of products on sale! And here's another pro tip from your friendly neighborhood clerk!\pThe more Badges you earn, the more our offers will expand to cover your ever-increasing needs. Isn't that great?"),MSGBOX_NPC)
+}
+
+script Borago_Mart_MotherDaughter
+{
+	lock
+	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Mom! Mom! I wanna go home! Don't you have enough stuff already? Mom!"))
+	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Shhh! I'm nearly done, sweetie.\pI just need a few more things, and then we can go back home.\pNow be a good child and stop yelling in the store, okay?"))
+	closemessage
+	release
 }

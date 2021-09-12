@@ -1493,7 +1493,7 @@ LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase:
 	.string "This is the reception counter for\n"
 	.string "Pokémon Contests.\p"
 	.string "Oh? It appears that you don't have\n"
-	.string "a Condition Drive yet.\p"
+	.string "a SheenDrive yet.\p"
 	.string "In that case, we need to provide you\n"
 	.string "with this!$"
 
@@ -1918,4 +1918,4 @@ ContestHall_Text_LetsAppeal:
 	.string "Let's appeal!$"
 
 LilycoveCity_ContestLobby_Text_ContestDrive:
-	.string "{PLAYER} received the Condition Drive!$"
+	.string "{PLAYER}'s P-Drive was upgraded\pwith the SheenDrive!$"

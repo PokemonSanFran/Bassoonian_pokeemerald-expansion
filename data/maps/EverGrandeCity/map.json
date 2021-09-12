@@ -301,7 +301,7 @@
       "y": 67,
       "elevation": 3,
       "var": "VAR_BIRCH_LAB_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "SpotByAide2"
     },
     {
@@ -328,7 +328,7 @@
       "y": 67,
       "elevation": 3,
       "var": "VAR_BIRCH_LAB_STATE",
-      "var_value": "0",
+      "var_value": "1",
       "script": "SpotByAide1"
     },
     {
@@ -384,6 +384,33 @@
       "var": "VAR_PETALBURG_WOODS_STATE",
       "var_value": "3",
       "script": "FamilyEventA"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 61,
+      "elevation": 0,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "0",
+      "script": "Borago_PushAwayPlayerWithoutDrive"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 62,
+      "elevation": 0,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "0",
+      "script": "Borago_PushAwayPlayerWithoutDrive"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "0",
+      "script": "Borago_PushAwayPlayerWithoutDrive"
     }
   ],
   "bg_events": [

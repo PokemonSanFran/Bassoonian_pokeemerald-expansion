@@ -1,22 +1,23 @@
-DriveLabs_TalkToPresident::
+script DriveLabs_TalkToPresident
+{
 	lock
 	faceplayer
-	goto_if_unset FLAG_TEMP_1, DriveLabs_TalkToPresident_2
-	msgbox DriveLabs_TalkToPresident_Text_1
-DriveLabs_TalkToPresident_1:
+	if (!flag(FLAG_TEMP_1))
+	{
+		setflag(FLAG_TEMP_1)
+		msgbox(format("Hello, hello! Are you enjoying your P-Drive, dear Trainer?\pAh, yes, I should introduce myself… I am Ivan Baldry, the founder of Drive Labs and inventor of the P-Drive. It's a pleasure to meet you!\pI take it you've explored the facility at your leisure? Good, good!\pPollock has probably given you the full rundown already, hahaha!\pSafe journeys to you!"))
+	}
+	else
+	{
+		msgbox(format("I take it you've explored the facility at your leisure? Good, good!\pPollock has probably given you the full rundown already, hahaha!\pSafe journeys to you!"))
+	}
 	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
-	waitmovement 0
+	applymovement(VAR_LAST_TALKED,Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
 	release
-	return
+}
 
-DriveLabs_TalkToPresident_2:
-	setflag FLAG_TEMP_1
-	msgbox DriveLabs_TalkToPresident_Text_0
-	goto DriveLabs_TalkToPresident_1
-
-
- 
+raw ` 
 .set LOCALID_DEVON_EMPLOYEE, 2
 
 RustboroCity_DevonCorp_3F_MapScripts::
@@ -326,23 +327,4 @@ RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
 	.string "It's a collection of rare rocks and\n"
 	.string "stones assembled by the PRESIDENT.$"
-
-DriveLabs_TalkToPresident_Text_0:
-	.string "Hello, hello! Are you enjoying your\n"
-	.string "P-Drive, dear Trainer?\p"
-	.string "Ah, yes, I should introduce myself… I am\n"
-	.string "Ivan Baldry, the founder of Drive Labs\l"
-	.string "and inventor of the P-Drive. It's a\l"
-	.string "pleasure to meet you!\p"
-	.string "I take it you've explored the facility\n"
-	.string "at your leisure? Good, good!\p"
-	.string "Pollock has probably given you the full\n"
-	.string "rundown already, hahaha!\p"
-	.string "Safe journeys to you!$"
-
-DriveLabs_TalkToPresident_Text_1:
-	.string "I take it you've explored the facility\n"
-	.string "at your leisure? Good, good!\p"
-	.string "Pollock has probably given you the full\n"
-	.string "rundown already, hahaha!\p"
-	.string "Safe journeys to you!$"
+`

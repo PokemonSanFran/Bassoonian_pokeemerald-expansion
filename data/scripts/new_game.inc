@@ -127,9 +127,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_GRC_HIDE_RIVAL_POPPY
 	setflag FLAG_HIDE_ROUTE_103_BIRCH
 	
-	@You actually start with the pokenav here
-	setflag FLAG_SYS_POKENAV_GET
-	
 	@Contest flags
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_1
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_2

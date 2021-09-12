@@ -1,35 +1,35 @@
-DrivesLab_1F_FrustratedScientist::
+script DrivesLab_1F_FrustratedScientist
+{
 	lock
-	msgbox DrivesLab_1F_FrustratedScientist_Text_0
+	msgbox(format("Hmmm, no… Not quite… Aaagh, I'm so close, but I can't figure this thing out!"))
 	closemessage
 	faceplayer
-	msgbox DrivesLab_1F_FrustratedScientist_Text_1
+	msgbox(format("Oh! Ah, sorry… Got a little caught up in my work."))
 	closemessage
 	release
-	return
+}
 
+script DrivesLab_1F_WorriedEconomic
+{
+	msgbox(format("We're trying to compete with Unova's C-Gear.\pThey're a raging success, so we can't rest on our laurels from a single bout of strong sales.\pWe'll have to keep at it to make sure the P-Drive becomes the number-one Trainer's gadget!"),MSGBOX_NPC)
+}
 
-DrivesLab_1F_WorriedEconomic::
-	msgbox DrivesLab_1F_WorriedEconomic_Text_0, MSGBOX_NPC
-	return
+script DrivesLab_1F_Singer
+{
+	msgbox(format("P-Driiiiive… P-Driiiiive… Livin' a better life with my P-Driiiiive!\pWell, how was that? How was my commercial song?\lOh…"),MSGBOX_NPC)
+}
 
+script DrivesLab_1F_ContinuousWork
+{
+	msgbox(format("We're continuously working on making the P-Drive the ultimate gadget for Trainers all across the region.\pWe've got our sights set on the world, though the competition's pretty stiff…\pDoesn't mean we'll give up on trying, though!"),MSGBOX_NPC)
+}
 
-DrivesLab_1F_Singer::
-	msgbox DrivesLab_1F_Singer_Text_0, MSGBOX_NPC
-	return
+script DrivesLab_1F_TiredScientist
+{
+	msgbox(format("Johto has the PokéGear, Hoenn's got their PokéNav, Sinnoh's got the Pokétch… and then there's Unova with the C-Gear.\pIt's my job to make sure we know what they're doing, so we're always one step ahead of them.\pI do need a break, though… You wouldn't believe how tiring this can be."),MSGBOX_NPC)
+}
 
-
-DrivesLab_1F_ContinuousWork::
-	msgbox DrivesLab_1F_ContinuousWork_Text_0, MSGBOX_NPC
-	return
-
-
-DrivesLab_1F_TiredScientist::
-	msgbox DrivesLab_1F_TiredScientist_Text_0, MSGBOX_NPC
-	return
-
-
- 
+raw ` 
 .set LOCALID_FOSSIL_SCIENTIST, 5
 
 RustboroCity_DevonCorp_2F_MapScripts::
@@ -438,50 +438,4 @@ RustboroCity_DevonCorp_2F_Text_WhatToWorkOnNext:
 @	.string "inspirations into reality.\p"
 @	.string "One couldn't ask for a better\n"
 @	.string "environment as an engineer.$"
-
-DrivesLab_1F_FrustratedScientist_Text_0:
-	.string "Hmmm, no… Not quite… Aaagh, I'm so\n"
-	.string "close, but I can't figure this thing\l"
-	.string "out!$"
-
-DrivesLab_1F_FrustratedScientist_Text_1:
-	.string "Oh! Ah, sorry… Got a little caught up in\n"
-	.string "my work.$"
-
-DrivesLab_1F_WorriedEconomic_Text_0:
-	.string "We're trying to compete with Unova's\n"
-	.string "C-Gear.\p"
-	.string "They're a raging success, so we can't\n"
-	.string "rest on our laurels from a single bout\l"
-	.string "of strong sales.\p"
-	.string "We'll have to keep at it to make sure\n"
-	.string "the P-Drive becomes the number-one\l"
-	.string "Trainer's gadget!$"
-
-DrivesLab_1F_Singer_Text_0:
-	.string "P-Driiiiive… P-Driiiiive… Livin' a better\n"
-	.string "life with my P-Driiiiive!\p"
-	.string "Well, how was that? How was my\n"
-	.string "commercial song?\l"
-	.string "Oh…$"
-
-DrivesLab_1F_ContinuousWork_Text_0:
-	.string "We're continuously working on making\n"
-	.string "the P-Drive the ultimate gadget for\l"
-	.string "Trainers all across the region.\p"
-	.string "We've got our sights set on the world,\n"
-	.string "though the competition's pretty\l"
-	.string "stiff…\p"
-	.string "Doesn't mean we'll give up on trying,\n"
-	.string "though!$"
-
-DrivesLab_1F_TiredScientist_Text_0:
-	.string "Johto has the PokéGear, Hoenn's got\n"
-	.string "their PokéNav, Sinnoh's got the\l"
-	.string "Pokétch… and then there's Unova with\l"
-	.string "the C-Gear.\p"
-	.string "It's my job to make sure we know what\n"
-	.string "they're doing, so we're always one step\l"
-	.string "ahead of them.\p"
-	.string "I do need a break, though… You wouldn't\n"
-	.string "believe how tiring this can be.$"
+`
