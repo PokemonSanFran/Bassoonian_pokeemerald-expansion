@@ -70,180 +70,130 @@ Route102_Text_TianaPostBattle: @ 8294916
 	.string "I have to catch more Pokémon.$"
 
 Route103_Text_DaisyIntro: @ 829495A
-	.string "Did you feel the tug of our\n"
-	.string "soul-soothing fragrance?$"
+	.string "Kayla intro$"
 
 Route103_Text_DaisyDefeated: @ 829498F
-	.string "You weren't led astray by our aroma…$"
+	.string "Kayla defeat$"
 
 Route103_Text_DaisyPostBattle: @ 82949B4
-	.string "Aromatherapy is a form of mental\n"
-	.string "healing that works with fragrances.$"
+	.string "Kayla post$"
 
 Route103_Text_AmyIntro: @ 82949F9
-	.string "Amy: I'm Amy.\n"
-	.string "And this is my little sister Liv.\l"
-	.string "We battle together!$"
+	.string "Jo intro$"
 
 Route103_Text_AmyDefeated: @ 8294A3D
-	.string "Amy: Uh-oh, we lost.$"
+	.string "Jo defeat$"
 
 Route103_Text_AmyPostBattle: @ 8294A52
-	.string "Amy: You have to think about all\n"
-	.string "kinds of things when you're battling\l"
-	.string "against two Trainers.$"
+	.string "Jo post$"
 
 Route103_Text_AmyNotEnoughPokemon: @ 8294AAE
-	.string "Amy: Uh-oh, you have only one\n"
-	.string "Pokémon with you.\l"
-	.string "You can't battle us like that.$"
+	.string "Jo not enough$"
 
 Route103_Text_LivIntro: @ 8294AFD
-	.string "Liv: We battle together as one\n"
-	.string "team.$"
+	.string "Jim intro$"
 
 Route103_Text_LivDefeated: @ 8294B22
-	.string "Liv: Oh, we lost, big sister…$"
+	.string "Jim defeated$"
 
 Route103_Text_LivPostBattle: @ 8294B40
-	.string "Liv: We work perfectly together,\n"
-	.string "me and my big sister…\p"
-	.string "But we still lost…$"
+	.string "Jim post$"
 
 Route103_Text_AmyLivRegister: @ 8294B8A
-	.string "Liv: Really, we're a lot better…\n"
-	.string "It's true! We'll show you next time!$"
+	.string "Jim register$"
 
 Route103_Text_LivNotEnoughPokemon: @ 8294BD0
-	.string "Liv: If you want to battle us,\n"
-	.string "you have to have two Pokémon!\l"
-	.string "It's not fair if you don't!$"
+	.string "Jim not enough$"
 
 Route103_Text_AmyRematchIntro: @ 8294C29
-	.string "Amy: I'm Amy.\n"
-	.string "And this is my little sister Liv.\l"
-	.string "We battle together!$"
+	.string "Jo rematch intro$"
 
 Route103_Text_AmyRematchDefeated: @ 8294C6D
-	.string "Amy: Aww, boo!\n"
-	.string "We couldn't win again…$"
+	.string "Jo rematch defeat$"
 
 Route103_Text_AmyRematchPostBattle: @ 8294C93
-	.string "Amy: You have to think about all\n"
-	.string "kinds of things when you're battling\l"
-	.string "against two Trainers.$"
+	.string "Jo rematch post$"
 
 Route103_Text_AmyRematchNotEnoughPokemon: @ 8294CEF
-	.string "Amy: Uh-oh, you have only one\n"
-	.string "Pokémon with you.\l"
-	.string "You can't battle us like that.$"
+	.string "Jo rematch not enough$"
 
 Route103_Text_LivRematchIntro: @ 8294D3E
-	.string "Liv: We battle together as one\n"
-	.string "team.$"
+	.string "Jim rematch intro$"
 
 Route103_Text_LivRematchDefeated: @ 8294D63
-	.string "Liv: Awww, we lost again…\n"
-	.string "Big sister…$"
+	.string "Jim rematch defeat$"
 
 Route103_Text_LivRematchPostBattle: @ 8294D89
-	.string "Liv: We work perfectly together,\n"
-	.string "me and my big sister…\p"
-	.string "But why did we lose again?$"
+	.string "Jim rematch post$"
 
 Route103_Text_LivRematchNotEnoughPokemon: @ 8294DDB
-	.string "Liv: If you want to battle us, you\n"
-	.string "have to have two Pokémon!\l"
-	.string "It's not fair if you don't!$"
+	.string "Jim rematch not enough$"
 
 Route103_Text_AndrewIntro: @ 8294E34
-	.string "Gah! My fishing line's all snarled up!\n"
-	.string "I'm getting frustrated and mean!\l"
-	.string "That's it! Battle me!$"
+	.string "Jennifer intro$"
 
 Route103_Text_AndrewDefeated: @ 8294E92
-	.string "Gah! Lost it!\n"
-	.string "I'm even more annoyed now!$"
+	.string "Jennifer defeat$"
 
 Route103_Text_AndrewPostBattle: @ 8294EBB
-	.string "Gah, I'm still boiling mad…\n"
-	.string "Grrrrr…$"
+	.string "Jennifer post$"
 
 Route103_Text_MiguelIntro: @ 8294EDF
-	.string "My Pokémon is delightfully adorable!\n"
-	.string "Don't be shy--I'll show you!$"
+	.string "Harold intro$"
 
 Route103_Text_MiguelDefeated: @ 8294F21
-	.string "Oh, my gosh!\n"
-	.string "My darling Pokémon!$"
+	.string "Harold defeat$"
 
 Route103_Text_MiguelPostBattle: @ 8294F42
-	.string "My delightful Pokémon looks darling\n"
-	.string "even when it's fainted!$"
+	.string "Harold post$"
 
 Route103_Text_MiguelRegister: @ 8294F7E
-	.string "I'll get you to come out and look in\n"
-	.string "on my delightful Pokémon again!$"
+	.string "Harold register$"
 
 Route103_Text_MiguelRematchIntro: @ 8294FC3
-	.string "Hi, you! My delightfully adorable\n"
-	.string "Pokémon has become more darling!$"
+	.string "Harold rematch intro$"
 
 Route103_Text_MiguelRematchDefeated: @ 8295006
-	.string "Oh!\n"
-	.string "My darling Pokémon!$"
+	.string "Harold rematch defeat$"
 
 Route103_Text_MiguelRematchPostBattle: @ 829501E
-	.string "The more I spend time with it,\n"
-	.string "the more adorable my Pokémon becomes.$"
+	.string "Harold rematch post$"
 
 Route103_Text_PeteIntro: @ 8295063
-	.string "This sort of distance…\n"
-	.string "You should just swim it!$"
+	.string "Alliah intro$"
 
 Route103_Text_PeteDefeated: @ 8295093
-	.string "Oh, that's good going!$"
+	.string "Alliah defeat$"
 
 Route103_Text_PetePostBattle: @ 82950AA
-	.string "Oh, I understand where you're coming\n"
-	.string "from now.\p"
-	.string "If I had a Pokémon that trusty,\n"
-	.string "I'd want to Surf on it, too!$"
+	.string "Alliah post$"
 
 Route103_Text_IsabelleIntro: @ 8295116
-	.string "Watch where you're going!\n"
-	.string "We're going to crash!$"
+	.string "Kwok intro$"
 
 Route103_Text_IsabelleDefeated: @ 8295146
-	.string "Groan…$"
+	.string "Kwok defeat$"
 
 Route103_Text_IsabellePostBattle: @ 829514D
-	.string "I'm a poor swimmer so I was practicing…\n"
-	.string "Sorry for almost crashing into you.$"
+	.string "Kwok post$"
 
 Route103_Text_RhettIntro: @ 8295199
-	.string "Whoa!\n"
-	.string "How'd you get into a space this small?$"
+	.string "Sally intro$"
 
 Route103_Text_RhettDefeated: @ 82951C6
-	.string "Whoa!\n"
-	.string "The kid can rock!$"
+	.string "Sally defeat$"
 
 Route103_Text_RhettPostBattle: @ 82951DE
-	.string "Do you like cramped quarters\n"
-	.string "like this?$"
+	.string "Sally post$"
 
 Route103_Text_MarcosIntro: @ 8295206
-	.string "Did my guitar's wailing draw you in?$"
+	.string "Rodd intro$"
 
 Route103_Text_MarcosDefeated: @ 829522B
-	.string "My one-man show is ruined…$"
+	.string "Rodd defeat$"
 
 Route103_Text_MarcosPostBattle: @ 8295246
-	.string "I was playing my guitar where few\n"
-	.string "people were around, but a lot of fans\l"
-	.string "have gathered.\p"
-	.string "Heh, maybe I should turn pro.$"
+	.string "Rodd post$"
 
 Route104_Text_GinaIntro: @ 82952BB
 	.string "Meg intro$"

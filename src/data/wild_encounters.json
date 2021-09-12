@@ -307,22 +307,22 @@
             "mons": [
               {
                 "min_level": 8,
-                "max_level": 9,
-                "species": "SPECIES_STARLY"
+                "max_level": 10,
+                "species": "SPECIES_PSYDUCK"
               },
               {
                 "min_level": 8,
-                "max_level": 10,
+                "max_level": 9,
                 "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 8,
-                "max_level": 9,
-                "species": "SPECIES_STARLY"
+                "max_level": 10,
+                "species": "SPECIES_PSYDUCK"
               },
               {
                 "min_level": 8,
-                "max_level": 10,
+                "max_level": 9,
                 "species": "SPECIES_SHINX"
               },
               {

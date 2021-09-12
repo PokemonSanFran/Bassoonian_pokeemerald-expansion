@@ -248,10 +248,10 @@ const u8 gText_MatchCallPicnicker_Diana_Pokemon[] = _("I like all Pokémon.");
 const u8 gText_MatchCallPicnicker_Diana_Intro1[] = _("What lies beyond that");
 const u8 gText_MatchCallPicnicker_Diana_Intro2[] = _("yonder hill?");
 
-const u8 gText_MatchCallTwins_AmyAndLiv_Strategy[] = _("We battle together!");
-const u8 gText_MatchCallTwins_AmyAndLiv_Pokemon[] = _("We train together!");
-const u8 gText_MatchCallTwins_AmyAndLiv_Intro1[] = _("We like the same Pokémon,");
-const u8 gText_MatchCallTwins_AmyAndLiv_Intro2[] = _("but different desserts.");
+const u8 gText_MatchCallTwins_AmyAndLiv_Strategy[] = _("Jim & Jo strats");
+const u8 gText_MatchCallTwins_AmyAndLiv_Pokemon[] = _("Jim & Jo mons");
+const u8 gText_MatchCallTwins_AmyAndLiv_Intro1[] = _("Jim & Jo intro 1");
+const u8 gText_MatchCallTwins_AmyAndLiv_Intro2[] = _("Jim & Jo intro 2");
 
 const u8 gText_MatchCallSailor_Ernest_Strategy[] = _("I force things with power!");
 const u8 gText_MatchCallSailor_Ernest_Pokemon[] = _("Water and Fighting types.");

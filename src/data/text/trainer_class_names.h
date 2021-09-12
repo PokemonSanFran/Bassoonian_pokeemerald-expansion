@@ -66,4 +66,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_PYRAMID_KING] = _("Pyramid King"),
     [TRAINER_CLASS_RS_PROTAG] = _("{PKMN} Trainer"),
 	[TRAINER_CLASS_CRUSH_KIN] = _("Crush Kin"),
+	[TRAINER_CLASS_POKEFAN_FAMILY] = _("Pokéfamily"),
 };
