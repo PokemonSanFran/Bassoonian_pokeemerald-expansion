@@ -3,6 +3,65 @@ mapscripts EverGrandeCity_MapScripts
 	MAP_SCRIPT_ON_TRANSITION: Borago_Outside_OnTransition
 }
 
+script Borago_POT_Keeper
+{
+	lock
+	faceplayer
+	msgbox(format("Whoa, buster! I don't think it's a good idea for you to come here just yet.\pLet's see, how many Badges have you earned?"))
+	closemessage
+	if (flag(FLAG_BADGE03_GET))
+	{
+		msgbox(format("Impressive stuff! Now, I'll just have to test you in person.\pI'm not going easy on you, so you better give this your all!"))
+		closemessage
+		//Trainer battle
+		msgbox(format("Whew! Been a while since I've last had a fight like that. About time I get back to the old schedule, too…\pAnyway, I'm not gonna keep you any more. Stay safe, and enjoy the road ahead, Trainer!"))
+		//Movement
+	}
+	else
+	{
+		msgbox(format("Nope, you're not strong enough yet. You'll need three Badges to earn the right to pass through.\pJust keep at it, Trainer!"))
+		closemessage
+	}
+	release
+}
+
+script Borago_TownSign
+{
+	msgbox(format("Borago City\n“The First and Last Destination”"),MSGBOX_SIGN)
+}
+
+script Borago_Psychic
+{
+	msgbox(format("This place really has everything a city could offer.\pFrom entertainment to daily needs, Borago just has it all. Don't you agree?"),MSGBOX_NPC)
+}
+
+script Borago_Gentleman
+{
+	msgbox(format("May I indulge you, young one?\pHanau has quite a number of nice cities, and this is the most renowned of them all.\pHowever, if you truly wish to experience fine culture, then this is not the place to be."),MSGBOX_NPC)
+}
+
+script Borago_ContestDuo
+{
+	lock
+	applymovement(13,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Yay, Contests! Glitz and spectacle! Ohhh, seeing the Contest Hall makes me feel all giddy inside!"))
+	closemessage
+	applymovement(14,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("You've got that right! There's nothing beating the excitement and thrill of Pokémon Contests! Not to mention all those adorable Pokémon on the stage!"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Ohhhh… I'm growing emotional again…"))
+	closemessage
+	applymovement(14,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Oh, hubby…"))
+	closemessage
+	release
+}
+
 script FamilyEventA
 {
 	lockall
