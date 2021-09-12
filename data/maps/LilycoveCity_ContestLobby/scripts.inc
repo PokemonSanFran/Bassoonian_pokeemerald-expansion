@@ -416,51 +416,48 @@ LilycoveCity_ContestLobby_EventScript_WarpToToughContestHall::
 
 LilycoveCity_ContestLobby_EventScript_LeadToContestHall::
 	lockall
-	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistApproachCounter
-	waitmovement 0
+	@applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistApproachCounter
+	@waitmovement 0
 	playse SE_BRIDGE_WALK
-	setmetatile 12, 2, METATILE_Contest_WallShadow, 1
-	setmetatile 12, 3, METATILE_Contest_FloorShadow, 1
+	setmetatile 7, 2, METATILE_Contest_WallShadow, 1
+	setmetatile 7, 3, METATILE_Contest_FloorShadow, 1
 	special DrawWholeMapView
-	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistExitCounter
-	waitmovement 0
-	playse SE_BRIDGE_WALK
-	setmetatile 12, 2, METATILE_Contest_CounterFlap_Top, 1
-	setmetatile 12, 3, METATILE_Contest_CounterFlap_Bottom, 1
-	special DrawWholeMapView
-	delay 20
-	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistFacePlayer
-	waitmovement 0
+	@applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistExitCounter
+	@waitmovement 0
+	@applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistFacePlayer
+	@waitmovement 0
+	@applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistWalkToContestHall
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_ContestLobby_Movement_PlayerApproachReceptionist
 	waitmovement 0
-	msgbox LilycoveCity_ContestLobby_Text_ComeThroughHere, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_RECEPTIONIST, LilycoveCity_ContestLobby_Movement_ReceptionistWalkToContestHall
+	playse SE_BRIDGE_WALK
+	setmetatile 7, 2, METATILE_Contest_CounterFlap_Top, 1
+	setmetatile 7, 3, METATILE_Contest_CounterFlap_Bottom, 1
+	special DrawWholeMapView
+	delay 20
+	@msgbox LilycoveCity_ContestLobby_Text_ComeThroughHere, MSGBOX_DEFAULT
+	@closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_ContestLobby_Movement_PlayerWalkToContestHall
 	waitmovement 0
 	releaseall
 	return
 
 LilycoveCity_ContestLobby_Movement_PlayerWalkToContestHall:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
 	walk_up
 	delay_8
 	set_invisible
 	step_end
 
 LilycoveCity_ContestLobby_Movement_PlayerApproachReceptionist:
-	walk_in_place_fastest_left
-	walk_left
+	walk_in_place_fastest_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
 	step_end
 
 LilycoveCity_ContestLobby_Movement_ReceptionistApproachCounter:
-	walk_left
-	walk_left
+	walk_right
+	walk_right
 	walk_in_place_fastest_down
 	step_end
 

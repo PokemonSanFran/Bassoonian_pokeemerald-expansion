@@ -418,22 +418,22 @@ ContestHall_EventScript_SetExitWarp::
 	return
 
 ContestHall_EventScript_SetExitWarpNormalContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 5, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpSuperContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 5, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpHyperContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 5, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpMasterContest::
-	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 14, 4
+	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 255, 5, 4
 	waitstate
 	end
 
