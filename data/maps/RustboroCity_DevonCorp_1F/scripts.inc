@@ -114,10 +114,8 @@ DrivesLab_Desk_Pollock::
 	waitfanfare
 	msgbox DrivesLab_Desk_Pollock_Text_3
 	closemessage
-	msgbox DrivesLab_Desk_Pollock_Text_4
-	closemessage
 	setflag FLAG_SYS_POKENAV_GET
-	setvar VAR_BIRCH_LAB_STATE, 1
+	goto DrivesLab_Desk_PollockTutorial
 DrivesLab_Desk_Pollock_1:
 	releaseall
 	return
@@ -126,6 +124,38 @@ DrivesLab_Desk_Pollock_2:
 	msgbox DrivesLab_Desk_Pollock_Text_0
 	closemessage
 	goto DrivesLab_Desk_Pollock_1
+
+
+DrivesLab_Desk_PollockTutorial::
+	special ScriptMenu_CreateStartMenuForPokenavTutorial
+	waitstate
+	switch VAR_RESULT
+	case 0, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 1, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 3, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 4, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 5, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 6, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case MULTI_B_PRESSED, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	special OpenPokenavForTutorial
+	waitstate
+	delay 20
+	goto DrivesLab_Desk_PollockTutorial_End
+
+DrivesLab_Desk_PollockTutorial_PleaseSelect::
+	msgbox DrivesLab_Desk_PollockTutorial_PleaseSelect_Text_0, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	goto DrivesLab_Desk_PollockTutorial
+	return
+
+
+DrivesLab_Desk_PollockTutorial_End::
+	msgbox DrivesLab_Desk_PollockTutorial_End_Text_0
+	closemessage
+	setvar VAR_BIRCH_LAB_STATE, 1
+	releaseall
+	return
 
 
 .set LOCALID_STAIR_GUARD, 2
@@ -322,7 +352,11 @@ DrivesLab_Desk_Pollock_Text_3:
 	.string "now? It's got all the latest info on\l"
 	.string "where you are and where you need to go.$"
 
-DrivesLab_Desk_Pollock_Text_4:
+DrivesLab_Desk_PollockTutorial_PleaseSelect_Text_0:
+	.string "Hey, mind checking out your P-Drive for\n"
+	.string "a sec?$"
+
+DrivesLab_Desk_PollockTutorial_End_Text_0:
 	.string "Marvelous! We'll be installing new Drives\n"
 	.string "along the way, so be sure to keep an\l"
 	.string "eye out for those.\p"

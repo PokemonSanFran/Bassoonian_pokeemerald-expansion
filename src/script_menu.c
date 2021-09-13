@@ -715,16 +715,16 @@ bool16 ScriptMenu_CreateStartMenuForPokenavTutorial(void)
 
 static void CreateStartMenuForPokenavTutorial(void)
 {
-    u8 windowId = CreateWindowFromRect(21, 0, 7, 18);
+    u8 windowId = CreateWindowFromRect(21, 0, 7, 16);
     SetStandardWindowBorderStyle(windowId, 0);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokedex, 8, 9, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokemon, 8, 25, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionBag, 8, 41, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokenav, 8, 57, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gSaveBlock2Ptr->playerName, 8, 73, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionSave, 8, 89, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionOption, 8, 105, TEXT_SPEED_FF, NULL);
-    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionExit, 8, 121, TEXT_SPEED_FF, NULL);
+    //AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokedex, 8, 9, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokemon, 8, 9/*25*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionBag, 8, 25/*41*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionPokenav, 8, 41/*57*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gSaveBlock2Ptr->playerName, 8, 57/*73*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionSave, 8, 73/*89*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionOption, 8, 89/*105*/, TEXT_SPEED_FF, NULL);
+    AddTextPrinterParameterized(windowId, 1, gText_MenuOptionExit, 8, 105/*121*/, TEXT_SPEED_FF, NULL);
     sub_81983AC(windowId, 1, 0, 9, 16, ARRAY_COUNT(MultichoiceList_ForcedStartMenu), 0);
     InitMultichoiceNoWrap(FALSE, ARRAY_COUNT(MultichoiceList_ForcedStartMenu), windowId, MULTI_FORCED_START_MENU);
     CopyWindowToVram(windowId, 3);

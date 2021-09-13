@@ -392,7 +392,7 @@
       "elevation": 0,
       "var": "VAR_BIRCH_LAB_STATE",
       "var_value": "0",
-      "script": "Borago_PushAwayPlayerWithoutDrive"
+      "script": "FamilyEventB"
     },
     {
       "type": "trigger",

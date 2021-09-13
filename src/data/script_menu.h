@@ -551,7 +551,7 @@ static const struct MenuAction MultichoiceList_LinkContestMode[] =
 
 static const struct MenuAction MultichoiceList_ForcedStartMenu[] =
 {
-    {gText_MenuOptionPokedex},
+    //{gText_MenuOptionPokedex},
     {gText_MenuOptionPokemon},
     {gText_MenuOptionBag},
     {gText_MenuOptionPokenav},

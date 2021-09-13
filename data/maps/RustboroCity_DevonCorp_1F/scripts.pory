@@ -106,14 +106,46 @@ script DrivesLab_Desk_Pollock
 		waitfanfare
 		msgbox(format("The P-Drive is quite the nifty little gadget, if I do say so myself!\pWe're currently still developing additional functions for it, but we've already built in a map version.\pWhy don't you check out AreaDrive for now? It's got all the latest info on where you are and where you need to go."))
 		closemessage
-		//tutorial
-		msgbox(format("Marvelous! We'll be installing new Drives along the way, so be sure to keep an eye out for those.\pEnjoy your new P-Drive, {PLAYER}! If you have any further questions, you know where to find me. Old man Pollock's always ready to give you a hand.\pSafe journeys!"))
-		closemessage
 		setflag(FLAG_SYS_POKENAV_GET)
-		setvar(VAR_BIRCH_LAB_STATE,1)
+		goto(DrivesLab_Desk_PollockTutorial)
 	}
 	releaseall
 }
+
+raw `
+DrivesLab_Desk_PollockTutorial::
+	special ScriptMenu_CreateStartMenuForPokenavTutorial
+	waitstate
+	switch VAR_RESULT
+	case 0, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 1, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 3, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 4, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 5, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case 6, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	case MULTI_B_PRESSED, DrivesLab_Desk_PollockTutorial_PleaseSelect
+	special OpenPokenavForTutorial
+	waitstate
+	delay 20
+	goto DrivesLab_Desk_PollockTutorial_End
+`
+
+script DrivesLab_Desk_PollockTutorial_PleaseSelect
+{
+	msgbox(format("Hey, mind checking out your P-Drive for a sec?"),MSGBOX_DEFAULT)
+	closemessage
+	delay(10)
+	goto(DrivesLab_Desk_PollockTutorial)
+}
+
+script DrivesLab_Desk_PollockTutorial_End
+{
+	msgbox(format("Marvelous! We'll be installing new Drives along the way, so be sure to keep an eye out for those.\pEnjoy your new P-Drive, {PLAYER}! If you have any further questions, you know where to find me. Old man Pollock's always ready to give you a hand.\pSafe journeys!"))
+	closemessage
+	setvar(VAR_BIRCH_LAB_STATE,1)
+	releaseall
+}
+
 
 raw `
 .set LOCALID_STAIR_GUARD, 2
