@@ -94,7 +94,32 @@ script DrivesLab_Desk_Pollock
 	lock
 	if (flag(FLAG_SYS_POKENAV_GET))
 	{
-		msgbox(format("drive help"))
+		message(format("Hey, {PLAYER}! Any Drives you want to know more about?"))
+		waitmessage
+		setvar(VAR_0x8004,0)
+		special(ScriptMenu_CreateDriveLabsPollockMultichoice)
+		waitstate
+		special(GetDriveLabsPollockSelection)
+		switch(var(VAR_RESULT))
+		{
+			case 0:
+				msgbox(format("AreaDrive is your go-to map of the entire Hanau region!\pYou can also take a closer look at the layout of towns and cities by zooming in."))
+			case 1:
+				msgbox(format("DexDrive allows you to chase for specific Pokémon.\pAs you keep encountering the same kind of Pokémon, you may find stronger specimens with unique moves!"))
+			case 2:
+				msgbox(format("TeleDrive lets you call anyone you've registered, no matter how near or far.\pTrainers you've fought before may call you whenever they feel like battling again!"))
+			case 3:
+				msgbox(format("SheenDrive lets you check on the Condition of your party!\pUseful if you want to know how far you can still add to a Pokémon's Condition when feeding them Ponuts."))
+			case 4:
+				msgbox(format("BerryDrive is a special map for all your Berry needs!\pIt'll display where you've planted Berries all across the region."))
+			case 5:
+				msgbox(format("StatDrive is an in-depth look at the stats and potential of your party!\pYou'll also be able to check how much your Pokémon have grown on you."))
+			case 6:
+				msgbox(format("ForceDrive contains all kinds of special powers to make your life just that extra bit more convenient!"))
+			case 7:
+			case MULTI_B_PRESSED:
+				msgbox(format("Right, then. That's good! If you need something, you know where to find me!"))
+		}
 		closemessage
 	}
 	else

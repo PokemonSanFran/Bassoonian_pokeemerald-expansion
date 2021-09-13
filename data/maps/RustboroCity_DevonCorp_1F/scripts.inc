@@ -107,12 +107,12 @@ DrivesLab_HeyKiddoComeBack::
 DrivesLab_Desk_Pollock::
 	lock
 	goto_if_set FLAG_SYS_POKENAV_GET, DrivesLab_Desk_Pollock_2
-	msgbox DrivesLab_Desk_Pollock_Text_1
+	msgbox DrivesLab_Desk_Pollock_Text_9
 	closemessage
 	playfanfare MUS_OBTAIN_ITEM
-	message DrivesLab_Desk_Pollock_Text_2
+	message DrivesLab_Desk_Pollock_Text_10
 	waitfanfare
-	msgbox DrivesLab_Desk_Pollock_Text_3
+	msgbox DrivesLab_Desk_Pollock_Text_11
 	closemessage
 	setflag FLAG_SYS_POKENAV_GET
 	goto DrivesLab_Desk_PollockTutorial
@@ -121,9 +121,57 @@ DrivesLab_Desk_Pollock_1:
 	return
 
 DrivesLab_Desk_Pollock_2:
-	msgbox DrivesLab_Desk_Pollock_Text_0
+	message DrivesLab_Desk_Pollock_Text_0
+	waitmessage
+	setvar VAR_0x8004, 0
+	special ScriptMenu_CreateDriveLabsPollockMultichoice
+	waitstate
+	special GetDriveLabsPollockSelection
+	switch VAR_RESULT
+	case 0, DrivesLab_Desk_Pollock_7
+	case 1, DrivesLab_Desk_Pollock_8
+	case 2, DrivesLab_Desk_Pollock_9
+	case 3, DrivesLab_Desk_Pollock_10
+	case 4, DrivesLab_Desk_Pollock_11
+	case 5, DrivesLab_Desk_Pollock_12
+	case 6, DrivesLab_Desk_Pollock_13
+	case 7, DrivesLab_Desk_Pollock_14
+	case MULTI_B_PRESSED, DrivesLab_Desk_Pollock_14
+DrivesLab_Desk_Pollock_5:
 	closemessage
 	goto DrivesLab_Desk_Pollock_1
+
+DrivesLab_Desk_Pollock_7:
+	msgbox DrivesLab_Desk_Pollock_Text_1
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_8:
+	msgbox DrivesLab_Desk_Pollock_Text_2
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_9:
+	msgbox DrivesLab_Desk_Pollock_Text_3
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_10:
+	msgbox DrivesLab_Desk_Pollock_Text_4
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_11:
+	msgbox DrivesLab_Desk_Pollock_Text_5
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_12:
+	msgbox DrivesLab_Desk_Pollock_Text_6
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_13:
+	msgbox DrivesLab_Desk_Pollock_Text_7
+	goto DrivesLab_Desk_Pollock_5
+
+DrivesLab_Desk_Pollock_14:
+	msgbox DrivesLab_Desk_Pollock_Text_8
+	goto DrivesLab_Desk_Pollock_5
 
 
 DrivesLab_Desk_PollockTutorial::
@@ -328,9 +376,59 @@ DrivesLab_HeyKiddoComeBack_Text_0:
 	.string "Hey, kid! Got a second?$"
 
 DrivesLab_Desk_Pollock_Text_0:
-	.string "drive help$"
+	.string "Hey, {PLAYER}! Any Drives you want to\n"
+	.string "know more about?$"
 
 DrivesLab_Desk_Pollock_Text_1:
+	.string "AreaDrive is your go-to map of the\n"
+	.string "entire Hanau region!\p"
+	.string "You can also take a closer look at the\n"
+	.string "layout of towns and cities by zooming\l"
+	.string "in.$"
+
+DrivesLab_Desk_Pollock_Text_2:
+	.string "DexDrive allows you to chase for\n"
+	.string "specific Pokémon.\p"
+	.string "As you keep encountering the same kind\n"
+	.string "of Pokémon, you may find stronger\l"
+	.string "specimens with unique moves!$"
+
+DrivesLab_Desk_Pollock_Text_3:
+	.string "TeleDrive lets you call anyone you've\n"
+	.string "registered, no matter how near or far.\p"
+	.string "Trainers you've fought before may call\n"
+	.string "you whenever they feel like battling\l"
+	.string "again!$"
+
+DrivesLab_Desk_Pollock_Text_4:
+	.string "SheenDrive lets you check on the\n"
+	.string "Condition of your party!\p"
+	.string "Useful if you want to know how far you\n"
+	.string "can still add to a Pokémon's Condition\l"
+	.string "when feeding them Ponuts.$"
+
+DrivesLab_Desk_Pollock_Text_5:
+	.string "BerryDrive is a special map for all your\n"
+	.string "Berry needs!\p"
+	.string "It'll display where you've planted\n"
+	.string "Berries all across the region.$"
+
+DrivesLab_Desk_Pollock_Text_6:
+	.string "StatDrive is an in-depth look at the\n"
+	.string "stats and potential of your party!\p"
+	.string "You'll also be able to check how much\n"
+	.string "your Pokémon have grown on you.$"
+
+DrivesLab_Desk_Pollock_Text_7:
+	.string "ForceDrive contains all kinds of\n"
+	.string "special powers to make your life just\l"
+	.string "that extra bit more convenient!$"
+
+DrivesLab_Desk_Pollock_Text_8:
+	.string "Right, then. That's good! If you need\n"
+	.string "something, you know where to find me!$"
+
+DrivesLab_Desk_Pollock_Text_9:
 	.string "Hello there! I'm Pollock, one of the\n"
 	.string "designers of the P-Drive.\p"
 	.string "I see this is your first time in here!\n"
@@ -339,10 +437,10 @@ DrivesLab_Desk_Pollock_Text_1:
 	.string "Here you go, my friend: a brand-new\n"
 	.string "P-Drive! All yours!$"
 
-DrivesLab_Desk_Pollock_Text_2:
+DrivesLab_Desk_Pollock_Text_10:
 	.string "{PLAYER} received a P-Drive.$"
 
-DrivesLab_Desk_Pollock_Text_3:
+DrivesLab_Desk_Pollock_Text_11:
 	.string "The P-Drive is quite the nifty little\n"
 	.string "gadget, if I do say so myself!\p"
 	.string "We're currently still developing\n"

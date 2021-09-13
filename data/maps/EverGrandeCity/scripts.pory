@@ -141,7 +141,7 @@ script FamilyEventC
 	playse(SE_CLICK)
 	delay(20)
 	playfanfare(MUS_OBTAIN_ITEM)
-	message("{PLAYER}'s P-Drive was upgraded\pwith the TeleDrive!")
+	message("{PLAYER}'s P-Drive was upgraded\nwith the TeleDrive!")
 	setflag(FLAG_SYS_MATCH_CALL_GET)
 	waitfanfare
 	msgbox(format("please call either of us to try it"))

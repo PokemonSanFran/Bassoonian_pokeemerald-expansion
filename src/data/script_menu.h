@@ -963,6 +963,18 @@ static const u8 *const sLilycoveSSTidalDestinations[SSTIDAL_SELECTION_COUNT] =
     [SSTIDAL_SELECTION_EXIT]            = gText_Exit,
 };
 
+static const u8 *const sDriveLabsChoices[DRIVELABS_SELECTION_COUNT] =
+{
+	[DRIVELABS_SELECTION_AREADRIVE]		= gText_Drive_AreaDrive,
+	[DRIVELABS_SELECTION_DEXDRIVE]		= gText_Drive_DexDrive,
+	[DRIVELABS_SELECTION_TELEDRIVE]		= gText_Drive_TeleDrive,
+	[DRIVELABS_SELECTION_SHEENDRIVE]	= gText_Drive_SheenDrive,
+	[DRIVELABS_SELECTION_BERRYDRIVE]	= gText_Drive_BerryDrive,
+	[DRIVELABS_SELECTION_STATDRIVE]		= gText_Drive_StatDrive,
+	[DRIVELABS_SELECTION_FORCEDRIVE]	= gText_Drive_ForceDrive,
+	[DRIVELABS_SELECTION_EXIT]			= gText_Exit,
+};
+
 static const u8 *const sCableClubOptions_WithRecordMix[] =
 {
     CableClub_Text_TradeUsingLinkCable,

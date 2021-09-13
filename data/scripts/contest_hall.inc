@@ -1918,4 +1918,4 @@ ContestHall_Text_LetsAppeal:
 	.string "Let's appeal!$"
 
 LilycoveCity_ContestLobby_Text_ContestDrive:
-	.string "{PLAYER}'s P-Drive was upgraded\pwith the SheenDrive!$"
+	.string "{PLAYER}'s P-Drive was upgraded\nwith the SheenDrive!$"

@@ -389,16 +389,16 @@
       "type": "trigger",
       "x": 20,
       "y": 61,
-      "elevation": 0,
+      "elevation": 3,
       "var": "VAR_BIRCH_LAB_STATE",
       "var_value": "0",
-      "script": "FamilyEventB"
+      "script": "Borago_PushAwayPlayerWithoutDrive"
     },
     {
       "type": "trigger",
       "x": 20,
       "y": 62,
-      "elevation": 0,
+      "elevation": 3,
       "var": "VAR_BIRCH_LAB_STATE",
       "var_value": "0",
       "script": "Borago_PushAwayPlayerWithoutDrive"
@@ -407,7 +407,7 @@
       "type": "trigger",
       "x": 20,
       "y": 63,
-      "elevation": 0,
+      "elevation": 3,
       "var": "VAR_BIRCH_LAB_STATE",
       "var_value": "0",
       "script": "Borago_PushAwayPlayerWithoutDrive"

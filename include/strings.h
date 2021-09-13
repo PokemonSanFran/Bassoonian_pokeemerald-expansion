@@ -749,6 +749,14 @@ extern const u8 gText_NavelRock[];
 extern const u8 gText_BirthIsland[];
 extern const u8 gText_FarawayIsland[];
 
+extern const u8 gText_Drive_AreaDrive[];
+extern const u8 gText_Drive_DexDrive[];
+extern const u8 gText_Drive_TeleDrive[];
+extern const u8 gText_Drive_SheenDrive[];
+extern const u8 gText_Drive_BerryDrive[];
+extern const u8 gText_Drive_StatDrive[];
+extern const u8 gText_Drive_ForceDrive[];
+
 extern const u8 gText_BattleTrainers[];
 extern const u8 gText_BattleBasics[];
 extern const u8 gText_PokemonNature[];

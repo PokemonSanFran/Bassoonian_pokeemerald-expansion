@@ -23,6 +23,7 @@
 static EWRAM_DATA u8 sProcessInputDelay = 0;
 
 static u8 sLilycoveSSTidalSelections[SSTIDAL_SELECTION_COUNT];
+static u8 sDriveLabsPollockSelections[DRIVELABS_SELECTION_COUNT];
 
 static void Task_HandleMultichoiceInput(u8 taskId);
 static void Task_HandleYesNoInput(u8 taskId);
@@ -32,6 +33,7 @@ static void InitMultichoiceCheckWrap(bool8 ignoreBPress, u8 count, u8 windowId, 
 static void DrawLinkServicesMultichoiceMenu(u8 multichoiceId);
 static void CreatePCMultichoice(void);
 static void CreateLilycoveSSTidalMultichoice(void);
+static void CreateDriveLabsPollockMultichoice(void);
 static bool8 IsPicboxClosed(void);
 static void CreateStartMenuForPokenavTutorial(void);
 static void InitMultichoiceNoWrap(bool8 ignoreBPress, u8 unusedCount, u8 windowId, u8 multichoiceId);
@@ -426,6 +428,20 @@ bool8 ScriptMenu_CreateLilycoveSSTidalMultichoice(void)
     }
 }
 
+bool8 ScriptMenu_CreateDriveLabsPollockMultichoice(void)
+{
+    if (FuncIsActiveTask(Task_HandleMultichoiceInput) == TRUE)
+    {
+        return FALSE;
+    }
+    else
+    {
+        gSpecialVar_Result = 0xFF;
+        CreateDriveLabsPollockMultichoice();
+        return TRUE;
+    }
+}
+
 // gSpecialVar_0x8004 is 1 if the Sailor was shown multiple event tickets at the same time
 // otherwise gSpecialVar_0x8004 is 0
 static void CreateLilycoveSSTidalMultichoice(void)
@@ -567,11 +583,120 @@ static void CreateLilycoveSSTidalMultichoice(void)
     }
 }
 
+static void CreateDriveLabsPollockMultichoice(void)
+{
+    u8 selectionCount = 0;
+    u8 count;
+    u32 pixelWidth;
+    u8 width;
+    u8 windowId;
+    u8 i;
+    u32 j;
+
+    for (i = 0; i < DRIVELABS_SELECTION_COUNT; i++)
+    {
+        sDriveLabsPollockSelections[i] = 0xFF;
+    }
+
+    GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH);
+	
+	if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_AREADRIVE;
+		selectionCount++;
+	}
+	
+	if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_DEXDRIVE;
+		selectionCount++;
+	}
+	
+	if (FlagGet(FLAG_SYS_MATCH_CALL_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_TELEDRIVE;
+		selectionCount++;
+	}
+	
+	if (FlagGet(FLAG_SYS_CONDITION_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_SHEENDRIVE;
+		selectionCount++;
+	}
+	
+	if (FlagGet(FLAG_SYS_BERRYDRIVE_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_BERRYDRIVE;
+		selectionCount++;
+	}
+	
+	if (FlagGet(FLAG_SYS_STATDRIVE_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_STATDRIVE;
+		selectionCount++;
+	}
+
+	if (FlagGet(FLAG_SYS_FORCEDRIVE_GET) == TRUE)
+	{
+		sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_FORCEDRIVE;
+		selectionCount++;
+	}
+
+    sDriveLabsPollockSelections[selectionCount] = DRIVELABS_SELECTION_EXIT;
+    selectionCount++;
+
+    count = selectionCount;
+    if (count > 6)
+    {
+		//FIX THIS LATER!
+        gSpecialVar_0x8004 = SCROLL_MULTI_SS_TIDAL_DESTINATION;
+        ShowScrollableMultichoice();
+    }
+    else
+    {
+        pixelWidth = 0;
+
+        for (j = 0; j < DRIVELABS_SELECTION_COUNT; j++)
+        {
+            u8 selection = sDriveLabsPollockSelections[j];
+            if (selection != 0xFF)
+            {
+                pixelWidth = DisplayTextAndGetWidth(sDriveLabsChoices[selection], pixelWidth);
+            }
+        }
+
+        width = ConvertPixelWidthToTileWidth(pixelWidth);
+        windowId = CreateWindowFromRect(MAX_MULTICHOICE_WIDTH - width, (6 - count) * 2, width, count * 2);
+        SetStandardWindowBorderStyle(windowId, 0);
+
+        for (selectionCount = 0, i = 0; i < DRIVELABS_SELECTION_COUNT; i++)
+        {
+            if (sDriveLabsPollockSelections[i] != 0xFF)
+            {
+                AddTextPrinterParameterized(windowId, 1, sDriveLabsChoices[sDriveLabsPollockSelections[i]], 8, selectionCount * 16 + 1, TEXT_SPEED_FF, NULL);
+                selectionCount++;
+            }
+        }
+
+        InitMenuInUpperLeftCornerPlaySoundWhenAPressed(windowId, count, count - 1);
+        CopyWindowToVram(windowId, 3);
+        InitMultichoiceCheckWrap(FALSE, count, windowId, MULTI_SSTIDAL_LILYCOVE);
+    }
+}
+
 void GetLilycoveSSTidalSelection(void)
 {
     if (gSpecialVar_Result != MULTI_B_PRESSED)
     {
         gSpecialVar_Result = sLilycoveSSTidalSelections[gSpecialVar_Result];
+    }
+}
+
+void GetDriveLabsPollockSelection(void)
+{
+    if (gSpecialVar_Result != MULTI_B_PRESSED)
+    {
+        gSpecialVar_Result = sDriveLabsPollockSelections[gSpecialVar_Result];
     }
 }
 

@@ -524,7 +524,7 @@ FamilyEventC_Text_0:
 	.string "hey here's a match call$"
 
 FamilyEventC_Text_1:
-	.string "{PLAYER}'s P-Drive was upgraded\pwith the TeleDrive!$"
+	.string "{PLAYER}'s P-Drive was upgraded\nwith the TeleDrive!$"
 
 FamilyEventC_Text_2:
 	.string "please call either of us to try it$"
