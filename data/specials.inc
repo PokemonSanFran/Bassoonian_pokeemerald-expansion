@@ -482,6 +482,7 @@ gSpecials::
 	def_special ShowFrontierGamblerGoMessage
 	def_special Script_DoRayquazaScene
 	def_special OpenPokenavForTutorial
+	def_special OpenPokenavForTutorial2
 	def_special ScriptMenu_CreateStartMenuForPokenavTutorial
 	def_special CountPlayerTrainerStars
 	def_special BufferBattleFrontierTutorMoveName

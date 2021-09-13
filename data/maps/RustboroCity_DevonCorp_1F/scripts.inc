@@ -137,7 +137,7 @@ DrivesLab_Desk_PollockTutorial::
 	case 5, DrivesLab_Desk_PollockTutorial_PleaseSelect
 	case 6, DrivesLab_Desk_PollockTutorial_PleaseSelect
 	case MULTI_B_PRESSED, DrivesLab_Desk_PollockTutorial_PleaseSelect
-	special OpenPokenavForTutorial
+	special OpenPokenavForTutorial2
 	waitstate
 	delay 20
 	goto DrivesLab_Desk_PollockTutorial_End

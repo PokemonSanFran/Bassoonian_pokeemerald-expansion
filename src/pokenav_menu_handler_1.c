@@ -27,6 +27,8 @@ static u32 HandleConditionMenuInput(struct Pokenav1Struct *state);
 static u32 HandleCantOpenRibbonsInput(struct Pokenav1Struct *state);
 static u32 HandleMainMenuInputEndTutorial(struct Pokenav1Struct *state);
 static u32 HandleMainMenuInputTutorial(struct Pokenav1Struct *state);
+static u32 HandleMainMenuInputEndTutorial2(struct Pokenav1Struct *state);
+static u32 HandleMainMenuInputTutorial2(struct Pokenav1Struct *state);
 static u32 HandleMainMenuInput(struct Pokenav1Struct *state);
 static u32 (*GetMainMenuInputHandler(void))(struct Pokenav1Struct*);
 static void SetMenuInputHandler(struct Pokenav1Struct *state);
@@ -186,7 +188,7 @@ static void SetMenuInputHandler(struct Pokenav1Struct *state)
     switch (state->menuType)
     {
     case POKENAV_MENU_TYPE_DEFAULT:
-        SetPokenavMode(POKENAV_MODE_NORMAL);
+        //SetPokenavMode(POKENAV_MODE_NORMAL); // GRCCOMMENT if anything breaks in the feature, check this lol
         // fallthrough
     case POKENAV_MENU_TYPE_UNLOCK_MC:
 	case POKENAV_MENU_TYPE_UNLOCK_CONDITION:
@@ -214,6 +216,10 @@ static u32 (*GetMainMenuInputHandler(void))(struct Pokenav1Struct*)
         return HandleMainMenuInputTutorial;
     case POKENAV_MODE_FORCE_CALL_EXIT:
         return HandleMainMenuInputEndTutorial;
+	case POKENAV_MODE_FORCE_MAP_READY:
+	    return HandleMainMenuInputTutorial2;
+	case POKENAV_MODE_FORCE_MAP_EXIT:
+	    return HandleMainMenuInputEndTutorial2;
     }
 }
 
@@ -322,6 +328,69 @@ static u32 HandleMainMenuInputEndTutorial(struct Pokenav1Struct *state)
         {
             state->helpBarIndex = HELPBAR_MC_TRAINER_LIST;
             SetMenuIdAndCB(state, POKENAV_MATCH_CALL);
+            return POKENAV_MENU_FUNC_OPEN_FEATURE;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        return -1;
+    }
+    return POKENAV_MENU_FUNC_NONE;
+}
+
+// Force the player to select Map during map tutorial
+static u32 HandleMainMenuInputTutorial2(struct Pokenav1Struct *state)
+{
+    if (UpdateMenuCursorPos(state))
+        return POKENAV_MENU_FUNC_MOVE_CURSOR;
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        if (sMenuItems[state->menuType][state->cursorPos] == POKENAV_MENUITEM_MAP)
+        {
+            SetPokenavMode(POKENAV_MODE_FORCE_MAP_EXIT);
+            state->helpBarIndex = gSaveBlock2Ptr->regionMapZoom ? HELPBAR_MAP_ZOOMED_IN : HELPBAR_MAP_ZOOMED_OUT;
+            SetMenuIdAndCB(state, POKENAV_REGION_MAP);
+            return POKENAV_MENU_FUNC_OPEN_FEATURE;
+        }
+        else
+        {
+            PlaySE(SE_FAILURE);
+            return POKENAV_MENU_FUNC_NONE;
+        }
+    }
+
+    if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_FAILURE);
+        return POKENAV_MENU_FUNC_NONE;
+    }
+
+    return POKENAV_MENU_FUNC_NONE;
+}
+
+// After checking map in tutorial
+static u32 HandleMainMenuInputEndTutorial2(struct Pokenav1Struct *state)
+{
+    if (UpdateMenuCursorPos(state))
+        return POKENAV_MENU_FUNC_MOVE_CURSOR;
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        u32 menuItem = sMenuItems[state->menuType][state->cursorPos];
+        if (menuItem != POKENAV_MENUITEM_MAP && menuItem != POKENAV_MENUITEM_SWITCH_OFF)
+        {
+            PlaySE(SE_FAILURE);
+            return POKENAV_MENU_FUNC_NONE;
+        }
+        else if (menuItem == POKENAV_MENUITEM_MAP)
+        {
+            state->helpBarIndex = gSaveBlock2Ptr->regionMapZoom ? HELPBAR_MAP_ZOOMED_IN : HELPBAR_MAP_ZOOMED_OUT;
+            SetMenuIdAndCB(state, POKENAV_REGION_MAP);
             return POKENAV_MENU_FUNC_OPEN_FEATURE;
         }
         else

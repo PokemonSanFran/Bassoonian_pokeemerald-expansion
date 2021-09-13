@@ -48,6 +48,7 @@ static void Task_RunLoopedTask_LinkMode(u8 a0);
 static void Task_RunLoopedTask(u8 taskId);
 static void Task_Pokenav(u8 taskId);
 static void CB2_InitPokenavForTutorial(void);
+static void CB2_InitPokenavForTutorial2(void);
 
 // TODO: Use MENU ids
 const struct PokenavCallbacks PokenavMenuCallbacks[15] =
@@ -352,6 +353,37 @@ static void CB2_InitPokenavForTutorial(void)
     {
         InitPokenavResources(gPokenavResources);
         gPokenavResources->mode = POKENAV_MODE_FORCE_CALL_READY;
+        ResetTasks();
+        ResetSpriteData();
+        FreeAllSpritePalettes();
+        SetVBlankCallback(NULL);
+        CreateTask(Task_Pokenav, 0);
+        SetMainCallback2(CB2_Pokenav);
+        SetVBlankCallback(VBlankCB_Pokenav);
+    }
+}
+
+void OpenPokenavForTutorial2(void)
+{
+    SetMainCallback2(CB2_InitPokenavForTutorial2);
+    FadeScreen(FADE_TO_BLACK, 0);
+}
+
+static void CB2_InitPokenavForTutorial2(void)
+{
+    UpdatePaletteFade();
+    if (gPaletteFade.active)
+        return;
+
+    gPokenavResources = Alloc(sizeof(*gPokenavResources));
+    if (gPokenavResources == NULL)
+    {
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    }
+    else
+    {
+        InitPokenavResources(gPokenavResources);
+        gPokenavResources->mode = POKENAV_MODE_FORCE_MAP_READY;
         ResetTasks();
         ResetSpriteData();
         FreeAllSpritePalettes();

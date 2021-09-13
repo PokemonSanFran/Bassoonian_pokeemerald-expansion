@@ -63,6 +63,8 @@ enum
     POKENAV_MODE_NORMAL,           // Chosen from Start menu.
     POKENAV_MODE_FORCE_CALL_READY, // Pokenav tutorial before calling Mr. Stone
     POKENAV_MODE_FORCE_CALL_EXIT,  // Pokenav tutorial after calling Mr. Stone
+	POKENAV_MODE_FORCE_MAP_READY,  // Map tutorial beofre checking map
+	POKENAV_MODE_FORCE_MAP_EXIT,   // Map tutorial after checking map
 };
 
 // TODO - refine these names
