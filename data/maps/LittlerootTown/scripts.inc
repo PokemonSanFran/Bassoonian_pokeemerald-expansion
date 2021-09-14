@@ -256,7 +256,7 @@ Turpia_ScientistR1Block::
 
 Turpia_SigurdCameo::
 	lock
-	goto_if_set FLAG_GRC_TURPIA_HIDE_RIVALS, Turpia_SigurdCameo_2
+	goto_if_set FLAG_SYS_POKEMON_GET, Turpia_SigurdCameo_2
 	goto_if_unset FLAG_TEMP_1F, Turpia_SigurdCameo_5
 	msgbox Turpia_SigurdCameo_Text_3, MSGBOX_NPC
 Turpia_SigurdCameo_1:

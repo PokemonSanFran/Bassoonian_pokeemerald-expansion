@@ -225,7 +225,7 @@ script Turpia_ScientistR1Block {
 
 script Turpia_SigurdCameo {
 	lock
-	if (flag(FLAG_GRC_TURPIA_HIDE_RIVALS))
+	if (flag(FLAG_SYS_POKEMON_GET))
 	{
 		msgbox(format("{PLAYER}, {RIVAL}, Tori… Something tells me I will hear from you again."),MSGBOX_NPC)
 	}
