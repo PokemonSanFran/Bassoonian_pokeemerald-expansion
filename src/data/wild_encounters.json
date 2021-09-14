@@ -85,12 +85,12 @@
               {
                 "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 4,
@@ -313,7 +313,7 @@
               {
                 "min_level": 8,
                 "max_level": 9,
-                "species": "SPECIES_SHINX"
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 8,
@@ -323,7 +323,7 @@
               {
                 "min_level": 8,
                 "max_level": 9,
-                "species": "SPECIES_SHINX"
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 8,
@@ -472,12 +472,12 @@
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_HOOTHOOT"
               },
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_STARLY"
+                "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 5,
@@ -3026,17 +3026,7 @@
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_DWEBBLE"
-              },
-              {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_DWEBBLE"
-              },
-              {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_POLIWAG"
+                "species": "SPECIES_WINGULL"
               },
               {
                 "min_level": 7,
@@ -3054,14 +3044,24 @@
                 "species": "SPECIES_DWEBBLE"
               },
               {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_DWEBBLE"
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_SANDYGAST"
               },
               {
-                "min_level": 7,
-                "max_level": 8,
-                "species": "SPECIES_DWEBBLE"
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_SANDYGAST"
+              },
+              {
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_SANDYGAST"
+              },
+              {
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_SANDYGAST"
               }
             ]
           },
