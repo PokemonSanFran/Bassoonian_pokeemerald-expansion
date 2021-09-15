@@ -4,6 +4,7 @@
 #include "main.h"
 #include "sound.h"
 #include "constants/songs.h"
+#include "dexnav.h"
 
 struct Pokenav1Struct
 {
@@ -56,7 +57,8 @@ static const u8 sMenuItems[][6] =
     {
         POKENAV_MENUITEM_MAP,
         POKENAV_MENUITEM_MATCH_CALL,
-        [2 ... 5] = POKENAV_MENUITEM_SWITCH_OFF
+		POKENAV_MENUITEM_RIBBONS,
+        [3 ... 5] = POKENAV_MENUITEM_SWITCH_OFF
     },
     [POKENAV_MENU_TYPE_UNLOCK_MC_RIBBONS] =
     {
@@ -77,7 +79,8 @@ static const u8 sMenuItems[][6] =
 		POKENAV_MENUITEM_MAP,
         POKENAV_MENUITEM_CONDITION,
         POKENAV_MENUITEM_MATCH_CALL,
-        [3 ... 5] = POKENAV_MENUITEM_SWITCH_OFF
+		POKENAV_MENUITEM_RIBBONS,
+        [4 ... 5] = POKENAV_MENUITEM_SWITCH_OFF
 	},
     [POKENAV_MENU_TYPE_CONDITION] =
     {
@@ -258,7 +261,7 @@ static u32 HandleMainMenuInput(struct Pokenav1Struct *state)
             SetMenuIdAndCB(state, POKENAV_MATCH_CALL);
             return POKENAV_MENU_FUNC_OPEN_FEATURE;
         case POKENAV_MENUITEM_RIBBONS:
-            if (CanViewRibbonsMenu())
+            /*if (CanViewRibbonsMenu())
             {
                 state->helpBarIndex = HELPBAR_RIBBONS_MON_LIST;
                 SetMenuIdAndCB(state, POKENAV_RIBBONS_MON_LIST);
@@ -268,7 +271,9 @@ static u32 HandleMainMenuInput(struct Pokenav1Struct *state)
             {
                 state->callback = HandleCantOpenRibbonsInput;
                 return POKENAV_MENU_FUNC_NO_RIBBON_WINNERS;
-            }
+            }*/
+			DexNavGuiInit(CB2_InitPokeNav);
+			return POKENAV_MENU_FUNC_OPEN_FEATURE;
         case POKENAV_MENUITEM_SWITCH_OFF:
             return POKENAV_MENU_FUNC_EXIT;
         }

@@ -1,6 +1,8 @@
 #ifndef GUARD_DEXNAV_H
 #define GUARD_DEXNAV_H
 
+#include "main.h"
+
 #define DEXNAV_TIMEOUT                  15  //15 seconds is the time out. Max of 1092 seconds allowed
 #define SNEAKING_PROXIMITY              4   //Tile amount
 #define CREEPING_PROXIMITY              2
@@ -128,6 +130,7 @@ void ResetDexNavSearch(void);
 bool8 TryFindHiddenPokemon(void);
 bool8 DexNavTryMakeShinyMon(void);
 void IncrementDexNavChain(void);
+void DexNavGuiInit(MainCallback callback);
 
 //ewram
 extern u8 gCurrentDexNavChain;
