@@ -1702,6 +1702,10 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER - 1] = NATIONAL_DEX_CALYREX,
     [SPECIES_CALYREX_SHADOW_RIDER - 1] = NATIONAL_DEX_CALYREX,
+	
+	//Custom
+	[SPECIES_PSYDUCK_HANAUAN - 1] = NATIONAL_DEX_PSYDUCK,
+	[SPECIES_GOLDUCK_HANAUAN - 1] = NATIONAL_DEX_GOLDUCK,
 };
 
 const u16 gHoennToNationalOrder[HOENN_DEX_COUNT] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
@@ -3007,6 +3011,10 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_ROTOM_FAN - 1]     = ANIM_FIGURE_8,
     [SPECIES_ROTOM_MOW - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ROTOM_WASH - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
+	
+	// Custom
+    [SPECIES_PSYDUCK_HANAUAN - 1]       = ANIM_V_JUMPS_H_JUMPS,
+    [SPECIES_GOLDUCK_HANAUAN - 1]       = ANIM_H_SHAKE_SLOW,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

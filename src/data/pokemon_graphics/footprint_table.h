@@ -651,4 +651,6 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_MELOETTA] = gMonFootprint_Meloetta,
     [SPECIES_GENESECT] = gMonFootprint_Genesect,
     [SPECIES_EGG] = gMonFootprint_Bulbasaur,
+    [SPECIES_PSYDUCK_HANAUAN] = gMonFootprint_PsyduckHanauan,
+    [SPECIES_GOLDUCK_HANAUAN] = gMonFootprint_GolduckHanauan,
 };

@@ -1235,6 +1235,8 @@ const u8 *const gMonIconTable[] =
     [SPECIES_CALYREX_ICE_RIDER] = gMonIcon_QuestionMark,//gMonIcon_CalyrexIceRider,
     [SPECIES_CALYREX_SHADOW_RIDER] = gMonIcon_QuestionMark,//gMonIcon_CalyrexShadowRider,
     [SPECIES_EGG] = gMonIcon_Egg,
+    [SPECIES_PSYDUCK_HANAUAN] = gMonIcon_PsyduckHanauan,
+    [SPECIES_GOLDUCK_HANAUAN] = gMonIcon_GolduckHanauan,
 };
 
 const u8 *const gMonIconTableFemale[] =
@@ -2416,6 +2418,8 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_CALYREX_ICE_RIDER] = 0,
     [SPECIES_CALYREX_SHADOW_RIDER] = 0,
     [SPECIES_EGG] = 1,
+    [SPECIES_PSYDUCK_HANAUAN] = 1,
+    [SPECIES_GOLDUCK_HANAUAN] = 0,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

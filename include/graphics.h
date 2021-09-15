@@ -6470,6 +6470,39 @@ extern const u8 gMonFootprint_Keldeo[];
 extern const u8 gMonFootprint_Meloetta[];
 extern const u8 gMonFootprint_Genesect[];
 
+//Custom forms
+extern const u32 gMonFrontPic_PsyduckHanauan[];
+extern const u32 gMonPalette_PsyduckHanauan[];
+extern const u32 gMonBackPic_PsyduckHanauan[];
+extern const u32 gMonShinyPalette_PsyduckHanauan[];
+extern const u32 gMonStillFrontPic_PsyduckHanauan[];
+extern const u8 gMonIcon_PsyduckHanauan[];
+extern const u8 gMonFootprint_PsyduckHanauan[];
+
+extern const u32 gMonFrontPic_GolduckHanauan[];
+extern const u32 gMonPalette_GolduckHanauan[];
+extern const u32 gMonBackPic_GolduckHanauan[];
+extern const u32 gMonShinyPalette_GolduckHanauan[];
+extern const u32 gMonStillFrontPic_GolduckHanauan[];
+extern const u8 gMonIcon_GolduckHanauan[];
+extern const u8 gMonFootprint_GolduckHanauan[];
+
+extern const u32 gMonFrontPic_FinneonHanauan[];
+extern const u32 gMonPalette_FinneonHanauan[];
+extern const u32 gMonBackPic_FinneonHanauan[];
+extern const u32 gMonShinyPalette_FinneonHanauan[];
+extern const u32 gMonStillFrontPic_FinneonHanauan[];
+extern const u8 gMonIcon_FinneonHanauan[];
+extern const u8 gMonFootprint_FinneonHanauan[];
+
+extern const u32 gMonFrontPic_LumineonHanauan[];
+extern const u32 gMonPalette_LumineonHanauan[];
+extern const u32 gMonBackPic_LumineonHanauan[];
+extern const u32 gMonShinyPalette_LumineonHanauan[];
+extern const u32 gMonStillFrontPic_LumineonHanauan[];
+extern const u8 gMonIcon_LumineonHanauan[];
+extern const u8 gMonFootprint_LumineonHanauan[];
+
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];
 extern const u32 gTrainerFrontPic_AquaGruntM[];

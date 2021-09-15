@@ -24751,4 +24751,8 @@ const u32 gTMHMLearnsets[][2] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM12_TAUNT)),
+	
+	[SPECIES_PSYDUCK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+	
+	[SPECIES_GOLDUCK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 };

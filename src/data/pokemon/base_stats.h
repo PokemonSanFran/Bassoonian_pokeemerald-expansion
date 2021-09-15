@@ -33943,4 +33943,52 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
+	
+    [SPECIES_PSYDUCK_HANAUAN] =
+    {
+        .baseHP        = 45,
+        .baseAttack    = 42,
+        .baseDefense   = 38,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 60,
+        .type1 = TYPE_WATER,
+        .type2 = TYPE_PSYCHIC,
+        .catchRate = 190, //To verify
+        .expYield = 64, //To verify
+        .evYield_SpAttack  = 1, //To verify
+        .genderRatio = PERCENT_FEMALE(50), //To verify
+        .eggCycles = 20, //To verify
+        .friendship = 70, //To verify
+        .growthRate = GROWTH_MEDIUM_FAST, //To verify
+        .eggGroup1 = EGG_GROUP_WATER_1, //To verify
+        .eggGroup2 = EGG_GROUP_FIELD, //To verify
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_TRACE, ABILITY_WATER_ABSORB},
+        .bodyColor = BODY_COLOR_YELLOW, //To verify
+        .noFlip = FALSE,
+    },
+
+    [SPECIES_GOLDUCK_HANAUAN] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 62,
+        .baseDefense   = 58,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 100,
+        .type1 = TYPE_WATER,
+        .type2 = TYPE_PSYCHIC,
+        .catchRate = 75, //To verify
+        .expYield = 175, //To verify
+        .evYield_SpAttack  = 2, //To verify
+        .genderRatio = PERCENT_FEMALE(50), //To verify
+        .eggCycles = 20, //To verify
+        .friendship = 70, //To verify
+        .growthRate = GROWTH_MEDIUM_FAST, //To verify
+        .eggGroup1 = EGG_GROUP_WATER_1, //To verify
+        .eggGroup2 = EGG_GROUP_FIELD, //To verify
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_TRACE, ABILITY_WATER_ABSORB},
+        .bodyColor = BODY_COLOR_BLUE, //To verify
+        .noFlip = FALSE,
+    },
 };

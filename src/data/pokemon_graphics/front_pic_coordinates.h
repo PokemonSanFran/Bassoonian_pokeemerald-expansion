@@ -6107,4 +6107,15 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x33,
         .y_offset = 20,
     },
+	//Custom
+    [SPECIES_PSYDUCK_HANAUAN] =
+    {
+        .size = 0x56,
+        .y_offset = 11,
+    },
+    [SPECIES_GOLDUCK_HANAUAN] =
+    {
+        .size = 0x78,
+        .y_offset = 2,
+    },
 };

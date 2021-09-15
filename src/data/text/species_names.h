@@ -1274,4 +1274,8 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = _("Calyrex"),
     [SPECIES_CALYREX_SHADOW_RIDER] = _("Calyrex"),
+	
+	//Custom
+    [SPECIES_PSYDUCK_HANAUAN] = _("Psyduck"),
+    [SPECIES_GOLDUCK_HANAUAN] = _("Golduck"),
 };

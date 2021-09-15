@@ -10595,4 +10595,8 @@ static const u32 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWIFT)),
+	
+	[SPECIES_PSYDUCK_HANAUAN]       = TUTOR_LEARNSET(0),
+	
+	[SPECIES_GOLDUCK_HANAUAN]       = TUTOR_LEARNSET(0),
 };

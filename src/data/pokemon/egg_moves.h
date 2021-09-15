@@ -4409,6 +4409,14 @@ const u16 gEggMoves[] = {
         MOVE_FAKE_OUT,
         MOVE_PSYCHO_SHIFT,
         MOVE_HEAL_PULSE),
+		
+    egg_moves(PSYDUCK_HANAUAN,
+        MOVE_MUD_BOMB,
+		MOVE_CLEAR_SMOG,
+		MOVE_YAWN,
+		MOVE_ENCORE,
+		MOVE_SIMPLE_BEAM,
+		MOVE_REFRESH),
 
     EGG_MOVES_TERMINATOR
 };

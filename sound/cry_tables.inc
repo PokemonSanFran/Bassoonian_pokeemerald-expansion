@@ -1271,6 +1271,9 @@ gCryTable::
 	@ Calyrex
 	cry_uncomp Cry_CalyrexIceRider
 	cry_uncomp Cry_CalyrexShadowRider
+	@ Custom
+	cry Cry_Psyduck
+	cry Cry_Golduck
 
 	.align 2
 gCryTable2::
@@ -2545,3 +2548,6 @@ gCryTable2::
 	@ Calyrex
 	cry2_uncomp Cry_CalyrexIceRider
 	cry2_uncomp Cry_CalyrexShadowRider
+	@ Custom
+	cry2 Cry_Psyduck
+	cry2 Cry_Golduck

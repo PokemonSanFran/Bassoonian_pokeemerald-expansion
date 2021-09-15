@@ -1273,6 +1273,9 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(CALYREX_SHADOW_RIDER, gMonShinyPalette_CalyrexShadowRider),
 
     SPECIES_SHINY_PAL(EGG, gMonPalette_Egg),
+	
+    SPECIES_SHINY_PAL(PSYDUCK_HANAUAN, gMonShinyPalette_PsyduckHanauan),
+    SPECIES_SHINY_PAL(GOLDUCK_HANAUAN, gMonShinyPalette_GolduckHanauan),
 };
 
 const struct CompressedSpritePalette gMonShinyPaletteTableFemale[] =

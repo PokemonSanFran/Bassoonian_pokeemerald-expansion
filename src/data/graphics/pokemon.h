@@ -6402,3 +6402,32 @@ const u8 gMonFootprint_Kyurem[] = INCBIN_U8("graphics/pokemon/kyurem/footprint.1
 const u8 gMonFootprint_Keldeo[] = INCBIN_U8("graphics/pokemon/keldeo/footprint.1bpp");
 const u8 gMonFootprint_Meloetta[] = INCBIN_U8("graphics/pokemon/meloetta/footprint.1bpp");
 const u8 gMonFootprint_Genesect[] = INCBIN_U8("graphics/pokemon/genesect/footprint.1bpp");
+
+//Custom forms
+const u32 gMonFrontPic_PsyduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_psyduck/anim_front.4bpp.lz");
+const u32 gMonPalette_PsyduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_psyduck/normal.gbapal.lz");
+const u32 gMonBackPic_PsyduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_psyduck/back.4bpp.lz");
+const u32 gMonShinyPalette_PsyduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_psyduck/shiny.gbapal.lz");
+const u8 gMonIcon_PsyduckHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_psyduck/icon.4bpp");
+const u8 gMonFootprint_PsyduckHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_psyduck/footprint.1bpp");
+
+const u32 gMonFrontPic_GolduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_golduck/anim_front.4bpp.lz");
+const u32 gMonPalette_GolduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_golduck/normal.gbapal.lz");
+const u32 gMonBackPic_GolduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_golduck/back.4bpp.lz");
+const u32 gMonShinyPalette_GolduckHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_golduck/shiny.gbapal.lz");
+const u8 gMonIcon_GolduckHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_golduck/icon.4bpp");
+const u8 gMonFootprint_GolduckHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_golduck/footprint.1bpp");
+
+const u32 gMonFrontPic_FinneonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_finneon/anim_front.4bpp.lz");
+const u32 gMonPalette_FinneonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_finneon/normal.gbapal.lz");
+const u32 gMonBackPic_FinneonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_finneon/back.4bpp.lz");
+const u32 gMonShinyPalette_FinneonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_finneon/shiny.gbapal.lz");
+const u8 gMonIcon_FinneonHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_finneon/icon.4bpp");
+const u8 gMonFootprint_FinneonHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_finneon/footprint.1bpp");
+
+const u32 gMonFrontPic_LumineonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_lumineon/anim_front.4bpp.lz");
+const u32 gMonPalette_LumineonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_lumineon/normal.gbapal.lz");
+const u32 gMonBackPic_LumineonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_lumineon/back.4bpp.lz");
+const u32 gMonShinyPalette_LumineonHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_lumineon/shiny.gbapal.lz");
+const u8 gMonIcon_LumineonHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_lumineon/icon.4bpp");
+const u8 gMonFootprint_LumineonHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_lumineon/footprint.1bpp");
