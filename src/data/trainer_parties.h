@@ -6303,7 +6303,7 @@ static const struct TrainerMon sParty_GRC_JimAndJo1[] = {
     {
     .iv = 0,
     .lvl = 14,
-    .species = SPECIES_PSYDUCK,
+    .species = SPECIES_PSYDUCK_HANAUAN,
     },
     {
     .iv = 0,
