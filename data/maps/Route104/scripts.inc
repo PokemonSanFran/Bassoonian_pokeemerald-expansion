@@ -2,6 +2,65 @@ Route104_MapScripts::
 	.byte 0
 
 
+Route104_EventScript_Cindy::
+	trainerbattle_single TRAINER_GRC_DAVE_1, Route104_EventScript_Cindy_Text_0, Route104_EventScript_Cindy_Text_1, Route104_EventScript_TryRegisterCindyAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route104_EventScript_Cindy_1
+	setvar VAR_0x8004, TRAINER_GRC_DAVE_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route104_EventScript_Cindy_6
+Route104_EventScript_Cindy_5:
+	msgbox Route104_EventScript_Cindy_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+Route104_EventScript_Cindy_1:
+	trainerbattle_rematch TRAINER_GRC_DAVE_1, Route104_EventScript_Cindy_Text_2, Route104_EventScript_Cindy_Text_3
+	msgbox Route104_EventScript_Cindy_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+Route104_EventScript_Cindy_4:
+	call Route104_EventScript_RegisterCindy
+	return
+
+Route104_EventScript_Cindy_6:
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_Cindy_4
+	goto Route104_EventScript_Cindy_5
+
+
+Route104_EventScript_TryRegisterCindyAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_TryRegisterCindyAfterBattle_2
+Route104_EventScript_TryRegisterCindyAfterBattle_1:
+	release
+	return
+
+Route104_EventScript_TryRegisterCindyAfterBattle_2:
+	call Route104_EventScript_RegisterCindy
+	goto Route104_EventScript_TryRegisterCindyAfterBattle_1
+
+
+Route104_EventScript_RegisterCindy::
+	msgbox Route104_EventScript_RegisterCindy_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_DAVE_1
+	return
+
+
+Route104_EventScript_Ivan::
+	trainerbattle_single TRAINER_GRC_KYLE, Route104_EventScript_Ivan_Text_0, Route104_EventScript_Ivan_Text_1
+	msgbox Route104_EventScript_Ivan_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route104_EventScript_Billy::
+	trainerbattle_single TRAINER_GRC_KRISSY, Route104_EventScript_Billy_Text_0, Route104_EventScript_Billy_Text_1
+	msgbox Route104_EventScript_Billy_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
 @ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map. 
 @  These are labeled in DewfordTown/scripts.inc
 .set LOCALID_RIVAL, 34
@@ -864,16 +923,6 @@ Route104_Movement_BrineyExitBoat:
 @	walk_in_place_fastest_left
 @	step_end
 
-Route104_EventScript_Ivan::
-	trainerbattle_single TRAINER_GRC_KYLE, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
-	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route104_EventScript_Billy::
-	trainerbattle_single TRAINER_GRC_KRISSY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
-	msgbox Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route104_EventScript_Haley::
 	trainerbattle_single TRAINER_GRC_JULIET_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -958,49 +1007,6 @@ Route104_EventScript_RegisterWinston::
 Route104_EventScript_RematchWinston::
 	trainerbattle_rematch TRAINER_GRC_MAXIME_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
 	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
-	end
-
-Route104_EventScript_Cindy::
-	trainerbattle_single TRAINER_GRC_DAVE_1, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route104_EventScript_RematchCindy
-	setvar VAR_0x8004, TRAINER_GRC_DAVE_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route104_EventScript_TryRegisterCindy
-	msgbox Route104_Text_CindyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_TryRegisterCindyAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterCindyAfterBattle
-	release
-	end
-
-Route104_EventScript_RegisterCindyAfterBattle::
-	msgbox Route104_Text_CindyRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_DAVE_1
-	release
-	end
-
-Route104_EventScript_TryRegisterCindy::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterCindy
-	msgbox Route104_Text_CindyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_RegisterCindy::
-	msgbox Route104_Text_CindyRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_DAVE_1
-	release
-	end
-
-Route104_EventScript_RematchCindy::
-	trainerbattle_rematch TRAINER_GRC_DAVE_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
-	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Gina::
@@ -1194,3 +1200,63 @@ Route104_Text_BrendanPostBattle:
 @	.string "making POKéMON battle.\p"
 @	.string "Like MR. BRINEY, it's important to\n"
 @	.string "become friends with your POKéMON.$"
+
+Route104_EventScript_Cindy_Text_0:
+	.string "Hey, you know what happens when\n"
+	.string "Trainers meet?\p"
+	.string "Yeah, you do. Let's get this show on the\n"
+	.string "road!$"
+
+Route104_EventScript_Cindy_Text_1:
+	.string "Whoa, you're strong stuff! I couldn't\n"
+	.string "measure up…$"
+
+Route104_EventScript_Cindy_Text_2:
+	.string "Hey, you know what? Me and my Pokémon\n"
+	.string "have gotten stronger since last time!\p"
+	.string "Let's get this show on the road!$"
+
+Route104_EventScript_Cindy_Text_3:
+	.string "Aw, seriously? Guess I gotta train\n"
+	.string "harder…$"
+
+Route104_EventScript_Cindy_Text_4:
+	.string "I shouldn't be rushing myself or my\n"
+	.string "Pokémon. We may have a long way to go,\l"
+	.string "but we'll get there in time. I shouldn't\l"
+	.string "lose sight of that.$"
+
+Route104_EventScript_Cindy_Text_5:
+	.string "I gotta get stronger. Someday, I wanna\n"
+	.string "challenge the best of the best… and\l"
+	.string "come out on top! You just watch!$"
+
+Route104_EventScript_RegisterCindy_Text_0:
+	.string "Oh, hey! You got a P-Drive? Why don't I\n"
+	.string "give you my number?\p"
+	.string "I'll call you if I'm feeling like fighting\n"
+	.string "you again!$"
+
+Route104_EventScript_Ivan_Text_0:
+	.string "Ready or not, we're gonna kick your\n"
+	.string "butt!$"
+
+Route104_EventScript_Ivan_Text_1:
+	.string "Ow, ow, ow! Uncle! I said Uncle!$"
+
+Route104_EventScript_Ivan_Text_2:
+	.string "I was always the toughest kid on the\n"
+	.string "block. Guess there's bigger fish in the\l"
+	.string "pond now, huh?$"
+
+Route104_EventScript_Billy_Text_0:
+	.string "My Pokémon are the cutest! But they're\n"
+	.string "even stronger than they're cute!$"
+
+Route104_EventScript_Billy_Text_1:
+	.string "No! My little cuties! Are you okay?!$"
+
+Route104_EventScript_Billy_Text_2:
+	.string "I like to pamper my Pokémon, especially\n"
+	.string "since they always do their best for me.\l"
+	.string "They're the best!$"

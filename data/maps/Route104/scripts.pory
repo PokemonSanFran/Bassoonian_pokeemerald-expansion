@@ -1,6 +1,63 @@
 mapscripts Route104_MapScripts
 {}
 
+//DAVE SCRIPTS
+script Route104_EventScript_Cindy
+{
+	trainerbattle_single(TRAINER_GRC_DAVE_1,format("Hey, you know what happens when Trainers meet?\pYeah, you do. Let's get this show on the road!"),format("Whoa, you're strong stuff! I couldn't measure up…"),Route104_EventScript_TryRegisterCindyAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch(TRAINER_GRC_DAVE_1,format("Hey, you know what? Me and my Pokémon have gotten stronger since last time!\pLet's get this show on the road!"),format("Aw, seriously? Guess I gotta train harder…"))
+		msgbox(format("I shouldn't be rushing myself or my Pokémon. We may have a long way to go, but we'll get there in time. I shouldn't lose sight of that."),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		setvar(VAR_0x8004,TRAINER_GRC_DAVE_1)
+		specialvar(VAR_RESULT,IsTrainerRegistered)
+		if (var(VAR_RESULT)==FALSE && flag(FLAG_SYS_MATCH_CALL_GET))
+		{
+			call(Route104_EventScript_RegisterCindy)
+		}
+		else
+		{
+			msgbox(format("I gotta get stronger. Someday, I wanna challenge the best of the best… and come out on top! You just watch!"),MSGBOX_DEFAULT)
+			release
+		}
+	}
+}
+
+script Route104_EventScript_TryRegisterCindyAfterBattle
+{
+	special(PlayerFaceTrainerAfterBattle)
+	waitmovement(0)
+	if(flag(FLAG_SYS_MATCH_CALL_GET))
+	{
+		call(Route104_EventScript_RegisterCindy)
+	}
+	release
+}
+
+script Route104_EventScript_RegisterCindy
+{
+	msgbox(format("Oh, hey! You got a P-Drive? Why don't I give you my number?\pI'll call you if I'm feeling like fighting you again!"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_DAVE_1)
+}
+
+//KYLE SCRIPT
+script Route104_EventScript_Ivan
+{
+	trainerbattle_single(TRAINER_GRC_KYLE,format("Ready or not, we're gonna kick your butt!"),format("Ow, ow, ow! Uncle! I said Uncle!"))
+	msgbox(format("I was always the toughest kid on the block. Guess there's bigger fish in the pond now, huh?"),MSGBOX_AUTOCLOSE)
+}
+
+//KRISSY SCRIPT
+script Route104_EventScript_Billy
+{
+	trainerbattle_single(TRAINER_GRC_KRISSY,format("My Pokémon are the cutest! But they're even stronger than they're cute!"),format("No! My little cuties! Are you okay?!"))
+	msgbox(format("I like to pamper my Pokémon, especially since they always do their best for me. They're the best!"),MSGBOX_AUTOCLOSE)
+}
+
 raw `
 @ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map. 
 @  These are labeled in DewfordTown/scripts.inc
@@ -864,16 +921,6 @@ Route104_Movement_BrineyExitBoat:
 @	walk_in_place_fastest_left
 @	step_end
 
-Route104_EventScript_Ivan::
-	trainerbattle_single TRAINER_GRC_KYLE, Route104_Text_IvanIntro, Route104_Text_IvanDefeat
-	msgbox Route104_Text_IvanPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route104_EventScript_Billy::
-	trainerbattle_single TRAINER_GRC_KRISSY, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
-	msgbox Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route104_EventScript_Haley::
 	trainerbattle_single TRAINER_GRC_JULIET_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -958,49 +1005,6 @@ Route104_EventScript_RegisterWinston::
 Route104_EventScript_RematchWinston::
 	trainerbattle_rematch TRAINER_GRC_MAXIME_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
 	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
-	end
-
-Route104_EventScript_Cindy::
-	trainerbattle_single TRAINER_GRC_DAVE_1, Route104_Text_CindyIntro, Route104_Text_CindyDefeat, Route104_EventScript_TryRegisterCindyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route104_EventScript_RematchCindy
-	setvar VAR_0x8004, TRAINER_GRC_DAVE_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route104_EventScript_TryRegisterCindy
-	msgbox Route104_Text_CindyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_TryRegisterCindyAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterCindyAfterBattle
-	release
-	end
-
-Route104_EventScript_RegisterCindyAfterBattle::
-	msgbox Route104_Text_CindyRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_DAVE_1
-	release
-	end
-
-Route104_EventScript_TryRegisterCindy::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterCindy
-	msgbox Route104_Text_CindyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_RegisterCindy::
-	msgbox Route104_Text_CindyRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_DAVE_1
-	release
-	end
-
-Route104_EventScript_RematchCindy::
-	trainerbattle_rematch TRAINER_GRC_DAVE_1, Route104_Text_CindyRematchIntro, Route104_Text_CindyRematchDefeat
-	msgbox Route104_Text_CindyPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route104_EventScript_Gina::

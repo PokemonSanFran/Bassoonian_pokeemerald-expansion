@@ -17,6 +17,59 @@ BoragoGroveGruntFight::
 	return
 
 
+BoragoGrove_EventScript_James::
+	trainerbattle_single TRAINER_GRC_WAYNE_1, BoragoGrove_EventScript_James_Text_0, BoragoGrove_EventScript_James_Text_1, BoragoGrove_EventScript_TryRegisterJamesAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq BoragoGrove_EventScript_James_1
+	setvar VAR_0x8004, TRAINER_GRC_WAYNE_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	compare VAR_RESULT, FALSE
+	goto_if_eq BoragoGrove_EventScript_James_6
+BoragoGrove_EventScript_James_5:
+	msgbox BoragoGrove_EventScript_James_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+BoragoGrove_EventScript_James_1:
+	trainerbattle_rematch TRAINER_GRC_WAYNE_1, BoragoGrove_EventScript_James_Text_2, BoragoGrove_EventScript_James_Text_3
+	msgbox BoragoGrove_EventScript_James_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+BoragoGrove_EventScript_James_4:
+	call BoragoGrove_EventScript_RegisterJames
+	return
+
+BoragoGrove_EventScript_James_6:
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, BoragoGrove_EventScript_James_4
+	goto BoragoGrove_EventScript_James_5
+
+
+BoragoGrove_EventScript_TryRegisterJamesAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, BoragoGrove_EventScript_TryRegisterJamesAfterBattle_2
+BoragoGrove_EventScript_TryRegisterJamesAfterBattle_1:
+	release
+	return
+
+BoragoGrove_EventScript_TryRegisterJamesAfterBattle_2:
+	call BoragoGrove_EventScript_RegisterJames
+	goto BoragoGrove_EventScript_TryRegisterJamesAfterBattle_1
+
+
+BoragoGrove_EventScript_RegisterJames::
+	msgbox BoragoGrove_EventScript_RegisterJames_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_DAVE_1
+	return
+
+
+PetalburgWoods_EventScript_Lyle::
+	trainerbattle_single TRAINER_GRC_MORRIS, PetalburgWoods_EventScript_Lyle_Text_0, PetalburgWoods_EventScript_Lyle_Text_1
+	msgbox PetalburgWoods_EventScript_Lyle_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4
 
@@ -293,54 +346,6 @@ PetalburgWoods_EventScript_Sign2::
 @	msgbox PetalburgWoods_Text_TrainerTipsPP, MSGBOX_SIGN
 @	end
 
-PetalburgWoods_EventScript_Lyle::
-	trainerbattle_single TRAINER_GRC_MORRIS, PetalburgWoods_Text_GoBugPokemonTeam, PetalburgWoods_Text_ICouldntWin
-	msgbox PetalburgWoods_Text_ImOutOfPokeBalls, MSGBOX_AUTOCLOSE
-	end
-
-PetalburgWoods_EventScript_James::
-	trainerbattle_single TRAINER_GRC_WAYNE_1, PetalburgWoods_Text_InstantlyPopularWithBugPokemon, PetalburgWoods_Text_CantBePopularIfILose, PetalburgWoods_EventScript_TryRegisterJames
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq PetalburgWoods_EventScript_JamesRematch
-	setvar VAR_0x8004, TRAINER_GRC_WAYNE_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq PetalburgWoods_EventScript_TryRegisterJames2
-	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
-	release
-	end
-
-PetalburgWoods_EventScript_TryRegisterJames::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, PetalburgWoods_EventScript_RegisterJames
-	release
-	end
-
-PetalburgWoods_EventScript_RegisterJames::
-	msgbox PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_WAYNE_1
-	release
-	end
-
-PetalburgWoods_EventScript_TryRegisterJames2::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, PetalburgWoods_EventScript_RegisterJames2
-	msgbox PetalburgWoods_Text_PeopleRespectYou, MSGBOX_DEFAULT
-	release
-	end
-
-PetalburgWoods_EventScript_RegisterJames2::
-	msgbox PetalburgWoods_Text_IWantRematch2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_WAYNE_1
-	release
-	end
-
-PetalburgWoods_EventScript_JamesRematch::
-	trainerbattle_rematch TRAINER_GRC_WAYNE_1, PetalburgWoods_Text_MyPokemonHaveGrown, PetalburgWoods_Text_CantBePopularIfLose
-	msgbox PetalburgWoods_Text_IveBeenTrainingHard, MSGBOX_AUTOCLOSE
-	end
-
 PetalburgWoods_Text_NotAOneToBeFound:
 @	.string "Hmmm…\n"
 @	.string "Not a one to be found…$"
@@ -486,3 +491,47 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 BoragoGroveGruntFight_Text_0:
 	.string "battle$"
+
+BoragoGrove_EventScript_James_Text_0:
+	.string "Behold, the mystery and intrigue of Bug\n"
+	.string "Pokémon! Right before your very eyes!$"
+
+BoragoGrove_EventScript_James_Text_1:
+	.string "Uh... that was kind of underwhelming…$"
+
+BoragoGrove_EventScript_James_Text_2:
+	.string "Hey, Bug buddy! I've delved deeper into\n"
+	.string "the mysteries of the Bug type… and I'll\l"
+	.string "show you just what I mean!$"
+
+BoragoGrove_EventScript_James_Text_3:
+	.string "At least we gave it a good shot this\n"
+	.string "time, right?$"
+
+BoragoGrove_EventScript_James_Text_4:
+	.string "I want to meet someone who's just as\n"
+	.string "passionate about Bug Pokémon as me.\p"
+	.string "I know they're out there somewhere! I\n"
+	.string "just know it!$"
+
+BoragoGrove_EventScript_James_Text_5:
+	.string "Bug Pokémon are the best! It's just a\n"
+	.string "shame nobody else seems to think that\l"
+	.string "way.$"
+
+BoragoGrove_EventScript_RegisterJames_Text_0:
+	.string "Do my compound eyes detect a P-Drive?\n"
+	.string "Care registering me?\p"
+	.string "That way, we can be Bug buddies! You\n"
+	.string "and me!$"
+
+PetalburgWoods_EventScript_Lyle_Text_0:
+	.string "The grove hides many surprises! And\n"
+	.string "now, I found a Trainer! Let's battle!$"
+
+PetalburgWoods_EventScript_Lyle_Text_1:
+	.string "I got beat, huh… Another surprise.$"
+
+PetalburgWoods_EventScript_Lyle_Text_2:
+	.string "I'm always looking for the next thrill.\n"
+	.string "The grove's got a lot of 'em, though!$"

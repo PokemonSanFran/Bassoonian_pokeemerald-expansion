@@ -1451,12 +1451,12 @@ static const struct TrainerMon sParty_Valerie5[] = {
 static const struct TrainerMon sParty_GRC_Dave1[] = {
     {
     .iv = 0,
-    .lvl = 7,
-    .species = SPECIES_STARLY,
+    .lvl = 6,
+    .species = SPECIES_HOOTHOOT,
     },
 	{
 		.iv = 0,
-		.lvl = 6,
+		.lvl = 7,
 		.species = SPECIES_SHINX
 	}
 };
@@ -8323,18 +8323,18 @@ static const struct TrainerMon sParty_GRC_Wayne1[] = {
     {
     .iv = 0,
     .lvl = 9,
-    .species = SPECIES_KRICKETOT,
-    },
-    {
-    .iv = 0,
-    .lvl = 9,
     .species = SPECIES_PARAS,
     },
 	{
 		.iv = 0,
 		.lvl = 9,
-		.species = SPECIES_SURSKIT,
-	}
+		.species = SPECIES_VENONAT,
+	},
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_KRICKETUNE,
+    }
 };
 
 //TO FIX
