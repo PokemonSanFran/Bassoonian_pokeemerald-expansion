@@ -493,6 +493,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Borago_DriveLabsSign"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 57,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DebugTestScript"
     }
   ]
 }

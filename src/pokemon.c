@@ -3013,8 +3013,8 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_ROTOM_WASH - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
 	
 	// Custom
-    [SPECIES_PSYDUCK_HANAUAN - 1]       = ANIM_V_JUMPS_H_JUMPS,
-    [SPECIES_GOLDUCK_HANAUAN - 1]       = ANIM_H_SHAKE_SLOW,
+    [SPECIES_PSYDUCK_HANAUAN - 1]       = ANIM_V_STRETCH,
+    [SPECIES_GOLDUCK_HANAUAN - 1]       = ANIM_GROW_VIBRATE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

@@ -33964,7 +33964,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_WATER_1, //To verify
         .eggGroup2 = EGG_GROUP_FIELD, //To verify
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_TRACE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_PINK, //To verify
+        .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
 
@@ -33988,7 +33988,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_WATER_1, //To verify
         .eggGroup2 = EGG_GROUP_FIELD, //To verify
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_TRACE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE, //To verify
+        .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
 };

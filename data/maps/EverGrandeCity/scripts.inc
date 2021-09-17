@@ -3,6 +3,14 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 
+DebugTestScript::
+	msgbox DebugTestScript_Text_0
+	closemessage
+	givemon SPECIES_PSYDUCK_HANAUAN, 5, ITEM_NONE
+	givemon SPECIES_GOLDUCK_HANAUAN, 5, ITEM_NONE
+	return
+
+
 Borago_PushAwayPlayerWithoutDrive::
 	lockall
 	applymovement 2, Common_Movement_WalkInPlaceFastestRight
@@ -435,6 +443,9 @@ EverGrandeCity_Text_CitySign:
 @	.string "EVER GRANDE CITY\p"
 @	.string "“The paradise of flowers, the sea,\n"
 @	.string "and POKéMON.”$"
+
+DebugTestScript_Text_0:
+	.string "done$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
 	.string "nuh uh still preparin'$"

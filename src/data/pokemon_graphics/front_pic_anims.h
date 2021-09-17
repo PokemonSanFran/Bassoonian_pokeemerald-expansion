@@ -719,39 +719,17 @@ static const union AnimCmd sAnim_GOLDUCK_2[] =
 
 static const union AnimCmd sAnim_PSYDUCK_HANAUAN_1[] =
 {
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_PSYDUCK_HANAUAN_2[] =
-{
-    ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(2, 20),
-    ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(1, 35),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_GOLDUCK_HANAUAN_1[] =
 {
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 45),
     ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 20),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_GOLDUCK_HANAUAN_2[] =
-{
-    ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(2, 20),
-    ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(2, 20),
     ANIMCMD_END,
 };
 
@@ -9554,13 +9532,11 @@ static const union AnimCmd *const sAnims_GOLDUCK[] ={
 static const union AnimCmd *const sAnims_PSYDUCK_HANAUAN[] ={
     sAnim_GeneralFrame0,
     sAnim_PSYDUCK_HANAUAN_1,
-    sAnim_PSYDUCK_HANAUAN_2,
 };
 
 static const union AnimCmd *const sAnims_GOLDUCK_HANAUAN[] ={
     sAnim_GeneralFrame0,
     sAnim_GOLDUCK_HANAUAN_1,
-    sAnim_GOLDUCK_HANAUAN_2,
 };
 
 static const union AnimCmd *const sAnims_MANKEY[] ={

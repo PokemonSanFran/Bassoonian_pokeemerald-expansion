@@ -3,6 +3,14 @@ mapscripts EverGrandeCity_MapScripts
 	MAP_SCRIPT_ON_TRANSITION: Borago_Outside_OnTransition
 }
 
+script DebugTestScript
+{
+	msgbox("done")
+	closemessage
+	givemon(SPECIES_PSYDUCK_HANAUAN,5,ITEM_NONE)
+	givemon(SPECIES_GOLDUCK_HANAUAN,5,ITEM_NONE)
+}
+
 script Borago_PushAwayPlayerWithoutDrive
 {
 	lockall
