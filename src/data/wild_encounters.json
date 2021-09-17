@@ -1375,17 +1375,12 @@
               {
                 "min_level": 9,
                 "max_level": 11,
-                "species": "SPECIES_LILLIPUP"
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 9,
                 "max_level": 11,
-                "species": "SPECIES_LILLIPUP"
-              },
-              {
-                "min_level": 9,
-                "max_level": 11,
-                "species": "SPECIES_TIMBURR"
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 9,
@@ -1395,7 +1390,12 @@
               {
                 "min_level": 9,
                 "max_level": 11,
-                "species": "SPECIES_LILLIPUP"
+                "species": "SPECIES_TIMBURR"
+              },
+              {
+                "min_level": 9,
+                "max_level": 11,
+                "species": "SPECIES_STARLY"
               },
               {
                 "min_level": 11,
@@ -1418,9 +1418,9 @@
                 "species": "SPECIES_GULPIN"
               },
               {
-                "min_level": 11,
-                "max_level": 11,
-                "species": "SPECIES_GULPIN"
+                "min_level": 12,
+                "max_level": 12,
+                "species": "SPECIES_MURKROW"
               }
             ]
           }
