@@ -1,3 +1,9 @@
+Route108_EventScript_Matthew::
+	trainerbattle_single TRAINER_GRC_MIKEY, Route108_EventScript_Matthew_Text_0, Route108_EventScript_Matthew_Text_1
+	msgbox Route108_EventScript_Matthew_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
  
 Route108_MapScripts::
 	.byte 0
@@ -5,11 +11,6 @@ Route108_MapScripts::
 Route108_EventScript_Jerome::
 	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated
 	msgbox Route108_Text_JeromePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route108_EventScript_Matthew::
-	trainerbattle_single TRAINER_GRC_MIKEY, Route108_Text_MatthewIntro, Route108_Text_MatthewDefeated
-	msgbox Route108_Text_MatthewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route108_EventScript_Tara::
@@ -48,3 +49,16 @@ Route108_EventScript_CoryRematch::
 	trainerbattle_rematch TRAINER_CORY_1, Route108_Text_CoryRematchIntro, Route108_Text_CoryRematchDefeated
 	msgbox Route108_Text_CoryRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route108_EventScript_Matthew_Text_0:
+	.string "I like building sand castles. I'm gonna\n"
+	.string "be the king of this beach! Go, my\l"
+	.string "squires!$"
+
+Route108_EventScript_Matthew_Text_1:
+	.string "We couldn't protect the fort!$"
+
+Route108_EventScript_Matthew_Text_2:
+	.string "I read a lot of stories about knights\n"
+	.string "and kings. That's where I got the idea\l"
+	.string "of becoming the king of the beach.$"

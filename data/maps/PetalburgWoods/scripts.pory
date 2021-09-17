@@ -61,7 +61,7 @@ script BoragoGrove_EventScript_RegisterJames
 //MORRIS SCRIPT
 script PetalburgWoods_EventScript_Lyle
 {
-	trainerbattle_single(TRAINER_GRC_MORRIS,format("The grove hides many surprises! And now, I found a Trainer! Let's battle!"),format("I got beat, huh… Another surprise."))
+	trainerbattle_single(TRAINER_GRC_MORRIS,format("The grove hides many surprises! And now, I found a Trainer! Let's battle!"),format("Oh, huh! Didn't see that one coming!"))
 	msgbox(format("I'm always looking for the next thrill. The grove's got a lot of 'em, though!"),MSGBOX_AUTOCLOSE)
 }
 

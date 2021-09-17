@@ -2418,8 +2418,8 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_CALYREX_ICE_RIDER] = 0,
     [SPECIES_CALYREX_SHADOW_RIDER] = 0,
     [SPECIES_EGG] = 1,
-    [SPECIES_PSYDUCK_HANAUAN] = 1,
-    [SPECIES_GOLDUCK_HANAUAN] = 0,
+    [SPECIES_PSYDUCK_HANAUAN] = 0,
+    [SPECIES_GOLDUCK_HANAUAN] = 2,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

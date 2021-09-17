@@ -49,6 +49,100 @@ Route104_EventScript_RegisterCindy::
 	return
 
 
+Route104_EventScript_Haley::
+	trainerbattle_single TRAINER_GRC_JULIET_1, Route104_EventScript_Haley_Text_0, Route104_EventScript_Haley_Text_1, Route104_EventScript_TryRegisterHaleyAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route104_EventScript_Haley_1
+	setvar VAR_0x8004, TRAINER_GRC_JULIET_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route104_EventScript_Haley_6
+Route104_EventScript_Haley_5:
+	msgbox Route104_EventScript_Haley_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+Route104_EventScript_Haley_1:
+	trainerbattle_rematch TRAINER_GRC_JULIET_1, Route104_EventScript_Haley_Text_2, Route104_EventScript_Haley_Text_3
+	msgbox Route104_EventScript_Haley_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+Route104_EventScript_Haley_4:
+	call Route104_EventScript_RegisterHaley
+	return
+
+Route104_EventScript_Haley_6:
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_Haley_4
+	goto Route104_EventScript_Haley_5
+
+
+Route104_EventScript_TryRegisterHaleyAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_TryRegisterHaleyAfterBattle_2
+Route104_EventScript_TryRegisterHaleyAfterBattle_1:
+	release
+	return
+
+Route104_EventScript_TryRegisterHaleyAfterBattle_2:
+	call Route104_EventScript_RegisterHaley
+	goto Route104_EventScript_TryRegisterHaleyAfterBattle_1
+
+
+Route104_EventScript_RegisterHaley::
+	msgbox Route104_EventScript_RegisterCindy_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_JULIET_1
+	return
+
+
+Route104_EventScript_Winston::
+	trainerbattle_single TRAINER_GRC_MAXIME_1, Route104_EventScript_Winston_Text_0, Route104_EventScript_Winston_Text_1, Route104_EventScript_TryRegisterWinstonAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route104_EventScript_Winston_1
+	setvar VAR_0x8004, TRAINER_GRC_MAXIME_1
+	specialvar VAR_RESULT, IsTrainerRegistered
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route104_EventScript_Winston_6
+Route104_EventScript_Winston_5:
+	msgbox Route104_EventScript_Winston_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+Route104_EventScript_Winston_1:
+	trainerbattle_rematch TRAINER_GRC_MAXIME_1, Route104_EventScript_Winston_Text_2, Route104_EventScript_Winston_Text_3
+	msgbox Route104_EventScript_Winston_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+Route104_EventScript_Winston_4:
+	call Route104_EventScript_RegisterWinston
+	return
+
+Route104_EventScript_Winston_6:
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_Winston_4
+	goto Route104_EventScript_Winston_5
+
+
+Route104_EventScript_TryRegisterWinstonAfterBattle::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_TryRegisterWinstonAfterBattle_2
+Route104_EventScript_TryRegisterWinstonAfterBattle_1:
+	release
+	return
+
+Route104_EventScript_TryRegisterWinstonAfterBattle_2:
+	call Route104_EventScript_RegisterWinston
+	goto Route104_EventScript_TryRegisterWinstonAfterBattle_1
+
+
+Route104_EventScript_RegisterWinston::
+	msgbox Route104_EventScript_RegisterWinston_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_MAXIME_1
+	return
+
+
 Route104_EventScript_Ivan::
 	trainerbattle_single TRAINER_GRC_KYLE, Route104_EventScript_Ivan_Text_0, Route104_EventScript_Ivan_Text_1
 	msgbox Route104_EventScript_Ivan_Text_2, MSGBOX_AUTOCLOSE
@@ -58,6 +152,12 @@ Route104_EventScript_Ivan::
 Route104_EventScript_Billy::
 	trainerbattle_single TRAINER_GRC_KRISSY, Route104_EventScript_Billy_Text_0, Route104_EventScript_Billy_Text_1
 	msgbox Route104_EventScript_Billy_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route104_EventScript_Darian::
+	trainerbattle_single TRAINER_GRC_FINN, Route104_EventScript_Darian_Text_0, Route104_EventScript_Darian_Text_1
+	msgbox Route104_EventScript_Darian_Text_2, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -923,92 +1023,6 @@ Route104_Movement_BrineyExitBoat:
 @	walk_in_place_fastest_left
 @	step_end
 
-Route104_EventScript_Haley::
-	trainerbattle_single TRAINER_GRC_JULIET_1, Route104_Text_HaleyIntro, Route104_Text_HaleyDefeat, Route104_EventScript_TryRegisterHaleyAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route104_EventScript_RematchHaley
-	setvar VAR_0x8004, TRAINER_GRC_JULIET_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route104_EventScript_TryRegisterHaley
-	msgbox Route104_Text_HaleyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_TryRegisterHaleyAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterHaleyAfterBattle
-	release
-	end
-
-Route104_EventScript_RegisterHaleyAfterBattle::
-	msgbox Route104_Text_HaleyRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JULIET_1
-	release
-	end
-
-Route104_EventScript_TryRegisterHaley::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterHaley
-	msgbox Route104_Text_HaleyPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_RegisterHaley::
-	msgbox Route104_Text_HaleyRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JULIET_1
-	release
-	end
-
-Route104_EventScript_RematchHaley::
-	trainerbattle_rematch TRAINER_GRC_JULIET_1, Route104_Text_HaleyRematchIntro, Route104_Text_HaleyRematchDefeat
-	msgbox Route104_Text_HaleyPostRematch, MSGBOX_AUTOCLOSE
-	end
-
-Route104_EventScript_Winston::
-	trainerbattle_single TRAINER_GRC_MAXIME_1, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route104_EventScript_RematchWinston
-	setvar VAR_0x8004, TRAINER_GRC_MAXIME_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route104_EventScript_TryRegisterWinston
-	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_TryRegisterWinstonAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterWinstonAfterBattle
-	release
-	end
-
-Route104_EventScript_RegisterWinstonAfterBattle::
-	msgbox Route104_Text_WinstonRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_MAXIME_1
-	release
-	end
-
-Route104_EventScript_TryRegisterWinston::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route104_EventScript_RegisterWinston
-	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_RegisterWinston::
-	msgbox Route104_Text_WinstonRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_MAXIME_1
-	release
-	end
-
-Route104_EventScript_RematchWinston::
-	trainerbattle_rematch TRAINER_GRC_MAXIME_1, Route104_Text_WinstonRematchIntro, Route104_Text_WinstonRematchDefeat
-	msgbox Route104_Text_WinstonPostRematch, MSGBOX_AUTOCLOSE
-	end
-
 Route104_EventScript_Gina::
 	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
 	special GetPlayerBigGuyGirlString
@@ -1021,11 +1035,6 @@ Route104_EventScript_Mia::
 	special GetPlayerBigGuyGirlString
 	msgbox Route104_Text_MiaPostBattle, MSGBOX_DEFAULT
     release
-	end
-
-Route104_EventScript_Darian::
-	trainerbattle_single TRAINER_GRC_FINN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
-	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route104_Text_BrineyLivesInSeasideCottage:
@@ -1237,6 +1246,70 @@ Route104_EventScript_RegisterCindy_Text_0:
 	.string "I'll call you if I'm feeling like fighting\n"
 	.string "you again!$"
 
+Route104_EventScript_Haley_Text_0:
+	.string "Huh? Wait, my training spot's been\n"
+	.string "found! Well, I've been looking for a\l"
+	.string "challenge, so I hope you won't let me\l"
+	.string "down!$"
+
+Route104_EventScript_Haley_Text_1:
+	.string "Whew! Talk about a workout…$"
+
+Route104_EventScript_Haley_Text_2:
+	.string "My Pokémon and I have been pushing our\n"
+	.string "limits all the time. I've been looking\l"
+	.string "forward to this match!$"
+
+Route104_EventScript_Haley_Text_3:
+	.string "Clearly, you've been going the extra\n"
+	.string "mile…$"
+
+Route104_EventScript_Haley_Text_4:
+	.string "Having someone like you around helps\n"
+	.string "keep me sharp. You don't know how much\l"
+	.string "I appreciate that, {PLAYER}.$"
+
+Route104_EventScript_Haley_Text_5:
+	.string "That was fun! I'll let you know when I'm\n"
+	.string "ready for the next round, okay? Look\l"
+	.string "forward to it!$"
+
+Route104_EventScript_Winston_Text_0:
+	.string "My grandpappy gave me this Pokémon as\n"
+	.string "a birthday gift. Allow me to\l"
+	.string "demonstrate how a proper Pokémon\l"
+	.string "fights!$"
+
+Route104_EventScript_Winston_Text_1:
+	.string "Wh-whaaaaat?! No! Its feathers are all\n"
+	.string "ruffled now… Sob… Grandpappy…$"
+
+Route104_EventScript_Winston_Text_2:
+	.string "Well, well! You have arrived! This time,\n"
+	.string "my superior care shall see us through!$"
+
+Route104_EventScript_Winston_Text_3:
+	.string "Ah… well. Hmm. Something must have gone\n"
+	.string "amiss.$"
+
+Route104_EventScript_Winston_Text_4:
+	.string "My grandpappy is growing old. That's why\n"
+	.string "I cherish Noctowl so.\p"
+	.string "It was his birthday gift to me, and it\n"
+	.string "has been my best friend since./pI don't\l"
+	.string "think I could have asked for a better\l"
+	.string "gift than that.$"
+
+Route104_EventScript_Winston_Text_5:
+	.string "Hmm… Perhaps I should explore\n"
+	.string "Contests. A podium is a better fit than\l"
+	.string "a battlefield.$"
+
+Route104_EventScript_RegisterWinston_Text_0:
+	.string "Excuse me! You! I demand your number.\n"
+	.string "This will not be the last time we have\l"
+	.string "crossed paths!$"
+
 Route104_EventScript_Ivan_Text_0:
 	.string "Ready or not, we're gonna kick your\n"
 	.string "butt!$"
@@ -1260,3 +1333,19 @@ Route104_EventScript_Billy_Text_2:
 	.string "I like to pamper my Pokémon, especially\n"
 	.string "since they always do their best for me.\l"
 	.string "They're the best!$"
+
+Route104_EventScript_Darian_Text_0:
+	.string "Aw, dang it! I almost had that fish!\n"
+	.string "Urgh, if only you weren't there to ruin\l"
+	.string "my catch!\p"
+	.string "I'll just have to take it out on you!$"
+
+Route104_EventScript_Darian_Text_1:
+	.string "Phew… maybe I needed that. Thanks.$"
+
+Route104_EventScript_Darian_Text_2:
+	.string "It's not easy, being a fisherman. If we\n"
+	.string "don't get our catch, we won't have food\l"
+	.string "on the table.\p"
+	.string "That's why we can be grumpy at times.\n"
+	.string "Don't take it personally, kid.$"

@@ -530,7 +530,7 @@ PetalburgWoods_EventScript_Lyle_Text_0:
 	.string "now, I found a Trainer! Let's battle!$"
 
 PetalburgWoods_EventScript_Lyle_Text_1:
-	.string "I got beat, huh… Another surprise.$"
+	.string "Oh, huh! Didn't see that one coming!$"
 
 PetalburgWoods_EventScript_Lyle_Text_2:
 	.string "I'm always looking for the next thrill.\n"

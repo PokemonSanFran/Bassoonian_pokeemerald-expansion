@@ -1,3 +1,10 @@
+//MIKEY SCRIPT
+script Route108_EventScript_Matthew
+{
+	trainerbattle_single(TRAINER_GRC_MIKEY,format("I like building sand castles. I'm gonna be the king of this beach! Go, my squires!"),format("We couldn't protect the fort!"))
+	msgbox(format("I read a lot of stories about knights and kings. That's where I got the idea of becoming the king of the beach."),MSGBOX_AUTOCLOSE)
+}
+
 raw ` 
 Route108_MapScripts::
 	.byte 0
@@ -5,11 +12,6 @@ Route108_MapScripts::
 Route108_EventScript_Jerome::
 	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated
 	msgbox Route108_Text_JeromePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route108_EventScript_Matthew::
-	trainerbattle_single TRAINER_GRC_MIKEY, Route108_Text_MatthewIntro, Route108_Text_MatthewDefeated
-	msgbox Route108_Text_MatthewPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route108_EventScript_Tara::
