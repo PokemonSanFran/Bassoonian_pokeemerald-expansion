@@ -5,17 +5,17 @@ mapscripts LittlerootTown_MaysHouse_2F_MapScripts {
 
 script Turpia_ToriHouse_pickuprival {
 	lockall
+	//applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	//waitmovement(0)
+	//msgbox(format("Tori: Ugh, won't you just give me a rest? You said we'd be going on a vacation, not some kind of bootcamp!\pIf I'd known, I'd just have stayed home!"))
+	//closemessage
+	//applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	//waitmovement(0)
+	//msgbox(format("Claudia: I am not having any of your foul tongue, young lady. Be grateful that we've given you a head start to becoming a Trainer."))
+	//closemessage
 	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
 	waitmovement(0)
-	msgbox(format("Tori: Ugh, won't you just give me a rest? You said we'd be going on a vacation, not some kind of bootcamp!\pIf I'd known, I'd just have stayed home!"))
-	closemessage
-	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
-	waitmovement(0)
-	msgbox(format("Claudia: I am not having any of your foul tongue, young lady. Be grateful that we've given you a head start to becoming a Trainer."))
-	closemessage
-	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-	waitmovement(0)
-	msgbox(format("Tori: How many times do I have to say it, Mom? I don't want to be a Trainer!"))
+	msgbox(format("Tori: How many times do I have to say it? I don't want to be a Trainer!"))
 	closemessage
 	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
 	waitmovement(0)
@@ -53,34 +53,39 @@ script Turpia_ToriHouse_pickuprival {
 	waitmovement(0)
 	msgbox(format("Edmond: Stop it, Tori. Just go attend the finals, and then we'll let you do whatever you please."))
 	closemessage
-	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
-	waitmovement(0)
-	msgbox(format("Claudia: You're expected to win this competition, young lady.\p No, you will win."))
+	//applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	//waitmovement(0)
+	//msgbox(format("Claudia: You're expected to win this competition, young lady.\p No, you will win."))
+	//closemessage
+	//applymovement(1,Common_Movement_WalkInPlaceFastestUp)
+	//waitmovement(0)
+	//msgbox(format("Edmond: Cut it out, Claudia. You know drilling won't make a difference."))
+	//closemessage
+	//applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	//waitmovement(0)
+	//msgbox(format("Claudia: Ed, please! Don't you know what's at stake here?"))
+	//closemessage
+	//applymovement(1,Common_Movement_WalkInPlaceFastestUp)
+	//waitmovement(0)
+	//msgbox(format("Edmond: Of course I do! Do you think I don't want Tori to win this thing?"))
+	//closemessage
+	//applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	//waitmovement(0)
+	//msgbox(format("Claudia: You're being much too lenient again. That just won't do."))
+	//closemessage
+	//applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	//waitmovement(0)
+	//msgbox(format("Tori: Oh, that just won't do, huh."))
+	//closemessage
+	//applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
+	//waitmovement(0)
+	//msgbox(format("Claudia: Tori!"))
+	//closemessage
+	
+	//this replaces the former
+	msgbox(format("Tori: Fine…"))
 	closemessage
-	applymovement(1,Common_Movement_WalkInPlaceFastestUp)
-	waitmovement(0)
-	msgbox(format("Edmond: Cut it out, Claudia. You know drilling won't make a difference."))
-	closemessage
-	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
-	waitmovement(0)
-	msgbox(format("Claudia: Ed, please! Don't you know what's at stake here?"))
-	closemessage
-	applymovement(1,Common_Movement_WalkInPlaceFastestUp)
-	waitmovement(0)
-	msgbox(format("Edmond: Of course I do! Do you think I don't want Tori to win this thing?"))
-	closemessage
-	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
-	waitmovement(0)
-	msgbox(format("Claudia: You're being much too lenient again. That just won't do."))
-	closemessage
-	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-	waitmovement(0)
-	msgbox(format("Tori: Oh, that just won't do, huh."))
-	closemessage
-	applymovement(2,Common_Movement_WalkInPlaceFastestLeft)
-	waitmovement(0)
-	msgbox(format("Claudia: Tori!"))
-	closemessage
+	
 	applymovement(4,Common_Movement_WalkInPlaceFastestDown)
 	applymovement(1,Common_Movement_WalkInPlaceFastestDown)
 	applymovement(2,Common_Movement_WalkInPlaceFastestDown)

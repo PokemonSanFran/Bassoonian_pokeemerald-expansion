@@ -93,48 +93,48 @@ script Turpia_RivalHouse_pickuprival {
 		msgbox(format("{RIVAL}: I'm lucky to have you both. Watch me go, Pa, Ma!\pI'm gonna give this my all! And once I come back home, I'll be the Champion!"))
 	}
 	closemessage
-	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
-	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
-	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
-	{
-		applymovement(6,Common_Movement_WalkInPlaceFastestUp)
-	}
-	waitmovement(0)
-	checkplayergender
-	if (var(VAR_RESULT)==MALE)
-	{
-		msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't wanna show up too late for the big moment!"))
-	}
-	else
-	{
-		msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't want to keep everyone waiting!"))
-	}
-	closemessage
-	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
-	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
-	if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
-	{
-		applymovement(6,Common_Movement_WalkInPlaceFastestRight)
-	}
-	applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
-	waitmovement(0)
-	msgbox(format("Have fun, dears!"))
-	closemessage
-	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
-	waitmovement(0)
-	if (var(VAR_GRC_TURPIA_INTRO_STATE)==1)
-	{
-		msgbox(format("Do your best, both of you!"))
-	}
-	else
-	{
-		msgbox(format("Do your best, all of you!"))
-	}
-	closemessage
-	applymovement(7,Common_Movement_WalkInPlaceFastestRight)
-	waitmovement(0)
-	msgbox(format("{RIVAL}: See you soon!"))
-	closemessage
+	//applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	//applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	//if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
+	//{
+	//	applymovement(6,Common_Movement_WalkInPlaceFastestUp)
+	//}
+	//waitmovement(0)
+	//checkplayergender
+	//if (var(VAR_RESULT)==MALE)
+	//{
+	//	msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't wanna show up too late for the big moment!"))
+	//}
+	//else
+	//{
+	//	msgbox(format("{RIVAL}: Anyway, we'll be off now! Don't want to keep everyone waiting!"))
+	//}
+	//closemessage
+	//applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	//applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	//if (var(VAR_GRC_TURPIA_INTRO_STATE)!=1)
+	//{
+	//	applymovement(6,Common_Movement_WalkInPlaceFastestRight)
+	//}
+	//applymovement(1,Common_Movement_WalkInPlaceFastestLeft)
+	//waitmovement(0)
+	//msgbox(format("Have fun, dears!"))
+	//closemessage
+	//applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	//waitmovement(0)
+	//if (var(VAR_GRC_TURPIA_INTRO_STATE)==1)
+	//{
+	//	msgbox(format("Do your best, both of you!"))
+	//}
+	//else
+	//{
+	//	msgbox(format("Do your best, all of you!"))
+	//}
+	//closemessage
+	//applymovement(7,Common_Movement_WalkInPlaceFastestRight)
+	//waitmovement(0)
+	//msgbox(format("{RIVAL}: See you soon!"))
+	//closemessage
 	if(var(VAR_GRC_TURPIA_INTRO_STATE)==1)
 	{
 		loadword(0,Turpia_Follower_Rival)
