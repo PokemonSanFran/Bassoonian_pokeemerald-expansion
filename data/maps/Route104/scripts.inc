@@ -161,6 +161,18 @@ Route104_EventScript_Darian::
 	return
 
 
+Route104_EventScript_Gina::
+	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_EventScript_Gina_Text_0, Route104_EventScript_Gina_Text_1, Route104_EventScript_Gina_Text_2
+	msgbox Route104_EventScript_Gina_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+Route104_EventScript_Mia::
+	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_EventScript_Mia_Text_0, Route104_EventScript_Mia_Text_1, Route104_EventScript_Mia_Text_2
+	msgbox Route104_EventScript_Mia_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
 @ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map. 
 @  These are labeled in DewfordTown/scripts.inc
 .set LOCALID_RIVAL, 34
@@ -1023,20 +1035,6 @@ Route104_Movement_BrineyExitBoat:
 @	walk_in_place_fastest_left
 @	step_end
 
-Route104_EventScript_Gina::
-	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
-	special GetPlayerBigGuyGirlString
-	msgbox Route104_Text_GinaPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_Mia::
-	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons
-	special GetPlayerBigGuyGirlString
-	msgbox Route104_Text_MiaPostBattle, MSGBOX_DEFAULT
-    release
-	end
-
 Route104_Text_BrineyLivesInSeasideCottage:
 @	.string "That seaside cottage is where\n"
 @	.string "MR. BRINEY lives.\p"
@@ -1349,3 +1347,35 @@ Route104_EventScript_Darian_Text_2:
 	.string "on the table.\p"
 	.string "That's why we can be grumpy at times.\n"
 	.string "Don't take it personally, kid.$"
+
+Route104_EventScript_Gina_Text_0:
+	.string "Hi, I'm Meg! And this is my sister Mia!\n"
+	.string "Together, we can't be stopped!$"
+
+Route104_EventScript_Gina_Text_1:
+	.string "Aww. But that was fun!$"
+
+Route104_EventScript_Gina_Text_2:
+	.string "Uh-oh! We can't fight you if you don't\n"
+	.string "have two Pokémon!$"
+
+Route104_EventScript_Gina_Text_3:
+	.string "We're twins! That means we're super in\n"
+	.string "sync all the time. That's why we're such\l"
+	.string "a good combo!$"
+
+Route104_EventScript_Mia_Text_0:
+	.string "My name's Mia! And this is Meg, my sis! We\n"
+	.string "can beat anyone together!$"
+
+Route104_EventScript_Mia_Text_1:
+	.string "That was fun! Right?$"
+
+Route104_EventScript_Mia_Text_2:
+	.string "Two against one isn't fair. Can you\n"
+	.string "bring another Pokémon?$"
+
+Route104_EventScript_Mia_Text_3:
+	.string "Sometimes, we get weird looks because\n"
+	.string "Meg and I are so in sync. Not like we\l"
+	.string "really mind!$"

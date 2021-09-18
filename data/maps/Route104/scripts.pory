@@ -151,6 +151,19 @@ script Route104_EventScript_Darian
 	msgbox(format("It's not easy, being a fisherman. If we don't get our catch, we won't have food on the table.\pThat's why we can be grumpy at times. Don't take it personally, kid."),MSGBOX_AUTOCLOSE)
 }
 
+//MEG & MIA SCRIPT
+script Route104_EventScript_Gina
+{
+	trainerbattle_double(TRAINER_GRC_MEG_AND_MIA,format("Hi, I'm Meg! And this is my sister Mia! Together, we can't be stopped!"),format("Aww. But that was fun!"),format("Uh-oh! We can't fight you if you don't have two Pokémon!"))
+	msgbox(format("We're twins! That means we're super in sync all the time. That's why we're such a good combo!"),MSGBOX_AUTOCLOSE)
+}
+
+script Route104_EventScript_Mia
+{
+	trainerbattle_double(TRAINER_GRC_MEG_AND_MIA,format("My name's Mia! And this is Meg, my sis! We can beat anyone together!"),format("That was fun! Right?"),format("Two against one isn't fair. Can you bring another Pokémon?"))
+	msgbox(format("Sometimes, we get weird looks because Meg and I are so in sync. Not like we really mind!"),MSGBOX_AUTOCLOSE)
+}
+
 raw `
 @ NOTE: Route 104's sail to Dewford script references local IDs from Dewford's map. 
 @  These are labeled in DewfordTown/scripts.inc
@@ -1013,20 +1026,6 @@ Route104_Movement_BrineyExitBoat:
 @	walk_down
 @	walk_in_place_fastest_left
 @	step_end
-
-Route104_EventScript_Gina::
-	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_Text_GinaIntro, Route104_Text_GinaDefeat, Route104_Text_GinaNotEnoughMons
-	special GetPlayerBigGuyGirlString
-	msgbox Route104_Text_GinaPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route104_EventScript_Mia::
-	trainerbattle_double TRAINER_GRC_MEG_AND_MIA, Route104_Text_MiaIntro, Route104_Text_MiaDefeat, Route104_Text_MiaNotEnoughMons
-	special GetPlayerBigGuyGirlString
-	msgbox Route104_Text_MiaPostBattle, MSGBOX_DEFAULT
-    release
-	end
 
 Route104_Text_BrineyLivesInSeasideCottage:
 @	.string "That seaside cottage is where\n"

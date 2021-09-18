@@ -13,14 +13,14 @@ PoppyGym_Trigger2::
 
 
 RustboroCity_Gym_EventScript_Roxanne::
-	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_EventScript_Roxanne_Text_0, RustboroCity_Gym_EventScript_Roxanne_Text_1, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Roxanne_2
 RustboroCity_Gym_EventScript_Roxanne_1:
 	goto_if_unset FLAG_RECEIVED_TM39, RustboroCity_Gym_EventScript_Roxanne_5
 RustboroCity_Gym_EventScript_Roxanne_4:
-	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+	msgbox RustboroCity_Gym_EventScript_Roxanne_Text_2, MSGBOX_DEFAULT
 	release
 	return
 
@@ -34,10 +34,10 @@ RustboroCity_Gym_EventScript_Roxanne_5:
 
 
 RustboroCity_Gym_EventScript_RoxanneDefeated::
-	message RustboroCity_Gym_Text_ReceivedStoneBadge
+	message RustboroCity_Gym_EventScript_RoxanneDefeated_Text_0
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
+	msgbox RustboroCity_Gym_EventScript_RoxanneDefeated_Text_1, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setflag FLAG_BADGE01_GET
 	clearflag FLAG_GRC_HIDE_RIVAL_POPPY
@@ -51,9 +51,33 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 RustboroCity_Gym_EventScript_GiveRockTomb::
 	giveitem ITEM_TM08
 	setflag FLAG_RECEIVED_TM39
-	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+	msgbox RustboroCity_Gym_EventScript_GiveRockTomb_Text_0, MSGBOX_DEFAULT
 	release
 	end
+
+
+RustboroCity_Gym_EventScript_Josh::
+	trainerbattle_single TRAINER_GRC_LI, RustboroCity_Gym_EventScript_Josh_Text_0, RustboroCity_Gym_EventScript_Josh_Text_1
+	msgbox RustboroCity_Gym_EventScript_Josh_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+RustboroCity_Gym_EventScript_Tommy::
+	trainerbattle_single TRAINER_GRC_KEN, RustboroCity_Gym_EventScript_Tommy_Text_0, RustboroCity_Gym_EventScript_Tommy_Text_1
+	msgbox RustboroCity_Gym_EventScript_Tommy_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+RustboroCity_Gym_EventScript_Marc::
+	trainerbattle_double TRAINER_GRC_ANDI_AND_MAI, RustboroCity_Gym_EventScript_Marc_Text_0, RustboroCity_Gym_EventScript_Marc_Text_1, RustboroCity_Gym_EventScript_Marc_Text_2
+	msgbox RustboroCity_Gym_EventScript_Marc_Text_3, MSGBOX_AUTOCLOSE
+	return
+
+
+RustboroCity_Gym_EventScript_Marc2::
+	trainerbattle_double TRAINER_GRC_ANDI_AND_MAI, RustboroCity_Gym_EventScript_Marc2_Text_0, RustboroCity_Gym_EventScript_Marc2_Text_1, RustboroCity_Gym_EventScript_Marc2_Text_2
+	msgbox RustboroCity_Gym_EventScript_Marc2_Text_3, MSGBOX_AUTOCLOSE
+	return
 
 
 RustboroCity_Gym_EventScript_RoxanneRematch::
@@ -65,21 +89,6 @@ RustboroCity_Gym_EventScript_RoxanneRematch::
  
 RustboroCity_Gym_MapScripts::
 	.byte 0
-
-RustboroCity_Gym_EventScript_Josh::
-	trainerbattle_single TRAINER_GRC_LI, RustboroCity_Gym_Text_JoshIntro, RustboroCity_Gym_Text_JoshDefeat
-	msgbox RustboroCity_Gym_Text_JoshPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-RustboroCity_Gym_EventScript_Tommy::
-	trainerbattle_single TRAINER_GRC_KEN, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
-	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-RustboroCity_Gym_EventScript_Marc::
-	trainerbattle_single TRAINER_GRC_ANDI_AND_MAI, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
-	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 RustboroCity_Gym_EventScript_GymGuide::
 	lock
@@ -309,3 +318,107 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one POKéMON with you?\p"
 	.string "Please return with at least one more\n"
 	.string "POKéMON.$"
+
+RustboroCity_Gym_EventScript_Roxanne_Text_0:
+	.string "Hey there, challenger! I'm Talia, the Gym\n"
+	.string "Leader of this town.\p"
+	.string "What did you think of my Dollbags?\n"
+	.string "Weren't they just the cutest darlings?\l"
+	.string "You bet they were!\p"
+	.string "What, did you think a girl couldn't be\n"
+	.string "both cute and strong? Well, that's\l"
+	.string "where you're wrong!\p"
+	.string "I'll prove it to you right here, right\n"
+	.string "now! Give me your best shot!$"
+
+RustboroCity_Gym_EventScript_Roxanne_Text_1:
+	.string "Wow… That was impressive! That really\n"
+	.string "got my pulse racing, you know?\p"
+	.string "Anyway, you've beaten me fair and\n"
+	.string "square, so you've earned the Effort\l"
+	.string "Badge!$"
+
+RustboroCity_Gym_EventScript_Roxanne_Text_2:
+	.string "Why do I love dolls so much? Well, I've\n"
+	.string "grown up with them!\p"
+	.string "My granny is a renowned doll artist, and\n"
+	.string "I've been studying to become her\l"
+	.string "successor.\p"
+	.string "I love working out just as much, so I've\n"
+	.string "combined my two passions here! Pretty\l"
+	.string "nice, huh?$"
+
+RustboroCity_Gym_EventScript_RoxanneDefeated_Text_0:
+	.string "{PLAYER} received the Effort Badge\n"
+	.string "from Talia!$"
+
+RustboroCity_Gym_EventScript_RoxanneDefeated_Text_1:
+	.string "Oh, I want you to have this, too!$"
+
+RustboroCity_Gym_EventScript_GiveRockTomb_Text_0:
+	.string "TM08 contains Bulk Up! It's a real nifty\n"
+	.string "move that raises your Pokémon's\l"
+	.string "Attack and Defense stats!\p"
+	.string "I'm sure you'll be able to take\n"
+	.string "advantage of it just fine, knowing how\l"
+	.string "skilled you are.$"
+
+RustboroCity_Gym_EventScript_Josh_Text_0:
+	.string "Hold it, Trainer! Don't think you can\n"
+	.string "just barge through and challenge the\l"
+	.string "Gym Leader! You'll have to go through\l"
+	.string "me first!$"
+
+RustboroCity_Gym_EventScript_Josh_Text_1:
+	.string "Ow, ow, ow… I pulled a muscle…$"
+
+RustboroCity_Gym_EventScript_Josh_Text_2:
+	.string "You're free to go on through. Oww… I\n"
+	.string "really shouldn't have done that…$"
+
+RustboroCity_Gym_EventScript_Tommy_Text_0:
+	.string "Dollbags! We push them! We lift them!\n"
+	.string "They guide us to our inner strength!$"
+
+RustboroCity_Gym_EventScript_Tommy_Text_1:
+	.string "Dollbaaaaaags!$"
+
+RustboroCity_Gym_EventScript_Tommy_Text_2:
+	.string "Talia's a genius! Who else would've\n"
+	.string "thought of combining aesthetics and\l"
+	.string "practicality like that? Right, time to\l"
+	.string "lift some more!$"
+
+RustboroCity_Gym_EventScript_Marc_Text_0:
+	.string "I've been training with Mai to improve\n"
+	.string "our focus. Let's see if that's paid off!$"
+
+RustboroCity_Gym_EventScript_Marc_Text_1:
+	.string "Ah, well. We've tried our hardest.$"
+
+RustboroCity_Gym_EventScript_Marc_Text_2:
+	.string "We will not fight anyone with fewer than\n"
+	.string "two Pokémon. Come back and fight us\l"
+	.string "once you're ready.$"
+
+RustboroCity_Gym_EventScript_Marc_Text_3:
+	.string "It seems we both have so much more to\n"
+	.string "learn. But that's why we stick\l"
+	.string "together.$"
+
+RustboroCity_Gym_EventScript_Marc2_Text_0:
+	.string "Andy and I have been training together.\n"
+	.string "We're gonna give this our all!$"
+
+RustboroCity_Gym_EventScript_Marc2_Text_1:
+	.string "Oh, no… I flubbed it…$"
+
+RustboroCity_Gym_EventScript_Marc2_Text_2:
+	.string "Um… aren't you missing a Pokémon? We\n"
+	.string "stand by fair play, so we'll wait for you\l"
+	.string "to bring another.$"
+
+RustboroCity_Gym_EventScript_Marc2_Text_3:
+	.string "We might've been beaten, but I'm not\n"
+	.string "gonna let one bad fight ruin my mood.\l"
+	.string "Let's keep pushing on!$"

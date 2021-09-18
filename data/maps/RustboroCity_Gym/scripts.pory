@@ -14,7 +14,7 @@ script PoppyGym_Trigger2
 
 script RustboroCity_Gym_EventScript_Roxanne
 {
-	trainerbattle_single(TRAINER_ROXANNE_1,RustboroCity_Gym_Text_RoxanneIntro,RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated,NO_MUSIC)
+	trainerbattle_single(TRAINER_ROXANNE_1,format("Hey there, challenger! I'm Talia, the Gym Leader of this town.\pWhat did you think of my Dollbags? Weren't they just the cutest darlings? You bet they were!\pWhat, did you think a girl couldn't be both cute and strong? Well, that's where you're wrong!\pI'll prove it to you right here, right now! Give me your best shot!"),format("Wow… That was impressive! That really got my pulse racing, you know?\pAnyway, you've beaten me fair and square, so you've earned the Effort Badge!"),RustboroCity_Gym_EventScript_RoxanneDefeated,NO_MUSIC)
 	specialvar(VAR_RESULT,ShouldTryRematchBattle)
 	if (var(VAR_RESULT)==TRUE)
 	{
@@ -24,16 +24,16 @@ script RustboroCity_Gym_EventScript_Roxanne
 	{
 		goto(RustboroCity_Gym_EventScript_GiveRockTomb)
 	}
-	msgbox(RustboroCity_Gym_Text_RoxannePostBattle,MSGBOX_DEFAULT)
+	msgbox(format("Why do I love dolls so much? Well, I've grown up with them!\pMy granny is a renowned doll artist, and I've been studying to become her successor.\pI love working out just as much, so I've combined my two passions here! Pretty nice, huh?"),MSGBOX_DEFAULT)
 	release
 }
 
 script RustboroCity_Gym_EventScript_RoxanneDefeated
 {
-	message(RustboroCity_Gym_Text_ReceivedStoneBadge)
+	message(format("{PLAYER} received the Effort Badge from Talia!"))
 	waitmessage
 	call(Common_EventScript_PlayGymBadgeFanfare)
-	msgbox(RustboroCity_Gym_Text_StoneBadgeInfoTakeThis,MSGBOX_DEFAULT)
+	msgbox(format("Oh, I want you to have this, too!"),MSGBOX_DEFAULT)
 	setflag(FLAG_DEFEATED_RUSTBORO_GYM)
 	setflag(FLAG_BADGE01_GET)
 	clearflag(FLAG_GRC_HIDE_RIVAL_POPPY)
@@ -52,11 +52,39 @@ script RustboroCity_Gym_EventScript_GiveRockTomb
 	//compare VAR_RESULT,FALSE)
 	//goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag(FLAG_RECEIVED_TM39)
-	msgbox(RustboroCity_Gym_Text_ExplainRockTomb,MSGBOX_DEFAULT)
+	msgbox(format("TM08 contains Bulk Up! It's a real nifty move that raises your Pokémon's Attack and Defense stats!\pI'm sure you'll be able to take advantage of it just fine, knowing how skilled you are."),MSGBOX_DEFAULT)
 	release
 	end
 }
 
+//LI SCRIPT
+script RustboroCity_Gym_EventScript_Josh
+{
+	trainerbattle_single(TRAINER_GRC_LI,format("Hold it, Trainer! Don't think you can just barge through and challenge the Gym Leader! You'll have to go through me first!"),format("Ow, ow, ow… I pulled a muscle…"))
+	msgbox(format("You're free to go on through. Oww… I really shouldn't have done that…"),MSGBOX_AUTOCLOSE)
+}
+
+//KEN SCRIPT
+script RustboroCity_Gym_EventScript_Tommy
+{
+	trainerbattle_single(TRAINER_GRC_KEN,format("Dollbags! We push them! We lift them! They guide us to our inner strength!"),format("Dollbaaaaaags!"))
+	msgbox(format("Talia's a genius! Who else would've thought of combining aesthetics and practicality like that? Right, time to lift some more!"),MSGBOX_AUTOCLOSE)
+}
+
+//ANDY & MAI SCRIPT
+script RustboroCity_Gym_EventScript_Marc
+{
+	trainerbattle_double(TRAINER_GRC_ANDI_AND_MAI,format("I've been training with Mai to improve our focus. Let's see if that's paid off!"),format("Ah, well. We've tried our hardest."),format("We will not fight anyone with fewer than two Pokémon. Come back and fight us once you're ready."))
+	msgbox(format("It seems we both have so much more to learn. But that's why we stick together."),MSGBOX_AUTOCLOSE)
+}
+
+script RustboroCity_Gym_EventScript_Marc2
+{
+	trainerbattle_double(TRAINER_GRC_ANDI_AND_MAI,format("Andy and I have been training together. We're gonna give this our all!"),format("Oh, no… I flubbed it…"),format("Um… aren't you missing a Pokémon? We stand by fair play, so we'll wait for you to bring another."))
+	msgbox(format("We might've been beaten, but I'm not gonna let one bad fight ruin my mood. Let's keep pushing on!"),MSGBOX_AUTOCLOSE)
+}
+
+//To figure out dialogue!
 script RustboroCity_Gym_EventScript_RoxanneRematch
 {
 	trainerbattle_rematch_double(TRAINER_ROXANNE_1,RustboroCity_Gym_Text_RoxannePreRematch,RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons)
@@ -67,21 +95,6 @@ script RustboroCity_Gym_EventScript_RoxanneRematch
 raw ` 
 RustboroCity_Gym_MapScripts::
 	.byte 0
-
-RustboroCity_Gym_EventScript_Josh::
-	trainerbattle_single TRAINER_GRC_LI, RustboroCity_Gym_Text_JoshIntro, RustboroCity_Gym_Text_JoshDefeat
-	msgbox RustboroCity_Gym_Text_JoshPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-RustboroCity_Gym_EventScript_Tommy::
-	trainerbattle_single TRAINER_GRC_KEN, RustboroCity_Gym_Text_TommyIntro, RustboroCity_Gym_Text_TommyDefeat
-	msgbox RustboroCity_Gym_Text_TommyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-RustboroCity_Gym_EventScript_Marc::
-	trainerbattle_single TRAINER_GRC_ANDI_AND_MAI, RustboroCity_Gym_Text_MarcIntro, RustboroCity_Gym_Text_MarcDefeat
-	msgbox RustboroCity_Gym_Text_MarcPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 RustboroCity_Gym_EventScript_GymGuide::
 	lock
