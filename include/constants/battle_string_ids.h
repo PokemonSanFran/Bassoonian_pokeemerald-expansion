@@ -571,8 +571,11 @@
 #define STRINGID_PKMNSHOOKOFFTHETAUNT            567
 #define STRINGID_PKMNGOTOVERITSINFATUATION       568
 #define STRINGID_PLAYERWHITEOUT3                 569
+	
+#define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   570
+#define STRINGID_PLAYERPAIDPRIZEMONEY  			 571
 
-#define BATTLESTRINGS_COUNT                      570
+#define BATTLESTRINGS_COUNT                      572
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
