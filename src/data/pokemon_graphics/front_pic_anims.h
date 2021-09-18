@@ -5431,6 +5431,26 @@ static const union AnimCmd sAnim_LUMINEON_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_FINNEON_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_LUMINEON_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_MANTYKE_1[] =
 {
     ANIMCMD_FRAME(1, 50),
@@ -11744,6 +11764,16 @@ static const union AnimCmd *const sAnims_LUMINEON[] ={
     sAnim_LUMINEON_1,
 };
 
+static const union AnimCmd *const sAnims_FINNEON_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_FINNEON_HANAUAN_1,
+};
+
+static const union AnimCmd *const sAnims_LUMINEON_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_LUMINEON_HANAUAN_1,
+};
+
 static const union AnimCmd *const sAnims_MANTYKE[] ={
     sAnim_GeneralFrame0,
     sAnim_MANTYKE_1,
@@ -15816,6 +15846,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_FULL(CALYREX_SHADOW_RIDER, sAnims_CALYREX),
     ANIM_CMD(PSYDUCK_HANAUAN),
     ANIM_CMD(GOLDUCK_HANAUAN),
+    ANIM_CMD(FINNEON_HANAUAN),
+    ANIM_CMD(LUMINEON_HANAUAN),
     ANIM_CMD(EGG),
 };
 

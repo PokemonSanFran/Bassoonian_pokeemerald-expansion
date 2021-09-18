@@ -24755,4 +24755,8 @@ const u32 gTMHMLearnsets[][2] =
 	[SPECIES_PSYDUCK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 	
 	[SPECIES_GOLDUCK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+	
+	[SPECIES_FINNEON_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+	
+	[SPECIES_LUMINEON_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 };

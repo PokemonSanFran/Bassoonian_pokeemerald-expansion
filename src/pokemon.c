@@ -1706,6 +1706,8 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
 	//Custom
 	[SPECIES_PSYDUCK_HANAUAN - 1] = NATIONAL_DEX_PSYDUCK,
 	[SPECIES_GOLDUCK_HANAUAN - 1] = NATIONAL_DEX_GOLDUCK,
+	[SPECIES_FINNEON_HANAUAN - 1] = NATIONAL_DEX_FINNEON,
+	[SPECIES_LUMINEON_HANAUAN - 1] = NATIONAL_DEX_LUMINEON,
 };
 
 const u16 gHoennToNationalOrder[HOENN_DEX_COUNT] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
@@ -3015,6 +3017,8 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
 	// Custom
     [SPECIES_PSYDUCK_HANAUAN - 1]       = ANIM_V_STRETCH,
     [SPECIES_GOLDUCK_HANAUAN - 1]       = ANIM_GROW_VIBRATE,
+    [SPECIES_FINNEON_HANAUAN - 1]       = ANIM_SWING_CONCAVE_FAST_SHORT,
+    [SPECIES_LUMINEON_HANAUAN - 1]      = ANIM_GLOW_BLUE,
 };
 
 static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =

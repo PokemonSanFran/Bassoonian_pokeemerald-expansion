@@ -6118,4 +6118,14 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x78,
         .y_offset = 2,
     },
+    [SPECIES_FINNEON_HANAUAN] =
+    {
+        .size = 0x66,
+        .y_offset = 14,
+    },
+    [SPECIES_LUMINEON_HANAUAN] =
+    {
+        .size = 0x77,
+        .y_offset = 6,
+    },
 };

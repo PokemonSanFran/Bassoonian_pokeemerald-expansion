@@ -1278,4 +1278,6 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
 	//Custom
     [SPECIES_PSYDUCK_HANAUAN] = _("Psyduck"),
     [SPECIES_GOLDUCK_HANAUAN] = _("Golduck"),
+    [SPECIES_FINNEON_HANAUAN] = _("Finneon"),
+    [SPECIES_LUMINEON_HANAUAN] = _("Lumineon"),
 };

@@ -1274,6 +1274,8 @@ gCryTable::
 	@ Custom
 	cry Cry_Psyduck
 	cry Cry_Golduck
+	cry Cry_Finneon
+	cry Cry_Lumineon
 
 	.align 2
 gCryTable2::
@@ -2551,3 +2553,5 @@ gCryTable2::
 	@ Custom
 	cry2 Cry_Psyduck
 	cry2 Cry_Golduck
+	cry2 Cry_Finneon
+	cry2 Cry_Lumineon

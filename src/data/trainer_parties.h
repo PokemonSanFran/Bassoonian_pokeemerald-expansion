@@ -3937,7 +3937,7 @@ static const struct TrainerMon sParty_GRC_Harold1[] = {
     {
     .iv = 0,
     .lvl = 14,
-    .species = SPECIES_FINNEON,
+    .species = SPECIES_FINNEON_HANAUAN,
     }
 };
 
@@ -9545,7 +9545,7 @@ static const struct TrainerMon sParty_GRC_Finn[] = {
 	{
 		.iv = 0,
 		.lvl = 10,
-		.species = SPECIES_FINNEON,
+		.species = SPECIES_FINNEON_HANAUAN,
 	}
 };
 

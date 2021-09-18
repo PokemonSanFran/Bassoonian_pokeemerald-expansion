@@ -1275,4 +1275,6 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
 	// Custom
     [SPECIES_PSYDUCK_HANAUAN] = sPsyduckHanauanLevelUpLearnset,
     [SPECIES_GOLDUCK_HANAUAN] = sGolduckHanauanLevelUpLearnset,
+    [SPECIES_FINNEON_HANAUAN] = sFinneonHanauanLevelUpLearnset,
+    [SPECIES_LUMINEON_HANAUAN] = sLumineonHanauanLevelUpLearnset,
 };

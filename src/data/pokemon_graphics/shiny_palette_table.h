@@ -1276,6 +1276,8 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
 	
     SPECIES_SHINY_PAL(PSYDUCK_HANAUAN, gMonShinyPalette_PsyduckHanauan),
     SPECIES_SHINY_PAL(GOLDUCK_HANAUAN, gMonShinyPalette_GolduckHanauan),
+    SPECIES_SHINY_PAL(FINNEON_HANAUAN, gMonShinyPalette_FinneonHanauan),
+    SPECIES_SHINY_PAL(LUMINEON_HANAUAN, gMonShinyPalette_LumineonHanauan),
 };
 
 const struct CompressedSpritePalette gMonShinyPaletteTableFemale[] =
