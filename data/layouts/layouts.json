@@ -1334,10 +1334,10 @@
     {
       "id": "LAYOUT_GRANITE_CAVE_B2F",
       "name": "GraniteCave_B2F_Layout",
-      "width": 32,
+      "width": 33,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/GraniteCave_B2F/border.bin",
       "blockdata_filepath": "data/layouts/GraniteCave_B2F/map.bin"
     },
