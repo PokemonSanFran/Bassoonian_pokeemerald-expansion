@@ -65,8 +65,11 @@ Text_CantCut: @ 829077D
 @ Interact with smashable rock
 EventScript_RockSmash:: @ 82907A6
 	lockall
-	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
-	checkpartymove MOVE_ROCK_SMASH
+	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
+	checkitem ITEM_HM05, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_CantSmashRock
+	checkpartyhmlearnable MOVE_ROCK_SMASH
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
