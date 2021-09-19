@@ -15,8 +15,13 @@
   "connections": [
     {
       "direction": "down",
+      "offset": 8,
+      "map": "MAP_LAVARIDGE_TOWN"
+    },
+    {
+      "direction": "left",
       "offset": 0,
-      "map": "MAP_MAUVILLE_CITY"
+      "map": "MAP_FALLARBOR_TOWN"
     }
   ],
   "object_events": [

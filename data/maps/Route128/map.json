@@ -19,11 +19,6 @@
       "map": "MAP_ROUTE127"
     },
     {
-      "direction": "down",
-      "offset": 0,
-      "map": "MAP_ROUTE129"
-    },
-    {
       "direction": "dive",
       "offset": 0,
       "map": "MAP_UNDERWATER_ROUTE128"

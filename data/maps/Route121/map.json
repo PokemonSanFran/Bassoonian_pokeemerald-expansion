@@ -15,13 +15,13 @@
   "connections": [
     {
       "direction": "left",
-      "offset": -80,
-      "map": "MAP_ROUTE120"
+      "offset": 0,
+      "map": "MAP_LAVARIDGE_TOWN"
     },
     {
       "direction": "right",
-      "offset": -10,
-      "map": "MAP_LILYCOVE_CITY"
+      "offset": -80,
+      "map": "MAP_ROUTE120"
     }
   ],
   "object_events": [
