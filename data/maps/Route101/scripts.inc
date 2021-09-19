@@ -219,6 +219,16 @@ R1_ProfHomeBlock::
 	return
 
 
+Route101_EventScript_Youngster::
+	msgbox Route101_EventScript_Youngster_Text_0, MSGBOX_NPC
+	return
+
+
+Route101_EventScript_Boy::
+	msgbox Route101_EventScript_Boy_Text_0, MSGBOX_NPC
+	return
+
+
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4
 
@@ -427,14 +437,6 @@ Route101_Movement_Unused2:
 @	walk_up
 @	step_end
 
-Route101_EventScript_Youngster::
-@	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
-@	end
-
-Route101_EventScript_Boy::
-@	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
-@	end
-
 Route101_EventScript_RouteSign::
 @	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
 @	end
@@ -534,3 +536,13 @@ R1_ScientistCityBlock_Text_0:
 
 R1_ProfHomeBlock_Text_0:
 	.string "Prof says no$"
+
+Route101_EventScript_Youngster_Text_0:
+	.string "Professor Spruce sure has a lot of\n"
+	.string "energy… I guess he's just a really busy\l"
+	.string "man!$"
+
+Route101_EventScript_Boy_Text_0:
+	.string "I tend to use a lot of Repels so I don't\n"
+	.string "encounter wild Pokémon. I don't have\l"
+	.string "any of my own, you see.$"

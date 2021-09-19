@@ -19,6 +19,27 @@ script Route103_EventScript_Marcos
 	msgbox(format("They say Bug Pokémon live out here as well, but they must be super rare. I've never seen any here…"),MSGBOX_AUTOCLOSE)
 }
 
+//ALLIAH SCRIPT
+script Route103_EventScript_Pete
+{
+	trainerbattle_single(TRAINER_GRC_ALLIAH,format("I'm a little reclusive, but I love reading others' emotions. And right now, I can tell you are looking forward to challenging me. Very well!"),format("Such focus…!"))
+	msgbox(format("I've always been so fascinated by others' thoughts, but I find it hard to open my own heart. Perhaps that Black Belt over there…"),MSGBOX_AUTOCLOSE)
+}
+
+//SALLY SCRIPT
+script Route103_EventScript_Rhett
+{
+	trainerbattle_single(TRAINER_GRC_SALLY,format("I've learned a lot at school about how types interact. It's important to cover all your bases!"),format("Seems you hit a blind spot…"))
+	msgbox(format("I need to learn even more about Pokémon types. There's a lot of Pokémon with two types, too, so that makes it all the more interesting!"),MSGBOX_AUTOCLOSE)
+}
+
+//KWOK SCRIPT
+script Route103_EventScript_Isabelle
+{
+	trainerbattle_single(TRAINER_GRC_KWOK,format("To truly elevate your strength, your mind must be as strong as your body. That is why I try to stay calm at all times."),format("This, too, is no reason to get worked up."))
+	msgbox(format("A strong body without a strong spirit will crumble just as easily as weak body. Find your peace of mind, for that is the wellspring of true strength."),MSGBOX_AUTOCLOSE)
+}
+
 //JIM & JO SCRIPTS
 script Route103_EventScript_Amy
 {
@@ -295,21 +316,6 @@ Route103_EventScript_Man::
 Route103_EventScript_RouteSign::
 @	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 @	end
-
-Route103_EventScript_Rhett::
-	trainerbattle_single TRAINER_GRC_SALLY, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
-	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Pete::
-	trainerbattle_single TRAINER_GRC_ALLIAH, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
-	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Isabelle::
-	trainerbattle_single TRAINER_GRC_KWOK, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
-	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route103_Text_MayRoute103Pokemon:
 @	.string "MAY: Let's see… The POKéMON found\n"

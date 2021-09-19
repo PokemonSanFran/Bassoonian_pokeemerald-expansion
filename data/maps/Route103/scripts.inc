@@ -16,6 +16,24 @@ Route103_EventScript_Marcos::
 	return
 
 
+Route103_EventScript_Pete::
+	trainerbattle_single TRAINER_GRC_ALLIAH, Route103_EventScript_Pete_Text_0, Route103_EventScript_Pete_Text_1
+	msgbox Route103_EventScript_Pete_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_Rhett::
+	trainerbattle_single TRAINER_GRC_SALLY, Route103_EventScript_Rhett_Text_0, Route103_EventScript_Rhett_Text_1
+	msgbox Route103_EventScript_Rhett_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_Isabelle::
+	trainerbattle_single TRAINER_GRC_KWOK, Route103_EventScript_Isabelle_Text_0, Route103_EventScript_Isabelle_Text_1
+	msgbox Route103_EventScript_Isabelle_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
 Route103_EventScript_Amy::
 	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_0, Route103_EventScript_Amy_Text_1, Route103_EventScript_Amy_Text_2, Route103_EventScript_RegisterAmyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -288,21 +306,6 @@ Route103_EventScript_RouteSign::
 @	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 @	end
 
-Route103_EventScript_Rhett::
-	trainerbattle_single TRAINER_GRC_SALLY, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
-	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Pete::
-	trainerbattle_single TRAINER_GRC_ALLIAH, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
-	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Isabelle::
-	trainerbattle_single TRAINER_GRC_KWOK, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
-	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route103_Text_MayRoute103Pokemon:
 @	.string "MAY: Let's see… The POKéMON found\n"
 @	.string "on ROUTE 103 include…$"
@@ -407,6 +410,50 @@ Route103_EventScript_Marcos_Text_2:
 	.string "They say Bug Pokémon live out here as\n"
 	.string "well, but they must be super rare. I've\l"
 	.string "never seen any here…$"
+
+Route103_EventScript_Pete_Text_0:
+	.string "I'm a little reclusive, but I love\n"
+	.string "reading others' emotions. And right\l"
+	.string "now, I can tell you are looking forward\l"
+	.string "to challenging me. Very well!$"
+
+Route103_EventScript_Pete_Text_1:
+	.string "Such focus…!$"
+
+Route103_EventScript_Pete_Text_2:
+	.string "I've always been so fascinated by\n"
+	.string "others' thoughts, but I find it hard to\l"
+	.string "open my own heart. Perhaps that Black\l"
+	.string "Belt over there…$"
+
+Route103_EventScript_Rhett_Text_0:
+	.string "I've learned a lot at school about how\n"
+	.string "types interact. It's important to\l"
+	.string "cover all your bases!$"
+
+Route103_EventScript_Rhett_Text_1:
+	.string "Seems you hit a blind spot…$"
+
+Route103_EventScript_Rhett_Text_2:
+	.string "I need to learn even more about\n"
+	.string "Pokémon types. There's a lot of\l"
+	.string "Pokémon with two types, too, so that\l"
+	.string "makes it all the more interesting!$"
+
+Route103_EventScript_Isabelle_Text_0:
+	.string "To truly elevate your strength, your\n"
+	.string "mind must be as strong as your body.\l"
+	.string "That is why I try to stay calm at all\l"
+	.string "times.$"
+
+Route103_EventScript_Isabelle_Text_1:
+	.string "This, too, is no reason to get worked up.$"
+
+Route103_EventScript_Isabelle_Text_2:
+	.string "A strong body without a strong spirit\n"
+	.string "will crumble just as easily as weak\l"
+	.string "body. Find your peace of mind, for that\l"
+	.string "is the wellspring of true strength.$"
 
 Route103_EventScript_Amy_Text_0:
 	.string "Oh, what a darling Trainer we have here!\n"
