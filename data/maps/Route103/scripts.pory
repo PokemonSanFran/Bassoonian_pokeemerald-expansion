@@ -1,3 +1,95 @@
+//KAYLA SCRIPT
+script Route103_EventScript_Daisy
+{
+	trainerbattle_single(TRAINER_GRC_KAYLA,format("My little fluffy pal evolved! Now it's my big, super-fluffy pal!"),format("At least Furret will always be the fluffiest! That's what matters."))
+	msgbox(format("We're not really battlers, but that's okay. What matters is that Furret and I are the best of pals!"),MSGBOX_AUTOCLOSE)
+}
+
+//JENNIFER SCRIPT
+script Route103_EventScript_Andrew
+{
+	trainerbattle_single(TRAINER_GRC_JENNIFER,format("Oh, I was just about to go for tea. But I can't refuse a Trainer's challenge, can I?"),format("Now I could really use a nice brew…"))
+	msgbox(format("I'm rather particular when it comes to my tea preferences. Even my Pokémon have their own tastes. Isn't that lovely?"),MSGBOX_AUTOCLOSE)
+}
+
+//RODD SCRIPT
+script Route103_EventScript_Marcos
+{
+	trainerbattle_single(TRAINER_GRC_RODD,format("I caught most of my Bug Pokémon in Borago Grove. I like the waterside more, though."),format("If only my Pokémon could swim…"))
+	msgbox(format("They say Bug Pokémon live out here as well, but they must be super rare. I've never seen any here…"),MSGBOX_AUTOCLOSE)
+}
+
+//JIM & JO SCRIPTS
+script Route103_EventScript_Amy
+{
+	trainerbattle_double(TRAINER_GRC_JIM_AND_JO_1,format("Oh, what a darling Trainer we have here! Are your Pokémon just as precious?"),format("Ohhh, how charming!"),format("Oh, dearie me. One Pokémon? If you bring another, we can let our darlings out!"),Route103_EventScript_RegisterAmyAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch_double(TRAINER_GRC_JIM_AND_JO_1,format("Hello, hello, {PLAYER}! Would you look at our darling Pokémon once again?"),format("So strong, and yet so cute!"),format("You haven't forgotten about Double Battles, have you now, dear? We'll wait for you, don't worry!"))
+		msgbox(format("The love that Jim and I share extends to our Pokémon. I believe that's why they've grown so strong."),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		msgbox(format("I met my husband when my Hoothoot stumbled across his Psyduck. We've never been apart since!"),MSGBOX_DEFAULT)
+		release
+	}
+}
+
+script Route103_EventScript_RegisterAmyAfterBattle
+{
+	msgbox(format("I think we'll be seeing many more delightful Pokémon from you. Care to register us?"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_JIM_AND_JO_1)
+	release
+}
+
+script Route103_EventScript_Liv
+{
+	trainerbattle_double(TRAINER_GRC_JIM_AND_JO_1,format("Trainer! Trainer! Behold our adorable Pokémon!"),format("Weren't they just delightful?"),format("Hello, Trainer! Could you bring another Pokémon? We'd love to show off our own!"),Route103_EventScript_RegisterLivAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch_double(TRAINER_GRC_JIM_AND_JO_1,format("{PLAYER}! {PLAYER}! Our Pokémon have grown even more adorable than last time!"),format("They truly are such lovely little things…"),format("{PLAYER}! So good to see you! You're just a Pokémon short, though…"))
+		msgbox(format("No matter how big and strong, our Pokémon will always be our little darlings. They're our babies."),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		msgbox(format("My wife and I bonded over our shared love for Pokémon. It was love at first sight…"),MSGBOX_DEFAULT)
+		release
+	}
+}
+
+script Route103_EventScript_RegisterLivAfterBattle
+{
+	msgbox(format("Please register us! We'd love to see what other kinds of adorable Pokémon you'll bring next time!"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_JIM_AND_JO_1)
+	release
+}
+
+//HAROLD SCRIPTS
+script Route103_EventScript_Miguel
+{
+	trainerbattle_double(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave… HO! And that's how you catch a fish, young one!\pNow, I'll show you what my strength has earned me!"),format("Hm… Seems I'll have to bulk up some more."),Route103_EventScript_RegisterMiguelAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch_double(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave, heave, heave… HO! Care to join me, {PLAYER}?"),format("Heave… HO!"))
+		msgbox(format("I think I could defeat a sailor with these sculpted arms of mine! If you wish to know the secrets of fishing, then say it with me: Heave… HO!"),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		msgbox(format("It takes quite some strength to haul in the big fish. I do this every day, so my body is in tip-top shape!"),MSGBOX_DEFAULT)
+		release
+	}
+}
+
+script Route103_EventScript_RegisterMiguelAfterBattle
+{
+	msgbox(format("I think we'll be seeing each other again. If you want to heave some fish with me, just give me a holler!"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_HAROLD_1)
+	release
+}
+
 raw ` 
 .set LOCALID_RIVAL, 2
 
@@ -203,81 +295,6 @@ Route103_EventScript_Man::
 Route103_EventScript_RouteSign::
 @	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 @	end
-
-Route103_EventScript_Daisy::
-	trainerbattle_single TRAINER_GRC_KAYLA, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
-	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Amy::
-	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon, Route102_EventScript_AmyRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route102_EventScript_AmyRematch
-	msgbox Route103_Text_AmyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_AmyRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JIM_AND_JO_1
-	release
-	end
-
-Route102_EventScript_AmyRematch::
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated, Route103_Text_AmyRematchNotEnoughPokemon
-	msgbox Route103_Text_AmyRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Liv::
-	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_LivIntro, Route103_Text_LivDefeated, Route103_Text_LivNotEnoughPokemon, Route102_EventScript_LivRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route102_EventScript_LivRematch
-	msgbox Route103_Text_LivPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_LivRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JIM_AND_JO_1
-	release
-	end
-
-Route102_EventScript_LivRematch::
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated, Route103_Text_LivRematchNotEnoughPokemon
-	msgbox Route103_Text_LivRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Andrew::
-	trainerbattle_single TRAINER_GRC_JENNIFER, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
-	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Miguel::
-	trainerbattle_single TRAINER_GRC_HAROLD_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route102_EventScript_MiguelRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route103_EventScript_MiguelRematch
-	msgbox Route103_Text_MiguelPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route103_Text_MiguelRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_HAROLD_1
-	release
-	end
-
-Route103_EventScript_MiguelRematch::
-	trainerbattle_rematch TRAINER_GRC_HAROLD_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
-	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Marcos::
-	trainerbattle_single TRAINER_GRC_RODD, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
-	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route103_EventScript_Rhett::
 	trainerbattle_single TRAINER_GRC_SALLY, Route103_Text_RhettIntro, Route103_Text_RhettDefeated

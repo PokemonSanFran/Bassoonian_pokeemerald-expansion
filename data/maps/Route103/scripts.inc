@@ -1,3 +1,53 @@
+Route103_EventScript_Daisy::
+	trainerbattle_single TRAINER_GRC_KAYLA, Route103_EventScript_Daisy_Text_0, Route103_EventScript_Daisy_Text_1
+	msgbox Route103_EventScript_Daisy_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_Amy::
+	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_0, Route103_EventScript_Amy_Text_1, Route103_EventScript_Amy_Text_2, Route103_EventScript_RegisterAmyAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route103_EventScript_Amy_1
+	msgbox Route103_EventScript_Amy_Text_6, MSGBOX_DEFAULT
+	release
+	return
+
+Route103_EventScript_Amy_1:
+	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_3, Route103_EventScript_Amy_Text_4, Route103_EventScript_Amy_Text_2
+	msgbox Route103_EventScript_Amy_Text_5, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_RegisterAmyAfterBattle::
+	msgbox Route103_EventScript_RegisterAmyAfterBattle_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_JIM_AND_JO_1
+	release
+	return
+
+
+Route103_EventScript_Liv::
+	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_0, Route103_EventScript_Liv_Text_1, Route103_EventScript_Amy_Text_2, Route103_EventScript_RegisterLivAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route103_EventScript_Liv_1
+	msgbox Route103_EventScript_Liv_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+Route103_EventScript_Liv_1:
+	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_2, Route103_EventScript_Liv_Text_3, Route103_EventScript_Amy_Text_2
+	msgbox Route103_EventScript_Liv_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_RegisterLivAfterBattle::
+	msgbox Route103_EventScript_RegisterLivAfterBattle_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_JIM_AND_JO_1
+	release
+	return
+
+
  
 .set LOCALID_RIVAL, 2
 
@@ -204,49 +254,6 @@ Route103_EventScript_RouteSign::
 @	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 @	end
 
-Route103_EventScript_Daisy::
-	trainerbattle_single TRAINER_GRC_KAYLA, Route103_Text_DaisyIntro, Route103_Text_DaisyDefeated
-	msgbox Route103_Text_DaisyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Amy::
-	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_AmyIntro, Route103_Text_AmyDefeated, Route103_Text_AmyNotEnoughPokemon, Route102_EventScript_AmyRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route102_EventScript_AmyRematch
-	msgbox Route103_Text_AmyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_AmyRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JIM_AND_JO_1
-	release
-	end
-
-Route102_EventScript_AmyRematch::
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_AmyRematchIntro, Route103_Text_AmyRematchDefeated, Route103_Text_AmyRematchNotEnoughPokemon
-	msgbox Route103_Text_AmyRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Liv::
-	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_LivIntro, Route103_Text_LivDefeated, Route103_Text_LivNotEnoughPokemon, Route102_EventScript_LivRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route102_EventScript_LivRematch
-	msgbox Route103_Text_LivPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route102_EventScript_LivRegisterMatchCallAfterBattle::
-	msgbox Route103_Text_AmyLivRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JIM_AND_JO_1
-	release
-	end
-
-Route102_EventScript_LivRematch::
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_Text_LivRematchIntro, Route103_Text_LivRematchDefeated, Route103_Text_LivRematchNotEnoughPokemon
-	msgbox Route103_Text_LivRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route103_EventScript_Andrew::
 	trainerbattle_single TRAINER_GRC_JENNIFER, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
 	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
@@ -358,3 +365,79 @@ Route103_Text_ShortcutToOldale:
 Route103_Text_RouteSign:
 @	.string "ROUTE 103\n"
 @	.string "{DOWN_ARROW} OLDALE TOWN$"
+
+Route103_EventScript_Daisy_Text_0:
+	.string "My little fluffy pal evolved! Now it's my\n"
+	.string "big, super-fluffy pal!$"
+
+Route103_EventScript_Daisy_Text_1:
+	.string "At least Furret will always be the\n"
+	.string "fluffiest! That's what matters.$"
+
+Route103_EventScript_Daisy_Text_2:
+	.string "We're not really battlers, but that's\n"
+	.string "okay. What matters is that Furret and I\l"
+	.string "are the best of pals!$"
+
+Route103_EventScript_Amy_Text_0:
+	.string "Oh, what a darling Trainer we have here!\n"
+	.string "Are your Pokémon just as precious?$"
+
+Route103_EventScript_Amy_Text_1:
+	.string "Ohhh, how charming!$"
+
+Route103_EventScript_Amy_Text_2:
+	.string "not enough$"
+
+Route103_EventScript_Amy_Text_3:
+	.string "Hello, hello, {PLAYER}! Would you look\n"
+	.string "at our darling Pokémon once again?$"
+
+Route103_EventScript_Amy_Text_4:
+	.string "So strong, and yet so cute!$"
+
+Route103_EventScript_Amy_Text_5:
+	.string "The love that Jim and I share extends\n"
+	.string "to our Pokémon. I believe that's why\l"
+	.string "they've grown so strong.$"
+
+Route103_EventScript_Amy_Text_6:
+	.string "I met my husband when my Hoothoot\n"
+	.string "stumbled across his Psyduck. We've\l"
+	.string "never been apart since!$"
+
+Route103_EventScript_RegisterAmyAfterBattle_Text_0:
+	.string "I think we'll be seeing many more\n"
+	.string "delightful Pokémon from you. Care to\l"
+	.string "register us?$"
+
+Route103_EventScript_Liv_Text_0:
+	.string "Trainer! Trainer! Behold our adorable\n"
+	.string "Pokémon!$"
+
+Route103_EventScript_Liv_Text_1:
+	.string "Weren't they just delightful?$"
+
+Route103_EventScript_Liv_Text_2:
+	.string "{PLAYER}! {PLAYER}! Our Pokémon\n"
+	.string "have grown even more adorable than\l"
+	.string "last time!$"
+
+Route103_EventScript_Liv_Text_3:
+	.string "They truly are such lovely little\n"
+	.string "things…$"
+
+Route103_EventScript_Liv_Text_4:
+	.string "No matter how big and strong, our\n"
+	.string "Pokémon will always be our little\l"
+	.string "darlings. They're our babies.$"
+
+Route103_EventScript_Liv_Text_5:
+	.string "My wife and I bonded over our shared\n"
+	.string "love for Pokémon. It was love at first\l"
+	.string "sight…$"
+
+Route103_EventScript_RegisterLivAfterBattle_Text_0:
+	.string "Please register us! We'd love to see\n"
+	.string "what other kinds of adorable Pokémon\l"
+	.string "you'll bring next time!$"
