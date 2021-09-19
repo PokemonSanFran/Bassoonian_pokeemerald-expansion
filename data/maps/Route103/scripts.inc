@@ -4,18 +4,30 @@ Route103_EventScript_Daisy::
 	return
 
 
+Route103_EventScript_Andrew::
+	trainerbattle_single TRAINER_GRC_JENNIFER, Route103_EventScript_Andrew_Text_0, Route103_EventScript_Andrew_Text_1
+	msgbox Route103_EventScript_Andrew_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_Marcos::
+	trainerbattle_single TRAINER_GRC_RODD, Route103_EventScript_Marcos_Text_0, Route103_EventScript_Marcos_Text_1
+	msgbox Route103_EventScript_Marcos_Text_2, MSGBOX_AUTOCLOSE
+	return
+
+
 Route103_EventScript_Amy::
 	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_0, Route103_EventScript_Amy_Text_1, Route103_EventScript_Amy_Text_2, Route103_EventScript_RegisterAmyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route103_EventScript_Amy_1
-	msgbox Route103_EventScript_Amy_Text_6, MSGBOX_DEFAULT
+	msgbox Route103_EventScript_Amy_Text_7, MSGBOX_DEFAULT
 	release
 	return
 
 Route103_EventScript_Amy_1:
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_3, Route103_EventScript_Amy_Text_4, Route103_EventScript_Amy_Text_2
-	msgbox Route103_EventScript_Amy_Text_5, MSGBOX_AUTOCLOSE
+	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Amy_Text_3, Route103_EventScript_Amy_Text_4, Route103_EventScript_Amy_Text_5
+	msgbox Route103_EventScript_Amy_Text_6, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -27,23 +39,45 @@ Route103_EventScript_RegisterAmyAfterBattle::
 
 
 Route103_EventScript_Liv::
-	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_0, Route103_EventScript_Liv_Text_1, Route103_EventScript_Amy_Text_2, Route103_EventScript_RegisterLivAfterBattle
+	trainerbattle_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_0, Route103_EventScript_Liv_Text_1, Route103_EventScript_Liv_Text_2, Route103_EventScript_RegisterLivAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route103_EventScript_Liv_1
-	msgbox Route103_EventScript_Liv_Text_5, MSGBOX_DEFAULT
+	msgbox Route103_EventScript_Liv_Text_7, MSGBOX_DEFAULT
 	release
 	return
 
 Route103_EventScript_Liv_1:
-	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_2, Route103_EventScript_Liv_Text_3, Route103_EventScript_Amy_Text_2
-	msgbox Route103_EventScript_Liv_Text_4, MSGBOX_AUTOCLOSE
+	trainerbattle_rematch_double TRAINER_GRC_JIM_AND_JO_1, Route103_EventScript_Liv_Text_3, Route103_EventScript_Liv_Text_4, Route103_EventScript_Liv_Text_5
+	msgbox Route103_EventScript_Liv_Text_6, MSGBOX_AUTOCLOSE
 	return
 
 
 Route103_EventScript_RegisterLivAfterBattle::
 	msgbox Route103_EventScript_RegisterLivAfterBattle_Text_0, MSGBOX_DEFAULT
 	register_matchcall TRAINER_GRC_JIM_AND_JO_1
+	release
+	return
+
+
+Route103_EventScript_Miguel::
+	trainerbattle_single TRAINER_GRC_HAROLD_1, Route103_EventScript_Miguel_Text_0, Route103_EventScript_Miguel_Text_1, Route103_EventScript_RegisterMiguelAfterBattle
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route103_EventScript_Miguel_1
+	msgbox Route103_EventScript_Miguel_Text_5, MSGBOX_DEFAULT
+	release
+	return
+
+Route103_EventScript_Miguel_1:
+	trainerbattle_rematch TRAINER_GRC_HAROLD_1, Route103_EventScript_Miguel_Text_2, Route103_EventScript_Miguel_Text_3
+	msgbox Route103_EventScript_Miguel_Text_4, MSGBOX_AUTOCLOSE
+	return
+
+
+Route103_EventScript_RegisterMiguelAfterBattle::
+	msgbox Route103_EventScript_RegisterMiguelAfterBattle_Text_0, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GRC_HAROLD_1
 	release
 	return
 
@@ -254,38 +288,6 @@ Route103_EventScript_RouteSign::
 @	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 @	end
 
-Route103_EventScript_Andrew::
-	trainerbattle_single TRAINER_GRC_JENNIFER, Route103_Text_AndrewIntro, Route103_Text_AndrewDefeated
-	msgbox Route103_Text_AndrewPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Miguel::
-	trainerbattle_single TRAINER_GRC_HAROLD_1, Route103_Text_MiguelIntro, Route103_Text_MiguelDefeated, Route102_EventScript_MiguelRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route103_EventScript_MiguelRematch
-	msgbox Route103_Text_MiguelPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route102_EventScript_MiguelRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route103_Text_MiguelRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_HAROLD_1
-	release
-	end
-
-Route103_EventScript_MiguelRematch::
-	trainerbattle_rematch TRAINER_GRC_HAROLD_1, Route103_Text_MiguelRematchIntro, Route103_Text_MiguelRematchDefeated
-	msgbox Route103_Text_MiguelRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Marcos::
-	trainerbattle_single TRAINER_GRC_RODD, Route103_Text_MarcosIntro, Route103_Text_MarcosDefeated
-	msgbox Route103_Text_MarcosPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route103_EventScript_Rhett::
 	trainerbattle_single TRAINER_GRC_SALLY, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
 	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
@@ -379,6 +381,33 @@ Route103_EventScript_Daisy_Text_2:
 	.string "okay. What matters is that Furret and I\l"
 	.string "are the best of pals!$"
 
+Route103_EventScript_Andrew_Text_0:
+	.string "Oh, I was just about to go for tea. But I\n"
+	.string "can't refuse a Trainer's challenge, can\l"
+	.string "I?$"
+
+Route103_EventScript_Andrew_Text_1:
+	.string "Now I could really use a nice brew…$"
+
+Route103_EventScript_Andrew_Text_2:
+	.string "I'm rather particular when it comes to\n"
+	.string "my tea preferences. Even my Pokémon\l"
+	.string "have their own tastes. Isn't that\l"
+	.string "lovely?$"
+
+Route103_EventScript_Marcos_Text_0:
+	.string "I caught most of my Bug Pokémon in\n"
+	.string "Borago Grove. I like the waterside\l"
+	.string "more, though.$"
+
+Route103_EventScript_Marcos_Text_1:
+	.string "If only my Pokémon could swim…$"
+
+Route103_EventScript_Marcos_Text_2:
+	.string "They say Bug Pokémon live out here as\n"
+	.string "well, but they must be super rare. I've\l"
+	.string "never seen any here…$"
+
 Route103_EventScript_Amy_Text_0:
 	.string "Oh, what a darling Trainer we have here!\n"
 	.string "Are your Pokémon just as precious?$"
@@ -387,7 +416,8 @@ Route103_EventScript_Amy_Text_1:
 	.string "Ohhh, how charming!$"
 
 Route103_EventScript_Amy_Text_2:
-	.string "not enough$"
+	.string "Oh, dearie me. One Pokémon? If you bring\n"
+	.string "another, we can let our darlings out!$"
 
 Route103_EventScript_Amy_Text_3:
 	.string "Hello, hello, {PLAYER}! Would you look\n"
@@ -397,11 +427,16 @@ Route103_EventScript_Amy_Text_4:
 	.string "So strong, and yet so cute!$"
 
 Route103_EventScript_Amy_Text_5:
+	.string "You haven't forgotten about Double\n"
+	.string "Battles, have you now, dear? We'll wait\l"
+	.string "for you, don't worry!$"
+
+Route103_EventScript_Amy_Text_6:
 	.string "The love that Jim and I share extends\n"
 	.string "to our Pokémon. I believe that's why\l"
 	.string "they've grown so strong.$"
 
-Route103_EventScript_Amy_Text_6:
+Route103_EventScript_Amy_Text_7:
 	.string "I met my husband when my Hoothoot\n"
 	.string "stumbled across his Psyduck. We've\l"
 	.string "never been apart since!$"
@@ -419,20 +454,28 @@ Route103_EventScript_Liv_Text_1:
 	.string "Weren't they just delightful?$"
 
 Route103_EventScript_Liv_Text_2:
+	.string "Hello, Trainer! Could you bring another\n"
+	.string "Pokémon? We'd love to show off our own!$"
+
+Route103_EventScript_Liv_Text_3:
 	.string "{PLAYER}! {PLAYER}! Our Pokémon\n"
 	.string "have grown even more adorable than\l"
 	.string "last time!$"
 
-Route103_EventScript_Liv_Text_3:
+Route103_EventScript_Liv_Text_4:
 	.string "They truly are such lovely little\n"
 	.string "things…$"
 
-Route103_EventScript_Liv_Text_4:
+Route103_EventScript_Liv_Text_5:
+	.string "{PLAYER}! So good to see you! You're\n"
+	.string "just a Pokémon short, though…$"
+
+Route103_EventScript_Liv_Text_6:
 	.string "No matter how big and strong, our\n"
 	.string "Pokémon will always be our little\l"
 	.string "darlings. They're our babies.$"
 
-Route103_EventScript_Liv_Text_5:
+Route103_EventScript_Liv_Text_7:
 	.string "My wife and I bonded over our shared\n"
 	.string "love for Pokémon. It was love at first\l"
 	.string "sight…$"
@@ -441,3 +484,36 @@ Route103_EventScript_RegisterLivAfterBattle_Text_0:
 	.string "Please register us! We'd love to see\n"
 	.string "what other kinds of adorable Pokémon\l"
 	.string "you'll bring next time!$"
+
+Route103_EventScript_Miguel_Text_0:
+	.string "Heave-ho! Heave… HO! And that's how\n"
+	.string "you catch a fish, young one!\p"
+	.string "Now, I'll show you what my strength has\n"
+	.string "earned me!$"
+
+Route103_EventScript_Miguel_Text_1:
+	.string "Hm… Seems I'll have to bulk up some\n"
+	.string "more.$"
+
+Route103_EventScript_Miguel_Text_2:
+	.string "Heave-ho! Heave, heave, heave… HO! Care\n"
+	.string "to join me, {PLAYER}?$"
+
+Route103_EventScript_Miguel_Text_3:
+	.string "Heave… HO!$"
+
+Route103_EventScript_Miguel_Text_4:
+	.string "I think I could defeat a sailor with\n"
+	.string "these sculpted arms of mine! If you\l"
+	.string "wish to know the secrets of fishing,\l"
+	.string "then say it with me: Heave… HO!$"
+
+Route103_EventScript_Miguel_Text_5:
+	.string "It takes quite some strength to haul in\n"
+	.string "the big fish. I do this every day, so my\l"
+	.string "body is in tip-top shape!$"
+
+Route103_EventScript_RegisterMiguelAfterBattle_Text_0:
+	.string "I think we'll be seeing each other again.\n"
+	.string "If you want to heave some fish with me,\l"
+	.string "just give me a holler!$"

@@ -69,11 +69,11 @@ script Route103_EventScript_RegisterLivAfterBattle
 //HAROLD SCRIPTS
 script Route103_EventScript_Miguel
 {
-	trainerbattle_double(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave… HO! And that's how you catch a fish, young one!\pNow, I'll show you what my strength has earned me!"),format("Hm… Seems I'll have to bulk up some more."),Route103_EventScript_RegisterMiguelAfterBattle)
+	trainerbattle_single(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave… HO! And that's how you catch a fish, young one!\pNow, I'll show you what my strength has earned me!"),format("Hm… Seems I'll have to bulk up some more."),Route103_EventScript_RegisterMiguelAfterBattle)
 	specialvar(VAR_RESULT,ShouldTryRematchBattle)
 	if (var(VAR_RESULT)==TRUE)
 	{
-		trainerbattle_rematch_double(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave, heave, heave… HO! Care to join me, {PLAYER}?"),format("Heave… HO!"))
+		trainerbattle_rematch(TRAINER_GRC_HAROLD_1,format("Heave-ho! Heave, heave, heave… HO! Care to join me, {PLAYER}?"),format("Heave… HO!"))
 		msgbox(format("I think I could defeat a sailor with these sculpted arms of mine! If you wish to know the secrets of fishing, then say it with me: Heave… HO!"),MSGBOX_AUTOCLOSE)
 	}
 	else
