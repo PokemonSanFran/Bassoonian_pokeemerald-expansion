@@ -63,7 +63,7 @@ script Turpia_LacusSign
 
 script Turpia_FractalSign
 {
-	msgbox("“Fractal”\pFOR SALE!",MSGBOX_SIGN)
+	msgbox("“Fractal”\nFOR SALE!",MSGBOX_SIGN)
 }
 
 script Turpia_DontRunAway

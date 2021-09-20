@@ -1758,7 +1758,7 @@ Turpia_LacusSign_Text_1:
 	.string "“Lacus”$"
 
 Turpia_FractalSign_Text_0:
-	.string "“Fractal”\pFOR SALE!$"
+	.string "“Fractal”\nFOR SALE!$"
 
 Turpia_DontRunAway_Text_0:
 	.string "yo wassu u dont want???$"

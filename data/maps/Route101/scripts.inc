@@ -438,8 +438,8 @@ Route101_Movement_Unused2:
 @	step_end
 
 Route101_EventScript_RouteSign::
-@	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-@	end
+	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
+	end
 
 Route101_EventScript_BirchsBag::
 @	lock
@@ -522,8 +522,8 @@ Route101_Text_WildPokemonInTallGrass:
 @	.string "to go into the tall grass and search.$"
 
 Route101_Text_RouteSign:
-@	.string "Route 1\n"
-@	.string "{LEFT_ARROW} Borago City$"
+	.string "Route 1\n"
+	.string "{LEFT_ARROW} Borago City$"
 
 Route1_finalisetutorial_Text_0:
 	.string "congrats winners win & losers lose$"

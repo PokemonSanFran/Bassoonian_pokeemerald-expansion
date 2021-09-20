@@ -2423,7 +2423,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_PSYDUCK_HANAUAN] = 0,
     [SPECIES_GOLDUCK_HANAUAN] = 2,
     [SPECIES_FINNEON_HANAUAN] = 3,
-    [SPECIES_LUMINEON_HANAUAN] = 0,
+    [SPECIES_LUMINEON_HANAUAN] = 3,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =
