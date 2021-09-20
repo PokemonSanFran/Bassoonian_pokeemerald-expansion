@@ -26,29 +26,29 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 16,
-      "y": 62,
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 27,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_BugCatcher",
+      "script": "Route104_WatersideDude",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 1,
-      "y": 35,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Girl1",
+      "script": "Route104_HayFeverWoman",
       "flag": "0"
     },
     {
@@ -66,32 +66,32 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 25,
-      "y": 61,
+      "x": 18,
+      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Boy1",
+      "script": "Route104_SurfRodBoy",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 26,
-      "y": 20,
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 22,
+      "y": 61,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Woman",
+      "script": "Route104_ScaredGirl",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 10,
       "y": 62,
       "elevation": 3,
@@ -100,7 +100,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Girl2",
+      "script": "Route104_HillGirl",
       "flag": "0"
     },
     {
@@ -221,9 +221,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 21,
-      "y": 68,
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 10,
+      "y": 31,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
@@ -429,16 +429,16 @@
       "flag": "FLAG_ITEM_ROUTE_104_POTION"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 5,
-      "y": 24,
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "x": 17,
+      "y": 69,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Boy2",
+      "script": "Route104_HappyBoy",
       "flag": "0"
     },
     {
@@ -464,7 +464,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route104_EventScript_Rival",
+      "script": "Route104_Tori",
       "flag": "FLAG_GRC_HIDE_TORI_R2"
     }
   ],

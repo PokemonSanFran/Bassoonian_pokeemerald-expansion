@@ -1,6 +1,64 @@
 mapscripts Route104_MapScripts
 {}
 
+//NPCs
+script Route104_EventScript_ExpertF
+{
+	lock
+	faceplayer
+	if (!flag(FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104))
+	{
+		msgbox(format("Berries make the world a more beautiful place. They are like nature's own jewels.\pHere, I'll share one with you!"),MSGBOX_DEFAULT)
+		giveitem(ITEM_ASPEAR_BERRY)
+		if (var(VAR_RESULT)==FALSE)
+		{
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		else
+		{
+			setflag(FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104)
+		}
+	}
+	msgbox(format("You can help make the world lovelier by tending to Berries with love and care.\pAlways remember to give back what you take from the earth!"),MSGBOX_DEFAULT)
+	release
+	end
+}
+
+script Route104_Tori
+{
+	msgbox(format("Oh. Hi, {PLAYER}. I'm not in the mood to fight you, so don't bother asking.\pI'm just trying to see if I can catch something nice here. See ya."),MSGBOX_NPC)
+}
+
+script Route104_HillGirl
+{
+	msgbox(format("Do you see that sandy hill? No matter how often I try to mount it, I just keep falling back.\pMaybe if I could just go faster…"),MSGBOX_NPC)
+}
+
+script Route104_WatersideDude
+{
+	msgbox(format("Ahh, nothing's better for the old bones than taking a nice, long stroll!\pIf only more of those young whippersnappers were more like you… Nothing good'll come of sitting around all day."),MSGBOX_NPC)
+}
+
+script Route104_SurfRodBoy
+{
+	msgbox(format("Some Pokémon can only be found if you cross the water or use a fishing rod.\pI don't know what lies on the other side, but I'm itching to find out! Agh, it's driving me nuts!"),MSGBOX_NPC)
+}
+
+script Route104_ScaredGirl
+{
+	msgbox(format("I wanna go to the city! But I have to cross the forest to get there, and I really don't like Bug Pokémon… Eww…"),MSGBOX_NPC)
+}
+
+script Route104_HappyBoy
+{
+	msgbox(format("Wheeeeee! Today's a nice day."),MSGBOX_NPC)
+}
+
+script Route104_HayFeverWoman
+{
+	msgbox(format("Ah, achoo! If only I didn't have this hay fever, I could enjoy the flowers and the trees…"),MSGBOX_NPC)
+}
+
 //DAVE SCRIPTS
 script Route104_EventScript_Cindy
 {
@@ -434,24 +492,6 @@ Route104_Movement_PlayerBackUp:
 Route104_Movement_RivalExitBrineysCottage:
 @	walk_down
 @	step_end
-
-Route104_EventScript_ExpertF::
-@	lock
-@	faceplayer
-@	goto_if_set FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ReceivedBerry
-@	msgbox Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT
-@	giveitem ITEM_CHESTO_BERRY
-@	compare VAR_RESULT, FALSE
-@	goto_if_eq Common_EventScript_ShowBagIsFull
-@	setflag FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104
-@	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
-@	release
-@	end
-
-Route104_EventScript_ReceivedBerry::
-@	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
-@	release
-@	end
 
 Route104_EventScript_WhiteHerbFlorist::
 @	lock

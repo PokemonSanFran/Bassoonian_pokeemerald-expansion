@@ -4,6 +4,11 @@ Route108_EventScript_Matthew::
 	return
 
 
+Route108_CantSwim::
+	msgbox Route108_CantSwim_Text_0, MSGBOX_NPC
+	return
+
+
  
 Route108_MapScripts::
 	.byte 0
@@ -62,3 +67,9 @@ Route108_EventScript_Matthew_Text_2:
 	.string "I read a lot of stories about knights\n"
 	.string "and kings. That's where I got the idea\l"
 	.string "of becoming the king of the beach.$"
+
+Route108_CantSwim_Text_0:
+	.string "I wish I could join all the Swimmers in\n"
+	.string "the water. So much to see, so much to\l"
+	.string "look at! But I can't swim, so I'd just\l"
+	.string "look like an idiot…$"

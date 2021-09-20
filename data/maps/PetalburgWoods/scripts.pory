@@ -65,6 +65,36 @@ script PetalburgWoods_EventScript_Lyle
 	msgbox(format("I'm always looking for the next thrill. The grove's got a lot of 'em, though!"),MSGBOX_AUTOCLOSE)
 }
 
+//NPCs
+script PetalburgWoods_KricketuneOrchestra
+{
+	msgbox(format("The word goes that deep in the night, Kricketune appear and conduct swarms of Kricketot.\pIf you're a night owl, you might just hear them yourself… Hohohoho!"),MSGBOX_NPC)
+}
+
+script PetalburgWoods_BraveGirl
+{
+	msgbox(format("I'm not afraid of bugs. In fact, Bug Pokémon are cute!\pI don't know why so many girls are so squeamish about Bug Pokémon. I mean, what have they done wrong?"),MSGBOX_NPC)
+}
+
+script PetalburgWoods_BugManiacPowder
+{
+	lock
+	faceplayer
+	if (!flag(FLAG_RECEIVED_MIRACLE_SEED))
+	{
+		msgbox(format("I've gathered a lot of precious materials from the forest. Here, I'll share some with you!"),MSGBOX_DEFAULT)
+		giveitem(ITEM_SILVER_POWDER)
+		if(var(VAR_RESULT)==FALSE)
+		{
+			goto(Common_EventScript_ShowBagIsFull)
+		}
+		setflag(FLAG_RECEIVED_MIRACLE_SEED)
+	}
+	msgbox(format("This is Silver Powder! It raises the power of Bug-type moves for the Pokémon that holds it.\pIt's also just lovely to look at, don't you agree? That silvery gleam is so alluring, indeed…"),MSGBOX_DEFAULT)
+	release
+	end
+}
+
 raw `
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4

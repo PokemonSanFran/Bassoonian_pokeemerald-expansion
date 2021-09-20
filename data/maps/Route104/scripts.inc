@@ -2,6 +2,63 @@ Route104_MapScripts::
 	.byte 0
 
 
+Route104_EventScript_ExpertF::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ExpertF_2
+Route104_EventScript_ExpertF_1:
+	msgbox Route104_EventScript_ExpertF_Text_1, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_ExpertF_2:
+	msgbox Route104_EventScript_ExpertF_Text_0, MSGBOX_DEFAULT
+	giveitem ITEM_ASPEAR_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Route104_EventScript_ExpertF_4
+	setflag FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104
+	goto Route104_EventScript_ExpertF_1
+
+Route104_EventScript_ExpertF_4:
+	goto Common_EventScript_ShowBagIsFull
+	goto Route104_EventScript_ExpertF_1
+
+
+Route104_Tori::
+	msgbox Route104_Tori_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_HillGirl::
+	msgbox Route104_HillGirl_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_WatersideDude::
+	msgbox Route104_WatersideDude_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_SurfRodBoy::
+	msgbox Route104_SurfRodBoy_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_ScaredGirl::
+	msgbox Route104_ScaredGirl_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_HappyBoy::
+	msgbox Route104_HappyBoy_Text_0, MSGBOX_NPC
+	return
+
+
+Route104_HayFeverWoman::
+	msgbox Route104_HayFeverWoman_Text_0, MSGBOX_NPC
+	return
+
+
 Route104_EventScript_Cindy::
 	trainerbattle_single TRAINER_GRC_DAVE_1, Route104_EventScript_Cindy_Text_0, Route104_EventScript_Cindy_Text_1, Route104_EventScript_TryRegisterCindyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -442,24 +499,6 @@ Route104_Movement_PlayerBackUp:
 Route104_Movement_RivalExitBrineysCottage:
 @	walk_down
 @	step_end
-
-Route104_EventScript_ExpertF::
-@	lock
-@	faceplayer
-@	goto_if_set FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104, Route104_EventScript_ReceivedBerry
-@	msgbox Route104_Text_PlantBerriesInSoilTakeThis, MSGBOX_DEFAULT
-@	giveitem ITEM_CHESTO_BERRY
-@	compare VAR_RESULT, FALSE
-@	goto_if_eq Common_EventScript_ShowBagIsFull
-@	setflag FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104
-@	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
-@	release
-@	end
-
-Route104_EventScript_ReceivedBerry::
-@	msgbox Route104_Text_TrainersOftenMakeMonHoldBerries, MSGBOX_DEFAULT
-@	release
-@	end
 
 Route104_EventScript_WhiteHerbFlorist::
 @	lock
@@ -1207,6 +1246,58 @@ Route104_Text_BrendanPostBattle:
 @	.string "making POKéMON battle.\p"
 @	.string "Like MR. BRINEY, it's important to\n"
 @	.string "become friends with your POKéMON.$"
+
+Route104_EventScript_ExpertF_Text_0:
+	.string "Berries make the world a more beautiful\n"
+	.string "place. They are like nature's own\l"
+	.string "jewels.\p"
+	.string "Here, I'll share one with you!$"
+
+Route104_EventScript_ExpertF_Text_1:
+	.string "You can help make the world lovelier by\n"
+	.string "tending to Berries with love and care.\p"
+	.string "Always remember to give back what you\n"
+	.string "take from the earth!$"
+
+Route104_Tori_Text_0:
+	.string "Oh. Hi, {PLAYER}. I'm not in the mood to\n"
+	.string "fight you, so don't bother asking.\p"
+	.string "I'm just trying to see if I can catch\n"
+	.string "something nice here. See ya.$"
+
+Route104_HillGirl_Text_0:
+	.string "Do you see that sandy hill? No matter\n"
+	.string "how often I try to mount it, I just\l"
+	.string "keep falling back.\p"
+	.string "Maybe if I could just go faster…$"
+
+Route104_WatersideDude_Text_0:
+	.string "Ahh, nothing's better for the old bones\n"
+	.string "than taking a nice, long stroll!\p"
+	.string "If only more of those young\n"
+	.string "whippersnappers were more like you…\l"
+	.string "Nothing good'll come of sitting around\l"
+	.string "all day.$"
+
+Route104_SurfRodBoy_Text_0:
+	.string "Some Pokémon can only be found if you\n"
+	.string "cross the water or use a fishing rod.\p"
+	.string "I don't know what lies on the other\n"
+	.string "side, but I'm itching to find out! Agh,\l"
+	.string "it's driving me nuts!$"
+
+Route104_ScaredGirl_Text_0:
+	.string "I wanna go to the city! But I have to\n"
+	.string "cross the forest to get there, and I\l"
+	.string "really don't like Bug Pokémon… Eww…$"
+
+Route104_HappyBoy_Text_0:
+	.string "Wheeeeee! Today's a nice day.$"
+
+Route104_HayFeverWoman_Text_0:
+	.string "Ah, achoo! If only I didn't have this hay\n"
+	.string "fever, I could enjoy the flowers and\l"
+	.string "the trees…$"
 
 Route104_EventScript_Cindy_Text_0:
 	.string "Hey, you know what happens when\n"

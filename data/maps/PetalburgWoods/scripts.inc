@@ -70,6 +70,39 @@ PetalburgWoods_EventScript_Lyle::
 	return
 
 
+PetalburgWoods_KricketuneOrchestra::
+	msgbox PetalburgWoods_KricketuneOrchestra_Text_0, MSGBOX_NPC
+	return
+
+
+PetalburgWoods_BraveGirl::
+	msgbox PetalburgWoods_BraveGirl_Text_0, MSGBOX_NPC
+	return
+
+
+PetalburgWoods_BugManiacPowder::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_BugManiacPowder_2
+PetalburgWoods_BugManiacPowder_1:
+	msgbox PetalburgWoods_BugManiacPowder_Text_1, MSGBOX_DEFAULT
+	release
+	end
+
+PetalburgWoods_BugManiacPowder_2:
+	msgbox PetalburgWoods_BugManiacPowder_Text_0, MSGBOX_DEFAULT
+	giveitem ITEM_SILVER_POWDER
+	compare VAR_RESULT, FALSE
+	goto_if_eq PetalburgWoods_BugManiacPowder_5
+PetalburgWoods_BugManiacPowder_4:
+	setflag FLAG_RECEIVED_MIRACLE_SEED
+	goto PetalburgWoods_BugManiacPowder_1
+
+PetalburgWoods_BugManiacPowder_5:
+	goto Common_EventScript_ShowBagIsFull
+	goto PetalburgWoods_BugManiacPowder_4
+
+
 .set LOCALID_GRUNT, 3
 .set LOCALID_DEVON_EMPLOYEE, 4
 
@@ -535,3 +568,30 @@ PetalburgWoods_EventScript_Lyle_Text_1:
 PetalburgWoods_EventScript_Lyle_Text_2:
 	.string "I'm always looking for the next thrill.\n"
 	.string "The grove's got a lot of 'em, though!$"
+
+PetalburgWoods_KricketuneOrchestra_Text_0:
+	.string "The word goes that deep in the night,\n"
+	.string "Kricketune appear and conduct swarms\l"
+	.string "of Kricketot.\p"
+	.string "If you're a night owl, you might just\n"
+	.string "hear them yourself… Hohohoho!$"
+
+PetalburgWoods_BraveGirl_Text_0:
+	.string "I'm not afraid of bugs. In fact, Bug\n"
+	.string "Pokémon are cute!\p"
+	.string "I don't know why so many girls are so\n"
+	.string "squeamish about Bug Pokémon. I mean,\l"
+	.string "what have they done wrong?$"
+
+PetalburgWoods_BugManiacPowder_Text_0:
+	.string "I've gathered a lot of precious\n"
+	.string "materials from the forest. Here, I'll\l"
+	.string "share some with you!$"
+
+PetalburgWoods_BugManiacPowder_Text_1:
+	.string "This is Silver Powder! It raises the\n"
+	.string "power of Bug-type moves for the\l"
+	.string "Pokémon that holds it.\p"
+	.string "It's also just lovely to look at, don't\n"
+	.string "you agree? That silvery gleam is so\l"
+	.string "alluring, indeed…$"
