@@ -21,6 +21,26 @@ Turpia_SloganBoard::
 	return
 
 
+Turpia_FulgurSign::
+	msgbox Turpia_FulgurSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Turpia_FlammaSign::
+	msgbox Turpia_FlammaSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Turpia_LacusSign::
+	msgbox Turpia_LacusSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Turpia_FractalSign::
+	msgbox Turpia_FractalSign_Text_0, MSGBOX_SIGN
+	return
+
+
 Turpia_DontRunAway::
 	lockall
 	applymovement 9, Common_Movement_WalkInPlaceFastestUp
@@ -1703,6 +1723,18 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 Turpia_SloganBoard_Text_0:
 	.string "Turpia Town\n“A Peaceful Passage”$"
+
+Turpia_FulgurSign_Text_0:
+	.string "“Fulgur”$"
+
+Turpia_FlammaSign_Text_0:
+	.string "“Flamma”$"
+
+Turpia_LacusSign_Text_0:
+	.string "“Lacus”$"
+
+Turpia_FractalSign_Text_0:
+	.string "“Fractal”\pFOR SALE!$"
 
 Turpia_DontRunAway_Text_0:
 	.string "yo wassu u dont want???$"

@@ -22,6 +22,50 @@ script Turpia_SloganBoard
 	msgbox("Turpia Town\n“A Peaceful Passage”",MSGBOX_SIGN)
 }
 
+script Turpia_FulgurSign
+{
+	if(!flag(FLAG_GRC_TURPIA_HIDE_PARENTS))
+	{
+		msgbox("“Fulgur”\nRowan family",MSGBOX_SIGN)
+	}
+	else
+	{
+		//Depend on inhabitants
+		msgbox("“Fulgur”",MSGBOX_SIGN)
+	}
+}
+
+script Turpia_FlammaSign
+{
+	if(!flag(FLAG_GRC_TURPIA_HIDE_PARENTS))
+	{
+		msgbox("“Flamma”\nLinnes family",MSGBOX_SIGN)
+	}
+	else
+	{
+		//Depend on inhabitants
+		msgbox("“Flamma”",MSGBOX_SIGN)
+	}
+}
+
+script Turpia_LacusSign
+{
+	if(!flag(FLAG_GRC_TURPIA_HIDE_PARENTS))
+	{
+		msgbox("“Lacus”\nCoriolis family",MSGBOX_SIGN)
+	}
+	else
+	{
+		//Depend on inhabitants
+		msgbox("“Lacus”",MSGBOX_SIGN)
+	}
+}
+
+script Turpia_FractalSign
+{
+	msgbox("“Fractal”\pFOR SALE!",MSGBOX_SIGN)
+}
+
 script Turpia_DontRunAway
 {
 	lockall

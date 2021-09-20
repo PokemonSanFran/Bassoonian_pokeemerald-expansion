@@ -172,8 +172,8 @@
       "dest_warp_id": 1
     },
     {
-      "x": 15,
-      "y": 1,
+      "x": 13,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
       "dest_warp_id": 0
@@ -284,7 +284,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BirchsLabSign"
+      "script": "Turpia_FractalSign"
     },
     {
       "type": "sign",
@@ -292,7 +292,7 @@
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BrendansHouseSign"
+      "script": "Turpia_FulgurSign"
     },
     {
       "type": "sign",
@@ -300,7 +300,15 @@
       "y": 7,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_MaysHouseSign"
+      "script": "Turpia_FlammaSign"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 15,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Turpia_LacusSign"
     }
   ]
 }
