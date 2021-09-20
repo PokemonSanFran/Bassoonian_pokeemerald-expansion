@@ -22,16 +22,31 @@ Turpia_SloganBoard::
 
 
 Turpia_FulgurSign::
+	goto_if_unset FLAG_GRC_TURPIA_HIDE_PARENTS, Turpia_FulgurSign_1
+	msgbox Turpia_FulgurSign_Text_1, MSGBOX_SIGN
+	return
+
+Turpia_FulgurSign_1:
 	msgbox Turpia_FulgurSign_Text_0, MSGBOX_SIGN
 	return
 
 
 Turpia_FlammaSign::
+	goto_if_unset FLAG_GRC_TURPIA_HIDE_PARENTS, Turpia_FlammaSign_1
+	msgbox Turpia_FlammaSign_Text_1, MSGBOX_SIGN
+	return
+
+Turpia_FlammaSign_1:
 	msgbox Turpia_FlammaSign_Text_0, MSGBOX_SIGN
 	return
 
 
 Turpia_LacusSign::
+	goto_if_unset FLAG_GRC_TURPIA_HIDE_PARENTS, Turpia_LacusSign_1
+	msgbox Turpia_LacusSign_Text_1, MSGBOX_SIGN
+	return
+
+Turpia_LacusSign_1:
 	msgbox Turpia_LacusSign_Text_0, MSGBOX_SIGN
 	return
 
@@ -1725,12 +1740,21 @@ Turpia_SloganBoard_Text_0:
 	.string "Turpia Town\n“A Peaceful Passage”$"
 
 Turpia_FulgurSign_Text_0:
+	.string "“Fulgur”\nRowan family$"
+
+Turpia_FulgurSign_Text_1:
 	.string "“Fulgur”$"
 
 Turpia_FlammaSign_Text_0:
+	.string "“Flamma”\nLinnes family$"
+
+Turpia_FlammaSign_Text_1:
 	.string "“Flamma”$"
 
 Turpia_LacusSign_Text_0:
+	.string "“Lacus”\nCoriolis family$"
+
+Turpia_LacusSign_Text_1:
 	.string "“Lacus”$"
 
 Turpia_FractalSign_Text_0:
