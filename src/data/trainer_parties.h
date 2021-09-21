@@ -4269,12 +4269,12 @@ static const struct TrainerMon sParty_Calvin1[] = {
 static const struct TrainerMon sParty_GRC_Krissy[] = {
     {
     .iv = 0,
-    .lvl = 6,
+    .lvl = 5,
     .species = SPECIES_SENTRET,
     },
     {
     .iv = 0,
-    .lvl = 6,
+    .lvl = 5,
     .species = SPECIES_LILLIPUP,
     },
 	{
@@ -4524,12 +4524,12 @@ static const struct TrainerMon sParty_GRC_Jennifer[] = {
     {
     .iv = 0,
     .lvl = 13,
-    .species = SPECIES_LILLIPUP,
+    .species = SPECIES_RALTS,
     },
     {
     .iv = 0,
     .lvl = 13,
-    .species = SPECIES_SHINX,
+    .species = SPECIES_WINGULL,
     }
 };
 
@@ -4547,7 +4547,7 @@ static const struct TrainerMon sParty_GRC_Kyle[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_SLAKOTH,
+    .species = SPECIES_KRICKETOT,
     }
 };
 
@@ -8088,8 +8088,7 @@ static const struct TrainerMon sParty_Tiana[] = {
     }
 };
 
-//To fix: IVs (if appropriate) and abilities
-static const struct TrainerMon sParty_GRC_Juliet1[] = {
+static const struct TrainerMon sParty_GRC_Erin1[] = {
     {
     .iv = 0,
     .lvl = 24,
@@ -8099,16 +8098,18 @@ static const struct TrainerMon sParty_GRC_Juliet1[] = {
     .iv = 0,
     .lvl = 24,
     .species = SPECIES_PONYTA,
+	.ability = ABILITY_SLOT_2,
     },
 	{
 		.iv = 0,
 		.lvl = 25,
 		.species = SPECIES_MIENFOO,
+		.ability = ABILITY_SLOT_1,
 	}
 };
 
 //To fix
-static const struct TrainerMon sParty_GRC_Juliet2[] = {
+static const struct TrainerMon sParty_GRC_Erin2[] = {
     {
     .iv = 10,
     .lvl = 26,
@@ -8122,7 +8123,7 @@ static const struct TrainerMon sParty_GRC_Juliet2[] = {
 };
 
 //To fix
-static const struct TrainerMon sParty_GRC_Juliet3[] = {
+static const struct TrainerMon sParty_GRC_Erin3[] = {
     {
     .iv = 20,
     .lvl = 29,
@@ -8136,7 +8137,7 @@ static const struct TrainerMon sParty_GRC_Juliet3[] = {
 };
 
 //To fix
-static const struct TrainerMon sParty_GRC_Juliet4[] = {
+static const struct TrainerMon sParty_GRC_Erin4[] = {
     {
     .iv = 30,
     .lvl = 32,
@@ -8150,7 +8151,7 @@ static const struct TrainerMon sParty_GRC_Juliet4[] = {
 };
 
 //To fix
-static const struct TrainerMon sParty_GRC_Juliet5[] = {
+static const struct TrainerMon sParty_GRC_Erin5[] = {
     {
     .iv = 40,
     .lvl = 34,
@@ -8263,7 +8264,7 @@ static const struct TrainerMon sParty_GRC_Morris[] = {
     {
     .iv = 0,
     .lvl = 9,
-    .species = SPECIES_SLAKOTH,
+    .species = SPECIES_VENONAT,
     },
     {
     .iv = 0,

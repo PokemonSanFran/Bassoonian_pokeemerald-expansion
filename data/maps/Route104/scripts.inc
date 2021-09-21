@@ -107,11 +107,11 @@ Route104_EventScript_RegisterCindy::
 
 
 Route104_EventScript_Haley::
-	trainerbattle_single TRAINER_GRC_JULIET_1, Route104_EventScript_Haley_Text_0, Route104_EventScript_Haley_Text_1, Route104_EventScript_TryRegisterHaleyAfterBattle
+	trainerbattle_single TRAINER_GRC_ERIN_1, Route104_EventScript_Haley_Text_0, Route104_EventScript_Haley_Text_1, Route104_EventScript_TryRegisterHaleyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route104_EventScript_Haley_1
-	setvar VAR_0x8004, TRAINER_GRC_JULIET_1
+	setvar VAR_0x8004, TRAINER_GRC_ERIN_1
 	specialvar VAR_RESULT, IsTrainerRegistered
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route104_EventScript_Haley_6
@@ -121,7 +121,7 @@ Route104_EventScript_Haley_5:
 	return
 
 Route104_EventScript_Haley_1:
-	trainerbattle_rematch TRAINER_GRC_JULIET_1, Route104_EventScript_Haley_Text_2, Route104_EventScript_Haley_Text_3
+	trainerbattle_rematch TRAINER_GRC_ERIN_1, Route104_EventScript_Haley_Text_2, Route104_EventScript_Haley_Text_3
 	msgbox Route104_EventScript_Haley_Text_4, MSGBOX_AUTOCLOSE
 	return
 
@@ -149,7 +149,7 @@ Route104_EventScript_TryRegisterHaleyAfterBattle_2:
 
 Route104_EventScript_RegisterHaley::
 	msgbox Route104_EventScript_RegisterCindy_Text_0, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JULIET_1
+	register_matchcall TRAINER_GRC_ERIN_1
 	return
 
 

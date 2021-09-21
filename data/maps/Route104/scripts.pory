@@ -105,16 +105,16 @@ script Route104_EventScript_RegisterCindy
 //JULIET SCRIPTS
 script Route104_EventScript_Haley
 {
-	trainerbattle_single(TRAINER_GRC_JULIET_1,format("Huh? Wait, my training spot's been found! Well, I've been looking for a challenge, so I hope you won't let me down!"),format("Whew! Talk about a workout…"),Route104_EventScript_TryRegisterHaleyAfterBattle)
+	trainerbattle_single(TRAINER_GRC_ERIN_1,format("Huh? Wait, my training spot's been found! Well, I've been looking for a challenge, so I hope you won't let me down!"),format("Whew! Talk about a workout…"),Route104_EventScript_TryRegisterHaleyAfterBattle)
 	specialvar(VAR_RESULT,ShouldTryRematchBattle)
 	if (var(VAR_RESULT)==TRUE)
 	{
-		trainerbattle_rematch(TRAINER_GRC_JULIET_1,format("My Pokémon and I have been pushing our limits all the time. I've been looking forward to this match!"),format("Clearly, you've been going the extra mile…"))
+		trainerbattle_rematch(TRAINER_GRC_ERIN_1,format("My Pokémon and I have been pushing our limits all the time. I've been looking forward to this match!"),format("Clearly, you've been going the extra mile…"))
 		msgbox(format("Having someone like you around helps keep me sharp. You don't know how much I appreciate that, {PLAYER}."),MSGBOX_AUTOCLOSE)
 	}
 	else
 	{
-		setvar(VAR_0x8004,TRAINER_GRC_JULIET_1)
+		setvar(VAR_0x8004,TRAINER_GRC_ERIN_1)
 		specialvar(VAR_RESULT,IsTrainerRegistered)
 		if (var(VAR_RESULT)==FALSE && flag(FLAG_SYS_MATCH_CALL_GET))
 		{
@@ -142,7 +142,7 @@ script Route104_EventScript_TryRegisterHaleyAfterBattle
 script Route104_EventScript_RegisterHaley
 {
 	msgbox(format("Oh, hey! You got a P-Drive? Why don't I give you my number?\pI'll call you if I'm feeling like fighting you again!"),MSGBOX_DEFAULT)
-	register_matchcall(TRAINER_GRC_JULIET_1)
+	register_matchcall(TRAINER_GRC_ERIN_1)
 }
 
 //MAXIME SCRIPTS
