@@ -1276,6 +1276,8 @@ gCryTable::
 	cry Cry_Golduck
 	cry Cry_Finneon
 	cry Cry_Lumineon
+	cry Cry_Gulpin
+	cry Cry_Swalot
 
 	.align 2
 gCryTable2::
@@ -2555,3 +2557,5 @@ gCryTable2::
 	cry2 Cry_Golduck
 	cry2 Cry_Finneon
 	cry2 Cry_Lumineon
+	cry2 Cry_Gulpin
+	cry2 Cry_Swalot

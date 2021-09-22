@@ -117,6 +117,26 @@ Poppy_FanGirlLass::
 	return
 
 
+Poppy_TSchoolLady::
+	msgbox Poppy_TSchoolLady_Text_0, MSGBOX_NPC
+	return
+
+
+Poppy_TownSign::
+	msgbox Poppy_TownSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Poppy_GymSign::
+	msgbox Poppy_GymSign_Text_0, MSGBOX_SIGN
+	return
+
+
+Poppy_TSSign::
+	msgbox Poppy_TSSign_Text_0, MSGBOX_SIGN
+	return
+
+
  
 @ Sailing to and from Dewford uses local IDs from different maps
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map
@@ -951,6 +971,25 @@ Poppy_FanGirlLass_Text_0:
 	.string "always wears her heart on her sleeve.\p"
 	.string "I'm always a little nervous because\n"
 	.string "she's so candid, though…$"
+
+Poppy_TSchoolLady_Text_0:
+	.string "Children enroll in the Trainer's School\n"
+	.string "so that they're provided with a strong\l"
+	.string "basis.\p"
+	.string "Once they graduate, they'll be ready\n"
+	.string "for the road ahead!$"
+
+Poppy_TownSign_Text_0:
+	.string "Poppy Town\n"
+	.string "“Where new paths come to bloom”$"
+
+Poppy_GymSign_Text_0:
+	.string "Poppy Town Pokémon Gym\p"
+	.string "Leader: Talia\l"
+	.string "“The cutest bruiser in town!”$"
+
+Poppy_TSSign_Text_0:
+	.string "Pokémon Trainer's School$"
 
 Poppy_RivalDefeatedText::
 	.string "Oh no u gud$"

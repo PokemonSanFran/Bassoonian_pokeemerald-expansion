@@ -6503,6 +6503,22 @@ extern const u32 gMonStillFrontPic_LumineonHanauan[];
 extern const u8 gMonIcon_LumineonHanauan[];
 extern const u8 gMonFootprint_LumineonHanauan[];
 
+extern const u32 gMonFrontPic_GulpinHanauan[];
+extern const u32 gMonPalette_GulpinHanauan[];
+extern const u32 gMonBackPic_GulpinHanauan[];
+extern const u32 gMonShinyPalette_GulpinHanauan[];
+extern const u32 gMonStillFrontPic_GulpinHanauan[];
+extern const u8 gMonIcon_GulpinHanauan[];
+extern const u8 gMonFootprint_GulpinHanauan[];
+
+extern const u32 gMonFrontPic_SwalotHanauan[];
+extern const u32 gMonPalette_SwalotHanauan[];
+extern const u32 gMonBackPic_SwalotHanauan[];
+extern const u32 gMonShinyPalette_SwalotHanauan[];
+extern const u32 gMonStillFrontPic_SwalotHanauan[];
+extern const u8 gMonIcon_SwalotHanauan[];
+extern const u8 gMonFootprint_SwalotHanauan[];
+
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];
 extern const u32 gTrainerFrontPic_AquaGruntM[];

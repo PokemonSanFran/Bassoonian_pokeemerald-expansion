@@ -4043,6 +4043,25 @@ static const union AnimCmd sAnim_SWALOT_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_GULPIN_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 14),
+    ANIMCMD_FRAME(1, 14),
+    ANIMCMD_FRAME(0, 14),
+    ANIMCMD_FRAME(1, 14),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_SWALOT_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_TROPIUS_1[] =
 {
     ANIMCMD_FRAME(0, 15),
@@ -11047,6 +11066,16 @@ static const union AnimCmd *const sAnims_SWALOT[] ={
     sAnim_SWALOT_1,
 };
 
+static const union AnimCmd *const sAnims_GULPIN_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_GULPIN_HANAUAN_1,
+};
+
+static const union AnimCmd *const sAnims_SWALOT_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SWALOT_HANAUAN_1,
+};
+
 static const union AnimCmd *const sAnims_TROPIUS[] ={
     sAnim_GeneralFrame0,
     sAnim_TROPIUS_1,
@@ -15852,6 +15881,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(GOLDUCK_HANAUAN),
     ANIM_CMD(FINNEON_HANAUAN),
     ANIM_CMD(LUMINEON_HANAUAN),
+    ANIM_CMD(GULPIN_HANAUAN),
+    ANIM_CMD(SWALOT_HANAUAN),
     ANIM_CMD(EGG),
 };
 

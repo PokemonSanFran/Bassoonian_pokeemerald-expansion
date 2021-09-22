@@ -108,6 +108,26 @@ script Poppy_FanGirlLass
 	msgbox(format("Have you been to the Gym yet? The Gym Leader, Talia, is so cool!\pShe's the strongest girl I know, and she always wears her heart on her sleeve.\pI'm always a little nervous because she's so candid, though…"),MSGBOX_NPC)
 }
 
+script Poppy_TSchoolLady
+{
+	msgbox(format("Children enroll in the Trainer's School so that they're provided with a strong basis.\pOnce they graduate, they'll be ready for the road ahead!"),MSGBOX_NPC)
+}
+
+script Poppy_TownSign
+{
+	msgbox(format("Poppy Town\n“Where new paths come to bloom”"),MSGBOX_SIGN)
+}
+
+script Poppy_GymSign
+{
+	msgbox(format("Poppy Town Pokémon Gym\pLeader: Talia\l“The cutest bruiser in town!”"),MSGBOX_SIGN)
+}
+
+script Poppy_TSSign
+{
+	msgbox(format("Pokémon Trainer's School"),MSGBOX_SIGN)
+}
+
 raw ` 
 @ Sailing to and from Dewford uses local IDs from different maps
 @ e.g. Route 104's sail to Dewford script references local IDs from Dewford's map
