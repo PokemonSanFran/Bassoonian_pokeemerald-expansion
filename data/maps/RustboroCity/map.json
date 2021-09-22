@@ -250,8 +250,8 @@
       "dest_warp_id": 0
     },
     {
-      "x": 16,
-      "y": 45,
+      "x": 0,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_MART",
       "dest_warp_id": 0
@@ -264,22 +264,22 @@
       "dest_warp_id": 0
     },
     {
-      "x": 27,
-      "y": 34,
+      "x": 1,
+      "y": 0,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_POKEMON_SCHOOL",
       "dest_warp_id": 0
     },
     {
-      "x": 11,
-      "y": 15,
+      "x": 6,
+      "y": 23,
       "elevation": 0,
-      "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
+      "dest_map": "MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY",
       "dest_warp_id": 0
     },
     {
-      "x": 12,
-      "y": 15,
+      "x": 0,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_DEVON_CORP_1F",
       "dest_warp_id": 1
@@ -530,8 +530,8 @@
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 45,
+      "x": 0,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"
@@ -554,8 +554,8 @@
     },
     {
       "type": "sign",
-      "x": 18,
-      "y": 45,
+      "x": 1,
+      "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemartSign"

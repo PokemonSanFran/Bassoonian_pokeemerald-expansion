@@ -17,13 +17,18 @@
       "direction": "left",
       "offset": 0,
       "map": "MAP_PETALBURG_CITY"
+    },
+    {
+      "direction": "right",
+      "offset": -32,
+      "map": "MAP_ROUTE104"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 68,
-      "y": 27,
+      "x": 41,
+      "y": 23,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -48,8 +53,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
-      "x": 68,
-      "y": 28,
+      "x": 47,
+      "y": 23,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 0,
