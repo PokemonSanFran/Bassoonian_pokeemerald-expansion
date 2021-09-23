@@ -620,7 +620,7 @@
       "x": 22,
       "y": 32,
       "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
+      "item": "ITEM_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE"
     }
   ]

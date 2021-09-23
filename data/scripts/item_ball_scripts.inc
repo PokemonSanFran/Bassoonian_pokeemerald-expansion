@@ -19,7 +19,7 @@ Route104_EventScript_ItemPokeBall::
 	end
 
 Route104_EventScript_ItemXAccuracy::
-	finditem ITEM_X_ACCURACY
+	finditem ITEM_SUPER_POTION
 	end
 
 Route104_EventScript_ItemPotion::
@@ -327,11 +327,11 @@ MossdeepCity_EventScript_ItemNetBall::
 	end
 
 PetalburgWoods_EventScript_ItemXAttack::
-	finditem ITEM_X_ATTACK
+	finditem ITEM_ANTIDOTE
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
+	finditem ITEM_REPEL
 	end
 
 PetalburgWoods_EventScript_ItemEther::

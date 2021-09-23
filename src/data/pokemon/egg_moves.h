@@ -4439,6 +4439,11 @@ const u16 gEggMoves[] = {
 		MOVE_BUBBLE_BEAM,
 		MOVE_PSYBEAM,
 		MOVE_FLAIL),
+		
+    egg_moves(GULPIPN_HANAUAN,
+        MOVE_CLEAR_SMOG,
+		MOVE_WISH,
+		MOVE_SWEET_KISS),
 
     EGG_MOVES_TERMINATOR
 };
