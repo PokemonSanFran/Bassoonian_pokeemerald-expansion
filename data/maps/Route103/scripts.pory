@@ -111,6 +111,17 @@ script Route103_EventScript_RegisterMiguelAfterBattle
 	release
 }
 
+//npcs
+script Route103_EventScript_CutGuy
+{
+	msgbox(format("Hey, you see this tree over here? If you have a Pokémon on you that can learn Cut, they'll clear any such trees for you!\pI don't know how they do it, but just having that HM in your bag lets your Pokémon mow those trees down. Nice, huh?"),MSGBOX_NPC)
+}
+
+script Route103_EventScript_SurskitGal
+{
+	msgbox(format("There might be Bug Pokémon on this route, but I'd lie if I said I didn't want fifty Surskit!\pMy word, they're just the most precious little things!"),MSGBOX_NPC)
+}
+
 raw ` 
 .set LOCALID_RIVAL, 2
 

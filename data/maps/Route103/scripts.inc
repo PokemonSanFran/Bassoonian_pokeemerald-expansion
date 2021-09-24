@@ -100,6 +100,16 @@ Route103_EventScript_RegisterMiguelAfterBattle::
 	return
 
 
+Route103_EventScript_CutGuy::
+	msgbox Route103_EventScript_CutGuy_Text_0, MSGBOX_NPC
+	return
+
+
+Route103_EventScript_SurskitGal::
+	msgbox Route103_EventScript_SurskitGal_Text_0, MSGBOX_NPC
+	return
+
+
  
 .set LOCALID_RIVAL, 2
 
@@ -564,3 +574,20 @@ Route103_EventScript_RegisterMiguelAfterBattle_Text_0:
 	.string "I think we'll be seeing each other again.\n"
 	.string "If you want to heave some fish with me,\l"
 	.string "just give me a holler!$"
+
+Route103_EventScript_CutGuy_Text_0:
+	.string "Hey, you see this tree over here? If you\n"
+	.string "have a Pokémon on you that can learn\l"
+	.string "Cut, they'll clear any such trees for\l"
+	.string "you!\p"
+	.string "I don't know how they do it, but just\n"
+	.string "having that HM in your bag lets your\l"
+	.string "Pokémon mow those trees down. Nice,\l"
+	.string "huh?$"
+
+Route103_EventScript_SurskitGal_Text_0:
+	.string "There might be Bug Pokémon on this\n"
+	.string "route, but I'd lie if I said I didn't want\l"
+	.string "fifty Surskit!\p"
+	.string "My word, they're just the most precious\n"
+	.string "little things!$"

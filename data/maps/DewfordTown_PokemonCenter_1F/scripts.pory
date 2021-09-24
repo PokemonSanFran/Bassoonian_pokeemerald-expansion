@@ -1,13 +1,14 @@
-PoppyPC_YoungWoman::
-	msgbox PoppyPC_YoungWoman_Text_0, MSGBOX_NPC
-	return
+script PoppyPC_YoungWoman
+{
+	msgbox(format("You'll need a fair number of Gym Badges if you want to head southwest. The Pokémon there are much tougher, and the climate is harsh.\pIt does seem like a wonderful place to visit, though!"),MSGBOX_NPC)
+}
 
+script PoppyPC_OldMan
+{
+	msgbox(format("You would do well to hold on to some Poké Balls. Who knows, you may find the glimmer of fortune one day. Hohohohoho!"),MSGBOX_NPC)
+}
 
-PoppyPC_OldMan::
-	msgbox PoppyPC_OldMan_Text_0, MSGBOX_NPC
-	return
-
-
+raw `
 .set LOCALID_NURSE, 1
 
 DewfordTown_PokemonCenter_1F_MapScripts::
@@ -47,16 +48,4 @@ DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM:
 @	.string "battle, it can still use a move learned\l"
 @	.string "from a HIDDEN MACHINE (HM).$"
 
-PoppyPC_YoungWoman_Text_0:
-	.string "You'll need a fair number of Gym Badges\n"
-	.string "if you want to head southwest. The\l"
-	.string "Pokémon there are much tougher, and\l"
-	.string "the climate is harsh.\p"
-	.string "It does seem like a wonderful place to\n"
-	.string "visit, though!$"
-
-PoppyPC_OldMan_Text_0:
-	.string "You would do well to hold on to some\n"
-	.string "Poké Balls. Who knows, you may find the\l"
-	.string "glimmer of fortune one day.\l"
-	.string "Hohohohoho!$"
+` 

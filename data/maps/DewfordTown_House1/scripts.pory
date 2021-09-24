@@ -1,14 +1,14 @@
-PoppyHouse1_Man::
-	msgbox PoppyHouse1_Man_Text_0, MSGBOX_NPC
-	return
+script PoppyHouse1_Man
+{
+	msgbox(format("We've sent our children to the Trainer's School. We couldn't become Trainers ourselves, but we don't want to force our kids, either. We're letting them test the waters, you could say."),MSGBOX_NPC)
+}
 
+script PoppyHouse1_Woman
+{
+	msgbox(format("Whether my children want to become Trainers, Coordinators or something entirely different… What matters to me is that they can pursue their own happiness. Happy children make a happy mother."),MSGBOX_NPC)
+}
 
-PoppyHouse1_Woman::
-	msgbox PoppyHouse1_Woman_Text_0, MSGBOX_NPC
-	return
-
-
- 
+raw ` 
 DewfordTown_House1_MapScripts::
 	.byte 0
 
@@ -45,17 +45,4 @@ DewfordTown_House1_Text_LifeGoesSlowlyOnIsland:
 DewfordTown_House1_Text_Zigzagoon:
 @	.string "ZIGZAGOON: Guguuh!$"
 
-PoppyHouse1_Man_Text_0:
-	.string "We've sent our children to the Trainer's\n"
-	.string "School. We couldn't become Trainers\l"
-	.string "ourselves, but we don't want to force\l"
-	.string "our kids, either. We're letting them\l"
-	.string "test the waters, you could say.$"
-
-PoppyHouse1_Woman_Text_0:
-	.string "Whether my children want to become\n"
-	.string "Trainers, Coordinators or something\l"
-	.string "entirely different… What matters to me\l"
-	.string "is that they can pursue their own\l"
-	.string "happiness. Happy children make a happy\l"
-	.string "mother.$"
+` 

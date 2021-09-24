@@ -26,16 +26,16 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 51,
-      "y": 7,
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 19,
+      "y": 22,
       "elevation": 4,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Man",
+      "script": "Route103_EventScript_SurskitGal",
       "flag": "0"
     },
     {
@@ -152,7 +152,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route103_EventScript_Boy",
+      "script": "Route103_EventScript_CutGuy",
       "flag": "0"
     },
     {

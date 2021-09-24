@@ -1,0 +1,9 @@
+script PoppyMartWoman
+{
+	msgbox(format("I don't need supplements! I'm in tip-top shape. After all, with such energetic youngsters out and about, I can't give the wrong example, can I?"),MSGBOX_NPC)
+}
+
+raw `
+LilycoveCity_UnusedMart_MapScripts::
+	.byte 0
+` 
