@@ -47,15 +47,17 @@ DewfordTown_House1_Text_Zigzagoon:
 
 PoppyHouse1_Man_Text_0:
 	.string "We've sent our children to the Trainer's\n"
-	.string "School. We couldn't become Trainers\l"
-	.string "ourselves, but we don't want to force\l"
-	.string "our kids, either. We're letting them\l"
-	.string "test the waters, you could say.$"
+	.string "School.\p"
+	.string "We couldn't become Trainers ourselves,\n"
+	.string "but we don't want to force our kids,\l"
+	.string "either.\p"
+	.string "We're letting them test the waters, you\n"
+	.string "could say.$"
 
 PoppyHouse1_Woman_Text_0:
 	.string "Whether my children want to become\n"
 	.string "Trainers, Coordinators or something\l"
-	.string "entirely different… What matters to me\l"
-	.string "is that they can pursue their own\l"
-	.string "happiness. Happy children make a happy\l"
-	.string "mother.$"
+	.string "entirely different…\p"
+	.string "What matters to me is that they can\n"
+	.string "pursue their own happiness.\p"
+	.string "Happy children make a happy mother.$"

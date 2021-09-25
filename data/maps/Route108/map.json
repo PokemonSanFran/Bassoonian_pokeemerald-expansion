@@ -60,7 +60,7 @@
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
       "x": 26,
       "y": 10,
-      "elevation": 1,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_COUNTERCLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,

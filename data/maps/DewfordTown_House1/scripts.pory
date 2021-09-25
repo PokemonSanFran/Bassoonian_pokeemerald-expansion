@@ -1,11 +1,11 @@
 script PoppyHouse1_Man
 {
-	msgbox(format("We've sent our children to the Trainer's School. We couldn't become Trainers ourselves, but we don't want to force our kids, either. We're letting them test the waters, you could say."),MSGBOX_NPC)
+	msgbox(format("We've sent our children to the Trainer's School.\pWe couldn't become Trainers ourselves, but we don't want to force our kids, either.\pWe're letting them test the waters, you could say."),MSGBOX_NPC)
 }
 
 script PoppyHouse1_Woman
 {
-	msgbox(format("Whether my children want to become Trainers, Coordinators or something entirely different… What matters to me is that they can pursue their own happiness. Happy children make a happy mother."),MSGBOX_NPC)
+	msgbox(format("Whether my children want to become Trainers, Coordinators or something entirely different…\pWhat matters to me is that they can pursue their own happiness.\pHappy children make a happy mother."),MSGBOX_NPC)
 }
 
 raw ` 

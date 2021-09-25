@@ -1831,3 +1831,10 @@ const u8 gText_Answer[] = _("Answer");
 const u8 gText_PokeBalls[] = _("Poké Balls");
 const u8 gText_Berry[] = _("Berry");
 const u8 gText_Berries[] = _("Berries");
+
+const u8 gText_TrainerSchoolQ_Conservation[] = _("{PKMN} Conservation");
+const u8 gText_TrainerSchoolQ_Restoration[] = _("{PKMN} Restoration");
+const u8 gText_TrainerSchoolQ_Water[] = _("Water");
+const u8 gText_TrainerSchoolQ_Electric[] = _("Electric");
+const u8 gText_TrainerSchoolQ_Dolls[] = _("Dolls");
+const u8 gText_TrainerSchoolQ_Books[] = _("Books");

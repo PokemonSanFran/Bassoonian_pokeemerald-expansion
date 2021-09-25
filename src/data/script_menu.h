@@ -776,6 +776,24 @@ static const struct MenuAction MultichoiceList_Exit[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_GRC_TrainerSchoolA[] =
+{
+    {gText_TrainerSchoolQ_Conservation},
+	{gText_TrainerSchoolQ_Restoration},
+};
+
+static const struct MenuAction MultichoiceList_GRC_TrainerSchoolB[] =
+{
+    {gText_TrainerSchoolQ_Water},
+	{gText_TrainerSchoolQ_Electric},
+};
+
+static const struct MenuAction MultichoiceList_GRC_TrainerSchoolC[] =
+{
+    {gText_TrainerSchoolQ_Dolls},
+	{gText_TrainerSchoolQ_Books},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -793,13 +811,13 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BASE_PC_WITH_REGISTRY]      = MULTICHOICE(MultichoiceList_BasePCWithRegistry),
     [MULTI_REGISTER_MENU]              = MULTICHOICE(MultichoiceList_RegisterMenu),
     [MULTI_SSTIDAL_LILYCOVE]           = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_9]                   = MULTICHOICE(MultichoiceList_GRC_TrainerSchoolA),
+    [MULTI_UNUSED_10]                  = MULTICHOICE(MultichoiceList_GRC_TrainerSchoolB),
     [MULTI_FRONTIER_PASS_INFO]         = MULTICHOICE(MultichoiceList_FrontierPassInfo),
     [MULTI_BIKE]                       = MULTICHOICE(MultichoiceList_Bike),
     [MULTI_STATUS_INFO]                = MULTICHOICE(MultichoiceList_StatusInfo),
     [MULTI_BRINEY_OFF_DEWFORD]         = MULTICHOICE(MultichoiceList_BrineyOffDewford),
-    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_15]                  = MULTICHOICE(MultichoiceList_GRC_TrainerSchoolC),
     [MULTI_VIEWED_PAINTINGS]           = MULTICHOICE(MultichoiceList_ViewedPaintings),
     [MULTI_YESNOINFO]                  = MULTICHOICE(MultichoiceList_YesNoInfo),
     [MULTI_BATTLE_MODE]                = MULTICHOICE(MultichoiceList_BattleMode),

@@ -36,7 +36,7 @@ script Route104_HillGirl
 
 script Route104_WatersideDude
 {
-	msgbox(format("Ahh, nothing's better for the old bones than taking a nice, long stroll!\pIf only more of those young whippersnappers were more like you… Nothing good'll come of sitting around all day."),MSGBOX_NPC)
+	msgbox(format("Ahh, nothing's better for the old bones than taking a nice, long stroll!\pIf only more of those young whippersnappers were more like you…\pNothing good'll come of sitting around all day."),MSGBOX_NPC)
 }
 
 script Route104_SurfRodBoy

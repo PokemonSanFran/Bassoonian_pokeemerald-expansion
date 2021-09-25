@@ -28,6 +28,77 @@ PoppySchool_Babby1::
 	return
 
 
+PoppySchool_MaleTeacher::
+	msgbox PoppySchool_MaleTeacher_Text_0, MSGBOX_NPC
+	return
+
+
+PoppySchool_FemaleTeacher::
+	lockall
+	faceplayer
+	goto_if_set FLAG_RECEIVED_QUICK_CLAW, PoppySchool_FemaleTeacher_2
+	msgbox PoppySchool_FemaleTeacher_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq PoppySchool_FemaleTeacher_5
+PoppySchool_FemaleTeacher_1:
+	releaseall
+	return
+
+PoppySchool_FemaleTeacher_2:
+	msgbox PoppySchool_FemaleTeacher_Text_0, MSGBOX_DEFAULT
+	goto PoppySchool_FemaleTeacher_1
+
+PoppySchool_FemaleTeacher_5:
+	message PoppySchool_FemaleTeacher_Text_2
+	waitmessage
+	multichoice 12, 0, MULTI_UNUSED_9, TRUE
+	compare VAR_RESULT, 1
+	goto_if_eq PoppySchool_FemaleTeacher_8
+PoppySchool_FemaleTeacher_7:
+	message PoppySchool_FemaleTeacher_Text_3
+	waitmessage
+	multichoice 12, 0, MULTI_UNUSED_10, TRUE
+	compare VAR_RESULT, 0
+	goto_if_eq PoppySchool_FemaleTeacher_11
+PoppySchool_FemaleTeacher_10:
+	message PoppySchool_FemaleTeacher_Text_4
+	waitmessage
+	multichoice 12, 0, MULTI_UNUSED_15, TRUE
+	compare VAR_RESULT, 1
+	goto_if_eq PoppySchool_FemaleTeacher_14
+PoppySchool_FemaleTeacher_13:
+	msgbox PoppySchool_FemaleTeacher_Text_5, MSGBOX_DEFAULT
+	giveitem ITEM_QUICK_CLAW
+	compare VAR_RESULT, 0
+	goto_if_eq PoppySchool_FemaleTeacher_17
+PoppySchool_FemaleTeacher_16:
+	setflag FLAG_RECEIVED_QUICK_CLAW
+	msgbox PoppySchool_FemaleTeacher_Text_6, MSGBOX_DEFAULT
+	goto PoppySchool_FemaleTeacher_1
+
+PoppySchool_FemaleTeacher_8:
+	goto PoppySchool_FemaleTeacher_Wrong
+	goto PoppySchool_FemaleTeacher_7
+
+PoppySchool_FemaleTeacher_11:
+	goto PoppySchool_FemaleTeacher_Wrong
+	goto PoppySchool_FemaleTeacher_10
+
+PoppySchool_FemaleTeacher_14:
+	goto PoppySchool_FemaleTeacher_Wrong
+	goto PoppySchool_FemaleTeacher_13
+
+PoppySchool_FemaleTeacher_17:
+	goto Common_EventScript_ShowBagIsFull
+	goto PoppySchool_FemaleTeacher_16
+
+
+PoppySchool_FemaleTeacher_Wrong::
+	msgbox PoppySchool_FemaleTeacher_Wrong_Text_0, MSGBOX_DEFAULT
+	releaseall
+	return
+
+
  
 RustboroCity_PokemonSchool_MapScripts::
 	.byte 0
@@ -416,3 +487,59 @@ PoppySchool_Babby2_Text_0:
 PoppySchool_Babby1_Text_0:
 	.string "Teacheeeeeer! Let's play with the\n"
 	.string "Pokémon! Come oooooon!$"
+
+PoppySchool_MaleTeacher_Text_0:
+	.string "Hey there! I'm trying to teach these\n"
+	.string "kids what it means to be a Pokémon\l"
+	.string "Trainer.\p"
+	.string "It's my responsibility to prepare them\n"
+	.string "for the road ahead, since it won't be\l"
+	.string "easy.\p"
+	.string "Not like I'll have much to teach you, but\n"
+	.string "feel free to stick around if you wish.\p"
+	.string "A little company never hurts, y'know.$"
+
+PoppySchool_FemaleTeacher_Text_0:
+	.string "I don't really believe in books. To me,\n"
+	.string "being a Pokémon Trainer is all about\l"
+	.string "experience.\p"
+	.string "You'll have plenty to read if you want\n"
+	.string "to become a researcher, but for us\l"
+	.string "Trainers? Nothing like a real battle!$"
+
+PoppySchool_FemaleTeacher_Text_1:
+	.string "Hey, Trainer! I've got a little quiz to\n"
+	.string "see how well you know your stuff.\p"
+	.string "I'm giving you three questions. Guess\n"
+	.string "them all, and you'll earn something\l"
+	.string "nice! Ready?$"
+
+PoppySchool_FemaleTeacher_Text_2:
+	.string "Question 1: What is Professor Spruce's\n"
+	.string "specialty domain?$"
+
+PoppySchool_FemaleTeacher_Text_3:
+	.string "Correct! That was a good guess!\p"
+	.string "Question 2: What is Finneon's type?$"
+
+PoppySchool_FemaleTeacher_Text_4:
+	.string "Correct! Guessed right again!\p"
+	.string "Question 3: What does Gym Leader Talia\n"
+	.string "collect?$"
+
+PoppySchool_FemaleTeacher_Text_5:
+	.string "Bingo! Congratulations, Trainer! You've\n"
+	.string "passed my little test with flying\l"
+	.string "colors.\p"
+	.string "Here's a Quick Claw for your trouble!$"
+
+PoppySchool_FemaleTeacher_Text_6:
+	.string "The Quick Claw sometimes lets you move\n"
+	.string "first in battle regardless of speed.\p"
+	.string "Moves such as Quick Attack will still\n"
+	.string "bypass the item's effect, though, so\l"
+	.string "know your enemies!$"
+
+PoppySchool_FemaleTeacher_Wrong_Text_0:
+	.string "Nope! Sorry, looks like you lose. Feel\n"
+	.string "free to try again anytime!$"

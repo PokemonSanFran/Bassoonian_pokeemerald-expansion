@@ -120,7 +120,7 @@ script Poppy_TownSign
 
 script Poppy_GymSign
 {
-	msgbox(format("Poppy Town Pokémon Gym\pLeader: Talia\l“The cutest bruiser in town!”"),MSGBOX_SIGN)
+	msgbox(format("Poppy Town Pokémon Gym\nLeader: Talia\l“The cutest bruiser in town!”"),MSGBOX_SIGN)
 }
 
 script Poppy_TSSign

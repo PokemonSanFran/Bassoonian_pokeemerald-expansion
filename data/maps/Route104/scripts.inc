@@ -1275,8 +1275,8 @@ Route104_WatersideDude_Text_0:
 	.string "Ahh, nothing's better for the old bones\n"
 	.string "than taking a nice, long stroll!\p"
 	.string "If only more of those young\n"
-	.string "whippersnappers were more like you…\l"
-	.string "Nothing good'll come of sitting around\l"
+	.string "whippersnappers were more like you…\p"
+	.string "Nothing good'll come of sitting around\n"
 	.string "all day.$"
 
 Route104_SurfRodBoy_Text_0:

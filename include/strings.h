@@ -1308,6 +1308,13 @@ extern const u8 gText_TrainerHill2F[];
 extern const u8 gText_TrainerHill3F[];
 extern const u8 gText_TrainerHill4F[];
 
+extern const u8 gText_TrainerSchoolQ_Conservation[];
+extern const u8 gText_TrainerSchoolQ_Restoration[];
+extern const u8 gText_TrainerSchoolQ_Water[];
+extern const u8 gText_TrainerSchoolQ_Electric[];
+extern const u8 gText_TrainerSchoolQ_Dolls[];
+extern const u8 gText_TrainerSchoolQ_Books[];
+
 // Cable Club multichoice text
 extern const u8 CableClub_Text_TradeUsingLinkCable[];
 extern const u8 CableClub_Text_BattleUsingLinkCable[];

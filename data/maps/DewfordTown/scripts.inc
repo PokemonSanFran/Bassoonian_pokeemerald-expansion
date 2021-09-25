@@ -984,7 +984,7 @@ Poppy_TownSign_Text_0:
 	.string "“Where new paths come to bloom”$"
 
 Poppy_GymSign_Text_0:
-	.string "Poppy Town Pokémon Gym\p"
+	.string "Poppy Town Pokémon Gym\n"
 	.string "Leader: Talia\l"
 	.string "“The cutest bruiser in town!”$"
 
