@@ -1,34 +1,34 @@
-PoppySchool_Lass::
-	msgbox PoppySchool_Lass_Text_0, MSGBOX_NPC
-	return
+script PoppySchool_Lass
+{
+	msgbox(format("I know this is a Trainer's School, but I want to be a Coordinator, not a Trainer.\pStill, I've learned some useful things here, so it's not all bad."),MSGBOX_NPC)
+}
 
+script PoppySchool_Student1
+{
+	msgbox(format("Teach makes sure she shows us what battles are like.\pWhen it comes to Pokémon, you can't just expect to learn everything from stuffy old books.\pYou gotta feel it, live it! Oh, I can't wait to be a real Trainer!"),MSGBOX_NPC)
+}
 
-PoppySchool_Student1::
-	msgbox PoppySchool_Student1_Text_0, MSGBOX_NPC
-	return
+script PoppySchool_Student2
+{
+	msgbox(format("Abilities look hard to understand, but they make a lot of sense once you see how they work. That goes for moves, too."),MSGBOX_NPC)
+}
 
+script PoppySchool_Babby3
+{
+	msgbox(format("Mommy told me to not go in the tall grass. Teacher says the same! I wanna be smart like them."),MSGBOX_NPC)
+}
 
-PoppySchool_Student2::
-	msgbox PoppySchool_Student2_Text_0, MSGBOX_NPC
-	return
+script PoppySchool_Babby2
+{
+	msgbox(format("Gulpin is our best buddy! He's soft and round and super nice!"),MSGBOX_NPC)
+}
 
+script PoppySchool_Babby1
+{
+	msgbox(format("Teacheeeeeer! Let's play with the Pokémon! Come oooooon!"),MSGBOX_NPC)
+}
 
-PoppySchool_Babby3::
-	msgbox PoppySchool_Babby3_Text_0, MSGBOX_NPC
-	return
-
-
-PoppySchool_Babby2::
-	msgbox PoppySchool_Babby2_Text_0, MSGBOX_NPC
-	return
-
-
-PoppySchool_Babby1::
-	msgbox PoppySchool_Babby1_Text_0, MSGBOX_NPC
-	return
-
-
- 
+raw ` 
 RustboroCity_PokemonSchool_MapScripts::
 	.byte 0
 
@@ -383,36 +383,4 @@ RustboroCity_PokemonSchool_Text_ScottMetAlreadyStoneBadge:
 @	.string "It's hard to tell what you're like as\n"
 @	.string "a TRAINER from a LEAGUE BADGE.$"
 
-PoppySchool_Lass_Text_0:
-	.string "I know this is a Trainer's School, but I\n"
-	.string "want to be a Coordinator, not a Trainer.\p"
-	.string "Still, I've learned some useful things\n"
-	.string "here, so it's not all bad.$"
-
-PoppySchool_Student1_Text_0:
-	.string "Teach makes sure she shows us what\n"
-	.string "battles are like.\p"
-	.string "When it comes to Pokémon, you can't\n"
-	.string "just expect to learn everything from\l"
-	.string "stuffy old books.\p"
-	.string "You gotta feel it, live it! Oh, I can't\n"
-	.string "wait to be a real Trainer!$"
-
-PoppySchool_Student2_Text_0:
-	.string "Abilities look hard to understand, but\n"
-	.string "they make a lot of sense once you see\l"
-	.string "how they work. That goes for moves,\l"
-	.string "too.$"
-
-PoppySchool_Babby3_Text_0:
-	.string "Mommy told me to not go in the tall\n"
-	.string "grass. Teacher says the same! I wanna\l"
-	.string "be smart like them.$"
-
-PoppySchool_Babby2_Text_0:
-	.string "Gulpin is our best buddy! He's soft and\n"
-	.string "round and super nice!$"
-
-PoppySchool_Babby1_Text_0:
-	.string "Teacheeeeeer! Let's play with the\n"
-	.string "Pokémon! Come oooooon!$"
+` 

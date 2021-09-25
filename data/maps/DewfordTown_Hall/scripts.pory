@@ -13,6 +13,11 @@ script PoppyDollShop_SmallGirl
 	msgbox(format("My brother's such a child… It's so embarrassing to see him run around like that! Can't he just knock it off?"),MSGBOX_NPC)
 }
 
+script PoppyDollShop_SteelixDollGuy
+{
+	msgbox(format("Man, I can't believe this! I want to buy my boyfriend a nice Poké Doll, but they don't offer any Steelix dolls here… Now what do I do?"),MSGBOX_NPC)
+}
+
 raw ` 
 .set LOCALID_EXPERT_M, 4
 .set LOCALID_TWIN, 5

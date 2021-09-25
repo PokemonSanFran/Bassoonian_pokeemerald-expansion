@@ -13,6 +13,11 @@ PoppyDollShop_SmallGirl::
 	return
 
 
+PoppyDollShop_SteelixDollGuy::
+	msgbox PoppyDollShop_SteelixDollGuy_Text_0, MSGBOX_NPC
+	return
+
+
  
 .set LOCALID_EXPERT_M, 4
 .set LOCALID_TWIN, 5
@@ -489,3 +494,9 @@ PoppyDollShop_SmallGirl_Text_0:
 	.string "My brother's such a child… It's so\n"
 	.string "embarrassing to see him run around like\l"
 	.string "that! Can't he just knock it off?$"
+
+PoppyDollShop_SteelixDollGuy_Text_0:
+	.string "Man, I can't believe this! I want to buy\n"
+	.string "my boyfriend a nice Poké Doll, but they\l"
+	.string "don't offer any Steelix dolls here… Now\l"
+	.string "what do I do?$"
