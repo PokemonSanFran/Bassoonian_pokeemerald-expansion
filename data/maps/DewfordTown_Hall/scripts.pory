@@ -1,19 +1,19 @@
-PoppyDollShop_YoungLady::
-	msgbox PoppyDollShop_YoungLady_Text_0, MSGBOX_NPC
-	return
+script PoppyDollShop_YoungLady
+{
+	msgbox(format("Did you know the shopkeeper is Talia's granny? Sometimes, Talia herself helps run the place!\pHer passion for the doll shop and the craft are just charming… And she's not the least bit shy about it, either!\pIf only more people could be that open about themselves."),MSGBOX_NPC)
+}
 
+script PoppyDollShop_SmallBoy
+{
+	msgbox(format("Wrooooooaaaaar! I'm practicing my roar. I wanna find a Tyranitar doll!"),MSGBOX_NPC)
+}
 
-PoppyDollShop_SmallBoy::
-	msgbox PoppyDollShop_SmallBoy_Text_0, MSGBOX_NPC
-	return
+script PoppyDollShop_SmallGirl
+{
+	msgbox(format("My brother's such a child… It's so embarrassing to see him run around like that! Can't he just knock it off?"),MSGBOX_NPC)
+}
 
-
-PoppyDollShop_SmallGirl::
-	msgbox PoppyDollShop_SmallGirl_Text_0, MSGBOX_NPC
-	return
-
-
- 
+raw ` 
 .set LOCALID_EXPERT_M, 4
 .set LOCALID_TWIN, 5
 .set LOCALID_SCHOOL_KID_M, 7
@@ -471,21 +471,4 @@ DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo:
 @	.string "“{STR_VAR_1}”\l"
 @	.string "are in, too.$"
 
-PoppyDollShop_YoungLady_Text_0:
-	.string "Did you know the shopkeeper is Talia's\n"
-	.string "granny? Sometimes, Talia herself helps\l"
-	.string "run the place!\p"
-	.string "Her passion for the doll shop and the\n"
-	.string "craft are just charming… And she's not\l"
-	.string "the least bit shy about it, either!\p"
-	.string "If only more people could be that open\n"
-	.string "about themselves.$"
-
-PoppyDollShop_SmallBoy_Text_0:
-	.string "Wrooooooaaaaar! I'm practicing my roar.\n"
-	.string "I wanna find a Tyranitar doll!$"
-
-PoppyDollShop_SmallGirl_Text_0:
-	.string "My brother's such a child… It's so\n"
-	.string "embarrassing to see him run around like\l"
-	.string "that! Can't he just knock it off?$"
+` 
