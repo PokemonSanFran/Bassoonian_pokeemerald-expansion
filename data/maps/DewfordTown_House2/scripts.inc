@@ -24,6 +24,8 @@ PoppyHouse2_LolaTrade_2:
 	goto PoppyHouse2_LolaTrade_1
 
 PoppyHouse2_LolaTrade_5:
+	special ChoosePartyMon
+	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	compare VAR_0x8004, 255
 	goto_if_eq PoppyHouse2_LolaTrade_9

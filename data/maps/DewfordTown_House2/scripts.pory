@@ -20,6 +20,8 @@ script PoppyHouse2_LolaTrade
 		msgbox(format("Hi! Do you have a Dwebble? Wanna trade it for my Krabby?"),MSGBOX_YESNO)
 		if(var(VAR_RESULT)==YES)
 		{
+		special(ChoosePartyMon)
+		waitstate
 			copyvar(VAR_0x800A,VAR_0x8004)
 			if(var(VAR_0x8004)==255)
 			{
