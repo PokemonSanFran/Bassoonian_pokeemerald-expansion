@@ -34046,8 +34046,8 @@ const struct BaseStats gBaseStats[] =
         .baseAttack    = 38,
         .baseDefense   = 48,
         .baseSpeed     = 35,
-        .baseSpAttack  = 43,
-        .baseSpDefense = 48,
+        .baseSpAttack  = 38,
+        .baseSpDefense = 53,
         .type1 = TYPE_FAIRY,
         .type2 = TYPE_FAIRY,
         .catchRate = 225,
@@ -34068,11 +34068,11 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_SWALOT_HANAUAN] =
     {
-        .baseHP        = 130,
+        .baseHP        = 135,
         .baseAttack    = 63,
         .baseDefense   = 73,
         .baseSpeed     = 50,
-        .baseSpAttack  = 68,
+        .baseSpAttack  = 63,
         .baseSpDefense = 83,
         .type1 = TYPE_FAIRY,
         .type2 = TYPE_FAIRY,
