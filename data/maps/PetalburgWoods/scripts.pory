@@ -15,6 +15,14 @@ script BoragoGroveGruntFight
 	releaseall
 }
 
+script BoragoGrove_TrainerTips1 {
+	msgbox(format("Trainer Tips! Any Pokémon can use HM moves on the field as long as they're compatible with any moves. You don't need to teach HM moves to your Pokémon."),MSGBOX_SIGN)
+}
+
+script BoragoGrove_TrainerTips2 {
+	msgbox(format("Trainer Tips! Berries are free resources for your Pokémon. As long as you plant them back and water them regularly, you'll save out on a lot of money!"),MSGBOX_SIGN)
+}
+
 //DAVE SCRIPTS
 script BoragoGrove_EventScript_James
 {

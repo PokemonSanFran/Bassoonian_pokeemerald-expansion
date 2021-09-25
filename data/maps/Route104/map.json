@@ -557,7 +557,7 @@
       "y": 74,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route104_EventScript_RouteSignPetalburg"
+      "script": "Route104_Sign_PoppyDown"
     },
     {
       "type": "sign",
@@ -565,7 +565,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route104_EventScript_RouteSignRustboro"
+      "script": "Route104_Sign_BoragoUp"
     },
     {
       "type": "sign",
@@ -581,7 +581,7 @@
       "y": 27,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route104_EventScript_TrainerTipsDoubleBattles"
+      "script": "Route104_Sign_TrainerTips"
     },
     {
       "type": "hidden_item",

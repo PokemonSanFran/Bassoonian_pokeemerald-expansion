@@ -86,11 +86,39 @@ RustboroCity_Gym_EventScript_RoxanneRematch::
 	end
 
 
+RustboroCity_Gym_EventScript_GymGuide::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE01_GET, RustboroCity_Gym_EventScript_GymGuide_2
+	goto_if_unset FLAG_GRC_GYM1_FRESHWATER, RustboroCity_Gym_EventScript_GymGuide_6
+RustboroCity_Gym_EventScript_GymGuide_5:
+	msgbox RustboroCity_Gym_EventScript_GymGuide_Text_2
+RustboroCity_Gym_EventScript_GymGuide_1:
+	closemessage
+	release
+	return
+
+RustboroCity_Gym_EventScript_GymGuide_2:
+	msgbox RustboroCity_Gym_EventScript_GymGuide_Text_0
+	goto RustboroCity_Gym_EventScript_GymGuide_1
+
+RustboroCity_Gym_EventScript_GymGuide_6:
+	msgbox RustboroCity_Gym_EventScript_GymGuide_Text_1
+	giveitem ITEM_FRESH_WATER
+	setflag FLAG_GRC_GYM1_FRESHWATER
+	goto RustboroCity_Gym_EventScript_GymGuide_5
+
+
+RustboroCity_Gym_Statue::
+	msgbox RustboroCity_Gym_Statue_Text_0, MSGBOX_SIGN
+	return
+
+
  
 RustboroCity_Gym_MapScripts::
 	.byte 0
 
-RustboroCity_Gym_EventScript_GymGuide::
+@RustboroCity_Gym_EventScript_GymGuide::
 @	lock
 @	faceplayer
 @	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory
@@ -422,3 +450,36 @@ RustboroCity_Gym_EventScript_Marc2_Text_3:
 	.string "We might've been beaten, but I'm not\n"
 	.string "gonna let one bad fight ruin my mood.\l"
 	.string "Let's keep pushing on!$"
+
+RustboroCity_Gym_EventScript_GymGuide_Text_0:
+	.string "Woo! You've done it, Challenger! That's\n"
+	.string "your first Gym Badge!\p"
+	.string "Of course, that's no time to rest on\n"
+	.string "your laurels, but I'm sure you know\l"
+	.string "that well enough.\p"
+	.string "Keep up the hard work!$"
+
+RustboroCity_Gym_EventScript_GymGuide_Text_1:
+	.string "Welcome, Challenger! This is your first\n"
+	.string "Gym Challenge, so allow me to explain a\l"
+	.string "few things.\p"
+	.string "I'm Argus, though people call me the\n"
+	.string "Guide! I'm the guy who'll be checking up\l"
+	.string "on you as you take your Gym Challenges.\p"
+	.string "If you have any questions about this\n"
+	.string "place, just say the word, and I'll\l"
+	.string "answer 'em all. Capisce?\p"
+	.string "Now, have some Fresh Water. On the\n"
+	.string "house!$"
+
+RustboroCity_Gym_EventScript_GymGuide_Text_2:
+	.string "Your first Gym Challenge will see you\n"
+	.string "face off against Talia!\p"
+	.string "She's a hardworking girl with an\n"
+	.string "appetite for battle… and dolls!\p"
+	.string "Her taste's a little eclectic to some,\n"
+	.string "but she's really living her best life.\l"
+	.string "Best of luck!$"
+
+RustboroCity_Gym_Statue_Text_0:
+	.string "Poppy Town Pokémon Gym$"

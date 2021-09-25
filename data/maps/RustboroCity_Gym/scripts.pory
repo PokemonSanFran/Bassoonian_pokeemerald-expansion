@@ -92,11 +92,37 @@ script RustboroCity_Gym_EventScript_RoxanneRematch
 	end
 }
 
+//Gym Guide
+script RustboroCity_Gym_EventScript_GymGuide {
+	lock
+	faceplayer
+	if (flag(FLAG_BADGE01_GET))
+	{
+		msgbox(format("Woo! You've done it, Challenger! That's your first Gym Badge!\pOf course, that's no time to rest on your laurels, but I'm sure you know that well enough.\pKeep up the hard work!"))
+	}
+	else
+	{
+	if (!flag(FLAG_GRC_GYM1_FRESHWATER))
+		{
+			msgbox(format("Welcome, Challenger! This is your first Gym Challenge, so allow me to explain a few things.\pI'm Argus, though people call me the Guide! I'm the guy who'll be checking up on you as you take your Gym Challenges.\pIf you have any questions about this place, just say the word, and I'll answer 'em all. Capisce?\pNow, have some Fresh Water. On the house!"))
+			giveitem(ITEM_FRESH_WATER)
+			setflag(FLAG_GRC_GYM1_FRESHWATER)
+		}
+	msgbox(format("Your first Gym Challenge will see you face off against Talia!\pShe's a hardworking girl with an appetite for battle… and dolls!\pHer taste's a little eclectic to some, but she's really living her best life. Best of luck!"))
+	}
+	closemessage
+	release
+}
+
+script RustboroCity_Gym_Statue {
+	msgbox(format("Poppy Town Pokémon Gym"),MSGBOX_SIGN)
+}
+
 raw ` 
 RustboroCity_Gym_MapScripts::
 	.byte 0
 
-RustboroCity_Gym_EventScript_GymGuide::
+@RustboroCity_Gym_EventScript_GymGuide::
 @	lock
 @	faceplayer
 @	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, RustboroCity_Gym_EventScript_GymGuidePostVictory

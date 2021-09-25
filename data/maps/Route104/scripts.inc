@@ -59,6 +59,21 @@ Route104_HayFeverWoman::
 	return
 
 
+Route104_Sign_BoragoUp::
+	msgbox Route104_Sign_BoragoUp_Text_0, MSGBOX_SIGN
+	return
+
+
+Route104_Sign_PoppyDown::
+	msgbox Route104_Sign_PoppyDown_Text_0, MSGBOX_SIGN
+	return
+
+
+Route104_Sign_TrainerTips::
+	msgbox Route104_Sign_TrainerTips_Text_0, MSGBOX_SIGN
+	return
+
+
 Route104_EventScript_Cindy::
 	trainerbattle_single TRAINER_GRC_DAVE_1, Route104_EventScript_Cindy_Text_0, Route104_EventScript_Cindy_Text_1, Route104_EventScript_TryRegisterCindyAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -1298,6 +1313,19 @@ Route104_HayFeverWoman_Text_0:
 	.string "Ah, achoo! If only I didn't have this hay\n"
 	.string "fever, I could enjoy the flowers and\l"
 	.string "the trees…$"
+
+Route104_Sign_BoragoUp_Text_0:
+	.string "{UP_ARROW} Borago City$"
+
+Route104_Sign_PoppyDown_Text_0:
+	.string "{DOWN_ARROW} Poppy Town$"
+
+Route104_Sign_TrainerTips_Text_0:
+	.string "Trainer Tips! If you have any Poké Balls\n"
+	.string "on you, press the R button to instantly\l"
+	.string "throw another Ball of the same kind\l"
+	.string "without having to browse through your\l"
+	.string "Bag.$"
 
 Route104_EventScript_Cindy_Text_0:
 	.string "Hey, you know what happens when\n"

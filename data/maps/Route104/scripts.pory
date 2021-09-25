@@ -59,6 +59,18 @@ script Route104_HayFeverWoman
 	msgbox(format("Ah, achoo! If only I didn't have this hay fever, I could enjoy the flowers and the trees…"),MSGBOX_NPC)
 }
 
+script Route104_Sign_BoragoUp {
+	msgbox(format("{UP_ARROW} Borago City"),MSGBOX_SIGN)
+}
+
+script Route104_Sign_PoppyDown {
+	msgbox(format("{DOWN_ARROW} Poppy Town"),MSGBOX_SIGN)
+}
+
+script Route104_Sign_TrainerTips {
+	msgbox(format("Trainer Tips! If you have any Poké Balls on you, press the R button to instantly throw another Ball of the same kind without having to browse through your Bag."),MSGBOX_SIGN)
+}
+
 //DAVE SCRIPTS
 script Route104_EventScript_Cindy
 {

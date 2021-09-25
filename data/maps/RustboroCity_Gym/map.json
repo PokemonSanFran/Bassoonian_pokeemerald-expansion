@@ -162,7 +162,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "RustboroCity_Gym_EventScript_LeftGymStatue"
+      "script": "RustboroCity_Gym_Statue"
     },
     {
       "type": "sign",
@@ -170,7 +170,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "RustboroCity_Gym_EventScript_RightGymStatue"
+      "script": "RustboroCity_Gym_Statue"
     }
   ]
 }

@@ -17,6 +17,16 @@ BoragoGroveGruntFight::
 	return
 
 
+BoragoGrove_TrainerTips1::
+	msgbox BoragoGrove_TrainerTips1_Text_0, MSGBOX_SIGN
+	return
+
+
+BoragoGrove_TrainerTips2::
+	msgbox BoragoGrove_TrainerTips2_Text_0, MSGBOX_SIGN
+	return
+
+
 BoragoGrove_EventScript_James::
 	trainerbattle_single TRAINER_GRC_WAYNE_1, BoragoGrove_EventScript_James_Text_0, BoragoGrove_EventScript_James_Text_1, BoragoGrove_EventScript_TryRegisterJamesAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -524,6 +534,20 @@ PetalburgWoods_Text_TrainerTipsPP:
 
 BoragoGroveGruntFight_Text_0:
 	.string "battle$"
+
+BoragoGrove_TrainerTips1_Text_0:
+	.string "Trainer Tips! Any Pokémon can use HM\n"
+	.string "moves on the field as long as they're\l"
+	.string "compatible with any moves. You don't\l"
+	.string "need to teach HM moves to your\l"
+	.string "Pokémon.$"
+
+BoragoGrove_TrainerTips2_Text_0:
+	.string "Trainer Tips! Berries are free\n"
+	.string "resources for your Pokémon. As long as\l"
+	.string "you plant them back and water them\l"
+	.string "regularly, you'll save out on a lot of\l"
+	.string "money!$"
 
 BoragoGrove_EventScript_James_Text_0:
 	.string "Behold, the mystery and intrigue of Bug\n"
