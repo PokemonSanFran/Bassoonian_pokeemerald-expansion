@@ -3435,6 +3435,10 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 			#endif
 			u32 i;
 
+            if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
+            && GetMonAbility(&gPlayerParty[0]) == ABILITY_ILLUMINATE)
+                shinyRolls *= 32;
+
 			value = gSaveBlock2Ptr->playerTrainerId[0]
 			          | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
 			          | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
