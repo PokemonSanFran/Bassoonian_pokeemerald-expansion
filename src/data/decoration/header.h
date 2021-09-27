@@ -1063,7 +1063,7 @@ const struct Decoration gDecorations[] =
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 0,
         .description = DecorDesc_TREECKO_DOLL,
         .tiles = DecorGfx_TREECKO_DOLL,
     },
@@ -1075,7 +1075,7 @@ const struct Decoration gDecorations[] =
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 0,
         .description = DecorDesc_TORCHIC_DOLL,
         .tiles = DecorGfx_TORCHIC_DOLL,
     },
@@ -1087,7 +1087,7 @@ const struct Decoration gDecorations[] =
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 0,
         .description = DecorDesc_MUDKIP_DOLL,
         .tiles = DecorGfx_MUDKIP_DOLL,
     },
@@ -1188,26 +1188,26 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_GULPIN_DOLL,
     },
  
-    [DECOR_UNUSED1_DOLL] =
+    [DECOR_SHAYMIN_DOLL] =
     {
-        .id = DECOR_UNUSED1_DOLL,
-        .name = _("Lotad Doll"),
+        .id = DECOR_SHAYMIN_DOLL,
+        .name = _("Shaymin Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 0,
         .description = DecorDesc_LOTAD_DOLL,
         .tiles = DecorGfx_LOTAD_DOLL,
     },
  
-    [DECOR_UNUSED2_DOLL] =
+    [DECOR_JIRACHI_DOLL] =
     {
-        .id = DECOR_UNUSED2_DOLL,
-        .name = _("Seedot Doll"),
+        .id = DECOR_JIRACHI_DOLL,
+        .name = _("Jirachi Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 0,
         .description = DecorDesc_SEEDOT_DOLL,
         .tiles = DecorGfx_SEEDOT_DOLL,
     },

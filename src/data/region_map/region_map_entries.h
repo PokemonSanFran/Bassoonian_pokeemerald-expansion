@@ -193,9 +193,9 @@ static const u8 sMapName_AquaHideout[] = _("Vitae Hideout");
 static const u8 sMapName_MagmaHideout[] = _("Gratia Forest");
 static const u8 sMapName_MirageTower[] = _("MIRAGE TOWER");
 static const u8 sMapName_FarawayIsland[] = _("FARAWAY ISLAND");
-static const u8 sMapName_ArtisanCave[] = _("ARTISAN CAVE");
-static const u8 sMapName_MarineCave[] = _("MARINE CAVE");
-static const u8 sMapName_TerraCave[] = _("TERRA CAVE");
+static const u8 sMapName_ArtisanCave[] = _("Axiom Altar");
+static const u8 sMapName_MarineCave[] = _("Abyssal Trench");
+static const u8 sMapName_TerraCave[] = _("Molten Chamber");
 static const u8 sMapName_DesertUnderpass[] = _("DESERT UNDERPASS");
 static const u8 sMapName_TrainerHill[] = _("Trainer Hill");
 
