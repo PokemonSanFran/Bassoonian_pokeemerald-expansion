@@ -9,7 +9,7 @@ SootopolisCity_House6_EventScript_Woman::
 	compare VAR_RESULT, NO
 	call_if_eq SootopolisCity_House6_EventScript_DeclineWailmerDoll
 	msgbox SootopolisCity_House6_Text_TakeGoodCareOfIt, MSGBOX_DEFAULT
-	givedecoration DECOR_WAILMER_DOLL
+	givedecoration DECOR_GOLURK_DOLL
 	compare VAR_RESULT, FALSE
 	goto_if_eq SootopolisCity_House6_EventScript_NoRoomForWailmerDoll
 	setflag FLAG_RECEIVED_WAILMER_DOLL
@@ -27,7 +27,7 @@ SootopolisCity_House6_EventScript_ReceivedWailmerDoll::
 	end
 
 SootopolisCity_House6_EventScript_NoRoomForWailmerDoll::
-	bufferdecorationname 1, DECOR_WAILMER_DOLL
+	bufferdecorationname 1, DECOR_GOLURK_DOLL
 	msgbox gText_NoRoomLeftForAnother, MSGBOX_DEFAULT
 	msgbox SootopolisCity_House6_Text_IllHoldItForYou, MSGBOX_DEFAULT
 	release

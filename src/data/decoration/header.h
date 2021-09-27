@@ -912,10 +912,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_KISS_POSTER,
     },
  
-    [DECOR_PICHU_DOLL] =
+    [DECOR_STARLY_DOLL] =
     {
-        .id = DECOR_PICHU_DOLL,
-        .name = _("Pichu Doll"),
+        .id = DECOR_STARLY_DOLL,
+        .name = _("Starly Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -924,10 +924,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_PICHU_DOLL,
     },
  
-    [DECOR_PIKACHU_DOLL] =
+    [DECOR_SUBSTITUTE_DOLL] =
     {
-        .id = DECOR_PIKACHU_DOLL,
-        .name = _("Pikachu Doll"),
+        .id = DECOR_SUBSTITUTE_DOLL,
+        .name = _("Substitute Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -936,10 +936,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_PIKACHU_DOLL,
     },
  
-    [DECOR_MARILL_DOLL] =
+    [DECOR_AXEW_DOLL] =
     {
-        .id = DECOR_MARILL_DOLL,
-        .name = _("Marill Doll"),
+        .id = DECOR_AXEW_DOLL,
+        .name = _("Axew Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -948,10 +948,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_MARILL_DOLL,
     },
  
-    [DECOR_TOGEPI_DOLL] =
+    [DECOR_MIENFOO_DOLL] =
     {
-        .id = DECOR_TOGEPI_DOLL,
-        .name = _("Togepi Doll"),
+        .id = DECOR_MIENFOO_DOLL,
+        .name = _("Mienfoo Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -960,10 +960,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_TOGEPI_DOLL,
     },
  
-    [DECOR_CYNDAQUIL_DOLL] =
+    [DECOR_PAWNIARD_DOLL] =
     {
-        .id = DECOR_CYNDAQUIL_DOLL,
-        .name = _("Cyndaquil Doll"),
+        .id = DECOR_PAWNIARD_DOLL,
+        .name = _("Pawniard Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -972,10 +972,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_CYNDAQUIL_DOLL,
     },
  
-    [DECOR_CHIKORITA_DOLL] =
+    [DECOR_MAREANIE_DOLL] =
     {
-        .id = DECOR_CHIKORITA_DOLL,
-        .name = _("Chikorita Doll"),
+        .id = DECOR_MAREANIE_DOLL,
+        .name = _("Mareanie Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -984,10 +984,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_CHIKORITA_DOLL,
     },
  
-    [DECOR_TOTODILE_DOLL] =
+    [DECOR_LARVESTA_DOLL] =
     {
-        .id = DECOR_TOTODILE_DOLL,
-        .name = _("Totodile Doll"),
+        .id = DECOR_LARVESTA_DOLL,
+        .name = _("Larvesta Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -996,10 +996,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_TOTODILE_DOLL,
     },
  
-    [DECOR_JIGGLYPUFF_DOLL] =
+    [DECOR_CROAGUNK_DOLL] =
     {
-        .id = DECOR_JIGGLYPUFF_DOLL,
-        .name = _("Jigglypuff Doll"),
+        .id = DECOR_CROAGUNK_DOLL,
+        .name = _("Croagunk Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1008,10 +1008,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_JIGGLYPUFF_DOLL,
     },
  
-    [DECOR_MEOWTH_DOLL] =
+    [DECOR_WHIMSICOTT_DOLL] =
     {
-        .id = DECOR_MEOWTH_DOLL,
-        .name = _("Meowth Doll"),
+        .id = DECOR_WHIMSICOTT_DOLL,
+        .name = _("Whimsicott Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1020,10 +1020,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_MEOWTH_DOLL,
     },
  
-    [DECOR_CLEFAIRY_DOLL] =
+    [DECOR_SNEASEL_DOLL] =
     {
-        .id = DECOR_CLEFAIRY_DOLL,
-        .name = _("Clefairy Doll"),
+        .id = DECOR_SNEASEL_DOLL,
+        .name = _("Sneasel Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1032,10 +1032,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_CLEFAIRY_DOLL,
     },
  
-    [DECOR_DITTO_DOLL] =
+    [DECOR_PSYDUCK_DOLL] =
     {
-        .id = DECOR_DITTO_DOLL,
-        .name = _("Ditto Doll"),
+        .id = DECOR_PSYDUCK_DOLL,
+        .name = _("Psyduck Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1044,10 +1044,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_DITTO_DOLL,
     },
  
-    [DECOR_SMOOCHUM_DOLL] =
+    [DECOR_MAKUHITA_DOLL] =
     {
-        .id = DECOR_SMOOCHUM_DOLL,
-        .name = _("Smoochum Doll"),
+        .id = DECOR_MAKUHITA_DOLL,
+        .name = _("Makuhita Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1092,10 +1092,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_MUDKIP_DOLL,
     },
  
-    [DECOR_DUSKULL_DOLL] =
+    [DECOR_MEGA_SLOWKING_DOLL] =
     {
-        .id = DECOR_DUSKULL_DOLL,
-        .name = _("Duskull Doll"),
+        .id = DECOR_MEGA_SLOWKING_DOLL,
+        .name = _("M-Slowking Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1116,10 +1116,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_WYNAUT_DOLL,
     },
  
-    [DECOR_BALTOY_DOLL] =
+    [DECOR_MEGA_DARMANITAN_DOLL] =
     {
-        .id = DECOR_BALTOY_DOLL,
-        .name = _("Baltoy Doll"),
+        .id = DECOR_MEGA_DARMANITAN_DOLL,
+        .name = _("M-Darmanit Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1128,10 +1128,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_BALTOY_DOLL,
     },
  
-    [DECOR_KECLEON_DOLL] =
+    [DECOR_WHISMUR_DOLL] =
     {
-        .id = DECOR_KECLEON_DOLL,
-        .name = _("Kecleon Doll"),
+        .id = DECOR_WHISMUR_DOLL,
+        .name = _("Whismur Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1140,10 +1140,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_KECLEON_DOLL,
     },
  
-    [DECOR_AZURILL_DOLL] =
+    [DECOR_SPINDA_DOLL] =
     {
-        .id = DECOR_AZURILL_DOLL,
-        .name = _("Azurill Doll"),
+        .id = DECOR_SPINDA_DOLL,
+        .name = _("Spinda Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
         .category = DECORCAT_DOLL,
@@ -1152,26 +1152,26 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_AZURILL_DOLL,
     },
  
-    [DECOR_SKITTY_DOLL] =
+    [DECOR_SCIZOR_DOLL] =
     {
-        .id = DECOR_SKITTY_DOLL,
-        .name = _("Skitty Doll"),
+        .id = DECOR_SCIZOR_DOLL,
+        .name = _("Scizor Doll"),
         .permission = DECORPERM_SPRITE,
-        .shape = DECORSHAPE_1x1,
+        .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 10000,
         .description = DecorDesc_SKITTY_DOLL,
         .tiles = DecorGfx_SKITTY_DOLL,
     },
  
-    [DECOR_SWABLU_DOLL] =
+    [DECOR_REUNICLUS_DOLL] =
     {
-        .id = DECOR_SWABLU_DOLL,
-        .name = _("Swablu Doll"),
+        .id = DECOR_REUNICLUS_DOLL,
+        .name = _("Reuniclus Doll"),
         .permission = DECORPERM_SPRITE,
-        .shape = DECORSHAPE_1x1,
+        .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
-        .price = 3000,
+        .price = 10000,
         .description = DecorDesc_SWABLU_DOLL,
         .tiles = DecorGfx_SWABLU_DOLL,
     },
@@ -1188,9 +1188,9 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_GULPIN_DOLL,
     },
  
-    [DECOR_LOTAD_DOLL] =
+    [DECOR_UNUSED1_DOLL] =
     {
-        .id = DECOR_LOTAD_DOLL,
+        .id = DECOR_UNUSED1_DOLL,
         .name = _("Lotad Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
@@ -1200,9 +1200,9 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_LOTAD_DOLL,
     },
  
-    [DECOR_SEEDOT_DOLL] =
+    [DECOR_UNUSED2_DOLL] =
     {
-        .id = DECOR_SEEDOT_DOLL,
+        .id = DECOR_UNUSED2_DOLL,
         .name = _("Seedot Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x1,
@@ -1332,10 +1332,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_WATER_CUSHION,
     },
  
-    [DECOR_SNORLAX_DOLL] =
+    [DECOR_STEELIX_DOLL] =
     {
-        .id = DECOR_SNORLAX_DOLL,
-        .name = _("Snorlax Doll"),
+        .id = DECOR_STEELIX_DOLL,
+        .name = _("Steelix Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1344,10 +1344,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_SNORLAX_DOLL,
     },
  
-    [DECOR_RHYDON_DOLL] =
+    [DECOR_MAMOSWINE_DOLL] =
     {
-        .id = DECOR_RHYDON_DOLL,
-        .name = _("Rhydon Doll"),
+        .id = DECOR_MAMOSWINE_DOLL,
+        .name = _("Mamoswine Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1356,10 +1356,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_RHYDON_DOLL,
     },
  
-    [DECOR_LAPRAS_DOLL] =
+    [DECOR_LUMINEON_DOLL] =
     {
-        .id = DECOR_LAPRAS_DOLL,
-        .name = _("Lapras Doll"),
+        .id = DECOR_LUMINEON_DOLL,
+        .name = _("Lumineon Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1368,10 +1368,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_LAPRAS_DOLL,
     },
  
-    [DECOR_VENUSAUR_DOLL] =
+    [DECOR_TYRANITAR_DOLL] =
     {
-        .id = DECOR_VENUSAUR_DOLL,
-        .name = _("Venusaur Doll"),
+        .id = DECOR_TYRANITAR_DOLL,
+        .name = _("Tyranitar Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1380,10 +1380,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_VENUSAUR_DOLL,
     },
  
-    [DECOR_CHARIZARD_DOLL] =
+    [DECOR_METAGROSS_DOLL] =
     {
-        .id = DECOR_CHARIZARD_DOLL,
-        .name = _("Charizard Doll"),
+        .id = DECOR_METAGROSS_DOLL,
+        .name = _("Metagross Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1392,10 +1392,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_CHARIZARD_DOLL,
     },
  
-    [DECOR_BLASTOISE_DOLL] =
+    [DECOR_KOMMO_O_DOLL] =
     {
-        .id = DECOR_BLASTOISE_DOLL,
-        .name = _("Blastoise Doll"),
+        .id = DECOR_KOMMO_O_DOLL,
+        .name = _("Kommo-o Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1404,10 +1404,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_BLASTOISE_DOLL,
     },
  
-    [DECOR_WAILMER_DOLL] =
+    [DECOR_GOLURK_DOLL] =
     {
-        .id = DECOR_WAILMER_DOLL,
-        .name = _("Wailmer Doll"),
+        .id = DECOR_GOLURK_DOLL,
+        .name = _("Golurk Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1416,10 +1416,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_WAILMER_DOLL,
     },
  
-    [DECOR_REGIROCK_DOLL] =
+    [DECOR_STOUTLAND_DOLL] =
     {
-        .id = DECOR_REGIROCK_DOLL,
-        .name = _("Regirock Doll"),
+        .id = DECOR_STOUTLAND_DOLL,
+        .name = _("Stoutland Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1428,10 +1428,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_REGIROCK_DOLL,
     },
  
-    [DECOR_REGICE_DOLL] =
+    [DECOR_MEGA_ALTARIA_DOLL] =
     {
-        .id = DECOR_REGICE_DOLL,
-        .name = _("Regice Doll"),
+        .id = DECOR_MEGA_ALTARIA_DOLL,
+        .name = _("M-Altaria Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
@@ -1440,10 +1440,10 @@ const struct Decoration gDecorations[] =
         .tiles = DecorGfx_REGICE_DOLL,
     },
  
-    [DECOR_REGISTEEL_DOLL] =
+    [DECOR_AVALUGG_DOLL] =
     {
-        .id = DECOR_REGISTEEL_DOLL,
-        .name = _("Registeel Doll"),
+        .id = DECOR_AVALUGG_DOLL,
+        .name = _("Avalugg Doll"),
         .permission = DECORPERM_SPRITE,
         .shape = DECORSHAPE_1x2,
         .category = DECORCAT_DOLL,
