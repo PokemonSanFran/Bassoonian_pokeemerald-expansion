@@ -499,6 +499,11 @@ static u8 GetNumberOfBadges(void)
     return count;
 }
 
+void GetBadgeCountSpecial(void)
+{
+    gSpecialVar_Result = GetNumberOfBadges();
+}
+
 static void SetShopItemsForSale(const u16 *items)
 {
     u16 i = 0;

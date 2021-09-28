@@ -543,3 +543,4 @@ gSpecials::
 	def_special SetTotemBoost
 	@Custom specials
 	def_special FullPartyToPC
+	def_special GetBadgeCountSpecial

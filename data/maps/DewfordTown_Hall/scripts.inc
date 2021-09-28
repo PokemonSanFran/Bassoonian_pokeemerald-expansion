@@ -18,6 +18,278 @@ PoppyDollShop_SteelixDollGuy::
 	return
 
 
+PoppyDollShop_OldLady::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE01_GET, PoppyDollShop_OldLady_4
+PoppyDollShop_OldLady_3:
+	message PoppyDollShop_OldLady_Text_1
+PoppyDollShop_OldLady_1:
+	waitmessage
+	special GetBadgeCountSpecial
+	switch VAR_RESULT
+	case 8, PoppyDollShop_OldLady_9
+	case 7, PoppyDollShop_OldLady_10
+	case 6, PoppyDollShop_OldLady_11
+	case 5, PoppyDollShop_OldLady_12
+	case 4, PoppyDollShop_OldLady_13
+	case 3, PoppyDollShop_OldLady_14
+	case 2, PoppyDollShop_OldLady_15
+	case 1, PoppyDollShop_OldLady_16
+	case 0, PoppyDollShop_OldLady_17
+PoppyDollShop_OldLady_17:
+	pokemartdecoration2 Poppy_DollShop_Inventory_Standard
+PoppyDollShop_OldLady_7:
+	msgbox PoppyDollShop_OldLady_Text_2, MSGBOX_DEFAULT
+	release
+	return
+
+PoppyDollShop_OldLady_2:
+	setflag FLAG_GRC_DOLLSHOP_POSTBADGETALK
+	message PoppyDollShop_OldLady_Text_0
+	goto PoppyDollShop_OldLady_1
+
+PoppyDollShop_OldLady_4:
+	goto_if_unset FLAG_GRC_DOLLSHOP_POSTBADGETALK, PoppyDollShop_OldLady_2
+	goto PoppyDollShop_OldLady_3
+
+PoppyDollShop_OldLady_9:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B8
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_10:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B7
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_11:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B6
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_12:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B5
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_13:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B4
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_14:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B3
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_15:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B2
+	goto PoppyDollShop_OldLady_7
+
+PoppyDollShop_OldLady_16:
+	pokemartdecoration2 Poppy_DollShop_Inventory_B1
+	goto PoppyDollShop_OldLady_7
+
+
+ 
+	.align 2
+Poppy_DollShop_Inventory_Standard:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B1:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B2:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B3:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B4:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B5:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_LARVESTA_DOLL
+	.2byte DECOR_LUMINEON_DOLL
+	.2byte DECOR_STOUTLAND_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B6:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_LARVESTA_DOLL
+	.2byte DECOR_LUMINEON_DOLL
+	.2byte DECOR_STOUTLAND_DOLL
+	.2byte DECOR_SCIZOR_DOLL
+	.2byte DECOR_STEELIX_DOLL
+	.2byte DECOR_GOLURK_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B7:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_LARVESTA_DOLL
+	.2byte DECOR_LUMINEON_DOLL
+	.2byte DECOR_STOUTLAND_DOLL
+	.2byte DECOR_SCIZOR_DOLL
+	.2byte DECOR_STEELIX_DOLL
+	.2byte DECOR_GOLURK_DOLL
+	.2byte DECOR_SNEASEL_DOLL
+	.2byte DECOR_AVALUGG_DOLL
+	.2byte DECOR_MAMOSWINE_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_B8:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_LARVESTA_DOLL
+	.2byte DECOR_LUMINEON_DOLL
+	.2byte DECOR_STOUTLAND_DOLL
+	.2byte DECOR_SCIZOR_DOLL
+	.2byte DECOR_STEELIX_DOLL
+	.2byte DECOR_GOLURK_DOLL
+	.2byte DECOR_SNEASEL_DOLL
+	.2byte DECOR_AVALUGG_DOLL
+	.2byte DECOR_MAMOSWINE_DOLL
+	.2byte DECOR_TYRANITAR_DOLL
+	.2byte DECOR_METAGROSS_DOLL
+	.2byte DECOR_KOMMO_O_DOLL
+	.2byte DECOR_REUNICLUS_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
+	.align 2
+Poppy_DollShop_Inventory_Mega:
+	.2byte DECOR_PSYDUCK_DOLL
+	.2byte DECOR_STARLY_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_MAKUHITA_DOLL
+	.2byte DECOR_MIENFOO_DOLL
+	.2byte DECOR_CROAGUNK_DOLL
+	.2byte DECOR_PAWNIARD_DOLL
+	.2byte DECOR_WHISMUR_DOLL
+	.2byte DECOR_SUBSTITUTE_DOLL
+	.2byte DECOR_MAREANIE_DOLL
+	.2byte DECOR_AXEW_DOLL
+	.2byte DECOR_WHIMSICOTT_DOLL
+	.2byte DECOR_LARVESTA_DOLL
+	.2byte DECOR_LUMINEON_DOLL
+	.2byte DECOR_STOUTLAND_DOLL
+	.2byte DECOR_SCIZOR_DOLL
+	.2byte DECOR_STEELIX_DOLL
+	.2byte DECOR_GOLURK_DOLL
+	.2byte DECOR_SNEASEL_DOLL
+	.2byte DECOR_AVALUGG_DOLL
+	.2byte DECOR_MAMOSWINE_DOLL
+	.2byte DECOR_TYRANITAR_DOLL
+	.2byte DECOR_METAGROSS_DOLL
+	.2byte DECOR_KOMMO_O_DOLL
+	.2byte DECOR_REUNICLUS_DOLL
+	.2byte DECOR_MEGA_SLOWKING_DOLL
+	.2byte DECOR_MEGA_DARMANITAN_DOLL
+	.2byte DECOR_MEGA_ALTARIA_DOLL
+	.2byte DECOR_NONE
+	release
+	end
+
  
 .set LOCALID_EXPERT_M, 4
 .set LOCALID_TWIN, 5
@@ -500,3 +772,22 @@ PoppyDollShop_SteelixDollGuy_Text_0:
 	.string "my boyfriend a nice Poké Doll, but they\l"
 	.string "don't offer any Steelix dolls here… Now\l"
 	.string "what do I do?$"
+
+PoppyDollShop_OldLady_Text_0:
+	.string "Welcome, welcome! Oh! I see you have\n"
+	.string "earned my granddaughter's Gym Badge.\l"
+	.string "How remarkable!\p"
+	.string "Oh, yes, she must have told you about my\n"
+	.string "little store. Now, then, have you come\l"
+	.string "to look around?$"
+
+PoppyDollShop_OldLady_Text_1:
+	.string "Welcome, welcome! Have you come looking\n"
+	.string "for some hand-crafted Poké Dolls?\p"
+	.string "I can assure you they will brighten up\n"
+	.string "your living space.\p"
+	.string "Have you come to buy any?$"
+
+PoppyDollShop_OldLady_Text_2:
+	.string "Thank you for coming! Please, look\n"
+	.string "around as much as you like, dear.$"
