@@ -254,6 +254,9 @@ static const u8 sChillingNeighDescription[] = _("KOs boost Attack stat.");
 static const u8 sGrimNeighDescription[] = _("KOs boost Sp. Atk stat.");
 static const u8 sAsOneIceRiderDescription[] = _("Unnerve and Chilling Neigh.");
 static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
+static const u8 sPlagueDescription[] = _("Spreads poison status to others.");
+static const u8 sDisturbDescription[] = _("Lowers the foe's Sp. Atk.");
+static const u8 sAmplifierDescription[] = _("Powers up sound moves.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -525,6 +528,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GRIM_NEIGH] = _("Grim Neigh"),
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
+    [ABILITY_PLAGUE] = _("Plague"),
+    [ABILITY_DISTURB] = _("Disturb"),
+    [ABILITY_AMPLIFIER] = _("Amplifier"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -797,4 +803,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GRIM_NEIGH] = sGrimNeighDescription,
     [ABILITY_AS_ONE_ICE_RIDER] = sAsOneIceRiderDescription,
     [ABILITY_AS_ONE_SHADOW_RIDER] = sAsOneShadowRiderDescription,
+    [ABILITY_PLAGUE] = sPlagueDescription,
+    [ABILITY_DISTURB] = sDisturbDescription,
+    [ABILITY_AMPLIFIER] = sAmplifierDescription,
 };
