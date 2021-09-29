@@ -847,6 +847,12 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             else if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_SPDEF))
                 score -= 8;
             break;
+        case EFFECT_CONCENTRATE:
+            if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_SPATK))
+                score -= 10;
+            else if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_ACC))
+                score -= 8;
+            break;
         case EFFECT_DRAGON_DANCE:
             if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_ATK) || !HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL))
                 score -= 10;
@@ -4140,6 +4146,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, &score);
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
         break;
+    case EFFECT_CONCENTRATE:
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ACC, &score);
+        break;
     case EFFECT_GEOMANCY:
         if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB)
             score += 3;
@@ -4606,6 +4616,7 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_COSMIC_POWER:
     case EFFECT_BULK_UP:
     case EFFECT_CALM_MIND:
+    case EFFECT_CONCENTRATE:
     case EFFECT_ACUPRESSURE:
     case EFFECT_AUTOTOMIZE:
     case EFFECT_SHIFT_GEAR:
@@ -4912,6 +4923,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_COSMIC_POWER:
             case EFFECT_BULK_UP:
             case EFFECT_CALM_MIND:
+            case EFFECT_CONCENTRATE:
             case EFFECT_DRAGON_DANCE:
             case EFFECT_DEFENSE_UP_3:
             case EFFECT_SPECIAL_ATTACK_UP_3:

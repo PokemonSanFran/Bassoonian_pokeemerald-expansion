@@ -4105,6 +4105,39 @@ static const union AnimCmd sAnim_EXPLOUD_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_WHISMUR_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_LOUDRED_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
+    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_EXPLOUD_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 44),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_CLAMPERL_1[] =
 {
     ANIMCMD_FRAME(0, 15),
@@ -11096,6 +11129,21 @@ static const union AnimCmd *const sAnims_EXPLOUD[] ={
     sAnim_EXPLOUD_1,
 };
 
+static const union AnimCmd *const sAnims_WHISMUR_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_WHISMUR_HANAUAN_1,
+};
+
+static const union AnimCmd *const sAnims_LOUDRED_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_LOUDRED_HANAUAN_1,
+};
+
+static const union AnimCmd *const sAnims_EXPLOUD_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_EXPLOUD_HANAUAN_1,
+};
+
 static const union AnimCmd *const sAnims_CLAMPERL[] ={
     sAnim_GeneralFrame0,
     sAnim_CLAMPERL_1,
@@ -15883,6 +15931,9 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(LUMINEON_HANAUAN),
     ANIM_CMD(GULPIN_HANAUAN),
     ANIM_CMD(SWALOT_HANAUAN),
+    ANIM_CMD(WHISMUR_HANAUAN),
+    ANIM_CMD(LOUDRED_HANAUAN),
+    ANIM_CMD(EXPLOUD_HANAUAN),
     ANIM_CMD(EGG),
 };
 

@@ -779,6 +779,9 @@ gBattleAnims_Moves::
 	@@@ Custom
 	.4byte Move_SUNSPARK
 	.4byte Move_SAURTOOTH
+	.4byte Move_CONCENTRATE
+	.4byte Move_BATTLECRY
+	.4byte Move_VIBE_CANNON
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
 	.align 2
@@ -14050,6 +14053,15 @@ Move_SUNSPARK::
 	end @to do:
 
 Move_SAURTOOTH::
+	end @to do:
+
+Move_CONCENTRATE::
+	end @to do:
+
+Move_BATTLECRY::
+	end @to do:
+
+Move_VIBE_CANNON::
 	end @to do:
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@

@@ -759,4 +759,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
 	
 	[MOVE_SUNSPARK] = _("Sunspark"),
 	[MOVE_SAURTOOTH] = _("Saurtooth"),
+    [MOVE_CONCENTRATE] = _("Concentrate"),
+    [MOVE_BATTLECRY] = _("Battlecry"),
+    [MOVE_VIBE_CANNON] = _("Vibe Cannon"),
 };

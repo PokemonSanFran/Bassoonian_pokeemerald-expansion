@@ -370,6 +370,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSleepHit                @ EFFECT_SLEEP_HIT
 	.4byte BattleScript_EffectAttackerDefenseDownHit  @ EFFECT_ATTACKER_DEFENSE_DOWN_HIT
 	.4byte BattleScript_EffectHit                     @ EFFECT_BODY_PRESS
+	.4byte BattleScript_EffectConcentrate			  @ EFFECT_CONCENTRATE
 
 BattleScript_EffectAttackerDefenseDownHit:
 	setmoveeffect MOVE_EFFECT_DEF_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
@@ -4875,6 +4876,31 @@ BattleScript_CalmMindTrySpDef::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_CalmMindEnd::
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectConcentrate::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPATK, MAX_STAT_STAGE, BattleScript_ConcentrateDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_ACC, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_ConcentrateDoMoveAnim::
+	attackanimation
+	waitanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_ACC, 0
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_ConcentrateTrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ConcentrateTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ConcentrateTrySpDef::
+	setstatchanger STAT_ACC, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_ConcentrateEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_ConcentrateEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ConcentrateEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_CantRaiseMultipleStats::

@@ -2022,6 +2022,7 @@ bool32 IsStatRaisingEffect(u16 effect)
     case EFFECT_DEFENSE_CURL:
     case EFFECT_CHARGE:
 	case EFFECT_CALM_MIND:
+    case EFFECT_CONCENTRATE:
     case EFFECT_COSMIC_POWER:
 	case EFFECT_DRAGON_DANCE:
 	case EFFECT_ACUPRESSURE:

@@ -1282,4 +1282,7 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_LUMINEON_HANAUAN] = _("Lumineon"),
     [SPECIES_GULPIN_HANAUAN] = _("Gulpin"),
     [SPECIES_SWALOT_HANAUAN] = _("Swalot"),
+    [SPECIES_WHISMUR_HANAUAN] = _("Whismur"),
+    [SPECIES_LOUDRED_HANAUAN] = _("Loudred"),
+    [SPECIES_EXPLOUD_HANAUAN] = _("Exploud"),
 };

@@ -657,4 +657,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_LUMINEON_HANAUAN] = gMonFootprint_LumineonHanauan,
     [SPECIES_GULPIN_HANAUAN] = gMonFootprint_GulpinHanauan,
     [SPECIES_SWALOT_HANAUAN] = gMonFootprint_SwalotHanauan,
+    [SPECIES_WHISMUR_HANAUAN] = gMonFootprint_WhismurHanauan,
+    [SPECIES_LOUDRED_HANAUAN] = gMonFootprint_LoudredHanauan,
+    [SPECIES_EXPLOUD_HANAUAN] = gMonFootprint_ExploudHanauan,
 };

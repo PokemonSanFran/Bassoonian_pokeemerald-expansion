@@ -6445,3 +6445,24 @@ const u32 gMonBackPic_SwalotHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_swa
 const u32 gMonShinyPalette_SwalotHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_swalot/shiny.gbapal.lz");
 const u8 gMonIcon_SwalotHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_swalot/icon.4bpp");
 const u8 gMonFootprint_SwalotHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_swalot/footprint.1bpp");
+
+const u32 gMonFrontPic_WhismurHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_whismur/anim_front.4bpp.lz");
+const u32 gMonPalette_WhismurHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_whismur/normal.gbapal.lz");
+const u32 gMonBackPic_WhismurHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_whismur/back.4bpp.lz");
+const u32 gMonShinyPalette_WhismurHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_whismur/shiny.gbapal.lz");
+const u8 gMonIcon_WhismurHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_whismur/icon.4bpp");
+const u8 gMonFootprint_WhismurHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_whismur/footprint.1bpp");
+
+const u32 gMonFrontPic_LoudredHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_loudred/anim_front.4bpp.lz");
+const u32 gMonPalette_LoudredHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_loudred/normal.gbapal.lz");
+const u32 gMonBackPic_LoudredHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_loudred/back.4bpp.lz");
+const u32 gMonShinyPalette_LoudredHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_loudred/shiny.gbapal.lz");
+const u8 gMonIcon_LoudredHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_loudred/icon.4bpp");
+const u8 gMonFootprint_LoudredHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_loudred/footprint.1bpp");
+
+const u32 gMonFrontPic_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_exploud/anim_front.4bpp.lz");
+const u32 gMonPalette_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_exploud/normal.gbapal.lz");
+const u32 gMonBackPic_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_exploud/back.4bpp.lz");
+const u32 gMonShinyPalette_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_exploud/shiny.gbapal.lz");
+const u8 gMonIcon_ExploudHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_exploud/icon.4bpp");
+const u8 gMonFootprint_ExploudHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_exploud/footprint.1bpp");

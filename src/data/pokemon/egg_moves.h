@@ -4450,5 +4450,18 @@ const u16 gEggMoves[] = {
 		MOVE_POISON_GAS,
 		MOVE_SING),
 
+    egg_moves(WHISMUR_HANAUAN,
+        MOVE_CIRCLE_THROW,
+        MOVE_ENDEAVOR,
+        MOVE_EXTRASENSORY,
+        MOVE_FAKE_TEARS,
+        MOVE_DIZZY_PUNCH,
+        MOVE_HAMMER_ARM,
+        MOVE_ROUND,
+        MOVE_ASSURANCE,
+        MOVE_WHIRLWIND,
+        MOVE_TAKE_DOWN,
+        MOVE_FEINT_ATTACK),
+
     EGG_MOVES_TERMINATOR
 };

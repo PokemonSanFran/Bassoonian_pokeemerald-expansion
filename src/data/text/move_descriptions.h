@@ -2953,6 +2953,18 @@ static const u8 sSAURTOOTHDescription[] = _(
 	"Crunches down with the ferocity of a\n"
 	"dragon. May lower foe's Defense.");
 
+static const u8 sCONCENTRATEDescription[] = _(
+    "Focuses the mind to raise Sp.\n"
+    "Attack and accuracy.");
+
+static const u8 sBATTLECRYDescription[] = _(
+    "The user bellows out a fiercy war\n"
+    "cry that hits all foes.");
+
+static const u8 sVIBE_CANNONDescription[] = _(
+    "A powerful assault of wind and\n"
+    "sound that may cause flinching.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3715,4 +3727,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 	
 	[MOVE_SUNSPARK - 1] = sSUNSPARKDescription,
 	[MOVE_SAURTOOTH - 1] = sSAURTOOTHDescription,
+    [MOVE_CONCENTRATE - 1] = sCONCENTRATEDescription,
+    [MOVE_BATTLECRY - 1] = sBATTLECRYDescription,
+    [MOVE_VIBE_CANNON - 1] = sVIBE_CANNONDescription,
 };

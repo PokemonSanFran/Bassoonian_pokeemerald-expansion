@@ -1241,6 +1241,9 @@ const u8 *const gMonIconTable[] =
     [SPECIES_LUMINEON_HANAUAN] = gMonIcon_LumineonHanauan,
     [SPECIES_GULPIN_HANAUAN] = gMonIcon_GulpinHanauan,
     [SPECIES_SWALOT_HANAUAN] = gMonIcon_SwalotHanauan,
+    [SPECIES_WHISMUR_HANAUAN] = gMonIcon_WhismurHanauan,
+    [SPECIES_LOUDRED_HANAUAN] = gMonIcon_LoudredHanauan,
+    [SPECIES_EXPLOUD_HANAUAN] = gMonIcon_ExploudHanauan,
 };
 
 const u8 *const gMonIconTableFemale[] =
@@ -2428,6 +2431,9 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_LUMINEON_HANAUAN] = 3,
     [SPECIES_GULPIN_HANAUAN] = 1,
     [SPECIES_SWALOT_HANAUAN] = 0,
+    [SPECIES_WHISMUR_HANAUAN] = 2,
+    [SPECIES_LOUDRED_HANAUAN] = 0,
+    [SPECIES_EXPLOUD_HANAUAN] = 0,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

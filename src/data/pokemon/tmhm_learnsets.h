@@ -24763,4 +24763,10 @@ const u32 gTMHMLearnsets[][2] =
 	[SPECIES_GULPIN_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 	
 	[SPECIES_SWALOT_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+
+    [SPECIES_WHISMUR_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+
+    [SPECIES_LOUDRED_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+
+    [SPECIES_EXPLOUD_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 };
