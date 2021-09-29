@@ -15,12 +15,12 @@
   "connections": [
     {
       "direction": "left",
-      "offset": -80,
+      "offset": -76,
       "map": "MAP_ROUTE110"
     },
     {
       "direction": "right",
-      "offset": -4,
+      "offset": 0,
       "map": "MAP_PETALBURG_CITY"
     }
   ],
