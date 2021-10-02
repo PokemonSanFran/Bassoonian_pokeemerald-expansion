@@ -10,7 +10,7 @@
 #include "constants/battle_anim.h"
 #include "constants/rgb.h"
 
-/* 
+/*
     This file handles the movements of the Pokémon intro animations.
 
     Each animation type is identified by an ANIM_* constant that
@@ -26,7 +26,7 @@
 
     The table linking species to a BACK_ANIM is in this file (sSpeciesToBackAnimSet)
     while the table linking species to an ANIM for their front animation is in
-    pokemon.c (sMonFrontAnimIdsTable). 
+    pokemon.c (sMonFrontAnimIdsTable).
 
     These are the functions that will start an animation:
     - LaunchAnimationTaskForFrontSprite
@@ -600,6 +600,17 @@ static const u8 sSpeciesToBackAnimSet[NUM_SPECIES] =
     [SPECIES_JIRACHI]    = BACK_ANIM_CONVEX_DOUBLE_ARC,
     [SPECIES_DEOXYS]     = BACK_ANIM_SHRINK_GROW_VIBRATE,
     [SPECIES_CHIMECHO]   = BACK_ANIM_CONVEX_DOUBLE_ARC,
+
+    // Custom
+    [SPECIES_PSYDUCK_HANAUAN]   = BACK_ANIM_SHRINK_GROW_VIBRATE,
+    [SPECIES_GOLDUCK_HANAUAN]   = BACK_ANIM_SHRINK_GROW_VIBRATE,
+    [SPECIES_FINNEON_HANAUAN]   = BACK_ANIM_CONVEX_DOUBLE_ARC,
+    [SPECIES_LUMINEON_HANAUAN]  = BACK_ANIM_CONVEX_DOUBLE_ARC,
+    [SPECIES_GULPIN_HANAUAN]    = BACK_ANIM_V_STRETCH,
+    [SPECIES_SWALOT_HANAUAN]    = BACK_ANIM_V_STRETCH,
+    [SPECIES_WHISMUR_HANAUAN]   = BACK_ANIM_CONCAVE_ARC_SMALL,
+    [SPECIES_LOUDRED_HANAUAN]   = BACK_ANIM_V_SHAKE,
+    [SPECIES_EXPLOUD_HANAUAN]   = BACK_ANIM_GROW_STUTTER,
 };
 
 // Equivalent to struct YellowFlashData, but doesn't match as a struct
