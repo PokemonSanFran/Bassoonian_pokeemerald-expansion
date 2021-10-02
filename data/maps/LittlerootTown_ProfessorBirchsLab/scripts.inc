@@ -26,6 +26,7 @@ Borago_Get_Dex::
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_SYS_DEXNAV_GET
+	setflag FLAG_SYS_MYSTERY_GIFT_ENABLE
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	return

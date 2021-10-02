@@ -544,4 +544,3 @@ gSpecials::
 	def_special ScriptMenu_CreateDriveLabsPollockMultichoice
 	def_special OpenPokenavForTutorial2
 	def_special EnterSafariModeR1
-	def_special GetPartySizeSpecial

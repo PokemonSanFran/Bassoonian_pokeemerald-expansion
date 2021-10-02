@@ -136,6 +136,19 @@ Route1_finalisetutorial::
 	lockall
 	msgbox Route1_finalisetutorial_Text_0
 	closemessage
+	getpartysize
+	compare VAR_RESULT, 0
+	goto_if_eq Route1_finalisetutorial_2
+	compare VAR_RESULT, 1
+	goto_if_eq Route1_finalisetutorial_3
+	compare VAR_RESULT, 2
+	goto_if_eq Route1_finalisetutorial_4
+	compare VAR_RESULT, 3
+	goto_if_eq Route1_finalisetutorial_5
+	compare VAR_RESULT, 4
+	goto_if_eq Route1_finalisetutorial_6
+Route1_finalisetutorial_1:
+	closemessage
 	setvar VAR_GRC_ROUTE1_STATE, 3
 	setvar VAR_LITTLEROOT_TOWN_STATE, 1
 	setflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
@@ -145,6 +158,76 @@ Route1_finalisetutorial::
 	waitstate
 	releaseall
 	return
+
+Route1_finalisetutorial_2:
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route1_finalisetutorial_14
+	msgbox Route1_finalisetutorial_Text_2
+Route1_finalisetutorial_13:
+	closemessage
+	msgbox Route1_finalisetutorial_Text_3
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_4
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_5
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Route1_finalisetutorial_22
+	msgbox Route1_finalisetutorial_Text_7
+Route1_finalisetutorial_21:
+	closemessage
+	goto Route1_finalisetutorial_1
+
+Route1_finalisetutorial_3:
+	msgbox Route1_finalisetutorial_Text_8
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_9
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route1_finalisetutorial_18
+	msgbox Route1_finalisetutorial_Text_11
+Route1_finalisetutorial_17:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_12
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	goto Route1_finalisetutorial_1
+
+Route1_finalisetutorial_4:
+	goto Route1_finalisetutorial_1
+
+Route1_finalisetutorial_5:
+	goto Route1_finalisetutorial_1
+
+Route1_finalisetutorial_6:
+	goto Route1_finalisetutorial_1
+
+Route1_finalisetutorial_14:
+	msgbox Route1_finalisetutorial_Text_1
+	goto Route1_finalisetutorial_13
+
+Route1_finalisetutorial_18:
+	msgbox Route1_finalisetutorial_Text_10
+	goto Route1_finalisetutorial_17
+
+Route1_finalisetutorial_22:
+	msgbox Route1_finalisetutorial_Text_6
+	goto Route1_finalisetutorial_21
 
 
 Route1_GatherPeeps::
@@ -568,7 +651,60 @@ Route101_Text_RouteSign:
 	.string "{LEFT_ARROW} Borago City$"
 
 Route1_finalisetutorial_Text_0:
-	.string "congrats winners win & losers lose$"
+	.string "Prof. Spruce: Alright, folks, here are\n"
+	.string "the final results of the competition!$"
+
+Route1_finalisetutorial_Text_1:
+	.string "In third place is {PLAYER}! He failed\n"
+	.string "to catch any Pokémon, but they scored\l"
+	.string "well enough in the previous rounds to\l"
+	.string "earn third place overall!$"
+
+Route1_finalisetutorial_Text_2:
+	.string "In third place is {PLAYER}! She failed\n"
+	.string "to catch any Pokémon, but they scored\l"
+	.string "well enough in the previous rounds to\l"
+	.string "earn third place overall!$"
+
+Route1_finalisetutorial_Text_3:
+	.string "In second place is Tori!$"
+
+Route1_finalisetutorial_Text_4:
+	.string "Tori: Hm. Okay.$"
+
+Route1_finalisetutorial_Text_5:
+	.string "Spruce: And the winner is… {RIVAL}!$"
+
+Route1_finalisetutorial_Text_6:
+	.string "Alyssa: R-really? I'm the winner?!\p"
+	.string "Hehehe, that's great! Ma and Pa will be\n"
+	.string "so happy to hear it!$"
+
+Route1_finalisetutorial_Text_7:
+	.string "Basil: Whoa, what? I've won?! Hahahaha!\p"
+	.string "Awesome! Can't wait to tell my old folks\n"
+	.string "about it!$"
+
+Route1_finalisetutorial_Text_8:
+	.string "In third place is… No, wait! Let me get\n"
+	.string "this right… We have three winners!\p"
+	.string "It's a three-way tie between\n"
+	.string "{PLAYER}, {RIVAL} and Tori!$"
+
+Route1_finalisetutorial_Text_9:
+	.string "Tori: Huh, what do you know. Neat, I\n"
+	.string "guess.$"
+
+Route1_finalisetutorial_Text_10:
+	.string "Basil: Neat? That's rad! I can share my\n"
+	.string "victory with both of you!$"
+
+Route1_finalisetutorial_Text_11:
+	.string "Alyssa: Neat? Now the three of us can\n"
+	.string "cheer to our victory together!$"
+
+Route1_finalisetutorial_Text_12:
+	.string "Tori: I suppose so.$"
 
 R1_NoAccess_City_Text_0:
 	.string "Uh, I don't think that's a good idea,\n"

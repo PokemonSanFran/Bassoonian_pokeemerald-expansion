@@ -114,7 +114,7 @@ script Route1_finalisetutorial
 	lockall
 	msgbox(format("Prof. Spruce: Alright, folks, here are the final results of the competition!"))
 	closemessage
-	special(GetPartySizeSpecial)
+	getpartysize
 	if (var(VAR_RESULT)==0)
 	{
 		checkplayergender
@@ -148,7 +148,7 @@ script Route1_finalisetutorial
 		}
 		closemessage
 	}
-	else if (var(VAR_RESULT)==1)
+	elif (var(VAR_RESULT)==1)
 	{
 		msgbox(format("In third place is… No, wait! Let me get this right… We have three winners!\pIt's a three-way tie between {PLAYER}, {RIVAL} and Tori!"))
 		closemessage
@@ -176,15 +176,15 @@ script Route1_finalisetutorial
 		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
 		waitmovement(0)
 	}
-	else if (var(VAR_RESULT)==2)
+	elif (var(VAR_RESULT)==2)
 	{
 
 	}
-	else if (var(VAR_RESULT)==3)
+	elif (var(VAR_RESULT)==3)
 	{
 
 	}
-	else if (var(VAR_RESULT)==4)
+	elif (var(VAR_RESULT)==4)
 	{
 
 	}
