@@ -72,15 +72,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_CITY",
-      "dest_warp_id": 5
+      "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": 2
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_PETALBURG_CITY",
-      "dest_warp_id": 5
+      "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

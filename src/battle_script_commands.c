@@ -8451,6 +8451,12 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;    // exit if loop failed (failsafe)
         }
         return;
+    case VARIOUS_JUMP_IF_SET:
+        if (FlagGet(T1_READ_16(gBattlescriptCurrInstr + 7)))
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        else
+            gBattlescriptCurrInstr += 9;
+        return;
     }
 
     gBattlescriptCurrInstr += 3;

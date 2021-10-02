@@ -1769,6 +1769,12 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_GRIM_NEIGH
 	.endm
 
+	.macro jumpifset, flag:req, ptr:req
+	various BS_TARGET, VARIOUS_JUMP_IF_SET
+	.4byte \ptr
+	.2byte \flag
+	.endm
+
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
 	setbyte sSTATCHANGER \stat | \stages << 3 | \down << 7

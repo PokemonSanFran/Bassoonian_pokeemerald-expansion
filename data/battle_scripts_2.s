@@ -5,6 +5,7 @@
 #include "constants/battle_config.h"
 #include "constants/items.h"
 #include "constants/songs.h"
+#include "constants/flags.h"
 #include "constants/game_stat.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/battle_script.inc"
@@ -118,10 +119,17 @@ BattleScript_ShakeBallThrow::
 	waitmessage B_WAIT_TIME_LONG
 	jumpifword CMP_NO_COMMON_BITS, gBattleTypeFlags, BATTLE_TYPE_SAFARI, BattleScript_ShakeBallThrowEnd
 	jumpifbyte CMP_NOT_EQUAL, gNumSafariBalls, 0, BattleScript_ShakeBallThrowEnd
-	printstring STRINGID_OUTOFSAFARIBALLS
+	jumpifset FLAG_GRC_TURPIA_HIDE_PARENTS, BattleScript_ShakeBallThrow2
+	printstring STRINGID_OUTOFSAFARIBALLSR1
 	waitmessage B_WAIT_TIME_LONG
 	setbyte gBattleOutcome, B_OUTCOME_NO_SAFARI_BALLS
 BattleScript_ShakeBallThrowEnd::
+	finishaction
+
+BattleScript_ShakeBallThrow2::
+	printstring STRINGID_OUTOFSAFARIBALLS
+	waitmessage B_WAIT_TIME_LONG
+	setbyte gBattleOutcome, B_OUTCOME_NO_SAFARI_BALLS
 	finishaction
 
 BattleScript_TrainerBallBlock::

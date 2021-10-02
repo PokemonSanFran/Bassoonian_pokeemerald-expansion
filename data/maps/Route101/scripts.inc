@@ -206,7 +206,7 @@ R1_NoAccess_Home::
 	applymovement 2, Common_Movement_ExclamationMark
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
-	msgbox R1_NoAccess_City_Text_0
+	msgbox R1_NoAccess_Home_Text_0
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft
 	waitmovement 0
@@ -236,6 +236,16 @@ R1_Event_Robin::
 
 R1_Event_Jack::
 	msgbox R1_Event_Jack_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Pam::
+	msgbox R1_Event_Pam_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Mike::
+	msgbox R1_Event_Mike_Text_0, MSGBOX_NPC
 	return
 
 
@@ -561,13 +571,28 @@ Route1_finalisetutorial_Text_0:
 	.string "congrats winners win & losers lose$"
 
 R1_NoAccess_City_Text_0:
-	.string "Nuh uh$"
+	.string "Uh, I don't think that's a good idea,\n"
+	.string "{PLAYER}. The competition's still\l"
+	.string "under way, you know?$"
 
 R1_ScientistCityBlock_Text_0:
-	.string "Science says no$"
+	.string "Hey, {PLAYER}! You look like you've\n"
+	.string "bounced right back from the incident\l"
+	.string "earlier.\p"
+	.string "That's great! Best of luck with the\n"
+	.string "competition!$"
+
+R1_NoAccess_Home_Text_0:
+	.string "Prof. Spruce: We're not done with the\n"
+	.string "competition yet, {PLAYER}. Capisce?\l"
+	.string "Off you go, then.$"
 
 R1_ProfHomeBlock_Text_0:
-	.string "Prof says no$"
+	.string "Prof. Spruce: {PLAYER}! I can see the\n"
+	.string "fire in your eyes.\p"
+	.string "It's that kind of passion that makes\n"
+	.string "the world go round. Can't wait to see\l"
+	.string "what you've got!$"
 
 R1_Event_Tori_Text_0:
 	.string "Tori: Hmph. I'm not doing this for fun,\n"
@@ -585,6 +610,18 @@ R1_Event_Robin_Text_0:
 
 R1_Event_Jack_Text_0:
 	.string "Jack: Leave.$"
+
+R1_Event_Pam_Text_0:
+	.string "Pam: Oh, it's {PLAYER}! Can't say I\n"
+	.string "expected you to drop by like this!\p"
+	.string "I see you're hard at work trying to win\n"
+	.string "this challenge, but thanks for\l"
+	.string "stopping by!\p"
+	.string "We're rooting for all of you!$"
+
+R1_Event_Mike_Text_0:
+	.string "Mike: You got this, buster! I'll secure\n"
+	.string "some awesome action shots!$"
 
 R1_Event_Rival_Text_0:
 	.string "Alyssa: I didn't it'd be this thrilling\n"

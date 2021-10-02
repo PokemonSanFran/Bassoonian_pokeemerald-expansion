@@ -18,22 +18,37 @@ script SafariZone_EventScript_OutOfBallsMidBattle
 
 script SafariZone_EventScript_Exit
 {
+	special(ExitSafariMode)
 	if (flag(FLAG_GRC_TURPIA_HIDE_PARENTS))
 	{
 		setvar(VAR_SAFARI_ZONE_STATE,1)
-		special(ExitSafariMode)
 		warp(MAP_ROUTE121_SAFARI_ZONE_ENTRANCE,255,2,5)
-		waitstate
-		end
 	}
 	else
 	{
 		setvar(VAR_GRC_ROUTE1_STATE,2)
-		special(ExitSafariMode)
 		warp(MAP_ROUTE101,255,13,3)
-		waitstate
-		end
 	}
+	waitstate
+	end
+}
+
+script SafariZone_EventScript_OutOfBalls
+{
+	lockall
+	playse(SE_DING_DONG)
+	if (flag(FLAG_GRC_TURPIA_HIDE_PARENTS))
+	{
+		message(SafariZone_Text_OutOfBalls)
+	}
+	else
+	{
+		message(format("Prof. Spruce: All right, that's a wrap!\pGood job, everyone! Let's take a look at your results now!"))
+	}
+	waitmessage
+	waitbuttonpress
+	releaseall
+	goto(SafariZone_EventScript_Exit)
 }
 
 raw `
@@ -70,14 +85,14 @@ SafariZone_EventScript_TimesUp:: @ 82A4B8A
 	releaseall
 	goto SafariZone_EventScript_Exit
 
-SafariZone_EventScript_OutOfBalls:: @ 82A4B9B
-	lockall
-	playse SE_DING_DONG
-	message SafariZone_Text_OutOfBalls
-	waitmessage
-	waitbuttonpress
-	releaseall
-	goto SafariZone_EventScript_Exit
+@SafariZone_EventScript_OutOfBalls:: @ 82A4B9B
+@	lockall
+@	playse SE_DING_DONG
+@	message SafariZone_Text_OutOfBalls
+@	waitmessage
+@	waitbuttonpress
+@	releaseall
+@	goto SafariZone_EventScript_Exit
 
 EventScript_PokeBlockFeeder:: @ 82A4BAC
 	lockall

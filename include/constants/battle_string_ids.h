@@ -575,7 +575,9 @@
 #define STRINGID_PLAYERLOSTAGAINSTENEMYTRAINER   570
 #define STRINGID_PLAYERPAIDPRIZEMONEY  			 571
 
-#define BATTLESTRINGS_COUNT                      572
+#define STRINGID_OUTOFSAFARIBALLSR1              572
+
+#define BATTLESTRINGS_COUNT                      573
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

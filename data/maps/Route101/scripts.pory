@@ -156,7 +156,7 @@ script R1_NoAccess_City {
 	applymovement(4,Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("Nuh uh"))
+	msgbox(format("Uh, I don't think that's a good idea, {PLAYER}. The competition's still under way, you know?"))
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkRight)
 	waitmovement(0)
@@ -164,7 +164,7 @@ script R1_NoAccess_City {
 }
 
 script R1_ScientistCityBlock {
-	msgbox("Science says no",MSGBOX_NPC)
+	msgbox(format("Hey, {PLAYER}! You look like you've bounced right back from the incident earlier.\pThat's great! Best of luck with the competition!"),MSGBOX_NPC)
 }
 
 script R1_NoAccess_Home {
@@ -174,7 +174,7 @@ script R1_NoAccess_Home {
 	applymovement(2,Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("Nuh uh"))
+	msgbox(format("Prof. Spruce: We're not done with the competition yet, {PLAYER}. Capisce? Off you go, then."))
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkLeft)
 	waitmovement(0)
@@ -182,7 +182,7 @@ script R1_NoAccess_Home {
 }
 
 script R1_ProfHomeBlock {
-	msgbox("Prof says no",MSGBOX_NPC)
+	msgbox(format("Prof. Spruce: {PLAYER}! I can see the fire in your eyes.\pIt's that kind of passion that makes the world go round. Can't wait to see what you've got!"),MSGBOX_NPC)
 }
 
 script R1_Event_Tori {
@@ -199,6 +199,14 @@ script R1_Event_Robin {
 
 script R1_Event_Jack {
 	msgbox(format("Jack: Leave."),MSGBOX_NPC)
+}
+
+script R1_Event_Pam {
+	msgbox(format("Pam: Oh, it's {PLAYER}! Can't say I expected you to drop by like this!\pI see you're hard at work trying to win this challenge, but thanks for stopping by!\pWe're rooting for all of you!"),MSGBOX_NPC)
+}
+
+script R1_Event_Mike {
+	msgbox(format("Mike: You got this, buster! I'll secure some awesome action shots!"),MSGBOX_NPC)
 }
 
 script R1_Event_Rival {

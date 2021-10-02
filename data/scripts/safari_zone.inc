@@ -13,19 +13,35 @@ SafariZone_EventScript_OutOfBallsMidBattle_1:
 
 
 SafariZone_EventScript_Exit::
-	goto_if_set FLAG_GRC_TURPIA_HIDE_PARENTS, SafariZone_EventScript_Exit_1
-	setvar VAR_GRC_ROUTE1_STATE, 2
 	special ExitSafariMode
+	goto_if_set FLAG_GRC_TURPIA_HIDE_PARENTS, SafariZone_EventScript_Exit_2
+	setvar VAR_GRC_ROUTE1_STATE, 2
 	warp MAP_ROUTE101, 255, 13, 3
+SafariZone_EventScript_Exit_1:
 	waitstate
 	end
 
-SafariZone_EventScript_Exit_1:
+SafariZone_EventScript_Exit_2:
 	setvar VAR_SAFARI_ZONE_STATE, 1
-	special ExitSafariMode
 	warp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 255, 2, 5
-	waitstate
-	end
+	goto SafariZone_EventScript_Exit_1
+
+
+SafariZone_EventScript_OutOfBalls::
+	lockall
+	playse SE_DING_DONG
+	goto_if_set FLAG_GRC_TURPIA_HIDE_PARENTS, SafariZone_EventScript_OutOfBalls_2
+	message SafariZone_EventScript_OutOfBalls_Text_0
+SafariZone_EventScript_OutOfBalls_1:
+	waitmessage
+	waitbuttonpress
+	releaseall
+	goto SafariZone_EventScript_Exit
+	return
+
+SafariZone_EventScript_OutOfBalls_2:
+	message SafariZone_Text_OutOfBalls
+	goto SafariZone_EventScript_OutOfBalls_1
 
 
 @SafariZone_EventScript_OutOfBallsMidBattle:: @ 82A4B4C
@@ -61,14 +77,14 @@ SafariZone_EventScript_TimesUp:: @ 82A4B8A
 	releaseall
 	goto SafariZone_EventScript_Exit
 
-SafariZone_EventScript_OutOfBalls:: @ 82A4B9B
-	lockall
-	playse SE_DING_DONG
-	message SafariZone_Text_OutOfBalls
-	waitmessage
-	waitbuttonpress
-	releaseall
-	goto SafariZone_EventScript_Exit
+@SafariZone_EventScript_OutOfBalls:: @ 82A4B9B
+@	lockall
+@	playse SE_DING_DONG
+@	message SafariZone_Text_OutOfBalls
+@	waitmessage
+@	waitbuttonpress
+@	releaseall
+@	goto SafariZone_EventScript_Exit
 
 EventScript_PokeBlockFeeder:: @ 82A4BAC
 	lockall
@@ -323,3 +339,8 @@ SafariZone_Northeast_Text_Girl: @ 82A5A44
 	.string "I can't seem to catch anything!\p"
 	.string "I'll end up wasting the admission\n"
 	.string "price if I don't catch something!$"
+
+SafariZone_EventScript_OutOfBalls_Text_0:
+	.string "Prof. Spruce: All right, that's a wrap!\p"
+	.string "Good job, everyone! Let's take a look at\n"
+	.string "your results now!$"
