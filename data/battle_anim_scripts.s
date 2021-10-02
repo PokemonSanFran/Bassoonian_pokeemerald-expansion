@@ -782,6 +782,7 @@ gBattleAnims_Moves::
 	.4byte Move_CONCENTRATE
 	.4byte Move_BATTLECRY
 	.4byte Move_VIBE_CANNON
+	.4byte Move_ABYSSAL_BASS
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
 	.align 2
@@ -14062,6 +14063,9 @@ Move_BATTLECRY::
 	end @to do:
 
 Move_VIBE_CANNON::
+	end @to do:
+
+Move_ABYSSAL_BASS::
 	end @to do:
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
