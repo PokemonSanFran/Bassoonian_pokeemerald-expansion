@@ -2433,7 +2433,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_SWALOT_HANAUAN] = 0,
     [SPECIES_WHISMUR_HANAUAN] = 2,
     [SPECIES_LOUDRED_HANAUAN] = 1,
-    [SPECIES_EXPLOUD_HANAUAN] = 0,
+    [SPECIES_EXPLOUD_HANAUAN] = 1,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

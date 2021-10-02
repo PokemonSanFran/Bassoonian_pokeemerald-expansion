@@ -3028,7 +3028,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_GULPIN_HANAUAN - 1]        = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_SWALOT_HANAUAN - 1]        = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
     [SPECIES_WHISMUR_HANAUAN - 1]       = ANIM_H_SLIDE,
-    [SPECIES_LOUDRED_HANAUAN - 1]       = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+    [SPECIES_LOUDRED_HANAUAN - 1]       = ANIM_H_SHAKE,
     [SPECIES_EXPLOUD_HANAUAN - 1]       = ANIM_V_SHAKE_TWICE,
 };
 
@@ -3091,6 +3091,7 @@ static const u8 sMonAnimationDelayTable[NUM_SPECIES - 1] =
     [SPECIES_RAYQUAZA - 1]   = 60,
     [SPECIES_TAPU_FINI - 1]  = 5,
     [SPECIES_ROTOM_FAN - 1]  = 7,
+    [SPECIES_LOUDRED_HANAUAN - 1] = 5,
 };
 
 const u8 gPPUpGetMask[] = {0x03, 0x0c, 0x30, 0xc0}; // Masks for getting PP Up count, also PP Max values

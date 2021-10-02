@@ -4122,11 +4122,10 @@ static const union AnimCmd sAnim_WHISMUR_HANAUAN_1[] =
 
 static const union AnimCmd sAnim_LOUDRED_HANAUAN_1[] =
 {
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 9),
-    ANIMCMD_FRAME(1, 9),
-    ANIMCMD_FRAME(0, 33),
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(0, 40),
     ANIMCMD_END,
 };
 
