@@ -32,6 +32,11 @@
       "direction": "down",
       "offset": 0,
       "map": "MAP_ROUTE124"
+    },
+    {
+      "direction": "emerge",
+      "offset": 0,
+      "map": "MAP_ROUTE109"
     }
   ],
   "object_events": [
