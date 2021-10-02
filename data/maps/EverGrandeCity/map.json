@@ -3,7 +3,7 @@
   "name": "EverGrandeCity",
   "layout": "LAYOUT_EVER_GRANDE_CITY",
   "music": "MUS_EVER_GRANDE",
-  "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
+  "region_map_section": "MAPSEC_BORAGO_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_CITY",
@@ -27,6 +27,11 @@
       "direction": "left",
       "offset": 36,
       "map": "MAP_ROUTE103"
+    },
+    {
+      "direction": "up",
+      "offset": 0,
+      "map": "MAP_ROUTE131"
     }
   ],
   "object_events": [

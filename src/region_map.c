@@ -135,61 +135,61 @@ static const u8 sRegionMap_MapSectionLayout[] = INCBIN_U8("graphics/pokenav/regi
 
 static const u16 sRegionMap_SpecialPlaceLocations[][2] =
 {
-    {MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
-    {MAPSEC_UNDERWATER_124,             MAPSEC_ROUTE_124},
+    {MAPSEC_UNDERWATER_105,             MAPSEC_GRC_ROUTE14},
+    {MAPSEC_UNDERWATER_124,             MAPSEC_GRC_ROUTE24},
     #ifdef BUGFIX
     {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_125},
     #else
-    {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_129}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Marine Cave only)
+    {MAPSEC_UNDERWATER_125,             MAPSEC_GRC_ROUTE15}, // BUG: Map will incorrectly display the name of Route 129 when diving on Route 125 (for Marine Cave only)
     #endif
-    {MAPSEC_UNDERWATER_126,             MAPSEC_ROUTE_126},
+    {MAPSEC_UNDERWATER_126,             MAPSEC_GRC_ROUTE30},
     {MAPSEC_UNDERWATER_127,             MAPSEC_ROUTE_127},
     {MAPSEC_UNDERWATER_128,             MAPSEC_ROUTE_128},
-    {MAPSEC_UNDERWATER_129,             MAPSEC_ROUTE_129},
-    {MAPSEC_UNDERWATER_SOOTOPOLIS,      MAPSEC_SOOTOPOLIS_CITY},
+    {MAPSEC_UNDERWATER_129,             MAPSEC_GRC_ROUTE15},
+    {MAPSEC_UNDERWATER_SOOTOPOLIS,      MAPSEC_HEDERA_CITY},
     {MAPSEC_UNDERWATER_SEAFLOOR_CAVERN, MAPSEC_ROUTE_128},
-    {MAPSEC_AQUA_HIDEOUT,               MAPSEC_LILYCOVE_CITY},
-    {MAPSEC_AQUA_HIDEOUT_OLD,           MAPSEC_LILYCOVE_CITY},
-    {MAPSEC_MAGMA_HIDEOUT,              MAPSEC_ROUTE_112},
-    {MAPSEC_UNDERWATER_SEALED_CHAMBER,  MAPSEC_ROUTE_134},
-    {MAPSEC_PETALBURG_WOODS,            MAPSEC_ROUTE_104},
-    {MAPSEC_JAGGED_PASS,                MAPSEC_ROUTE_112},
-    {MAPSEC_MT_PYRE,                    MAPSEC_ROUTE_122},
-    {MAPSEC_SKY_PILLAR,                 MAPSEC_ROUTE_131},
-    {MAPSEC_MIRAGE_TOWER,               MAPSEC_ROUTE_111},
-    {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
-    {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
-    {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
-    {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
-    {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
+    {MAPSEC_VITAE_HIDEOUT,               MAPSEC_ROSEVALE_CITY},
+    {MAPSEC_VITAE_HIDEOUT_OLD,           MAPSEC_ROSEVALE_CITY},
+    {MAPSEC_GRATIA_FOREST,              MAPSEC_GRC_ROUTE26},
+    {MAPSEC_UNDERWATER_SEALED_CHAMBER,  MAPSEC_GRC_ROUTE16},
+    {MAPSEC_BORAGO_GROVE,            MAPSEC_GRC_ROUTE2},
+    {MAPSEC_SLOPE_OF_SLEET,                MAPSEC_GRC_ROUTE26},
+    {MAPSEC_HELIX_SPIRE,                    MAPSEC_GRC_ROUTE6},
+    {MAPSEC_SKY_PILLAR,                 MAPSEC_GRC_ROUTE10},
+    {MAPSEC_MIRAGE_TOWER,               MAPSEC_GRC_ROUTE20},
+    {MAPSEC_TRAINER_HILL,               MAPSEC_GRC_ROUTE20},
+    {MAPSEC_DESERT_UNDERPASS,           MAPSEC_GRC_ROUTE21},
+    {MAPSEC_ALTERING_CAVE,              MAPSEC_GRC_ROUTE3},
+    {MAPSEC_AXIOM_ALTAR,               MAPSEC_GRC_ROUTE3},
+    {MAPSEC_PARCHED_RUINS,             MAPSEC_GRC_ROUTE4},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 
 static const u16 sMarineCaveMapSecIds[] =
 {
-    MAPSEC_MARINE_CAVE,
+    MAPSEC_ABYSSAL_TRENCH,
     MAPSEC_UNDERWATER_MARINE_CAVE,
     MAPSEC_UNDERWATER_MARINE_CAVE
 };
 
 static const u16 sTerraOrMarineCaveMapSecIds[ABNORMAL_WEATHER_LOCATIONS] =
 {
-    [ABNORMAL_WEATHER_ROUTE_114_NORTH - 1] = MAPSEC_ROUTE_114,
-    [ABNORMAL_WEATHER_ROUTE_114_SOUTH - 1] = MAPSEC_ROUTE_114,
-    [ABNORMAL_WEATHER_ROUTE_115_WEST  - 1] = MAPSEC_ROUTE_115,
-    [ABNORMAL_WEATHER_ROUTE_115_EAST  - 1] = MAPSEC_ROUTE_115,
-    [ABNORMAL_WEATHER_ROUTE_116_NORTH - 1] = MAPSEC_ROUTE_116,
-    [ABNORMAL_WEATHER_ROUTE_116_SOUTH - 1] = MAPSEC_ROUTE_116,
-    [ABNORMAL_WEATHER_ROUTE_118_EAST  - 1] = MAPSEC_ROUTE_118,
-    [ABNORMAL_WEATHER_ROUTE_118_WEST  - 1] = MAPSEC_ROUTE_118,
-    [ABNORMAL_WEATHER_ROUTE_105_NORTH - 1] = MAPSEC_ROUTE_105,
-    [ABNORMAL_WEATHER_ROUTE_105_SOUTH - 1] = MAPSEC_ROUTE_105,
+    [ABNORMAL_WEATHER_ROUTE_114_NORTH - 1] = MAPSEC_GRC_ROUTE21,
+    [ABNORMAL_WEATHER_ROUTE_114_SOUTH - 1] = MAPSEC_GRC_ROUTE21,
+    [ABNORMAL_WEATHER_ROUTE_115_WEST  - 1] = MAPSEC_GRC_ROUTE22,
+    [ABNORMAL_WEATHER_ROUTE_115_EAST  - 1] = MAPSEC_GRC_ROUTE22,
+    [ABNORMAL_WEATHER_ROUTE_116_NORTH - 1] = MAPSEC_GRC_ROUTE5,
+    [ABNORMAL_WEATHER_ROUTE_116_SOUTH - 1] = MAPSEC_GRC_ROUTE5,
+    [ABNORMAL_WEATHER_ROUTE_118_EAST  - 1] = MAPSEC_GRC_ROUTE32,
+    [ABNORMAL_WEATHER_ROUTE_118_WEST  - 1] = MAPSEC_GRC_ROUTE32,
+    [ABNORMAL_WEATHER_ROUTE_105_NORTH - 1] = MAPSEC_GRC_ROUTE14,
+    [ABNORMAL_WEATHER_ROUTE_105_SOUTH - 1] = MAPSEC_GRC_ROUTE14,
     [ABNORMAL_WEATHER_ROUTE_125_WEST  - 1] = MAPSEC_ROUTE_125,
     [ABNORMAL_WEATHER_ROUTE_125_EAST  - 1] = MAPSEC_ROUTE_125,
     [ABNORMAL_WEATHER_ROUTE_127_NORTH - 1] = MAPSEC_ROUTE_127,
     [ABNORMAL_WEATHER_ROUTE_127_SOUTH - 1] = MAPSEC_ROUTE_127,
-    [ABNORMAL_WEATHER_ROUTE_129_WEST  - 1] = MAPSEC_ROUTE_129,
-    [ABNORMAL_WEATHER_ROUTE_129_EAST  - 1] = MAPSEC_ROUTE_129
+    [ABNORMAL_WEATHER_ROUTE_129_WEST  - 1] = MAPSEC_GRC_ROUTE15,
+    [ABNORMAL_WEATHER_ROUTE_129_EAST  - 1] = MAPSEC_GRC_ROUTE15
 };
 
 #define MARINE_CAVE_COORD(location)(ABNORMAL_WEATHER_##location - MARINE_CAVE_LOCATIONS_START)
@@ -208,7 +208,7 @@ static const struct UCoords16 sMarineCaveLocationCoords[MARINE_CAVE_LOCATIONS] =
 
 static const u8 sMapSecAquaHideoutOld[] =
 {
-    MAPSEC_AQUA_HIDEOUT_OLD
+    MAPSEC_VITAE_HIDEOUT_OLD
 };
 
 static const struct OamData sRegionMapCursorOam =
@@ -357,7 +357,7 @@ static const struct MultiNameFlyDest sMultiNameFlyDestinations[] =
 {
     {
         .name = sEverGrandeCityNames,
-        .mapSecId = MAPSEC_EVER_GRANDE_CITY,
+        .mapSecId = MAPSEC_BORAGO_CITY,
         .flag = FLAG_LANDMARK_POKEMON_LEAGUE
     }
 };
@@ -1094,11 +1094,11 @@ static void InitMapBasedOnPlayerLocation(void)
 
     switch (gRegionMap->mapSecId)
     {
-    case MAPSEC_ROUTE_114:
+    case MAPSEC_GRC_ROUTE21:
         if (y != 0)
             x = 0;
         break;
-    case MAPSEC_ROUTE_126:
+    case MAPSEC_GRC_ROUTE30:
     case MAPSEC_UNDERWATER_126:
         x = 0;
         if (gSaveBlock1Ptr->pos.x > 32)
@@ -1112,7 +1112,7 @@ static void InitMapBasedOnPlayerLocation(void)
         if (gSaveBlock1Ptr->pos.y > 56)
             y++;
         break;
-    case MAPSEC_ROUTE_121:
+    case MAPSEC_GRC_ROUTE18:
         x = 0;
         if (xOnMap > 14)
             x++;
@@ -1145,16 +1145,16 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
     switch (GetSSTidalLocation(&mapGroup, &mapNum, &xOnMap, &yOnMap))
     {
     case SS_TIDAL_LOCATION_SLATEPORT:
-        gRegionMap->mapSecId = MAPSEC_SLATEPORT_CITY;
+        gRegionMap->mapSecId = MAPSEC_ORCHIDALE_CITY;
         break;
     case SS_TIDAL_LOCATION_LILYCOVE:
-        gRegionMap->mapSecId = MAPSEC_LILYCOVE_CITY;
+        gRegionMap->mapSecId = MAPSEC_ROSEVALE_CITY;
         break;
     case SS_TIDAL_LOCATION_ROUTE124:
-        gRegionMap->mapSecId = MAPSEC_ROUTE_124;
+        gRegionMap->mapSecId = MAPSEC_GRC_ROUTE24;
         break;
     case SS_TIDAL_LOCATION_ROUTE131:
-        gRegionMap->mapSecId = MAPSEC_ROUTE_131;
+        gRegionMap->mapSecId = MAPSEC_GRC_ROUTE10;
         break;
     default:
     case SS_TIDAL_LOCATION_CURRENTS:
@@ -1187,37 +1187,37 @@ static u8 GetMapsecType(u16 mapSecId)
     {
     case MAPSEC_NONE:
         return MAPSECTYPE_NONE;
-    case MAPSEC_LITTLEROOT_TOWN:
+    case MAPSEC_TURPIA_TOWN:
         return FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_OLDALE_TOWN:
+    case MAPSEC_MAGNOLIA_TOWN:
         return FlagGet(FLAG_VISITED_OLDALE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_DEWFORD_TOWN:
+    case MAPSEC_POPPY_TOWN:
         return FlagGet(FLAG_VISITED_DEWFORD_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LAVARIDGE_TOWN:
+    case MAPSEC_CLEMATI_TOWN:
         return FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FALLARBOR_TOWN:
+    case MAPSEC_FALLUGE_HAMLET:
         return FlagGet(FLAG_VISITED_FALLARBOR_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_VERDANTURF_TOWN:
+    case MAPSEC_HELIANTH_TOWN:
         return FlagGet(FLAG_VISITED_VERDANTURF_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PACIFIDLOG_TOWN:
+    case MAPSEC_KELLIP_TOWN:
         return FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PETALBURG_CITY:
+    case MAPSEC_DAFFLE_CITY:
         return FlagGet(FLAG_VISITED_PETALBURG_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SLATEPORT_CITY:
+    case MAPSEC_ORCHIDALE_CITY:
         return FlagGet(FLAG_VISITED_SLATEPORT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MAUVILLE_CITY:
+    case MAPSEC_ARECACE_CITY:
         return FlagGet(FLAG_VISITED_MAUVILLE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_RUSTBORO_CITY:
+    case MAPSEC_CALLUNE_CITY:
         return FlagGet(FLAG_VISITED_RUSTBORO_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FORTREE_CITY:
+    case MAPSEC_LECHENA_CITY:
         return FlagGet(FLAG_VISITED_FORTREE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LILYCOVE_CITY:
+    case MAPSEC_ROSEVALE_CITY:
         return FlagGet(FLAG_VISITED_LILYCOVE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MOSSDEEP_CITY:
+    case MAPSEC_VYGIE_CITY:
         return FlagGet(FLAG_VISITED_MOSSDEEP_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SOOTOPOLIS_CITY:
+    case MAPSEC_HEDERA_CITY:
         return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_EVER_GRANDE_CITY:
+    case MAPSEC_BORAGO_CITY:
         return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
@@ -1621,7 +1621,7 @@ u8 *GetMapNameGeneric(u8 *dest, u16 mapSecId)
 
 u8 *GetMapNameHandleAquaHideout(u8 *dest, u16 mapSecId)
 {
-    if (mapSecId == MAPSEC_AQUA_HIDEOUT_OLD)
+    if (mapSecId == MAPSEC_VITAE_HIDEOUT_OLD)
         return StringCopy(dest, gText_Hideout);
     else
         return GetMapNameGeneric(dest, mapSecId);
@@ -1856,7 +1856,7 @@ static void CreateFlyDestIcons(void)
     u8 spriteId;
 
     canFlyFlag = FLAG_VISITED_LITTLEROOT_TOWN;
-    for (mapSecId = MAPSEC_LITTLEROOT_TOWN; mapSecId <= MAPSEC_EVER_GRANDE_CITY; mapSecId++)
+    for (mapSecId = MAPSEC_TURPIA_TOWN; mapSecId <= MAPSEC_BORAGO_CITY; mapSecId++)
     {
         GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
@@ -2008,10 +2008,10 @@ static void CB_ExitFlyMap(void)
                 case MAPSEC_BATTLE_FRONTIER:
                     SetWarpDestinationToHealLocation(HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST);
                     break;
-                case MAPSEC_LITTLEROOT_TOWN:
+                case MAPSEC_TURPIA_TOWN:
                     SetWarpDestinationToHealLocation(gSaveBlock2Ptr->playerGender == MALE ? HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE : HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE);
                     break;
-                case MAPSEC_EVER_GRANDE_CITY:
+                case MAPSEC_BORAGO_CITY:
                     SetWarpDestinationToHealLocation(FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && sFlyMap->regionMap.posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
                     break;
                 default:
