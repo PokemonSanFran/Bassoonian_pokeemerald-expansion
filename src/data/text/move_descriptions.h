@@ -2969,6 +2969,10 @@ static const u8 sABYSSAL_BASSDescription[] = _(
     "A rupturing bass blast that hits\n"
     "all Pokémon on the field.");
 
+static const u8 sMALICE_BLASTDescription[] = _(
+    "A powerful blast of negative\n"
+    "energy. May cause flinching.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3735,4 +3739,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_BATTLECRY - 1] = sBATTLECRYDescription,
     [MOVE_VIBE_CANNON - 1] = sVIBE_CANNONDescription,
     [MOVE_ABYSSAL_BASS - 1] = sABYSSAL_BASSDescription,
+    [MOVE_MALICE_BLAST - 1] = sMALICE_BLASTDescription,
 };
