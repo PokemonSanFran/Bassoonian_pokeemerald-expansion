@@ -106,10 +106,18 @@ Turpia_RivalHouse_pickuprival_19:
 	goto Turpia_RivalHouse_pickuprival_18
 
 Turpia_RivalHouse_pickuprival_23:
-	loadword 0, Turpia_Follower_Rival
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_RivalHouse_pickuprival_27
+	loadword 0, Turpia_Follower_RivalMale
+Turpia_RivalHouse_pickuprival_26:
 	setfollower 7, 0x100
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
 	goto Turpia_RivalHouse_pickuprival_22
+
+Turpia_RivalHouse_pickuprival_27:
+	loadword 0, Turpia_Follower_RivalFemale
+	goto Turpia_RivalHouse_pickuprival_26
 
 
 Turpia_Rival_Player_Movement:
@@ -145,15 +153,25 @@ Turpia_RivalHouse_Frame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, Turpia_RivalHouse_pickuprival
 	.2byte 0
 	
-Turpia_Follower_Rival::
+Turpia_Follower_RivalMale::
 	lock
 	facefollower
-	msgbox Turpia_Follower_Rival_text
+	msgbox Turpia_Follower_RivalMale_text
+	release
+	end
+
+Turpia_Follower_RivalFemale::
+	lock
+	facefollower
+	msgbox Turpia_Follower_RivalMale_text
 	release
 	end
 	
-Turpia_Follower_Rival_text::
-	.string "imma follow you$"
+Turpia_Follower_RivalMale_text::
+	.string "Basil: Oh, man, I'm pumped! Can't wait to get going!$"
+
+Turpia_Follower_RivalFemale_text::
+	.string "Alyssa: Aaah, I'm so excited! The finals are just around the corner!$"
 
 .set LOCALID_MOM, 1
 .set LOCALID_RIVAL_MOM, 4

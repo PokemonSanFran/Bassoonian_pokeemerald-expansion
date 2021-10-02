@@ -137,7 +137,15 @@ script Turpia_RivalHouse_pickuprival {
 	//closemessage
 	if(var(VAR_GRC_TURPIA_INTRO_STATE)==1)
 	{
-		loadword(0,Turpia_Follower_Rival)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			loadword(0,Turpia_Follower_RivalFemale)
+		}
+		else
+		{
+			loadword(0,Turpia_Follower_RivalMale)
+		}
 		setfollower(7,0x100)
 		setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
 	}
@@ -182,15 +190,25 @@ Turpia_RivalHouse_Frame:
 	map_script_2 VAR_GRC_TURPIA_INTRO_STATE, 3, Turpia_RivalHouse_pickuprival
 	.2byte 0
 	
-Turpia_Follower_Rival::
+Turpia_Follower_RivalMale::
 	lock
 	facefollower
-	msgbox Turpia_Follower_Rival_text
+	msgbox Turpia_Follower_RivalMale_text
+	release
+	end
+
+Turpia_Follower_RivalFemale::
+	lock
+	facefollower
+	msgbox Turpia_Follower_RivalMale_text
 	release
 	end
 	
-Turpia_Follower_Rival_text::
-	.string "imma follow you$"
+Turpia_Follower_RivalMale_text::
+	.string "Basil: Oh, man, I'm pumped! Can't wait to get going!$"
+
+Turpia_Follower_RivalFemale_text::
+	.string "Alyssa: Aaah, I'm so excited! The finals are just around the corner!$"
 `
 
 raw `

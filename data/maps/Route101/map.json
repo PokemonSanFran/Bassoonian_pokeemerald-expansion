@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route101_EventScript_BirchsBag",
+      "script": "R1_Event_Rival",
       "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
@@ -113,7 +113,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "R1_Event_Tori",
       "flag": "FLAG_GRC_R1_HIDE_RIVALS"
     },
     {
@@ -126,7 +126,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "R1_Event_Jack",
       "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
@@ -139,7 +139,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "R1_Event_Robin",
       "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {
@@ -152,7 +152,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "R1_Event_Nicholas",
       "flag": "FLAG_GRC_R1_HIDE_BADDIES"
     },
     {

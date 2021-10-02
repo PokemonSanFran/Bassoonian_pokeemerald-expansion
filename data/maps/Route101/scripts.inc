@@ -219,6 +219,38 @@ R1_ProfHomeBlock::
 	return
 
 
+R1_Event_Tori::
+	msgbox R1_Event_Tori_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Nicholas::
+	msgbox R1_Event_Nicholas_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Robin::
+	msgbox R1_Event_Robin_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Jack::
+	msgbox R1_Event_Jack_Text_0, MSGBOX_NPC
+	return
+
+
+R1_Event_Rival::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq R1_Event_Rival_1
+	msgbox R1_Event_Rival_Text_1, MSGBOX_NPC
+	return
+
+R1_Event_Rival_1:
+	msgbox R1_Event_Rival_Text_0, MSGBOX_NPC
+	return
+
+
 Route101_EventScript_Youngster::
 	msgbox Route101_EventScript_Youngster_Text_0, MSGBOX_NPC
 	return
@@ -536,6 +568,37 @@ R1_ScientistCityBlock_Text_0:
 
 R1_ProfHomeBlock_Text_0:
 	.string "Prof says no$"
+
+R1_Event_Tori_Text_0:
+	.string "Tori: Hmph. I'm not doing this for fun,\n"
+	.string "you know. I'd rather just get this over\l"
+	.string "with as quick as I can.$"
+
+R1_Event_Nicholas_Text_0:
+	.string "Nicholas: Don't get in my way. You're\n"
+	.string "only gonna scare away the Pokémon like\l"
+	.string "that. Hey, I said scram! Now!$"
+
+R1_Event_Robin_Text_0:
+	.string "Robin: What's your problem? Can't you go\n"
+	.string "bother your little friends? Sheesh.$"
+
+R1_Event_Jack_Text_0:
+	.string "Jack: Leave.$"
+
+R1_Event_Rival_Text_0:
+	.string "Alyssa: I didn't it'd be this thrilling\n"
+	.string "just to catch Pokémon!\p"
+	.string "Not to mention this is going to help the\n"
+	.string "Professor's research!\p"
+	.string "Are you having fun, too, {PLAYER}?$"
+
+R1_Event_Rival_Text_1:
+	.string "Basil: Who knew just catching Pokémon\n"
+	.string "was this exciting?\p"
+	.string "And we're giving the Professor a hand\n"
+	.string "all the while!\p"
+	.string "Good luck out there, {PLAYER}!$"
 
 Route101_EventScript_Youngster_Text_0:
 	.string "Professor Spruce sure has a lot of\n"

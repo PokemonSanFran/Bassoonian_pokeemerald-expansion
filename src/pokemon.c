@@ -3446,9 +3446,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 			#endif
 			u32 i;
 
-            if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
+            /*if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
             && GetMonAbility(&gPlayerParty[0]) == ABILITY_ILLUMINATE)
-                shinyRolls *= 32;
+                shinyRolls *= 32;*/
 
 			value = gSaveBlock2Ptr->playerTrainerId[0]
 			          | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
@@ -8332,7 +8332,7 @@ u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
      return 0;
  }
  
- static void ShuffleStatArray(u8* statArray)
+static void ShuffleStatArray(u8* statArray)
 {
     int i;
 

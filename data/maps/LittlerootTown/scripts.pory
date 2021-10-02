@@ -84,6 +84,7 @@ script Turpia_Celebration
 {
 	lockall
 	special(FullPartyToPC)
+	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
 	clearflag(FLAG_SYS_POKEMON_GET)
 	setflag(FLAG_GRC_R1_HIDE_BADDIES)
@@ -347,12 +348,14 @@ script Turpia_ShowRivals_Start_Movement
 		clearflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
 		setobjectxyperm(6,22,9)
 		setobjectxyperm(7,21,9)
+		savebgm(MUS_FOLLOW_ME)
 	}
 	if(var(VAR_GRC_TURPIA_INTRO_STATE)==5)
 	{
 		clearflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
 		setobjectxyperm(6,14,17)
 		setobjectxyperm(7,13,17)
+		savebgm(MUS_FOLLOW_ME)
 	}
 	if(var(VAR_GRC_TURPIA_INTRO_STATE)==6)
 	{
@@ -386,12 +389,82 @@ script Turpia_ProtaSquad_B
 script Turpia_ProtaSquad_C
 {
 	setrespawn(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+	setflag(FLAG_DONT_TRANSITION_MUSIC)
 	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_C_Player)
-	applymovement(7,Turpia_ProtaSquad_C_Rival)
 	applymovement(6,Turpia_ProtaSquad_C_Tori)
+	applymovement(7,Turpia_ProtaSquad_C_Rival)
 	waitmovement(0)
-	delay(30)
-	msgbox(format("Tori says hm"))
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: There's the Professor!\pI think we can cut a path through the tall grass to reach him!\pI don't see any issues with that, at least."))
+	}
+	else
+	{
+		msgbox(format("Basil: Hey, I can see the Professor, right there!\pWe just gotta go through the grass to reach him.\pWhat's the worst that could happen?"))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori: Are you sure about this? I mean, what if a wild Pokémon jumped at us?"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+	applymovement(7,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
+	waitmovement(7,MAP_LITTLEROOT_TOWN)
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: I know there's a chance we may get attacked, and that'd be pretty bad…\pBut at the same time, I just can't resist the urge!"))
+	}
+	else
+	{
+		msgbox(format("Basil: I mean, yeah, there's a chance that may happen, and we'd be outta luck if it did…\pBut you'll never know unless you chance it!"))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori: Hmmmm… What do you think, {PLAYER}? I trust your judgment."),MSGBOX_YESNO)
+	if(var(VAR_RESULT)==YES)
+	{
+		msgbox(format("Tori: Yeah, same here. I'd rather not risk doing anything stupid."))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+		applymovement(7,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
+		waitmovement(7,MAP_LITTLEROOT_TOWN)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: I don't get why you're both being so cautious.\pCome on, let's just give this a shot!"))
+		}
+		else
+		{
+			msgbox(format("Basil: Aw, c'mon, do you really need to be such wimps?\pLet's just go already! You'll never know unless you try!"))
+		}
+	}
+	else
+	{
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+		applymovement(7,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
+		waitmovement(7,MAP_LITTLEROOT_TOWN)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: See? No need to be such a worrywart, Tori!"))
+		}
+		else
+		{
+			msgbox(format("Basil: See? We're gonna be fine! C'mon, let's go!"))
+		}
+	}
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_E_Player)
+	applymovement(7,Turpia_ProtaSquad_E_Rival,MAP_LITTLEROOT_TOWN)
+	applymovement(6,Turpia_ProtaSquad_E_Tori,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori: Hmm…"))
+	playbgm(MUS_HELP,FALSE)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown)
 	applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
 	applymovement(6,Common_Movement_ExclamationMark,MAP_LITTLEROOT_TOWN)
@@ -399,31 +472,109 @@ script Turpia_ProtaSquad_C
 	applymovement(5,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
 	waitmovement(5,MAP_LITTLEROOT_TOWN)
 	applymovement(5,Common_Movement_ExclamationMark,MAP_LITTLEROOT_TOWN)
-	msgbox(format("Tori says aaaaa"))
+	msgbox(format("Tori: Aaaaah! Help! P-Pokémon!"))
 	closemessage
 	applymovement(5,R1_Scientist_Save,MAP_LITTLEROOT_TOWN)
 	waitmovement(5,MAP_LITTLEROOT_TOWN)
-	msgbox(format("Scientist says lemme help"))
+	msgbox(format("Hold on, you three! Don't move! I've got you covered!"))
 	closemessage
 	special(SavePlayerParty)
 	special(PutZigzagoonInPlayerParty)
 	special(StartWallyTutorialBattle)
 	waitstate
 	special(LoadPlayerParty)
-	msgbox(format("Scientist says ur ok"))
+	applymovement(5,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
+	waitmovement(5,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Phew! That's been taken care of.\pI don't know what you three were thinking, going through the grass without your own Pokémon…\pAh, well. At least you're safe and sound."))
+	closemessage
+	applymovement(5,R1_Scientist_BackOff,MAP_LITTLEROOT_TOWN)
+	waitmovement(5,MAP_LITTLEROOT_TOWN)
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+	waitmovement(7,MAP_LITTLEROOT_TOWN)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Whew! That was pretty tense, huh?"))
+	}
+	else
+	{
+		msgbox(format("Basil: Phooey, hahahaha! Talk about a thrill, right?"))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori: That was kinda scary, I won't lie… I'm glad the scientist guy could bail us out."))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+	waitmovement(7,MAP_LITTLEROOT_TOWN)
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Maybe I should've known that we could've gotten attacked…\pBut hey, fortune favors the bold, as they say!"))
+		closemessage
+		applymovement(6,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+		waitmovement(6,MAP_LITTLEROOT_TOWN)
+		msgbox(format("Tori: Yeah, but a little caution goes a long way, Alyssa! We could've gotten hurt!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+		waitmovement(7,MAP_LITTLEROOT_TOWN)
+		msgbox(format("Alyssa: No need to make a big fuss over it, Tori. All's well that ends well."))
+	}
+	else
+	{
+		msgbox(format("Basil: Didn't think we'd get jumped by that Pokémon, but hey, guess that's what we signed up for!"))
+		closemessage
+		applymovement(6,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+		waitmovement(6,MAP_LITTLEROOT_TOWN)
+		msgbox(format("Tori: How can you be so relaxed about this, Basil? We could've gotten hurt!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+		waitmovement(7,MAP_LITTLEROOT_TOWN)
+		msgbox(format("Basil: Yeah, but we didn't, so I wouldn't dwell on it."))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	waitmovement(6,MAP_LITTLEROOT_TOWN)
+	msgbox(format("Tori: Hmph. I didn't feel good about it to begin with…"))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown,MAP_LITTLEROOT_TOWN)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp,MAP_LITTLEROOT_TOWN)
+	waitmovement(7,MAP_LITTLEROOT_TOWN)
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Ah, well. Let's continue!"))
+	}
+	else
+	{
+		msgbox(format("Basil: Whatever, let's just move it."))
+	}
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_ProtaSquad_D_Player)
 	applymovement(7,Turpia_ProtaSquad_D_Rival,MAP_LITTLEROOT_TOWN)
 	applymovement(6,Turpia_ProtaSquad_D_Tori,MAP_LITTLEROOT_TOWN)
 	waitmovement(6,MAP_LITTLEROOT_TOWN)
-	msgbox(format("Prof dialogue"))
+	applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	playbgm(MUS_BIRCH_LAB,TRUE)
+	msgbox(format("Prof. Spruce: Welcome, one and all, to the final round of the Pokémon Conservation Cup!\pFor that, you already have my congratulations. I'd also like to thank all of you for participating so enthusiastically.\pNow, onto the main event! Your task is to capture as many Pokémon as you can with the Venture Balls you are given.\pThe person who captures the most Pokémon wins the competition!\pThat's easy enough, right? All right, off you go!"))
 	closemessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER} received 5 Venture Balls.")
+	waitfanfare
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,6)
 	setvar(VAR_GRC_ROUTE1_STATE,1)
 	setflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
 	clearflag(FLAG_GRC_R1_HIDE_RIVALS)
+	clearflag(FLAG_DONT_TRANSITION_MUSIC)
 	special(EnterSafariModeR1)
-	warp(MAP_ROUTE101,255,13,3)
+	warpsilent(MAP_ROUTE101,255,13,3)
 	waitstate
 	releaseall
 }
@@ -431,6 +582,11 @@ script Turpia_ProtaSquad_C
 movement R1_Scientist_Save
 {
 	walk_fast_left * 4
+}
+
+movement R1_Scientist_BackOff
+{
+	walk_right * 4
 }
 
 movement Turpia_ProtaSquad_A_Player
@@ -485,8 +641,6 @@ movement Turpia_ProtaSquad_C_Player
 	walk_left * 6
 	walk_down * 2
 	walk_left * 5
-	walk_slow_left * 3
-	walk_slow_up * 2
 }
 
 movement Turpia_ProtaSquad_C_Rival
@@ -494,8 +648,7 @@ movement Turpia_ProtaSquad_C_Rival
 	walk_left * 5
 	walk_down * 2
 	walk_left * 6
-	walk_slow_left * 2
-	walk_slow_up * 3
+	walk_in_place_fastest_right
 }
 
 movement Turpia_ProtaSquad_C_Tori
@@ -503,8 +656,6 @@ movement Turpia_ProtaSquad_C_Tori
 	walk_left * 7
 	walk_down * 2
 	walk_left * 4
-	walk_slow_left * 4
-	walk_slow_up
 }
 
 movement Turpia_ProtaSquad_D_Player
@@ -529,6 +680,24 @@ movement Turpia_ProtaSquad_D_Tori
 	walk_left * 2
 	walk_up
 	walk_in_place_fastest_left
+}
+
+movement Turpia_ProtaSquad_E_Player
+{
+	walk_slow_left * 3
+	walk_slow_up * 2
+}
+
+movement Turpia_ProtaSquad_E_Rival
+{
+	walk_slow_left * 2
+	walk_slow_up * 3
+}
+
+movement Turpia_ProtaSquad_E_Tori
+{
+	walk_slow_left * 4
+	walk_slow_up
 }
 
 raw ` 

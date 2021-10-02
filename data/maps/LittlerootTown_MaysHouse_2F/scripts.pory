@@ -209,7 +209,7 @@ Turpia_Follower_Tori::
 	end
 	
 Turpia_Follower_Tori_text::
-	.string "imma follow you 2$"
+	.string "Tori: Huh? Don't mind me, {PLAYER}.$"
 `
 
 raw `

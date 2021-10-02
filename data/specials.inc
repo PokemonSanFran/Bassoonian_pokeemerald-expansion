@@ -217,7 +217,6 @@ gSpecials::
 	def_special SetSSTidalFlag
 	def_special ResetSSTidalFlag
 	def_special EnterSafariMode
-	def_special EnterSafariModeR1
 	def_special ExitSafariMode
 	def_special GetPokeblockFeederInFront
 	def_special OpenPokeblockCaseOnFeeder
@@ -311,7 +310,6 @@ gSpecials::
 	def_special InitRoamer
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
-	def_special SafariBallsLeft
 	def_special DoContestHallWarp
 	def_special PutZigzagoonInPlayerParty
 	def_special IsStarterInParty
@@ -482,7 +480,6 @@ gSpecials::
 	def_special ShowFrontierGamblerGoMessage
 	def_special Script_DoRayquazaScene
 	def_special OpenPokenavForTutorial
-	def_special OpenPokenavForTutorial2
 	def_special ScriptMenu_CreateStartMenuForPokenavTutorial
 	def_special CountPlayerTrainerStars
 	def_special BufferBattleFrontierTutorMoveName
@@ -512,9 +509,7 @@ gSpecials::
 	def_special ShouldDoBrailleRegicePuzzle
 	def_special EnableNationalPokedex
 	def_special ScriptMenu_CreateLilycoveSSTidalMultichoice
-	def_special ScriptMenu_CreateDriveLabsPollockMultichoice
 	def_special GetLilycoveSSTidalSelection
-	def_special GetDriveLabsPollockSelection
 	def_special TurnOnTVScreen
 	def_special SetMewAboveGrass
 	def_special ShouldDistributeEonTicket
@@ -544,3 +539,8 @@ gSpecials::
 	@Custom specials
 	def_special FullPartyToPC
 	def_special GetBadgeCountSpecial
+	def_special SafariBallsLeft
+	def_special GetDriveLabsPollockSelection
+	def_special ScriptMenu_CreateDriveLabsPollockMultichoice
+	def_special OpenPokenavForTutorial2
+	def_special EnterSafariModeR1

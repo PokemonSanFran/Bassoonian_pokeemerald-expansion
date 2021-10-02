@@ -185,6 +185,34 @@ script R1_ProfHomeBlock {
 	msgbox("Prof says no",MSGBOX_NPC)
 }
 
+script R1_Event_Tori {
+	msgbox(format("Tori: Hmph. I'm not doing this for fun, you know. I'd rather just get this over with as quick as I can."),MSGBOX_NPC)
+}
+
+script R1_Event_Nicholas {
+	msgbox(format("Nicholas: Don't get in my way. You're only gonna scare away the Pokémon like that. Hey, I said scram! Now!"),MSGBOX_NPC)
+}
+
+script R1_Event_Robin {
+	msgbox(format("Robin: What's your problem? Can't you go bother your little friends? Sheesh."),MSGBOX_NPC)
+}
+
+script R1_Event_Jack {
+	msgbox(format("Jack: Leave."),MSGBOX_NPC)
+}
+
+script R1_Event_Rival {
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: I didn't it'd be this thrilling just to catch Pokémon!\pNot to mention this is going to help the Professor's research!\pAre you having fun, too, {PLAYER}?"),MSGBOX_NPC)
+	}
+	else
+	{
+		msgbox(format("Basil: Who knew just catching Pokémon was this exciting?\pAnd we're giving the Professor a hand all the while!\pGood luck out there, {PLAYER}!"),MSGBOX_NPC)
+	}
+}
+
 script Route101_EventScript_Youngster
 {
 	msgbox(format("Professor Spruce sure has a lot of energy… I guess he's just a really busy man!"),MSGBOX_NPC)

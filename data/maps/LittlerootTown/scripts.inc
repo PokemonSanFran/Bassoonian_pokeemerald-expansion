@@ -73,6 +73,7 @@ Turpia_DontRunAway::
 Turpia_Celebration::
 	lockall
 	special FullPartyToPC
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
 	clearflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_GRC_R1_HIDE_BADDIES
@@ -374,12 +375,14 @@ Turpia_ShowRivals_Start_Movement_2:
 	clearflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
 	setobjectxyperm 6, 22, 9
 	setobjectxyperm 7, 21, 9
+	savebgm MUS_FOLLOW_ME
 	goto Turpia_ShowRivals_Start_Movement_1
 
 Turpia_ShowRivals_Start_Movement_5:
 	clearflag FLAG_GRC_HIDE_TURPIA_SCIENTIST
 	setobjectxyperm 6, 14, 17
 	setobjectxyperm 7, 13, 17
+	savebgm MUS_FOLLOW_ME
 	goto Turpia_ShowRivals_Start_Movement_4
 
 Turpia_ShowRivals_Start_Movement_7:
@@ -412,12 +415,52 @@ Turpia_ProtaSquad_B::
 
 Turpia_ProtaSquad_C::
 	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_DONT_TRANSITION_MUSIC
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_C_Player
-	applymovement 7, Turpia_ProtaSquad_C_Rival
 	applymovement 6, Turpia_ProtaSquad_C_Tori
+	applymovement 7, Turpia_ProtaSquad_C_Rival
 	waitmovement 0
-	delay 30
-	msgbox Turpia_ProtaSquad_C_Text_0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_2
+	msgbox Turpia_ProtaSquad_C_Text_1
+Turpia_ProtaSquad_C_1:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_2
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_6
+	msgbox Turpia_ProtaSquad_C_Text_4
+Turpia_ProtaSquad_C_5:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_5, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Turpia_ProtaSquad_C_10
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_20
+	msgbox Turpia_ProtaSquad_C_Text_10
+Turpia_ProtaSquad_C_9:
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_E_Player
+	applymovement 7, Turpia_ProtaSquad_E_Rival, MAP_LITTLEROOT_TOWN
+	applymovement 6, Turpia_ProtaSquad_E_Tori, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_11
+	playbgm MUS_HELP, FALSE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
 	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
 	applymovement 6, Common_Movement_ExclamationMark, MAP_LITTLEROOT_TOWN
@@ -425,34 +468,140 @@ Turpia_ProtaSquad_C::
 	applymovement 5, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
 	waitmovement 5, MAP_LITTLEROOT_TOWN
 	applymovement 5, Common_Movement_ExclamationMark, MAP_LITTLEROOT_TOWN
-	msgbox Turpia_ProtaSquad_C_Text_1
+	msgbox Turpia_ProtaSquad_C_Text_12
 	closemessage
 	applymovement 5, R1_Scientist_Save, MAP_LITTLEROOT_TOWN
 	waitmovement 5, MAP_LITTLEROOT_TOWN
-	msgbox Turpia_ProtaSquad_C_Text_2
+	msgbox Turpia_ProtaSquad_C_Text_13
 	closemessage
 	special SavePlayerParty
 	special PutZigzagoonInPlayerParty
 	special StartWallyTutorialBattle
 	waitstate
 	special LoadPlayerParty
-	msgbox Turpia_ProtaSquad_C_Text_3
+	applymovement 5, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	waitmovement 5, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_14
+	closemessage
+	applymovement 5, R1_Scientist_BackOff, MAP_LITTLEROOT_TOWN
+	waitmovement 5, MAP_LITTLEROOT_TOWN
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_14
+	msgbox Turpia_ProtaSquad_C_Text_16
+Turpia_ProtaSquad_C_13:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_17
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_24
+	msgbox Turpia_ProtaSquad_C_Text_21
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_22
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_23
+Turpia_ProtaSquad_C_23:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_24
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_28
+	msgbox Turpia_ProtaSquad_C_Text_26
+Turpia_ProtaSquad_C_27:
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_ProtaSquad_D_Player
 	applymovement 7, Turpia_ProtaSquad_D_Rival, MAP_LITTLEROOT_TOWN
 	applymovement 6, Turpia_ProtaSquad_D_Tori, MAP_LITTLEROOT_TOWN
 	waitmovement 6, MAP_LITTLEROOT_TOWN
-	msgbox Turpia_ProtaSquad_C_Text_4
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	playbgm MUS_BIRCH_LAB, TRUE
+	msgbox Turpia_ProtaSquad_C_Text_27
 	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	message Turpia_ProtaSquad_C_Text_28
+	waitfanfare
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 6
 	setvar VAR_GRC_ROUTE1_STATE, 1
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	clearflag FLAG_GRC_R1_HIDE_RIVALS
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 	special EnterSafariModeR1
-	warp MAP_ROUTE101, 255, 13, 3
+	warpsilent MAP_ROUTE101, 255, 13, 3
 	waitstate
 	releaseall
 	return
+
+Turpia_ProtaSquad_C_2:
+	msgbox Turpia_ProtaSquad_C_Text_0
+	goto Turpia_ProtaSquad_C_1
+
+Turpia_ProtaSquad_C_6:
+	msgbox Turpia_ProtaSquad_C_Text_3
+	goto Turpia_ProtaSquad_C_5
+
+Turpia_ProtaSquad_C_10:
+	msgbox Turpia_ProtaSquad_C_Text_6
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
+	applymovement 7, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_ProtaSquad_C_17
+	msgbox Turpia_ProtaSquad_C_Text_8
+	goto Turpia_ProtaSquad_C_9
+
+Turpia_ProtaSquad_C_14:
+	msgbox Turpia_ProtaSquad_C_Text_15
+	goto Turpia_ProtaSquad_C_13
+
+Turpia_ProtaSquad_C_17:
+	msgbox Turpia_ProtaSquad_C_Text_7
+	goto Turpia_ProtaSquad_C_9
+
+Turpia_ProtaSquad_C_20:
+	msgbox Turpia_ProtaSquad_C_Text_9
+	goto Turpia_ProtaSquad_C_9
+
+Turpia_ProtaSquad_C_24:
+	msgbox Turpia_ProtaSquad_C_Text_18
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	waitmovement 6, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_19
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown, MAP_LITTLEROOT_TOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp, MAP_LITTLEROOT_TOWN
+	waitmovement 7, MAP_LITTLEROOT_TOWN
+	msgbox Turpia_ProtaSquad_C_Text_20
+	goto Turpia_ProtaSquad_C_23
+
+Turpia_ProtaSquad_C_28:
+	msgbox Turpia_ProtaSquad_C_Text_25
+	goto Turpia_ProtaSquad_C_27
 
 
 R1_Scientist_Save:
@@ -460,6 +609,13 @@ R1_Scientist_Save:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	step_end
+
+R1_Scientist_BackOff:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 Turpia_ProtaSquad_A_Player:
@@ -578,11 +734,6 @@ Turpia_ProtaSquad_C_Player:
 	walk_left
 	walk_left
 	walk_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_up
-	walk_slow_up
 	step_end
 
 Turpia_ProtaSquad_C_Rival:
@@ -599,11 +750,7 @@ Turpia_ProtaSquad_C_Rival:
 	walk_left
 	walk_left
 	walk_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_up
-	walk_slow_up
-	walk_slow_up
+	walk_in_place_fastest_right
 	step_end
 
 Turpia_ProtaSquad_C_Tori:
@@ -620,11 +767,6 @@ Turpia_ProtaSquad_C_Tori:
 	walk_left
 	walk_left
 	walk_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_left
-	walk_slow_up
 	step_end
 
 Turpia_ProtaSquad_D_Player:
@@ -661,6 +803,30 @@ Turpia_ProtaSquad_D_Tori:
 	walk_left
 	walk_up
 	walk_in_place_fastest_left
+	step_end
+
+Turpia_ProtaSquad_E_Player:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Turpia_ProtaSquad_E_Rival:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Turpia_ProtaSquad_E_Tori:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_up
 	step_end
 
  
@@ -1879,19 +2045,150 @@ Turpia_RealEstateGuy_Text_4:
 	.string "Ah… I see.$"
 
 Turpia_ProtaSquad_C_Text_0:
-	.string "Tori says hm$"
+	.string "Alyssa: There's the Professor!\p"
+	.string "I think we can cut a path through the\n"
+	.string "tall grass to reach him!\p"
+	.string "I don't see any issues with that, at\n"
+	.string "least.$"
 
 Turpia_ProtaSquad_C_Text_1:
-	.string "Tori says aaaaa$"
+	.string "Basil: Hey, I can see the Professor,\n"
+	.string "right there!\p"
+	.string "We just gotta go through the grass to\n"
+	.string "reach him.\p"
+	.string "What's the worst that could happen?$"
 
 Turpia_ProtaSquad_C_Text_2:
-	.string "Scientist says lemme help$"
+	.string "Tori: Are you sure about this? I mean,\n"
+	.string "what if a wild Pokémon jumped at us?$"
 
 Turpia_ProtaSquad_C_Text_3:
-	.string "Scientist says ur ok$"
+	.string "Alyssa: I know there's a chance we may\n"
+	.string "get attacked, and that'd be pretty\l"
+	.string "bad…\p"
+	.string "But at the same time, I just can't\n"
+	.string "resist the urge!$"
 
 Turpia_ProtaSquad_C_Text_4:
-	.string "Prof dialogue$"
+	.string "Basil: I mean, yeah, there's a chance\n"
+	.string "that may happen, and we'd be outta luck\l"
+	.string "if it did…\p"
+	.string "But you'll never know unless you chance\n"
+	.string "it!$"
+
+Turpia_ProtaSquad_C_Text_5:
+	.string "Tori: Hmmmm… What do you think,\n"
+	.string "{PLAYER}? I trust your judgment.$"
+
+Turpia_ProtaSquad_C_Text_6:
+	.string "Tori: Yeah, same here. I'd rather not\n"
+	.string "risk doing anything stupid.$"
+
+Turpia_ProtaSquad_C_Text_7:
+	.string "Alyssa: I don't get why you're both\n"
+	.string "being so cautious.\p"
+	.string "Come on, let's just give this a shot!$"
+
+Turpia_ProtaSquad_C_Text_8:
+	.string "Basil: Aw, c'mon, do you really need to be\n"
+	.string "such wimps?\p"
+	.string "Let's just go already! You'll never know\n"
+	.string "unless you try!$"
+
+Turpia_ProtaSquad_C_Text_9:
+	.string "Alyssa: See? No need to be such a\n"
+	.string "worrywart, Tori!$"
+
+Turpia_ProtaSquad_C_Text_10:
+	.string "Basil: See? We're gonna be fine! C'mon,\n"
+	.string "let's go!$"
+
+Turpia_ProtaSquad_C_Text_11:
+	.string "Tori: Hmm…$"
+
+Turpia_ProtaSquad_C_Text_12:
+	.string "Tori: Aaaaah! Help! P-Pokémon!$"
+
+Turpia_ProtaSquad_C_Text_13:
+	.string "Hold on, you three! Don't move! I've got\n"
+	.string "you covered!$"
+
+Turpia_ProtaSquad_C_Text_14:
+	.string "Phew! That's been taken care of.\p"
+	.string "I don't know what you three were\n"
+	.string "thinking, going through the grass\l"
+	.string "without your own Pokémon…\p"
+	.string "Ah, well. At least you're safe and sound.$"
+
+Turpia_ProtaSquad_C_Text_15:
+	.string "Alyssa: Whew! That was pretty tense,\n"
+	.string "huh?$"
+
+Turpia_ProtaSquad_C_Text_16:
+	.string "Basil: Phooey, hahahaha! Talk about a\n"
+	.string "thrill, right?$"
+
+Turpia_ProtaSquad_C_Text_17:
+	.string "Tori: That was kinda scary, I won't lie…\n"
+	.string "I'm glad the scientist guy could bail us\l"
+	.string "out.$"
+
+Turpia_ProtaSquad_C_Text_18:
+	.string "Alyssa: Maybe I should've known that we\n"
+	.string "could've gotten attacked…\p"
+	.string "But hey, fortune favors the bold, as\n"
+	.string "they say!$"
+
+Turpia_ProtaSquad_C_Text_19:
+	.string "Tori: Yeah, but a little caution goes a\n"
+	.string "long way, Alyssa! We could've gotten\l"
+	.string "hurt!$"
+
+Turpia_ProtaSquad_C_Text_20:
+	.string "Alyssa: No need to make a big fuss over\n"
+	.string "it, Tori. All's well that ends well.$"
+
+Turpia_ProtaSquad_C_Text_21:
+	.string "Basil: Didn't think we'd get jumped by\n"
+	.string "that Pokémon, but hey, guess that's\l"
+	.string "what we signed up for!$"
+
+Turpia_ProtaSquad_C_Text_22:
+	.string "Tori: How can you be so relaxed about\n"
+	.string "this, Basil? We could've gotten hurt!$"
+
+Turpia_ProtaSquad_C_Text_23:
+	.string "Basil: Yeah, but we didn't, so I wouldn't\n"
+	.string "dwell on it.$"
+
+Turpia_ProtaSquad_C_Text_24:
+	.string "Tori: Hmph. I didn't feel good about it\n"
+	.string "to begin with…$"
+
+Turpia_ProtaSquad_C_Text_25:
+	.string "Alyssa: Ah, well. Let's continue!$"
+
+Turpia_ProtaSquad_C_Text_26:
+	.string "Basil: Whatever, let's just move it.$"
+
+Turpia_ProtaSquad_C_Text_27:
+	.string "Prof. Spruce: Welcome, one and all, to\n"
+	.string "the final round of the Pokémon\l"
+	.string "Conservation Cup!\p"
+	.string "For that, you already have my\n"
+	.string "congratulations. I'd also like to thank\l"
+	.string "all of you for participating so\l"
+	.string "enthusiastically.\p"
+	.string "Now, onto the main event! Your task is\n"
+	.string "to capture as many Pokémon as you can\l"
+	.string "with the Venture Balls you are given.\p"
+	.string "The person who captures the most\n"
+	.string "Pokémon wins the competition!\p"
+	.string "That's easy enough, right? All right,\n"
+	.string "off you go!$"
+
+Turpia_ProtaSquad_C_Text_28:
+	.string "{PLAYER} received 5 Venture Balls.$"
 
 Turpia_Defeat_Rival::
 	.string "Ouchie$"
