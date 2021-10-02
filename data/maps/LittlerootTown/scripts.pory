@@ -83,12 +83,21 @@ script Turpia_DontRunAway
 script Turpia_Celebration
 {
 	lockall
-	special(FullPartyToPC)
 	clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 	setvar(VAR_GRC_TURPIA_INTRO_STATE,7)
 	clearflag(FLAG_SYS_POKEMON_GET)
 	setflag(FLAG_GRC_R1_HIDE_BADDIES)
-	msgbox(format("grats all lol"))
+	applymovement(9,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Thanks for coming here, you three. I've brought you here because you've reached a turning point in your lives.\pNow, I'd like you to take a good look at yourself. Gaze at your reflection in the water, and remember that sight."))
+	closemessage
+	msgbox("Tori: …")
+	closemessage
+	msgbox("{RIVAL}: Hmm…")
+	closemessage
+	applymovement(9,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox("Prof. Spruce: All set? Good.")
 	closemessage
 	applymovement(9,Turpia_Prof_MovesUp)
 	waitmovement(0)
@@ -97,14 +106,53 @@ script Turpia_Celebration
 	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
 	applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
 	waitmovement(0)
-	msgbox(format("Here is a bag pick a pokemon"))
+	msgbox(format("Prof. Spruce: Inside this bag are three Pokémon.\pYou can pick one each, and that Pokémon will be your first partner on the long journey ahead.\pWhoever gets to pick first, I'll leave to you."))
 	closemessage
 	applymovement(9,Turpia_Prof_MovesSide)
 	waitmovement(0)
 	applymovement(6,Common_Movement_WalkLeft)
 	applymovement(7,Turpia_Rival_MovesToBox)
 	waitmovement(0)
-	msgbox(format("I think {PLAYER} should go first"))
+	getpartysize
+	if (var(VAR_RESULT)==0)
+	{
+		applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Who should pick first?"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: I think it's fair if we let {PLAYER} pick first.\pAfter all, it wouldn't really be fair if we picked our Pokémon before him, right?"))
+		}
+		else
+		{
+			msgbox(format("Basil: If you ask me, {PLAYER} should call dibs on the first.\pI don't exactly think it's fair for us to snatch away the Pokémon she might like."))
+		}
+		closemessage
+		applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Whichever works, really. For all I care, you can go first, {PLAYER}."))
+		closemessage
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: After you, {PLAYER}!"))
+		}
+		else
+		{
+			msgbox(format("Basil: Go ahead, {PLAYER}!"))
+		}
+	}
+	elif (var(VAR_RESULT)==1)
+	{
+
+	}
+	else
+	{
+
+	}
 	closemessage
 	releaseall
 	end
@@ -113,6 +161,7 @@ script Turpia_Celebration
 script Turpia_BagPickStarter
 {
 	lockall
+	special(FullPartyToPC)
 	fadescreen(FADE_TO_BLACK)
 	special(ChooseStarter)
 	waitstate

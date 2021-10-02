@@ -72,12 +72,21 @@ Turpia_DontRunAway::
 
 Turpia_Celebration::
 	lockall
-	special FullPartyToPC
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 7
 	clearflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_GRC_R1_HIDE_BADDIES
+	applymovement 9, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
 	msgbox Turpia_Celebration_Text_0
+	closemessage
+	msgbox Turpia_Celebration_Text_1
+	closemessage
+	msgbox Turpia_Celebration_Text_2
+	closemessage
+	applymovement 9, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_3
 	closemessage
 	applymovement 9, Turpia_Prof_MovesUp
 	waitmovement 0
@@ -86,21 +95,60 @@ Turpia_Celebration::
 	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
 	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
-	msgbox Turpia_Celebration_Text_1
+	msgbox Turpia_Celebration_Text_4
 	closemessage
 	applymovement 9, Turpia_Prof_MovesSide
 	waitmovement 0
 	applymovement 6, Common_Movement_WalkLeft
 	applymovement 7, Turpia_Rival_MovesToBox
 	waitmovement 0
-	msgbox Turpia_Celebration_Text_2
+	getpartysize
+	compare VAR_RESULT, 0
+	goto_if_eq Turpia_Celebration_2
+	compare VAR_RESULT, 1
+	goto_if_eq Turpia_Celebration_3
+Turpia_Celebration_1:
 	closemessage
 	releaseall
 	end
 
+Turpia_Celebration_2:
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_5
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_8
+	msgbox Turpia_Celebration_Text_7
+Turpia_Celebration_7:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_8
+	closemessage
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_11
+	msgbox Turpia_Celebration_Text_10
+	goto Turpia_Celebration_1
+
+Turpia_Celebration_3:
+	goto Turpia_Celebration_1
+
+Turpia_Celebration_8:
+	msgbox Turpia_Celebration_Text_6
+	goto Turpia_Celebration_7
+
+Turpia_Celebration_11:
+	msgbox Turpia_Celebration_Text_9
+	goto Turpia_Celebration_1
+
 
 Turpia_BagPickStarter::
 	lockall
+	special FullPartyToPC
 	fadescreen FADE_TO_BLACK
 	special ChooseStarter
 	waitstate
@@ -1930,13 +1978,58 @@ Turpia_DontRunAway_Text_0:
 	.string "yo wassu u dont want???$"
 
 Turpia_Celebration_Text_0:
-	.string "grats all lol$"
+	.string "Prof. Spruce: Thanks for coming here,\n"
+	.string "you three. I've brought you here\l"
+	.string "because you've reached a turning point\l"
+	.string "in your lives.\p"
+	.string "Now, I'd like you to take a good look at\n"
+	.string "yourself. Gaze at your reflection in\l"
+	.string "the water, and remember that sight.$"
 
 Turpia_Celebration_Text_1:
-	.string "Here is a bag pick a pokemon$"
+	.string "Tori: …$"
 
 Turpia_Celebration_Text_2:
-	.string "I think {PLAYER} should go first$"
+	.string "{RIVAL}: Hmm…$"
+
+Turpia_Celebration_Text_3:
+	.string "Prof. Spruce: All set? Good.$"
+
+Turpia_Celebration_Text_4:
+	.string "Prof. Spruce: Inside this bag are three\n"
+	.string "Pokémon.\p"
+	.string "You can pick one each, and that Pokémon\n"
+	.string "will be your first partner on the long\l"
+	.string "journey ahead.\p"
+	.string "Whoever gets to pick first, I'll leave to\n"
+	.string "you.$"
+
+Turpia_Celebration_Text_5:
+	.string "Tori: Who should pick first?$"
+
+Turpia_Celebration_Text_6:
+	.string "Alyssa: I think it's fair if we let\n"
+	.string "{PLAYER} pick first.\p"
+	.string "After all, it wouldn't really be fair if\n"
+	.string "we picked our Pokémon before him,\l"
+	.string "right?$"
+
+Turpia_Celebration_Text_7:
+	.string "Basil: If you ask me, {PLAYER} should\n"
+	.string "call dibs on the first.\p"
+	.string "I don't exactly think it's fair for us to\n"
+	.string "snatch away the Pokémon she might\l"
+	.string "like.$"
+
+Turpia_Celebration_Text_8:
+	.string "Tori: Whichever works, really. For all I\n"
+	.string "care, you can go first, {PLAYER}.$"
+
+Turpia_Celebration_Text_9:
+	.string "Alyssa: After you, {PLAYER}!$"
+
+Turpia_Celebration_Text_10:
+	.string "Basil: Go ahead, {PLAYER}!$"
 
 Turpia_BagPickStarter_Text_0:
 	.string "oy here's your pkmn\p"
