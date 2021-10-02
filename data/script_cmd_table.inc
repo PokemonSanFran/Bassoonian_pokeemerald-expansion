@@ -234,5 +234,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_checkpartyhmlearnable     @ 0xe7
     .4byte ScrCmd_showitemdesc				@ 0xe8
     .4byte ScrCmd_hideitemdesc				@ 0xe9
-gScriptCmdTableEnd:: @ 81DBA08
+	.4byte ScrCmd_questmenu                 @ 0xea
+
+gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
