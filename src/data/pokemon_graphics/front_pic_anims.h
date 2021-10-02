@@ -4124,16 +4124,19 @@ static const union AnimCmd sAnim_LOUDRED_HANAUAN_1[] =
 {
     ANIMCMD_FRAME(1, 10),
     ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 25),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 9),
     ANIMCMD_FRAME(0, 40),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_EXPLOUD_HANAUAN_1[] =
 {
-    ANIMCMD_FRAME(0, 10),
-    ANIMCMD_FRAME(1, 31),
-    ANIMCMD_FRAME(0, 7),
+    ANIMCMD_FRAME(0, 9),
+    ANIMCMD_FRAME(1, 40),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 9),
     ANIMCMD_END,
 };
 
