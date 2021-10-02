@@ -31,6 +31,7 @@ enum
     MENUITEM_HP_BAR,
     MENUITEM_EXP_BAR,
     MENUITEM_UNIT_SYSTEM,
+    MENUITEM_SAVE_PROMPT,
     MENUITEM_FRAMETYPE,
     MENUITEM_CANCEL,
     MENUITEM_COUNT,
@@ -61,6 +62,7 @@ static void BattleScene_DrawChoices(int selection, int y, u8 textSpeed);
 static void BattleStyle_DrawChoices(int selection, int y, u8 textSpeed);
 static void HpBar_DrawChoices(int selection, int y, u8 textSpeed);
 static void UnitSystem_DrawChoices(int selection, int y, u8 textSpeed);
+static void SavePrompt_DrawChoices(int selection, int y, u8 textSpeed);
 static void Sound_DrawChoices(int selection, int y, u8 textSpeed);
 static void FrameType_DrawChoices(int selection, int y, u8 textSpeed);
 static void ButtonMode_DrawChoices(int selection, int y, u8 textSpeed);
@@ -90,6 +92,7 @@ struct
     [MENUITEM_HP_BAR] = {HpBar_DrawChoices, ElevenOptions_ProcessInput},
     [MENUITEM_EXP_BAR] = {HpBar_DrawChoices, ElevenOptions_ProcessInput},
     [MENUITEM_UNIT_SYSTEM] = {UnitSystem_DrawChoices, TwoOptions_ProcessInput},
+    [MENUITEM_SAVE_PROMPT] = {SavePrompt_DrawChoices, TwoOptions_ProcessInput},
     [MENUITEM_CANCEL] = {NULL, NULL},
 };
 
@@ -103,6 +106,9 @@ static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/misc/option_menu_equals_si
 static const u8 sText_HpBar[] = _("HP Bar");
 static const u8 sText_ExpBar[] = _("EXP Bar");
 static const u8 sText_UnitSystem[] = _("Unit System");
+static const u8 sText_SavePrompt[] = _("Save Prompts");
+static const u8 sText_On[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}On");
+static const u8 sText_Off[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Off");
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -115,6 +121,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_HP_BAR]      = sText_HpBar,
     [MENUITEM_EXP_BAR]     = sText_ExpBar,
     [MENUITEM_UNIT_SYSTEM] = sText_UnitSystem,
+    [MENUITEM_SAVE_PROMPT] = sText_SavePrompt,
     [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
 };
 
@@ -272,6 +279,7 @@ void CB2_InitOptionMenu(void)
         sOptions->sel[MENUITEM_HP_BAR] = gSaveBlock2Ptr->optionsHpBarSpeed;
         sOptions->sel[MENUITEM_EXP_BAR] = gSaveBlock2Ptr->optionsExpBarSpeed;
         sOptions->sel[MENUITEM_UNIT_SYSTEM] = gSaveBlock2Ptr->optionsUnitSystem;
+        sOptions->sel[MENUITEM_SAVE_PROMPT] = gSaveBlock2Ptr->optionsSavePrompt;
 
         for (i = 0; i < 7; i++)
             DrawChoices(i, i * Y_DIFF, 0xFF);
@@ -432,6 +440,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsHpBarSpeed = sOptions->sel[MENUITEM_HP_BAR];
     gSaveBlock2Ptr->optionsExpBarSpeed = sOptions->sel[MENUITEM_EXP_BAR];
     gSaveBlock2Ptr->optionsUnitSystem = sOptions->sel[MENUITEM_UNIT_SYSTEM];
+    gSaveBlock2Ptr->optionsSavePrompt = sOptions->sel[MENUITEM_SAVE_PROMPT];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -617,6 +626,15 @@ static void UnitSystem_DrawChoices(int selection, int y, u8 textSpeed)
     styles[selection] = 1;
     DrawOptionMenuChoice(gText_UnitSystemMetric, 104, y, styles[0], textSpeed);
     DrawOptionMenuChoice(gText_UnitSystemImperial, GetStringRightAlignXOffset(1, sText_Instant, 198), y, styles[1], textSpeed);
+}
+
+static void SavePrompt_DrawChoices(int selection, int y, u8 textSpeed)
+{
+    u8 styles[2] = {0, 0};
+
+    styles[selection] = 1;
+    DrawOptionMenuChoice(sText_On, 104, y, styles[0], textSpeed);
+    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Instant, 198), y, styles[1], textSpeed);
 }
 
 static void FourOptions_DrawChoices(const u8 *const *const strings, int selection, int y, u8 textSpeed)

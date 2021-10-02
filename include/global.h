@@ -536,7 +536,8 @@ struct SaveBlock2
     /*0x15*/ u16 optionsHpBarSpeed:4;   //tx_optionsPlus
     /*0x16*/ u16 optionsExpBarSpeed:4;  //tx_optionsPlus
     /*0x16*/ u16 optionsSound:2;        //tx_optionsPlus
-    /*0x16*/ u16 padding:2;             //tx_optionsPlus FREE for 2 double options or one four options
+    /*0x16*/ u16 optionsSavePrompt:1;   //custom
+    /*0x16*/ u16 padding:1;             //tx_optionsPlus FREE for 2 double options or one four options
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u16 lastUsedBall;
     /*0x92*/ u8 filler_90[0x7];
