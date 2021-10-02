@@ -1513,3 +1513,8 @@ void FullPartyToPC(void)
 	}
 	CompactPartySlots();
 }
+
+void GetPartySizeSpecial(void)
+{
+    gSpecialVar_Result = gPlayerPartyCount;
+}

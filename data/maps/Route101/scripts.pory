@@ -112,8 +112,88 @@ script Route1_FacePlayerOccur
 script Route1_finalisetutorial
 {
 	lockall
-	msgbox(format("congrats winners win & losers lose"))
+	msgbox(format("Prof. Spruce: Alright, folks, here are the final results of the competition!"))
 	closemessage
+	special(GetPartySizeSpecial)
+	if (var(VAR_RESULT)==0)
+	{
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("In third place is {PLAYER}! He failed to catch any Pokémon, but they scored well enough in the previous rounds to earn third place overall!"))
+		}
+		else
+		{
+			msgbox(format("In third place is {PLAYER}! She failed to catch any Pokémon, but they scored well enough in the previous rounds to earn third place overall!"))
+		}
+		closemessage
+		msgbox(format("In second place is Tori!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Hm. Okay."))
+		applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		msgbox(format("Spruce: And the winner is… {RIVAL}!"))
+		closemessage
+		applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: R-really? I'm the winner?!\pHehehe, that's great! Ma and Pa will be so happy to hear it!"))
+		}
+		else
+		{
+			msgbox(format("Basil: Whoa, what? I've won?! Hahahaha!\pAwesome! Can't wait to tell my old folks about it!"))
+		}
+		closemessage
+	}
+	else if (var(VAR_RESULT)==1)
+	{
+		msgbox(format("In third place is… No, wait! Let me get this right… We have three winners!\pIt's a three-way tie between {PLAYER}, {RIVAL} and Tori!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Huh, what do you know. Neat, I guess."))
+		closemessage
+		applymovement(3,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Basil: Neat? That's rad! I can share my victory with both of you!"))
+		}
+		else
+		{
+			msgbox(format("Alyssa: Neat? Now the three of us can cheer to our victory together!"))
+		}
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Tori: I suppose so."))
+		closemessage
+		applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+	}
+	else if (var(VAR_RESULT)==2)
+	{
+
+	}
+	else if (var(VAR_RESULT)==3)
+	{
+
+	}
+	else if (var(VAR_RESULT)==4)
+	{
+
+	}
+	else //5
+	{
+
+	}
+	closemessage
+	//Rival complaints
 	setvar(VAR_GRC_ROUTE1_STATE,3)
 	setvar(VAR_LITTLEROOT_TOWN_STATE,1)
 	setflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
