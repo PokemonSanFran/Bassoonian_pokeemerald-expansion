@@ -134,7 +134,7 @@ script Route1_finalisetutorial
 		msgbox(format("Tori: Hm. Okay."))
 		applymovement(2,Common_Movement_WalkInPlaceFastestRight)
 		waitmovement(0)
-		msgbox(format("Spruce: And the winner is… {RIVAL}!"))
+		msgbox(format("Prof. Spruce: And the winner is… {RIVAL}!"))
 		closemessage
 		applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
 		waitmovement(0)
@@ -176,24 +176,87 @@ script Route1_finalisetutorial
 		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
 		waitmovement(0)
 	}
-	elif (var(VAR_RESULT)==2)
+	else //2+
 	{
-
+		msgbox(format("In third place is Tori!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Hm, okay."))
+		closemessage
+		applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		msgbox(format("Prof. Spruce: In second place is {RIVAL}!"))
+		closemessage
+		applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: Hey, that's not bad at all! Second place is not a bad place to be in."))
+		}
+		else
+		{
+			msgbox(format("Basil: Oh, hey, that's pretty good! It ain't first, but I'll gladly take second."))
+		}
+		closemessage
+		applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		msgbox(format("Prof. Spruce: And the winner of the CCP is {PLAYER}! Congratulations!"))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestUp)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		msgbox(format("Tori: Grats."))
+		closemessage
+		applymovement(3,Common_Movement_WalkInPlaceFastestDown)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: Congrats, {PLAYER}! A well-earned victory! Oh, no offense, Tori…"))
+		}
+		else
+		{
+			msgbox(format("Basil: Congrats, {PLAYER}! You deserve that win. No offense to you, Tori!"))
+		}
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Tori: None taken."))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestLeft)
+		applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
 	}
-	elif (var(VAR_RESULT)==3)
-	{
-
-	}
-	elif (var(VAR_RESULT)==4)
-	{
-
-	}
-	else //5
-	{
-
-	}
+	applymovement(10,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Nicholas: Of course those pampered westerners have to come out on top…\pUgh, I can't stand this! This whole thing feels rigged against our favor!\pAnd for what, just because we're from the east of the region?!"))
 	closemessage
-	//Rival complaints
+	applymovement(8,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Jack: Pipe it down, Nicholas. Nothing good will come of such fury."))
+	closemessage
+	applymovement(10,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Nicholas: Grrr…"))
+	closemessage
+	applymovement(9,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Robin: Look, Jack and I are just as upset as you, but we're fuming internally, not externally.\pEither way, I'm not gonna waste any more time here. These rich kids are making me sick to my stomach."))
+	closemessage
+	applymovement(10,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Nicholas: Right you are. Let's get outta here."))
+	closemessage
+	applymovement(12,Route1_AngryDeparture_Interviewer)
+	applymovement(10,Route1_AngryDeparture_Nicholas)
+	applymovement(9,Route1_AngryDeparture_Robin)
+	applymovement(8,Route1_AngryDeparture_Jack)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: What was that all about? Anyway, you three shouldn't be worrying about any of that.\pI'd like to meet you by the pond back in Turpia, in fact. I'll see you there!"))
+	closemessage
 	setvar(VAR_GRC_ROUTE1_STATE,3)
 	setvar(VAR_LITTLEROOT_TOWN_STATE,1)
 	setflag(FLAG_GRC_HIDE_TURPIA_SCIENTIST)
@@ -202,6 +265,34 @@ script Route1_finalisetutorial
 	warp(MAP_LITTLEROOT_TOWN,255,4,14)
 	waitstate
 	releaseall
+}
+
+movement Route1_AngryDeparture_Nicholas {
+	walk_left * 3
+	walk_down
+	walk_left
+	walk_down * 6
+}
+
+movement Route1_AngryDeparture_Jack {
+	walk_down
+	walk_left * 3
+	walk_down
+	walk_left
+	walk_down * 5
+}
+
+movement Route1_AngryDeparture_Robin {
+	walk_down * 2
+	walk_left * 3
+	walk_down
+	walk_left
+	walk_down * 4
+}
+
+movement Route1_AngryDeparture_Interviewer {
+	walk_left * 2
+	walk_in_place_fastest_right
 }
 
 script Route1_GatherPeeps

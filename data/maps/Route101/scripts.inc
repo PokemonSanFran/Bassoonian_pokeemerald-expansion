@@ -141,13 +141,76 @@ Route1_finalisetutorial::
 	goto_if_eq Route1_finalisetutorial_2
 	compare VAR_RESULT, 1
 	goto_if_eq Route1_finalisetutorial_3
-	compare VAR_RESULT, 2
-	goto_if_eq Route1_finalisetutorial_4
-	compare VAR_RESULT, 3
-	goto_if_eq Route1_finalisetutorial_5
-	compare VAR_RESULT, 4
-	goto_if_eq Route1_finalisetutorial_6
+	msgbox Route1_finalisetutorial_Text_13
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_14
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_15
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route1_finalisetutorial_16
+	msgbox Route1_finalisetutorial_Text_17
+Route1_finalisetutorial_15:
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_18
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_19
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Route1_finalisetutorial_24
+	msgbox Route1_finalisetutorial_Text_21
+Route1_finalisetutorial_23:
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_22
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
 Route1_finalisetutorial_1:
+	applymovement 10, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_23
+	closemessage
+	applymovement 8, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_24
+	closemessage
+	applymovement 10, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_25
+	closemessage
+	applymovement 9, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_26
+	closemessage
+	applymovement 10, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_27
+	closemessage
+	applymovement 12, Route1_AngryDeparture_Interviewer
+	applymovement 10, Route1_AngryDeparture_Nicholas
+	applymovement 9, Route1_AngryDeparture_Robin
+	applymovement 8, Route1_AngryDeparture_Jack
+	waitmovement 0
+	msgbox Route1_finalisetutorial_Text_28
 	closemessage
 	setvar VAR_GRC_ROUTE1_STATE, 3
 	setvar VAR_LITTLEROOT_TOWN_STATE, 1
@@ -162,9 +225,9 @@ Route1_finalisetutorial_1:
 Route1_finalisetutorial_2:
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Route1_finalisetutorial_14
+	goto_if_eq Route1_finalisetutorial_8
 	msgbox Route1_finalisetutorial_Text_2
-Route1_finalisetutorial_13:
+Route1_finalisetutorial_7:
 	closemessage
 	msgbox Route1_finalisetutorial_Text_3
 	closemessage
@@ -178,9 +241,9 @@ Route1_finalisetutorial_13:
 	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	compare VAR_RESULT, MALE
-	goto_if_eq Route1_finalisetutorial_22
+	goto_if_eq Route1_finalisetutorial_20
 	msgbox Route1_finalisetutorial_Text_7
-Route1_finalisetutorial_21:
+Route1_finalisetutorial_19:
 	closemessage
 	goto Route1_finalisetutorial_1
 
@@ -195,9 +258,9 @@ Route1_finalisetutorial_3:
 	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Route1_finalisetutorial_18
+	goto_if_eq Route1_finalisetutorial_12
 	msgbox Route1_finalisetutorial_Text_11
-Route1_finalisetutorial_17:
+Route1_finalisetutorial_11:
 	closemessage
 	applymovement 7, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
@@ -208,27 +271,74 @@ Route1_finalisetutorial_17:
 	waitmovement 0
 	goto Route1_finalisetutorial_1
 
-Route1_finalisetutorial_4:
-	goto Route1_finalisetutorial_1
-
-Route1_finalisetutorial_5:
-	goto Route1_finalisetutorial_1
-
-Route1_finalisetutorial_6:
-	goto Route1_finalisetutorial_1
-
-Route1_finalisetutorial_14:
+Route1_finalisetutorial_8:
 	msgbox Route1_finalisetutorial_Text_1
-	goto Route1_finalisetutorial_13
+	goto Route1_finalisetutorial_7
 
-Route1_finalisetutorial_18:
+Route1_finalisetutorial_12:
 	msgbox Route1_finalisetutorial_Text_10
-	goto Route1_finalisetutorial_17
+	goto Route1_finalisetutorial_11
 
-Route1_finalisetutorial_22:
+Route1_finalisetutorial_16:
+	msgbox Route1_finalisetutorial_Text_16
+	goto Route1_finalisetutorial_15
+
+Route1_finalisetutorial_20:
 	msgbox Route1_finalisetutorial_Text_6
-	goto Route1_finalisetutorial_21
+	goto Route1_finalisetutorial_19
 
+Route1_finalisetutorial_24:
+	msgbox Route1_finalisetutorial_Text_20
+	goto Route1_finalisetutorial_23
+
+
+Route1_AngryDeparture_Nicholas:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route1_AngryDeparture_Jack:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route1_AngryDeparture_Robin:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route1_AngryDeparture_Interviewer:
+	walk_left
+	walk_left
+	walk_in_place_fastest_right
+	step_end
 
 Route1_GatherPeeps::
 	compare VAR_GRC_ROUTE1_STATE, 0
@@ -673,7 +783,8 @@ Route1_finalisetutorial_Text_4:
 	.string "Tori: Hm. Okay.$"
 
 Route1_finalisetutorial_Text_5:
-	.string "Spruce: And the winner is… {RIVAL}!$"
+	.string "Prof. Spruce: And the winner is…\n"
+	.string "{RIVAL}!$"
 
 Route1_finalisetutorial_Text_6:
 	.string "Alyssa: R-really? I'm the winner?!\p"
@@ -705,6 +816,79 @@ Route1_finalisetutorial_Text_11:
 
 Route1_finalisetutorial_Text_12:
 	.string "Tori: I suppose so.$"
+
+Route1_finalisetutorial_Text_13:
+	.string "In third place is Tori!$"
+
+Route1_finalisetutorial_Text_14:
+	.string "Tori: Hm, okay.$"
+
+Route1_finalisetutorial_Text_15:
+	.string "Prof. Spruce: In second place is\n"
+	.string "{RIVAL}!$"
+
+Route1_finalisetutorial_Text_16:
+	.string "Alyssa: Hey, that's not bad at all!\n"
+	.string "Second place is not a bad place to be\l"
+	.string "in.$"
+
+Route1_finalisetutorial_Text_17:
+	.string "Basil: Oh, hey, that's pretty good! It\n"
+	.string "ain't first, but I'll gladly take second.$"
+
+Route1_finalisetutorial_Text_18:
+	.string "Prof. Spruce: And the winner of the CCP\n"
+	.string "is {PLAYER}! Congratulations!$"
+
+Route1_finalisetutorial_Text_19:
+	.string "Tori: Grats.$"
+
+Route1_finalisetutorial_Text_20:
+	.string "Alyssa: Congrats, {PLAYER}! A\n"
+	.string "well-earned victory! Oh, no offense,\l"
+	.string "Tori…$"
+
+Route1_finalisetutorial_Text_21:
+	.string "Basil: Congrats, {PLAYER}! You\n"
+	.string "deserve that win. No offense to you,\l"
+	.string "Tori!$"
+
+Route1_finalisetutorial_Text_22:
+	.string "Tori: None taken.$"
+
+Route1_finalisetutorial_Text_23:
+	.string "Nicholas: Of course those pampered\n"
+	.string "westerners have to come out on top…\p"
+	.string "Ugh, I can't stand this! This whole\n"
+	.string "thing feels rigged against our favor!\p"
+	.string "And for what, just because we're from\n"
+	.string "the east of the region?!$"
+
+Route1_finalisetutorial_Text_24:
+	.string "Jack: Pipe it down, Nicholas. Nothing\n"
+	.string "good will come of such fury.$"
+
+Route1_finalisetutorial_Text_25:
+	.string "Nicholas: Grrr…$"
+
+Route1_finalisetutorial_Text_26:
+	.string "Robin: Look, Jack and I are just as\n"
+	.string "upset as you, but we're fuming\l"
+	.string "internally, not externally.\p"
+	.string "Either way, I'm not gonna waste any\n"
+	.string "more time here. These rich kids are\l"
+	.string "making me sick to my stomach.$"
+
+Route1_finalisetutorial_Text_27:
+	.string "Nicholas: Right you are. Let's get outta\n"
+	.string "here.$"
+
+Route1_finalisetutorial_Text_28:
+	.string "Prof. Spruce: What was that all about?\n"
+	.string "Anyway, you three shouldn't be\l"
+	.string "worrying about any of that.\p"
+	.string "I'd like to meet you by the pond back in\n"
+	.string "Turpia, in fact. I'll see you there!$"
 
 R1_NoAccess_City_Text_0:
 	.string "Uh, I don't think that's a good idea,\n"
