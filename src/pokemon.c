@@ -1703,7 +1703,7 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER - 1] = NATIONAL_DEX_CALYREX,
     [SPECIES_CALYREX_SHADOW_RIDER - 1] = NATIONAL_DEX_CALYREX,
-	
+
 	//Custom
 	[SPECIES_PSYDUCK_HANAUAN - 1] = NATIONAL_DEX_PSYDUCK,
 	[SPECIES_GOLDUCK_HANAUAN - 1] = NATIONAL_DEX_GOLDUCK,
@@ -3019,7 +3019,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_ROTOM_FAN - 1]     = ANIM_FIGURE_8,
     [SPECIES_ROTOM_MOW - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_ROTOM_WASH - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
-	
+
 	// Custom
     [SPECIES_PSYDUCK_HANAUAN - 1]       = ANIM_V_STRETCH,
     [SPECIES_GOLDUCK_HANAUAN - 1]       = ANIM_GROW_VIBRATE,
@@ -3446,15 +3446,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 			#endif
 			u32 i;
 
-            /*if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
-            && GetMonAbility(&gPlayerParty[0]) == ABILITY_ILLUMINATE)
-                shinyRolls *= 32;*/
-
 			value = gSaveBlock2Ptr->playerTrainerId[0]
 			          | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
 			          | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
 			          | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-          
+
 			for (i = 0; i < shinyRolls; i++)
 			{
 			    if (Random() < SHINY_ODDS)
@@ -3468,7 +3464,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 			        personality = Random32();
 			        personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
 			    } while (nature != GetNatureFromPersonality(personality));
-    
+
 			    // clear the flag after use
 			    FlagClear(FLAG_SHINY_CREATION);
 			}
@@ -5960,7 +5956,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1], NULL);
                         evChange = temp2;
-     
+
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
                             // Has EV increase limit already been reached?
@@ -6064,7 +6060,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         {
                             if (!usedByAI)
                             {
-                                // Restore HP 
+                                // Restore HP
                                 dataUnsigned = GetMonData(mon, MON_DATA_HP, NULL) + dataUnsigned;
                                 if (dataUnsigned > GetMonData(mon, MON_DATA_MAX_HP, NULL))
                                     dataUnsigned = GetMonData(mon, MON_DATA_MAX_HP, NULL);
@@ -6143,7 +6139,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                     dataUnsigned = CalculatePPWithBonus(moveId, GetMonData(mon, MON_DATA_PP_BONUSES, NULL), moveIndex);
                                 }
                                 SetMonData(mon, MON_DATA_PP1 + moveIndex, &dataUnsigned);
-                                
+
                                 // Heal battler PP too (if applicable)
                                 if (gMain.inBattle
                                  && battlerId != MAX_BATTLERS_COUNT && !(gBattleMons[battlerId].status2 & STATUS2_TRANSFORMED)
@@ -6180,7 +6176,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 5:
             effectFlags = itemEffect[i];
             temp1 = 0;
-            
+
             // Loop through and try each of the ITEM5 effects
             while (effectFlags != 0)
             {
@@ -8075,7 +8071,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_SPINDA)
             gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
     }
-    
+
     if (caseId == FLAG_SET_SEEN)
         TryIncrementSpeciesSearchLevel(nationalNum);    // encountering pokemon increments its search level
 }
@@ -8331,7 +8327,7 @@ u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
      }
      return 0;
  }
- 
+
 static void ShuffleStatArray(u8* statArray)
 {
     int i;

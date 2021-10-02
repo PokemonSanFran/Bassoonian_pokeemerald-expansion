@@ -17,6 +17,7 @@
 #include "battle_debug.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "item.h"
 #include "constants/abilities.h"
 #include "constants/battle_config.h"
 #include "constants/game_stat.h"
@@ -341,9 +342,11 @@ static u8 PickWildMonNature(void)
 void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
+    bool32 checkIlluminate;
 
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;
+    checkIlluminate = TRUE;
 
     switch (gBaseStats[species].genderRatio)
     {
@@ -352,6 +355,20 @@ void CreateWildMon(u16 species, u8 level)
     case MON_GENDERLESS:
         checkCuteCharm = FALSE;
         break;
+    }
+
+    if (checkIlluminate
+      && !GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
+      && GetMonAbility(&gPlayerParty[0]) == ABILITY_ILLUMINATE)
+    {
+          #ifdef ITEM_SHINY_CHARM
+          u32 shinyRate = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 6 : 2;
+          #else
+          u32 shinyRate = 2;
+          #endif
+
+          if (Random() % 100 < shinyRate)
+              FlagSet(FLAG_SHINY_CREATION);
     }
 
     if (checkCuteCharm
