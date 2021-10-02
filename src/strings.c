@@ -1505,6 +1505,8 @@ const u8 gText_FrameTypeNumber[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}");
 const u8 gText_ButtonTypeNormal[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Normal");
 const u8 gText_ButtonTypeLR[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}LR");
 const u8 gText_ButtonTypeLEqualsA[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}L=A");
+const u8 gText_UnitSystemMetric[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Metric");     //tx_optionsPlus
+const u8 gText_UnitSystemImperial[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Imperial"); //tx_optionsPlus
 const u8 gText_NumPlayerLink[] = _("{STR_VAR_1}P Link");
 const u8 gText_BronzeCard[] = _("Bronze");
 const u8 gText_CopperCard[] = _("Copper");
