@@ -56,6 +56,11 @@ Turpia_FractalSign::
 	return
 
 
+Turpia_SpruceWhileBagPick::
+	msgbox Turpia_SpruceWhileBagPick_Text_0, MSGBOX_NPC
+	return
+
+
 Turpia_DontRunAway::
 	lockall
 	applymovement 9, Common_Movement_WalkInPlaceFastestUp
@@ -102,23 +107,38 @@ Turpia_Celebration::
 	applymovement 6, Common_Movement_WalkLeft
 	applymovement 7, Turpia_Rival_MovesToBox
 	waitmovement 0
-	getpartysize
-	compare VAR_RESULT, 0
-	goto_if_eq Turpia_Celebration_2
-	compare VAR_RESULT, 1
-	goto_if_eq Turpia_Celebration_3
-Turpia_Celebration_1:
-	closemessage
-	releaseall
-	end
-
-Turpia_Celebration_2:
 	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox Turpia_Celebration_Text_5
 	closemessage
 	applymovement 7, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
+	getpartysize
+	compare VAR_RESULT, 0
+	goto_if_eq Turpia_Celebration_2
+	compare VAR_RESULT, 1
+	goto_if_eq Turpia_Celebration_3
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_16
+	msgbox Turpia_Celebration_Text_17
+Turpia_Celebration_15:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_18
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_25
+	msgbox Turpia_Celebration_Text_20
+Turpia_Celebration_1:
+	closemessage
+	releaseall
+	end
+
+Turpia_Celebration_2:
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Turpia_Celebration_8
@@ -129,20 +149,53 @@ Turpia_Celebration_7:
 	waitmovement 0
 	msgbox Turpia_Celebration_Text_8
 	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
 	compare VAR_RESULT, MALE
-	goto_if_eq Turpia_Celebration_11
+	goto_if_eq Turpia_Celebration_19
 	msgbox Turpia_Celebration_Text_10
 	goto Turpia_Celebration_1
 
 Turpia_Celebration_3:
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_12
+	msgbox Turpia_Celebration_Text_12
+Turpia_Celebration_11:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_Celebration_Text_13
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_22
+	msgbox Turpia_Celebration_Text_15
 	goto Turpia_Celebration_1
 
 Turpia_Celebration_8:
 	msgbox Turpia_Celebration_Text_6
 	goto Turpia_Celebration_7
 
-Turpia_Celebration_11:
+Turpia_Celebration_12:
+	msgbox Turpia_Celebration_Text_11
+	goto Turpia_Celebration_11
+
+Turpia_Celebration_16:
+	msgbox Turpia_Celebration_Text_16
+	goto Turpia_Celebration_15
+
+Turpia_Celebration_19:
 	msgbox Turpia_Celebration_Text_9
+	goto Turpia_Celebration_1
+
+Turpia_Celebration_22:
+	msgbox Turpia_Celebration_Text_14
+	goto Turpia_Celebration_1
+
+Turpia_Celebration_25:
+	msgbox Turpia_Celebration_Text_19
 	goto Turpia_Celebration_1
 
 
@@ -153,10 +206,14 @@ Turpia_BagPickStarter::
 	special ChooseStarter
 	waitstate
 	bufferleadmonspeciesname 0
+	applymovement 9, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
 	message Turpia_BagPickStarter_Text_0
 	waitmessage
 	playfanfare MUS_OBTAIN_ITEM
 	waitfanfare
+	applymovement 9, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
 	msgbox Turpia_BagPickStarter_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne Turpia_BagPickStarter_2
@@ -166,9 +223,31 @@ Turpia_BagPickStarter_1:
 	case 1, Turpia_BagPickStarter_7
 	case 2, Turpia_BagPickStarter_8
 Turpia_BagPickStarter_4:
-	msgbox Turpia_BagPickStarter_Text_2
-	closemessage
-	msgbox Turpia_BagPickStarter_Text_3
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_BagPickStarter_10
+	message Turpia_BagPickStarter_Text_3
+Turpia_BagPickStarter_9:
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	message Turpia_BagPickStarter_Text_4
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	playse SE_POKENAV_ON
+	delay 30
+	applymovement 9, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 30
+	playse SE_POKENAV_OFF
+	applymovement 9, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Turpia_BagPickStarter_Text_5
 	closemessage
 	applymovement 9, Common_Movement_WalkRight
 	applymovement OBJ_EVENT_ID_PLAYER, Turpia_Prof_MovesUp
@@ -178,12 +257,35 @@ Turpia_BagPickStarter_4:
 	waitmovement 0
 	removeobject 9
 	setvar VAR_LITTLEROOT_TOWN_STATE, 2
-	msgbox Turpia_BagPickStarter_Text_4
+	applymovement OBJ_EVENT_ID_PLAYER, Turpia_PlayerMovesBackIntoPosition
+	waitmovement 0
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_BagPickStarter_14
+	msgbox Turpia_BagPickStarter_Text_7
+Turpia_BagPickStarter_13:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_BagPickStarter_Text_8
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_BagPickStarter_18
+	msgbox Turpia_BagPickStarter_Text_10
+Turpia_BagPickStarter_17:
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Turpia_BagPickStarter_Text_11
 	closemessage
 	switch VAR_STARTER_MON
-	case 0, Turpia_BagPickStarter_10
-	case 1, Turpia_BagPickStarter_11
-	case 2, Turpia_BagPickStarter_12
+	case 0, Turpia_BagPickStarter_22
+	case 1, Turpia_BagPickStarter_23
+	case 2, Turpia_BagPickStarter_24
 	return
 
 Turpia_BagPickStarter_2:
@@ -207,67 +309,112 @@ Turpia_BagPickStarter_8:
 	goto Turpia_BagPickStarter_4
 
 Turpia_BagPickStarter_10:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
+	message Turpia_BagPickStarter_Text_2
+	goto Turpia_BagPickStarter_9
+
+Turpia_BagPickStarter_14:
+	msgbox Turpia_BagPickStarter_Text_6
+	goto Turpia_BagPickStarter_13
+
+Turpia_BagPickStarter_18:
+	msgbox Turpia_BagPickStarter_Text_9
+	goto Turpia_BagPickStarter_17
+
+Turpia_BagPickStarter_22:
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TREECKO, 0, Turpia_Defeat_Tori, Turpia_Celebration_Cont_A
 	return
 
-Turpia_BagPickStarter_11:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
+Turpia_BagPickStarter_23:
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_TORCHIC, 0, Turpia_Defeat_Tori, Turpia_Celebration_Cont_A
 	return
 
-Turpia_BagPickStarter_12:
-	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turpia_Celebration_Cont_A
+Turpia_BagPickStarter_24:
+	trainerbattle_continue_after_lose TRAINER_GRC_TORI_TURPIA_MUDKIP, 0, Turpia_Defeat_Tori, Turpia_Celebration_Cont_A
 	return
 
+
+Turpia_PlayerMovesBackIntoPosition:
+	walk_down
+	walk_in_place_fastest_right
+	step_end
 
 Turpia_Celebration_Cont_A::
 	special HealPlayerParty
-	msgbox Turpia_Celebration_Cont_A_Text_0
-	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Turpia_Celebration_Cont_A_1
+	goto_if_eq Turpia_Celebration_Cont_A_2
+	msgbox Turpia_Celebration_Cont_A_Text_1
+Turpia_Celebration_Cont_A_1:
+	closemessage
+	compare VAR_RESULT, MALE
+	goto_if_eq Turpia_Celebration_Cont_A_5
+	switch VAR_STARTER_MON
+	case 0, Turpia_Celebration_Cont_A_13
+	case 1, Turpia_Celebration_Cont_A_14
+	case 2, Turpia_Celebration_Cont_A_15
+	return
+
+Turpia_Celebration_Cont_A_2:
+	msgbox Turpia_Celebration_Cont_A_Text_0
+	goto Turpia_Celebration_Cont_A_1
+
+Turpia_Celebration_Cont_A_5:
 	switch VAR_STARTER_MON
 	case 0, Turpia_Celebration_Cont_A_9
 	case 1, Turpia_Celebration_Cont_A_10
 	case 2, Turpia_Celebration_Cont_A_11
 	return
 
-Turpia_Celebration_Cont_A_1:
-	switch VAR_STARTER_MON
-	case 0, Turpia_Celebration_Cont_A_5
-	case 1, Turpia_Celebration_Cont_A_6
-	case 2, Turpia_Celebration_Cont_A_7
-	return
-
-Turpia_Celebration_Cont_A_5:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
-	return
-
-Turpia_Celebration_Cont_A_6:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
-	return
-
-Turpia_Celebration_Cont_A_7:
-	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
-	return
-
 Turpia_Celebration_Cont_A_9:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TREECKO, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TREECKO, 0, Turpia_Defeat_Alyssa, Turia_Celebration_Cont_B
 	return
 
 Turpia_Celebration_Cont_A_10:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TORCHIC, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_TORCHIC, 0, Turpia_Defeat_Alyssa, Turia_Celebration_Cont_B
 	return
 
 Turpia_Celebration_Cont_A_11:
-	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_MUDKIP, 0, Turpia_Defeat_Rival, Turia_Celebration_Cont_B
+	trainerbattle_continue_after_lose TRAINER_GRC_ALYSSA_TURPIA_MUDKIP, 0, Turpia_Defeat_Alyssa, Turia_Celebration_Cont_B
+	return
+
+Turpia_Celebration_Cont_A_13:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TREECKO, 0, Turpia_Defeat_Basil, Turia_Celebration_Cont_B
+	return
+
+Turpia_Celebration_Cont_A_14:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_TORCHIC, 0, Turpia_Defeat_Basil, Turia_Celebration_Cont_B
+	return
+
+Turpia_Celebration_Cont_A_15:
+	trainerbattle_continue_after_lose TRAINER_GRC_BASIL_TURPIA_MUDKIP, 0, Turpia_Defeat_Basil, Turia_Celebration_Cont_B
 	return
 
 
 Turia_Celebration_Cont_B::
 	special HealPlayerParty
-	msgbox Turia_Celebration_Cont_B_Text_0, MSGBOX_DEFAULT
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Turia_Celebration_Cont_B_2
+	msgbox Turia_Celebration_Cont_B_Text_1
+Turia_Celebration_Cont_B_1:
 	closemessage
+	applymovement 7, Turpia_Rival_RunsOff
+	waitmovement 0
+	removeobject 7
+	applymovement 6, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	compare VAR_RESULT, MALE
+	goto_if_eq Turia_Celebration_Cont_B_6
+	msgbox Turia_Celebration_Cont_B_Text_3
+Turia_Celebration_Cont_B_5:
+	closemessage
+	applymovement 6, Turpia_Tori_RunsOff
+	waitmovement 0
+	removeobject 6
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	setflag FLAG_GRC_R1_HIDE_RIVALS
 	clearflag FLAG_GRC_R1_HIDE_NPCS
@@ -275,6 +422,42 @@ Turia_Celebration_Cont_B::
 	releaseall
 	end
 
+Turia_Celebration_Cont_B_2:
+	msgbox Turia_Celebration_Cont_B_Text_0
+	goto Turia_Celebration_Cont_B_1
+
+Turia_Celebration_Cont_B_6:
+	msgbox Turia_Celebration_Cont_B_Text_2
+	goto Turia_Celebration_Cont_B_5
+
+
+Turpia_Rival_RunsOff:
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_up
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	step_end
+
+Turpia_Tori_RunsOff:
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
 
 Turpia_Prof_Runsoff:
 	walk_fast_left
@@ -1974,8 +2157,19 @@ Turpia_LacusSign_Text_1:
 Turpia_FractalSign_Text_0:
 	.string "“Fractal”\nFOR SALE!$"
 
+Turpia_SpruceWhileBagPick_Text_0:
+	.string "Prof. Spruce: Go ahead, {PLAYER}! I'm\n"
+	.string "positively itching to see which\l"
+	.string "Pokémon the three of you will be\l"
+	.string "choosing.\p"
+	.string "Just don't keep your pals waiting for\n"
+	.string "too long, okay?$"
+
 Turpia_DontRunAway_Text_0:
-	.string "yo wassu u dont want???$"
+	.string "Prof. Spruce: Hey, where do you think\n"
+	.string "you're scampering off to?\p"
+	.string "Aren't you going to pick your first\n"
+	.string "Pokémon?$"
 
 Turpia_Celebration_Text_0:
 	.string "Prof. Spruce: Thanks for coming here,\n"
@@ -2031,29 +2225,153 @@ Turpia_Celebration_Text_9:
 Turpia_Celebration_Text_10:
 	.string "Basil: Go ahead, {PLAYER}!$"
 
+Turpia_Celebration_Text_11:
+	.string "Alyssa: We did tie as winners in the\n"
+	.string "competition, so…\p"
+	.string "How about we let {PLAYER} pick first?\n"
+	.string "I don't mind a little challenge!$"
+
+Turpia_Celebration_Text_12:
+	.string "Basil: Y'know, the three of us all won,\n"
+	.string "so…\p"
+	.string "I'll let {PLAYER} pick before me. That\n"
+	.string "kind of challenge is just what I want!$"
+
+Turpia_Celebration_Text_13:
+	.string "Tori: Fine by me. I don't care about the\n"
+	.string "order myself, but if it makes you\l"
+	.string "happy… Go ahead, {PLAYER}.$"
+
+Turpia_Celebration_Text_14:
+	.string "Alyssa: Oh, I'm excited now!$"
+
+Turpia_Celebration_Text_15:
+	.string "Basil: Can't wait to see what you pick!$"
+
+Turpia_Celebration_Text_16:
+	.string "Alyssa: The winner deserves to have the\n"
+	.string "first say, in my opinion.\p"
+	.string "Pick whichever one you'd like,\n"
+	.string "{PLAYER}! I'll choose mine once\l"
+	.string "you're done.$"
+
+Turpia_Celebration_Text_17:
+	.string "Basil: If you ask me, it's only right that\n"
+	.string "the winner goes first.\p"
+	.string "As far as I care, you can go ahead and\n"
+	.string "pick one, {PLAYER}! I'll go after you.$"
+
+Turpia_Celebration_Text_18:
+	.string "Tori: Don't worry. I don't mind going\n"
+	.string "last. You two are more excited about\l"
+	.string "this than I am, anyhow.$"
+
+Turpia_Celebration_Text_19:
+	.string "Alyssa: Now I can feel the tension!\n"
+	.string "Don't dawdle on it, {PLAYER}!$"
+
+Turpia_Celebration_Text_20:
+	.string "Basil: The suspense! C'mon, don't keep\n"
+	.string "us waiting too long, {PLAYER}!$"
+
 Turpia_BagPickStarter_Text_0:
-	.string "oy here's your pkmn\p"
+	.string "Prof. Spruce: You've made up your mind,\n"
+	.string "huh? Congrats on obtaining your first\l"
+	.string "Pokémon!\p"
 	.string "{PLAYER} received the\n"
 	.string "{STR_VAR_1}!$"
 
 Turpia_BagPickStarter_Text_1:
-	.string "congrats do u want to nickname it$"
+	.string "Prof. Spruce: Are you giving it a\n"
+	.string "nickname? No one's stopping you, but\l"
+	.string "no one's forcing you, either.$"
 
 Turpia_BagPickStarter_Text_2:
-	.string "BA takes {STR_VAR_2} and Tori takes\n"
-	.string "{STR_VAR_3}$"
+	.string "Alyssa: Okay, then this one will be mine!\p"
+	.string "Alyssa received the {STR_VAR_2}!$"
 
 Turpia_BagPickStarter_Text_3:
-	.string "prof says oops gtg bai$"
+	.string "Basil: Right, then I'll be taking this\n"
+	.string "one!\p"
+	.string "Basil received the {STR_VAR_2}!$"
 
 Turpia_BagPickStarter_Text_4:
-	.string "battle 1$"
+	.string "Tori: Yeah, okay, I'll have this one,\n"
+	.string "then.\p"
+	.string "Tori received the {STR_VAR_3}!$"
+
+Turpia_BagPickStarter_Text_5:
+	.string "Prof. Spruce: Whoops! Hahahaha… Seems\n"
+	.string "I got an interview coming up over in\l"
+	.string "Borago City.\p"
+	.string "I'm sorry, but can you three come pick\n"
+	.string "up your Pokédexes in my lab? It's in\l"
+	.string "Borago City, right across Route 1.\p"
+	.string "I need to hurry now, so I'll see you\n"
+	.string "there!$"
+
+Turpia_BagPickStarter_Text_6:
+	.string "Alyssa: Now that we all have our first\n"
+	.string "Pokémon… There's only one thing left\l"
+	.string "to do!$"
+
+Turpia_BagPickStarter_Text_7:
+	.string "Basil: We all have our first Pokémon\n"
+	.string "now… You know what that means, right?\l"
+	.string "I bet you do!$"
+
+Turpia_BagPickStarter_Text_8:
+	.string "Tori: Oh. Right. {PLAYER}, let's get\n"
+	.string "this over with, shall we? I'll take you\l"
+	.string "on first.$"
+
+Turpia_BagPickStarter_Text_9:
+	.string "Alyssa: Aww…$"
+
+Turpia_BagPickStarter_Text_10:
+	.string "Basil: Aw…$"
+
+Turpia_BagPickStarter_Text_11:
+	.string "Tori: You can let loose once I'm done,\n"
+	.string "{RIVAL}. Be patient.\p"
+	.string "Anyway, let's do this.$"
 
 Turpia_Celebration_Cont_A_Text_0:
-	.string "battle 2$"
+	.string "Alyssa: That was the best! All right, you\n"
+	.string "ready, {PLAYER}?\p"
+	.string "You better be, because I'm not going\n"
+	.string "easy on you!$"
+
+Turpia_Celebration_Cont_A_Text_1:
+	.string "Basil: That was awesome! Okay, now it's\n"
+	.string "my turn!\p"
+	.string "I'm not gonna hold anything back,\n"
+	.string "{PLAYER}, so better give this your\l"
+	.string "all!$"
 
 Turia_Celebration_Cont_B_Text_0:
-	.string "The end$"
+	.string "Alyssa: Whew! I'm going right ahead,\n"
+	.string "since I don't plan on standing around\l"
+	.string "all day! Catch you in Borago!$"
+
+Turia_Celebration_Cont_B_Text_1:
+	.string "Basil: Whew! I don't know about you, but\n"
+	.string "I'm not gonna waste any more time! See\l"
+	.string "you both in Borago!$"
+
+Turia_Celebration_Cont_B_Text_2:
+	.string "Tori: And there she goes. Sheesh, where\n"
+	.string "does she get all that energy from?\p"
+	.string "Oh, well… I guess I'd better get going,\n"
+	.string "too. We'll see each other again in\l"
+	.string "Borago.$"
+
+Turia_Celebration_Cont_B_Text_3:
+	.string "Tori: And there he goes. Sheesh, where\n"
+	.string "does he get all that energy from?\p"
+	.string "Oh, well… I guess I'd better get going,\n"
+	.string "too. We'll see each other again in\l"
+	.string "Borago.$"
 
 Turpia_NoAccessR1_Text_0:
 	.string "Oh, hey! The Professor is still getting\n"
@@ -2283,5 +2601,11 @@ Turpia_ProtaSquad_C_Text_27:
 Turpia_ProtaSquad_C_Text_28:
 	.string "{PLAYER} received 5 Venture Balls.$"
 
-Turpia_Defeat_Rival::
-	.string "Ouchie$"
+Turpia_Defeat_Tori::
+	.string "Guess that's over and done with, then.$"
+
+Turpia_Defeat_Basil::
+	.string "That was a blast! I won't lose next\ntime, though!$"
+
+Turpia_Defeat_Alyssa::
+	.string "That was awesome! I'll come out on top\nnext time, though!$"

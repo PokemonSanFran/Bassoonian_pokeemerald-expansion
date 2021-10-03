@@ -66,12 +66,17 @@ script Turpia_FractalSign
 	msgbox("“Fractal”\nFOR SALE!",MSGBOX_SIGN)
 }
 
+script Turpia_SpruceWhileBagPick
+{
+	msgbox(format("Prof. Spruce: Go ahead, {PLAYER}! I'm positively itching to see which Pokémon the three of you will be choosing.\pJust don't keep your pals waiting for too long, okay?"),MSGBOX_NPC)
+}
+
 script Turpia_DontRunAway
 {
 	lockall
 	applymovement(9,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("yo wassu u dont want???"))
+	msgbox(format("Prof. Spruce: Hey, where do you think you're scampering off to?\pAren't you going to pick your first Pokémon?"))
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkDown)
 	waitmovement(0)
@@ -113,15 +118,15 @@ script Turpia_Celebration
 	applymovement(6,Common_Movement_WalkLeft)
 	applymovement(7,Turpia_Rival_MovesToBox)
 	waitmovement(0)
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Tori: Who should pick first?"))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
 	getpartysize
 	if (var(VAR_RESULT)==0)
 	{
-		applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
-		waitmovement(0)
-		msgbox(format("Tori: Who should pick first?"))
-		closemessage
-		applymovement(7,Common_Movement_WalkInPlaceFastestDown)
-		waitmovement(0)
 		checkplayergender
 		if(var(VAR_RESULT)==MALE)
 		{
@@ -136,6 +141,8 @@ script Turpia_Celebration
 		waitmovement(0)
 		msgbox(format("Tori: Whichever works, really. For all I care, you can go first, {PLAYER}."))
 		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
 		if(var(VAR_RESULT)==MALE)
 		{
 			msgbox(format("Alyssa: After you, {PLAYER}!"))
@@ -147,11 +154,57 @@ script Turpia_Celebration
 	}
 	elif (var(VAR_RESULT)==1)
 	{
-
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: We did tie as winners in the competition, so…\pHow about we let {PLAYER} pick first? I don't mind a little challenge!"))
+		}
+		else
+		{
+			msgbox(format("Basil: Y'know, the three of us all won, so…\pI'll let {PLAYER} pick before me. That kind of challenge is just what I want!"))
+		}
+		closemessage
+		applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Fine by me. I don't care about the order myself, but if it makes you happy… Go ahead, {PLAYER}."))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: Oh, I'm excited now!"))
+		}
+		else
+		{
+			msgbox(format("Basil: Can't wait to see what you pick!"))
+		}
 	}
 	else
 	{
-
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: The winner deserves to have the first say, in my opinion.\pPick whichever one you'd like, {PLAYER}! I'll choose mine once you're done."))
+		}
+		else
+		{
+			msgbox(format("Basil: If you ask me, it's only right that the winner goes first.\pAs far as I care, you can go ahead and pick one, {PLAYER}! I'll go after you."))
+		}
+		closemessage
+		applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Tori: Don't worry. I don't mind going last. You two are more excited about this than I am, anyhow."))
+		closemessage
+		applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Alyssa: Now I can feel the tension! Don't dawdle on it, {PLAYER}!"))
+		}
+		else
+		{
+			msgbox(format("Basil: The suspense! C'mon, don't keep us waiting too long, {PLAYER}!"))
+		}
 	}
 	closemessage
 	releaseall
@@ -166,11 +219,15 @@ script Turpia_BagPickStarter
 	special(ChooseStarter)
 	waitstate
 	bufferleadmonspeciesname(0)
-	message(format("oy here's your pkmn\p{PLAYER} received the {STR_VAR_1}!"))
+	applymovement(9,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	message(format("Prof. Spruce: You've made up your mind, huh? Congrats on obtaining your first Pokémon!\p{PLAYER} received the {STR_VAR_1}!"))
 	waitmessage
 	playfanfare(MUS_OBTAIN_ITEM)
 	waitfanfare
-	msgbox(format("congrats do u want to nickname it"),MSGBOX_YESNO)
+	applymovement(9,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Are you giving it a nickname? No one's stopping you, but no one's forcing you, either."),MSGBOX_YESNO)
 	if(var(VAR_RESULT))
 	{
 		setvar(VAR_0x8004,0)
@@ -188,9 +245,35 @@ script Turpia_BagPickStarter
 			bufferspeciesname(1,SPECIES_TREECKO)
 			bufferspeciesname(2,SPECIES_TORCHIC)
 	}
-	msgbox(format("BA takes {STR_VAR_2} and Tori takes {STR_VAR_3}"))
-	closemessage
-	msgbox(format("prof says oops gtg bai"))
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		message(format("Alyssa: Okay, then this one will be mine!\pAlyssa received the {STR_VAR_2}!"))
+	}
+	else
+	{
+		message(format("Basil: Right, then I'll be taking this one!\pBasil received the {STR_VAR_2}!"))
+	}
+	waitmessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	message(format("Tori: Yeah, okay, I'll have this one, then.\pTori received the {STR_VAR_3}!"))
+	waitmessage
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	playse(SE_POKENAV_ON)
+	delay(30)
+	applymovement(9,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	delay(30)
+	playse(SE_POKENAV_OFF)
+	applymovement(9,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Whoops! Hahahaha… Seems I got an interview coming up over in Borago City.\pI'm sorry, but can you three come pick up your Pokédexes in my lab? It's in Borago City, right across Route 1.\pI need to hurry now, so I'll see you there!"))
 	closemessage
 	applymovement(9,Common_Movement_WalkRight)
 	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_Prof_MovesUp)
@@ -200,40 +283,96 @@ script Turpia_BagPickStarter
 	waitmovement(0)
 	removeobject(9)
 	setvar(VAR_LITTLEROOT_TOWN_STATE,2)
-	msgbox(format("battle 1"))
+	applymovement(OBJ_EVENT_ID_PLAYER,Turpia_PlayerMovesBackIntoPosition)
+	waitmovement(0)
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Now that we all have our first Pokémon… There's only one thing left to do!"))
+	}
+	else
+	{
+		msgbox(format("Basil: We all have our first Pokémon now… You know what that means, right? I bet you do!"))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Tori: Oh. Right. {PLAYER}, let's get this over with, shall we? I'll take you on first."))
+	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Aww…"))
+	}
+	else
+	{
+		msgbox(format("Basil: Aw…"))
+	}
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Tori: You can let loose once I'm done, {RIVAL}. Be patient.\pAnyway, let's do this."))
 	closemessage
 	switch(var(VAR_STARTER_MON))
 	{
 		case 0:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TREECKO,0,Turpia_Defeat_Tori,Turpia_Celebration_Cont_A)
 		case 1:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_TORCHIC,0,Turpia_Defeat_Tori,Turpia_Celebration_Cont_A)
 		case 2:
-			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turpia_Celebration_Cont_A)
+			trainerbattle_continue_after_lose(TRAINER_GRC_TORI_TURPIA_MUDKIP,0,Turpia_Defeat_Tori,Turpia_Celebration_Cont_A)
 	}
 }
 
-text Turpia_Defeat_Rival
+movement Turpia_PlayerMovesBackIntoPosition
 {
-	"Ouchie"
+	walk_down
+	walk_in_place_fastest_right
+}
+
+text Turpia_Defeat_Tori
+{
+	"Guess that's over and done with, then."
+}
+
+text Turpia_Defeat_Basil
+{
+	"That was a blast! I won't lose next\ntime, though!"
+}
+
+text Turpia_Defeat_Alyssa
+{
+	"That was awesome! I'll come out on top\nnext time, though!"
 }
 
 script Turpia_Celebration_Cont_A
 {
 	special(HealPlayerParty)
-	msgbox(format("battle 2"))
-	closemessage
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
 	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: That was the best! All right, you ready, {PLAYER}?\pYou better be, because I'm not going easy on you!"))
+	}
+	else
+	{
+		msgbox(format("Basil: That was awesome! Okay, now it's my turn!\pI'm not gonna hold anything back, {PLAYER}, so better give this your all!"))
+	}
+	closemessage
 	if(var(VAR_RESULT)==MALE)
 	{
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TREECKO,0,Turpia_Defeat_Alyssa,Turia_Celebration_Cont_B)
 			case 1:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_TORCHIC,0,Turpia_Defeat_Alyssa,Turia_Celebration_Cont_B)
 			case 2:
-				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_ALYSSA_TURPIA_MUDKIP,0,Turpia_Defeat_Alyssa,Turia_Celebration_Cont_B)
 		}
 	}
 	else
@@ -241,11 +380,11 @@ script Turpia_Celebration_Cont_A
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TREECKO,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TREECKO,0,Turpia_Defeat_Basil,Turia_Celebration_Cont_B)
 			case 1:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TORCHIC,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_TORCHIC,0,Turpia_Defeat_Basil,Turia_Celebration_Cont_B)
 			case 2:
-				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_MUDKIP,0,Turpia_Defeat_Rival,Turia_Celebration_Cont_B)
+				trainerbattle_continue_after_lose(TRAINER_GRC_BASIL_TURPIA_MUDKIP,0,Turpia_Defeat_Basil,Turia_Celebration_Cont_B)
 		}
 	}
 }
@@ -253,14 +392,56 @@ script Turpia_Celebration_Cont_A
 script Turia_Celebration_Cont_B
 {
 	special(HealPlayerParty)
-	msgbox(format("The end"),MSGBOX_DEFAULT)
+	applymovement(7,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Whew! I'm going right ahead, since I don't plan on standing around all day! Catch you in Borago!"))
+	}
+	else
+	{
+		msgbox(format("Basil: Whew! I don't know about you, but I'm not gonna waste any more time! See you both in Borago!"))
+	}
 	closemessage
+	applymovement(7,Turpia_Rival_RunsOff)
+	waitmovement(0)
+	removeobject(7)
+	applymovement(6,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Tori: And there she goes. Sheesh, where does she get all that energy from?\pOh, well… I guess I'd better get going, too. We'll see each other again in Borago."))
+	}
+	else
+	{
+		msgbox(format("Tori: And there he goes. Sheesh, where does he get all that energy from?\pOh, well… I guess I'd better get going, too. We'll see each other again in Borago."))
+	}
+	closemessage
+	applymovement(6,Turpia_Tori_RunsOff)
+	waitmovement(0)
+	removeobject(6)
 	setflag(FLAG_GRC_TURPIA_HIDE_RIVALS)
 	setflag(FLAG_GRC_R1_HIDE_RIVALS)
 	clearflag(FLAG_GRC_R1_HIDE_NPCS)
 	setflag(FLAG_SYS_POKEMON_GET)
 	releaseall
 	end
+}
+
+movement Turpia_Rival_RunsOff
+{
+	player_run_left * 3
+	player_run_up
+	player_run_left * 6
+}
+
+movement Turpia_Tori_RunsOff
+{
+	walk_up
+	walk_left * 4
+	walk_up
+	walk_left * 6
 }
 
 movement Turpia_Prof_Runsoff
