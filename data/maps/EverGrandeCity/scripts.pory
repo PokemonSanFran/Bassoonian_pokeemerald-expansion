@@ -16,6 +16,8 @@ script DebugTestScript
 	givemon(SPECIES_WHISMUR_HANAUAN,50,ITEM_NONE)
 	givemon(SPECIES_LOUDRED_HANAUAN,50,ITEM_NONE)
 	givemon(SPECIES_EXPLOUD_HANAUAN,50,ITEM_NONE)
+	giveitem(ITEM_TM27_RETURN)
+	giveitem(ITEM_TM46_THIEF)
 }
 
 script Borago_PushAwayPlayerWithoutDrive
