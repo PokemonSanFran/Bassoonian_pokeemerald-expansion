@@ -1998,3 +1998,10 @@ const u8 gText_SideQuestReward_27[] = _("Reward 27");
 const u8 gText_SideQuestReward_28[] = _("Reward 28");
 const u8 gText_SideQuestReward_29[] = _("Reward 29");
 const u8 gText_SideQuestReward_30[] = _("Reward 30");
+
+// fr_tm_case_port
+const u8 gText_TMCase[] = _("TM Case");
+const u8 gText_Close[] = _("Close");
+const u8 gText_TMCaseWillBePutAway[] = _("The TM Case will be\nput away.");
+const u8 gText_FontSize0[] = _("{SIZE 0}");
+const u8 gText_FontSize2[] = _("{SIZE 2}");
