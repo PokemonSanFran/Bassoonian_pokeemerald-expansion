@@ -146,7 +146,7 @@ script Turpia_RivalHouse_pickuprival {
 		{
 			loadword(0,Turpia_Follower_RivalMale)
 		}
-		setfollower(7,0x100)
+		setfollower(7,0x101)
 		setvar(VAR_GRC_TURPIA_INTRO_STATE,2)
 	}
 	else
@@ -200,7 +200,7 @@ Turpia_Follower_RivalMale::
 Turpia_Follower_RivalFemale::
 	lock
 	facefollower
-	msgbox Turpia_Follower_RivalMale_text
+	msgbox Turpia_Follower_RivalFemale_text
 	release
 	end
 	

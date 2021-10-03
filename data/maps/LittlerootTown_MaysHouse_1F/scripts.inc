@@ -111,7 +111,7 @@ Turpia_RivalHouse_pickuprival_23:
 	goto_if_eq Turpia_RivalHouse_pickuprival_27
 	loadword 0, Turpia_Follower_RivalMale
 Turpia_RivalHouse_pickuprival_26:
-	setfollower 7, 0x100
+	setfollower 7, 0x101
 	setvar VAR_GRC_TURPIA_INTRO_STATE, 2
 	goto Turpia_RivalHouse_pickuprival_22
 
@@ -163,7 +163,7 @@ Turpia_Follower_RivalMale::
 Turpia_Follower_RivalFemale::
 	lock
 	facefollower
-	msgbox Turpia_Follower_RivalMale_text
+	msgbox Turpia_Follower_RivalFemale_text
 	release
 	end
 	
