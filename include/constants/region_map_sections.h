@@ -90,7 +90,7 @@
 #define MAPSEC_SECRET_BASE                  0x56
 #define MAPSEC_DYNAMIC                      0x57
 #define MAPSEC_CALLUNE_GATE                  0x58
-#define MAPSEC_VIRIDIAN_CITY                0x59
+#define MAPSEC_BORAGO_GATE                0x59
 #define MAPSEC_PEWTER_CITY                  0x5A
 #define MAPSEC_CERULEAN_CITY                0x5B
 #define MAPSEC_LAVENDER_TOWN                0x5C

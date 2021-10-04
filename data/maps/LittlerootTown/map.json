@@ -207,7 +207,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 12,
       "y": 1,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
