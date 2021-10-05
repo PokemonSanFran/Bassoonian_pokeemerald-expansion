@@ -1,1 +1,16 @@
 mapscripts BoragoGate_MapScripts {}
+
+script BoragoGate_Operator
+{
+    msgbox(format("Are you heading into the big, bustling city? Or are you going out into the wild?\pEither way, with this gate, you can stop to take a break in all the peace and quiet you need."),MSGBOX_NPC)
+}
+
+script BoragoGate_YoungLady
+{
+    msgbox(format("Bag, check… Pokémon, check… P-Drive, check…\lOkay! I'm good to go!"),MSGBOX_NPC)
+}
+
+script BoragoGate_Man
+{
+    msgbox(format("It's nice to take a breather after a long day. Within these gates, you can just sit down and clear your mind. Whoever invented them deserves a raise!"),MSGBOX_NPC)
+}
