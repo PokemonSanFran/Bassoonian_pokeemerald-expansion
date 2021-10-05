@@ -4450,6 +4450,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/EverGrandeCity_House2_UpperFloor/border.bin",
       "blockdata_filepath": "data/layouts/EverGrandeCity_House2_UpperFloor/map.bin"
+    },
+    {
+      "id": "LAYOUT_BORAGO_GATE",
+      "name": "BoragoGate_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/BoragoGate/border.bin",
+      "blockdata_filepath": "data/layouts/BoragoGate/map.bin"
     }
   ]
 }

@@ -593,7 +593,8 @@
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
-    "Route104_PrototypePrettyPetalFlowerShop"
+    "Route104_PrototypePrettyPetalFlowerShop",
+    "BoragoGate"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

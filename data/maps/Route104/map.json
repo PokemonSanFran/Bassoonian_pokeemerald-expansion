@@ -475,18 +475,18 @@
   ],
   "warp_events": [
     {
-      "x": 16,
-      "y": 43,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE104_MR_BRINEYS_HOUSE",
-      "dest_warp_id": 0
+      "x": 13,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_BORAGO_GATE",
+      "dest_warp_id": 2
     },
     {
-      "x": 1,
-      "y": 19,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
-      "dest_warp_id": 0
+      "x": 14,
+      "y": 1,
+      "elevation": 3,
+      "dest_map": "MAP_BORAGO_GATE",
+      "dest_warp_id": 3
     },
     {
       "x": 31,
@@ -561,8 +561,8 @@
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 4,
+      "x": 13,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route104_Sign_BoragoUp"
