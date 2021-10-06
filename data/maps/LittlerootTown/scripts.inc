@@ -4,6 +4,11 @@ LittlerootTown_MapScripts::
 	.byte 0
 
 
+EventScript_HMFlyPole::
+	msgbox EventScript_HMFlyPole_Text_0, MSGBOX_SIGN
+	return
+
+
 Turpia_Outside_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call Turpia_ShowRivals_Start_Movement
@@ -2132,6 +2137,9 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 @	.string "I gave you?\p"
 @	.string "I have something to show you.\n"
 @	.string "Let's go to my LAB.$"
+
+EventScript_HMFlyPole_Text_0:
+	.string "It's a bell.$"
 
 Turpia_SloganBoard_Text_0:
 	.string "Turpia Town\n“A Peaceful Passage”$"

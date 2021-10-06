@@ -3,6 +3,10 @@ mapscripts LittlerootTown_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE: Turpia_Outside_OnFrame
 }
 
+script EventScript_HMFlyPole {
+	msgbox("It's a bell.",MSGBOX_SIGN)
+}
+
 raw `
 Turpia_Outside_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
