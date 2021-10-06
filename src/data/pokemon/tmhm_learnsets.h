@@ -24769,4 +24769,8 @@ const u32 gTMHMLearnsets[][2] =
     [SPECIES_LOUDRED_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 
     [SPECIES_EXPLOUD_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+
+    [SPECIES_CROAGUNK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
+
+    [SPECIES_TOXICROAK_HANAUAN]    = TMHM_LEARNSET(0), //To verify
 };

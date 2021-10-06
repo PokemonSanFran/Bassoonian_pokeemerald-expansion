@@ -5454,6 +5454,22 @@ static const union AnimCmd sAnim_TOXICROAK_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_CROAGUNK_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TOXICROAK_HANAUAN_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_CARNIVINE_1[] =
 {
     ANIMCMD_FRAME(0, 30),
@@ -11829,6 +11845,16 @@ static const union AnimCmd *const sAnims_TOXICROAK[] ={
     sAnim_TOXICROAK_1,
 };
 
+static const union AnimCmd *const sAnims_CROAGUNK_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_CROAGUNK_HANAUAN_1,
+};
+
+static const union AnimCmd *const sAnims_TOXICROAK_HANAUAN[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TOXICROAK_HANAUAN_1,
+};
+
 static const union AnimCmd *const sAnims_CARNIVINE[] ={
     sAnim_GeneralFrame0,
     sAnim_CARNIVINE_1,
@@ -15933,6 +15959,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(WHISMUR_HANAUAN),
     ANIM_CMD(LOUDRED_HANAUAN),
     ANIM_CMD(EXPLOUD_HANAUAN),
+    ANIM_CMD(CROAGUNK_HANAUAN),
+    ANIM_CMD(TOXICROAK_HANAUAN),
     ANIM_CMD(EGG),
 };
 

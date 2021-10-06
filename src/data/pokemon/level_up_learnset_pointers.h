@@ -1282,4 +1282,6 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_WHISMUR_HANAUAN] = sWhismurHanauanLevelUpLearnset,
     [SPECIES_LOUDRED_HANAUAN] = sLoudredHanauanLevelUpLearnset,
     [SPECIES_EXPLOUD_HANAUAN] = sExploudHanauanLevelUpLearnset,
+    [SPECIES_CROAGUNK_HANAUAN] = sCroagunkHanauanLevelUpLearnset,
+    [SPECIES_TOXICROAK_HANAUAN] = sToxicroakHanauanLevelUpLearnset,
 };

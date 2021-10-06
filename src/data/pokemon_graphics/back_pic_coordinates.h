@@ -6152,4 +6152,14 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x88,
         .y_offset = 0,
     },
+    [SPECIES_CROAGUNK_HANAUAN] =
+    {
+        .size = 0x77,
+        .y_offset = 6,
+    },
+    [SPECIES_TOXICROAK_HANAUAN] =
+    {
+        .size = 0x77,
+        .y_offset = 6,
+    },
 };

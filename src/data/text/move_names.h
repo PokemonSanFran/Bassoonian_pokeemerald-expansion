@@ -764,4 +764,5 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_VIBE_CANNON] = _("Vibe Cannon"),
     [MOVE_ABYSSAL_BASS] = _("Abyssal Bass"),
     [MOVE_MALICE_BLAST] = _("Malice Blast"),
+    [MOVE_VENOM_SURGE] = _("Venom Surge"),
 };

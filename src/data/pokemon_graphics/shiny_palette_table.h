@@ -1283,6 +1283,8 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(WHISMUR_HANAUAN, gMonShinyPalette_WhismurHanauan),
     SPECIES_SHINY_PAL(LOUDRED_HANAUAN, gMonShinyPalette_LoudredHanauan),
     SPECIES_SHINY_PAL(EXPLOUD_HANAUAN, gMonShinyPalette_ExploudHanauan),
+    SPECIES_SHINY_PAL(CROAGUNK_HANAUAN, gMonShinyPalette_CroagunkHanauan),
+    SPECIES_SHINY_PAL(TOXICROAK_HANAUAN, gMonShinyPalette_ToxicroakHanauan),
 };
 
 const struct CompressedSpritePalette gMonShinyPaletteTableFemale[] =

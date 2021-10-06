@@ -5454,6 +5454,14 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboStarterId = 0,
         .comboMoves = {0}
     },
+
+    [MOVE_VENOM_SURGE] =
+    {
+        .effect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .comboStarterId = 0,
+        .comboMoves = {0}
+    },
 };
 
 const struct ContestEffect gContestEffects[] =

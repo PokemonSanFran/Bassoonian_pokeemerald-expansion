@@ -6466,3 +6466,17 @@ const u32 gMonBackPic_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_ex
 const u32 gMonShinyPalette_ExploudHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_exploud/shiny.gbapal.lz");
 const u8 gMonIcon_ExploudHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_exploud/icon.4bpp");
 const u8 gMonFootprint_ExploudHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_exploud/footprint.1bpp");
+
+const u32 gMonFrontPic_CroagunkHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_croagunk/anim_front.4bpp.lz");
+const u32 gMonPalette_CroagunkHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_croagunk/normal.gbapal.lz");
+const u32 gMonBackPic_CroagunkHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_croagunk/back.4bpp.lz");
+const u32 gMonShinyPalette_CroagunkHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_croagunk/shiny.gbapal.lz");
+const u8 gMonIcon_CroagunkHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_croagunk/icon.4bpp");
+const u8 gMonFootprint_CroagunkHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_croagunk/footprint.1bpp");
+
+const u32 gMonFrontPic_ToxicroakHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_toxicroak/anim_front.4bpp.lz");
+const u32 gMonPalette_ToxicroakHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_toxicroak/normal.gbapal.lz");
+const u32 gMonBackPic_ToxicroakHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_toxicroak/back.4bpp.lz");
+const u32 gMonShinyPalette_ToxicroakHanauan[] = INCBIN_U32("graphics/pokemon/hanauan_toxicroak/shiny.gbapal.lz");
+const u8 gMonIcon_ToxicroakHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_toxicroak/icon.4bpp");
+const u8 gMonFootprint_ToxicroakHanauan[] = INCBIN_U8("graphics/pokemon/hanauan_toxicroak/footprint.1bpp");

@@ -1281,6 +1281,8 @@ gCryTable::
 	cry Cry_Whismur
 	cry Cry_Loudred
 	cry Cry_Exploud
+	cry Cry_Croagunk
+	cry Cry_Toxicroak
 
 	.align 2
 gCryTable2::
@@ -2565,3 +2567,5 @@ gCryTable2::
 	cry2 Cry_Whismur
 	cry2 Cry_Loudred
 	cry2 Cry_Exploud
+	cry2 Cry_Croagunk
+	cry2 Cry_Toxicroak

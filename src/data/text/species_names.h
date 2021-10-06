@@ -1285,4 +1285,6 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
     [SPECIES_WHISMUR_HANAUAN] = _("Whismur"),
     [SPECIES_LOUDRED_HANAUAN] = _("Loudred"),
     [SPECIES_EXPLOUD_HANAUAN] = _("Exploud"),
+    [SPECIES_CROAGUNK_HANAUAN] = _("Croagunk"),
+    [SPECIES_TOXICROAK_HANAUAN] = _("Toxicroak"),
 };

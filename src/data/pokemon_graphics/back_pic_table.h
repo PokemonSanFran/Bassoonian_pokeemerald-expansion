@@ -1283,6 +1283,8 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(WHISMUR_HANAUAN, gMonBackPic_WhismurHanauan),
     SPECIES_SPRITE(LOUDRED_HANAUAN, gMonBackPic_LoudredHanauan),
     SPECIES_SPRITE(EXPLOUD_HANAUAN, gMonBackPic_ExploudHanauan),
+    SPECIES_SPRITE(CROAGUNK_HANAUAN, gMonBackPic_CroagunkHanauan),
+    SPECIES_SPRITE(TOXICROAK_HANAUAN, gMonBackPic_ToxicroakHanauan),
 };
 
 const struct CompressedSpriteSheet gMonBackPicTableFemale[] =

@@ -4463,5 +4463,22 @@ const u16 gEggMoves[] = {
         MOVE_TAKE_DOWN,
         MOVE_FEINT_ATTACK),
 
+    egg_moves(CROAGUNK_HANAUAN,
+        MOVE_SLUDGE,
+        MOVE_ACUPRESSURE,
+        MOVE_FLATTER,
+        MOVE_MIRROR_COAT,
+        MOVE_DYNAMIC_PUNCH,
+        MOVE_DRAIN_PUNCH,
+        MOVE_ZEN_HEADBUTT,
+        MOVE_FAKE_OUT,
+        MOVE_ME_FIRST,
+        MOVE_MEDITATE,
+        MOVE_WIDE_GUARD,
+        MOVE_VACUUM_WAVE,
+        MOVE_ROLE_PLAY,
+        MOVE_MEMENTO,
+        MOVE_DARK_PULSE),
+
     EGG_MOVES_TERMINATOR
 };
