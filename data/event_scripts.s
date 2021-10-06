@@ -1086,3 +1086,5 @@ Common_EventScript_Mart_EventScript_Clerk::
 	.include "data/maps/EverGrandeCity_House2_UpperFloor/scripts.inc"
 
 	.include "data/maps/BoragoGate/scripts.inc"
+
+	.include "data/maps/CalluneGate/scripts.inc"
