@@ -66,7 +66,7 @@
                                 BAG_POKEBALLS_COUNT))))) + 1)
 
 // Up to 8 item slots can be visible at a time
-#define MAX_ITEMS_SHOWN 8
+#define MAX_ITEMS_SHOWN 6 //8 in e
 
 enum {
     SWITCH_POCKET_NONE,
@@ -96,9 +96,9 @@ enum {
     WIN_ITEM_LIST,
     WIN_DESCRIPTION,
     WIN_POCKET_NAME,
-    WIN_TMHM_INFO_ICONS,
-    WIN_TMHM_INFO,
-    WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
+    //WIN_TMHM_INFO_ICONS,
+    //WIN_TMHM_INFO,
+    //WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
 };
 
 // Item list ID for toSwapPos to indicate an item is not currently being swapped
@@ -366,11 +366,11 @@ static const struct YesNoFuncTable sYesNoSellItemFunctions = {ConfirmSell, Cance
 
 static const struct ScrollArrowsTemplate sBagScrollArrowsTemplate = {
     .firstArrowType = SCROLL_ARROW_LEFT,
-    .firstX = 28,
-    .firstY = 16,
+    .firstX = 8,
+    .firstY = 72,
     .secondArrowType = SCROLL_ARROW_RIGHT,
-    .secondX = 100,
-    .secondY = 16,
+    .secondX = 72,
+    .secondY = 72,
     .fullyUpThreshold = -1,
     .fullyDownThreshold = -1,
     .tileTag = TAG_BAG_SCROLL_ARROW,
@@ -401,58 +401,58 @@ static const struct WindowTemplate sDefaultBagWindows[] =
 {
     [WIN_ITEM_LIST] = {
         .bg = 0,
-        .tilemapLeft = 14,
-        .tilemapTop = 2,
-        .width = 15,
-        .height = 16,
+        .tilemapLeft = 0x0b,
+        .tilemapTop = 0x01,
+        .width = 0x12,
+        .height = 0x0c,
         .paletteNum = 1,
-        .baseBlock = 0x27,
+        .baseBlock = 0x39, //0x27, //frlg: 0x8a
     },
     [WIN_DESCRIPTION] = {
         .bg = 0,
-        .tilemapLeft = 0,
-        .tilemapTop = 13,
-        .width = 14,
-        .height = 6,
+        .tilemapLeft = 0x05,
+        .tilemapTop = 0x0e,
+        .width = 0x19,
+        .height = 0x06,
         .paletteNum = 1,
-        .baseBlock = 0x117,
+        .baseBlock = 0x111, //0xFF, //frlg: 0x162, e: 0x117
     },
     [WIN_POCKET_NAME] = {
         .bg = 0,
-        .tilemapLeft = 4,
-        .tilemapTop = 1,
-        .width = 8,
-        .height = 2,
+        .tilemapLeft = 0x01,
+        .tilemapTop = 0x01,
+        .width = 0x8, //0x09,
+        .height = 0x02,
         .paletteNum = 1,
-        .baseBlock = 0x1A1,
+        .baseBlock = 0x27, //frlg: 0x1f8, e: 0x1a1
     },
-    [WIN_TMHM_INFO_ICONS] = {
+    /*[WIN_TMHM_INFO_ICONS] = {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 13,
-        .width = 5,
-        .height = 6,
+        .width = 1,//5,
+        .height = 1,//6,
         .paletteNum = 12,
-        .baseBlock = 0x16B,
+        .baseBlock = 0x27, //e: 0x16B,
     },
     [WIN_TMHM_INFO] = {
         .bg = 0,
         .tilemapLeft = 7,
         .tilemapTop = 13,
-        .width = 4,
-        .height = 6,
+        .width = 1,//4,
+        .height = 1,//6,
         .paletteNum = 12,
-        .baseBlock = 0x189,
+        .baseBlock = 0x27, //e: 0x189,
     },
     [WIN_MESSAGE] = {
         .bg = 1,
         .tilemapLeft = 2,
         .tilemapTop = 15,
-        .width = 27,
-        .height = 4,
+        .width = 1,//27,
+        .height = 1,//4,
         .paletteNum = 15,
-        .baseBlock = 0x1B1,
-    },
+        .baseBlock = 0x27,//e: 0x1B1,
+    },*/
     DUMMY_WIN_TEMPLATE,
 };
 
@@ -989,16 +989,16 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
             // Print berry quantity
             ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, BERRY_CAPACITY_DIGITS);
             StringExpandPlaceholders(gStringVar4, gText_xVar1);
-            offset = GetStringRightAlignXOffset(7, gStringVar4, 119);
-            BagMenu_Print(windowId, 7, gStringVar4, offset, y, 0, 0, TEXT_SPEED_FF, COLORID_NORMAL);
+            //offset = GetStringRightAlignXOffset(7, gStringVar4, 119);
+            BagMenu_Print(windowId, 0, gStringVar4, 0x6e, y, 0, 0, TEXT_SPEED_FF, COLORID_NORMAL);
         }
         else if (gBagPosition.pocket != KEYITEMS_POCKET && ItemId_GetImportance(itemId) == FALSE)
         {
             // Print item quantity
             ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, BAG_ITEM_CAPACITY_DIGITS);
             StringExpandPlaceholders(gStringVar4, gText_xVar1);
-            offset = GetStringRightAlignXOffset(7, gStringVar4, 119);
-            BagMenu_Print(windowId, 7, gStringVar4, offset, y, 0, 0, TEXT_SPEED_FF, COLORID_NORMAL);
+            //offset = GetStringRightAlignXOffset(7, gStringVar4, 119);
+            BagMenu_Print(windowId, 0, gStringVar4, 0x6e, y, 0, 0, TEXT_SPEED_FF, COLORID_NORMAL);
         }
         else
         {
@@ -1024,7 +1024,7 @@ static void PrintItemDescription(int itemIndex)
         str = gStringVar4;
     }
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
-    BagMenu_Print(WIN_DESCRIPTION, 1, str, 3, 1, 0, 0, 0, COLORID_NORMAL);
+    BagMenu_Print(WIN_DESCRIPTION, 2, str, 0, 3, 2, 0, 0, COLORID_NORMAL);
 }
 
 static void BagMenu_PrintCursor(u8 listTaskId, u8 colorIndex)
@@ -1291,8 +1291,8 @@ static void ReturnToItemList(u8 taskId)
 {
     CreatePocketScrollArrowPair();
     CreatePocketSwitchArrowPair();
-    ClearWindowTilemap(WIN_TMHM_INFO_ICONS);
-    ClearWindowTilemap(WIN_TMHM_INFO);
+    //ClearWindowTilemap(WIN_TMHM_INFO_ICONS);
+    //ClearWindowTilemap(WIN_TMHM_INFO);
     PutWindowTilemap(WIN_DESCRIPTION);
     ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].func = Task_BagMenu_HandleInput;
@@ -1319,12 +1319,11 @@ static u8 GetSwitchBagPocketDirection(void)
 
 static void ChangeBagPocketId(u8 *bagPocketId, s8 deltaBagPocketId)
 {
-    if ((deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == BALLS_POCKET) || (deltaBagPocketId == MENU_CURSOR_DELTA_LEFT && *bagPocketId == BERRIES_POCKET))
-        *bagPocketId += deltaBagPocketId*2;
-    else if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKETS_COUNT - 1)
+    //2 rather than one avoids the TM pocket from being selected
+    if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKETS_COUNT - 2)
         *bagPocketId = 0;
     else if (deltaBagPocketId == MENU_CURSOR_DELTA_LEFT && *bagPocketId == 0)
-        *bagPocketId = POCKETS_COUNT - 1;
+        *bagPocketId = POCKETS_COUNT - 2;
     else
         *bagPocketId += deltaBagPocketId;
 }
@@ -1360,7 +1359,8 @@ static void SwitchBagPocket(u8 taskId, s16 deltaBagPocketId, bool16 skipEraseLis
     }
     DrawPocketIndicatorSquare(gBagPosition.pocket, FALSE);
     DrawPocketIndicatorSquare(newPocket, TRUE);
-    FillBgTilemapBufferRect_Palette0(2, 11, 14, 2, 15, 16);
+    //Does the woosh effect
+    //FillBgTilemapBufferRect_Palette0(2, 11, 14, 2, 15, 16);
     ScheduleBgCopyTilemapToVram(2);
     SetBagVisualPocketId(newPocket, 1);
     RemoveBagSprite(ITEMMENUSPRITE_BALL);
@@ -1391,7 +1391,7 @@ static void Task_SwitchBagPocket(u8 taskId)
     switch (tPocketSwitchState)
     {
     case 0:
-        DrawItemListBgRow(tPocketSwitchTimer);
+        //DrawItemListBgRow(tPocketSwitchTimer);
         if (!(++tPocketSwitchTimer & 1))
         {
             if (tPocketSwitchDir == MENU_CURSOR_DELTA_RIGHT)
@@ -1426,9 +1426,9 @@ static void DrawItemListBgRow(u8 y)
 static void DrawPocketIndicatorSquare(u8 x, bool8 isCurrentPocket)
 {
     if (!isCurrentPocket)
-        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 4/*5*/, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 3/*5*/, 3, 1, 1);
     else
-        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 4/*5*/, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 3/*5*/, 3, 1, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -1666,8 +1666,8 @@ static void OpenContextMenu(u8 taskId)
     {
         ClearWindowTilemap(WIN_DESCRIPTION);
         PrintTMHMMoveData(gSpecialVar_ItemId);
-        PutWindowTilemap(WIN_TMHM_INFO_ICONS);
-        PutWindowTilemap(WIN_TMHM_INFO);
+        //PutWindowTilemap(WIN_TMHM_INFO_ICONS);
+        //PutWindowTilemap(WIN_TMHM_INFO);
         ScheduleBgCopyTilemapToVram(0);
     }
     else
@@ -2565,12 +2565,12 @@ static void RemoveMoneyWindow(void)
 
 static void PrepareTMHMMoveWindow(void)
 {
-    FillWindowPixelBuffer(WIN_TMHM_INFO_ICONS, PIXEL_FILL(0));
-    BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_TYPE, 0, 0);
-    BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_POWER, 0, 12);
-    BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_ACCURACY, 0, 24);
-    BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_PP, 0, 36);
-    CopyWindowToVram(WIN_TMHM_INFO_ICONS, 2);
+    //FillWindowPixelBuffer(WIN_TMHM_INFO_ICONS, PIXEL_FILL(0));
+    //BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_TYPE, 0, 0);
+    //BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_POWER, 0, 12);
+    //BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_ACCURACY, 0, 24);
+    //BlitMenuInfoIcon(WIN_TMHM_INFO_ICONS, MENU_INFO_ICON_PP, 0, 36);
+    //CopyWindowToVram(WIN_TMHM_INFO_ICONS, 2);
 }
 
 static void PrintTMHMMoveData(u16 itemId)
@@ -2579,17 +2579,17 @@ static void PrintTMHMMoveData(u16 itemId)
     u16 moveId;
     const u8* text;
 
-    FillWindowPixelBuffer(WIN_TMHM_INFO, PIXEL_FILL(0));
+    //FillWindowPixelBuffer(WIN_TMHM_INFO, PIXEL_FILL(0));
     if (itemId == ITEM_NONE)
     {
-        for (i = 0; i < 4; i++)
-            BagMenu_Print(WIN_TMHM_INFO, 1, gText_ThreeDashes, 7, i * 12, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
-        CopyWindowToVram(WIN_TMHM_INFO, 2);
+        //for (i = 0; i < 4; i++)
+            //BagMenu_Print(WIN_TMHM_INFO, 1, gText_ThreeDashes, 7, i * 12, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
+        //CopyWindowToVram(WIN_TMHM_INFO, 2);
     }
     else
     {
         moveId = ItemIdToBattleMoveId(itemId);
-        BlitMenuInfoIcon(WIN_TMHM_INFO, gBattleMoves[moveId].type + 1, 0, 0);
+        //BlitMenuInfoIcon(WIN_TMHM_INFO, gBattleMoves[moveId].type + 1, 0, 0);
         
         // Print TMHM power
         if (gBattleMoves[moveId].power <= 1)
@@ -2601,7 +2601,7 @@ static void PrintTMHMMoveData(u16 itemId)
             ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveId].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
-        BagMenu_Print(WIN_TMHM_INFO, 1, text, 7, 12, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
+        //BagMenu_Print(WIN_TMHM_INFO, 1, text, 7, 12, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
 
         // Print TMHM accuracy
         if (gBattleMoves[moveId].accuracy == 0)
@@ -2613,12 +2613,12 @@ static void PrintTMHMMoveData(u16 itemId)
             ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveId].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
-        BagMenu_Print(WIN_TMHM_INFO, 1, text, 7, 24, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
+        //BagMenu_Print(WIN_TMHM_INFO, 1, text, 7, 24, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
 
         // Print TMHM pp
         ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveId].pp, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        BagMenu_Print(WIN_TMHM_INFO, 1, gStringVar1, 7, 36, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
+        //BagMenu_Print(WIN_TMHM_INFO, 1, gStringVar1, 7, 36, 0, 0, TEXT_SPEED_FF, COLORID_TMHM_INFO);
 
-        CopyWindowToVram(WIN_TMHM_INFO, 2);
+        //CopyWindowToVram(WIN_TMHM_INFO, 2);
     }
 }
