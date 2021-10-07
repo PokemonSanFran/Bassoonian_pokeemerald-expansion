@@ -394,130 +394,131 @@ static const u8 sPPMaxDesc[] = _(
 
 // Battle items
 static const u8 sGuardSpecDesc[] = _(
-    "Prevents stat\n"
-    "reduction when\n"
-    "used in battle.");
+    "An item that prevents stat reduction\n"
+    "among the Trainer's party Pokémon for\n"
+    "five turns after it is used in battle.");
 
 static const u8 sDireHitDesc[] = _(
-    "Raises the\n"
-    "critical-hit ratio\n"
-    "during one battle.");
+    "An item that raises the critical-hit\n"
+    "ratio. It can be used only once and\n"
+    "wears off if the Pokémon is withdrawn.");
 
 static const u8 sXAttackDesc[] = _(
-    "Raises the stat\n"
-    "Attack during one\n"
-    "battle.");
+    "An item that boosts the Attack stat of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sXDefendDesc[] = _(
-    "Raises the stat\n"
-    "Defense during one\n"
-    "battle.");
+    "An item that boosts the Defense stat of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sXSpeedDesc[] = _(
-    "Raises the stat\n"
-    "Speed during one\n"
-    "battle.");
+    "An item that boosts the Speed stat of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sXAccuracyDesc[] = _(
-    "Raises accuracy\n"
-    "of attack moves\n"
-    "during one battle.");
+    "An item that boosts the accuracy of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sXSpecialAttackDesc[] = _(
-    "Raises the stat\n"
-    "Sp. Atk during one\n"
-    "battle.");
+    "An item that boosts the Sp. Atk stat of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sXSpecialDefenseDesc[] = _(
-    "Raises the stat\n"
-    "Sp. Def during one\n"
-    "battle.");
+    "An item that boosts the Sp. Def stat of\n"
+    "a Pokémon during a battle. It wears off\n"
+    "once the Pokémon is withdrawn.");
 
 static const u8 sPokeDollDesc[] = _(
-    "Use to flee from\n"
-    "any battle with\n"
-    "a wild Pokémon.");
+    "A doll that attracts the attention of a\n"
+    "Pokémon. It guarantees escape from\n"
+    "any battle with wild Pokémon.");
 
 static const u8 sFluffyTailDesc[] = _(
-    "Use to flee from\n"
-    "any battle with\n"
-    "a wild Pokémon.");
+    "A doll that attracts the attention of a\n"
+    "Pokémon. It guarantees escape from\n"
+    "any battle with wild Pokémon.");
 
 // Field items
 static const u8 sSuperRepelDesc[] = _(
-    "Repels weak wild\n"
-    "Pokémon for 200\n"
-    "steps.");
+    "An item that prevents any low-level\n"
+    "wild Pokémon from jumping out at you\n"
+    "for 200 steps after its use.");
 
 static const u8 sMaxRepelDesc[] = _(
-    "Repels weak wild\n"
-    "Pokémon for 250\n"
-    "steps.");
+    "An item that prevents any low-level\n"
+    "wild Pokémon from jumping out at you\n"
+    "for 250 steps after its use.");
 
 static const u8 sAbilityCapsuleDesc[] = _(
-    "Switches a Poké-\n"
-    "mon's ability.");
+    "A capsule that allows a Pokémon with\n"
+    "two Abilities to switch between these\n"
+    "Abilities when it is used.");
 
 static const u8 sEscapeRopeDesc[] = _(
-    "Use to escape\n"
-    "instantly from a\n"
-    "cave or a dungeon.");
+    "A long and durable rope. Use it to\n"
+    "escape instantly from locations\n"
+    "like caves or dungeons.");
 
 static const u8 sRepelDesc[] = _(
-    "Repels weak wild\n"
-    "Pokémon for 100\n"
-    "steps.");
+    "An item that prevents any low-level\n"
+    "wild Pokémon from jumping out at you\n"
+    "for 100 steps after its use.");
 
 // Evolution stones
 static const u8 sSunStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It burns as\n"
+    "red as the evening sun.");
 
 static const u8 sMoonStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It is as\n"
+    "black as the night sky.");
 
 static const u8 sFireStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. The stone\n"
+    "has a fiery orange heart.");
 
 static const u8 sThunderStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It has a\n"
+    "distinct thunderbolt pattern.");
 
 static const u8 sWaterStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It is the\n"
+    "blue of a pool of clear water.");
 
 static const u8 sLeafStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It has an\n"
+    "unmistakable leaf pattern.");
 
 static const u8 sDawnStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It sparkles\n"
+    "like a glittering eye.");
 
 static const u8 sDuskStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It holds\n"
+    "shadows as dark as can be.");
 
 static const u8 sShinyStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It shines\n"
+    "with a dazzling light.");
 
 static const u8 sIceStoneDesc[] = _(
-    "Makes certain\n"
-    "species of Pokémon\n"
-    "evolve.");
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It has an\n"
+    "unmistakable snowflake pattern.");
 
 // Valuable items
 
