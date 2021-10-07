@@ -523,104 +523,97 @@ static const u8 sIceStoneDesc[] = _(
 // Valuable items
 
 static const u8 sRedApricornDesc[] = _(
-    "A red apricorn.\n"
-    "It assails your\n"
+    "A red apricorn. It assails your\n"
     "nostrils.");
 
 static const u8 sBlueApricornDesc[] = _(
-    "A blue apricorn.\n"
-    "It smells a bit\n"
-    "like grass.");
+    "A blue apricorn. It smells a bit like\n"
+    "grass.");
 
 static const u8 sYellowApricornDesc[] = _(
-    "A yellow apricorn.\n"
-    "It has an invigor-\n"
-    "ating scent.");
+    "A yellow apricorn. It has an\n"
+    "invigorating scent.");
 
 static const u8 sGreenApricornDesc[] = _(
-    "A green apricorn.\n"
-    "It has a strange,\n"
+    "A green apricorn. It has a mysterious,\n"
     "aromatic scent.");
 
 static const u8 sPinkApricornDesc[] = _(
-    "A pink apricorn.\n"
-    "It has a nice,\n"
-    "sweet scent.");
+    "A pink apricorn. It has a nice, sweet\n"
+    "scent.");
 
 static const u8 sWhiteApricornDesc[] = _(
-    "A white apricorn.\n"
-    "It doesn't smell\n"
-    "like anything.");
+    "A white apricorn. It doesn't smell like\n"
+    "anything.");
 
 static const u8 sBlackApricornDesc[] = _(
-    "A black apricorn.\n"
-    "It has an inde-\n"
-    "scribable scent.");
+    "A black apricorn. It has a scent\n"
+    "beyond one's experience.");
 
 static const u8 sTinyMushroomDesc[] = _(
-    "A plain mushroom\n"
-    "that would sell\n"
-    "at a cheap price.");
+    "A very small and rare mushroom.\n"
+    "It's popular with a certain class\n"
+    "of collectors.");
 
 static const u8 sBigMushroomDesc[] = _(
-    "A rare mushroom\n"
-    "that would sell at a\n"
-    "high price.");
+    "A very large and rare mushroom.\n"
+    "It's popular with a certain class\n"
+    "of collectors.");
 
 static const u8 sPearlDesc[] = _(
-    "A pretty pearl\n"
-    "that would sell at a\n"
-    "cheap price.");
+    "A rather small pearl that has a very\n"
+    "nice silvery sheen to it. It can be sold\n"
+    "at a low price to shops.");
 
 static const u8 sBigPearlDesc[] = _(
-    "A lovely large pearl\n"
-    "that would sell at a\n"
-    "high price.");
+    "A rather large pearl that has a very\n"
+    "nice silvery sheen. It can be sold at\n"
+    "a high price to shops.");
 
 static const u8 sStardustDesc[] = _(
-    "Beautiful red sand.\n"
-    "Can be sold at a\n"
-    "high price.");
+    "Lovely red sand that flows between the\n"
+    "fingers with a loose, silky feel. It can\n"
+    "be sold at a low price to shops.");
 
 static const u8 sStarPieceDesc[] = _(
-    "A red gem shard.\n"
-    "It would sell for a\n"
-    "very high price.");
+    "A small shard of a beautiful gem that\n"
+    "gives off a distinctly red sparkle. It\n"
+    "can be sold at a high price to shops.");
 
 static const u8 sNuggetDesc[] = _(
-    "A nugget of pure\n"
-    "gold. Can be sold at\n"
-    "a high price.");
+    "A nugget of the purest gold that gives\n"
+    "off a lustrous gleam in direct light. It\n"
+    "can be sold at a high price to shops.");
 
 static const u8 sHeartScaleDesc[] = _(
-    "A lovely scale.\n"
-    "It is coveted by\n"
-    "collectors.");
+    "A pretty, heart-shaped scale that is\n"
+    "extremely rare. Some people are\n"
+    "happy to receive one.");
 
 static const u8 sRedNectarDesc[] = _(
-    "Flower nectar that\n"
-    "changes the form\n"
-    "of certain Pokémon.");
+    "A flower nectar obtained at Ula'ula\n"
+    "Meadow. It changes the form of certain\n"
+    "species of Pokémon.");
 
 static const u8 sYellowNectarDesc[] = _(
-    "Flower nectar that\n"
-    "changes the form\n"
-    "of certain Pokémon.");
+    "A flower nectar obtained at Ula'ula\n"
+    "Meadow. It changes the form of certain\n"
+    "species of Pokémon.");
 
 static const u8 sPinkNectarDesc[] = _(
-    "Flower nectar that\n"
-    "changes the form\n"
-    "of certain Pokémon.");
+    "A flower nectar obtained at Ula'ula\n"
+    "Meadow. It changes the form of certain\n"
+    "species of Pokémon.");
 
 static const u8 sPurpleNectarDesc[] = _(
-    "Flower nectar that\n"
-    "changes the form\n"
-    "of certain Pokémon.");
+    "A flower nectar obtained at Ula'ula\n"
+    "Meadow. It changes the form of certain\n"
+    "species of Pokémon.");
 
 static const u8 sRareBoneDesc[] = _(
-    "A very rare bone.\n"
-    "It can be sold at\n"
-    "a high price.");
+    "A bone that is extremely valuable for\n"
+    "Pokémon archeology. It can be sold\n"
+    "for a high price to shops.");
 
 // Mail
 static const u8 sOrangeMailDesc[] = _(
@@ -685,339 +678,339 @@ static const u8 sRetroMailDesc[] = _(
 
 // Berries
 static const u8 sCheriBerryDesc[] = _(
-    "A hold item that\n"
-    "heals paralysis\n"
-    "in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from paralysis on its own in battle.");
 
 static const u8 sChestoBerryDesc[] = _(
-    "A hold item that\n"
-    "awakens Pokémon\n"
-    "in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from sleep on its own in battle.");
 
 static const u8 sPechaBerryDesc[] = _(
-    "A hold item that\n"
-    "heals poisoning\n"
-    "in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from poisoning on its own in battle.");
 
 static const u8 sRawstBerryDesc[] = _(
-    "A hold item that\n"
-    "heals a burn in\n"
-    "battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from a burn on its own in battle.");
 
 static const u8 sAspearBerryDesc[] = _(
-    "A hold item that\n"
-    "defrosts Pokémon\n"
-    "in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from being frozen on its own in battle.");
 
 static const u8 sLeppaBerryDesc[] = _(
-    "A hold item that\n"
-    "restores 10 PP in\n"
-    "battle.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "a Pokémon holds one, it can restore 10\n"
+    "PP to a depleted move during battle.");
 
 static const u8 sOranBerryDesc[] = _(
-    "A hold item that\n"
-    "restores 10 HP in\n"
-    "battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can restore\n"
+    "its own HP by 10 points during battle.");
 
 static const u8 sPersimBerryDesc[] = _(
-    "A hold item that\n"
-    "heals confusion\n"
-    "in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from confusion on its own in battle.");
 
 static const u8 sLumBerryDesc[] = _(
-    "A hold item that\n"
-    "heals any status\n"
-    "problem in battle.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, it can recover\n"
+    "from any status condition in battle.");
 
 static const u8 sSitrusBerryDesc[] = _(
-    "A hold item that\n"
-    "restores 30 HP in\n"
-    "battle.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "a Pokémon holds one, it can restore its\n"
+    "own HP by a small amount during battle.");
 
 static const u8 sFigyBerryDesc[] = _(
-    "A hold item that\n"
-    "restores HP but\n"
-    "may confuse.");
+    "If held by a Pokémon, it restores the\n"
+    "user's HP in a pinch, but it will cause\n"
+    "confusion if the user hates the taste.");
 
 static const u8 sWikiBerryDesc[] = _(
-    "A hold item that\n"
-    "restores HP but\n"
-    "may confuse.");
+    "If held by a Pokémon, it restores the\n"
+    "user's HP in a pinch, but it will cause\n"
+    "confusion if the user hates the taste.");
 
 static const u8 sMagoBerryDesc[] = _(
-    "A hold item that\n"
-    "restores HP but\n"
-    "may confuse.");
+    "If held by a Pokémon, it restores the\n"
+    "user's HP in a pinch, but it will cause\n"
+    "confusion if the user hates the taste.");
 
 static const u8 sAguavBerryDesc[] = _(
-    "A hold item that\n"
-    "restores HP but\n"
-    "may confuse.");
+    "If held by a Pokémon, it restores the\n"
+    "user's HP in a pinch, but it will cause\n"
+    "confusion if the user hates the taste.");
 
 static const u8 sIapapaBerryDesc[] = _(
-    "A hold item that\n"
-    "restores HP but\n"
-    "may confuse.");
+    "If held by a Pokémon, it restores the\n"
+    "user's HP in a pinch, but it will cause\n"
+    "confusion if the user hates the taste.");
 
 static const u8 sRazzBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Razz.");
+    "Used to make Ponuts that will enhance\n"
+    "your Coolness. Its red flesh is spicy\n"
+    "when eaten.");
 
 static const u8 sBlukBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Bluk.");
+    "Used to make Ponuts that will enhance\n"
+    "your Beauty. Its blue flesh is dry\n"
+    "when eaten.");
 
 static const u8 sNanabBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Nanab.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cuteness. Its pink flesh is sweet\n"
+    "when eaten.");
 
 static const u8 sWepearBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Wepear.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cleverness. Its green flesh is\n"
+    "bitter when eaten.");
 
 static const u8 sPinapBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Pinap.");
+    "Used to make Ponuts that will enhance\n"
+    "your Toughness. Its yellow flesh is\n"
+    "sour when eaten.");
 
 static const u8 sPomegBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base HP.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base HP.");
 
 static const u8 sKelpsyBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base Attack.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base Attack.");
 
 static const u8 sQualotBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base Defense.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base Defense.");
 
 static const u8 sHondewBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base Sp. Atk.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base Sp. Atk.");
 
 static const u8 sGrepaBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base Sp. Def.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base Sp. Def.");
 
 static const u8 sTamatoBerryDesc[] = _(
-    "Makes a Pokémon\n"
-    "friendly but lowers\n"
-    "base Speed.");
+    "A Berry to be consumed by Pokémon.\n"
+    "Using it on a Pokémon makes it more\n"
+    "friendly but lowers its base Speed.");
 
 static const u8 sCornnBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Cornn.");
+    "Used to make Ponuts that will enhance\n"
+    "your Beauty, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sMagostBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Magost.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cuteness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sRabutaBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Rabuta.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cleverness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sNomelBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Nomel.");
+    "Used to make Ponuts that will enhance\n"
+    "your Toughness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sSpelonBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Spelon.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cuteness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sPamtreBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Pamtre.");
+    "Used to make Ponuts that will enhance\n"
+    "your Beauty, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sWatmelBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Watmel.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cleverness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sDurinBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Durin.");
+    "Used to make Ponuts that will enhance\n"
+    "your Cleverness, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sBelueBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow Belue.");
+    "Used to make Ponuts that will enhance\n"
+    "your Beauty, this Berry is rare in\n"
+    "other regions.");
 
 static const u8 sLiechiBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Attack in\n"
-    "a pinch.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, its Attack stat\n"
+    "will increase when it's in a pinch.");
 
 static const u8 sGanlonBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Defense in\n"
-    "a pinch.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, its Defense\n"
+    "stat will increase when it's in a pinch.");
 
 static const u8 sSalacBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Speed in\n"
-    "a pinch.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, its Speed stat\n"
+    "will increase when it's in a pinch.");
 
 static const u8 sPetayaBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Sp. Atk in\n"
-    "a pinch.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, its Sp. Atk\n"
+    "stat will increase when it's in a pinch.");
 
 static const u8 sApicotBerryDesc[] = _(
-    "A hold item that\n"
-    "raises Sp. Def in\n"
-    "a pinch.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If a Pokémon holds one, its Sp. Def\n"
+    "stat will increase when it's in a pinch.");
 
 static const u8 sLansatBerryDesc[] = _(
-    "A hold item that\n"
-    "ups the critical-\n"
-    "hit rate in a pinch.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "a Pokémon holds one, its critical-hit\n"
+    "ratio will increase when it's in a pinch.");
 
 static const u8 sStarfBerryDesc[] = _(
-    "A hold item that\n"
-    "sharply boosts a\n"
-    "stat in a pinch.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "a Pokémon holds one, it sharply raises\n"
+    "one of its stats in a pinch.");
 
 static const u8 sMicleBerryDesc[] = _(
-    "When held, it ups\n"
-    "the Accuracy of a\n"
-    "move in a pinch.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "held by a Pokémon, it raises a move's\n"
+    "accuracy just once in a pinch.");
 
 static const u8 sEnigmaBerryDesc[] = _(
-    "Ponut ingredient.\n"
-    "Plant in loamy soil\n"
-    "to grow a mystery.");
+    "A Berry to be consumed by Pokémon. If\n"
+    "a Pokémon holds one, it restores its HP\n"
+    "when hit by any supereffective attack.");
 
 static const u8 sOccaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Fire\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Fire-type attack.");
 
 static const u8 sPasshoBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Water\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Water-type attack.");
 
 static const u8 sWacanBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Electric\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Electric-type attack.");
 
 static const u8 sRindoBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Grass\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Grass-type attack.");
 
 static const u8 sYacheBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Ice\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Ice-type attack.");
 
 static const u8 sChopleBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Fighting\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Fighting-type attack.");
 
 static const u8 sKebiaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Poison\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Poison-type attack.");
 
 static const u8 sShucaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Ground\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Ground-type attack.");
 
 static const u8 sCobaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Flying\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Flying-type attack.");
 
 static const u8 sPayapaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Psychic\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Psychic-type attack.");
 
 static const u8 sTangaBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Bug\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Bug-type attack.");
 
 static const u8 sChartiBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Rock\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Rock-type attack.");
 
 static const u8 sKasibBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Ghost\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Ghost-type attack.");
 
 static const u8 sHabanBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Dragon\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Dragon-type attack.");
 
 static const u8 sColburBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Dark\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Dark-type attack.");
 
 static const u8 sBabiriBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Steel\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Steel-type attack.");
 
 static const u8 sChilanBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Normal\n"
-    "move.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "Normal-type attack.");
 
 static const u8 sRoseliBerryDesc[] = _(
-    "A hold item that\n"
-    "weakens a Fairy\n"
-    "move if weak to it.");
+    "If held by a Pokémon, this Berry will\n"
+    "lessen the damage taken from one\n"
+    "supereffective Fairy-type attack.");
 
 static const u8 sCustapBerryDesc[] = _(
-    "It allows a Pokémon\n"
-    "in a pinch to move\n"
-    "first just once.");
+    "A Berry to be consumed by Pokémon.\n"
+    "If held by a Pokémon, it gets to move\n"
+    "first just once in a pinch.");
 
 static const u8 sJabocaBerryDesc[] = _(
-    "If hit by a physical\n"
-    "move, it will hurt\n"
-    "the attacker a bit.");
+    "If held by a Pokémon and a physical\n"
+    "attack lands, the attacker also takes\n"
+    "damage.");
 
 static const u8 sRowapBerryDesc[] = _(
-    "If hit by a special\n"
-    "move, it will hurt\n"
-    "the attacker a bit.");
+    "If held by a Pokémon and a special\n"
+    "attack lands, the attacker also takes\n"
+    "damage.");
 
 static const u8 sKeeBerryDesc[] = _(
-    "If hit by a physical\n"
-    "move, it raises the\n"
-    "Defense a bit.");
+    "If held by a Pokémon, this Berry will\n"
+    "increase the holder's Defense if it's\n"
+    "hit with a physical move.");
 
 static const u8 sMarangaBerryDesc[] = _(
-    "If hit by a special\n"
-    "move, it raises the\n"
-    "Sp. Def. a bit.");
+    "If held by a Pokémon, this Berry will\n"
+    "increase the holder's Sp. Def if it's\n"
+    "hit with a special move.");
 
 // Hold items
 static const u8 sBrightPowderDesc[] = _(
