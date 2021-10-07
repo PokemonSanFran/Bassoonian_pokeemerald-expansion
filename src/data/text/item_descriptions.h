@@ -3,24 +3,24 @@ static const u8 sDummyDesc[] = _(
 
 // Pokeballs
 static const u8 sMasterBallDesc[] = _(
-    "The best Ball that\n"
-    "catches a Pokémon\n"
-    "without fail.");
+    "The best Poké Ball with the ultimate\n"
+    "level of performance. With it, you will\n"
+    "catch any wild Pokémon without fail.");
 
 static const u8 sUltraBallDesc[] = _(
-    "A better Ball with\n"
-    "a higher catch rate\n"
-    "than a Great Ball.");
+    "An ultra-high-performance Poké Ball\n"
+    "that provides a higher success rate for\n"
+    "catching Pokémon than a Great Ball.");
 
 static const u8 sGreatBallDesc[] = _(
-    "A good Ball with a\n"
-    "higher catch rate\n"
-    "than a Poké Ball.");
+    "A good, high-performance Poké Ball\n"
+    "that provides a higher Pokémon catch\n"
+    "rate than a standard Poké Ball.");
 
 static const u8 sPokeBallDesc[] = _(
-    "A tool used for\n"
-    "catching wild\n"
-    "Pokémon.");
+    "A device for catching wild Pokémon.\n"
+    "It's thrown like a ball at a Pokémon,\n"
+    "comfortably encapsulating its target.");
 
 static const u8 sSafariBallDesc[] = _(
     "A special Ball that\n"
@@ -28,89 +28,88 @@ static const u8 sSafariBallDesc[] = _(
     "Safari Zone.");
 
 static const u8 sNetBallDesc[] = _(
-    "A Ball that works\n"
-    "well on Water- and\n"
-    "Bug-type Pokémon.");
+    "A somewhat different Poké Ball that is\n"
+    "more effective when attempting to\n"
+    "catch Water- or Bug-type Pokémon.");
 
 static const u8 sDiveBallDesc[] = _(
-    "A Ball that works\n"
-    "better on Pokémon\n"
-    "on the ocean floor.");
+    "A somewhat different Poké Ball that\n"
+    "works especially well when catching\n"
+    "Pokémon that live underwater.");
 
 static const u8 sNestBallDesc[] = _(
-    "A Ball that works\n"
-    "better on weaker\n"
-    "Pokémon.");
+    "A somewhat different Poké Ball that\n"
+    "becomes more effective the lower\n"
+    "the level of the wild Pokémon.");
 
 static const u8 sRepeatBallDesc[] = _(
-    "A Ball that works\n"
-    "better on Pokémon\n"
-    "caught before.");
+    "A somewhat different Poké Ball that\n"
+    "works especially well on a Pokémon\n"
+    "species that has been caught before.");
 
 static const u8 sTimerBallDesc[] = _(
-    "A Ball that gains\n"
-    "power in battles\n"
-    "taking many turns.");
+    "A somewhat different Poké Ball that\n"
+    "becomes progressively more effective\n"
+    "the more turns that are taken in battle.");
 
 static const u8 sLuxuryBallDesc[] = _(
-    "A cozy Ball that\n"
-    "makes Pokémon\n"
-    "more friendly.");
+    "A particularly comfortable Poké Ball\n"
+    "that makes a wild Pokémon quickly grow\n"
+    "friendlier after being caught.");
 
 static const u8 sPremierBallDesc[] = _(
-    "A rare Ball made\n"
-    "in commemoration\n"
-    "of some event.");
+    "A somewhat rare Poké Ball that was\n"
+    "made as a commemorative item used to\n"
+    "celebrate an event of some sort.");
 
 static const u8 sLevelBallDesc[] = _(
-    "A Ball that works\n"
-    "well on lower\n"
-    "level Pokémon.");
+    "A Poké Ball that makes it easier to\n"
+    "catch Pokémon that are at a lower\n"
+    "level than your own Pokémon.");
 
 static const u8 sLureBallDesc[] = _(
-    "A Ball that works\n"
-    "well on fished\n"
-    "up Pokémon.");
+    "A Poké Ball that is good for catching\n"
+    "Pokémon that you reel in with a rod\n"
+    "while out fishing.");
 
 static const u8 sMoonBallDesc[] = _(
-    "A Ball that works\n"
-    "well on Moon\n"
-    "Stone users.");
+    "A Poké Ball that will make it easier to\n"
+    "catch Pokémon that can evolve using a\n"
+    "Moon Stone.");
 
 static const u8 sFriendBallDesc[] = _(
-    "A Ball that makes\n"
-    "a Pokémon friendly\n"
-    "when caught.");
+    "A strange Poké Ball that will make the\n"
+    "wild Pokémon caught with it more\n"
+    "friendly toward you immediately.");
 
 static const u8 sLoveBallDesc[] = _(
-    "Works well on\n"
-    "Pokémon of the\n"
-    "opposite gender.");
+    "A Poké Ball that works best when\n"
+    "catching a Pokémon that is of the\n"
+    "opposite gender of your Pokémon.");
 
 static const u8 sHeavyBallDesc[] = _(
-    "Works well on\n"
-    "very heavy\n"
-    "Pokémon.");
+    "A Poké Ball that is better than usual\n"
+    "at catching very heavy Pokémon.");
 
 static const u8 sFastBallDesc[] = _(
-    "Works well on\n"
-    "very fast\n"
-    "Pokémon.");
+    "A Poké Ball that makes it easier to\n"
+    "catch Pokémon that are usually very\n"
+    "quick to run away.");
 
 static const u8 sHealBallDesc[] = _(
-    "A remedial Ball\n"
-    "that restores\n"
-    "caught Pokémon.");
+    "A remedial Poké Ball that restores the\n"
+    "HP of a Pokémon caught with it and\n"
+    "eliminates any status conditions.");
 
 static const u8 sQuickBallDesc[] = _(
-    "Works well if\n"
-    "used on the\n"
-    "first turn.");
+    "A somewhat different Poké Ball that\n"
+    "has a more successful catch rate if\n"
+    "used at the start of a wild encounter.");
 
 static const u8 sDuskBallDesc[] = _(
-    "Works well if\n"
-    "used in a\n"
-    "dark place.");
+    "A somewhat different Poké Ball that\n"
+    "makes it easier to catch wild Pokémon\n"
+    "at night or in dark places like caves.");
 
 static const u8 sCherishBallDesc[] = _(
     "A rare Ball made\n"
@@ -127,137 +126,145 @@ static const u8 sParkBallDesc[] = _(
     "the Pal Park.");
 
 static const u8 sDreamBallDesc[] = _(
-    "A Poké Ball used in\n"
-    "the Entree Forest.\n"
-    "It doesn't fail.");
+    "A somewhat different Poké Ball that\n"
+    "makes it easier to catch wild Pokémon\n"
+    "while they're asleep.");
 
 static const u8 sBeastBallDesc[] = _(
-    "A Ball designed to\n"
-    "catch Ultra Beasts.");
+    "A special Poké Ball designed to catch\n"
+    "Ultra Beasts. It has a low success rate\n"
+    "for catching others.");
 
 // Medicine
 static const u8 sPotionDesc[] = _(
-    "Restores the HP of\n"
-    "a Pokémon by\n"
-    "20 points.");
+    "A spray-type medicine for treating\n"
+    "wounds. It can be used to restore\n"
+    "20 HP to a single Pokémon.");
 
 static const u8 sAntidoteDesc[] = _(
-    "Heals a poisoned\n"
-    "Pokémon.");
+    "A spray-type medicine for poisoning.\n"
+    "It can be used once to lift the effects\n"
+    "of being poisoned from a Pokémon.");
 
 static const u8 sBurnHealDesc[] = _(
-    "Heals Pokémon\n"
-    "of a burn.");
+    "A spray-type medicine for treating\n"
+    "burns. It can be used once to heal a\n"
+    "Pokémon suffering from a burn.");
 
 static const u8 sIceHealDesc[] = _(
-    "Defrosts a frozen\n"
-    "Pokémon.");
+    "A spray-type medicine for freezing.\n"
+    "It can be used once to defrost a\n"
+    "Pokémon that has been frozen solid.");
 
 static const u8 sAwakeningDesc[] = _(
-    "Awakens a sleeping\n"
-    "Pokémon.");
+    "A spray-type medicine used against\n"
+    "sleep. It can be used once to rouse a\n"
+    "Pokémon from the clutches of sleep.");
 
 static const u8 sParalyzeHealDesc[] = _(
-    "Heals a paralyzed\n"
-    "Pokémon.");
+    "A spray-type medicine for paralysis.\n"
+    "It can be used once to free a Pokémon\n"
+    "that has been paralyzed.");
 
 static const u8 sFullRestoreDesc[] = _(
-    "Fully restores the\n"
-    "HP and status of a\n"
-    "Pokémon.");
+    "A medicine that can be used to fully\n"
+    "restore the HP of a single Pokémon and\n"
+    "heal any status conditions it has.");
 
 static const u8 sMaxPotionDesc[] = _(
-    "Fully restores the\n"
-    "HP of a Pokémon.");
+    "A spray-type medicine for treating\n"
+    "wounds. It can be used to completely\n"
+    "restore the max HP of a single Pokémon.");
 
 static const u8 sHyperPotionDesc[] = _(
-    "Restores the HP of\n"
-    "a Pokémon by\n"
-    "120 points.");
+    "A spray-type medicine for treating\n"
+    "wounds. It can be used to restore\n"
+    "120 HP to a single Pokémon.");
 
 static const u8 sSuperPotionDesc[] = _(
-    "Restores the HP of\n"
-    "a Pokémon by\n"
-    "60 points.");
+    "A spray-type medicine for treating\n"
+    "wounds. It can be used to restore\n"
+    "60 HP to a single Pokémon.");
 
 static const u8 sFullHealDesc[] = _(
-    "Heals all the\n"
-    "status problems of\n"
-    "one Pokémon.");
+    "A spray-type medicine that is broadly\n"
+    "effective. It can be used once to heal\n"
+    "all the status conditions of a Pokémon.");
 
 static const u8 sReviveDesc[] = _(
-    "Revives a fainted\n"
-    "Pokémon with half\n"
-    "its HP.");
+    "A medicine that can revive fainted\n"
+    "Pokémon. It also restores half of a\n"
+    "fainted Pokémon's maximum HP.");
 
 static const u8 sMaxReviveDesc[] = _(
-    "Revives a fainted\n"
-    "Pokémon with all\n"
-    "its HP.");
+    "A medicine that can revive fainted\n"
+    "Pokémon. It also fully restores a\n"
+    "fainted Pokémon's maximum HP.");
 
 static const u8 sFreshWaterDesc[] = _(
-    "A mineral water\n"
-    "that restores HP\n"
-    "by 30 points.");
+    "Water with high mineral content.\n"
+    "It can be used to restore 30 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sSodaPopDesc[] = _(
-    "A fizzy soda drink\n"
-    "that restores HP\n"
-    "by 50 points.");
+    "A highly carbonated soda drink.\n"
+    "It can be used to restore 50 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sLemonadeDesc[] = _(
-    "A very sweet drink\n"
-    "that restores HP\n"
-    "by 70 points.");
+    "A very sweet and refreshing drink.\n"
+    "It can be used to restore 70 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sMoomooMilkDesc[] = _(
-    "A nutritious milk\n"
-    "that restores HP\n"
-    "by 100 points.");
+    "A bottle of highly nutritious milk.\n"
+    "It can be used to restore 100 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sEnergyPowderDesc[] = _(
-    "A bitter powder\n"
-    "that restores HP\n"
-    "by 60 points.");
+    "A very bitter medicinal powder.\n"
+    "It can be used to restore 60 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sEnergyRootDesc[] = _(
-    "A bitter root\n"
-    "that restores HP\n"
-    "by 120 points.");
+    "An extremely bitter medicinal root.\n"
+    "It can be used to restore 120 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sHealPowderDesc[] = _(
-    "A bitter powder\n"
-    "that heals all\n"
-    "status problems.");
+    "A very bitter medicinal powder.\n"
+    "It can be used once to heal all the\n"
+    "status conditions of a Pokémon.");
 
 static const u8 sRevivalHerbDesc[] = _(
-    "A very bitter herb\n"
-    "that revives a\n"
-    "fainted Pokémon.");
+    "A terribly bitter medicinal herb.\n"
+    "It revives a fainted Pokémon and fully\n"
+    "restores its max HP.");
 
 static const u8 sEtherDesc[] = _(
-    "Restores the PP\n"
-    "of a selected move\n"
-    "by 10.");
+    "This medicine can restore 10 PP to a\n"
+    "single selected move that has been\n"
+    "learned by a Pokémon.");
 
 static const u8 sMaxEtherDesc[] = _(
-    "Fully restores the\n"
-    "PP of a selected\n"
-    "move.");
+    "This medicine can fully restore the\n"
+    "PP of a single selected move that\n"
+    "has been learned by a Pokémon.");
 
 static const u8 sElixirDesc[] = _(
-    "Restores the PP\n"
-    "of all moves by 10.");
+    "This medicine can restore 10 PP to\n"
+    "each of the moves that have been\n"
+    "learned by a Pokémon.");
 
 static const u8 sMaxElixirDesc[] = _(
-    "Fully restores the\n"
-    "PP of a Pokémon's\n"
-    "moves.");
+    "This medicine can fully restore the\n"
+    "PP of all of the moves that have\n"
+    "been learned by a Pokémon.");
 
 static const u8 sLavaCookieDesc[] = _(
-    "A local specialty\n"
-    "that heals all\n"
-    "status problems.");
+    "Lavaridge Town's local specialty.\n"
+    "It can be used once to heal all the\n"
+    "status conditions of a Pokémon.");
 
 static const u8 sBlueFluteDesc[] = _(
     "A glass flute that\n"
@@ -284,29 +291,29 @@ static const u8 sWhiteFluteDesc[] = _(
     "lures wild Pokémon.");
 
 static const u8 sBerryJuiceDesc[] = _(
-    "A 100% pure juice\n"
-    "that restores HP\n"
-    "by 20 points.");
+    "A 100 percent pure juice made of\n"
+    "Berries. It can be used to restore\n"
+    "20 HP to a single Pokémon.");
 
 static const u8 sSweetHeartDesc[] = _(
-    "A sweet chocolate\n"
-    "that restores HP\n"
-    "by 20 points.");
+    "A piece of cloyingly sweet chocolate.\n"
+    "It can be used to restore 20 HP to a\n"
+    "single Pokémon.");
 
 static const u8 sBigMalasadaDesc[] = _(
-    "Heals all the\n"
-    "status problems of\n"
-    "one Pokémon.");
+    "The Alola region's local specialty.\n"
+    "It can be used once to heal all the\n"
+    "status conditions of a Pokémon.");
 
 static const u8 sOldGateauDesc[] = _(
-    "Heals all the\n"
-    "status problems of\n"
-    "one Pokémon.");
+    "The Old Chateau's hidden specialty.\n"
+    "It can be used once to heal all the\n"
+    "status conditions of a Pokémon.");
 
 static const u8 sSacredAshDesc[] = _(
-    "Fully revives and\n"
-    "restores all\n"
-    "fainted Pokémon.");
+    "This rare ash can revive all fainted\n"
+    "Pokémon in a party. In doing so, it also\n"
+    "fully restores their max HP.");
 
 // Collectibles
 static const u8 sShoalSaltDesc[] = _(

@@ -4,8 +4,8 @@ EverGrandeCity_MapScripts::
 
 
 DebugTestScript::
-	msgbox DebugTestScript_Text_0
-	closemessage
+	message DebugTestScript_Text_0
+	waitmessage
 	givemon SPECIES_PSYDUCK_HANAUAN, 50, ITEM_NONE
 	givemon SPECIES_GOLDUCK_HANAUAN, 50, ITEM_NONE
 	givemon SPECIES_FINNEON_HANAUAN, 50, ITEM_NONE
@@ -15,8 +15,62 @@ DebugTestScript::
 	givemon SPECIES_WHISMUR_HANAUAN, 50, ITEM_NONE
 	givemon SPECIES_LOUDRED_HANAUAN, 50, ITEM_NONE
 	givemon SPECIES_EXPLOUD_HANAUAN, 50, ITEM_NONE
-	giveitem ITEM_TM27_RETURN
-	giveitem ITEM_TM46_THIEF
+	additem ITEM_MASTER_BALL
+	additem ITEM_ULTRA_BALL
+	additem ITEM_GREAT_BALL
+	additem ITEM_POKE_BALL
+	additem ITEM_NET_BALL
+	additem ITEM_DIVE_BALL
+	additem ITEM_NEST_BALL
+	additem ITEM_REPEAT_BALL
+	additem ITEM_LUXURY_BALL
+	additem ITEM_TIMER_BALL
+	additem ITEM_PREMIER_BALL
+	additem ITEM_LEVEL_BALL
+	additem ITEM_LURE_BALL
+	additem ITEM_MOON_BALL
+	additem ITEM_FRIEND_BALL
+	additem ITEM_LOVE_BALL
+	additem ITEM_HEAVY_BALL
+	additem ITEM_FAST_BALL
+	additem ITEM_HEAL_BALL
+	additem ITEM_QUICK_BALL
+	additem ITEM_DUSK_BALL
+	additem ITEM_DREAM_BALL
+	additem ITEM_BEAST_BALL
+	additem ITEM_POTION
+	additem ITEM_ANTIDOTE
+	additem ITEM_BURN_HEAL
+	additem ITEM_ICE_HEAL
+	additem ITEM_AWAKENING
+	additem ITEM_PARALYZE_HEAL
+	additem ITEM_FULL_RESTORE
+	additem ITEM_MAX_POTION
+	additem ITEM_HYPER_POTION
+	additem ITEM_SUPER_POTION
+	additem ITEM_FULL_HEAL
+	additem ITEM_REVIVE
+	additem ITEM_MAX_REVIVE
+	additem ITEM_FRESH_WATER
+	additem ITEM_LEMONADE
+	additem ITEM_SODA_POP
+	additem ITEM_MOOMOO_MILK
+	additem ITEM_ENERGY_POWDER
+	additem ITEM_ENERGY_ROOT
+	additem ITEM_HEAL_POWDER
+	additem ITEM_REVIVAL_HERB
+	additem ITEM_ETHER
+	additem ITEM_MAX_ETHER
+	additem ITEM_ELIXIR
+	additem ITEM_MAX_ELIXIR
+	additem ITEM_LAVA_COOKIE
+	additem ITEM_BERRY_JUICE
+	additem ITEM_SWEET_HEART
+	additem ITEM_BIG_MALASADA
+	additem ITEM_OLD_GATEAU
+	additem ITEM_SACRED_ASH
+	msgbox DebugTestScript_Text_1
+	closemessage
 	return
 
 
@@ -454,6 +508,9 @@ EverGrandeCity_Text_CitySign:
 @	.string "and POKéMON.”$"
 
 DebugTestScript_Text_0:
+	.string "this may take a while...$"
+
+DebugTestScript_Text_1:
 	.string "done$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
