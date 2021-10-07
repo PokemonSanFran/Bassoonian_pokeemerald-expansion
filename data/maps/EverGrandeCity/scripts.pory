@@ -72,6 +72,23 @@ script DebugTestScript
 	additem(ITEM_BIG_MALASADA)
 	additem(ITEM_OLD_GATEAU)
 	additem(ITEM_SACRED_ASH)
+	//collectibles
+	additem(ITEM_SHOAL_SALT)
+	additem(ITEM_SHOAL_SHELL)
+	additem(ITEM_RED_SHARD)
+	additem(ITEM_YELLOW_SHARD)
+	additem(ITEM_BLUE_SHARD)
+	additem(ITEM_GREEN_SHARD)
+	//vitamins
+	additem(ITEM_HP_UP)
+	additem(ITEM_CARBOS)
+	additem(ITEM_PROTEIN)
+	additem(ITEM_CALCIUM)
+	additem(ITEM_ZINC)
+	additem(ITEM_IRON)
+	additem(ITEM_RARE_CANDY)
+	additem(ITEM_PP_UP)
+	additem(ITEM_PP_MAX)
 	msgbox("done")
 	closemessage
 }

@@ -317,79 +317,80 @@ static const u8 sSacredAshDesc[] = _(
 
 // Collectibles
 static const u8 sShoalSaltDesc[] = _(
-    "Salt obtained from\n"
-    "deep inside the\n"
-    "Shoal Cave.");
+    "Pure salt that can be discovered\n"
+    "only deep inside the Shoal Cave.\n"
+    "It is extremely salty.");
 
 static const u8 sShoalShellDesc[] = _(
-    "A seashell found\n"
-    "deep inside the\n"
-    "Shoal Cave.");
+    "A pretty seashell that can be found\n"
+    "deep inside the Shoal Cave.\n"
+    "It is striped in blue and white.");
 
 static const u8 sRedShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "A small red shard. It appears to be\n"
+    "a fragment of some sort of implement\n"
+    "made long ago.");
 
 static const u8 sBlueShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "A small blue shard. It appears to be\n"
+    "a fragment of some sort of implement\n"
+    "made long ago.");
 
 static const u8 sYellowShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "A small yellow shard. It appears to be\n"
+    "a fragment of some sort of implement\n"
+    "made long ago.");
 
 static const u8 sGreenShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "A small green shard. It appears to be\n"
+    "a fragment of some sort of implement\n"
+    "made long ago.");
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
-    "Raises the base HP\n"
-    "of one Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the HP base\n"
+    "points of a single Pokémon.");
 
 static const u8 sProteinDesc[] = _(
-    "Raises the base\n"
-    "Attack stat of one\n"
-    "Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the Attack\n"
+    "base points of a single Pokémon.");
 
 static const u8 sIronDesc[] = _(
-    "Raises the base\n"
-    "Defense stat of\n"
-    "one Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the Defense\n"
+    "base points of a single Pokémon.");
 
 static const u8 sCarbosDesc[] = _(
-    "Raises the base\n"
-    "Speed stat of one\n"
-    "Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the Speed\n"
+    "base points of a single Pokémon.");
 
 static const u8 sCalciumDesc[] = _(
-    "Raises the base\n"
-    "Sp. Atk stat of one\n"
-    "Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the Sp. Atk\n"
+    "base points of a single Pokémon.");
 
 static const u8 sRareCandyDesc[] = _(
-    "Raises the level\n"
-    "of a Pokémon by\n"
-    "one.");
+    "A candy that is packed with energy.\n"
+    "When consumed, it will instantly raise\n"
+    "the level of a single Pokémon by one.");
 
 static const u8 sPPUpDesc[] = _(
-    "Raises the maximum\n"
-    "PP of a selected\n"
-    "move.");
+    "A medicine that slightly raises the\n"
+    "max PP of a single selected move that\n"
+    "has been learned by a Pokémon.");
 
 static const u8 sZincDesc[] = _(
-    "Raises the base\n"
-    "Sp. Def stat of one\n"
-    "Pokémon.");
+    "A nutritious drink for Pokémon.\n"
+    "When consumed, it raises the Sp. Def\n"
+    "base points of a single Pokémon.");
 
 static const u8 sPPMaxDesc[] = _(
-    "Raises the PP of a\n"
-    "move to its maximum\n"
-    "points.");
+    "A medicine that optimally raises the\n"
+    "max PP of a single selected move that\n"
+    "has been learned by a Pokémon.");
 
 // Battle items
 static const u8 sGuardSpecDesc[] = _(
