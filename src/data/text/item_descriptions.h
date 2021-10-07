@@ -1014,19 +1014,19 @@ static const u8 sMarangaBerryDesc[] = _(
 
 // Hold items
 static const u8 sBrightPowderDesc[] = _(
-    "A hold item that\n"
-    "casts a glare to\n"
-    "reduce accuracy.");
+    "An item to be held by a Pokémon.\n"
+    "It casts a tricky glare that lowers\n"
+    "the opposing Pokémon's accuracy.");
 
 static const u8 sWhiteHerbDesc[] = _(
-    "A hold item that\n"
-    "restores any\n"
-    "lowered stat.");
+    "An item to be held by a Pokémon.\n"
+    "It will restore any lowered stat in\n"
+    "battle. It can be used only once.");
 
 static const u8 sMachoBraceDesc[] = _(
-    "A hold item that\n"
-    "promotes growth,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "This stiff, heavy brace helps Pokémon\n"
+    "grow strong but cuts Speed in battle.");
 
 static const u8 sExpShareDesc[] = _(
     "A hold item that\n"
@@ -1034,363 +1034,364 @@ static const u8 sExpShareDesc[] = _(
     "from battles.");
 
 static const u8 sQuickClawDesc[] = _(
-    "A hold item that\n"
-    "occasionally allows\n"
-    "the first strike.");
+    "An item to be held by a Pokémon.\n"
+    "This light, sharp claw lets the bearer\n"
+    "move first occasionally.");
 
 static const u8 sSootheBellDesc[] = _(
-    "A hold item that\n"
-    "calms spirits and\n"
-    "fosters friendship.");
+    "An item to be held by a Pokémon.\n"
+    "The comforting chime of this bell calms\n"
+    "the holder, making it friendly.");
 
 static const u8 sMentalHerbDesc[] = _(
-    "A hold item that\n"
-    "snaps Pokémon out\n"
-    "of infatuation.");
+    "An item to be held by a Pokémon.\n"
+    "The holder shakes off move-binding\n"
+    "effects. It can be used only once.");
 
 static const u8 sChoiceBandDesc[] = _(
-    "Raises a move's\n"
-    "power, but permits\n"
-    "only that move.");
+    "An item to be held by a Pokémon.\n"
+    "This curious headband boosts Attack\n"
+    "but only allows the use of one move.");
 
 static const u8 sKingsRockDesc[] = _(
-    "A hold item that\n"
-    "may cause flinching\n"
-    "when the foe is hit.");
+    "An item to be held by a Pokémon.\n"
+    "When the holder successfully inflicts\n"
+    "damage, the target may also flinch.");
 
 static const u8 sSilverPowderDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Bug-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a shiny silver powder that will\n"
+    "boost the power of Bug-type moves.");
 
 static const u8 sAmuletCoinDesc[] = _(
-    "Doubles money in\n"
-    "battle if the\n"
-    "holder takes part.");
+    "An item to be held by a Pokémon.\n"
+    "It doubles any prize money received\n"
+    "if the holding Pokémon joins a battle.");
 
 static const u8 sCleanseTagDesc[] = _(
-    "A hold item that\n"
-    "helps repel wild\n"
-    "Pokémon.");
+    "An item to be held by a Pokémon.\n"
+    "It helps keep wild Pokémon away if\n"
+    "the holder is the head of the party.");
 
 static const u8 sSoulDewDesc[] = _(
-    "Hold item: raises\n"
-    "Sp. Atk & Sp. Def of\n"
-    "Latios & Latias.");
+    "A wondrous orb to be held by either\n"
+    "Latios or Latias. It raises the power\n"
+    "of Psychic- and Dragon-type moves.");
 
 static const u8 sDeepSeaToothDesc[] = _(
-    "A hold item that\n"
-    "raises the Sp. Atk\n"
-    "of Clamperl.");
+    "An item to be held by Clamperl.\n"
+    "This fang gleams a sharp silver and\n"
+    "raises the holder's Sp. Atk stat.");
 
 static const u8 sDeepSeaScaleDesc[] = _(
-    "A hold item that\n"
-    "raises the Sp. Def\n"
-    "of Clamperl.");
+    "An item to be held by Clamperl.\n"
+    "This scale shines with a faint pink\n"
+    "and raises the holder's Sp. Def stat.");
 
 static const u8 sSmokeBallDesc[] = _(
-    "A hold item that\n"
-    "assures fleeing\n"
-    "from wild Pokémon.");
+    "An item to be held by a Pokémon.\n"
+    "It enables the holder to flee from any\n"
+    "wild Pokémon encounter without fail.");
 
 static const u8 sEverstoneDesc[] = _(
-    "A wondrous hold\n"
-    "item that prevents\n"
-    "evolution.");
+    "An item to be held by a Pokémon.\n"
+    "A Pokémon holding this peculiar stone\n"
+    "is prevented from evolving.");
 
 static const u8 sFocusBandDesc[] = _(
-    "A hold item that\n"
-    "occasionally\n"
-    "prevents fainting.");
+    "An item to be held by a Pokémon.\n"
+    "The holder may endure a potential KO\n"
+    "attack, leaving it with just 1 HP.");
 
 static const u8 sLuckyEggDesc[] = _(
-    "A hold item that\n"
-    "boosts Exp. points\n"
-    "earned in battle.");
+    "An item to be held by a Pokémon.\n"
+    "It's an egg filled with happiness that\n"
+    "earns extra Exp. Points in battle.");
 
 static const u8 sScopeLensDesc[] = _(
-    "A hold item that\n"
-    "improves the\n"
-    "critical-hit rate.");
-
-static const u8 sMetalCoatDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Steel-type moves.");
-
-static const u8 sLeftoversDesc[] = _(
-    "A hold item that\n"
-    "gradually restores\n"
-    "HP in battle.");
-
-static const u8 sDragonScaleDesc[] = _(
-    "A strange scale\n"
-    "held by Dragon-\n"
-    "type Pokémon.");
-
-static const u8 sOvalStoneDesc[] = _(
-    "Makes a certain\n"
-    "Pokémon evolve. It's\n"
-    "shaped like an egg.");
-
-static const u8 sProtectorDesc[] = _(
-    "Loved by a certain\n"
-    "Pokémon. It's stiff\n"
-    "and heavy.");
-
-static const u8 sElectirizerDesc[] = _(
-    "Loved by a certain\n"
-    "Pokémon. It's full\n"
-    "of electric energy.");
-
-static const u8 sMagmarizerDesc[] = _(
-    "Loved by a certain\n"
-    "Pokémon. It's full\n"
-    "of magma energy.");
-
-static const u8 sDubiousDiscDesc[] = _(
-    "A transparent device\n"
-    "overflowing with\n"
-    "dubious data.");
-
-static const u8 sReaperClothDesc[] = _(
-    "Loved by a certain\n"
-    "Pokémon. Imbued with\n"
-    "spiritual energy.");
-
-static const u8 sRazorClawDesc[] = _(
-    "A hooked claw that\n"
-    "ups the holder's\n"
+    "An item to be held by a Pokémon.\n"
+    "It is a lens that boosts the holder's\n"
     "critical-hit ratio.");
 
+static const u8 sMetalCoatDesc[] = _(
+    "An item to be held by a Pokémon.\n"
+    "It's a special metallic film that can\n"
+    "boost the power of Steel-type moves.");
+
+static const u8 sLeftoversDesc[] = _(
+    "An item to be held by a Pokémon.\n"
+    "The holder's HP is slowly but steadily\n"
+    "restored throughout every battle.");
+
+static const u8 sDragonScaleDesc[] = _(
+    "A very tough and inflexible scale.\n"
+    "Dragon-type Pokémon may be holding\n"
+    "this item when caught.");
+
+static const u8 sOvalStoneDesc[] = _(
+    "A peculiar stone that can make certain\n"
+    "species of Pokémon evolve. It's as\n"
+    "round as a Pokémon Egg.");
+
+static const u8 sProtectorDesc[] = _(
+    "A protective item of some sort.\n"
+    "It is extremely stiff and heavy.\n"
+    "It's loved by a certain Pokémon.");
+
+static const u8 sElectirizerDesc[] = _(
+    "A box packed with a tremendous\n"
+    "amount of electric energy.\n"
+    "It's loved by a certain Pokémon.");
+
+static const u8 sMagmarizerDesc[] = _(
+    "A box packed with a tremendous\n"
+    "amount of magma energy.\n"
+    "It's loved by a certain Pokémon.");
+
+static const u8 sDubiousDiscDesc[] = _(
+    "A transparent device overflowing\n"
+    "with dubious data. Its producer is\n"
+    "unknown.");
+
+static const u8 sReaperClothDesc[] = _(
+    "A cloth imbued with horrifyingly\n"
+    "strong spiritual energy. It's loved\n"
+    "by a certain Pokémon.");
+
+static const u8 sRazorClawDesc[] = _(
+    "An item to be held by a Pokémon.\n"
+    "This sharply hooked claw increases\n"
+    "the holder's critical-hit ratio.");
+
 static const u8 sRazorFangDesc[] = _(
-    "A hold item that\n"
-    "may cause flinching\n"
-    "when the foe is hit.");
+    "An item to be held by a Pokémon.\n"
+    "When the holder successfully inflicts\n"
+    "damage, the target may also flinch.");
 
 static const u8 sPrismScaleDesc[] = _(
-    "A mysterious scale\n"
-    "that evolves certain\n"
-    "Pokémon. It shines.");
+    "A mysterious scale that causes a\n"
+    "certain Pokémon to evolve. It shines\n"
+    "in rainbow colors.");
 
 static const u8 sWhippedDreamDesc[] = _(
-    "A soft and sweet\n"
-    "treat loved by\n"
-    "a certain Pokémon.");
+    "A soft and sweet treat made of fluffy,\n"
+    "puffy, whipped, and whirled cream.\n"
+    "It's loved by a certain Pokémon.");
 
 static const u8 sSachetDesc[] = _(
-    "A sachet filled with\n"
-    "perfumes loved by\n"
-    "a certain Pokémon.");
+    "A sachet filled with fragrant perfumes\n"
+    "that are just too overwhelming.\n"
+    "Yet it's loved by a certain Pokémon.");
 
 static const u8 sLightBallDesc[] = _(
-    "A hold item that\n"
-    "raises the Atk and\n"
-    "Sp. Atk of Pikachu.");
+    "An item to be held by Pikachu.\n"
+    "It's a puzzling orb that boosts\n"
+    "its Attack and Sp. Atk stats.");
 
 static const u8 sSoftSandDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Ground-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a loose, silky sand that boosts\n"
+    "the power of Ground-type moves.");
 
 static const u8 sHardStoneDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Rock-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a durable stone that boosts\n"
+    "the power of Rock-type moves.");
 
 static const u8 sMiracleSeedDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Grass-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a seed imbued with life-force that\n"
+    "boosts the power of Grass-type moves.");
 
 static const u8 sBlackGlassesDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Dark-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It is a shady-looking pair of glasses\n"
+    "that boosts Dark-type moves.");
 
 static const u8 sBlackBeltDesc[] = _(
-    "A hold item that\n"
-    "boosts Fighting-\n"
-    "type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It is a belt that boosts determination\n"
+    "and Fighting-type moves.");
 
 static const u8 sMagnetDesc[] = _(
-    "A hold item that\n"
-    "boosts Electric-\n"
-    "type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a powerful magnet that boosts\n"
+    "the power of Electric-type moves.");
 
 static const u8 sMysticWaterDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Water-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This teardrop-shaped gem boosts\n"
+    "the power of Water-type moves.");
 
 static const u8 sSharpBeakDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Flying-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a long, sharp beak that boosts\n"
+    "the power of Flying-type moves.");
 
 static const u8 sPoisonBarbDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Poison-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This small, poisonous barb boosts\n"
+    "the power of Poison-type moves.");
 
 static const u8 sNeverMeltIceDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Ice-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a heat-repelling piece of ice that\n"
+    "boosts the power of Ice-type moves.");
 
 static const u8 sSpellTagDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Ghost-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a sinister, eerie tag that\n"
+    "boosts the power of Ghost-type moves.");
 
 static const u8 sTwistedSpoonDesc[] = _(
-    "A hold item that\n"
-    "boosts Psychic-\n"
-    "type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This spoon is imbued with telekinetic\n"
+    "power and boosts Psychic-type moves.");
 
 static const u8 sCharcoalDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Fire-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a combustible fuel that boosts\n"
+    "the power of Fire-type moves.");
 
 static const u8 sDragonFangDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Dragon-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This hard and sharp fang boosts\n"
+    "the power of Dragon-type moves.");
 
 static const u8 sSilkScarfDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Normal-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a sumptuous scarf that boosts\n"
+    "the power of Normal-type moves.");
 
 static const u8 sUpGradeDesc[] = _(
-    "A peculiar box made\n"
+    "A transparent device somehow filled\n"
+    "with all sorts of data. It was produced\n"
     "by Silph Co.");
 
 static const u8 sShellBellDesc[] = _(
-    "A hold item that\n"
-    "restores HP upon\n"
-    "striking the foe.");
+    "An item to be held by a Pokémon.\n"
+    "The holder restores a little HP every\n"
+    "time it inflicts damage on others.");
 
 static const u8 sPowerBracerDesc[] = _(
-    "A hold item that\n"
-    "promotes Atk gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes Attack gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sPowerBeltDesc[] = _(
-    "A hold item that\n"
-    "promotes Def gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes Defense gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sPowerLensDesc[] = _(
-    "Hold item that pro-\n"
-    "motes Sp. Atk gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes Sp. Atk gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sPowerBandDesc[] = _(
-    "Hold item that pro-\n"
-    "motes Sp. Def gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes Sp. Def gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sPowerAnkletDesc[] = _(
-    "A hold item that\n"
-    "promotes Spd gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes Speed gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sPowerWeightDesc[] = _(
-    "A hold item that\n"
-    "promotes HP gain,\n"
-    "but reduces Speed.");
+    "An item to be held by a Pokémon.\n"
+    "It promotes HP gain on leveling,\n"
+    "but reduces the Speed stat.");
 
 static const u8 sSeaIncenseDesc[] = _(
-    "A hold item that\n"
-    "slightly boosts\n"
-    "Water-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This incense has a curious aroma that\n"
+    "boosts the power of Water-type moves.");
 
 static const u8 sLaxIncenseDesc[] = _(
-    "A hold item that\n"
-    "slightly lowers the\n"
-    "foe's accuracy.");
+    "An item to be held by a Pokémon.\n"
+    "The beguiling aroma of this incense\n"
+    "may cause attacks to miss its holder.");
 
 static const u8 sOddIncenseDesc[] = _(
-    "A hold item that\n"
-    "boosts Psychic-\n"
-    "type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This exotic-smelling incense boosts\n"
+    "the power of Psychic-type moves.");
 
 static const u8 sRockIncenseDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Rock-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This exotic-smelling incense boosts\n"
+    "the power of Rock-type moves.");
 
 static const u8 sFullIncenseDesc[] = _(
-    "A held item that\n"
-    "makes the holder\n"
-    "move slower.");
+    "An item to be held by a Pokémon.\n"
+    "This exotic-smelling incense makes\n"
+    "the holder bloated and slow moving.");
 
 static const u8 sWaveIncenseDesc[] = _(
-    "A hold item that\n"
-    "slightly boosts\n"
-    "Water-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This incense has a curious aroma that\n"
+    "boosts the power of Water-type moves.");
 
 static const u8 sRoseIncenseDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Grass-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "This exotic-smelling incense boosts\n"
+    "the power of Grass-type moves.");
 
 static const u8 sLuckIncenseDesc[] = _(
-    "Doubles money in\n"
-    "battle if the\n"
-    "holder takes part.");
+    "An item to be held by a Pokémon.\n"
+    "It doubles any prize money received\n"
+    "if the holding Pokémon joins a battle.");
 
 static const u8 sPureIncenseDesc[] = _(
-    "A hold item that\n"
-    "helps repel wild\n"
-    "Pokémon.");
+    "An item to be held by a Pokémon.\n"
+    "It helps keep wild Pokémon away if\n"
+    "the holder is the head of the party.");
 
 static const u8 sLuckyPunchDesc[] = _(
-    "A hold item that\n"
-    "raises Chansey's\n"
-    "critical-hit rate.");
+    "An item to be held by Chansey.\n"
+    "This pair of lucky boxing gloves will\n"
+    "boost Chansey's critical-hit ratio.");
 
 static const u8 sMetalPowderDesc[] = _(
-    "A hold item that\n"
-    "raises Ditto's\n"
-    "Defense.");
+    "An item to be held by Ditto.\n"
+    "Extremely fine yet hard, this odd\n"
+    "powder boosts the Defense stat.");
 
 static const u8 sThickClubDesc[] = _(
-    "A hold item that \n"
-    "raises Cubone or\n"
-    "Marowak's Attack.");
+    "An item to be held by Cubone or\n"
+    "Marowak. It's a hard bone of some\n"
+    "sort that boosts the Attack stat.");
 
 static const u8 sStickDesc[] = _(
-    "A hold item that\n"
-    "raises Farfetch'd's\n"
-    "critical-hit ratio.");
+    "An item to be held by Farfetch'd.\n"
+    "This very long and stiff stalk of\n"
+    "leek boosts its critical-hit ratio.");
 
 static const u8 sRedScarfDesc[] = _(
-    "A hold item that\n"
-    "raises Cool in\n"
-    "Contests.");
+    "An item to be held by a Pokémon.\n"
+    "During a contest, it raises the Cool\n"
+    "aspect of the Pokémon holding it.");
 
 static const u8 sBlueScarfDesc[] = _(
-    "A hold item that\n"
-    "raises Beauty in\n"
-    "Contests.");
+    "An item to be held by a Pokémon.\n"
+    "During a contest, it raises the Beauty\n"
+    "aspect of the Pokémon holding it.");
 
 static const u8 sPinkScarfDesc[] = _(
-    "A hold item that\n"
-    "raises Cute in\n"
-    "Contests.");
+    "An item to be held by a Pokémon.\n"
+    "During a contest, it raises the Cute\n"
+    "aspect of the Pokémon holding it.");
 
 static const u8 sGreenScarfDesc[] = _(
-    "A hold item that\n"
-    "raises Smart in\n"
-    "Contests.");
+    "An item to be held by a Pokémon.\n"
+    "During a contest, it raises the Clever\n"
+    "aspect of the Pokémon holding it.");
 
 static const u8 sYellowScarfDesc[] = _(
-    "A hold item that\n"
-    "raises Tough in\n"
-    "Contests.");
+    "An item to be held by a Pokémon.\n"
+    "During a contest, it raises the Tough\n"
+    "aspect of the Pokémon holding it.");
 
 // Key items
 static const u8 sMachBikeDesc[] = _(

@@ -2622,3 +2622,10 @@ static void PrintTMHMMoveData(u16 itemId)
         //CopyWindowToVram(WIN_TMHM_INFO, 2);
     }
 }
+
+//DEBUG CODE
+void Debug_SaveBlockSize(void)
+{
+    ConvertIntToDecimalStringN(gStringVar1, sizeof(struct SaveBlock1), STR_CONV_MODE_LEFT_ALIGN, 6);
+    ConvertIntToDecimalStringN(gStringVar2, sizeof(struct SaveBlock2), STR_CONV_MODE_LEFT_ALIGN, 6);
+}

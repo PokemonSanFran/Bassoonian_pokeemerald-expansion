@@ -198,8 +198,86 @@ DebugTestScript::
 	additem ITEM_ROSELI_BERRY
 	additem ITEM_KEE_BERRY
 	additem ITEM_MARANGA_BERRY
+	additem ITEM_BRIGHT_POWDER
+	additem ITEM_WHITE_HERB
+	additem ITEM_MACHO_BRACE
+	additem ITEM_QUICK_CLAW
+	additem ITEM_SOOTHE_BELL
+	additem ITEM_MENTAL_HERB
+	additem ITEM_CHOICE_BAND
+	additem ITEM_KINGS_ROCK
+	additem ITEM_SILVER_POWDER
+	additem ITEM_AMULET_COIN
+	additem ITEM_CLEANSE_TAG
+	additem ITEM_SOUL_DEW
+	additem ITEM_DEEP_SEA_TOOTH
+	additem ITEM_DEEP_SEA_SCALE
+	additem ITEM_SMOKE_BALL
+	additem ITEM_EVERSTONE
+	additem ITEM_FOCUS_BAND
+	additem ITEM_LUCKY_EGG
+	additem ITEM_SCOPE_LENS
+	additem ITEM_METAL_COAT
+	additem ITEM_LEFTOVERS
+	additem ITEM_DRAGON_SCALE
+	additem ITEM_OVAL_STONE
+	additem ITEM_PROTECTOR
+	additem ITEM_ELECTIRIZER
+	additem ITEM_MAGMARIZER
+	additem ITEM_DUBIOUS_DISC
+	additem ITEM_REAPER_CLOTH
+	additem ITEM_RAZOR_CLAW
+	additem ITEM_RAZOR_FANG
+	additem ITEM_PRISM_SCALE
+	additem ITEM_WHIPPED_DREAM
+	additem ITEM_SACHET
+	additem ITEM_LIGHT_BALL
+	additem ITEM_SOFT_SAND
+	additem ITEM_HARD_STONE
+	additem ITEM_MIRACLE_SEED
+	additem ITEM_BLACK_GLASSES
+	additem ITEM_BLACK_BELT
+	additem ITEM_MAGNET
+	additem ITEM_MYSTIC_WATER
+	additem ITEM_SHARP_BEAK
+	additem ITEM_POISON_BARB
+	additem ITEM_NEVER_MELT_ICE
+	additem ITEM_SPELL_TAG
+	additem ITEM_TWISTED_SPOON
+	additem ITEM_CHARCOAL
+	additem ITEM_DRAGON_FANG
+	additem ITEM_SILK_SCARF
+	additem ITEM_UP_GRADE
+	additem ITEM_SHELL_BELL
+	additem ITEM_POWER_BRACER
+	additem ITEM_POWER_BELT
+	additem ITEM_POWER_LENS
+	additem ITEM_POWER_BAND
+	additem ITEM_POWER_ANKLET
+	additem ITEM_POWER_WEIGHT
+	additem ITEM_SEA_INCENSE
+	additem ITEM_LAX_INCENSE
+	additem ITEM_ODD_INCENSE
+	additem ITEM_ROCK_INCENSE
+	additem ITEM_FULL_INCENSE
+	additem ITEM_WAVE_INCENSE
+	additem ITEM_ROSE_INCENSE
+	additem ITEM_LUCK_INCENSE
+	additem ITEM_PURE_INCENSE
+	additem ITEM_LUCKY_PUNCH
+	additem ITEM_METAL_POWDER
+	additem ITEM_THICK_CLUB
+	additem ITEM_STICK
+	additem ITEM_RED_SCARF
+	additem ITEM_BLUE_SCARF
+	additem ITEM_PINK_SCARF
+	additem ITEM_GREEN_SCARF
+	additem ITEM_YELLOW_SCARF
 	additem ITEM_POKEBLOCK_CASE
 	msgbox DebugTestScript_Text_1
+	closemessage
+	special Debug_SaveBlockSize
+	msgbox DebugTestScript_Text_2
 	closemessage
 	return
 
@@ -642,6 +720,9 @@ DebugTestScript_Text_0:
 
 DebugTestScript_Text_1:
 	.string "done$"
+
+DebugTestScript_Text_2:
+	.string "SaveBlock1 is {STR_VAR_1} bytes long.\nMax size is 15872 bytes.\pSaveBlock2 is {STR_VAR_2} bytes long.\nMax size is 3968 bytes.$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
 	.string "nuh uh still preparin'$"
