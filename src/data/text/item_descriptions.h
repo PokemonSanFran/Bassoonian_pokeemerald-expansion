@@ -1404,24 +1404,24 @@ static const u8 sCoinCaseDesc[] = _(
     "up to 9,999 Coins.");
 
 static const u8 sItemfinderDesc[] = _(
-    "A device that\n"
-    "signals an invisible\n"
-    "item by sound.");
+    "It searches for hidden items in the\n"
+    "area and emits different lights and\n"
+    "sounds when it detects something.");
 
 static const u8 sOldRodDesc[] = _(
-    "Use by any body of\n"
-    "water to fish for\n"
-    "wild Pokémon.");
+    "An old and beat-up fishing rod.\n"
+    "Use it by any body of water to\n"
+    "fish for wild aquatic Pokémon.");
 
 static const u8 sGoodRodDesc[] = _(
-    "A decent fishing\n"
-    "rod for catching\n"
-    "wild Pokémon.");
+    "A new, good-quality fishing rod.\n"
+    "Use it by any body of water to\n"
+    "fish for wild aquatic Pokémon.");
 
 static const u8 sSuperRodDesc[] = _(
-    "The best fishing\n"
-    "rod for catching\n"
-    "wild Pokémon.");
+    "An awesome, high-tech fishing rod.\n"
+    "Use it at any body of water to\n"
+    "fish for wild aquatic Pokémon.");
 
 static const u8 sSSTicketDesc[] = _(
     "The ticket required\n"
@@ -1459,9 +1459,7 @@ static const u8 sAcroBikeDesc[] = _(
     "and wheelies.");
 
 static const u8 sPokeblockCaseDesc[] = _(
-    "A case for holding\n"
-    "Ponuts made with\n"
-    "a Ponut Baker.");
+    "filler");
 
 static const u8 sLetterDesc[] = _(
     "A letter to Steven\n"
@@ -1489,9 +1487,9 @@ static const u8 sScannerDesc[] = _(
     "Abandoned Ship.");
 
 static const u8 sGoGogglesDesc[] = _(
-    "Nifty goggles that\n"
-    "protect eyes from\n"
-    "desert sandstorms.");
+    "A pair of protective goggles.\n"
+    "They enable a Trainer to travel\n"
+    "through even desert sandstorms.");
 
 static const u8 sMeteoriteDesc[] = _(
     "A meteorite found\n"
@@ -1523,14 +1521,14 @@ static const u8 sStorageKeyDesc[] = _(
     "Abandoned Ship.");
 
 static const u8 sRootFossilDesc[] = _(
-    "A fossil of an\n"
-    "ancient, seafloor-\n"
-    "dwelling Pokémon.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sea. It looks as\n"
+    "if it could be part of a plant's root.");
 
 static const u8 sClawFossilDesc[] = _(
-    "A fossil of an\n"
-    "ancient, seafloor-\n"
-    "dwelling Pokémon.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sea. It appears\n"
+    "to be a fragment of a claw.");
 
 static const u8 sDevonScopeDesc[] = _(
     "A device by Devon\n"
@@ -1856,9 +1854,9 @@ static const u8 sGoldTeethDesc[] = _(
     "Zone's Warden.");
 
 static const u8 sOldAmberDesc[] = _(
-    "A stone containing\n"
-    "the genes of an\n"
-    "ancient Pokémon.");
+    "A piece of amber that contains the\n"
+    "genetic material of an ancient Pokémon.\n"
+    "It is clear with a reddish tint.");
 
 static const u8 sCardKeyDesc[] = _(
     "A card-type door\n"
@@ -1871,44 +1869,44 @@ static const u8 sLiftKeyDesc[] = _(
     "Rocket's Hideout.");
 
 static const u8 sArmorFossilDesc[] = _(
-    "A piece of a\n"
-    "prehistoric Poké-\n"
-    "mon's head.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived on the land. It appears\n"
+    "as though it's part of a head.");
 
 static const u8 sSkullFossilDesc[] = _(
-    "A piece of a\n"
-    "prehistoric Poké-\n"
-    "mon's head.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived on the land. It appears\n"
+    "as though it's part of a head.");
 
 static const u8 sHelixFossilDesc[] = _(
-    "A piece of an\n"
-    "ancient marine\n"
-    "Pokémon's seashell.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sea. It might\n"
+    "be a piece of a seashell.");
 
 static const u8 sDomeFossilDesc[] = _(
-    "A piece of an\n"
-    "ancient marine\n"
-    "Pokémon's shell.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sea. It could\n"
+    "be a shell or carapace.");
 
 static const u8 sCoverFossilDesc[] = _(
-    "A piece of a\n"
-    "prehistoric Poké-\n"
-    "mon's back.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sea. It appears\n"
+    "as though it could be part of its back.");
 
 static const u8 sPlumeFossilDesc[] = _(
-    "A piece of a\n"
-    "prehistoric Poké-\n"
-    "mon's wing.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived in the sky. It looks as\n"
+    "if it could come from part of its wing.");
 
 static const u8 sJawFossilDesc[] = _(
-    "A piece of a prehis-\n"
-    "toric Pokémon's\n"
-    "large jaw.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived on the land. It looks as\n"
+    "if it could be a piece of a large jaw.");
 
 static const u8 sSailFossilDesc[] = _(
-    "A piece of a prehis-\n"
-    "toric Pokémon's\n"
-    "skin sail.");
+    "A fossil from a prehistoric Pokémon\n"
+    "that once lived on land. It looks like\n"
+    "the impression from a skin sail.");
 
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"
@@ -1936,9 +1934,9 @@ static const u8 sFameCheckerDesc[] = _(
     "for instant recall.");
 
 static const u8 sTMCaseDesc[] = _(
-    "A convenient case \n"
-    "that holds TMs and\n"
-    "HMs.");
+    "A case that holds TMs and HMs.\n"
+    "It is attached to the bag's compartment\n"
+    "for important items.");
 
 static const u8 sBerryPouchDesc[] = _(
     "A convenient\n"

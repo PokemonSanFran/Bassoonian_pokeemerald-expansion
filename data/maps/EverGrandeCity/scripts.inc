@@ -273,7 +273,23 @@ DebugTestScript::
 	additem ITEM_PINK_SCARF
 	additem ITEM_GREEN_SCARF
 	additem ITEM_YELLOW_SCARF
+	additem ITEM_ITEMFINDER
+	additem ITEM_OLD_ROD
+	additem ITEM_GOOD_ROD
+	additem ITEM_SUPER_ROD
 	additem ITEM_POKEBLOCK_CASE
+	additem ITEM_GO_GOGGLES
+	additem ITEM_ROOT_FOSSIL
+	additem ITEM_CLAW_FOSSIL
+	additem ITEM_ARMOR_FOSSIL
+	additem ITEM_SKULL_FOSSIL
+	additem ITEM_HELIX_FOSSIL
+	additem ITEM_DOME_FOSSIL
+	additem ITEM_COVER_FOSSIL
+	additem ITEM_PLUME_FOSSIL
+	additem ITEM_JAW_FOSSIL
+	additem ITEM_SAIL_FOSSIL
+	additem ITEM_OLD_AMBER
 	msgbox DebugTestScript_Text_1
 	closemessage
 	special Debug_SaveBlockSize
