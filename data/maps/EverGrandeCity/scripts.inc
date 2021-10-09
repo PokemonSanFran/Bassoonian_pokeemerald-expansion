@@ -925,7 +925,15 @@ DebugTestScript_Text_5:
 	.string "SaveBlock1 is {STR_VAR_1} bytes long.\nMax size is 15872 bytes.\pSaveBlock2 is {STR_VAR_2} bytes long.\nMax size is 3968 bytes.$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
-	.string "nuh uh still preparin'$"
+	.string "Oh, {PLAYER}! You're early! Sorry, the\n"
+	.string "Professor and I still have a few things\l"
+	.string "to take care of.\p"
+	.string "How about you pay Drive Labs a visit?\n"
+	.string "It's the tall building to the\l"
+	.string "southeast.\p"
+	.string "They might just give you something\n"
+	.string "nifty there!\p"
+	.string "Okay, see you soon!$"
 
 Borago_POT_Keeper_Text_0:
 	.string "Whoa, buster! I don't think it's a good\n"

@@ -940,7 +940,7 @@ R1_Event_Pam_Text_0:
 	.string "We're rooting for all of you!$"
 
 R1_Event_Mike_Text_0:
-	.string "Mike: You got this, buster! I'll secure\n"
+	.string "Cam: You got this, buster! I'll secure\n"
 	.string "some awesome action shots!$"
 
 R1_Event_Rival_Text_0:
