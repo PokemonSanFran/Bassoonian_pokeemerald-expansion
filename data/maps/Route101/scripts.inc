@@ -891,14 +891,15 @@ Route1_finalisetutorial_Text_28:
 	.string "Turpia, in fact. I'll see you there!$"
 
 R1_NoAccess_City_Text_0:
-	.string "Uh, I don't think that's a good idea,\n"
-	.string "{PLAYER}. The competition's still\l"
-	.string "under way, you know?$"
+	.string "Aide Wicker: Uh, I don't think that's a\n"
+	.string "good idea, {PLAYER}. The\l"
+	.string "competition's still under way, you\l"
+	.string "know?$"
 
 R1_ScientistCityBlock_Text_0:
-	.string "Hey, {PLAYER}! You look like you've\n"
-	.string "bounced right back from the incident\l"
-	.string "earlier.\p"
+	.string "Aide Wicker: Hey, {PLAYER}! You look\n"
+	.string "like you've bounced right back from the\l"
+	.string "incident earlier.\p"
 	.string "That's great! Best of luck with the\n"
 	.string "competition!$"
 

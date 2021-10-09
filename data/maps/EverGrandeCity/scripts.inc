@@ -925,9 +925,9 @@ DebugTestScript_Text_5:
 	.string "SaveBlock1 is {STR_VAR_1} bytes long.\nMax size is 15872 bytes.\pSaveBlock2 is {STR_VAR_2} bytes long.\nMax size is 3968 bytes.$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
-	.string "Oh, {PLAYER}! You're early! Sorry, the\n"
-	.string "Professor and I still have a few things\l"
-	.string "to take care of.\p"
+	.string "Aide Wicker: Oh, {PLAYER}! You're\n"
+	.string "early! Sorry, the Professor and I still\l"
+	.string "have a few things to take care of.\p"
 	.string "How about you pay Drive Labs a visit?\n"
 	.string "It's the tall building to the\l"
 	.string "southeast.\p"
@@ -1041,4 +1041,10 @@ FamilyEventC_Text_7:
 	.string "end$"
 
 SpotByAide_PartB_Text_0:
-	.string "omg u so late hurry up already$"
+	.string "Aide Wicker: Hello, {PLAYER}! I see\n"
+	.string "you've obtained a P-Drive.\p"
+	.string "Good, good! The color goes well with you,\n"
+	.string "I must say!\p"
+	.string "Anyway, the Professor happens to have\n"
+	.string "finished his affairs, so I thought to\l"
+	.string "pick you up here. Shall we?$"

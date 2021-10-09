@@ -2382,14 +2382,14 @@ Turia_Celebration_Cont_B_Text_3:
 	.string "Borago.$"
 
 Turpia_NoAccessR1_Text_0:
-	.string "Oh, hey! The Professor is still getting\n"
-	.string "things ready.\p"
+	.string "Aide Wicker: Oh, hey! The Professor is\n"
+	.string "still getting things ready.\p"
 	.string "Why don't you go look for your pals in\n"
 	.string "the meantime?$"
 
 Turpia_ScientistR1Block_Text_0:
-	.string "The Professor is still getting things\n"
-	.string "ready.\p"
+	.string "Aide Wicker: The Professor is still\n"
+	.string "getting things ready.\p"
 	.string "Why don't you go look for your pals in\n"
 	.string "the meantime?$"
 
@@ -2529,11 +2529,12 @@ Turpia_ProtaSquad_C_Text_12:
 	.string "Tori: Aaaaah! Help! P-Pokémon!$"
 
 Turpia_ProtaSquad_C_Text_13:
-	.string "Hold on, you three! Don't move! I've got\n"
-	.string "you covered!$"
+	.string "Aide Wicker: Hold on, you three! Don't\n"
+	.string "move! I've got you covered!$"
 
 Turpia_ProtaSquad_C_Text_14:
-	.string "Phew! That's been taken care of.\p"
+	.string "Aide Wicker: Phew! That's been taken\n"
+	.string "care of.\p"
 	.string "I don't know what you three were\n"
 	.string "thinking, going through the grass\l"
 	.string "without your own Pokémon…\p"

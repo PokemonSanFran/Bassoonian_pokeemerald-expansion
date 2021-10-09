@@ -482,7 +482,7 @@ script Turpia_NoAccessR1 {
 	applymovement(5,Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("Oh, hey! The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"))
+	msgbox(format("Aide Wicker: Oh, hey! The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"))
 	closemessage
 	checkfollower
 	if (var(VAR_RESULT)) {
@@ -499,7 +499,7 @@ script Turpia_NoAccessR1 {
 }
 
 script Turpia_ScientistR1Block {
-	msgbox(format("The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"),MSGBOX_NPC)
+	msgbox(format("Aide Wicker: The Professor is still getting things ready.\pWhy don't you go look for your pals in the meantime?"),MSGBOX_NPC)
 }
 
 script Turpia_SigurdCameo {
@@ -710,7 +710,7 @@ script Turpia_ProtaSquad_C
 	closemessage
 	applymovement(5,R1_Scientist_Save,MAP_LITTLEROOT_TOWN)
 	waitmovement(5,MAP_LITTLEROOT_TOWN)
-	msgbox(format("Hold on, you three! Don't move! I've got you covered!"))
+	msgbox(format("Aide Wicker: Hold on, you three! Don't move! I've got you covered!"))
 	closemessage
 	special(SavePlayerParty)
 	special(PutZigzagoonInPlayerParty)
@@ -719,7 +719,7 @@ script Turpia_ProtaSquad_C
 	special(LoadPlayerParty)
 	applymovement(5,Common_Movement_WalkInPlaceFastestLeft,MAP_LITTLEROOT_TOWN)
 	waitmovement(5,MAP_LITTLEROOT_TOWN)
-	msgbox(format("Phew! That's been taken care of.\pI don't know what you three were thinking, going through the grass without your own Pokémon…\pAh, well. At least you're safe and sound."))
+	msgbox(format("Aide Wicker: Phew! That's been taken care of.\pI don't know what you three were thinking, going through the grass without your own Pokémon…\pAh, well. At least you're safe and sound."))
 	closemessage
 	applymovement(5,R1_Scientist_BackOff,MAP_LITTLEROOT_TOWN)
 	waitmovement(5,MAP_LITTLEROOT_TOWN)

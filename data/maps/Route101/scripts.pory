@@ -327,7 +327,7 @@ script R1_NoAccess_City {
 	applymovement(4,Common_Movement_ExclamationMark)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("Uh, I don't think that's a good idea, {PLAYER}. The competition's still under way, you know?"))
+	msgbox(format("Aide Wicker: Uh, I don't think that's a good idea, {PLAYER}. The competition's still under way, you know?"))
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkRight)
 	waitmovement(0)
@@ -335,7 +335,7 @@ script R1_NoAccess_City {
 }
 
 script R1_ScientistCityBlock {
-	msgbox(format("Hey, {PLAYER}! You look like you've bounced right back from the incident earlier.\pThat's great! Best of luck with the competition!"),MSGBOX_NPC)
+	msgbox(format("Aide Wicker: Hey, {PLAYER}! You look like you've bounced right back from the incident earlier.\pThat's great! Best of luck with the competition!"),MSGBOX_NPC)
 }
 
 script R1_NoAccess_Home {
