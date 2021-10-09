@@ -660,7 +660,7 @@ script Turpia_ProtaSquad_C
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight,MAP_LITTLEROOT_TOWN)
 	waitmovement(6,MAP_LITTLEROOT_TOWN)
 	msgbox(format("Tori: Hmmmm… What do you think, {PLAYER}? I trust your judgment."),MSGBOX_YESNO)
-	if(var(VAR_RESULT)==YES)
+	if(var(VAR_RESULT)==NO)
 	{
 		msgbox(format("Tori: Yeah, same here. I'd rather not risk doing anything stupid."))
 		closemessage

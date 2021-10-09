@@ -680,7 +680,7 @@ Turpia_ProtaSquad_C_5:
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
 	waitmovement 6, MAP_LITTLEROOT_TOWN
 	msgbox Turpia_ProtaSquad_C_Text_5, MSGBOX_YESNO
-	compare VAR_RESULT, YES
+	compare VAR_RESULT, NO
 	goto_if_eq Turpia_ProtaSquad_C_10
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft, MAP_LITTLEROOT_TOWN
 	applymovement 7, Common_Movement_WalkInPlaceFastestRight, MAP_LITTLEROOT_TOWN
