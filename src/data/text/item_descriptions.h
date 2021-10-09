@@ -2516,9 +2516,9 @@ static const u8 sSafetyGogglesDesc[] = _(
     "weather-related damage and powder.");
 
 static const u8 sGengariteDesc[] = _(
-    "This stone enables\n"
-    "Gengar to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Gengar\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sGardevoiriteDesc[] = _(
     "This stone enables\n"
