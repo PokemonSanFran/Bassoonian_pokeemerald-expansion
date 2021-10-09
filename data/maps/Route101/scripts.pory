@@ -377,7 +377,7 @@ script R1_Event_Pam {
 }
 
 script R1_Event_Mike {
-	msgbox(format("Mike: You got this, buster! I'll secure some awesome action shots!"),MSGBOX_NPC)
+	msgbox(format("Cam: You got this, buster! I'll secure some awesome action shots!"),MSGBOX_NPC)
 }
 
 script R1_Event_Rival {

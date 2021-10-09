@@ -514,7 +514,7 @@ script Borago_PushAwayPlayerWithoutDrive
 	lockall
 	applymovement(2,Common_Movement_WalkInPlaceFastestRight)
 	waitmovement(0)
-	msgbox(format("nuh uh still preparin'"))
+	msgbox(format("Oh, {PLAYER}! You're early! Sorry, the Professor and I still have a few things to take care of.\pHow about you pay Drive Labs a visit? It's the tall building to the southeast.\pThey might just give you something nifty there!\pOkay, see you soon!"))
 	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkRight)
 	waitmovement(0)
