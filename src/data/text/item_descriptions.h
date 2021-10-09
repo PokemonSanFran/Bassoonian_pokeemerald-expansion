@@ -2521,314 +2521,314 @@ static const u8 sGengariteDesc[] = _(
     "to Mega Evolve during battle.");
 
 static const u8 sGardevoiriteDesc[] = _(
-    "This stone enables\n"
-    "Gardevoir to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Gardevoir\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAmpharositeDesc[] = _(
-    "This stone enables\n"
-    "Ampharos to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Ampharos\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sVenusauriteDesc[] = _(
-    "This stone enables\n"
-    "Venusaur to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Venusaur\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sCharizarditeDesc[] = _(
-    "This stone enables\n"
-    "Charizard to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Charizard\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sBlastoisiniteDesc[] = _(
-    "This stone enables\n"
-    "Blastoise to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Blastoise\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sMewtwoniteDesc[] = _(
-    "This stone enables\n"
-    "Mewtwo to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Mewtwo\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sBlazikeniteDesc[] = _(
-    "This stone enables\n"
-    "Blaziken to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Blaziken\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sMedichamiteDesc[] = _(
-    "This stone enables\n"
-    "Medicham to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Medicham\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sHoundoominiteDesc[] = _(
-    "This stone enables\n"
-    "Houndoom to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Houndoom\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAggroniteDesc[] = _(
-    "This stone enables\n"
-    "Aggron to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Aggron\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sBanettiteDesc[] = _(
-    "This stone enables\n"
-    "Banette to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Banette\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sTyranitariteDesc[] = _(
-    "This stone enables\n"
-    "Tyranitar to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Tyranitar\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sScizoriteDesc[] = _(
-    "This stone enables\n"
-    "Scizor to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Scizor\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sPinsiriteDesc[] = _(
-    "This stone enables\n"
-    "Pinsir to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Pinsir\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAerodactyliteDesc[] = _(
-    "This stone enables\n"
-    "Aerodactyl to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Aerodactyl\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sLucarioniteDesc[] = _(
-    "This stone enables\n"
-    "Lucario to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Lucario\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAbomasiteDesc[] = _(
-    "This stone enables\n"
-    "Abomasnow to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Abomasnow\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sKangaskhaniteDesc[] = _(
-    "This stone enables\n"
-    "Kangaskhan to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Kangaskhan\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sGyaradositeDesc[] = _(
-    "This stone enables\n"
-    "Gyarados to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Gyarados\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAbsoliteDesc[] = _(
-    "This stone enables\n"
-    "Absol to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Absol\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAlakaziteDesc[] = _(
-    "This stone enables\n"
-    "Alakazam to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Alakazam\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sHeracroniteDesc[] = _(
-    "This stone enables\n"
-    "Heracross to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Heracross\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sMawiliteDesc[] = _(
-    "This stone enables\n"
-    "Mawile to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Mawile\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sManectiteDesc[] = _(
-    "This stone enables\n"
-    "Manectric to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Manectric\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sGarchompiteDesc[] = _(
-    "This stone enables\n"
-    "Garchomp to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Garchomp\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sLatiasiteDesc[] = _(
-    "This stone enables\n"
-    "Latias to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Latias\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sLatiositeDesc[] = _(
-    "This stone enables\n"
-    "Latios to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Latios\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSwampertiteDesc[] = _(
-    "This stone enables\n"
-    "Swampert to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Swampert\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSceptiliteDesc[] = _(
-    "This stone enables\n"
-    "Sceptile to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Sceptile\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSableniteDesc[] = _(
-    "This stone enables\n"
-    "Sableye to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Sableye\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAltarianiteDesc[] = _(
-    "This stone enables\n"
-    "Altaria to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Altaria\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sGalladiteDesc[] = _(
-    "This stone enables\n"
-    "Gallade to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Gallade\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sAudiniteDesc[] = _(
-    "This stone enables\n"
-    "Audino to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Audino\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sMetagrossiteDesc[] = _(
-    "This stone enables\n"
-    "Metagross to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Metagross\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSharpedoniteDesc[] = _(
-    "This stone enables\n"
-    "Sharpedo to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Sharpedo\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSlowbroniteDesc[] = _(
-    "This stone enables\n"
-    "Slowbro to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Slowbro\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSteelixiteDesc[] = _(
-    "This stone enables\n"
-    "Steelix to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Steelix\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sPidgeotiteDesc[] = _(
-    "This stone enables\n"
-    "Pidgeot to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Pidgeot\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sGlalititeDesc[] = _(
-    "This stone enables\n"
-    "Glalie to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Glalie\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sDianciteDesc[] = _(
-    "This stone enables\n"
-    "Diancie to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Diancie\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sCameruptiteDesc[] = _(
-    "This stone enables\n"
-    "Camerupt to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Camerupt\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sLopunniteDesc[] = _(
-    "This stone enables\n"
-    "Lopunny to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Lopunny\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sSalamenciteDesc[] = _(
-    "This stone enables\n"
-    "Salamence to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Salamence\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sBeedrilliteDesc[] = _(
-    "This stone enables\n"
-    "Beedrill to Mega\n"
-    "Evolve in battle.");
+    "One of the mysterious Mega Stones.\n"
+    "This stone will enable Beedrill\n"
+    "to Mega Evolve during battle.");
 
 static const u8 sMegaBraceletDesc[] = _(
-    "Enables {PKMN} holding\n"
-    "their Mega Stone to\n"
-    "Mega Evolve.");
+    "This cuff contains an untold power\n"
+    "that somehow enables Pokémon carrying a\n"
+    "Mega Stone to Mega Evolve in battle.");
 
 static const u8 sProtectPadsDesc[] = _(
-    "Guard the holder\n"
-    "from contact move\n"
-    "effects.");
+    "An item to be held by a Pokémon.\n"
+    "These pads protect the holder from effects\n"
+    "caused by making direct contact with the target.");
 
 static const u8 sTerrainExtenderDesc[] = _(
-    "Extends the length\n"
-    "of the active\n"
-    "battle terrain.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of the terrain\n"
+    "caused by the holder's move or Ability.");
 
 static const u8 sElectricSeedDesc[] = _(
-    "Boosts Defense on\n"
-    "Electric Terrain,\n"
-    "but only one time.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts Defense on Electric Terrain.\n"
+    "It can only be used once.");
 
 static const u8 sGrassySeedDesc[] = _(
-    "Boosts Defense on\n"
-    "Grassy Terrain,\n"
-    "but only one time.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts Defense on Grassy Terrain.\n"
+    "It can only be used once.");
 
 static const u8 sMistySeedDesc[] = _(
-    "Boosts Sp. Def. on\n"
-    "Misty Terrain,\n"
-    "but only one time.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts Sp. Def on Misty Terrain.\n"
+    "It can only be used once.");
 
 static const u8 sPsychicSeedDesc[] = _(
-    "Boosts Sp. Def. on\n"
-    "Psychic Terrain,\n"
-    "but only one time.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts Sp. Def on Psychic Terrain.\n"
+    "It can only be used once.");
 
 static const u8 sAdrenalineOrbDesc[] = _(
-    "Boosts Speed if the\n"
-    "user is intimidated,\n"
-    "but only one time.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts Speed when intimidated.\n"
+    "It can only be used once.");
 
 static const u8 sHoneyDesc[] = _(
-    "Sweet honey that\n"
-    "attracts wild\n"
-    "Pokémon when used.");
+    "A sweet honey with a lush aroma that\n"
+    "attracts wild Pokémon when it is used in\n"
+    "tall grass, in caves, or elsewhere.");
 
 static const u8 sHealthFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base HP of\n"
-    "a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the HP\n"
+    "base points of a single Pokémon.");
 
 static const u8 sMuscleFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Attack of\n"
-    "a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the Attack\n"
+    "base points of a single Pokémon.");
 
 static const u8 sResistFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Defense\n"
-    "of a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the Defense\n"
+    "base points of a single Pokémon.");
 
 static const u8 sGeniusFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Sp. Atk.\n"
-    "of a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the Sp. Atk\n"
+    "base points of a single Pokémon.");
 
 static const u8 sCleverFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Sp. Def.\n"
-    "of a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the Sp. Def\n"
+    "base points of a single Pokémon.");
 
 static const u8 sSwiftFeatherDesc[] = _(
-    "An item that raises\n"
-    "the base Speed of\n"
-    "a Pokémon.");
+    "An item for use on a Pokémon.\n"
+    "It slightly increases the Speed\n"
+    "base points of a single Pokémon.");
 
 static const u8 sPrettyFeatherDesc[] = _(
-    "A beautiful yet\n"
-    "plain feather that\n"
-    "does nothing.");
+    "Though this feather is beautiful,\n"
+    "it's just a regular feather and has\n"
+    "no effect.");
 
 static const u8 sShinyCharmDesc[] = _(
-	"A charm that will\n"
-    "raise the chance\n"
-    "of Shiny Pokémon.");
+	"A shiny charm said to increase the\n"
+    "chance of finding a Shiny Pokémon\n"
+    "in the wild.");
     
 static const u8 sOvalCharmDesc[] = _(
-    "Raises the chance\n"
-    "of finding eggs\n"
-    "at the daycare.");
+    "An oval charm said to increase the\n"
+    "chance of Pokémon Eggs being found\n"
+    "at the Day Care.");
 
 static const u8 sZRingDesc[] = _(
     "A strange ring\n"
