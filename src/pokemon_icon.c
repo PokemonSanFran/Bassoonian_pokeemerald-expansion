@@ -2437,7 +2437,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_LOUDRED_HANAUAN] = 1,
     [SPECIES_EXPLOUD_HANAUAN] = 1,
     [SPECIES_CROAGUNK_HANAUAN] = 4,
-    [SPECIES_TOXICROAK_HANAUAN] = 0,
+    [SPECIES_TOXICROAK_HANAUAN] = 4,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =

@@ -12563,7 +12563,7 @@ static const struct TrainerMon sParty_Debug[] = {
     {
     .iv = 40,
     .lvl = 40,
-    .species = SPECIES_CROAGUNK_HANAUAN,
+    .species = SPECIES_TOXICROAK_HANAUAN,
     .shiny = 1,
     },
 };

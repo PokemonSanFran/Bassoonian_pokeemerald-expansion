@@ -135,4 +135,5 @@ const u8 gEnemyMonElevation[NUM_SPECIES] =
 
     // Custom
     [SPECIES_CROAGUNK_HANAUAN] = 1,
+    [SPECIES_TOXICROAK_HANAUAN] = 4,
 };
