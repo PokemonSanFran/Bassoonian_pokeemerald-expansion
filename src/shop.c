@@ -66,6 +66,7 @@ static void BuyMenuInitWindows(void);
 static void BuyMenuDecompressBgGraphics(void);
 static void BuyMenuSetListEntry(struct ListMenuItem*, u16, u8*);
 static void BuyMenuAddItemIcon(u16, u8);
+static void BagMenu_Print_Shop(u8, u8, const u8*, u8, u8, u8, u8, u8, u8);
 static void BuyMenuRemoveItemIcon(u16, u8);
 static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 colorSet);
 static void BuyMenuDrawMapGraphics(void);
@@ -390,9 +391,9 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
     },
     {
         .bg = 0,
-        .tilemapLeft = 0,
-        .tilemapTop = 13,
-        .width = 14,
+        .tilemapLeft = 0x05, //0,
+        .tilemapTop = 0x0e, //13,
+        .width = 0x19,//14,
         .height = 6,
         .paletteNum = 15,
         .baseBlock = 0x0122,
@@ -404,7 +405,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 12,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x0176,
+        .baseBlock = 0x1B8, //0x0176,
     },
     {
         .bg = 0,
@@ -413,7 +414,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x018E,
+        .baseBlock = 0x1D0, //0x018E,
     },
     {
         .bg = 0,
@@ -422,7 +423,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x01A2,
+        .baseBlock = 0x1E4, //0x01A2,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -699,8 +700,8 @@ static void BuyMenuBuildListMenuTemplate(void)
     gMultiuseListMenuTemplate = sShopBuyMenuListTemplate;
     gMultiuseListMenuTemplate.items = sListMenuItems;
     gMultiuseListMenuTemplate.totalItems = sMartInfo.itemCount + 1;
-    if (gMultiuseListMenuTemplate.totalItems > 8)
-        gMultiuseListMenuTemplate.maxShowed = 8;
+    if (gMultiuseListMenuTemplate.totalItems > 5 /*8*/)
+        gMultiuseListMenuTemplate.maxShowed = 5 /*8*/;
     else
         gMultiuseListMenuTemplate.maxShowed = gMultiuseListMenuTemplate.totalItems;
 
@@ -744,7 +745,8 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
     }
 
     FillWindowPixelBuffer(2, PIXEL_FILL(0));
-    BuyMenuPrint(2, description, 3, 1, 0, 0);
+    //BuyMenuPrint(2, description, 3, 1, 0, 0);
+    BagMenu_Print_Shop(2, 2, description, 0, 3, 2, 0, 0, 0);
 }
 
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
@@ -778,14 +780,14 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
 
 static void BuyMenuAddScrollIndicatorArrows(void)
 {
-    if (sShopData->scrollIndicatorsTaskId == TASK_NONE && sMartInfo.itemCount + 1 > 8)
+    if (sShopData->scrollIndicatorsTaskId == TASK_NONE && sMartInfo.itemCount + 1 > 5 /*8*/)
     {
         sShopData->scrollIndicatorsTaskId = AddScrollIndicatorArrowPairParameterized(
             SCROLL_ARROW_UP,
             172,
             12,
-            148,
-            sMartInfo.itemCount - 7,
+            108,
+            sMartInfo.itemCount - 4/*7*/,
             TAG_SCROLL_ARROW,
             TAG_SCROLL_ARROW,
             &sShopData->scrollOffset);
@@ -821,7 +823,7 @@ static void BuyMenuAddItemIcon(u16 item, u8 iconSlot)
         {
             *spriteIdPtr = spriteId;
             gSprites[spriteId].x2 = 24;
-            gSprites[spriteId].y2 = 88;
+            gSprites[spriteId].y2 = 140;
         }
     }
     else
@@ -888,6 +890,11 @@ static void BuyMenuInitWindows(void)
 static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 colorSet)
 {
     AddTextPrinterParameterized4(windowId, 1, x, y, 0, 0, sShopBuyMenuTextColors[colorSet], speed, text);
+}
+
+static void BagMenu_Print_Shop(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIndex)
+{
+    AddTextPrinterParameterized4(windowId, fontId, left, top, letterSpacing, lineSpacing, sShopBuyMenuTextColors[colorIndex], speed, str);
 }
 
 static void BuyMenuDisplayMessage(u8 taskId, const u8 *text, TaskFunc callback)
