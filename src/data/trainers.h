@@ -7038,6 +7038,45 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_GRC_ToriTurpiaMudkip},
     },
 
+    [TRAINER_GRC_TORI_R6_TORCHIC] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_GRC_ToriR6Torchic),
+        .party = {.TrainerMon = sParty_GRC_ToriR6Torchic},
+    },
+
+    [TRAINER_GRC_TORI_R6_TREECKO] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_GRC_ToriR6Treecko),
+        .party = {.TrainerMon = sParty_GRC_ToriR6Treecko},
+    },
+
+    [TRAINER_GRC_TORI_R6_MUDKIP] =
+    {
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WALLY,
+        .trainerName = _("Tori"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_GRC_ToriR6Mudkip),
+        .party = {.TrainerMon = sParty_GRC_ToriR6Mudkip},
+    },
+
     [TRAINER_ISAAC_1] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
