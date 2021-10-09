@@ -2001,329 +2001,329 @@ static const u8 sOldSeaMapDesc[] = _(
 
 	// New items
 static const u8 sWideLensDesc[] = _(
-    "A magnifying lens\n"
-    "that boosts the\n"
-    "accuracy of moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a magnifying lens that slightly\n"
+    "boosts the accuracy of moves.");
 
 static const u8 sMuscleBandDesc[] = _(
-    "A headband that\n"
-    "boosts the power of\n"
-    "physical moves.");
+    "An item to be held by a Pokémon. This\n"
+    "headband exudes strength, slightly\n"
+    "boosting the power of physical moves.");
 
 static const u8 sWiseGlassesDesc[] = _(
-    "A pair of glasses\n"
-    "that ups the power\n"
-    "of special moves.");
+    "An item to be held by a Pokémon.\n"
+    "This thick pair of glasses slightly\n"
+    "boosts the power of special moves.");
 
 static const u8 sExpertBeltDesc[] = _(
-    "A belt that boosts\n"
-    "the power of super\n"
-    "effective moves.");
+    "An item to be held by a Pokémon. It's\n"
+    "a well-worn belt that slightly boosts\n"
+    "the power of supereffective moves.");
 
 static const u8 sLightClayDesc[] = _(
-    "Extends the length\n"
-    "of barrier moves\n"
-    "used by the holder.");
+    "An item to be held by a Pokémon.\n"
+    "Protective moves like Light Screen and\n"
+    "Reflect will be effective longer.");
 
 static const u8 sLifeOrbDesc[] = _(
-    "Boosts the power of\n"
-    "moves at the cost\n"
-    "of some HP per turn.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts the power of moves but at\n"
+    "the cost of some HP on each hit.");
 
 static const u8 sPowerHerbDesc[] = _(
-    "Allows immediate\n"
-    "use of a move that\n"
-    "charges first.");
+    "An item to be held by a Pokémon.\n"
+    "It allows the immediate use of a move\n"
+    "that charges on the first turn just once.");
 
 static const u8 sToxicOrbDesc[] = _(
-    "A bizarre orb that\n"
-    "badly poisons the\n"
-    "holder in battle.");
+    "An item to be held by a Pokémon.\n"
+    "It's a bizarre orb that will badly\n"
+    "poison the holder during battle.");
 
 static const u8 sFlameOrbDesc[] = _(
-    "A bizarre orb that\n"
-    "inflicts a burn on\n"
-    "holder in battle.");
+    "An item to be held by a Pokémon.\n"
+    "It's a bizarre orb that will afflict\n"
+    "the holder with a burn during battle.");
 
 static const u8 sQuickPowderDesc[] = _(
-    "An item to be held\n"
-    "by Ditto. This odd\n"
-    "powder boosts Speed.");
+    "An item to be held by Ditto.\n"
+    "Extremely fine yet hard, this odd\n"
+    "powder boosts the Speed stat.");
 
 static const u8 sFocusSashDesc[] = _(
-    "If the holder has\n"
-    "full HP, it endures\n"
-    "KO hits with 1 HP.");
+    "An item to be held by a Pokémon. If\n"
+    "the holder has full HP, it will endure\n"
+    "a potential KO attack with 1 HP.");
 
 static const u8 sZoomLensDesc[] = _(
-    "If the holder moves\n"
-    "after the foe, it'll\n"
-    "boost accuracy.");
+    "An item to be held by a Pokémon.\n"
+    "If the holder moves after its target\n"
+    "moves, its accuracy will be boosted.");
 
 static const u8 sMetronomeDesc[] = _(
-    "A held item that\n"
-    "boosts a move used\n"
-    "consecutively.");
+    "An item to be held by a Pokémon. It\n"
+    "boosts moves used consecutively but\n"
+    "only until a different move is used.");
 
 static const u8 sIronBallDesc[] = _(
-    "Cuts Speed and lets\n"
-    "Flying-types be hit\n"
-    "by Ground moves.");
+    "An item to be held by a Pokémon. It\n"
+    "cuts Speed and lets Ground-type moves\n"
+    "hit Flying-type and levitating holders.");
 
 static const u8 sLaggingTailDesc[] = _(
-    "A held item that\n"
-    "makes the holder\n"
-    "move slower.");
+    "An item to be held by a Pokémon.\n"
+    "It is tremendously heavy and makes the\n"
+    "holder move slower than usual.");
 
 static const u8 sDestinyKnotDesc[] = _(
-    "If the holder falls\n"
-    "in love, the foe\n"
-    "does too.");
+    "An item to be held by a Pokémon.\n"
+    "If the holder becomes infatuated,\n"
+    "the opposing Pokémon will be, too.");
 
 static const u8 sBlackSludgeDesc[] = _(
-    "Gradually restores\n"
-    "HP of Poison-types.\n"
-    "Damages others.");
+    "An item to be held by a Pokémon. It\n"
+    "gradually restores HP to Poison-type\n"
+    "Pokémon. It damages any other type.");
 
 static const u8 sIcyRockDesc[] = _(
-    "Extends the length\n"
-    "of the move Hail\n"
-    "used by the holder.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of the move\n"
+    "Hail when used by the holder.");
 
 static const u8 sSmoothRockDesc[] = _(
-    "Extends the length\n"
-    "of Sandstorm if\n"
-    "used by the holder.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of the move\n"
+    "Sandstorm when used by the holder.");
 
 static const u8 sHeatRockDesc[] = _(
-    "Extends the length\n"
-    "of Sunny Day if\n"
-    "used by the holder.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of the move\n"
+    "Sunny Day when used by the holder.");
 
 static const u8 sDampRockDesc[] = _(
-    "Extends the length\n"
-    "of Rain Dance if\n"
-    "used by the holder.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of the move\n"
+    "Rain Dance when used by the holder.");
 
 static const u8 sGripClawDesc[] = _(
-    "Makes binding moves\n"
-    "used by the holder\n"
-    "go on for 7 turns.");
+    "An item to be held by a Pokémon.\n"
+    "It extends the duration of multi-turn\n"
+    "attacks, such as Bind and Wrap.");
 
 static const u8 sChoiceScarfDesc[] = _(
-    "Boosts Speed, but\n"
-    "allows the use of\n"
-    "only one move.");
+    "An item to be held by a Pokémon.\n"
+    "This curious scarf boosts Speed but\n"
+    "only allows the use of one move.");
 
 static const u8 sStickyBarbDesc[] = _(
-    "Damages the holder\n"
-    "each turn. May latch\n"
-    "on to foes.");
+    "A held item that damages the holder\n"
+    "on every turn. It may latch on to foes\n"
+    "and allies that touch the holder.");
 
 static const u8 sShedShellDesc[] = _(
-    "Enables the holder\n"
-    "to switch out of\n"
-    "battle without fail.");
+    "An item to be held by a Pokémon. This\n"
+    "discarded carapace enables the holder\n"
+    "to switch out of battle without fail.");
 
 static const u8 sBigRootDesc[] = _(
-    "A held item that\n"
-    "boosts the power of\n"
-    "HP-stealing moves.");
+    "An item to be held by a Pokémon.\n"
+    "It boosts the amount of HP the holder\n"
+    "restores from HP-stealing moves.");
 
 static const u8 sChoiceSpecsDesc[] = _(
-    "Boosts Sp. Atk, but\n"
-    "allows the use of\n"
-    "only one move.");
+    "An item to be held by a Pokémon.\n"
+    "These curious glasses boost Sp. Atk\n"
+    "but only allow the use of one move.");
 
 static const u8 sOddKeystoneDesc[] = _(
-    "Voices can be heard\n"
-    "from this odd stone\n"
-    "occasionally.");
+    "A vital item that is needed to keep\n"
+    "a stone tower from collapsing. Voices\n"
+    "can be heard from it occasionally.");
 
 static const u8 sAdamantOrbDesc[] = _(
-    "Boosts the power of\n"
-    "Dialga's Dragon and\n"
-    "Steel-type moves.");
+    "A brightly gleaming orb to be held\n"
+    "by Dialga. It boosts the power of\n"
+    "Dragon- and Steel-type moves.");
 
 static const u8 sLustrousOrbDesc[] = _(
-    "Boosts the power of\n"
-    "Palkia's Dragon and\n"
-    "Water-type moves.");
+    "A beautifully glowing orb to be held\n"
+    "by Palkia. It boosts the power of\n"
+    "Dragon- and Water-type moves.");
 
 static const u8 sGriseousOrbDesc[] = _(
-    "Powers up Giratina's\n"
-    "Dragon and Ghost-\n"
-    "type moves.");
+    "A glowing orb to be held by Giratina.\n"
+    "It boosts the power of Dragon- and\n"
+    "Ghost-type moves when it is held.");
 
 static const u8 sGracideaDesc[] = _(
-    "Bouquets made with\n"
-    "it are offered as a\n"
-    "token of gratitude.");
+    "A flower sometimes bundled in bouquets\n"
+    "to convey gratitude on special\n"
+    "occasions like birthdays.");
 
 static const u8 sBugMemoryDesc[] = _(
-    "A disc with Bug\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Bug-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sDarkMemoryDesc[] = _(
-    "A disc with Dark\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Dark-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sDragonMemoryDesc[] = _(
-    "A disc with Dragon\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Dragon-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sElectricMemoryDesc[] = _(
-    "A disc with Electric\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Electric-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sFairyMemoryDesc[] = _(
-    "A disc with Fairy\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Fairy-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sFightingMemoryDesc[] = _(
-    "A disc with Fighting\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Fighting-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sFireMemoryDesc[] = _(
-    "A disc with Fire\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Fire-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sFlyingMemoryDesc[] = _(
-    "A disc with Flying\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Flying-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sGhostMemoryDesc[] = _(
-    "A disc with Ghost\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Ghost-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sGrassMemoryDesc[] = _(
-    "A disc with Grass\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Grass-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sGroundMemoryDesc[] = _(
-    "A disc with Ground\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Ground-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sIceMemoryDesc[] = _(
-    "A disc with Ice\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Ice-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sPoisonMemoryDesc[] = _(
-    "A disc with Poison\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Poison-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sPsychicMemoryDesc[] = _(
-    "A disc with Psychic\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Psychic-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sRockMemoryDesc[] = _(
-    "A disc with Rock\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Rock-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sSteelMemoryDesc[] = _(
-    "A disc with Steel\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Steel-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sWaterMemoryDesc[] = _(
-    "A disc with Water\n"
-    "type data. It swaps\n"
-    "Silvally's type.");
+    "A memory disc with Water-type data.\n"
+    "It changes the type of the holder if\n"
+    "held by a certain species of Pokémon.");
 
 static const u8 sFlamePlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Fire-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Fire-type moves.");
 
 static const u8 sSplashPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Water-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Water-type moves.");
 
 static const u8 sZapPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of Elec-\n"
-    "tric-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Electric-type moves.");
 
 static const u8 sMeadowPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Grass-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Grass-type moves.");
 
 static const u8 sIciclePlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Ice-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Ice-type moves.");
 
 static const u8 sFistPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of Fight-\n"
-    "ing-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Fighting-type moves.");
 
 static const u8 sToxicPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Poison-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Poison-type moves.");
 
 static const u8 sEarthPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Ground-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Earth-type moves.");
 
 static const u8 sSkyPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Flying-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Flying-type moves.");
 
 static const u8 sMindPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of Psy\n"
-    "chic-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Psychic-type moves.");
 
 static const u8 sInsectPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Bug-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Bug-type moves.");
 
 static const u8 sStonePlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Rock-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Rock-type moves.");
 
 static const u8 sSpookyPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Ghost-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Ghost-type moves.");
 
 static const u8 sDracoPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Dragon-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Dragon-type moves.");
 
 static const u8 sDreadPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Dark-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Dark-type moves.");
 
 static const u8 sIronPlateDesc[] = _(
-    "A tablet that ups\n"
-    "the power of\n"
-    "Steel-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Steel-type moves.");
 
 static const u8 sEvioliteDesc[] = _(
     "Raises the Def and\n"
