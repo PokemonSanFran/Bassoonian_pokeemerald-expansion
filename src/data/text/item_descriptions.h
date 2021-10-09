@@ -2326,194 +2326,194 @@ static const u8 sIronPlateDesc[] = _(
     "power of Steel-type moves.");
 
 static const u8 sEvioliteDesc[] = _(
-    "Raises the Def and\n"
-    "Sp. Def of Pokémon\n"
-    "that can evolve.");
+    "A mysterious evolutionary lump. When\n"
+    "held, it raises the Defense and Sp. Def\n"
+    "of a Pokémon that can still evolve.");
 
 static const u8 sFloatStoneDesc[] = _(
-    "It's so light that\n"
-    "when held, it halves\n"
-    "a Pokémon's weight.");
+    "An item to be held by a Pokémon.\n"
+    "This very light stone reduces the\n"
+    "weight of a Pokémon when held.");
 
 static const u8 sRockyHelmetDesc[] = _(
-    "Hurts the foe if\n"
-    "they touch its\n"
-    "holder.");
+    "An item to be held by a Pokémon.\n"
+    "If the holder is hit, the attacker\n"
+    "will also be damaged upon contact.");
 
 static const u8 sAirBalloonDesc[] = _(
-    "Elevates the holder\n"
-    "in the air. If hit,\n"
-    "this item will burst.");
+    "An item to be held by a Pokémon.\n"
+    "The holder will float in the air until\n"
+    "hit. Once hit, this item will burst.");
 
 static const u8 sRedCardDesc[] = _(
-    "Switches out the\n"
-    "foe if they hit the\n"
-    "holder.");
+    "An item to be held by a Pokémon.\n"
+    "When the holder is hit by an attack,\n"
+    "the attacker is removed from battle.");
 
 static const u8 sRingTargetDesc[] = _(
-    "Moves that wouldn't\n"
-    "have effect will\n"
-    "land on its holder.");
+    "An item to be held by a Pokémon.\n"
+    "Moves that normally have no effect\n"
+    "will land on a Pokémon holding it.");
 
 static const u8 sBindingBandDesc[] = _(
-    "Increases the\n"
-    "power of binding\n"
-    "moves when held.");
+    "An item to be held by a Pokémon.\n"
+    "It's a band that increases the power\n"
+    "of binding moves used by the holder.");
 
 static const u8 sEjectButtonDesc[] = _(
-    "Switches out the\n"
-    "user if they're hit\n"
-    "by the foe.");
+    "An item to be held by a Pokémon.\n"
+    "If the holder is hit by an attack,\n"
+    "it will be switched out of battle.");
 
 static const u8 sAbsorbBulbDesc[] = _(
-    "Raises Sp. Atk if\n"
-    "the holder is hit by\n"
-    "a Water-type move.");
+    "An item to be held by a Pokémon. It\n"
+    "boosts Sp. Atk if hit with a Water-type\n"
+    "attack. It can only be used once.");
 
 static const u8 sCellBatteryDesc[] = _(
-    "Raises Atk if the\n"
-    "holder is hit by an\n"
-    "Electric-type move.");
+    "An item to be held by a Pokémon. It\n"
+    "boosts Attack if hit with a Electric-\n"
+    "type attack. It can only be used once.");
 
 static const u8 sLuminousMossDesc[] = _(
-    "Raises Sp. Def if\n"
-    "the holder is hit by\n"
-    "a Water-type move.");
+    "An item to be held by a Pokémon. It\n"
+    "boosts Sp. Def if hit with a Water-type\n"
+    "attack. It can only be used once.");
 
 static const u8 sSnowballDesc[] = _(
-    "Raises Atk if its\n"
-    "holder is hit by an\n"
-    "Ice-type move.");
+    "An item to be held by a Pokémon. It\n"
+    "boosts Attack if hit with a Ice-type\n"
+    "attack. It can only be used once.");
 
 static const u8 sWeaknessPolicyDesc[] = _(
-    "If hit by a Super\n"
-    "Effective move, ups\n"
-    "Atk and Sp. Atk.");
+    "An item to be held by a Pokémon. Attack\n"
+    "and Sp. Atk sharply increase if the\n"
+    "holder is hit with a move it's weak to.");
 
 static const u8 sDouseDriveDesc[] = _(
-    "Changes Genesect's\n"
-    "Techno Blast to\n"
-    "Water-type.");
+    "A cassette to be held by Genesect.\n"
+    "It changes Genesect's Techno Blast\n"
+    "move so it becomes Water type.");
 
 static const u8 sShockDriveDesc[] = _(
-    "Changes Genesect's\n"
-    "Techno Blast to\n"
-    "Electric-type.");
+    "A cassette to be held by Genesect.\n"
+    "It changes Genesect's Techno Blast\n"
+    "move so it becomes Electric type.");
 
 static const u8 sBurnDriveDesc[] = _(
-    "Changes Genesect's\n"
-    "Techno Blast to\n"
-    "Fire-type.");
+    "A cassette to be held by Genesect.\n"
+    "It changes Genesect's Techno Blast\n"
+    "move so it becomes Fire type.");
 
 static const u8 sChillDriveDesc[] = _(
-    "Changes Genesect's\n"
-    "Techno Blast to\n"
-    "Ice-type.");
+    "A cassette to be held by Genesect.\n"
+    "It changes Genesect's Techno Blast\n"
+    "move so it becomes Ice type.");
 
 static const u8 sFireGemDesc[] = _(
-    "Increases the\n"
-    "power of Fire\n"
-    "Type moves.");
+    "A gem with an essence of fire.\n"
+    "When held, it strengthens the power\n"
+    "of a Fire-type move one time.");
 
 static const u8 sWaterGemDesc[] = _(
-    "Increases the\n"
-    "power of Water\n"
-    "Type moves.");
+    "A gem with an essence of water.\n"
+    "When held, it strengthens the power\n"
+    "of a Water-type move one time.");
 
 static const u8 sElectricGemDesc[] = _(
-    "Increases the\n"
-    "power of Electric\n"
-    "Type moves.");
+    "A gem with an essence of electricity.\n"
+    "When held, it strengthens the power\n"
+    "of an Electric-type move one time.");
 
 static const u8 sGrassGemDesc[] = _(
-    "Increases the\n"
-    "power of Grass\n"
-    "Type moves.");
+    "A gem with an essence of nature.\n"
+    "When held, it strengthens the power\n"
+    "of a Grass-type move one time.");
 
 static const u8 sIceGemDesc[] = _(
-    "Increases the\n"
-    "power of Ice\n"
-    "Type moves.");
+    "A gem with an essence of ice.\n"
+    "When held, it strengthens the power\n"
+    "of an Ice-type move one time.");
 
 static const u8 sFightingGemDesc[] = _(
-    "Increases the\n"
-    "power of Fighting\n"
-    "Type moves.");
+    "A gem with an essence of combat.\n"
+    "When held, it strengthens the power\n"
+    "of a Fighting-type move one time.");
 
 static const u8 sPoisonGemDesc[] = _(
-    "Increases the\n"
-    "power of Poison\n"
-    "Type moves.");
+    "A gem with an essence of poison.\n"
+    "When held, it strengthens the power\n"
+    "of a Poison-type move one time.");
 
 static const u8 sGroundGemDesc[] = _(
-    "Increases the\n"
-    "power of Ground\n"
-    "Type moves.");
+    "A gem with an essence of land.\n"
+    "When held, it strengthens the power\n"
+    "of a Ground-type move one time.");
 
 static const u8 sFlyingGemDesc[] = _(
-    "Increases the\n"
-    "power of Flying\n"
-    "Type moves.");
+    "A gem with an essence of air.\n"
+    "When held, it strengthens the power\n"
+    "of a Flying-type move one time.");
 
 static const u8 sPsychicGemDesc[] = _(
-    "Increases the\n"
-    "power of Psychic\n"
-    "Type moves.");
+    "A gem with an essence of the mind.\n"
+    "When held, it strengthens the power\n"
+    "of a Psychic-type move one time.");
 
 static const u8 sBugGemDesc[] = _(
-    "Increases the\n"
-    "power of Bug\n"
-    "Type moves.");
+    "A gem with an insect-like essence.\n"
+    "When held, it strengthens the power\n"
+    "of a Bug-type move one time.");
 
 static const u8 sRockGemDesc[] = _(
-    "Increases the\n"
-    "power of Rock\n"
-    "Type moves.");
+    "A gem with an essence of rock.\n"
+    "When held, it strengthens the power\n"
+    "of a Rock-type move one time.");
 
 static const u8 sGhostGemDesc[] = _(
-    "Increases the\n"
-    "power of Ghost\n"
-    "Type moves.");
+    "A gem with a spectral essence.\n"
+    "When held, it strengthens the power\n"
+    "of a Ghost-type move one time.");
 
 static const u8 sDragonGemDesc[] = _(
-    "Increases the\n"
-    "power of Dragon\n"
-    "Type moves.");
+    "A gem with a draconic essence.\n"
+    "When held, it strengthens the power\n"
+    "of a Dragon-type move one time.");
 
 static const u8 sDarkGemDesc[] = _(
-    "Increases the\n"
-    "power of Dark\n"
-    "Type moves.");
+    "A gem with an essence of darkness.\n"
+    "When held, it strengthens the power\n"
+    "of a Dark-type move one time.");
 
 static const u8 sSteelGemDesc[] = _(
-    "Increases the\n"
-    "power of Steel\n"
-    "Type moves.");
+    "A gem with an essence of steel.\n"
+    "When held, it strengthens the power\n"
+    "of a Steel-type move one time.");
 
 static const u8 sNormalGemDesc[] = _(
-    "Increases the\n"
-    "power of Normal\n"
-    "Type moves.");
+    "A gem with an ordinary essence.\n"
+    "When held, it strengthens the power\n"
+    "of a Normal-type move one time.");
 
 static const u8 sFairyGemDesc[] = _(
-    "Increases the\n"
-    "power of Fairy\n"
-    "Type moves.");
+    "A gem with an essence of the fey.\n"
+    "When held, it strengthens the power\n"
+    "of a Fairy-type move one time.");
 
 static const u8 sAssaultVestDesc[] = _(
-    "Raises Sp. Def but\n"
-    "prevents the use\n"
-    "of status moves.");
+    "An item to be held by a Pokémon.\n"
+    "This offensive vest raises Sp. Def\n"
+    "but prevents the use of status moves.");
 
 static const u8 sPixiePlateDesc[] = _(
-    "A stone tablet that\n"
-    "boosts the power of\n"
-    "Fairy-type moves.");
+    "An item to be held by a Pokémon.\n"
+    "It's a stone tablet that boosts the\n"
+    "power of Fairy-type moves.");
 
 static const u8 sSafetyGogglesDesc[] = _(
-    "Protect from\n"
-    "weather damage and\n"
-    "powder moves.");
+    "An item to be held by a Pokémon. These\n"
+    "goggles protect the holder from both\n"
+    "weather-related damage and powder.");
 
 static const u8 sGengariteDesc[] = _(
     "This stone enables\n"
