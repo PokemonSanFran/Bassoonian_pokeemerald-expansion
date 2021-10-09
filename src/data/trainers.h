@@ -1493,7 +1493,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_Dave1),
         .party = {.TrainerMon = sParty_GRC_Dave1},
     },
-	
+
     [TRAINER_GRC_DAVE_2] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -1506,7 +1506,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_Dave2),
         .party = {.TrainerMon = sParty_GRC_Dave2},
     },
-	
+
     [TRAINER_GRC_DAVE_3] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
@@ -1779,7 +1779,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_Maxime1),
         .party = {.TrainerMon = sParty_GRC_Maxime1},
     },
-	
+
     [TRAINER_GRC_MAXIME_2] =
     {
         .trainerClass = TRAINER_CLASS_RICH_BOY,
@@ -3872,7 +3872,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_Harold5),
         .party = {.TrainerMon = sParty_GRC_Harold5},
     },
-	
+
     [TRAINER_COLTON] =
     {
         .trainerClass = TRAINER_CLASS_POKEFAN,
@@ -6278,7 +6278,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_JimAndJo2),
         .party = {.TrainerMon = sParty_GRC_JimAndJo2},
     },
-	
+
 	//To fix
     [TRAINER_GRC_JIM_AND_JO_3] =
     {
@@ -6347,7 +6347,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_MegAndMia),
         .party = {.TrainerMon = sParty_GRC_MegAndMia},
     },
-	
+
 	//This is never called and is thus unused & free to replace
     [TRAINER_GINA_AND_MIA_2] =
     {
@@ -6998,7 +6998,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_MayRoute119Torchic),
         .party = {.TrainerMon = sParty_MayRoute119Torchic},
     },
-	
+
     [TRAINER_GRC_TORI_TURPIA_TORCHIC] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -7011,7 +7011,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_ToriTurpiaTorchic),
         .party = {.TrainerMon = sParty_GRC_ToriTurpiaTorchic},
     },
-	
+
     [TRAINER_GRC_TORI_TURPIA_TREECKO] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -7024,7 +7024,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_ToriTurpiaTreecko),
         .party = {.TrainerMon = sParty_GRC_ToriTurpiaTreecko},
     },
-	
+
     [TRAINER_GRC_TORI_TURPIA_MUDKIP] =
     {
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -7908,7 +7908,7 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_GRC_Erin1),
         .party = {.TrainerMon = sParty_GRC_Erin1},
     },
-	
+
     [TRAINER_GRC_ERIN_2] =
     {
         .trainerClass = TRAINER_CLASS_ACE_TRAINER,
@@ -11158,4 +11158,17 @@ const struct Trainer gTrainers[] = {
         .partySize = ARRAY_COUNT(sParty_MayLinkPlaceholder),
         .party = {.TrainerMon = sParty_MayLinkPlaceholder},
     },
+
+    [TRAINER_DEBUG] =
+    {
+      .trainerClass = TRAINER_CLASS_BEAUTY,
+      .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+      .trainerPic = TRAINER_PIC_BEAUTY,
+      .trainerName = _("Hanau"),
+      .items = {},
+      .doubleBattle = FALSE,
+      .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+      .partySize = ARRAY_COUNT(sParty_Debug),
+      .party = {.TrainerMon = sParty_Debug},
+    }
 };

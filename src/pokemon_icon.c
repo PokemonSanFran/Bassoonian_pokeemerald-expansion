@@ -2436,8 +2436,8 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_WHISMUR_HANAUAN] = 2,
     [SPECIES_LOUDRED_HANAUAN] = 1,
     [SPECIES_EXPLOUD_HANAUAN] = 1,
-    [SPECIES_CROAGUNK_HANAUAN] = 0,
-    [SPECIES_TOXICROAK_HANAUAN] = 0,
+    [SPECIES_CROAGUNK_HANAUAN] = 4,
+    [SPECIES_TOXICROAK_HANAUAN] = 4,
 };
 
 const u8 gMonIconPaletteIndicesFemale[] =
@@ -2535,21 +2535,21 @@ const union AffineAnimCmd *const sMonIconAffineAnims[] =
 
 const u16 sSpriteImageSizes[3][4] =
 {
-    [ST_OAM_SQUARE] = 
+    [ST_OAM_SQUARE] =
     {
         [SPRITE_SIZE(8x8)]   =  0x20,
         [SPRITE_SIZE(16x16)] =  0x80,
         [SPRITE_SIZE(32x32)] = 0x200,
         [SPRITE_SIZE(64x64)] = 0x800,
     },
-    [ST_OAM_H_RECTANGLE] = 
+    [ST_OAM_H_RECTANGLE] =
     {
         [SPRITE_SIZE(16x8)]  =  0x40,
         [SPRITE_SIZE(32x8)]  =  0x80,
         [SPRITE_SIZE(32x16)] = 0x100,
         [SPRITE_SIZE(64x32)] = 0x400,
     },
-    [ST_OAM_V_RECTANGLE] = 
+    [ST_OAM_V_RECTANGLE] =
     {
         [SPRITE_SIZE(8x16)]  =  0x40,
         [SPRITE_SIZE(8x32)]  =  0x80,
