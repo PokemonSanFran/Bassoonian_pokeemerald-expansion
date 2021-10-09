@@ -4,7 +4,10 @@ EverGrandeCity_MapScripts::
 
 
 DebugTestScript::
-	message DebugTestScript_Text_0
+	msgbox DebugTestScript_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq DebugTestScript_2
+	message DebugTestScript_Text_3
 	waitmessage
 	givemon SPECIES_PSYDUCK_HANAUAN, 50, ITEM_NONE
 	givemon SPECIES_GOLDUCK_HANAUAN, 50, ITEM_NONE
@@ -290,12 +293,17 @@ DebugTestScript::
 	additem ITEM_JAW_FOSSIL
 	additem ITEM_SAIL_FOSSIL
 	additem ITEM_OLD_AMBER
-	msgbox DebugTestScript_Text_1
+	msgbox DebugTestScript_Text_4
 	closemessage
 	special Debug_SaveBlockSize
-	msgbox DebugTestScript_Text_2
+	msgbox DebugTestScript_Text_5
+DebugTestScript_1:
 	closemessage
 	return
+
+DebugTestScript_2:
+	trainerbattle_single TRAINER_DEBUG, DebugTestScript_Text_1, DebugTestScript_Text_2
+	goto DebugTestScript_1
 
 
 Borago_PushAwayPlayerWithoutDrive::
@@ -732,41 +740,40 @@ EverGrandeCity_Text_CitySign:
 @	.string "and POKéMON.”$"
 
 DebugTestScript_Text_0:
-	.string "this may take a while...$"
+	.string "fight shiny?$"
 
 DebugTestScript_Text_1:
-	.string "done$"
+	.string "here go$"
 
 DebugTestScript_Text_2:
+	.string "nice$"
+
+DebugTestScript_Text_3:
+	.string "this may take a while...$"
+
+DebugTestScript_Text_4:
+	.string "done$"
+
+DebugTestScript_Text_5:
 	.string "SaveBlock1 is {STR_VAR_1} bytes long.\nMax size is 15872 bytes.\pSaveBlock2 is {STR_VAR_2} bytes long.\nMax size is 3968 bytes.$"
 
 Borago_PushAwayPlayerWithoutDrive_Text_0:
 	.string "nuh uh still preparin'$"
 
 Borago_POT_Keeper_Text_0:
-	.string "Whoa, buster! I don't think it's a good\n"
-	.string "idea for you to come here just yet.\p"
-	.string "Let's see, how many Badges have you\n"
-	.string "earned?$"
+	.string "Whoa, buster! I don't think it's a good idea for you to come here just yet.\p"
+	.string "Let's see, how many Badges have you earned?$"
 
 Borago_POT_Keeper_Text_1:
-	.string "Impressive stuff! Now, I'll just have to\n"
-	.string "test you in person.\p"
-	.string "I'm not going easy on you, so you better\n"
-	.string "give this your all!$"
+	.string "Impressive stuff! Now, I'll just have to test you in person.\p"
+	.string "I'm not going easy on you, so you better give this your all!$"
 
 Borago_POT_Keeper_Text_2:
-	.string "Whew! Been a while since I've last had a\n"
-	.string "fight like that. About time I get back\l"
-	.string "to the old schedule, too…\p"
-	.string "Anyway, I'm not gonna keep you any\n"
-	.string "more. Stay safe, and enjoy the road\l"
-	.string "ahead, Trainer!$"
+	.string "Whew! Been a while since I've last had a fight like that. About time I get back to the old schedule, too…\p"
+	.string "Anyway, I'm not gonna keep you any more. Stay safe, and enjoy the road ahead, Trainer!$"
 
 Borago_POT_Keeper_Text_3:
-	.string "Nope, you're not strong enough yet.\n"
-	.string "You'll need three Badges to earn the\l"
-	.string "right to pass through.\p"
+	.string "Nope, you're not strong enough yet. You'll need three Badges to earn the right to pass through.\p"
 	.string "Just keep at it, Trainer!$"
 
 Borago_TownSign_Text_0:
@@ -793,30 +800,19 @@ Borago_DriveLabsSign_Text_0:
 	.string "“We make your future.”$"
 
 Borago_Psychic_Text_0:
-	.string "This place really has everything a city\n"
-	.string "could offer.\p"
-	.string "From entertainment to daily needs,\n"
-	.string "Borago just has it all. Don't you agree?$"
+	.string "This place really has everything a city could offer.\p"
+	.string "From entertainment to daily needs, Borago just has it all. Don't you agree?$"
 
 Borago_Gentleman_Text_0:
 	.string "May I indulge you, young one?\p"
-	.string "Hanau has quite a number of nice cities,\n"
-	.string "and this is the most renowned of them\l"
-	.string "all.\p"
-	.string "However, if you truly wish to experience\n"
-	.string "fine culture, then this is not the place\l"
-	.string "to be.$"
+	.string "Hanau has quite a number of nice cities, and this is the most renowned of them all.\p"
+	.string "However, if you truly wish to experience fine culture, then this is not the place to be.$"
 
 Borago_ContestDuo_Text_0:
-	.string "Yay, Contests! Glitz and spectacle!\n"
-	.string "Ohhh, seeing the Contest Hall makes me\l"
-	.string "feel all giddy inside!$"
+	.string "Yay, Contests! Glitz and spectacle! Ohhh, seeing the Contest Hall makes me feel all giddy inside!$"
 
 Borago_ContestDuo_Text_1:
-	.string "You've got that right! There's nothing\n"
-	.string "beating the excitement and thrill of\l"
-	.string "Pokémon Contests! Not to mention all\l"
-	.string "those adorable Pokémon on the stage!$"
+	.string "You've got that right! There's nothing beating the excitement and thrill of Pokémon Contests! Not to mention all those adorable Pokémon on the stage!$"
 
 Borago_ContestDuo_Text_2:
 	.string "Ohhhh… I'm growing emotional again…$"
