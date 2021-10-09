@@ -426,7 +426,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
     },
     [WIN_POCKET_NAME] = {
         .bg = 0,
-        .tilemapLeft = 0x01,
+        .tilemapLeft = 0x0,
         .tilemapTop = 0x01,
         .width = 0x8, //0x09,
         .height = 0x02,
@@ -1433,9 +1433,9 @@ static void DrawItemListBgRow(u8 y)
 static void DrawPocketIndicatorSquare(u8 x, bool8 isCurrentPocket)
 {
     if (!isCurrentPocket)
-        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 3/*5*/, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 2/*5*/, 3, 1, 1);
     else
-        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 3/*5*/, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 2/*5*/, 3, 1, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
