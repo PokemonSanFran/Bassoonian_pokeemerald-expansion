@@ -288,6 +288,7 @@ const u8 gText_KeyItemsPocket[] = _("Key Items");
 
 const u8 *const gPocketNamesStringsTable[] =
 {
+    [HELDITEMS_POCKET] = gText_HeldItems,
     [ITEMS_POCKET] = gText_ItemsPocket,
 	[MEDICINE_POCKET] = gText_MedicinePocket,
     [BALLS_POCKET] = gText_PokeBallsPocket,

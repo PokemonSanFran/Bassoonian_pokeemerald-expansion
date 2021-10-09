@@ -64,7 +64,8 @@
                             max(BAG_ITEMS_COUNT,             \
                             max(BAG_KEYITEMS_COUNT,          \
                             max(BAG_MEDICINE_COUNT,          \
-                                BAG_POKEBALLS_COUNT)))))) + 1)
+                            max(BAG_HELDITEMS_COUNT,         \
+                                BAG_POKEBALLS_COUNT))))))) + 1)
 
 // Up to 8 item slots can be visible at a time
 #define MAX_ITEMS_SHOWN 6 //8 in e
@@ -293,6 +294,11 @@ static const u8 sContextMenuItems_ItemsPocket[] = {
 
 static const u8 sContextMenuItems_MedicinePocket[] = {
     ACTION_USE,         ACTION_GIVE,
+    ACTION_TOSS,        ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_HeldItemsPocket[] = {
+    ACTION_GIVE,        ACTION_DUMMY,
     ACTION_TOSS,        ACTION_CANCEL
 };
 
@@ -1651,6 +1657,10 @@ static void OpenContextMenu(u8 taskId)
             case MEDICINE_POCKET:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_MedicinePocket;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_MedicinePocket);
+                break;
+            case HELDITEMS_POCKET:
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_HeldItemsPocket;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_HeldItemsPocket);
                 break;
             case TMHM_POCKET:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_TmHmPocket;

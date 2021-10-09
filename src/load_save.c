@@ -27,6 +27,7 @@ struct LoadedSaveData
  /*0x0230*/ struct ItemSlot berries[BAG_BERRIES_COUNT];
  /*0x02E8*/ struct MailStruct mail[MAIL_COUNT];
 			struct ItemSlot medicine[BAG_MEDICINE_COUNT];
+            struct ItemSlot heldItems[BAG_HELDITEMS_COUNT];
 };
 
 // EWRAM DATA
@@ -234,9 +235,13 @@ void LoadPlayerBag(void)
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gLoadedSaveData.berries[i] = gSaveBlock1Ptr->bagPocket_Berries[i];
 	
-    // load player berries.
+    // load player medicine.
     for (i = 0; i < BAG_MEDICINE_COUNT; i++)
         gLoadedSaveData.medicine[i] = gSaveBlock1Ptr->bagPocket_Medicine[i];
+
+    // load player held items.
+    for (i = 0; i < BAG_HELDITEMS_COUNT; i++)
+        gLoadedSaveData.heldItems[i] = gSaveBlock1Ptr->bagPocket_HeldItems[i];
 
     // load mail.
     for (i = 0; i < MAIL_COUNT; i++)
@@ -270,9 +275,13 @@ void SavePlayerBag(void)
     for (i = 0; i < BAG_BERRIES_COUNT; i++)
         gSaveBlock1Ptr->bagPocket_Berries[i] = gLoadedSaveData.berries[i];
 	
-    // save player berries.
+    // save player medicine.
     for (i = 0; i < BAG_MEDICINE_COUNT; i++)
         gSaveBlock1Ptr->bagPocket_Medicine[i] = gLoadedSaveData.medicine[i];
+
+    // save player held items.
+    for (i = 0; i < BAG_HELDITEMS_COUNT; i++)
+        gSaveBlock1Ptr->bagPocket_HeldItems[i] = gLoadedSaveData.heldItems[i];
 
     // save mail.
     for (i = 0; i < MAIL_COUNT; i++)

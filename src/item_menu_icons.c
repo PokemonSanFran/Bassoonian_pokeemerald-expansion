@@ -97,9 +97,16 @@ static const union AnimCmd sSpriteAnim_Bag_Berries[] =
     ANIMCMD_END
 };
 
+static const union AnimCmd sSpriteAnim_Bag_HeldItems[] =
+{
+    ANIMCMD_FRAME(320, 4),
+    ANIMCMD_END
+};
+
 static const union AnimCmd *const sBagSpriteAnimTable[] =
 {
     sSpriteAnim_Bag_Closed,
+    sSpriteAnim_Bag_HeldItems,
     sSpriteAnim_Bag_Items,
 	sSpriteAnim_Bag_Medicine,
     sSpriteAnim_Bag_Pokeballs,

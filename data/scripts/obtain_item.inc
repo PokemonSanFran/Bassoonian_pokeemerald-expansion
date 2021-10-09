@@ -19,6 +19,7 @@ EventScript_BufferPocketNameAndTryFanfare::
 	switch VAR_RESULT
 	case POCKET_ITEMS, EventScript_BufferItemsPocket
 	case POCKET_MEDICINE, EventScript_BufferMedicinePocket
+	case POCKET_HELDITEMS, EventScript_BufferHeldItemsPocket
 	case POCKET_KEY_ITEMS, EventScript_BufferKeyItemsPocket
 	case POCKET_POKE_BALLS, EventScript_BufferPokeballsPocket
 	case POCKET_TM_HM, EventScript_BufferTMHMsPocket
@@ -33,6 +34,12 @@ EventScript_BufferItemsPocket::
 	
 EventScript_BufferMedicinePocket::
 	bufferstdstring 2, STDSTRING_MEDICINE
+	compare VAR_0x8007, 1
+	call_if_eq EventScript_PlayFanfareObtainedItem
+	return
+
+EventScript_BufferHeldItemsPocket::
+	bufferstdstring 2, STDSTRING_HELDITEMS
 	compare VAR_0x8007, 1
 	call_if_eq EventScript_PlayFanfareObtainedItem
 	return

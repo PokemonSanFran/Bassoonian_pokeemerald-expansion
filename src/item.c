@@ -93,6 +93,9 @@ void SetBagItemsPointers(void)
 	
     gBagPockets[MEDICINE_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_Medicine;
     gBagPockets[MEDICINE_POCKET].capacity = BAG_MEDICINE_COUNT;
+
+    gBagPockets[HELDITEMS_POCKET].itemSlots = gSaveBlock1Ptr->bagPocket_HeldItems;
+    gBagPockets[HELDITEMS_POCKET].capacity = BAG_HELDITEMS_COUNT;
 }
 
 void CopyItemName(u16 itemId, u8 *dst)

@@ -2747,8 +2747,8 @@ static const u8 sMegaBraceletDesc[] = _(
 
 static const u8 sProtectPadsDesc[] = _(
     "An item to be held by a Pokémon.\n"
-    "These pads protect the holder from effects\n"
-    "caused by making direct contact with the target.");
+    "These pads protect the holder from\n"
+    "effects caused by direct contact.");
 
 static const u8 sTerrainExtenderDesc[] = _(
     "An item to be held by a Pokémon.\n"
