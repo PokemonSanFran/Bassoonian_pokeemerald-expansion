@@ -16,30 +16,114 @@ Borago_Lab_OnFrame:
 
 Borago_Get_Dex::
 	lockall
-	applymovement 1, Borago_Get_Dex_Aide_Movement
 	applymovement OBJ_EVENT_ID_PLAYER, Borago_Get_Dex_Player_Movement
+	applymovement 1, Borago_Get_Dex_Aide_Movement
+	waitmovement 0
+	applymovement 1, Common_Movement_WalkLeft
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
 	msgbox Borago_Get_Dex_Text_0
 	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_1
+	closemessage
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_2
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Borago_Get_Dex_2
+	msgbox Borago_Get_Dex_Text_4
+Borago_Get_Dex_1:
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_5
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	applymovement 3, Common_Movement_WalkInPlaceFastestUp
+	applymovement 2, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_6
+	closemessage
+	applymovement 2, Common_Movement_WalkDown
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_7
+	closemessage
 	playfanfare MUS_OBTAIN_ITEM
-	message Borago_Get_Dex_Text_1
+	message Borago_Get_Dex_Text_8
 	waitfanfare
+	applymovement 2, Borago_Get_Dex_Spruce_WalkToRival
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_9
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Borago_Get_Dex_6
+	msgbox Borago_Get_Dex_Text_11
+Borago_Get_Dex_5:
+	closemessage
+	applymovement 2, Borago_Get_Dex_Spruce_WalkToTori
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_12
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_13
+	closemessage
+	applymovement 2, Borago_Get_Dex_Spruce_WalkBack
+	waitmovement 0
+	msgbox Borago_Get_Dex_Text_14
+	closemessage
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_DEXNAV_GET
 	setflag FLAG_SYS_MYSTERY_GIFT_ENABLE
 	setvar VAR_BIRCH_LAB_STATE, 3
 	releaseall
 	return
 
+Borago_Get_Dex_2:
+	msgbox Borago_Get_Dex_Text_3
+	goto Borago_Get_Dex_1
+
+Borago_Get_Dex_6:
+	msgbox Borago_Get_Dex_Text_10
+	goto Borago_Get_Dex_5
+
 
 Borago_Get_Dex_Aide_Movement:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Borago_Get_Dex_Spruce_WalkToRival:
+	walk_right
+	walk_in_place_fastest_down
+	step_end
+
+Borago_Get_Dex_Spruce_WalkToTori:
 	walk_left
+	walk_left
+	walk_in_place_fastest_down
+	step_end
+
+Borago_Get_Dex_Spruce_WalkBack:
+	walk_right
 	walk_up
 	walk_in_place_fastest_down
 	step_end
@@ -54,13 +138,18 @@ Borago_Get_Dex_Player_Movement:
 	step_end
 
 Borago_Lab_Move_Aide::
-	compare VAR_BIRCH_LAB_STATE, 1
+	compare VAR_BIRCH_LAB_STATE, 2
 	goto_if_eq Borago_Lab_Move_Aide_1
 	return
 
 Borago_Lab_Move_Aide_1:
-	setobjectxyperm 1, 6, 11
+	setobjectxyperm 1, 7, 12
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
+	return
+
+
+Borago_Lab_Spruce::
+	msgbox Borago_Lab_Spruce_Text_0, MSGBOX_NPC
 	return
 
 
@@ -1118,8 +1207,90 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 @	.string "… … … … … Click!$"
 
 Borago_Get_Dex_Text_0:
-	.string "This is where we say cool thanks here's\n"
-	.string "a dex$"
+	.string "Aide Wicker: I'm back, Professor!$"
 
 Borago_Get_Dex_Text_1:
-	.string "Uaui u got pokedex$"
+	.string "Prof. Spruce: Good! Welcome back,\n"
+	.string "Wicker.$"
+
+Borago_Get_Dex_Text_2:
+	.string "And a warm welcome to my lab,\n"
+	.string "{PLAYER}!$"
+
+Borago_Get_Dex_Text_3:
+	.string "Alyssa: Gosh, {PLAYER}, I'm not really\n"
+	.string "feeling like myself right now…\p"
+	.string "But we're here for the Dex, not the\n"
+	.string "spotlights. Just a matter of mindset!$"
+
+Borago_Get_Dex_Text_4:
+	.string "Basil: Golly, {PLAYER}. Those media\n"
+	.string "people are kinda making me nervous…\p"
+	.string "But I just need to focus on the Dex,\n"
+	.string "not the cameras. Focus on the Dex,\l"
+	.string "Basil!$"
+
+Borago_Get_Dex_Text_5:
+	.string "Tori: I'm not exactly thrilled to be\n"
+	.string "here, but whatever.$"
+
+Borago_Get_Dex_Text_6:
+	.string "Prof. Spruce: I'm sure you know why I've\n"
+	.string "called upon you all today. I am here to\l"
+	.string "give each of you a Pokédex.\p"
+	.string "With this device, you can record the\n"
+	.string "data of any Pokémon you capture.\p"
+	.string "Any data you gather on the Pokémon of\n"
+	.string "Hanau will directly aid the Lab's\l"
+	.string "conservation efforts.\p"
+	.string "With each battle, you'll learn to\n"
+	.string "understand Pokémon better.\p"
+	.string "With your help, we can directly make\n"
+	.string "Hanau a better place for all the\l"
+	.string "Pokémon that inhabit it.\p"
+	.string "This Pokédex is proof that you'll be\n"
+	.string "traveling for a noble cause, so please,\l"
+	.string "cherish it.$"
+
+Borago_Get_Dex_Text_7:
+	.string "Prof. Spruce: {PLAYER}, here is your\n"
+	.string "Pokédex.$"
+
+Borago_Get_Dex_Text_8:
+	.string "{PLAYER} received the Pokédex!$"
+
+Borago_Get_Dex_Text_9:
+	.string "Prof. Spruce: Here you go, {RIVAL}.$"
+
+Borago_Get_Dex_Text_10:
+	.string "Alyssa: Thank you so much! I can't\n"
+	.string "believe I have my own Pokédex…$"
+
+Borago_Get_Dex_Text_11:
+	.string "Basil: Thank you so much! To think I'm\n"
+	.string "actually holding a Pokédex…$"
+
+Borago_Get_Dex_Text_12:
+	.string "Prof. Spruce: Tori, here you are.$"
+
+Borago_Get_Dex_Text_13:
+	.string "Tori: Thanks, I guess.$"
+
+Borago_Get_Dex_Text_14:
+	.string "Prof. Spruce: {PLAYER}, {RIVAL},\n"
+	.string "Tori.\p"
+	.string "The three of you are on a mission, but\n"
+	.string "that doesn't mean you can't enjoy your\l"
+	.string "journeys.\p"
+	.string "In fact, relish in your travels! Explore\n"
+	.string "this land in all its glory!\p"
+	.string "Venture where few dare go, and forge\n"
+	.string "precious memories with your Pokémon\l"
+	.string "friends!\p"
+	.string "Wherever you go, never forget that\n"
+	.string "they are right beside you.$"
+
+Borago_Lab_Spruce_Text_0:
+	.string "Prof. Spruce: Now, I've kept you long\n"
+	.string "enough. Safe travels, and enjoy the\l"
+	.string "ride!$"

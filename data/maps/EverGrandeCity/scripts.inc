@@ -768,12 +768,17 @@ SpotByAide_PartB::
 
 SpotByAide_PartC::
 	waitmovement 0
+	msgbox SpotByAide_PartC_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	opendoor 21, 69
 	waitdooranim
-	applymovement 2, SpotByAide_Aide_MoveInside
-	applymovement OBJ_EVENT_ID_PLAYER, SpotByAide_Player_MoveInside
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, 0
+	applymovement 2, SpotByAide_Aide_MoveInside
+	waitmovement 0
 	closedoor 21, 69
 	waitdooranim
 	setflag FLAG_GRC_HIDE_AIDE_BORAGO
@@ -785,82 +790,82 @@ SpotByAide_PartC::
 
 
 SpotByAide_Aide_MoveInside:
+	walk_left
 	walk_up
 	set_invisible
 	step_end
 
-SpotByAide_Player_MoveInside:
-	walk_right
-	walk_up
-	step_end
-
 SpotByAide_MoveFastLeft:
-	walk_fast_left
+	walk_left
 	step_end
 
 SpotByAideMovementA:
-	walk_fast_up
-	walk_fast_up
+	walk_up
+	walk_up
 	step_end
 
 SpotByAide_Aide_MovRight:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_in_place_fast_up
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_fast_left
 	step_end
 
 SpotByAide_Aide_MovLeft:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_in_place_fast_up
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_in_place_fast_left
 	step_end
 
 SpotByAide_Player_MovRight:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 SpotByAide_Player_MovLeft:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 Borago_Outside_OnTransition:
@@ -1048,3 +1053,7 @@ SpotByAide_PartB_Text_0:
 	.string "Anyway, the Professor happens to have\n"
 	.string "finished his affairs, so I thought to\l"
 	.string "pick you up here. Shall we?$"
+
+SpotByAide_PartC_Text_0:
+	.string "Aide Wicker: Right this way, please.\n"
+	.string "After you!$"

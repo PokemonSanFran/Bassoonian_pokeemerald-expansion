@@ -803,12 +803,17 @@ script SpotByAide_PartB
 script SpotByAide_PartC
 {
 	waitmovement(0)
+	msgbox(format("Aide Wicker: Right this way, please. After you!"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
 	opendoor(21,69)
 	waitdooranim
-	applymovement(2,SpotByAide_Aide_MoveInside)
-	applymovement(OBJ_EVENT_ID_PLAYER,SpotByAide_Player_MoveInside)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
 	waitmovement(0)
 	hideobjectat(OBJ_EVENT_ID_PLAYER,0)
+	applymovement(2,SpotByAide_Aide_MoveInside)
+	waitmovement(0)
 	closedoor(21,69)
 	waitdooranim
 	setflag(FLAG_GRC_HIDE_AIDE_BORAGO)
@@ -820,50 +825,45 @@ script SpotByAide_PartC
 
 movement SpotByAide_Aide_MoveInside
 {
+	walk_left
 	walk_up
 	set_invisible
 }
 
-movement SpotByAide_Player_MoveInside
-{
-	walk_right
-	walk_up
-}
-
 movement SpotByAide_MoveFastLeft
 {
-	walk_fast_left
+	walk_left
 }
 
 movement SpotByAideMovementA
 {
-	walk_fast_up * 2
+	walk_up * 2
 }
 
 movement SpotByAide_Aide_MovRight
 {
-	walk_fast_down * 2
-	walk_fast_right * 9
-	walk_in_place_fast_up
+	walk_down * 2
+	walk_right * 10
+	walk_in_place_fast_left
 }
 
 movement SpotByAide_Aide_MovLeft
 {
-	walk_fast_down * 2
-	walk_fast_right * 10
-	walk_in_place_fast_up
+	walk_down * 2
+	walk_right * 11
+	walk_in_place_fast_left
 }
 
 movement SpotByAide_Player_MovRight
 {
-	walk_fast_down * 3
-	walk_fast_right * 8
+	walk_down * 3
+	walk_right * 9
 }
 
 movement SpotByAide_Player_MovLeft
 {
-	walk_fast_down * 3
-	walk_fast_right * 9
+	walk_down * 3
+	walk_right * 10
 }
 
 raw `

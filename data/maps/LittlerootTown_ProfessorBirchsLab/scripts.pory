@@ -19,16 +19,83 @@ Borago_Lab_OnFrame:
 script Borago_Get_Dex
 {
 	lockall
-	applymovement(1,Borago_Get_Dex_Aide_Movement)
 	applymovement(OBJ_EVENT_ID_PLAYER,Borago_Get_Dex_Player_Movement)
+	applymovement(1,Borago_Get_Dex_Aide_Movement)
 	waitmovement(0)
-	msgbox(format("This is where we say cool thanks here's a dex"))
+	applymovement(1,Common_Movement_WalkLeft)
+	applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: I'm back, Professor!"))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Good! Welcome back, Wicker."))
+	closemessage
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("And a warm welcome to my lab, {PLAYER}!"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Gosh, {PLAYER}, I'm not really feeling like myself right now…\pBut we're here for the Dex, not the spotlights. Just a matter of mindset!"))
+	}
+	else
+	{
+		msgbox(format("Basil: Golly, {PLAYER}. Those media people are kinda making me nervous…\pBut I just need to focus on the Dex, not the cameras. Focus on the Dex, Basil!"))
+	}
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: I'm not exactly thrilled to be here, but whatever."))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	applymovement(3,Common_Movement_WalkInPlaceFastestUp)
+	applymovement(2,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: I'm sure you know why I've called upon you all today. I am here to give each of you a Pokédex.\pWith this device, you can record the data of any Pokémon you capture.\pAny data you gather on the Pokémon of Hanau will directly aid the Lab's conservation efforts.\pWith each battle, you'll learn to understand Pokémon better.\pWith your help, we can directly make Hanau a better place for all the Pokémon that inhabit it.\pThis Pokédex is proof that you'll be traveling for a noble cause, so please, cherish it."))
+	closemessage
+	applymovement(2,Common_Movement_WalkDown)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: {PLAYER}, here is your Pokédex."))
 	closemessage
 	playfanfare(MUS_OBTAIN_ITEM)
-	message(format("Uaui u got pokedex"))
+	message(format("{PLAYER} received the Pokédex!"))
 	waitfanfare
+	applymovement(2,Borago_Get_Dex_Spruce_WalkToRival)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Here you go, {RIVAL}."))
+	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	checkplayergender
+	if (var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Thank you so much! I can't believe I have my own Pokédex…"))
+	}
+	else
+	{
+		msgbox(format("Basil: Thank you so much! To think I'm actually holding a Pokédex…"))
+	}
+	closemessage
+	applymovement(2,Borago_Get_Dex_Spruce_WalkToTori)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: Tori, here you are."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Tori: Thanks, I guess."))
+	closemessage
+	applymovement(2,Borago_Get_Dex_Spruce_WalkBack)
+	waitmovement(0)
+	msgbox(format("Prof. Spruce: {PLAYER}, {RIVAL}, Tori.\pThe three of you are on a mission, but that doesn't mean you can't enjoy your journeys.\pIn fact, relish in your travels! Explore this land in all its glory!\pVenture where few dare go, and forge precious memories with your Pokémon friends!\pWherever you go, never forget that they are right beside you."))
+	closemessage
 	setflag(FLAG_SYS_POKEDEX_GET)
-	setflag(FLAG_SYS_DEXNAV_GET)
 	setflag(FLAG_SYS_MYSTERY_GIFT_ENABLE)
 	setvar(VAR_BIRCH_LAB_STATE,3)
 	releaseall
@@ -36,8 +103,26 @@ script Borago_Get_Dex
 
 movement Borago_Get_Dex_Aide_Movement
 {
-	walk_fast_up * 6
-	walk_left
+	walk_up * 5
+	walk_right
+	walk_up * 3
+}
+
+movement Borago_Get_Dex_Spruce_WalkToRival
+{
+	walk_right
+	walk_in_place_fastest_down
+}
+
+movement Borago_Get_Dex_Spruce_WalkToTori
+{
+	walk_left * 2
+	walk_in_place_fastest_down
+}
+
+movement Borago_Get_Dex_Spruce_WalkBack
+{
+	walk_right
 	walk_up
 	walk_in_place_fastest_down
 }
@@ -49,11 +134,16 @@ movement Borago_Get_Dex_Player_Movement
 
 script Borago_Lab_Move_Aide
 {
-	if(var(VAR_BIRCH_LAB_STATE)==1)
+	if(var(VAR_BIRCH_LAB_STATE)==2)
 	{
-		setobjectxyperm(1,6,11)
+		setobjectxyperm(1,7,12)
 		setobjectmovementtype(1,MOVEMENT_TYPE_FACE_UP)
 	}
+}
+
+script Borago_Lab_Spruce {
+	//Make depend on a bunch of factors later lol
+	msgbox(format("Prof. Spruce: Now, I've kept you long enough. Safe travels, and enjoy the ride!"),MSGBOX_NPC)
 }
 
 raw `
