@@ -153,6 +153,144 @@ Borago_Lab_Spruce::
 	return
 
 
+Borago_Lab_Tori::
+	msgbox Borago_Lab_Tori_Text_0, MSGBOX_NPC
+	return
+
+
+Borago_Lab_Rival::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Borago_Lab_Rival_1
+	msgbox Borago_Lab_Rival_Text_1, MSGBOX_NPC
+	return
+
+Borago_Lab_Rival_1:
+	msgbox Borago_Lab_Rival_Text_0, MSGBOX_NPC
+	return
+
+
+Borago_Lab_Wicker::
+	msgbox Borago_Lab_Wicker_Text_0, MSGBOX_NPC
+	return
+
+
+Borago_Lab_Crew::
+	lockall
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_0
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_1
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_2
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_3
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_4
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_5
+	closemessage
+	applymovement 7, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Borago_Lab_Crew_Text_6
+	closemessage
+	releaseall
+	return
+
+
+Borago_Lab_GetCallFromPollock_BOTH_A::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	addobject 8
+	setvar VAR_BIRCH_LAB_STATE, 4
+	setflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	setobjectxy 1, 8, 5
+	return
+
+
+Borago_Lab_GetCallFromPollock_BOTH_B::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 8, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Borago_Lab_GetCallFromPollock_BOTH_B_Text_0
+	closemessage
+	applymovement 8, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	removeobject 8
+	applymovement 1, Borago_Lab_WickerWalkToPlayer1
+	waitmovement 0
+	return
+
+
+Borago_Lab_GetCallFromPollock_BOTH_C::
+	applymovement 1, Borago_Lab_WickerWalkToPlayer2
+	waitmovement 0
+	applymovement 1, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Borago_Lab_GetCallFromPollock_BOTH_C_Text_0
+	closemessage
+	loadword 0, Borago_Lab_WickerFollowerText
+	setfollower 1, 0x100
+	releaseall
+	return
+
+
+Borago_Lab_WickerFollowerText::
+	lock
+	facefollower
+	msgbox Borago_Lab_WickerFollowerText_string
+	release
+	end
+	
+Borago_Lab_WickerFollowerText_string::
+	.string "Aide Wicker: What could Pollock be\nup to this time…\lOh, sorry! Just thinking out loud.$"
+
+Borago_Lab_WickerWalkToPlayer1:
+	walk_down
+	walk_down
+	walk_left
+	step_end
+
+Borago_Lab_WickerWalkToPlayer2:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Borago_Lab_GetCallFromPollockA::
+	call Borago_Lab_GetCallFromPollock_BOTH_A
+	setobjectxy 8, 6, 12
+	call Borago_Lab_GetCallFromPollock_BOTH_B
+	applymovement 1, Common_Movement_WalkLeft
+	waitmovement 0
+	call Borago_Lab_GetCallFromPollock_BOTH_C
+	return
+
+
+Borago_Lab_GetCallFromPollockB::
+	call Borago_Lab_GetCallFromPollock_BOTH_A
+	setobjectxy 8, 7, 12
+	call Borago_Lab_GetCallFromPollock_BOTH_B
+	call Borago_Lab_GetCallFromPollock_BOTH_C
+	return
+
+
 .set LOCALID_AIDE, 1
 .set LOCALID_BIRCH, 2
 .set LOCALID_RIVAL, 3
@@ -1294,3 +1432,73 @@ Borago_Lab_Spruce_Text_0:
 	.string "Prof. Spruce: Now, I've kept you long\n"
 	.string "enough. Safe travels, and enjoy the\l"
 	.string "ride!$"
+
+Borago_Lab_Tori_Text_0:
+	.string "Tori: Good luck out there, {PLAYER}. I\n"
+	.string "mean it. I know you'll have fun out\l"
+	.string "there.\p"
+	.string "Me? Oh, I'll manage. I guess.$"
+
+Borago_Lab_Rival_Text_0:
+	.string "Alyssa: Deep breaths… Sorry, I'm just so\n"
+	.string "excited right now.\p"
+	.string "We're all going on an adventure with a\n"
+	.string "Pokédex! If I wasn't ready to rumble\l"
+	.string "before, now I sure am!$"
+
+Borago_Lab_Rival_Text_1:
+	.string "Basil: I'm still trying to wrap my head\n"
+	.string "around this whole thing.\p"
+	.string "I mean, I got a Pokédex! And so do you\n"
+	.string "and Tori! Now I really feel ready to hit\l"
+	.string "the road!$"
+
+Borago_Lab_Wicker_Text_0:
+	.string "Aide Wicker: The sight of new Trainers\n"
+	.string "receiving their Pokédexes never fails\l"
+	.string "to move me…\p"
+	.string "Oh, pardon me, {PLAYER}. Just a little\n"
+	.string "sentimental, is all.\p"
+	.string "But enough of that, hm? May fortune be\n"
+	.string "with you!$"
+
+Borago_Lab_Crew_Text_0:
+	.string "Sneyder: Cut! That's a wrap, folks!$"
+
+Borago_Lab_Crew_Text_1:
+	.string "Cam: Oh, crud, I think I forgot to press\n"
+	.string "the record button…$"
+
+Borago_Lab_Crew_Text_2:
+	.string "Sneyder: What?! You imbecile! You had\n"
+	.string "one job! ONE! JOB!$"
+
+Borago_Lab_Crew_Text_3:
+	.string "Cam: Relax, Director! Just messing with\n"
+	.string "you.$"
+
+Borago_Lab_Crew_Text_4:
+	.string "Pam: At this rate you're gonna get us\n"
+	.string "both fired, Cam! Be serious for once!$"
+
+Borago_Lab_Crew_Text_5:
+	.string "Cam: What? Can't be all tense and formal\n"
+	.string "when these teens are about to enjoy\l"
+	.string "their journey.$"
+
+Borago_Lab_Crew_Text_6:
+	.string "Sneyder: Ugh…$"
+
+Borago_Lab_GetCallFromPollock_BOTH_B_Text_0:
+	.string "Pollock: Hello, {PLAYER}! Good to see\n"
+	.string "you here!\p"
+	.string "If you've got some time, I'd like to show\n"
+	.string "you something on Route 1.\p"
+	.string "See you there!$"
+
+Borago_Lab_GetCallFromPollock_BOTH_C_Text_0:
+	.string "Aide Wicker: To think I've put up with\n"
+	.string "him for over two decades…\p"
+	.string "Ah, well. Why don't I accompany you,\n"
+	.string "{PLAYER}? Just don't keep him\l"
+	.string "waiting.$"

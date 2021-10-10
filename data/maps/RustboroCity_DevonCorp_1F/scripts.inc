@@ -13,6 +13,11 @@ DrivesLab_NotAllowedBasement::
 
 
 DrivesLab_Desk_Woman::
+	goto_if_set FLAG_HIDE_PLAYERS_HOUSE_DAD, DrivesLab_Desk_Woman_1
+	msgbox DrivesLab_Desk_Woman_Text_1, MSGBOX_NPC
+	return
+
+DrivesLab_Desk_Woman_1:
 	msgbox DrivesLab_Desk_Woman_Text_0, MSGBOX_NPC
 	return
 
@@ -357,6 +362,12 @@ DrivesLab_NotAllowedBasement_Text_0:
 	.string "Registered personnel only!$"
 
 DrivesLab_Desk_Woman_Text_0:
+	.string "Welcome! I do believe Mr. Pollock is\n"
+	.string "looking for you.\p"
+	.string "He hasn't briefed us on where he'd be,\n"
+	.string "but you shouldn't keep him waiting.$"
+
+DrivesLab_Desk_Woman_Text_1:
 	.string "Welcome to Drive Labs, home of the\n"
 	.string "P-Drive!\p"
 	.string "If you have any questions on the\n"

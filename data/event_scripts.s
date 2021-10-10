@@ -1088,3 +1088,5 @@ Common_EventScript_Mart_EventScript_Clerk::
 	.include "data/maps/BoragoGate/scripts.inc"
 
 	.include "data/maps/CalluneGate/scripts.inc"
+
+	.include "data/maps/BoragoGateR1/scripts.inc"

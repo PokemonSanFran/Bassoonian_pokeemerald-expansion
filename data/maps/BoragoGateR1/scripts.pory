@@ -1,0 +1,9 @@
+mapscripts BoragoGateR1_MapScripts {}
+
+script BoragoGate_R1_Teala {
+    msgbox(format("Hello! Beyond these gates, you'll find Borago City, the central hub of western Hanau!\pIf you want a more relaxing spot, Turpia Town is just to the other side.\pHave a nice day!"),MSGBOX_NPC)
+}
+
+script BoragoGate_R1_RandomDude {
+    msgbox(format("Did you know? Different Pokémon will appear depending on the time of day.\pKricketot and Hoothoot come out at night, but most of them sleep during the day."),MSGBOX_NPC)
+}

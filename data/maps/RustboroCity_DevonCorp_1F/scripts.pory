@@ -14,7 +14,14 @@ script DrivesLab_NotAllowedBasement
 
 script DrivesLab_Desk_Woman
 {
-	msgbox(format("Welcome to Drive Labs, home of the P-Drive!\pIf you have any questions on the P-Drive and its functions, my colleague next to me will be your guide.\pHave a good day!"),MSGBOX_NPC)
+	if (flag(FLAG_HIDE_PLAYERS_HOUSE_DAD))
+	{
+		msgbox(format("Welcome! I do believe Mr. Pollock is looking for you.\pHe hasn't briefed us on where he'd be, but you shouldn't keep him waiting."),MSGBOX_NPC)
+	}
+	else
+	{
+		msgbox(format("Welcome to Drive Labs, home of the P-Drive!\pIf you have any questions on the P-Drive and its functions, my colleague next to me will be your guide.\pHave a good day!"),MSGBOX_NPC)
+	}
 }
 
 script DrivesLab_Desk_Economic

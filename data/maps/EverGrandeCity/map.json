@@ -15,7 +15,7 @@
   "connections": [
     {
       "direction": "right",
-      "offset": 38,
+      "offset": 40,
       "map": "MAP_ROUTE101"
     },
     {
@@ -301,6 +301,20 @@
       "y": 75,
       "elevation": 3,
       "dest_map": "MAP_BORAGO_GATE",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 32,
+      "y": 55,
+      "elevation": 3,
+      "dest_map": "MAP_BORAGO_GATE_R1",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 32,
+      "y": 56,
+      "elevation": 3,
+      "dest_map": "MAP_BORAGO_GATE_R1",
       "dest_warp_id": 1
     }
   ],

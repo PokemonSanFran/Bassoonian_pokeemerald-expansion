@@ -165,7 +165,7 @@
       "id": "LAYOUT_ROUTE101",
       "name": "Route101_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route101/border.bin",
@@ -245,7 +245,7 @@
       "id": "LAYOUT_ROUTE109",
       "name": "Route109_Layout",
       "width": 40,
-      "height": 123,
+      "height": 125,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route109/border.bin",
@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/BoragoGate/border.bin",
       "blockdata_filepath": "data/layouts/BoragoGate/map.bin"
+    },
+    {
+      "id": "LAYOUT_BORAGO_GATE_R1",
+      "name": "BoragoGateR1_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/BoragoGateR1/border.bin",
+      "blockdata_filepath": "data/layouts/BoragoGateR1/map.bin"
     }
   ]
 }
