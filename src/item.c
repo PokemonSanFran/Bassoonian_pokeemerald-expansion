@@ -111,8 +111,10 @@ void CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
     {
         if (ItemId_GetPocket(itemId) == POCKET_BERRIES)
             GetBerryCountString(dst, gBerries[itemId - ITEM_CHERI_BERRY].name, quantity);
-        else
+        else if (!ItemId_GetPluralName(itemId))
             StringAppend(dst, sText_s);
+        else
+            StringCopy(dst, ItemId_GetPluralName(itemId));
     }
 }
 
@@ -897,6 +899,11 @@ static u16 SanitizeItemId(u16 itemId)
 const u8 *ItemId_GetName(u16 itemId)
 {
     return gItems[SanitizeItemId(itemId)].name;
+}
+
+const u8 *ItemId_GetPluralName(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].nameplural;
 }
 
 u16 ItemId_GetId(u16 itemId)

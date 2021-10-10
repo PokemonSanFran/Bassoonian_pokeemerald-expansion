@@ -1849,7 +1849,7 @@ static void ItemMenu_Toss(u8 taskId)
     }
     else
     {
-        CopyItemName(gSpecialVar_ItemId, gStringVar1);
+        CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar1, tQuantity);
         StringExpandPlaceholders(gStringVar4, gText_TossHowManyVar1s);
         FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
         BagMenu_Print(WIN_DESCRIPTION, 1, gStringVar4, 3, 1, 0, 0, 0, COLORID_NORMAL);
@@ -1862,7 +1862,7 @@ static void AskTossItems(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
 
-    CopyItemName(gSpecialVar_ItemId, gStringVar1);
+    CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar1, tItemCount);
     ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_ConfirmTossItems);
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
@@ -1905,7 +1905,7 @@ static void ConfirmToss(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
 
-    CopyItemName(gSpecialVar_ItemId, gStringVar1);
+    CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar1, tItemCount);
     ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_ThrewAwayVar2Var1s);
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
@@ -2117,7 +2117,7 @@ static void Task_ItemContext_Sell(u8 taskId)
         }
         else
         {
-            CopyItemName(gSpecialVar_ItemId, gStringVar2);
+            CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar2, tQuantity);
             StringExpandPlaceholders(gStringVar4, gText_HowManyToSell);
             DisplayItemMessage(taskId, 1, gStringVar4, InitSellHowManyInput);
         }
@@ -2187,7 +2187,7 @@ static void ConfirmSell(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
 
-    CopyItemName(gSpecialVar_ItemId, gStringVar2);
+    CopyItemNameHandlePlural(gSpecialVar_ItemId, gStringVar2, tItemCount);
     ConvertIntToDecimalStringN(gStringVar1, (ItemId_GetPrice(gSpecialVar_ItemId) / 2) * tItemCount, STR_CONV_MODE_LEFT_ALIGN, 6);
     StringExpandPlaceholders(gStringVar4, gText_TurnedOverVar1ForVar2);
     DisplayItemMessage(taskId, 1, gStringVar4, SellItem);
