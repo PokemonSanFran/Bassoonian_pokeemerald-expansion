@@ -41,7 +41,7 @@
 #define BAG_ITEMS_COUNT 64 //all items
 #define BAG_KEYITEMS_COUNT 20
 #define BAG_POKEBALLS_COUNT 23 //all accessible balls, ie all except sport/cherish/park/safari
-#define BAG_TMHM_COUNT 64
+#define BAG_TMHM_COUNT 100 //all TMs
 #define BAG_BERRIES_COUNT 67 //all berries
 #define BAG_MEDICINE_COUNT 47 //all obtainable medicine
 #define BAG_HELDITEMS_COUNT 231 //all obtainable held items
@@ -54,7 +54,7 @@
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
 #define GIFT_RIBBONS_COUNT 11
-#define SAVED_TRENDS_COUNT 5
+#define SAVED_TRENDS_COUNT 2
 
 #define PYRAMID_BAG_ITEMS_COUNT 10
 #define HALL_FACILITIES_COUNT 9 // 7 facilities for single mode + tower double mode + tower multi mode.
