@@ -14,7 +14,7 @@ script DrivesLab_NotAllowedBasement
 
 script DrivesLab_Desk_Woman
 {
-	if (flag(FLAG_HIDE_PLAYERS_HOUSE_DAD))
+	if (flag(FLAG_GRC_HIDE_POLLOCK_LABS))
 	{
 		msgbox(format("Welcome! I do believe Mr. Pollock is looking for you.\pHe hasn't briefed us on where he'd be, but you shouldn't keep him waiting."),MSGBOX_NPC)
 	}

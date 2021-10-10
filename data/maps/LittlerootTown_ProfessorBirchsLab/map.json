@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Borago_Lab_Rival",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+      "flag": "FLAG_GRC_HIDE_RIVALS_LAB"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TORI",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Borago_Lab_Tori",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+      "flag": "FLAG_GRC_HIDE_RIVALS_LAB"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",

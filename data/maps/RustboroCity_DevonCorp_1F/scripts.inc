@@ -13,7 +13,7 @@ DrivesLab_NotAllowedBasement::
 
 
 DrivesLab_Desk_Woman::
-	goto_if_set FLAG_HIDE_PLAYERS_HOUSE_DAD, DrivesLab_Desk_Woman_1
+	goto_if_set FLAG_GRC_HIDE_POLLOCK_LABS, DrivesLab_Desk_Woman_1
 	msgbox DrivesLab_Desk_Woman_Text_1, MSGBOX_NPC
 	return
 

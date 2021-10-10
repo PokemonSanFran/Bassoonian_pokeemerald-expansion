@@ -218,7 +218,7 @@ PetalburgCity_Gym_EventScript_BeginWallyTutorial::
 	setvar VAR_PETALBURG_CITY_STATE, 2
 	clearflag FLAG_GRC_HIDE_EVENT_BORAGO_GROVE
 	clearflag FLAG_HIDE_PETALBURG_GYM_WALLY
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	setflag FLAG_GRC_HIDE_RIVALS_LAB
 	special InitBirchState
 	warp MAP_PETALBURG_CITY, 255, 15, 8
 	waitstate

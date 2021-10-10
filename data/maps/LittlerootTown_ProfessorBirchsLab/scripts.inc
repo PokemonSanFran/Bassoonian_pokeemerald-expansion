@@ -217,7 +217,7 @@ Borago_Lab_GetCallFromPollock_BOTH_A::
 	waitmovement 0
 	addobject 8
 	setvar VAR_BIRCH_LAB_STATE, 4
-	setflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	setflag FLAG_GRC_HIDE_POLLOCK_LABS
 	setobjectxy 1, 8, 5
 	return
 
@@ -247,6 +247,7 @@ Borago_Lab_GetCallFromPollock_BOTH_C::
 	closemessage
 	loadword 0, Borago_Lab_WickerFollowerText
 	setfollower 1, 0x100
+	clearflag FLAG_GRC_HIDE_POLLOCK_R1
 	releaseall
 	return
 

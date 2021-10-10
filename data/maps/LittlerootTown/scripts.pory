@@ -1037,7 +1037,7 @@ LittlerootTown_EventScript_SetTwinGuardingRoutePos::
 @	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
-@	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+@	clearflag FLAG_GRC_HIDE_SIGURD_TURPIA
 @	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_DOWN
 @	checkplayergender
 @	compare VAR_RESULT, MALE
@@ -1107,7 +1107,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 @	applymovement LOCALID_MOM, LittlerootTown_Movement_MomEnterHouse
 @	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
 @	waitmovement 0
-@	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+@	setflag FLAG_GRC_HIDE_SIGURD_TURPIA
 @	setvar VAR_GRC_TURPIA_INTRO_STATE, 3
 @	hideobjectat OBJ_EVENT_ID_PLAYER, 0
 @	closedoor VAR_0x8004, VAR_0x8005

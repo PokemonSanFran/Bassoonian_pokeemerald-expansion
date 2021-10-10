@@ -782,7 +782,7 @@ SpotByAide_PartC::
 	closedoor 21, 69
 	waitdooranim
 	setflag FLAG_GRC_HIDE_AIDE_BORAGO
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+	setflag FLAG_GRC_HIDE_SIGURD_TURPIA
 	warpsilent MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 0, 0, 0
 	waitstate
 	releaseall
