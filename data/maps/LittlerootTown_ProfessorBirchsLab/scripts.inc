@@ -211,6 +211,7 @@ Borago_Lab_Crew::
 
 Borago_Lab_GetCallFromPollock_BOTH_A::
 	lockall
+	callnative HideWarpArrowSprite
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp

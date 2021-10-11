@@ -8773,3 +8773,8 @@ bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent)
     return FALSE;
 }
 
+void HideWarpArrowSprite(void)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    SetSpriteInvisible(playerObjEvent->warpArrowSpriteId);
+}

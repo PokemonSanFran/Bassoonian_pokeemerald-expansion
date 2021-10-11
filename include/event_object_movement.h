@@ -425,5 +425,6 @@ bool32 IsObjectEventSpriteAnimating(u8 objectEventId);
 u16 GetMiniStepCount(u8 speed);
 void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
 bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
+void HideWarpArrowSprite(void);
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H
