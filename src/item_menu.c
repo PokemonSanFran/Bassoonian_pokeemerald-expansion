@@ -100,7 +100,7 @@ enum {
     WIN_POCKET_NAME,
     //WIN_TMHM_INFO_ICONS,
     //WIN_TMHM_INFO,
-    //WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
+    WIN_MESSAGE, // Identical to ITEMWIN_MESSAGE. Unused?
 };
 
 // Item list ID for toSwapPos to indicate an item is not currently being swapped
@@ -450,16 +450,16 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .height = 1,//6,
         .paletteNum = 12,
         .baseBlock = 0x27, //e: 0x189,
-    },
+    },*/
     [WIN_MESSAGE] = {
         .bg = 1,
         .tilemapLeft = 2,
         .tilemapTop = 15,
-        .width = 1,//27,
-        .height = 1,//4,
+        .width = 27,
+        .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x27,//e: 0x1B1,
-    },*/
+        .baseBlock = 0x1B1,
+    },
     DUMMY_WIN_TEMPLATE,
 };
 
