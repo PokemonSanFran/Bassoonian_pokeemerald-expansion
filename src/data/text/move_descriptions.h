@@ -2977,6 +2977,10 @@ static const u8 sVENOM_SURGEDescription[] = _(
     "The user faints. Foes are badly\n"
     "poisoned and left weakened.");
 
+static const u8 sGLIMMERSTORMDescription[] = _(
+    "Assaults foes with a dazzling gale\n"
+    "that may cause confusion.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3745,4 +3749,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ABYSSAL_BASS - 1] = sABYSSAL_BASSDescription,
     [MOVE_MALICE_BLAST - 1] = sMALICE_BLASTDescription,
     [MOVE_VENOM_SURGE - 1] = sVENOM_SURGEDescription,
+    [MOVE_GLIMMERSTORM - 1] = sGLIMMERSTORMDescription,
 };
