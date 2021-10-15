@@ -396,7 +396,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 0x19,//14,
         .height = 6,
         .paletteNum = 15,
-        .baseBlock = 0x0122,
+        .baseBlock = 0xE6, //0x0122,
     },
     {
         .bg = 0,
@@ -405,7 +405,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 12,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x1B8, //0x0176,
+        .baseBlock = 0x17C, //0x0176,
     },
     {
         .bg = 0,
@@ -414,7 +414,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x1D0, //0x018E,
+        .baseBlock = 0x1A0, //0x018E,
     },
     {
         .bg = 0,
@@ -423,7 +423,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1E4, //0x01A2,
+        .baseBlock = 0x1C0, //0x01A2,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -436,7 +436,7 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
     .width = 5,
     .height = 4,
     .paletteNum = 15,
-    .baseBlock = 0x020E,
+    .baseBlock = 0x25C, //0x020E,
 };
 
 static const u8 sShopBuyMenuTextColors[][3] =
