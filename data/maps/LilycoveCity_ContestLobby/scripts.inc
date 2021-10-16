@@ -33,6 +33,21 @@ LilycoveCity_ContestLobby_EventScript_Fisherman::
 	return
 
 
+LilycoveCity_ContestLobby_Engage_Check::
+	compare VAR_BIRCH_LAB_STATE, 4
+	goto_if_eq LilycoveCity_ContestLobby_Engage_Check_1
+	goto LilycoveCity_ContestLobby_EventScript_ContestReceptionist
+	return
+
+LilycoveCity_ContestLobby_Engage_Check_1:
+	lock
+	facefollower
+	msgbox LilycoveCity_ContestLobby_Engage_Check_Text_0
+	closemessage
+	releaseall
+	return
+
+
  
 @ Note: data/scripts/berry_blender.inc is for the same map, so shares local IDs
 .set LOCALID_RECEPTIONIST, 1
@@ -1171,3 +1186,9 @@ LilycoveCity_ContestLobby_EventScript_Fisherman_Text_0:
 	.string "tasty!\p"
 	.string "Uh… what's with the long face? Don't\n"
 	.string "judge!$"
+
+LilycoveCity_ContestLobby_Engage_Check_Text_0:
+	.string "Aide Wicker: Er, excuse me, what do you\n"
+	.string "think you're up to?\p"
+	.string "We're supposed to meet Pollock at Route\n"
+	.string "1, remember?$"

@@ -402,6 +402,40 @@ script Route101_EventScript_Boy
 	msgbox(format("I tend to use a lot of Repels so I don't encounter wild Pokémon. I don't have any of my own, you see."),MSGBOX_NPC)
 }
 
+script Route101_Trigger_DexDrive_A {
+	call(Route101_Trigger_DexDrive_both_A)
+	call(Route101_Trigger_DexDrive_both_B)
+}
+
+script Route101_Trigger_DexDrive_B {
+	call(Route101_Trigger_DexDrive_both_A)
+	applymovement(OBJ_EVENT_PLAYER_ID,Common_Movement_WalkUp)
+	waitmovement(0)
+	call(Route101_Trigger_DexDrive_both_B)
+}
+
+script Route101_Trigger_DexDrive_both_A {
+	lockall
+	setvar(VAR_BIRCH_LAB_STATE,5)
+	applymovement(13,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	applymovement(13,Common_Movement_ExclamationMark)
+	waitmovement(0)
+}
+
+script Route101_Trigger_DexDrive_both_B {
+	applymovement(OBJ_EVENT_PLAYER_ID,R1_movement_player_threeright)
+	waitmovement(0)
+	//to be continued
+
+	releaseall
+}
+
+movement R1_movement_player_threeright {
+	walk_right * 3
+	walk_in_place_fastest_up
+}
+
 raw `
 .set LOCALID_BIRCH, 2
 .set LOCALID_ZIGZAGOON, 4

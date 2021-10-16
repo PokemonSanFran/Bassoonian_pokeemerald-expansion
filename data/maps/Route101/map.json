@@ -180,6 +180,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "R1_Event_Pam",
       "flag": "FLAG_GRC_R1_HIDE_BADDIES"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 5,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_GRC_HIDE_POLLOCK_R1"
     }
   ],
   "warp_events": [
@@ -243,15 +256,6 @@
       "var": "VAR_GRC_ROUTE1_STATE",
       "var_value": "1",
       "script": "R1_NoAccess_Home"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 11,
-      "elevation": 3,
-      "var": "VAR_GRC_ROUTE1_STATE",
-      "var_value": "1",
-      "script": "R1_NoAccess_City"
     },
     {
       "type": "trigger",
@@ -675,6 +679,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "3",
       "script": "Route1_ResetGrassPatch"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 15,
+      "elevation": 3,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "4",
+      "script": "Route101_Trigger_DexDrive_A"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "4",
+      "script": "Route101_Trigger_DexDrive_B"
     }
   ],
   "bg_events": [

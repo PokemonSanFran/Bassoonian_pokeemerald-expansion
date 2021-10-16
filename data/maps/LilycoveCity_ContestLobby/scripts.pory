@@ -33,6 +33,22 @@ script LilycoveCity_ContestLobby_EventScript_Fisherman
 	msgbox(format("Do you see the machines there? They're Ponut Ovens, used to bake Ponuts!\pThey improve your Pokémon's Condition, which lets them pull their weight even better in Contests! They're really tasty!\pUh… what's with the long face? Don't judge!"),MSGBOX_NPC)
 }
 
+script LilycoveCity_ContestLobby_Engage_Check
+{
+	if(var(VAR_BIRCH_LAB_STATE)==4)
+	{
+		lock
+		facefollower
+		msgbox(format("Aide Wicker: Er, excuse me, what do you think you're up to?\pWe're supposed to meet Pollock at Route 1, remember?"))
+		closemessage
+		releaseall
+	}
+	else
+	{
+		goto(LilycoveCity_ContestLobby_EventScript_ContestReceptionist)
+	}
+}
+
 raw ` 
 @ Note: data/scripts/berry_blender.inc is for the same map, so shares local IDs
 .set LOCALID_RECEPTIONIST, 1
