@@ -136,4 +136,7 @@ void DexNavGuiInit(MainCallback callback);
 extern u8 gCurrentDexNavChain;
 extern bool8 gDexnavBattle;
 
+void DexDriveTutorialR1_setfieldeffect(void);
+void DexDriveTutorialR1_setopponent(void);
+
 #endif //GUARD_DEXNAV_H

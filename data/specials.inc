@@ -545,3 +545,5 @@ gSpecials::
 	def_special OpenPokenavForTutorial2
 	def_special EnterSafariModeR1
 	def_special Debug_SaveBlockSize
+	def_special DexDriveTutorialR1_setfieldeffect
+	def_special DexDriveTutorialR1_setopponent

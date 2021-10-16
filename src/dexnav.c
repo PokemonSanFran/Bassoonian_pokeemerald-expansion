@@ -2731,3 +2731,21 @@ void IncrementDexNavChain(void)
     if (gSaveBlock1Ptr->dexNavChain < DEXNAV_CHAIN_MAX)
         gSaveBlock1Ptr->dexNavChain++;
 }
+
+void DexDriveTutorialR1_setfieldeffect(void)
+{
+    gFieldEffectArguments[0] = 7;
+    gFieldEffectArguments[1] = 16;
+    gFieldEffectArguments[2] = 0xFF; // subpriority
+    gFieldEffectArguments[3] = 2;   //priority
+    FieldEffectStart(FLDEFF_SHAKING_GRASS);
+}
+
+void DexDriveTutorialR1_setopponent(void)
+{
+    u16 monData;
+    monData = 2;
+    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &monData);
+    monData = MOVE_COVET;
+    SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &monData);
+}

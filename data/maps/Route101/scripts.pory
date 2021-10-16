@@ -409,7 +409,7 @@ script Route101_Trigger_DexDrive_A {
 
 script Route101_Trigger_DexDrive_B {
 	call(Route101_Trigger_DexDrive_both_A)
-	applymovement(OBJ_EVENT_PLAYER_ID,Common_Movement_WalkUp)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
 	waitmovement(0)
 	call(Route101_Trigger_DexDrive_both_B)
 }
@@ -424,10 +424,107 @@ script Route101_Trigger_DexDrive_both_A {
 }
 
 script Route101_Trigger_DexDrive_both_B {
-	applymovement(OBJ_EVENT_PLAYER_ID,R1_movement_player_threeright)
+	destroyfollower
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threeright)
 	waitmovement(0)
-	//to be continued
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: There you are, {PLAYER}! Good to see you.\pAnd I see a certain someone has tagged along…"))
+	closemessage
+	//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
+	//waitmovement(0)
+	msgbox(format("Aide Wicker: What's on the menu, old friend?"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: I'm glad you ask! I'd like to show {PLAYER} one of their most crucial P-Drive features: DexDrive!"))
+	closemessage
+	//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
+	//waitmovement(0)
+	msgbox(format("Aide Wicker: Ohhh, is it time?"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: Yes, it is! All righty, {PLAYER}, hand me your P-Drive for a moment."))
+	closemessage
+	playse(SE_CLICK)
+	delay(10)
+	playse(SE_CLICK)
+	delay(10)
+	playse(SE_CLICK)
+	delay(10)
+	playse(SE_CLICK)
+	delay(20)
+	playfanfare(MUS_OBTAIN_ITEM)
+	message("{PLAYER}'s P-Drive was upgraded\nwith the DexDrive!")
+	setflag(FLAG_SYS_DEXNAV_GET)
+	waitfanfare
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: All set! Now, do you know how to operate DexDrive?"),MSGBOX_YESNO)
+	if(var(VAR_RESULT)==YES)
+	{
+		msgbox(format("Pollock: Excellent! Then we won't be keeping you any longer, {PLAYER}.\pWe hope you'll enjoy using DexDrive to the max!"))
+		closemessage
+		//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
+		//waitmovement(0)
+		msgbox(format("Aide Wicker: To the max? Pollock, don't embarrass yourself in front of teenagers."))
+		closemessage
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		msgbox(format("Pollock: Oh, come on! Anyway, {PLAYER}, thank you for your time.\pI'll be sure to call you for future updates to your P-Drive!"))
+		closemessage
+		//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestRight)
+		//waitmovement(0)
+		msgbox(format("Aide Wicker: Until next time, {PLAYER}! Best of luck!"))
+		closemessage
+	}
+	else
+	{
+		msgbox(format("All righty, {PLAYER}, could you activate the DexDrive feature?"))
+		closemessage
+		msgbox("(to be added)")
+		closemessage
+		special(DexDriveTutorialR1_setfieldeffect)
+		msgbox(format("Aide Wicker: Rustling grass?"))
+		closemessage
+		msgbox(format("Pollock: Yes, exactly! Now, approach the rustling grass quietly by holding {A_BUTTON}.\pToo much noise, and the Pokémon will flee."))
+		closemessage
+		msgbox(format("Aide Wicker: Oh, do take these Poké Balls, {PLAYER}. You can never have enough, after all."))
+		closemessage
+		giveitem(ITEM_POKE_BALL,5)
+		msgbox(format("Aide Wicker: Do we watch now, old friend?"))
+		closemessage
+		msgbox(format("Pollock: We've got front-row seats, old pal.\pRight, let's keep our voices down now."))
+		closemessage
+		msgbox(format("Aide Wicker: Remember, {PLAYER}…\pHold {A_BUTTON}. Nice and slowly."))
+		closemessage
+		
+		setwildbattle(SPECIES_SENTRET,5,ITEM_ORAN_BERRY)
+		special(DexDriveTutorialR1_setopponent)
+		dowildbattle
 
+		specialvar(VAR_RESULT,GetBattleOutcome)
+		if(var(VAR_RESULT)==B_OUTCOME_CAUGHT)
+		{
+			msgbox("caught")
+			closemessage
+		}
+		elif(var(VAR_RESULT)==B_OUTCOME_WON)
+		{
+			msgbox("won")
+			closemessage
+		}
+		if(var(VAR_RESULT)==B_OUTCOME_RAN)
+		{
+			msgbox("ran")
+			closemessage
+		}
+	}
+	setflag(FLAG_GRC_HIDE_POLLOCK_R1)
+	clearflag(FLAG_GRC_HIDE_POLLOCK_LABS)
+	setflag(FLAG_GRC_HIDE_MUSKETEERS_BORAGO_GATE)
+	setflag(FLAG_GRC_HIDE_RIVALS_LAB)
 	releaseall
 }
 
