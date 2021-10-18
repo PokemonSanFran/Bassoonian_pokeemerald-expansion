@@ -41,23 +41,26 @@ script Poppy_GetSeenByRivalC
 	setrespawn(HEAL_LOCATION_DEWFORD_TOWN)
 	applymovement(2,Poppy_Rival_WalkDown)
 	waitmovement(0)
-	msgbox(format("oy hi oh cool badge lez go"))
-	closemessage
 	checkplayergender
 	if(var(VAR_RESULT)==MALE)
 	{
+		msgbox(format("Alyssa: Hi, {PLAYER}! How's it going?\pI've made a little more headway after getting my spiffy new Badge.\pDon't you think it's awesome to have a reminder of such an important win?\pWell, let's find out how we stack up now!"))
+		closemessage
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
-				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TREECKO,Poppy_RivalDefeatedText)
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TREECKO,Poppy_RivalDefeatedText2)
 			case 1:
-				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TORCHIC,Poppy_RivalDefeatedText)
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_TORCHIC,Poppy_RivalDefeatedText2)
 			case 2:
-				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_MUDKIP,Poppy_RivalDefeatedText)
-		}	
+				trainerbattle_no_intro(TRAINER_GRC_ALYSSA_POPPY_MUDKIP,Poppy_RivalDefeatedText2)
+		}
+		msgbox(format("Alyssa: Yeah, you really mean business. Doesn't mean I'm gonna let you off the hook, though!\pOur journey's just begun, and I'm not gonna wait for you to catch up! Heehee…\pAnyway, best of luck, {PLAYER}!"))
 	}
 	else
 	{
+		msgbox(format("Basil: Hey, {PLAYER}! How's tricks?\pI've gone on a head a bit with my shiny new Gym Badge.\pFeels great to know you've proven yourself like that, huh?\pNow let's see how far we've come up to this point!"))
+		closemessage
 		switch(var(VAR_STARTER_MON))
 		{
 			case 0:
@@ -66,9 +69,9 @@ script Poppy_GetSeenByRivalC
 				trainerbattle_no_intro(TRAINER_GRC_BASIL_POPPY_TORCHIC,Poppy_RivalDefeatedText)
 			case 2:
 				trainerbattle_no_intro(TRAINER_GRC_BASIL_POPPY_MUDKIP,Poppy_RivalDefeatedText)
-		}	
+		}
+		msgbox(format("Basil: Yeah, you got me good there. We still have a ways to go, of course!\pSo you better not lag behind, or I'll be sure to bring the pain next time! Hahaha, sorry!\pAnyway, good luck out there, {PLAYER}!"))
 	}
-	msgbox(format("damn u gud well see u around"))
 	closemessage
 	applymovement(2,Poppy_Rival_RunAway)
 	waitmovement(0)
@@ -94,7 +97,12 @@ movement Poppy_Rival_RunAway
 
 text Poppy_RivalDefeatedText
 {
-	"Oh no u gud"
+	"Wow! Impressive stuff!"
+}
+
+text Poppy_RivalDefeatedText2
+{
+	"Oh, wow! I'm impressed!"
 }
 
 //NPCs

@@ -38,17 +38,18 @@ Poppy_GetSeenByRivalC::
 	setrespawn HEAL_LOCATION_DEWFORD_TOWN
 	applymovement 2, Poppy_Rival_WalkDown
 	waitmovement 0
-	msgbox Poppy_GetSeenByRivalC_Text_0
-	closemessage
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq Poppy_GetSeenByRivalC_2
+	msgbox Poppy_GetSeenByRivalC_Text_2
+	closemessage
 	switch VAR_STARTER_MON
-	case 0, Poppy_GetSeenByRivalC_10
-	case 1, Poppy_GetSeenByRivalC_11
-	case 2, Poppy_GetSeenByRivalC_12
+	case 0, Poppy_GetSeenByRivalC_12
+	case 1, Poppy_GetSeenByRivalC_13
+	case 2, Poppy_GetSeenByRivalC_14
+Poppy_GetSeenByRivalC_10:
+	msgbox Poppy_GetSeenByRivalC_Text_3
 Poppy_GetSeenByRivalC_1:
-	msgbox Poppy_GetSeenByRivalC_Text_1
 	closemessage
 	applymovement 2, Poppy_Rival_RunAway
 	waitmovement 0
@@ -63,35 +64,39 @@ Poppy_GetSeenByRivalC_1:
 	return
 
 Poppy_GetSeenByRivalC_2:
+	msgbox Poppy_GetSeenByRivalC_Text_0
+	closemessage
 	switch VAR_STARTER_MON
-	case 0, Poppy_GetSeenByRivalC_6
-	case 1, Poppy_GetSeenByRivalC_7
-	case 2, Poppy_GetSeenByRivalC_8
-	goto Poppy_GetSeenByRivalC_1
-
-Poppy_GetSeenByRivalC_6:
-	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TREECKO, Poppy_RivalDefeatedText
+	case 0, Poppy_GetSeenByRivalC_7
+	case 1, Poppy_GetSeenByRivalC_8
+	case 2, Poppy_GetSeenByRivalC_9
+Poppy_GetSeenByRivalC_5:
+	msgbox Poppy_GetSeenByRivalC_Text_1
 	goto Poppy_GetSeenByRivalC_1
 
 Poppy_GetSeenByRivalC_7:
-	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TORCHIC, Poppy_RivalDefeatedText
-	goto Poppy_GetSeenByRivalC_1
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TREECKO, Poppy_RivalDefeatedText2
+	goto Poppy_GetSeenByRivalC_5
 
 Poppy_GetSeenByRivalC_8:
-	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_MUDKIP, Poppy_RivalDefeatedText
-	goto Poppy_GetSeenByRivalC_1
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_TORCHIC, Poppy_RivalDefeatedText2
+	goto Poppy_GetSeenByRivalC_5
 
-Poppy_GetSeenByRivalC_10:
-	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TREECKO, Poppy_RivalDefeatedText
-	goto Poppy_GetSeenByRivalC_1
-
-Poppy_GetSeenByRivalC_11:
-	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TORCHIC, Poppy_RivalDefeatedText
-	goto Poppy_GetSeenByRivalC_1
+Poppy_GetSeenByRivalC_9:
+	trainerbattle_no_intro TRAINER_GRC_ALYSSA_POPPY_MUDKIP, Poppy_RivalDefeatedText2
+	goto Poppy_GetSeenByRivalC_5
 
 Poppy_GetSeenByRivalC_12:
+	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TREECKO, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_10
+
+Poppy_GetSeenByRivalC_13:
+	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_TORCHIC, Poppy_RivalDefeatedText
+	goto Poppy_GetSeenByRivalC_10
+
+Poppy_GetSeenByRivalC_14:
 	trainerbattle_no_intro TRAINER_GRC_BASIL_POPPY_MUDKIP, Poppy_RivalDefeatedText
-	goto Poppy_GetSeenByRivalC_1
+	goto Poppy_GetSeenByRivalC_10
 
 
 Poppy_Rival_WalkDown:
@@ -952,10 +957,39 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 @	.string "definition of “in” right now.$"
 
 Poppy_GetSeenByRivalC_Text_0:
-	.string "oy hi oh cool badge lez go$"
+	.string "Alyssa: Hi, {PLAYER}! How's it going?\p"
+	.string "I've made a little more headway after\n"
+	.string "getting my spiffy new Badge.\p"
+	.string "Don't you think it's awesome to have a\n"
+	.string "reminder of such an important win?\p"
+	.string "Well, let's find out how we stack up now!$"
 
 Poppy_GetSeenByRivalC_Text_1:
-	.string "damn u gud well see u around$"
+	.string "Alyssa: Yeah, you really mean business.\n"
+	.string "Doesn't mean I'm gonna let you off the\l"
+	.string "hook, though!\p"
+	.string "Our journey's just begun, and I'm not\n"
+	.string "gonna wait for you to catch up!\l"
+	.string "Heehee…\p"
+	.string "Anyway, best of luck, {PLAYER}!$"
+
+Poppy_GetSeenByRivalC_Text_2:
+	.string "Basil: Hey, {PLAYER}! How's tricks?\p"
+	.string "I've gone on a head a bit with my shiny\n"
+	.string "new Gym Badge.\p"
+	.string "Feels great to know you've proven\n"
+	.string "yourself like that, huh?\p"
+	.string "Now let's see how far we've come up to\n"
+	.string "this point!$"
+
+Poppy_GetSeenByRivalC_Text_3:
+	.string "Basil: Yeah, you got me good there. We\n"
+	.string "still have a ways to go, of course!\p"
+	.string "So you better not lag behind, or I'll be\n"
+	.string "sure to bring the pain next time!\l"
+	.string "Hahaha, sorry!\p"
+	.string "Anyway, good luck out there,\n"
+	.string "{PLAYER}!$"
 
 Poppy_FunnyMan_Text_0:
 	.string "This town is small, but that's exactly\n"
@@ -992,4 +1026,7 @@ Poppy_TSSign_Text_0:
 	.string "Pokémon Trainer's School$"
 
 Poppy_RivalDefeatedText::
-	.string "Oh no u gud$"
+	.string "Wow! Impressive stuff!$"
+
+Poppy_RivalDefeatedText2::
+	.string "Oh, wow! I'm impressed!$"
