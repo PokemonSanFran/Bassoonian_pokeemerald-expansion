@@ -118,8 +118,8 @@
 #define OBJ_EVENT_GFX_CABLE_CAR                  114
 #define OBJ_EVENT_GFX_SCIENTIST_2                115
 #define OBJ_EVENT_GFX_DEVON_EMPLOYEE             116
-#define OBJ_EVENT_GFX_AQUA_MEMBER_M              117
-#define OBJ_EVENT_GFX_AQUA_MEMBER_F              118
+#define OBJ_EVENT_GFX_NICHOLAS              117
+#define OBJ_EVENT_GFX_ROBIN              118
 #define OBJ_EVENT_GFX_MAGMA_MEMBER_M             119
 #define OBJ_EVENT_GFX_MAGMA_MEMBER_F             120
 #define OBJ_EVENT_GFX_TERENCE                     121
@@ -196,7 +196,7 @@
 #define OBJ_EVENT_GFX_ALYSSA_WATERING               192
 #define OBJ_EVENT_GFX_BASIL_DECORATING         193
 #define OBJ_EVENT_GFX_ALYSSA_DECORATING             194
-#define OBJ_EVENT_GFX_ARCHIE                     195
+#define OBJ_EVENT_GFX_JACK                     195
 #define OBJ_EVENT_GFX_MAXIE                      196
 #define OBJ_EVENT_GFX_KYOGRE_FRONT               197
 #define OBJ_EVENT_GFX_GROUDON_FRONT              198

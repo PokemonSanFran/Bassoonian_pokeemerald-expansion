@@ -14,3 +14,47 @@ script BoragoGate_Man
 {
     msgbox(format("It's nice to take a breather after a long day. Within these gates, you can just sit down and clear your mind. Whoever invented them deserves a raise!"),MSGBOX_NPC)
 }
+
+script BoragoGate_Musketeers
+{
+    lock
+    applymovement(5,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Nicholas: All that talk the Professor gave about missions… Hah!\pLittle do those three rich kids know WE are the ones with a real mission!"))
+    closemessage
+    applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+    waitmovement(0)
+    msgbox(format("Jack: Pipe it down, Nick. Don't raise suspicion."))
+    closemessage
+    applymovement(6,Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(6,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Robin: Case in point, boys."))
+    closemessage
+    applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+    applymovement(5,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    applymovement(4,Common_Movement_ExclamationMark)
+    applymovement(5,Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(5,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Nicholas: Khh…! It's you! Ugh, why do you have to be here?!"))
+    closemessage
+    applymovement(6,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Robin: Yeah, we're kinda in the middle of something, and we're not gonna move until we've finished our business here."))
+    closemessage
+    applymovement(5,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Nicholas: Or, y'know, scram!"))
+    closemessage
+    applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+    waitmovement(0)
+    msgbox(format("Jack: Ugh... Make this easy on yourself and leave us be, {PLAYER}."))
+    closemessage
+    applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+    waitmovement(0)
+    release
+}
