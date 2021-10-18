@@ -422,6 +422,7 @@ Turia_Celebration_Cont_B_5:
 	removeobject 6
 	setflag FLAG_GRC_TURPIA_HIDE_RIVALS
 	setflag FLAG_GRC_R1_HIDE_RIVALS
+	setflag FLAG_RECEIVED_RUNNING_SHOES
 	clearflag FLAG_GRC_R1_HIDE_NPCS
 	setflag FLAG_SYS_POKEMON_GET
 	releaseall

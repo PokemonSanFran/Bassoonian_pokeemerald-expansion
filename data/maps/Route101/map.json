@@ -75,7 +75,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "R1_ScientistCityBlock",
-      "flag": "FLAG_GRC_R1_HIDE_RIVALS"
+      "flag": "FLAG_RECEIVED_RUNNING_SHOES"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_SPRUCE",

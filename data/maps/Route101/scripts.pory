@@ -404,12 +404,24 @@ script Route101_EventScript_Boy
 
 script Route101_Trigger_DexDrive_A {
 	call(Route101_Trigger_DexDrive_both_A)
+	clearflag(FLAG_RECEIVED_RUNNING_SHOES)
+	addobject(4)
+	destroyfollower
+	setobjectxy(4,1,15)
+	applymovement(4,R1_movement_player_threeright)
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threeright)
+	waitmovement(0)
 	call(Route101_Trigger_DexDrive_both_B)
 }
 
 script Route101_Trigger_DexDrive_B {
 	call(Route101_Trigger_DexDrive_both_A)
-	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
+	clearflag(FLAG_RECEIVED_RUNNING_SHOES)
+	addobject(4)
+	destroyfollower
+	setobjectxy(4,1,16)
+	applymovement(4,R1_movement_player_threerightB_aide)
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threerightB)
 	waitmovement(0)
 	call(Route101_Trigger_DexDrive_both_B)
 }
@@ -424,23 +436,20 @@ script Route101_Trigger_DexDrive_both_A {
 }
 
 script Route101_Trigger_DexDrive_both_B {
-	destroyfollower
-	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threeright)
-	waitmovement(0)
 	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
 	waitmovement(0)
 	msgbox(format("Pollock: There you are, {PLAYER}! Good to see you.\pAnd I see a certain someone has tagged along…"))
 	closemessage
-	//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
-	//waitmovement(0)
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
 	msgbox(format("Aide Wicker: What's on the menu, old friend?"))
 	closemessage
 	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
 	waitmovement(0)
 	msgbox(format("Pollock: I'm glad you ask! I'd like to show {PLAYER} one of their most crucial P-Drive features: DexDrive!"))
 	closemessage
-	//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
-	//waitmovement(0)
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
 	msgbox(format("Aide Wicker: Ohhh, is it time?"))
 	closemessage
 	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
@@ -466,16 +475,17 @@ script Route101_Trigger_DexDrive_both_B {
 	{
 		msgbox(format("Pollock: Excellent! Then we won't be keeping you any longer, {PLAYER}.\pWe hope you'll enjoy using DexDrive to the max!"))
 		closemessage
-		//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestUp)
-		//waitmovement(0)
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: To the max? Pollock, don't embarrass yourself in front of teenagers."))
 		closemessage
 		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
 		waitmovement(0)
 		msgbox(format("Pollock: Oh, come on! Anyway, {PLAYER}, thank you for your time.\pI'll be sure to call you for future updates to your P-Drive!"))
 		closemessage
-		//applymovement(OBJ_EVENT_ID_FOLLOWER,Common_Movement_WalkInPlaceFastestRight)
-		//waitmovement(0)
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: Until next time, {PLAYER}! Best of luck!"))
 		closemessage
 	}
@@ -486,51 +496,166 @@ script Route101_Trigger_DexDrive_both_B {
 		msgbox("(to be added)")
 		closemessage
 		special(DexDriveTutorialR1_setfieldeffect)
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_ExclamationMark)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: Rustling grass?"))
 		closemessage
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
 		msgbox(format("Pollock: Yes, exactly! Now, approach the rustling grass quietly by holding {A_BUTTON}.\pToo much noise, and the Pokémon will flee."))
 		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: Oh, do take these Poké Balls, {PLAYER}. You can never have enough, after all."))
 		closemessage
 		giveitem(ITEM_POKE_BALL,5)
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: Do we watch now, old friend?"))
 		closemessage
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
 		msgbox(format("Pollock: We've got front-row seats, old pal.\pRight, let's keep our voices down now."))
 		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
 		msgbox(format("Aide Wicker: Remember, {PLAYER}…\pHold {A_BUTTON}. Nice and slowly."))
 		closemessage
-		
+		applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_approachbush)
+		waitmovement(0)
 		setwildbattle(SPECIES_SENTRET,5,ITEM_ORAN_BERRY)
 		special(DexDriveTutorialR1_setopponent)
 		dowildbattle
-
+		applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_leavebush)
+		waitmovement(0)
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
 		specialvar(VAR_RESULT,GetBattleOutcome)
 		if(var(VAR_RESULT)==B_OUTCOME_CAUGHT)
 		{
-			msgbox("caught")
+			msgbox(format("Pollock: An astounding performance! I knew you could do it."))
 			closemessage
+			applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+			applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+			waitmovement(0)
+			msgbox(format("Aide Wicker: Agreed! It seems you've more than gotten the hang of it, {PLAYER}."))
+			closemessage
+			applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 		}
 		elif(var(VAR_RESULT)==B_OUTCOME_WON)
 		{
-			msgbox("won")
+			msgbox(format("Pollock: Well, I'll be. I didn't expect you to defeat it."))
+			closemessage
+			applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+			waitmovement(0)
+			checkplayergender
+			if(var(VAR_RESULT)==MALE)
+			{
+				msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's his choice."))
+			}
+			else
+			{
+				msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's her choice."))
+			}
 			closemessage
 		}
-		if(var(VAR_RESULT)==B_OUTCOME_RAN)
+		elif(var(VAR_RESULT)==B_OUTCOME_RAN)
 		{
-			msgbox("ran")
+			msgbox(format("Pollock: Oh, you ran away from it?"))
+			closemessage
+			applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+			waitmovement(0)
+			msgbox(format("Aide Wicker: Perhaps {PLAYER} simply wanted to let the Pokémon roam free.\pEither way, that's fine! Not to worry."))
 			closemessage
 		}
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		msgbox(format("Pollock: Oh, that reminds me! Pokémon found with DexDrive tend to be a little different from any ordinary specimen."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Aide Wicker: Indeed! They're quicker to hold items than average.\pWhat's more, they may have a special Ability or a unique move!\pIf you use DexDrive enough, you'll find just the right Pokémon for your team."))
+		closemessage
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		waitmovement(0)
+		msgbox(format("Pollock: That should wrap things up, then.\pMind tagging along with me, old friend? Just be sure not to lag too far behind."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Aide Wicker: H-hey, come on! I've gotten a little faster compared to 20 years ago!"))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		waitmovement(0)
+		msgbox(format("Aide Wicker: Anyway, {PLAYER}, thank you so much for your time. Be seeing you!"))
+		closemessage
+		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Pollock: If you need some advice from old man Pollock, you know where to find me! Till next time!"))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
 	}
+	applymovement(4,movement_R1_aide_leavestage)
+	applymovement(13,movement_R1_pollock_leavestage)
+	waitmovement(0)
+	removeobject(4)
+	applymovement(13,Common_Movement_WalkLeft)
+	waitmovement(0)
+	removeobject(13)
 	setflag(FLAG_GRC_HIDE_POLLOCK_R1)
 	clearflag(FLAG_GRC_HIDE_POLLOCK_LABS)
 	setflag(FLAG_GRC_HIDE_MUSKETEERS_BORAGO_GATE)
 	setflag(FLAG_GRC_HIDE_RIVALS_LAB)
+	setflag(FLAG_RECEIVED_RUNNING_SHOES)
+	setvar(VAR_BIRCH_LAB_STATE,6)
 	releaseall
+}
+
+movement movement_R1_aide_leavestage
+{
+	delay_16
+	walk_left * 4
+}
+
+movement movement_R1_pollock_leavestage
+{
+	walk_left
+	walk_down
+	walk_left * 3
 }
 
 movement R1_movement_player_threeright {
 	walk_right * 3
 	walk_in_place_fastest_up
+}
+
+movement R1_movement_player_threerightB {
+	walk_up
+	walk_right * 3
+	walk_in_place_fastest_up
+}
+
+movement R1_movement_player_threerightB_aide {
+	walk_right
+	walk_up
+	walk_right * 2
+	walk_in_place_fastest_up
+}
+
+movement R1_movement_player_approachbush {
+	walk_slow_down
+	walk_slow_right * 2
+}
+
+movement R1_movement_player_leavebush {
+	walk_left * 2
+	walk_up
 }
 
 raw `
