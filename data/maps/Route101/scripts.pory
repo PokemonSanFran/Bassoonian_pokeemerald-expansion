@@ -318,6 +318,12 @@ script Route1_GatherPeeps
 		setobjectxyperm(7,13,4)
 		setobjectmovementtype(7,MOVEMENT_TYPE_FACE_LEFT)
 	}
+	if(var(VAR_BIRCH_LAB_STATE)==5)
+	{
+		setobjectxyperm(4,4,14)
+		setobjectmovementtype(4,MOVEMENT_TYPE_FACE_RIGHT)
+		setobjectmovementtype(13,MOVEMENT_TYPE_FACE_LEFT)
+	}
 }
 
 script R1_NoAccess_City {
@@ -491,116 +497,12 @@ script Route101_Trigger_DexDrive_both_B {
 	}
 	else
 	{
-		msgbox(format("All righty, {PLAYER}, could you activate the DexDrive feature?"))
-		closemessage
-		msgbox("(to be added)")
-		closemessage
-		special(DexDriveTutorialR1_setfieldeffect)
-		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
-		waitmovement(0)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_ExclamationMark)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Rustling grass?"))
-		closemessage
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
-		waitmovement(0)
-		msgbox(format("Pollock: Yes, exactly! Now, approach the rustling grass quietly by holding {A_BUTTON}.\pToo much noise, and the Pokémon will flee."))
-		closemessage
-		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Oh, do take these Poké Balls, {PLAYER}. You can never have enough, after all."))
-		closemessage
-		giveitem(ITEM_POKE_BALL,5)
-		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Do we watch now, old friend?"))
-		closemessage
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		waitmovement(0)
-		msgbox(format("Pollock: We've got front-row seats, old pal.\pRight, let's keep our voices down now."))
-		closemessage
-		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Remember, {PLAYER}…\pHold {A_BUTTON}. Nice and slowly."))
-		closemessage
-		applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_approachbush)
-		waitmovement(0)
-		setwildbattle(SPECIES_SENTRET,5,ITEM_ORAN_BERRY)
-		special(DexDriveTutorialR1_setopponent)
-		dowildbattle
-		applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_leavebush)
-		waitmovement(0)
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		waitmovement(0)
-		specialvar(VAR_RESULT,GetBattleOutcome)
-		if(var(VAR_RESULT)==B_OUTCOME_CAUGHT)
-		{
-			msgbox(format("Pollock: An astounding performance! I knew you could do it."))
-			closemessage
-			applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-			applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
-			waitmovement(0)
-			msgbox(format("Aide Wicker: Agreed! It seems you've more than gotten the hang of it, {PLAYER}."))
-			closemessage
-			applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
-		}
-		elif(var(VAR_RESULT)==B_OUTCOME_WON)
-		{
-			msgbox(format("Pollock: Well, I'll be. I didn't expect you to defeat it."))
-			closemessage
-			applymovement(4,Common_Movement_WalkInPlaceFastestUp)
-			waitmovement(0)
-			checkplayergender
-			if(var(VAR_RESULT)==MALE)
-			{
-				msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's his choice."))
-			}
-			else
-			{
-				msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's her choice."))
-			}
-			closemessage
-		}
-		elif(var(VAR_RESULT)==B_OUTCOME_RAN)
-		{
-			msgbox(format("Pollock: Oh, you ran away from it?"))
-			closemessage
-			applymovement(4,Common_Movement_WalkInPlaceFastestUp)
-			waitmovement(0)
-			msgbox(format("Aide Wicker: Perhaps {PLAYER} simply wanted to let the Pokémon roam free.\pEither way, that's fine! Not to worry."))
-			closemessage
-		}
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		waitmovement(0)
-		msgbox(format("Pollock: Oh, that reminds me! Pokémon found with DexDrive tend to be a little different from any ordinary specimen."))
-		closemessage
-		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Indeed! They're quicker to hold items than average.\pWhat's more, they may have a special Ability or a unique move!\pIf you use DexDrive enough, you'll find just the right Pokémon for your team."))
-		closemessage
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		waitmovement(0)
-		msgbox(format("Pollock: That should wrap things up, then.\pMind tagging along with me, old friend? Just be sure not to lag too far behind."))
-		closemessage
-		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: H-hey, come on! I've gotten a little faster compared to 20 years ago!"))
-		closemessage
-		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
-		waitmovement(0)
-		msgbox(format("Aide Wicker: Anyway, {PLAYER}, thank you so much for your time. Be seeing you!"))
-		closemessage
-		applymovement(13,Common_Movement_WalkInPlaceFastestDown)
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
-		waitmovement(0)
-		msgbox(format("Pollock: If you need some advice from old man Pollock, you know where to find me! Till next time!"))
-		closemessage
-		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		call(Route101_DexDrive_Tutorial_Accept)
 	}
+	call(Route101_DexDriveTutorial_CleanUp)
+}
+
+script Route101_DexDriveTutorial_CleanUp {
 	applymovement(4,movement_R1_aide_leavestage)
 	applymovement(13,movement_R1_pollock_leavestage)
 	waitmovement(0)
@@ -615,6 +517,164 @@ script Route101_Trigger_DexDrive_both_B {
 	setflag(FLAG_RECEIVED_RUNNING_SHOES)
 	setvar(VAR_BIRCH_LAB_STATE,6)
 	releaseall
+}
+
+script Route101_DexDrive_Tutorial_Accept
+{
+	msgbox(format("All righty, {PLAYER}, could you activate the DexDrive feature?"))
+	closemessage
+	msgbox("(to be added)")
+	closemessage
+	special(DexDriveTutorialR1_setfieldeffect)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Rustling grass?"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Pollock: Yes, exactly! Now, approach the rustling grass quietly by holding {A_BUTTON}.\pToo much noise, and the Pokémon will flee."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Oh, do take these Poké Balls, {PLAYER}. You can never have enough, after all."))
+	closemessage
+	giveitem(ITEM_POKE_BALL,5)
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Do we watch now, old friend?"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: We've got front-row seats, old pal.\pRight, let's keep our voices down now."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Remember, {PLAYER}…\pHold {A_BUTTON}. Nice and slowly."))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_approachbush)
+	waitmovement(0)
+	setwildbattle(SPECIES_SENTRET,5,ITEM_ORAN_BERRY)
+	special(DexDriveTutorialR1_setopponent)
+	dowildbattle
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_leavebush)
+	waitmovement(0)
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	specialvar(VAR_RESULT,GetBattleOutcome)
+	if(var(VAR_RESULT)==B_OUTCOME_CAUGHT)
+	{
+		msgbox(format("Pollock: An astounding performance! I knew you could do it."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+		waitmovement(0)
+		msgbox(format("Aide Wicker: Agreed! It seems you've more than gotten the hang of it, {PLAYER}."))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	}
+	elif(var(VAR_RESULT)==B_OUTCOME_WON)
+	{
+		msgbox(format("Pollock: Well, I'll be. I didn't expect you to defeat it."))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		checkplayergender
+		if(var(VAR_RESULT)==MALE)
+		{
+			msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's his choice."))
+		}
+		else
+		{
+			msgbox(format("Aide Wicker: {PLAYER} might have caught this kind of Pokémon before.\pAll good, though! It's her choice."))
+		}
+		closemessage
+	}
+	elif(var(VAR_RESULT)==B_OUTCOME_RAN)
+	{
+		msgbox(format("Pollock: Oh, you ran away from it?"))
+		closemessage
+		applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+		waitmovement(0)
+		msgbox(format("Aide Wicker: Perhaps {PLAYER} simply wanted to let the Pokémon roam free.\pEither way, that's fine! Not to worry."))
+		closemessage
+	}
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: Oh, that reminds me! Pokémon found with DexDrive tend to be a little different from any ordinary specimen."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Indeed! They're quicker to hold items than average.\pWhat's more, they may have a special Ability or a unique move!\pIf you use DexDrive enough, you'll find just the right Pokémon for your team."))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: That should wrap things up, then.\pMind tagging along with me, old friend? Just be sure not to lag too far behind."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: H-hey, come on! I've gotten a little faster compared to 20 years ago!"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Anyway, {PLAYER}, thank you so much for your time. Be seeing you!"))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	msgbox(format("Pollock: If you need some advice from old man Pollock, you know where to find me! Till next time!"))
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+}
+
+script Route101_Trigger_DexDrive_C {
+	call(Route101_Trigger_DexDrive_both_C)
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threeright)
+	waitmovement(0)
+	call(Route101_Trigger_DexDrive_both_D)
+}
+
+script Route101_Trigger_DexDrive_D {
+	call(Route101_Trigger_DexDrive_both_C)
+	applymovement(OBJ_EVENT_ID_PLAYER,R1_movement_player_threerightB)
+	waitmovement(0)
+	call(Route101_Trigger_DexDrive_both_D)
+}
+
+script Route101_Trigger_DexDrive_both_C {
+	lockall
+	applymovement(13,Common_Movement_WalkInPlaceFastestLeft)
+	applymovement(4,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	applymovement(13,Common_Movement_ExclamationMark)
+	applymovement(4,Common_Movement_ExclamationMark)
+	waitmovement(0)
+}
+
+script Route101_Trigger_DexDrive_both_D {
+	applymovement(4,Common_Movement_WalkDown)
+	waitmovement(0)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Pollock: Ah, you're back! Can't win every fight in your life, so don't sweat it."))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Aide Wicker: Are you all set? Then let's try this again."))
+	closemessage
+	applymovement(13,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
+	waitmovement(0)
+	call(Route101_DexDrive_Tutorial_Accept)
+	call(Route101_DexDriveTutorial_CleanUp)
 }
 
 movement movement_R1_aide_leavestage

@@ -347,7 +347,10 @@ Route1_GatherPeeps::
 	goto_if_eq Route1_GatherPeeps_2
 Route1_GatherPeeps_1:
 	compare VAR_GRC_ROUTE1_STATE, 2
-	goto_if_eq Route1_GatherPeeps_6
+	goto_if_eq Route1_GatherPeeps_7
+Route1_GatherPeeps_6:
+	compare VAR_BIRCH_LAB_STATE, 5
+	goto_if_eq Route1_GatherPeeps_9
 	return
 
 Route1_GatherPeeps_2:
@@ -364,11 +367,17 @@ Route1_GatherPeeps_2:
 	setobjectmovementtype 12, MOVEMENT_TYPE_FACE_RIGHT
 	goto Route1_GatherPeeps_1
 
-Route1_GatherPeeps_6:
+Route1_GatherPeeps_7:
 	setobjectxyperm 3, 13, 2
 	setobjectmovementtype 3, MOVEMENT_TYPE_FACE_LEFT
 	setobjectxyperm 7, 13, 4
 	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_LEFT
+	goto Route1_GatherPeeps_6
+
+Route1_GatherPeeps_9:
+	setobjectxyperm 4, 4, 14
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 
@@ -538,100 +547,9 @@ Route101_Trigger_DexDrive_both_B::
 	msgbox Route101_Trigger_DexDrive_both_B_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq Route101_Trigger_DexDrive_both_B_2
-	msgbox Route101_Trigger_DexDrive_both_B_Text_11
-	closemessage
-	msgbox Route101_Trigger_DexDrive_both_B_Text_12
-	closemessage
-	special DexDriveTutorialR1_setfieldeffect
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_13
-	closemessage
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_14
-	closemessage
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_15
-	closemessage
-	giveitem ITEM_POKE_BALL, 5
-	applymovement 4, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_16
-	closemessage
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_17
-	closemessage
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_18
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_approachbush
-	waitmovement 0
-	setwildbattle SPECIES_SENTRET, 5, ITEM_ORAN_BERRY
-	special DexDriveTutorialR1_setopponent
-	dowildbattle
-	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_leavebush
-	waitmovement 0
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	specialvar VAR_RESULT, GetBattleOutcome
-	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq Route101_Trigger_DexDrive_both_B_6
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq Route101_Trigger_DexDrive_both_B_7
-	compare VAR_RESULT, B_OUTCOME_RAN
-	goto_if_eq Route101_Trigger_DexDrive_both_B_8
-Route101_Trigger_DexDrive_both_B_5:
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_26
-	closemessage
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_27
-	closemessage
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_28
-	closemessage
-	applymovement 4, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_29
-	closemessage
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_30
-	closemessage
-	applymovement 13, Common_Movement_WalkInPlaceFastestDown
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_31
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	call Route101_DexDrive_Tutorial_Accept
 Route101_Trigger_DexDrive_both_B_1:
-	applymovement 4, movement_R1_aide_leavestage
-	applymovement 13, movement_R1_pollock_leavestage
-	waitmovement 0
-	removeobject 4
-	applymovement 13, Common_Movement_WalkLeft
-	waitmovement 0
-	removeobject 13
-	setflag FLAG_GRC_HIDE_POLLOCK_R1
-	clearflag FLAG_GRC_HIDE_POLLOCK_LABS
-	setflag FLAG_GRC_HIDE_MUSKETEERS_BORAGO_GATE
-	setflag FLAG_GRC_HIDE_RIVALS_LAB
-	setflag FLAG_RECEIVED_RUNNING_SHOES
-	setvar VAR_BIRCH_LAB_STATE, 6
-	releaseall
+	call Route101_DexDriveTutorial_CleanUp
 	return
 
 Route101_Trigger_DexDrive_both_B_2:
@@ -652,42 +570,192 @@ Route101_Trigger_DexDrive_both_B_2:
 	closemessage
 	goto Route101_Trigger_DexDrive_both_B_1
 
-Route101_Trigger_DexDrive_both_B_6:
-	msgbox Route101_Trigger_DexDrive_both_B_Text_19
+
+Route101_DexDriveTutorial_CleanUp::
+	applymovement 4, movement_R1_aide_leavestage
+	applymovement 13, movement_R1_pollock_leavestage
+	waitmovement 0
+	removeobject 4
+	applymovement 13, Common_Movement_WalkLeft
+	waitmovement 0
+	removeobject 13
+	setflag FLAG_GRC_HIDE_POLLOCK_R1
+	clearflag FLAG_GRC_HIDE_POLLOCK_LABS
+	setflag FLAG_GRC_HIDE_MUSKETEERS_BORAGO_GATE
+	setflag FLAG_GRC_HIDE_RIVALS_LAB
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setvar VAR_BIRCH_LAB_STATE, 6
+	releaseall
+	return
+
+
+Route101_DexDrive_Tutorial_Accept::
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_0
+	closemessage
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_1
+	closemessage
+	special DexDriveTutorialR1_setfieldeffect
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_2
+	closemessage
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_3
 	closemessage
 	applymovement 4, Common_Movement_WalkInPlaceFastestRight
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_20
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_4
+	closemessage
+	giveitem ITEM_POKE_BALL, 5
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_5
+	closemessage
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_6
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_7
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_approachbush
+	waitmovement 0
+	setwildbattle SPECIES_SENTRET, 5, ITEM_ORAN_BERRY
+	special DexDriveTutorialR1_setopponent
+	dowildbattle
+	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_leavebush
+	waitmovement 0
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq Route101_DexDrive_Tutorial_Accept_2
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq Route101_DexDrive_Tutorial_Accept_3
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq Route101_DexDrive_Tutorial_Accept_4
+Route101_DexDrive_Tutorial_Accept_1:
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_15
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_16
+	closemessage
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_17
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_18
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_19
+	closemessage
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_20
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	return
+
+Route101_DexDrive_Tutorial_Accept_2:
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_8
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_9
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
-	goto Route101_Trigger_DexDrive_both_B_5
+	goto Route101_DexDrive_Tutorial_Accept_1
 
-Route101_Trigger_DexDrive_both_B_7:
-	msgbox Route101_Trigger_DexDrive_both_B_Text_21
+Route101_DexDrive_Tutorial_Accept_3:
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_10
 	closemessage
 	applymovement 4, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto_if_eq Route101_Trigger_DexDrive_both_B_13
-	msgbox Route101_Trigger_DexDrive_both_B_Text_23
-Route101_Trigger_DexDrive_both_B_12:
+	goto_if_eq Route101_DexDrive_Tutorial_Accept_9
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_12
+Route101_DexDrive_Tutorial_Accept_8:
 	closemessage
-	goto Route101_Trigger_DexDrive_both_B_5
+	goto Route101_DexDrive_Tutorial_Accept_1
 
-Route101_Trigger_DexDrive_both_B_8:
-	msgbox Route101_Trigger_DexDrive_both_B_Text_24
+Route101_DexDrive_Tutorial_Accept_4:
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_13
 	closemessage
 	applymovement 4, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
-	msgbox Route101_Trigger_DexDrive_both_B_Text_25
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_14
 	closemessage
-	goto Route101_Trigger_DexDrive_both_B_5
+	goto Route101_DexDrive_Tutorial_Accept_1
 
-Route101_Trigger_DexDrive_both_B_13:
-	msgbox Route101_Trigger_DexDrive_both_B_Text_22
-	goto Route101_Trigger_DexDrive_both_B_12
+Route101_DexDrive_Tutorial_Accept_9:
+	msgbox Route101_DexDrive_Tutorial_Accept_Text_11
+	goto Route101_DexDrive_Tutorial_Accept_8
+
+
+Route101_Trigger_DexDrive_C::
+	call Route101_Trigger_DexDrive_both_C
+	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_threeright
+	waitmovement 0
+	call Route101_Trigger_DexDrive_both_D
+	return
+
+
+Route101_Trigger_DexDrive_D::
+	call Route101_Trigger_DexDrive_both_C
+	applymovement OBJ_EVENT_ID_PLAYER, R1_movement_player_threerightB
+	waitmovement 0
+	call Route101_Trigger_DexDrive_both_D
+	return
+
+
+Route101_Trigger_DexDrive_both_C::
+	lockall
+	applymovement 13, Common_Movement_WalkInPlaceFastestLeft
+	applymovement 4, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	applymovement 13, Common_Movement_ExclamationMark
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	return
+
+
+Route101_Trigger_DexDrive_both_D::
+	applymovement 4, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox Route101_Trigger_DexDrive_both_D_Text_0
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route101_Trigger_DexDrive_both_D_Text_1
+	closemessage
+	applymovement 13, Common_Movement_WalkInPlaceFastestDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
+	call Route101_DexDrive_Tutorial_Accept
+	call Route101_DexDriveTutorial_CleanUp
+	return
 
 
 movement_R1_aide_leavestage:
@@ -1296,77 +1364,77 @@ Route101_Trigger_DexDrive_both_B_Text_10:
 	.string "Aide Wicker: Until next time, {PLAYER}!\n"
 	.string "Best of luck!$"
 
-Route101_Trigger_DexDrive_both_B_Text_11:
+Route101_DexDrive_Tutorial_Accept_Text_0:
 	.string "All righty, {PLAYER}, could you\n"
 	.string "activate the DexDrive feature?$"
 
-Route101_Trigger_DexDrive_both_B_Text_12:
+Route101_DexDrive_Tutorial_Accept_Text_1:
 	.string "(to be added)$"
 
-Route101_Trigger_DexDrive_both_B_Text_13:
+Route101_DexDrive_Tutorial_Accept_Text_2:
 	.string "Aide Wicker: Rustling grass?$"
 
-Route101_Trigger_DexDrive_both_B_Text_14:
+Route101_DexDrive_Tutorial_Accept_Text_3:
 	.string "Pollock: Yes, exactly! Now, approach the\n"
 	.string "rustling grass quietly by holding {A_BUTTON}.\p"
 	.string "Too much noise, and the Pokémon will\n"
 	.string "flee.$"
 
-Route101_Trigger_DexDrive_both_B_Text_15:
+Route101_DexDrive_Tutorial_Accept_Text_4:
 	.string "Aide Wicker: Oh, do take these Poké\n"
 	.string "Balls, {PLAYER}. You can never have\l"
 	.string "enough, after all.$"
 
-Route101_Trigger_DexDrive_both_B_Text_16:
+Route101_DexDrive_Tutorial_Accept_Text_5:
 	.string "Aide Wicker: Do we watch now, old\n"
 	.string "friend?$"
 
-Route101_Trigger_DexDrive_both_B_Text_17:
+Route101_DexDrive_Tutorial_Accept_Text_6:
 	.string "Pollock: We've got front-row seats, old\n"
 	.string "pal.\p"
 	.string "Right, let's keep our voices down now.$"
 
-Route101_Trigger_DexDrive_both_B_Text_18:
+Route101_DexDrive_Tutorial_Accept_Text_7:
 	.string "Aide Wicker: Remember, {PLAYER}…\p"
 	.string "Hold {A_BUTTON}. Nice and slowly.$"
 
-Route101_Trigger_DexDrive_both_B_Text_19:
+Route101_DexDrive_Tutorial_Accept_Text_8:
 	.string "Pollock: An astounding performance! I\n"
 	.string "knew you could do it.$"
 
-Route101_Trigger_DexDrive_both_B_Text_20:
+Route101_DexDrive_Tutorial_Accept_Text_9:
 	.string "Aide Wicker: Agreed! It seems you've\n"
 	.string "more than gotten the hang of it,\l"
 	.string "{PLAYER}.$"
 
-Route101_Trigger_DexDrive_both_B_Text_21:
+Route101_DexDrive_Tutorial_Accept_Text_10:
 	.string "Pollock: Well, I'll be. I didn't expect you\n"
 	.string "to defeat it.$"
 
-Route101_Trigger_DexDrive_both_B_Text_22:
+Route101_DexDrive_Tutorial_Accept_Text_11:
 	.string "Aide Wicker: {PLAYER} might have\n"
 	.string "caught this kind of Pokémon before.\p"
 	.string "All good, though! It's his choice.$"
 
-Route101_Trigger_DexDrive_both_B_Text_23:
+Route101_DexDrive_Tutorial_Accept_Text_12:
 	.string "Aide Wicker: {PLAYER} might have\n"
 	.string "caught this kind of Pokémon before.\p"
 	.string "All good, though! It's her choice.$"
 
-Route101_Trigger_DexDrive_both_B_Text_24:
+Route101_DexDrive_Tutorial_Accept_Text_13:
 	.string "Pollock: Oh, you ran away from it?$"
 
-Route101_Trigger_DexDrive_both_B_Text_25:
+Route101_DexDrive_Tutorial_Accept_Text_14:
 	.string "Aide Wicker: Perhaps {PLAYER} simply\n"
 	.string "wanted to let the Pokémon roam free.\p"
 	.string "Either way, that's fine! Not to worry.$"
 
-Route101_Trigger_DexDrive_both_B_Text_26:
+Route101_DexDrive_Tutorial_Accept_Text_15:
 	.string "Pollock: Oh, that reminds me! Pokémon\n"
 	.string "found with DexDrive tend to be a little\l"
 	.string "different from any ordinary specimen.$"
 
-Route101_Trigger_DexDrive_both_B_Text_27:
+Route101_DexDrive_Tutorial_Accept_Text_16:
 	.string "Aide Wicker: Indeed! They're quicker to\n"
 	.string "hold items than average.\p"
 	.string "What's more, they may have a special\n"
@@ -1374,23 +1442,31 @@ Route101_Trigger_DexDrive_both_B_Text_27:
 	.string "If you use DexDrive enough, you'll find\n"
 	.string "just the right Pokémon for your team.$"
 
-Route101_Trigger_DexDrive_both_B_Text_28:
+Route101_DexDrive_Tutorial_Accept_Text_17:
 	.string "Pollock: That should wrap things up,\n"
 	.string "then.\p"
 	.string "Mind tagging along with me, old friend?\n"
 	.string "Just be sure not to lag too far behind.$"
 
-Route101_Trigger_DexDrive_both_B_Text_29:
+Route101_DexDrive_Tutorial_Accept_Text_18:
 	.string "Aide Wicker: H-hey, come on! I've gotten\n"
 	.string "a little faster compared to 20 years\l"
 	.string "ago!$"
 
-Route101_Trigger_DexDrive_both_B_Text_30:
+Route101_DexDrive_Tutorial_Accept_Text_19:
 	.string "Aide Wicker: Anyway, {PLAYER}, thank\n"
 	.string "you so much for your time. Be seeing\l"
 	.string "you!$"
 
-Route101_Trigger_DexDrive_both_B_Text_31:
+Route101_DexDrive_Tutorial_Accept_Text_20:
 	.string "Pollock: If you need some advice from\n"
 	.string "old man Pollock, you know where to find\l"
 	.string "me! Till next time!$"
+
+Route101_Trigger_DexDrive_both_D_Text_0:
+	.string "Pollock: Ah, you're back! Can't win every\n"
+	.string "fight in your life, so don't sweat it.$"
+
+Route101_Trigger_DexDrive_both_D_Text_1:
+	.string "Aide Wicker: Are you all set? Then let's\n"
+	.string "try this again.$"

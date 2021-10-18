@@ -697,6 +697,24 @@
       "var": "VAR_BIRCH_LAB_STATE",
       "var_value": "4",
       "script": "Route101_Trigger_DexDrive_B"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 15,
+      "elevation": 3,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "5",
+      "script": "Route101_Trigger_DexDrive_C"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_BIRCH_LAB_STATE",
+      "var_value": "5",
+      "script": "Route101_Trigger_DexDrive_D"
     }
   ],
   "bg_events": [
