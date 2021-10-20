@@ -220,24 +220,29 @@ static const struct TrainerMon sParty_GruntWeatherInst3[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntMuseum1[] = {
-    {
-    .iv = 0,
-    .lvl = 15,
-    .species = SPECIES_CARVANHA,
-    }
-};
-
-static const struct TrainerMon sParty_GruntMuseum2[] = {
+static const struct TrainerMon sParty_GRC_GruntFlowers1[] = {
     {
     .iv = 0,
     .lvl = 14,
-    .species = SPECIES_ZUBAT,
+    .species = SPECIES_SHROOMISH,
     },
     {
     .iv = 0,
     .lvl = 14,
-    .species = SPECIES_CARVANHA,
+    .species = SPECIES_POLIWAG,
+    }
+};
+
+static const struct TrainerMon sParty_GRC_GruntFlowers2[] = {
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_SANDYGAST,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_DEWPIDER,
     }
 };
 

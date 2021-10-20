@@ -259,7 +259,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_GruntWeatherInst3},
     },
 
-    [TRAINER_GRUNT_MUSEUM_1] =
+    [TRAINER_GRC_GRUNT_FLOWERS_1] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -268,11 +268,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntMuseum1),
-        .party = {.TrainerMon = sParty_GruntMuseum1},
+        .partySize = ARRAY_COUNT(sParty_GRC_GruntFlowers1),
+        .party = {.TrainerMon = sParty_GRC_GruntFlowers1},
     },
 
-    [TRAINER_GRUNT_MUSEUM_2] =
+    [TRAINER_GRC_GRUNT_FLOWERS_2] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -281,8 +281,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntMuseum2),
-        .party = {.TrainerMon = sParty_GruntMuseum2},
+        .partySize = ARRAY_COUNT(sParty_GRC_GruntFlowers2),
+        .party = {.TrainerMon = sParty_GRC_GruntFlowers2},
     },
 
     [TRAINER_GRUNT_SPACE_CENTER_1] =
