@@ -1061,7 +1061,8 @@ static u8 ReformatItemDescription(u16 item, u8 *dest)
 }
 
 #define ITEM_ICON_X 26
-#define ITEM_ICON_Y 24
+//#define ITEM_ICON_Y 24
+#define ITEM_ICON_Y 32
 void DrawHeaderBox(void)
 {
     struct WindowTemplate template;
@@ -1085,7 +1086,8 @@ void DrawHeaderBox(void)
         return; //no box if item obtained previously
     }
     
-    SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
+    //SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
+    SetWindowTemplateFields(&template, 0, 1, 1, 28, 5, 15, 8);
     sHeaderBoxWindowId = AddWindow(&template);
     FillWindowPixelBuffer(sHeaderBoxWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeaderBoxWindowId);
