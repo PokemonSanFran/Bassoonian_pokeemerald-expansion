@@ -1322,10 +1322,9 @@ Route104_Sign_PoppyDown_Text_0:
 
 Route104_Sign_TrainerTips_Text_0:
 	.string "Trainer Tips! If you have any Poké Balls\n"
-	.string "on you, press the R button to instantly\l"
-	.string "throw another Ball of the same kind\l"
-	.string "without having to browse through your\l"
-	.string "Bag.$"
+	.string "on you, press {R_BUTTON} to instantly throw\l"
+	.string "another Ball of the same kind without\l"
+	.string "having to browse through your Bag.$"
 
 Route104_EventScript_Cindy_Text_0:
 	.string "Hey, you know what happens when\n"

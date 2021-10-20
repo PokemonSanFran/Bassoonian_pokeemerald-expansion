@@ -68,7 +68,7 @@ script Route104_Sign_PoppyDown {
 }
 
 script Route104_Sign_TrainerTips {
-	msgbox(format("Trainer Tips! If you have any Poké Balls on you, press the R button to instantly throw another Ball of the same kind without having to browse through your Bag."),MSGBOX_SIGN)
+	msgbox(format("Trainer Tips! If you have any Poké Balls on you, press {R_BUTTON} to instantly throw another Ball of the same kind without having to browse through your Bag."),MSGBOX_SIGN)
 }
 
 //DAVE SCRIPTS
