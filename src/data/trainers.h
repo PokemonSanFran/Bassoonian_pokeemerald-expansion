@@ -3550,9 +3550,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_JOHNNY_1] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
         .trainerName = _("Johnny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -3563,9 +3563,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_JOHNNY_2] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
         .trainerName = _("Johnny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -3576,9 +3576,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_JOHNNY_3] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
         .trainerName = _("Johnny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -3589,9 +3589,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_JOHNNY_4] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
         .trainerName = _("Johnny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -3602,9 +3602,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_JOHNNY_5] =
     {
-        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
         .trainerName = _("Johnny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -9107,9 +9107,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRC_RUDY] =
     {
-        .trainerClass = TRAINER_CLASS_RICH_BOY,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
-        .trainerPic = TRAINER_PIC_RICH_BOY,
+        .trainerClass = TRAINER_CLASS_BIKER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BIKER,
         .trainerName = _("Rudy"),
         .items = {},
         .doubleBattle = FALSE,

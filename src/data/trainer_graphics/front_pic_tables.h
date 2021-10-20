@@ -95,6 +95,7 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_CRUSH_KIN] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_POKEFAN_FAMILY] = {.size = 8, .y_offset = 2},
+    [TRAINER_PIC_BIKER] = {.size = 8, .y_offset = 2},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -297,4 +298,6 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
 	TRAINER_PAL(CRUSH_KIN, gTrainerPalette_CrushKin),
 	TRAINER_PAL(POKEFAN_FAMILY, gTrainerPalette_PokefanFamily),
+    TRAINER_PAL(BIKER, gTrainerPalette_Biker),
+    TRAINER_PAL(RISING_STAR_M, gTrainerPalette_RisingStarM),
 };

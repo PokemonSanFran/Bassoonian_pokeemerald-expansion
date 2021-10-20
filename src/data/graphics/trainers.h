@@ -283,6 +283,12 @@ const u32 gTrainerPalette_CrushKin[] = INCBIN_U32("graphics/trainers/palettes/cr
 const u32 gTrainerFrontPic_PokefanFamily[] = INCBIN_U32("graphics/trainers/front_pics/pokefan_family_front_pic.4bpp.lz");
 const u32 gTrainerPalette_PokefanFamily[] = INCBIN_U32("graphics/trainers/palettes/pokefan_family.gbapal.lz");
 
+const u32 gTrainerFrontPic_Biker[] = INCBIN_U32("graphics/trainers/front_pics/biker_front_pic.4bpp.lz");
+const u32 gTrainerPalette_Biker[] = INCBIN_U32("graphics/trainers/palettes/biker.gbapal.lz");
+
+const u32 gTrainerFrontPic_RisingStarM[] = INCBIN_U32("graphics/trainers/front_pics/rising_star_m_front_pic.4bpp.lz");
+const u32 gTrainerPalette_RisingStarM[] = INCBIN_U32("graphics/trainers/palettes/rising_star_m.gbapal.lz");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan_back_pic.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may_back_pic.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red_back_pic.4bpp");
