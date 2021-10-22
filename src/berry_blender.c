@@ -228,6 +228,7 @@ static void CB2_CheckPlayAgainLink(void);
 static void UpdateProgressBar(u16, u16);
 static void PrintMadePokeblockString(struct Pokeblock *, u8 *);
 static bool32 TryAddContestLinkTvShow(struct Pokeblock *, struct TvBlenderStruct *);
+static bool32 AddPokeBlockParameterized(u8, u8, u8, u8, u8, u8, u8);
 
 EWRAM_DATA static struct BerryBlender *sBerryBlender = NULL;
 EWRAM_DATA static s32 sDebug_PokeblockFactorFlavors[FLAVOR_COUNT] = {0};
@@ -3907,9 +3908,20 @@ static bool32 Blender_PrintText(s16 *textState, const u8 *string, s32 textSpeed)
 
 void Special_GiveFreePokeblocks(void)
 {
+    AddPokeBlockParameterized(PBLOCK_CLR_WHITE, 25, 25, 25, 25, 25, 1);
+    AddPokeBlockParameterized(PBLOCK_CLR_WHITE, 25, 25, 25, 25, 25, 1);
+    AddPokeBlockParameterized(PBLOCK_CLR_WHITE, 25, 25, 25, 25, 25, 1);
+}
+
+static bool32 AddPokeBlockParameterized(u8 color, u8 spicy, u8 dry, u8 sweet, u8 bitter, u8 sour, u8 feel)
+{
     struct Pokeblock pokeblock;
-    u8 flavors[FLAVOR_COUNT + 1];
-    ConvertItemToBlenderBerry(&sBerryBlender->blendedBerries[0], ITEM_SITRUS_BERRY);
-    CalculatePokeblock(sBerryBlender->blendedBerries, &pokeblock, 1, flavors, 100);
-    AddPokeblock(&pokeblock);
+    pokeblock.color = color;
+    pokeblock.spicy = spicy;
+    pokeblock.dry = dry;
+    pokeblock.sweet = sweet;
+    pokeblock.bitter = bitter;
+    pokeblock.sour = sour;
+    pokeblock.feel = feel;
+    return AddPokeblock(&pokeblock);
 }
