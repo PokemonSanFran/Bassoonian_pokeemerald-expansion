@@ -299,7 +299,7 @@ script DebugTestScript
 		additem(ITEM_OLD_ROD)
 		additem(ITEM_GOOD_ROD)
 		additem(ITEM_SUPER_ROD)
-		additem(ITEM_POKEBLOCK_CASE)
+		additem(ITEM_PONUT_CASE)
 		additem(ITEM_GO_GOGGLES)
 
 		//fossils
@@ -500,6 +500,9 @@ script DebugTestScript
 		additem(ITEM_PRETTY_FEATHER)
 		additem(ITEM_SHINY_CHARM)
 		additem(ITEM_OVAL_CHARM)
+
+		//pokeblocks
+		callnative(Special_GiveFreePokeblocks)
 
 		msgbox("done")
 		closemessage

@@ -3904,3 +3904,12 @@ static bool32 Blender_PrintText(s16 *textState, const u8 *string, s32 textSpeed)
 
     return FALSE;
 }
+
+void Special_GiveFreePokeblocks(void)
+{
+    struct Pokeblock pokeblock;
+    u8 flavors[FLAVOR_COUNT + 1];
+    ConvertItemToBlenderBerry(&sBerryBlender->blendedBerries[0], ITEM_SITRUS_BERRY);
+    CalculatePokeblock(sBerryBlender->blendedBerries, &pokeblock, 1, flavors, 100);
+    AddPokeblock(&pokeblock);
+}

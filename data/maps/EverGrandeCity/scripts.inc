@@ -282,7 +282,7 @@ DebugTestScript::
 	additem ITEM_OLD_ROD
 	additem ITEM_GOOD_ROD
 	additem ITEM_SUPER_ROD
-	additem ITEM_POKEBLOCK_CASE
+	additem ITEM_PONUT_CASE
 	additem ITEM_GO_GOGGLES
 	additem ITEM_ROOT_FOSSIL
 	additem ITEM_CLAW_FOSSIL
@@ -461,6 +461,7 @@ DebugTestScript::
 	additem ITEM_PRETTY_FEATHER
 	additem ITEM_SHINY_CHARM
 	additem ITEM_OVAL_CHARM
+	callnative Special_GiveFreePokeblocks
 	msgbox DebugTestScript_Text_4
 	closemessage
 	special Debug_SaveBlockSize

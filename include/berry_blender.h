@@ -17,4 +17,6 @@ void DoBerryBlending(void);
 u16 GetBlenderArrowPosition(void);
 void ShowBerryBlenderRecordWindow(void);
 
+void Special_GiveFreePokeblocks(void);
+
 #endif // GUARD_BERRY_BLENDER_H

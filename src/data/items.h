@@ -3673,10 +3673,10 @@ const struct Item gItems[] =
         .secondaryId = ACRO_BIKE,
     },
 
-    [ITEM_POKEBLOCK_CASE] =
+    [ITEM_PONUT_CASE] =
     {
         .name = _("Ponut Case"),
-        .itemId = ITEM_POKEBLOCK_CASE,
+        .itemId = ITEM_PONUT_CASE,
         .price = 0,
         .description = sPokeblockCaseDesc,
         .importance = 1,

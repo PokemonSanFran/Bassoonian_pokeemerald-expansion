@@ -1,82 +1,74 @@
-EventScript_CutTree::
+script EventScript_CutTree
+{
 	lockall
-	goto_if_unset FLAG_BADGE01_GET, EventScript_CutTree_2
-EventScript_CutTree_1:
-	checkitem ITEM_PONUT_CASE, 1
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_CutTree_5
-EventScript_CutTree_4:
-	msgbox EventScript_CutTree_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq EventScript_CutTree_8
-	fadescreen FADE_TO_BLACK
-	special OpenPokeblockCaseOnFeeder
-	waitstate
-	compare VAR_RESULT, 0xFFFF
-	goto_if_eq EventScript_CutTree_14
-EventScript_CutTree_7:
-	copyvar VAR_0x8006, VAR_RESULT
-	setvar VAR_0x8004, ITEM_HM01_CUT
-	setvar VAR_0x8005, MOVE_CUT
-	buffermovename 1, MOVE_CUT
-	special Special_FindHMCapableWild
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_CutTree_12
-EventScript_CutTree_11:
-	bufferspeciesname 2, VAR_0x8004
-	setfieldeffectargument 0, 0xFF
-	msgbox EventScript_CutTree_Text_1, MSGBOX_DEFAULT
+	if (!flag(FLAG_BADGE01_GET))
+	{
+		goto(EventScript_CheckTreeCantCut)
+	}
+	checkitem(ITEM_PONUT_CASE,1)
+	if (var(VAR_RESULT)==FALSE)
+	{
+		goto(EventScript_CheckTreeCantCut)
+	}
+	msgbox(format("This tree looks like it can be cut down! Would you like to leave a Ponut?"),MSGBOX_YESNO)
+	if(var(VAR_RESULT)==NO)
+	{
+		setvar(VAR_RESULT,0xFFFF)
+	}
+	else
+	{
+		fadescreen(FADE_TO_BLACK)
+		special(OpenPokeblockCaseOnFeeder)
+		waitstate
+		if(var(VAR_RESULT)==0xFFFF)
+		{
+			goto(EventScript_CancelCut)
+		}
+	}
+	copyvar(VAR_0x8006,VAR_RESULT)
+	setvar(VAR_0x8004,ITEM_HM01_CUT)
+	setvar(VAR_0x8005,MOVE_CUT)
+	buffermovename(1,MOVE_CUT)
+	special(Special_FindHMCapableWild)
+	if (var(VAR_RESULT)==FALSE)
+	{
+		goto(EventScript_ButNoOneShowedUp)
+	}
+	bufferspeciesname(2,VAR_0x8004)
+	setfieldeffectargument(0,0xFF)
+	msgbox(format("{STR_VAR_3} appeared and used {STR_VAR_2}!"),MSGBOX_DEFAULT)
 	closemessage
-	dofieldeffect FLDEFF_USE_CUT_ON_TREE
+	dofieldeffect(FLDEFF_USE_CUT_ON_TREE)
 	waitstate
-	call EventScript_CutTreeDown
-	compare VAR_0x8006, 0xFFFF
-	goto_if_ne EventScript_CutTree_17
-	msgbox EventScript_CutTree_Text_3
-	closemessage
-	dowildbattle
-EventScript_CutTree_16:
+	call(EventScript_CutTreeDown)
+	if (var(VAR_0x8006)!=0xFFFF)
+	{
+		msgbox(format("{STR_VAR_3} happily ran off with the {STR_VAR_1}!"))
+		callnative(ZeroEnemyPartyMons)
+	}
+	else
+	{
+		msgbox(format("{STR_VAR_3} was angry at the lack of Ponut and attacked!"))
+		closemessage
+		dowildbattle
+		//if not attacked: callnative(ZeroEnemyPartyMons)
+	}
 	releaseall
-	return
+}
 
-EventScript_CutTree_2:
-	goto EventScript_CheckTreeCantCut
-	goto EventScript_CutTree_1
-
-EventScript_CutTree_5:
-	goto EventScript_CheckTreeCantCut
-	goto EventScript_CutTree_4
-
-EventScript_CutTree_8:
-	setvar VAR_RESULT, 0xFFFF
-	goto EventScript_CutTree_7
-
-EventScript_CutTree_12:
-	goto EventScript_ButNoOneShowedUp
-	goto EventScript_CutTree_11
-
-EventScript_CutTree_14:
-	goto EventScript_CancelCut
-	goto EventScript_CutTree_7
-
-EventScript_CutTree_17:
-	msgbox EventScript_CutTree_Text_2
-	callnative ZeroEnemyPartyMons
-	goto EventScript_CutTree_16
-
-
-EventScript_CheckTreeCantCut::
-	msgbox EventScript_CheckTreeCantCut_Text_0
+script EventScript_CheckTreeCantCut
+{
+	msgbox(format("This tree looks like it can be cut down!"))
 	releaseall
-	return
+}
 
-
-EventScript_ButNoOneShowedUp::
-	msgbox EventScript_ButNoOneShowedUp_Text_0
+script EventScript_ButNoOneShowedUp
+{
+	msgbox(format("But no one showed up…"))
 	releaseall
-	return
+}
 
-
+raw`
 @ Interact with cuttable tree
 @EventScript_CutTree:: @ 82906BB
 @	lockall
@@ -486,25 +478,4 @@ WalkLeft:
 WalkRight:
     walk_right
     step_end
-
-EventScript_CutTree_Text_0:
-	.string "This tree looks like it can be cut down!\n"
-	.string "Would you like to leave a Ponut?$"
-
-EventScript_CutTree_Text_1:
-	.string "{STR_VAR_3} appeared and used\n"
-	.string "{STR_VAR_2}!$"
-
-EventScript_CutTree_Text_2:
-	.string "{STR_VAR_3} happily ran off with the\n"
-	.string "{STR_VAR_1}!$"
-
-EventScript_CutTree_Text_3:
-	.string "{STR_VAR_3} was angry at the lack\n"
-	.string "of Ponut and attacked!$"
-
-EventScript_CheckTreeCantCut_Text_0:
-	.string "This tree looks like it can be cut down!$"
-
-EventScript_ButNoOneShowedUp_Text_0:
-	.string "But no one showed up…$"
+`

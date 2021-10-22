@@ -57,7 +57,7 @@ Route121_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	end
 
 Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone::
-	checkitem ITEM_POKEBLOCK_CASE, 1
+	checkitem ITEM_PONUT_CASE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq Route121_SafariZoneEntrance_EventScript_NoPokeblockCase
 	call Route121_SafariZoneEntrance_EventScript_CheckHasRoomForPokemon

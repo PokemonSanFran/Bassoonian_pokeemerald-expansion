@@ -2627,7 +2627,10 @@ bool8 FldEff_FieldMoveShowMonInit(void)
 {
     struct Pokemon *pokemon;
     u32 flag = gFieldEffectArguments[0] & 0x80000000;
-    pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
+    if (gFieldEffectArguments[0] == 0xFF)
+        pokemon = &gEnemyParty[0];
+    else
+        pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
     gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
     gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_OT_ID);
     gFieldEffectArguments[2] = GetMonData(pokemon, MON_DATA_PERSONALITY);

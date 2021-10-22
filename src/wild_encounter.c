@@ -7,6 +7,7 @@
 #include "field_player_avatar.h"
 #include "event_data.h"
 #include "safari_zone.h"
+#include "script_pokemon_util.h"
 #include "overworld.h"
 #include "pokeblock.h"
 #include "battle_setup.h"
@@ -1016,4 +1017,91 @@ u8 ChooseHiddenMonIndex(void)
     #else
         return 0xFF;
     #endif
+}
+
+bool8 Special_FindHMCapableWild(void)
+{
+    u16 headerId = GetCurrentMapWildMonHeaderId();
+    u16 monData;
+    u8 wildMonIndex = 0;
+    u8 level;
+    u8 rand;
+
+
+    if (headerId != 0xFFFF)
+    {
+        const struct WildPokemonInfo *wildPokemonInfo = gWildMonHeaders[headerId].landMonsInfo;
+        if (wildPokemonInfo != NULL)
+        {
+            //Build a shortlist with mons that can learn the move in question
+            u8 specieslist[12];
+            u8 ratelist[12];
+            u8 i = 0;
+            u8 a;
+
+            for(a = 0; a < 12; a = a + 1)
+            {
+                if (CanSpeciesLearnTMHM(wildPokemonInfo->wildPokemon[a].species,gSpecialVar_0x8004 - ITEM_TM01))
+                {
+                    specieslist[i]=a;
+                    if (i==0) ratelist[i]=0;
+                    else switch(a)
+                    {
+                        case 1: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_0; break;
+                        case 2: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_1; break;
+                        case 3: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_2; break;
+                        case 4: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_3; break;
+                        case 5: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_4; break;
+                        case 6: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_5; break;
+                        case 7: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_6; break;
+                        case 8: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_7; break;
+                        case 9: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_8; break;
+                        case 10: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_9; break;
+                        case 11: ratelist[i]=ratelist[i-1]+ENCOUNTER_CHANCE_LAND_MONS_SLOT_10; break;
+                    }
+                    i = i + 1;
+                }
+            }
+            if (i==0)
+            {
+                gSpecialVar_Result = FALSE;
+                return FALSE;
+            }
+
+            rand = Random() % (ratelist[i-1]+1);
+            for(a = 0; a < i; a = a + 1)
+            {
+                if (a==0)
+                {
+                    if (rand < ratelist[a+1])
+                    {
+                        wildMonIndex=specieslist[a];
+                        break;
+                    }
+                }
+                else if (a==i)
+                {
+                    if (rand>= ratelist[a])
+                    {
+                        wildMonIndex=specieslist[a];
+                        break;
+                    }
+                }
+                else
+                {
+                    if (rand >= ratelist[a] && rand < ratelist[a+1])
+                    {
+                        wildMonIndex=specieslist[a];
+                        break;
+                    }
+                }
+            }
+            level = ChooseWildMonLevel(&wildPokemonInfo->wildPokemon[wildMonIndex]);
+            CreateScriptedWildMon(wildPokemonInfo->wildPokemon[wildMonIndex].species, level, ITEM_NONE);
+            monData = gSpecialVar_0x8005;
+            SetMonData(&gEnemyParty[0], MON_DATA_MOVE1, &monData);
+            gSpecialVar_0x8004 = wildPokemonInfo->wildPokemon[wildMonIndex].species;
+            gSpecialVar_Result = TRUE;
+        }
+    }
 }
