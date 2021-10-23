@@ -2981,6 +2981,22 @@ static const u8 sGLIMMERSTORMDescription[] = _(
     "Assaults foes with a dazzling gale\n"
     "that may cause confusion.");
 
+static const u8 sBOLT_KICKDescription[] = _(
+    "A kick with a high critical-hit\n"
+    "ratio. May cause paralysis.");
+
+static const u8 sFROST_KICKDescription[] = _(
+    "A kick with a high critical-hit\n"
+    "ratio. May cause freezing.");
+
+static const u8 sSILVER_SLASHDescription[] = _(
+    "A fierce strike of silver blades\n"
+    "with a high critical-hit ratio.");
+
+static const u8 sRUSHDOWNDescription[] = _(
+    "An instantaneous, 1st-turn strike\n"
+    "that causes flinching.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3750,4 +3766,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MALICE_BLAST - 1] = sMALICE_BLASTDescription,
     [MOVE_VENOM_SURGE - 1] = sVENOM_SURGEDescription,
     [MOVE_GLIMMERSTORM - 1] = sGLIMMERSTORMDescription,
+    [MOVE_BOLT_KICK - 1] = sBOLT_KICKDescription,
+    [MOVE_FROST_KICK - 1] = sFROST_KICKDescription,
+    [MOVE_SILVER_SLASH - 1] = sSILVER_SLASHDescription,
+    [MOVE_RUSHDOWN - 1] = sRUSHDOWNDescription,
 };

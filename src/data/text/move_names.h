@@ -766,4 +766,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_MALICE_BLAST] = _("Malice Blast"),
     [MOVE_VENOM_SURGE] = _("Venom Surge"),
     [MOVE_GLIMMERSTORM] = _("Glimmerstorm"),
+    [MOVE_FROST_KICK] = _("Frost Kick"),
+    [MOVE_BOLT_KICK] = _("Bolt Kick"),
+    [MOVE_SILVER_SLASH] = _("Silver Slash"),
+    [MOVE_RUSHDOWN] = _("Rushdown"),
 };

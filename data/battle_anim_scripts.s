@@ -786,6 +786,10 @@ gBattleAnims_Moves::
 	.4byte Move_MALICE_BLAST
 	.4byte Move_VENOM_SURGE
 	.4byte Move_GLIMMERSTORM
+	.4byte Move_BOLT_KICK
+	.4byte Move_FROST_KICK
+	.4byte Move_SILVER_SLASH
+	.4byte Move_RUSHDOWN
 	.4byte Move_COUNT @ cannot be reached, because last move is Eerie Spell
 
 	.align 2
@@ -14078,6 +14082,18 @@ Move_VENOM_SURGE::
 	end @to do:
 
 Move_GLIMMERSTORM::
+	end @to do:
+
+Move_BOLT_KICK::
+	end @to do:
+
+Move_FROST_KICK::
+	end @to do:
+
+Move_SILVER_SLASH::
+	end @to do:
+
+Move_RUSHDOWN::
 	end @to do:
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@

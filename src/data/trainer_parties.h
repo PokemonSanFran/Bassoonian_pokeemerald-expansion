@@ -3455,7 +3455,7 @@ static const struct TrainerMon sParty_Brawly1[] = {
     .species = SPECIES_PAWNIARD,
 	.ability = ABILITY_SLOT_1,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_TORMENT, MOVE_FURY_CUTTER, MOVE_FEINT_ATTACK, MOVE_IRON_HEAD}
+    .moves = {MOVE_TORMENT, MOVE_FURY_CUTTER, MOVE_ASSURANCE, MOVE_IRON_HEAD}
     }
 };
 
