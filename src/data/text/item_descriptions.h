@@ -1937,8 +1937,8 @@ static const u8 sFameCheckerDesc[] = _(
 
 static const u8 sTMCaseDesc[] = _(
     "A case that holds TMs and HMs.\n"
-    "It is attached to the bag's compartment\n"
-    "for important items.");
+    "It is attached to the bag's\n"
+    "compartment for important items.");
 
 static const u8 sBerryPouchDesc[] = _(
     "A convenient\n"
