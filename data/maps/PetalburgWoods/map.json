@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_NICHOLAS",
       "x": 22,
-      "y": 16,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -54,9 +54,9 @@
       "flag": "FLAG_GRC_HIDE_EVENT_BORAGO_GROVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_COOK",
       "x": 21,
-      "y": 16,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -236,7 +236,7 @@
       "elevation": 3,
       "var": "VAR_PETALBURG_WOODS_STATE",
       "var_value": "2",
-      "script": "BoragoGroveGruntFight"
+      "script": "BoragoGroveGruntFightB"
     },
     {
       "type": "trigger",
@@ -245,7 +245,7 @@
       "elevation": 3,
       "var": "VAR_PETALBURG_WOODS_STATE",
       "var_value": "2",
-      "script": "BoragoGroveGruntFight"
+      "script": "BoragoGroveGruntFightA"
     }
   ],
   "bg_events": [

@@ -1,18 +1,130 @@
 mapscripts PetalburgWoods_MapScripts {}
 
+script BoragoGroveGruntFightA
+{
+	call(BoragoGroveGruntFight)
+	applymovement(3,BoragoGrove_GruntComeB)
+	waitmovement(0)
+	call(BoragoGroveGruntFight_Part2)
+	applymovement(3,BoragoGrove_GruntGoB)
+	waitmovement(0)
+	applymovement(4,Common_Movement_WalkDown)
+	waitmovement(0)
+	call(BoragoGroveGruntFight_Part3)
+}
+
+script BoragoGroveGruntFightB
+{
+	call(BoragoGroveGruntFight)
+	applymovement(3,Common_Movement_WalkDown)
+	waitmovement(0)
+	call(BoragoGroveGruntFight_Part2)
+	applymovement(3,BoragoGrove_GruntGoC)
+	waitmovement(0)
+	applymovement(4,BoragoGrove_ChefComingA)
+	waitmovement(0)
+	call(BoragoGroveGruntFight_Part3)
+}
+
+movement BoragoGrove_ChefComingA
+{
+	walk_down
+	walk_right
+	walk_in_place_fastest_down
+}
+
+movement BoragoGrove_GruntComeB
+{
+	walk_down
+	walk_left
+	walk_in_place_fastest_down
+}
+
+movement BoragoGrove_GruntGoB
+{
+	walk_fast_right
+	walk_fast_up * 2
+	walk_fast_right * 3
+}
+
+movement BoragoGrove_GruntGoC
+{
+	walk_fast_up * 2
+	walk_fast_right * 8
+}
+
 script BoragoGroveGruntFight
 {
 	lockall
-	msgbox(format("battle"))
+	applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Stay here! Don't you dare try and weasel your way out!"))
 	closemessage
-	trainerbattle_no_intro(TRAINER_GRC_GRUNT_BORAGO_GROVE,PetalburgWoods_Text_YoureKiddingMe)
-	giveitem(ITEM_HM01)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Aaaaah! Help meeeee!"))
+	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Shut up, or you'll leave me no choice!"))
+	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	applymovement(3,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	msgbox(format("Grrr! Of course you had to go and cause a ruckus…"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Please! Help me! Save me from this scoundrel! I've done nothing wrong!"))
+	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("You stay put! I'm gonna deal with this brat first!"))
+	closemessage
+}
+
+script BoragoGroveGruntFight_Part2
+{
+	msgbox(format("What's the big idea, huh? Think you can be the hero saving the innocent civilian, punk?\pThat it?! Huh?! Well, you got a whole other thing coming your way!\pPrepare for pain!"))
+	closemessage
+	trainerbattle_no_intro(TRAINER_GRC_GRUNT_BORAGO_GROVE,format("You gotta be kidding me!"))
+	applymovement(3,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Okay, fine! I'll let him go! But don't you dare think I'm gonna let you off the hook, kid! Ugh, just my luck…"))
+	closemessage
+}
+
+script BoragoGroveGruntFight_Part3
+{
+	msgbox(format("I'm safe! Oh, thank you… a thousand times, thank you!\pAnd I just so happen to have something to repay you with for your kindness. Here, please take this!"))
+	closemessage
+	giveitem(ITEM_PONUT_CASE)
+	msgbox(format("This Ponut Case here can store all the Ponuts you'll ever want!\pPardon? Never heard of Ponuts? Well, fear not, my friend!\pThey are a delicacy enjoyed by Pokémon across all Hanau.\pIn fact, even people like you and I can't help themselves to some!\pShould you ever want to make Ponuts in the Contest Hall, this case will keep them safe and fresh. "))
+	closemessage
+	applymovement(4,Common_Movement_ExclamationMark)
+	waitmovement(0)
+	msgbox(format("Oh! I should mention another important thing.\pYou can use Ponuts to call upon Pokémon to use field moves for you!\pLet's say there's a tree in the way that can be cut, or a boulder that can be smashed…\pIf you reward Pokémon with a Ponut after they help you, they'll leave happily.\pIf you don't, though, they might attack you in disappointment.\pThat is to say, it never hurts to have some Ponuts on hand!\pAnd the Case I've given you comes pre-packaged with three!"))
+	closemessage
+	applymovement(4,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Anyway, that's enough from me. I have more baking to take care of. Safe journeys, my friend!"))
+	closemessage
+	applymovement(4,BoragoGrove_ChefLeaving)
+	waitmovement(0)
 	setvar(VAR_PETALBURG_WOODS_STATE,3)
 	setflag(FLAG_GRC_HIDE_EVENT_BORAGO_GROVE)
 	setflag(FLAG_GRC_TURPIA_HIDE_PARENTS)
+	callnative(Special_GiveFreePokeblocks)
 	removeobject(3)
 	removeobject(4)
 	releaseall
+}
+
+movement BoragoGrove_ChefLeaving
+{
+	walk_up * 2
+	walk_right * 8
 }
 
 script BoragoGrove_TrainerTips1 {

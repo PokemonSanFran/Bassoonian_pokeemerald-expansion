@@ -2,20 +2,146 @@ PetalburgWoods_MapScripts::
 	.byte 0
 
 
+BoragoGroveGruntFightA::
+	call BoragoGroveGruntFight
+	applymovement 3, BoragoGrove_GruntComeB
+	waitmovement 0
+	call BoragoGroveGruntFight_Part2
+	applymovement 3, BoragoGrove_GruntGoB
+	waitmovement 0
+	applymovement 4, Common_Movement_WalkDown
+	waitmovement 0
+	call BoragoGroveGruntFight_Part3
+	return
+
+
+BoragoGroveGruntFightB::
+	call BoragoGroveGruntFight
+	applymovement 3, Common_Movement_WalkDown
+	waitmovement 0
+	call BoragoGroveGruntFight_Part2
+	applymovement 3, BoragoGrove_GruntGoC
+	waitmovement 0
+	applymovement 4, BoragoGrove_ChefComingA
+	waitmovement 0
+	call BoragoGroveGruntFight_Part3
+	return
+
+
+BoragoGrove_ChefComingA:
+	walk_down
+	walk_right
+	walk_in_place_fastest_down
+	step_end
+
+BoragoGrove_GruntComeB:
+	walk_down
+	walk_left
+	walk_in_place_fastest_down
+	step_end
+
+BoragoGrove_GruntGoB:
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+BoragoGrove_GruntGoC:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
 BoragoGroveGruntFight::
 	lockall
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
 	msgbox BoragoGroveGruntFight_Text_0
 	closemessage
-	trainerbattle_no_intro TRAINER_GRC_GRUNT_BORAGO_GROVE, PetalburgWoods_Text_YoureKiddingMe
-	giveitem ITEM_HM01
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Text_1
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Text_2
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	applymovement 3, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Text_3
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Text_4
+	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Text_5
+	closemessage
+	return
+
+
+BoragoGroveGruntFight_Part2::
+	msgbox BoragoGroveGruntFight_Part2_Text_0
+	closemessage
+	trainerbattle_no_intro TRAINER_GRC_GRUNT_BORAGO_GROVE, BoragoGroveGruntFight_Part2_Text_1
+	applymovement 3, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Part2_Text_2
+	closemessage
+	return
+
+
+BoragoGroveGruntFight_Part3::
+	msgbox BoragoGroveGruntFight_Part3_Text_0
+	closemessage
+	giveitem ITEM_PONUT_CASE
+	msgbox BoragoGroveGruntFight_Part3_Text_1
+	closemessage
+	applymovement 4, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Part3_Text_2
+	closemessage
+	applymovement 4, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox BoragoGroveGruntFight_Part3_Text_3
+	closemessage
+	applymovement 4, BoragoGrove_ChefLeaving
+	waitmovement 0
 	setvar VAR_PETALBURG_WOODS_STATE, 3
 	setflag FLAG_GRC_HIDE_EVENT_BORAGO_GROVE
 	setflag FLAG_GRC_TURPIA_HIDE_PARENTS
+	callnative Special_GiveFreePokeblocks
 	removeobject 3
 	removeobject 4
 	releaseall
 	return
 
+
+BoragoGrove_ChefLeaving:
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
 
 BoragoGrove_TrainerTips1::
 	msgbox BoragoGrove_TrainerTips1_Text_0, MSGBOX_SIGN
@@ -533,7 +659,85 @@ PetalburgWoods_Text_TrainerTipsPP:
 @	.string "taken to a POKéMON CENTER.$"
 
 BoragoGroveGruntFight_Text_0:
-	.string "battle$"
+	.string "Stay here! Don't you dare try and\n"
+	.string "weasel your way out!$"
+
+BoragoGroveGruntFight_Text_1:
+	.string "Aaaaah! Help meeeee!$"
+
+BoragoGroveGruntFight_Text_2:
+	.string "Shut up, or you'll leave me no choice!$"
+
+BoragoGroveGruntFight_Text_3:
+	.string "Grrr! Of course you had to go and cause\n"
+	.string "a ruckus…$"
+
+BoragoGroveGruntFight_Text_4:
+	.string "Please! Help me! Save me from this\n"
+	.string "scoundrel! I've done nothing wrong!$"
+
+BoragoGroveGruntFight_Text_5:
+	.string "You stay put! I'm gonna deal with this\n"
+	.string "brat first!$"
+
+BoragoGroveGruntFight_Part2_Text_0:
+	.string "What's the big idea, huh? Think you can\n"
+	.string "be the hero saving the innocent\l"
+	.string "civilian, punk?\p"
+	.string "That it?! Huh?! Well, you got a whole\n"
+	.string "other thing coming your way!\p"
+	.string "Prepare for pain!$"
+
+BoragoGroveGruntFight_Part2_Text_1:
+	.string "You gotta be kidding me!$"
+
+BoragoGroveGruntFight_Part2_Text_2:
+	.string "Okay, fine! I'll let him go! But don't you\n"
+	.string "dare think I'm gonna let you off the\l"
+	.string "hook, kid! Ugh, just my luck…$"
+
+BoragoGroveGruntFight_Part3_Text_0:
+	.string "I'm safe! Oh, thank you… a thousand\n"
+	.string "times, thank you!\p"
+	.string "And I just so happen to have something\n"
+	.string "to repay you with for your kindness.\l"
+	.string "Here, please take this!$"
+
+BoragoGroveGruntFight_Part3_Text_1:
+	.string "This Ponut Case here can store all the\n"
+	.string "Ponuts you'll ever want!\p"
+	.string "Pardon? Never heard of Ponuts? Well,\n"
+	.string "fear not, my friend!\p"
+	.string "They are a delicacy enjoyed by Pokémon\n"
+	.string "across all Hanau.\p"
+	.string "In fact, even people like you and I\n"
+	.string "can't help themselves to some!\p"
+	.string "Should you ever want to make Ponuts in\n"
+	.string "the Contest Hall, this case will keep\l"
+	.string "them safe and fresh.$"
+
+BoragoGroveGruntFight_Part3_Text_2:
+	.string "Oh! I should mention another important\n"
+	.string "thing.\p"
+	.string "You can use Ponuts to call upon\n"
+	.string "Pokémon to use field moves for you!\p"
+	.string "Let's say there's a tree in the way that\n"
+	.string "can be cut, or a boulder that can be\l"
+	.string "smashed…\p"
+	.string "If you reward Pokémon with a Ponut\n"
+	.string "after they help you, they'll leave\l"
+	.string "happily.\p"
+	.string "If you don't, though, they might attack\n"
+	.string "you in disappointment.\p"
+	.string "That is to say, it never hurts to have\n"
+	.string "some Ponuts on hand!\p"
+	.string "And the Case I've given you comes\n"
+	.string "pre-packaged with three!$"
+
+BoragoGroveGruntFight_Part3_Text_3:
+	.string "Anyway, that's enough from me. I have\n"
+	.string "more baking to take care of. Safe\l"
+	.string "journeys, my friend!$"
 
 BoragoGrove_TrainerTips1_Text_0:
 	.string "Trainer Tips! Any Pokémon can use HM\n"
