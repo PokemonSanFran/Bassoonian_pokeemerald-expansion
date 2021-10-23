@@ -1459,7 +1459,9 @@ static const u8 sAcroBikeDesc[] = _(
     "and wheelies.");
 
 static const u8 sPokeblockCaseDesc[] = _(
-    "filler");
+    "A compact case that stores Ponuts.\n"
+    "When calling upon a wild Pokémon,\n"
+    "they can be fed a Ponut from the case.");
 
 static const u8 sLetterDesc[] = _(
     "A letter to Steven\n"
