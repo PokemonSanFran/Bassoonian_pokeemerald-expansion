@@ -1709,8 +1709,8 @@ const u8 gText_WhatWillWallyDo[] = _("What will\nAide Wicker do?");
 const u8 gText_LinkStandby[] = _("{PAUSE 16}Link standby…");
 const u8 gText_BattleMenu[] = _("Fight{CLEAR_TO 56}Bag\nPokémon{CLEAR_TO 56}Run");
 const u8 gText_SafariZoneMenu[] = _("Ball{CLEAR_TO 56}Ponut\nGo Near{CLEAR_TO 56}Run");
-const u8 gText_MoveInterfacePP[] = _("PP ");
-const u8 gText_MoveInterfaceType[] = _("Type/");
+const u8 gText_MoveInterfacePP[] = _("");//_("PP ");
+const u8 gText_MoveInterfaceType[] = _("");//_("Type/");
 const u8 gText_MoveInterfacePpType[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}PP\nType/");
 const u8 gText_MoveInterfaceDynamicColors[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_WhichMoveToForget4[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Which move should\nbe forgotten?");
@@ -2199,42 +2199,6 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 0,
         .shadowColor = 6,
     },
-	{ // 24 "type" super-effective
-		.fillValue = PIXEL_FILL(0xE),
-		.fontId = 7,
-		.x = 0,
-		.y = 1,
-		.letterSpacing = 0,
-		.lineSpacing = 0,
-		.speed = 0,
-		.fgColor = 6,
-		.bgColor = 14,
-		.shadowColor = 5,
-	},
-	{ // 25 "type" not very effective
-		.fillValue = PIXEL_FILL(0xE),
-		.fontId = 7,
-		.x = 0,
-		.y = 1,
-		.letterSpacing = 0,
-		.lineSpacing = 0,
-		.speed = 0,
-		.fgColor = 1,
-		.bgColor = 14,
-		.shadowColor = 3,
-	},
-	{ // 26 "type" no effect
-		.fillValue = PIXEL_FILL(0xE),
-		.fontId = 7,
-		.x = 0,
-		.y = 1,
-		.letterSpacing = 0,
-		.lineSpacing = 0,
-		.speed = 0,
-		.fgColor = 11,
-		.bgColor = 14,
-		.shadowColor = 11,
-	},
 };
 
 static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
