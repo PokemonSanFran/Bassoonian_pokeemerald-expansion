@@ -152,3 +152,4 @@
 	.include "src/dexnav.o"
 	.include "src/quests.o"
 	.include "src/tm_case.o"
+	.include "src/map_preview.o"
