@@ -531,7 +531,7 @@ script DebugTestScript
         additem(ITEM_TM27)
         additem(ITEM_TM28)
         additem(ITEM_TM29)
-		additem(ITEM_TM30)        
+		additem(ITEM_TM30)
 		additem(ITEM_TM31)
         additem(ITEM_TM32)
         additem(ITEM_TM33)
@@ -541,7 +541,7 @@ script DebugTestScript
         additem(ITEM_TM37)
         additem(ITEM_TM38)
         additem(ITEM_TM39)
-		additem(ITEM_TM40)        
+		additem(ITEM_TM40)
 		additem(ITEM_TM41)
         additem(ITEM_TM42)
         additem(ITEM_TM43)
@@ -746,7 +746,6 @@ script FamilyEventC
 	msgbox(format("Dad: Looks like it's all working just fine! Excellent!"))
 	closemessage
 	applymovement(3,FamilyEvent_RivalMove1)
-	applymovement(4,FamilyEvent_ToriMove1)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
 	waitmovement(0)
@@ -765,7 +764,8 @@ script FamilyEventC
 	msgbox(format("Registered {RIVAL} in the P-Drive."),MSGBOX_DEFAULT)
 	waitfanfare
 	delay(30)
-	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(4,FamilyEvent_ToriMove1)
+	applymovement(3,FamilyEvent_RivalMove2)
 	waitmovement(0)
 	msgbox(format("Tori: Oh, hi, {PLAYER}. Can you add me to your contacts? I'll add you in return."))
 	closemessage
@@ -879,7 +879,7 @@ movement Family_Event_CameraMoveE
 movement FamilyEvent_RivalMove1
 {
 	walk_right
-	walk_down * 3
+	walk_down * 2
 	walk_in_place_fastest_right
 }
 
@@ -887,6 +887,13 @@ movement FamilyEvent_ToriMove1
 {
 	walk_left
 	walk_down * 3
+	walk_in_place_fastest_right
+}
+
+movement FamilyEvent_RivalMove2
+{
+	delay_16 * 3
+	walk_down
 	walk_in_place_fastest_right
 }
 

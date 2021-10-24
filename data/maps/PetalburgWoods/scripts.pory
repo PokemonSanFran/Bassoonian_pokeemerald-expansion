@@ -175,7 +175,7 @@ script BoragoGrove_EventScript_TryRegisterJamesAfterBattle
 script BoragoGrove_EventScript_RegisterJames
 {
 	msgbox(format("Do my compound eyes detect a P-Drive? Care registering me?\pThat way, we can be Bug buddies! You and me!"),MSGBOX_DEFAULT)
-	register_matchcall(TRAINER_GRC_DAVE_1)
+	register_matchcall(TRAINER_GRC_WAYNE_1)
 }
 
 //MORRIS SCRIPT

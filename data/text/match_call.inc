@@ -2015,7 +2015,8 @@ MatchCall_BattlePyramidText14:: @ 82B21FC
 	.string "See you again!$"
 	
 MatchCall_Text_Mom1:: @ 82B227B
-	.string "Mom: i hear it$"
+	.string "Mom: Hi, {PLAYER}! How are things a few\n"
+	.string "steps ahead?\lOkay, I'll stop being silly.$"
 
 MatchCall_Text_MomD:: @ 82B227B
 	.string "Mom: Your father and you…\n"
@@ -2855,7 +2856,8 @@ MatchCall_Text_UnusedProfBirch:
 	.string "Pokémon becomes more fun, eh?$"
 
 MatchCall_Text_MrStone1:: @ 82B60C0
-	.string "Dad: I hear it$"
+	.string "Dad: Hello, this is your mother.\n"
+	.string "…Hahahahaha! All good, all good!$"
 
 MatchCall_Text_MrStone2:: @ 82B61E6
 	.string "Mr. Stone: Oh? {PLAYER}{KUN}!\p"

@@ -161,7 +161,8 @@ static void MatchCall_GetNameAndDescByRematchIdx(u32, const u8 **, const u8 **);
 
 static const match_call_text_data_t sMrStoneTextScripts[] = {
     { MatchCall_Text_MrStone1,  0xFFFF,                              FLAG_ENABLE_MR_STONE_POKENAV },
-    { MatchCall_Text_MrStone2,  FLAG_ENABLE_MR_STONE_POKENAV,        0xFFFF },
+    { MatchCall_Text_MrStone1,  FLAG_ENABLE_MR_STONE_POKENAV,        0xFFFF },
+    { MatchCall_Text_MrStone2,  FLAG_GRC_HIDE_FAMILY_BORAGO,        0xFFFF },
     //{ MatchCall_Text_MrStone3,  FLAG_DELIVERED_STEVEN_LETTER,        0xFFFF },
     //{ MatchCall_Text_MrStone4,  FLAG_RECEIVED_EXP_SHARE,             0xFFFF },
     //{ MatchCall_Text_MrStone5,  FLAG_RECEIVED_HM04,                  0xFFFF },
@@ -219,7 +220,8 @@ static const struct MatchCallBirch sProfBirchMatchCallHeader =
 
 static const match_call_text_data_t sMomTextScripts[] = {
     { MatchCall_Text_Mom1, 0xFFFF,                      FLAG_ENABLE_MR_STONE_POKENAV },
-	{ MatchCall_Text_MomD, FLAG_ENABLE_MR_STONE_POKENAV,0xFFFF },
+    { MatchCall_Text_Mom1, FLAG_ENABLE_MR_STONE_POKENAV, 0xFFFF },
+	{ MatchCall_Text_MomD, FLAG_GRC_HIDE_FAMILY_BORAGO  ,0xFFFF },
     //{ MatchCall_Text_Mom2, FLAG_DEFEATED_PETALBURG_GYM, 0xFFFF },
     { MatchCall_Text_Mom3, FLAG_SYS_GAME_CLEAR,         0xFFFF },
     { NULL,                0xFFFF,                      0xFFFF }
@@ -327,7 +329,7 @@ static const match_call_text_data_t sWallyTextScripts[] = {
 };
 
 const struct MatchCallLocationOverride sWallyLocationData[] = {
-    { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_HELIANTH_TOWN },
+    { FLAG_HIDE_MAUVILLE_CITY_WALLY,          MAPSEC_NONE },
     { FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT,    MAPSEC_NONE },
     { FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY,  MAPSEC_VICTORY_ROAD },
     { 0xFFFF,                                 MAPSEC_NONE }

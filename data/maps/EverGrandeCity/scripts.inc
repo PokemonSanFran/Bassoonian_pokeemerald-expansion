@@ -704,7 +704,6 @@ FamilyEventC::
 	msgbox FamilyEventC_Text_9
 	closemessage
 	applymovement 3, FamilyEvent_RivalMove1
-	applymovement 4, FamilyEvent_ToriMove1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
@@ -719,7 +718,8 @@ FamilyEventC_1:
 	msgbox FamilyEventC_Text_12, MSGBOX_DEFAULT
 	waitfanfare
 	delay 30
-	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement 4, FamilyEvent_ToriMove1
+	applymovement 3, FamilyEvent_RivalMove2
 	waitmovement 0
 	msgbox FamilyEventC_Text_13
 	closemessage
@@ -840,7 +840,6 @@ FamilyEvent_RivalMove1:
 	walk_right
 	walk_down
 	walk_down
-	walk_down
 	walk_in_place_fastest_right
 	step_end
 
@@ -848,6 +847,14 @@ FamilyEvent_ToriMove1:
 	walk_left
 	walk_down
 	walk_down
+	walk_down
+	walk_in_place_fastest_right
+	step_end
+
+FamilyEvent_RivalMove2:
+	delay_16
+	delay_16
+	delay_16
 	walk_down
 	walk_in_place_fastest_right
 	step_end
