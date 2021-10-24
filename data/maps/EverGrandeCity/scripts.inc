@@ -599,7 +599,17 @@ FamilyEventB::
 FamilyEventC::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
 	msgbox FamilyEventC_Text_0
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_1
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_2
 	closemessage
 	playse SE_CLICK
 	delay 10
@@ -610,29 +620,62 @@ FamilyEventC::
 	playse SE_CLICK
 	delay 20
 	playfanfare MUS_OBTAIN_ITEM
-	message FamilyEventC_Text_1
+	message FamilyEventC_Text_3
 	setflag FLAG_SYS_MATCH_CALL_GET
 	waitfanfare
-	msgbox FamilyEventC_Text_2
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_4
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FamilyEventC_Text_5, MSGBOX_DEFAULT
+	waitfanfare
+	delay 30
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_6
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FamilyEventC_Text_7, MSGBOX_DEFAULT
+	waitfanfare
+	delay 30
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_8
 	closemessage
 	delay 20
 	special OpenPokenavForTutorial
 	waitstate
 	delay 20
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_9
+	closemessage
 	applymovement 3, FamilyEvent_RivalMove1
 	applymovement 4, FamilyEvent_ToriMove1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
-	msgbox FamilyEventC_Text_3
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq FamilyEventC_2
+	msgbox FamilyEventC_Text_11
+FamilyEventC_1:
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox FamilyEventC_Text_4, MSGBOX_DEFAULT
+	msgbox FamilyEventC_Text_12, MSGBOX_DEFAULT
 	waitfanfare
 	delay 30
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox FamilyEventC_Text_13
+	closemessage
+	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox FamilyEventC_Text_5, MSGBOX_DEFAULT
+	msgbox FamilyEventC_Text_14, MSGBOX_DEFAULT
 	waitfanfare
 	delay 30
 	closemessage
@@ -659,9 +702,35 @@ FamilyEventC::
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveC
 	waitmovement 0
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
-	msgbox FamilyEventC_Text_6
+	msgbox FamilyEventC_Text_15
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_16
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox FamilyEventC_Text_17
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox FamilyEventC_Text_18
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_19
+	closemessage
+	applymovement 5, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_20
+	closemessage
+	applymovement 6, Common_Movement_WalkInPlaceFastestDown
+	waitmovement 0
+	msgbox FamilyEventC_Text_21
 	closemessage
 	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveD
 	waitmovement 0
@@ -676,7 +745,7 @@ FamilyEventC::
 	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveE
 	waitmovement 0
 	special RemoveCameraObject
-	msgbox FamilyEventC_Text_7
+	msgbox FamilyEventC_Text_22
 	closemessage
 	setvar VAR_PETALBURG_WOODS_STATE, 4
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
@@ -684,6 +753,10 @@ FamilyEventC::
 	setflag FLAG_GRC_HIDE_FAMILY_BORAGO
 	releaseall
 	return
+
+FamilyEventC_2:
+	msgbox FamilyEventC_Text_10
+	goto FamilyEventC_1
 
 
 Family_Event_CameraMoveA:
@@ -1023,27 +1096,103 @@ Borago_ContestDuo_Text_3:
 	.string "Oh, hubby…$"
 
 FamilyEventC_Text_0:
-	.string "hey here's a match call$"
+	.string "Dad: Hey, {PLAYER}! Good to see you\n"
+	.string "here!$"
 
 FamilyEventC_Text_1:
-	.string "{PLAYER}'s P-Drive was upgraded\nwith the TeleDrive!$"
+	.string "Mom: A little birdie told us you've\n"
+	.string "obtained your first Gym Badge.\l"
+	.string "Congratulations, honey!$"
 
 FamilyEventC_Text_2:
-	.string "please call either of us to try it$"
+	.string "Dad: There's one little thing we need to\n"
+	.string "do before we go back home.\p"
+	.string "Mind giving me your P-Drive for a\n"
+	.string "second?$"
 
 FamilyEventC_Text_3:
-	.string "oy we should register too$"
+	.string "{PLAYER}'s P-Drive was upgraded\nwith the TeleDrive!$"
 
 FamilyEventC_Text_4:
-	.string "Registered {RIVAL} in the P-Drive.$"
+	.string "Dad: With TeleDrive, you can register\n"
+	.string "people you've met and call them\l"
+	.string "whenever! And on that note…$"
 
 FamilyEventC_Text_5:
-	.string "Registered Tori in the P-Drive.$"
+	.string "Registered Dad in the P-Drive.$"
 
 FamilyEventC_Text_6:
-	.string "aye we be off too$"
+	.string "Mom: You'll call your dear old mom from\n"
+	.string "time to time, won't you?$"
 
 FamilyEventC_Text_7:
+	.string "Registered Mom in the P-Drive.$"
+
+FamilyEventC_Text_8:
+	.string "Dad: Oh, could you make a quick test\n"
+	.string "call, {PLAYER}? I'd just like to make\l"
+	.string "sure everything's all functional.$"
+
+FamilyEventC_Text_9:
+	.string "Dad: Looks like it's all working just\n"
+	.string "fine! Excellent!$"
+
+FamilyEventC_Text_10:
+	.string "Alyssa: Hi, {PLAYER}! You're here!\p"
+	.string "You've got TeleDrive now, don't you?\n"
+	.string "Then let's add each other!$"
+
+FamilyEventC_Text_11:
+	.string "Basil: Hey, {PLAYER}! There you are!\p"
+	.string "Now that you have TeleDrive as well,\n"
+	.string "let's register each other!$"
+
+FamilyEventC_Text_12:
+	.string "Registered {RIVAL} in the P-Drive.$"
+
+FamilyEventC_Text_13:
+	.string "Tori: Oh, hi, {PLAYER}. Can you add me\n"
+	.string "to your contacts? I'll add you in\l"
+	.string "return.$"
+
+FamilyEventC_Text_14:
+	.string "Registered Tori in the P-Drive.$"
+
+FamilyEventC_Text_15:
+	.string "Mom: {PLAYER}, if you're ever feeling\n"
+	.string "down in the dumps or just need someone\l"
+	.string "to talk to…\p"
+	.string "Just call us! We'll be right there to\n"
+	.string "listen.$"
+
+FamilyEventC_Text_16:
+	.string "Dad: Of course! I might be busy with my\n"
+	.string "research, but I'll always be ready to\l"
+	.string "talk with you.$"
+
+FamilyEventC_Text_17:
+	.string "Mom: He never wanted to miss a thing,\n"
+	.string "and that hasn't changed at all! Isn't\l"
+	.string "that right, darling? Hehehe…$"
+
+FamilyEventC_Text_18:
+	.string "Dad: Please, dear, not in front of our\n"
+	.string "teenage child…$"
+
+FamilyEventC_Text_19:
+	.string "Dad: A-anyway, {PLAYER}! We'll be\n"
+	.string "going home again.$"
+
+FamilyEventC_Text_20:
+	.string "Mom: I'm sure you'll drop by your old\n"
+	.string "place as you go, so we'll see you soon,\l"
+	.string "honey!$"
+
+FamilyEventC_Text_21:
+	.string "Dad: Take care and have fun,\n"
+	.string "{PLAYER}!$"
+
+FamilyEventC_Text_22:
 	.string "end$"
 
 SpotByAide_PartB_Text_0:

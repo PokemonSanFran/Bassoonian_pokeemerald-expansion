@@ -639,7 +639,17 @@ script FamilyEventC
 {
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkUp)
 	waitmovement(0)
-	msgbox(format("hey here's a match call"))
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: Hey, {PLAYER}! Good to see you here!"))
+	closemessage
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Mom: A little birdie told us you've obtained your first Gym Badge. Congratulations, honey!"))
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: There's one little thing we need to do before we go back home.\pMind giving me your P-Drive for a second?"))
 	closemessage
 	playse(SE_CLICK)
 	delay(10)
@@ -653,23 +663,60 @@ script FamilyEventC
 	message("{PLAYER}'s P-Drive was upgraded\nwith the TeleDrive!")
 	setflag(FLAG_SYS_MATCH_CALL_GET)
 	waitfanfare
-	msgbox(format("please call either of us to try it"))
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: With TeleDrive, you can register people you've met and call them whenever! And on that note…"))
+	closemessage
+	delay(30)
+	playfanfare(MUS_REGISTER_MATCH_CALL)
+	msgbox(format("Registered Dad in the P-Drive."),MSGBOX_DEFAULT)
+	waitfanfare
+	delay(30)
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Mom: You'll call your dear old mom from time to time, won't you?"))
+	closemessage
+	delay(30)
+	playfanfare(MUS_REGISTER_MATCH_CALL)
+	msgbox(format("Registered Mom in the P-Drive."),MSGBOX_DEFAULT)
+	waitfanfare
+	delay(30)
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: Oh, could you make a quick test call, {PLAYER}? I'd just like to make sure everything's all functional."))
 	closemessage
 	delay(20)
 	special(OpenPokenavForTutorial)
 	waitstate
 	delay(20)
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: Looks like it's all working just fine! Excellent!"))
+	closemessage
 	applymovement(3,FamilyEvent_RivalMove1)
 	applymovement(4,FamilyEvent_ToriMove1)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
 	waitmovement(0)
-	msgbox(format("oy we should register too"))
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Hi, {PLAYER}! You're here!\pYou've got TeleDrive now, don't you? Then let's add each other!"))
+	}
+	else
+	{
+		msgbox(format("Basil: Hey, {PLAYER}! There you are!\pNow that you have TeleDrive as well, let's register each other!"))
+	}
 	closemessage
 	delay(30)
 	playfanfare(MUS_REGISTER_MATCH_CALL)
 	msgbox(format("Registered {RIVAL} in the P-Drive."),MSGBOX_DEFAULT)
 	waitfanfare
+	delay(30)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Tori: Oh, hi, {PLAYER}. Can you add me to your contacts? I'll add you in return."))
+	closemessage
 	delay(30)
 	playfanfare(MUS_REGISTER_MATCH_CALL)
 	msgbox(format("Registered Tori in the P-Drive."),MSGBOX_DEFAULT)
@@ -699,9 +746,35 @@ script FamilyEventC
 	waitfieldeffect(FLDEFF_NPCFLY_OUT)
 	applymovement(OBJ_EVENT_ID_CAMERA,Family_Event_CameraMoveC)
 	waitmovement(0)
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestUp)
 	waitmovement(0)
-	msgbox(format("aye we be off too"))
+	msgbox(format("Mom: {PLAYER}, if you're ever feeling down in the dumps or just need someone to talk to…\pJust call us! We'll be right there to listen."))
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: Of course! I might be busy with my research, but I'll always be ready to talk with you."))
+	closemessage
+	applymovement(5,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Mom: He never wanted to miss a thing, and that hasn't changed at all! Isn't that right, darling? Hehehe…"))
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
+	msgbox(format("Dad: Please, dear, not in front of our teenage child…"))
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: A-anyway, {PLAYER}! We'll be going home again."))
+	closemessage
+	applymovement(5,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Mom: I'm sure you'll drop by your old place as you go, so we'll see you soon, honey!"))
+	closemessage
+	applymovement(6,Common_Movement_WalkInPlaceFastestDown)
+	waitmovement(0)
+	msgbox(format("Dad: Take care and have fun, {PLAYER}!"))
 	closemessage
 	applymovement(OBJ_EVENT_ID_CAMERA,Family_Event_CameraMoveD)
 	waitmovement(0)
