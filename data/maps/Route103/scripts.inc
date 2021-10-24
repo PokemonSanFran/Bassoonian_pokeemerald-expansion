@@ -101,12 +101,35 @@ Route103_EventScript_RegisterMiguelAfterBattle::
 
 
 Route103_EventScript_CutGuy::
+	goto_if_set FLAG_SYS_DEXNAV_GET, Route103_EventScript_CutGuy_1
+	lock
+	msgbox Route103_EventScript_CutGuy_Text_1
+	release
+	return
+
+Route103_EventScript_CutGuy_1:
 	msgbox Route103_EventScript_CutGuy_Text_0, MSGBOX_NPC
+	return
+
+
+Route103_EventScript_SneyderBlock::
+	msgbox Route103_EventScript_SneyderBlock_Text_0, MSGBOX_NPC
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestUp
 	return
 
 
 Route103_EventScript_SurskitGal::
 	msgbox Route103_EventScript_SurskitGal_Text_0, MSGBOX_NPC
+	return
+
+
+Route103_MoveStarlyPhotographer::
+	goto_if_unset FLAG_SYS_DEXNAV_GET, Route103_MoveStarlyPhotographer_1
+	return
+
+Route103_MoveStarlyPhotographer_1:
+	setobjectxyperm 10, 70, 14
+	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_UP
 	return
 
 
@@ -121,6 +144,7 @@ Route103_MapScripts::
 Route103_OnTransition:
 @	call Common_EventScript_SetupRivalGfxId
 @	call ProfBirch_EventScript_UpdateLocation
+	call Route103_MoveStarlyPhotographer
 	end
 
 Route103_OnLoad:
@@ -576,14 +600,26 @@ Route103_EventScript_RegisterMiguelAfterBattle_Text_0:
 	.string "just give me a holler!$"
 
 Route103_EventScript_CutGuy_Text_0:
-	.string "Hey, you see this tree over here? If you\n"
-	.string "have a Pokémon on you that can learn\l"
-	.string "Cut, they'll clear any such trees for\l"
-	.string "you!\p"
-	.string "I don't know how they do it, but just\n"
-	.string "having that HM in your bag lets your\l"
-	.string "Pokémon mow those trees down. Nice,\l"
-	.string "huh?$"
+	.string "Oh, hello! Sorry for blocking the road\n"
+	.string "earlier. I'm a really passionate\l"
+	.string "photographer, you see.\p"
+	.string "I really wanted to take some nice shots\n"
+	.string "of Starly, since they're just such\l"
+	.string "darlings. Don't you agree?$"
+
+Route103_EventScript_CutGuy_Text_1:
+	.string "Okay, now to wait for just the right\n"
+	.string "moment… Almost…\l"
+	.string "Agh, it just flew away!\p"
+	.string "Now I'll have to wait for another to\n"
+	.string "stop by…$"
+
+Route103_EventScript_SneyderBlock_Text_0:
+	.string "Sneyder: Hey there, pal! We're real busy\n"
+	.string "shooting another documentary with\l"
+	.string "Professor Spruce.\p"
+	.string "Can't really let you through right now.\n"
+	.string "Sorry for stalling you!$"
 
 Route103_EventScript_SurskitGal_Text_0:
 	.string "There might be Bug Pokémon on this\n"

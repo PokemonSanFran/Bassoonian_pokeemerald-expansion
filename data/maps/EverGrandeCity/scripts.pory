@@ -745,9 +745,19 @@ script FamilyEventC
 	waitmovement(0)
 	msgbox(format("Dad: Looks like it's all working just fine! Excellent!"))
 	closemessage
-	applymovement(3,FamilyEvent_RivalMove1)
+	applymovement(4,FamilyEvent_RivalMove1)
 	waitmovement(0)
 	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
+	msgbox(format("Tori: Oh, hi, {PLAYER}. Can you add me to your contacts? I'll add you in return."))
+	closemessage
+	delay(30)
+	playfanfare(MUS_REGISTER_MATCH_CALL)
+	msgbox(format("Registered Tori in the P-Drive."),MSGBOX_DEFAULT)
+	waitfanfare
+	delay(30)
+	applymovement(3,FamilyEvent_ToriMove1)
+	applymovement(4,FamilyEvent_RivalMove2)
 	waitmovement(0)
 	checkplayergender
 	if(var(VAR_RESULT)==MALE)
@@ -762,16 +772,6 @@ script FamilyEventC
 	delay(30)
 	playfanfare(MUS_REGISTER_MATCH_CALL)
 	msgbox(format("Registered {RIVAL} in the P-Drive."),MSGBOX_DEFAULT)
-	waitfanfare
-	delay(30)
-	applymovement(4,FamilyEvent_ToriMove1)
-	applymovement(3,FamilyEvent_RivalMove2)
-	waitmovement(0)
-	msgbox(format("Tori: Oh, hi, {PLAYER}. Can you add me to your contacts? I'll add you in return."))
-	closemessage
-	delay(30)
-	playfanfare(MUS_REGISTER_MATCH_CALL)
-	msgbox(format("Registered Tori in the P-Drive."),MSGBOX_DEFAULT)
 	waitfanfare
 	delay(30)
 	closemessage
@@ -841,12 +841,34 @@ script FamilyEventC
 	applymovement(OBJ_EVENT_ID_CAMERA,Family_Event_CameraMoveE)
 	waitmovement(0)
 	special(RemoveCameraObject)
-	msgbox(format("end"))
+	msgbox(format("Tori: Well, that's that."))
 	closemessage
+	checkplayergender
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Alyssa: Yup! Now it really feels like it's just us and our Pokémon.\pAnd I'm not gonna stand around all day, so I'll see you later!"))
+	}
+	else
+	{
+		msgbox(format("Basil: Yep. Now we're all on our own. I feel things are really getting started now!\pIn fact, I'll go right on ahead! Catch you later!"))
+	}
+	closemessage
+
+	if(var(VAR_RESULT)==MALE)
+	{
+		msgbox(format("Tori: Well, she's awfully excited. As always.\pGuess I'll get going, too. Bye, {PLAYER}."))
+	}
+	else
+	{
+		msgbox(format("Tori: Well, he's awfully excited. As always.\pGuess I'll get going, too. Bye, {PLAYER}."))
+	}
+	closemessage
+
 	setvar(VAR_PETALBURG_WOODS_STATE,4)
 	setflag(FLAG_ENABLE_RIVAL_MATCH_CALL)
 	setflag(FLAG_ENABLE_WALLY_MATCH_CALL)
 	setflag(FLAG_GRC_HIDE_FAMILY_BORAGO)
+	setflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS)
 	releaseall
 }
 

@@ -13,29 +13,16 @@ EventScript_CutTree_4:
 	special OpenPokeblockCaseOnFeeder
 	waitstate
 	compare VAR_RESULT, 0xFFFF
-	goto_if_eq EventScript_CutTree_14
+	goto_if_eq EventScript_CutTree_11
 EventScript_CutTree_7:
 	copyvar VAR_0x8006, VAR_RESULT
 	setvar VAR_0x8004, ITEM_HM01_CUT
 	setvar VAR_0x8005, MOVE_CUT
-	buffermovename 1, MOVE_CUT
-	special Special_FindHMCapableWild
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_CutTree_12
-EventScript_CutTree_11:
-	bufferspeciesname 2, VAR_0x8004
-	setfieldeffectargument 0, 0xFF
-	msgbox EventScript_CutTree_Text_1, MSGBOX_DEFAULT
-	closemessage
+	call EventScript_FieldMove_DoCalcs
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 	call EventScript_CutTreeDown
-	compare VAR_0x8006, 0xFFFF
-	goto_if_ne EventScript_CutTree_17
-	msgbox EventScript_CutTree_Text_3
-	closemessage
-	dowildbattle
-EventScript_CutTree_16:
+	call EventScript_FieldMove_VerifyPonut
 	releaseall
 	return
 
@@ -51,18 +38,9 @@ EventScript_CutTree_8:
 	setvar VAR_RESULT, 0xFFFF
 	goto EventScript_CutTree_7
 
-EventScript_CutTree_12:
-	goto EventScript_ButNoOneShowedUp
-	goto EventScript_CutTree_11
-
-EventScript_CutTree_14:
+EventScript_CutTree_11:
 	goto EventScript_CancelCut
 	goto EventScript_CutTree_7
-
-EventScript_CutTree_17:
-	msgbox EventScript_CutTree_Text_2
-	callnative ZeroEnemyPartyMons
-	goto EventScript_CutTree_16
 
 
 EventScript_CheckTreeCantCut::
@@ -71,9 +49,102 @@ EventScript_CheckTreeCantCut::
 	return
 
 
+EventScript_RockSmash::
+	lockall
+	goto_if_unset FLAG_BADGE02_GET, EventScript_RockSmash_2
+EventScript_RockSmash_1:
+	checkitem ITEM_PONUT_CASE, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_RockSmash_5
+EventScript_RockSmash_4:
+	msgbox EventScript_RockSmash_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_RockSmash_8
+	fadescreen FADE_TO_BLACK
+	special OpenPokeblockCaseOnFeeder
+	waitstate
+	compare VAR_RESULT, 0xFFFF
+	goto_if_eq EventScript_RockSmash_11
+EventScript_RockSmash_7:
+	copyvar VAR_0x8006, VAR_RESULT
+	setvar VAR_0x8004, ITEM_HM06_ROCK_SMASH
+	setvar VAR_0x8005, MOVE_ROCK_SMASH
+	call EventScript_FieldMove_DoCalcs
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+	call EventScript_SmashRock
+	call EventScript_FieldMove_VerifyPonut
+	releaseall
+	return
+
+EventScript_RockSmash_2:
+	goto EventScript_RockSmash_1
+
+EventScript_RockSmash_5:
+	goto EventScript_CantSmashRock
+	goto EventScript_RockSmash_4
+
+EventScript_RockSmash_8:
+	setvar VAR_RESULT, 0xFFFF
+	goto EventScript_RockSmash_7
+
+EventScript_RockSmash_11:
+	goto EventScript_CancelSmash
+	goto EventScript_RockSmash_7
+
+
+EventScript_CantSmashRock::
+	msgbox EventScript_CantSmashRock_Text_0
+	releaseall
+	return
+
+
+EventScript_FieldMove_DoCalcs::
+	buffermovename 1, VAR_0x8005
+	special Special_FindHMCapableWild
+	compare VAR_RESULT, FALSE
+	goto_if_eq EventScript_FieldMove_DoCalcs_2
+EventScript_FieldMove_DoCalcs_1:
+	bufferspeciesname 2, VAR_0x8004
+	setfieldeffectargument 0, 0xFF
+	msgbox EventScript_FieldMove_DoCalcs_Text_0, MSGBOX_DEFAULT
+	closemessage
+	return
+
+EventScript_FieldMove_DoCalcs_2:
+	goto EventScript_ButNoOneShowedUp
+	goto EventScript_FieldMove_DoCalcs_1
+
+
 EventScript_ButNoOneShowedUp::
 	msgbox EventScript_ButNoOneShowedUp_Text_0
 	releaseall
+	return
+
+
+EventScript_FieldMove_VerifyPonut::
+	compare VAR_0x8006, 0xFFFF
+	goto_if_ne EventScript_FieldMove_VerifyPonut_1
+	msgbox EventScript_FieldMove_VerifyPonut_Text_1
+	closemessage
+	dowildbattle
+	return
+
+EventScript_FieldMove_VerifyPonut_1:
+	msgbox EventScript_FieldMove_VerifyPonut_Text_0
+	callnative ZeroEnemyPartyMons
+	return
+
+
+EventScript_SmashRock_GetItem::
+	copyvar VAR_TEMP_0, VAR_0x8004
+	copyvar VAR_TEMP_1, VAR_0x8005
+	copyvar VAR_TEMP_2, VAR_0x8006
+	finditem VAR_0x8000
+	copyvar VAR_0x8004, VAR_TEMP_0
+	copyvar VAR_0x8005, VAR_TEMP_1
+	copyvar VAR_0x8006, VAR_TEMP_2
+	bufferspeciesname 2, VAR_0x8004
 	return
 
 
@@ -138,27 +209,27 @@ Text_MonUsedFieldMove: @ 8290771
 @	.string "Cut down!$"
 
 @ Interact with smashable rock
-EventScript_RockSmash:: @ 82907A6
-	lockall
-	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
-	checkitem ITEM_HM05, 1
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_CantSmashRock
-	checkpartyhmlearnable MOVE_ROCK_SMASH
-	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq EventScript_CantSmashRock
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick 0, VAR_RESULT
-	buffermovename 1, MOVE_ROCK_SMASH
-	msgbox Text_WantToSmash, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq EventScript_CancelSmash
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-	closemessage
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-	goto EventScript_SmashRock
-	end
+@EventScript_RockSmash:: @ 82907A6
+@	lockall
+@	goto_if_unset FLAG_BADGE02_GET, EventScript_CantSmashRock
+@	checkitem ITEM_HM05, 1
+@	compare VAR_RESULT, FALSE
+@	goto_if_eq EventScript_CantSmashRock
+@	checkpartyhmlearnable MOVE_ROCK_SMASH
+@	compare VAR_RESULT, PARTY_SIZE
+@	goto_if_eq EventScript_CantSmashRock
+@	setfieldeffectargument 0, VAR_RESULT
+@	bufferpartymonnick 0, VAR_RESULT
+@	buffermovename 1, MOVE_ROCK_SMASH
+@	msgbox Text_WantToSmash, MSGBOX_YESNO
+@	compare VAR_RESULT, NO
+@	goto_if_eq EventScript_CancelSmash
+@	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+@	closemessage
+@	dofieldeffect FLDEFF_USE_ROCK_SMASH
+@	waitstate
+@	goto EventScript_SmashRock
+@	end
 
 @ Use rock smash from party menu
 EventScript_UseRockSmash:: @ 82907F0
@@ -172,15 +243,17 @@ EventScript_SmashRock:: @ 82907FB
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
-	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+	//specialvar VAR_RESULT, TryUpdateRusturfTunnelState
+	//compare VAR_RESULT, TRUE
+	//goto_if_eq EventScript_EndSmash
+	//special RockSmashWildEncounter
+	special RockSmashFindItem
 	compare VAR_RESULT, TRUE
-	goto_if_eq EventScript_EndSmash
-	special RockSmashWildEncounter
-	compare VAR_RESULT, FALSE
-	goto_if_eq EventScript_EndSmash
-	waitstate
-	releaseall
-	end
+	call_if_eq EventScript_SmashRock_GetItem
+	//compare VAR_RESULT, FALSE
+	//goto_if_eq EventScript_EndSmash
+	//waitstate
+	return
 
 EventScript_EndSmash:: @ 8290829
 	releaseall
@@ -190,23 +263,23 @@ Movement_SmashRock: @ 829082B
 	rock_smash_break
 	step_end
 
-EventScript_CantSmashRock:: @ 829082D
-	msgbox Text_CantSmash, MSGBOX_DEFAULT
-	releaseall
-	end
+@EventScript_CantSmashRock:: @ 829082D
+@	msgbox Text_CantSmash, MSGBOX_DEFAULT
+@	releaseall
+@	end
 
 EventScript_CancelSmash:: @ 8290837
 	closemessage
 	releaseall
 	end
 
-Text_WantToSmash: @ 829083A
-	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use Rock Smash?$"
+@Text_WantToSmash: @ 829083A
+@	.string "This rock appears to be breakable.\n"
+@	.string "Would you like to use Rock Smash?$"
 
-Text_CantSmash: @ 829087F
-	.string "It's a rugged rock, but a Pokémon\n"
-	.string "may be able to smash it.$"
+@Text_CantSmash: @ 829087F
+@	.string "It's a rugged rock, but a Pokémon\n"
+@	.string "may be able to smash it.$"
 
 EventScript_StrengthBoulder:: @ 82908BA
 	lockall
@@ -491,20 +564,28 @@ EventScript_CutTree_Text_0:
 	.string "This tree looks like it can be cut down!\n"
 	.string "Would you like to leave a Ponut?$"
 
-EventScript_CutTree_Text_1:
-	.string "{STR_VAR_3} appeared and used\n"
-	.string "{STR_VAR_2}!$"
-
-EventScript_CutTree_Text_2:
-	.string "{STR_VAR_3} happily ran off with the\n"
-	.string "{STR_VAR_1}!$"
-
-EventScript_CutTree_Text_3:
-	.string "{STR_VAR_3} was angry at the lack\n"
-	.string "of Ponut and attacked!$"
-
 EventScript_CheckTreeCantCut_Text_0:
 	.string "This tree looks like it can be cut down!$"
 
+EventScript_RockSmash_Text_0:
+	.string "This rock appears to be breakable.\n"
+	.string "Would you like to leave a Ponut?$"
+
+EventScript_CantSmashRock_Text_0:
+	.string "It's a rugged rock, but a Pokémon may be\n"
+	.string "able to smash it.$"
+
+EventScript_FieldMove_DoCalcs_Text_0:
+	.string "{STR_VAR_3} appeared and used\n"
+	.string "{STR_VAR_2}!$"
+
 EventScript_ButNoOneShowedUp_Text_0:
 	.string "But no one showed up…$"
+
+EventScript_FieldMove_VerifyPonut_Text_0:
+	.string "{STR_VAR_3} happily ran off with its\n"
+	.string "treat!$"
+
+EventScript_FieldMove_VerifyPonut_Text_1:
+	.string "{STR_VAR_3} was angry at the lack\n"
+	.string "of Ponut and attacked!$"

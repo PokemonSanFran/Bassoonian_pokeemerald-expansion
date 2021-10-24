@@ -724,6 +724,35 @@ void RockSmashWildEncounter(void)
     }
 }
 
+void RockSmashFindItem(void)
+{
+    u8 i = Random() % 3;
+    if (i == 1)
+    {
+        gSpecialVar_Result = TRUE;
+        i = Random() % 100;
+        //add east later
+        if (i<20)
+            gSpecialVar_0x8000 = ITEM_RED_SHARD;
+        else if (i<40)
+            gSpecialVar_0x8000 = ITEM_BLUE_SHARD;
+        else if (i<60)
+            gSpecialVar_0x8000 = ITEM_YELLOW_SHARD;
+        else if (i<80)
+            gSpecialVar_0x8000 = ITEM_GREEN_SHARD;
+        else if (i<95)
+            gSpecialVar_0x8000 = ITEM_STARDUST;
+        else if (i<99)
+            gSpecialVar_0x8000 = ITEM_STAR_PIECE;
+        else
+            gSpecialVar_0x8000 = ITEM_STAR_PIECE; //ITEM_COMET_SHARD;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
 bool8 SweetScentWildEncounter(void)
 {
     s16 x, y;

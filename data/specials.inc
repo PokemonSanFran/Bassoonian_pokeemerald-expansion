@@ -548,3 +548,4 @@ gSpecials::
 	def_special DexDriveTutorialR1_setfieldeffect
 	def_special DexDriveTutorialR1_setopponent
 	def_special Special_FindHMCapableWild
+	def_special RockSmashFindItem

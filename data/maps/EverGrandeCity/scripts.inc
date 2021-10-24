@@ -703,25 +703,25 @@ FamilyEventC::
 	waitmovement 0
 	msgbox FamilyEventC_Text_9
 	closemessage
-	applymovement 3, FamilyEvent_RivalMove1
+	applymovement 4, FamilyEvent_RivalMove1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox FamilyEventC_Text_10
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox FamilyEventC_Text_11, MSGBOX_DEFAULT
+	waitfanfare
+	delay 30
+	applymovement 3, FamilyEvent_ToriMove1
+	applymovement 4, FamilyEvent_RivalMove2
 	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq FamilyEventC_2
-	msgbox FamilyEventC_Text_11
-FamilyEventC_1:
-	closemessage
-	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox FamilyEventC_Text_12, MSGBOX_DEFAULT
-	waitfanfare
-	delay 30
-	applymovement 4, FamilyEvent_ToriMove1
-	applymovement 3, FamilyEvent_RivalMove2
-	waitmovement 0
 	msgbox FamilyEventC_Text_13
+FamilyEventC_1:
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -797,16 +797,36 @@ FamilyEventC_1:
 	special RemoveCameraObject
 	msgbox FamilyEventC_Text_22
 	closemessage
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq FamilyEventC_6
+	msgbox FamilyEventC_Text_24
+FamilyEventC_5:
+	closemessage
+	compare VAR_RESULT, MALE
+	goto_if_eq FamilyEventC_10
+	msgbox FamilyEventC_Text_26
+FamilyEventC_9:
+	closemessage
 	setvar VAR_PETALBURG_WOODS_STATE, 4
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
 	setflag FLAG_ENABLE_WALLY_MATCH_CALL
 	setflag FLAG_GRC_HIDE_FAMILY_BORAGO
+	setflag FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS
 	releaseall
 	return
 
 FamilyEventC_2:
-	msgbox FamilyEventC_Text_10
+	msgbox FamilyEventC_Text_12
 	goto FamilyEventC_1
+
+FamilyEventC_6:
+	msgbox FamilyEventC_Text_23
+	goto FamilyEventC_5
+
+FamilyEventC_10:
+	msgbox FamilyEventC_Text_25
+	goto FamilyEventC_9
 
 
 Family_Event_CameraMoveA:
@@ -1195,25 +1215,25 @@ FamilyEventC_Text_9:
 	.string "fine! Excellent!$"
 
 FamilyEventC_Text_10:
-	.string "Alyssa: Hi, {PLAYER}! You're here!\p"
-	.string "You've got TeleDrive now, don't you?\n"
-	.string "Then let's add each other!$"
-
-FamilyEventC_Text_11:
-	.string "Basil: Hey, {PLAYER}! There you are!\p"
-	.string "Now that you have TeleDrive as well,\n"
-	.string "let's register each other!$"
-
-FamilyEventC_Text_12:
-	.string "Registered {RIVAL} in the P-Drive.$"
-
-FamilyEventC_Text_13:
 	.string "Tori: Oh, hi, {PLAYER}. Can you add me\n"
 	.string "to your contacts? I'll add you in\l"
 	.string "return.$"
 
-FamilyEventC_Text_14:
+FamilyEventC_Text_11:
 	.string "Registered Tori in the P-Drive.$"
+
+FamilyEventC_Text_12:
+	.string "Alyssa: Hi, {PLAYER}! You're here!\p"
+	.string "You've got TeleDrive now, don't you?\n"
+	.string "Then let's add each other!$"
+
+FamilyEventC_Text_13:
+	.string "Basil: Hey, {PLAYER}! There you are!\p"
+	.string "Now that you have TeleDrive as well,\n"
+	.string "let's register each other!$"
+
+FamilyEventC_Text_14:
+	.string "Registered {RIVAL} in the P-Drive.$"
 
 FamilyEventC_Text_15:
 	.string "Mom: {PLAYER}, if you're ever feeling\n"
@@ -1250,7 +1270,32 @@ FamilyEventC_Text_21:
 	.string "{PLAYER}!$"
 
 FamilyEventC_Text_22:
-	.string "end$"
+	.string "Tori: Well, that's that.$"
+
+FamilyEventC_Text_23:
+	.string "Alyssa: Yup! Now it really feels like it's\n"
+	.string "just us and our Pokémon.\p"
+	.string "And I'm not gonna stand around all day,\n"
+	.string "so I'll see you later!$"
+
+FamilyEventC_Text_24:
+	.string "Basil: Yep. Now we're all on our own. I\n"
+	.string "feel things are really getting started\l"
+	.string "now!\p"
+	.string "In fact, I'll go right on ahead! Catch\n"
+	.string "you later!$"
+
+FamilyEventC_Text_25:
+	.string "Tori: Well, she's awfully excited. As\n"
+	.string "always.\p"
+	.string "Guess I'll get going, too. Bye,\n"
+	.string "{PLAYER}.$"
+
+FamilyEventC_Text_26:
+	.string "Tori: Well, he's awfully excited. As\n"
+	.string "always.\p"
+	.string "Guess I'll get going, too. Bye,\n"
+	.string "{PLAYER}.$"
 
 SpotByAide_PartB_Text_0:
 	.string "Aide Wicker: Hello, {PLAYER}! I see\n"

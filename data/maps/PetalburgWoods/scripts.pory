@@ -115,6 +115,7 @@ script BoragoGroveGruntFight_Part3
 	setvar(VAR_PETALBURG_WOODS_STATE,3)
 	setflag(FLAG_GRC_HIDE_EVENT_BORAGO_GROVE)
 	setflag(FLAG_GRC_TURPIA_HIDE_PARENTS)
+	clearflag(FLAG_HIDE_RUSTBORO_CITY_RIVAL)
 	callnative(Special_GiveFreePokeblocks)
 	removeobject(3)
 	removeobject(4)

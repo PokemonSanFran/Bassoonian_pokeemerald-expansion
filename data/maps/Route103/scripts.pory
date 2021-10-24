@@ -114,12 +114,36 @@ script Route103_EventScript_RegisterMiguelAfterBattle
 //npcs
 script Route103_EventScript_CutGuy
 {
-	msgbox(format("Hey, you see this tree over here? If you have a Pokémon on you that can learn Cut, they'll clear any such trees for you!\pI don't know how they do it, but just having that HM in your bag lets your Pokémon mow those trees down. Nice, huh?"),MSGBOX_NPC)
+	if(flag(FLAG_SYS_DEXNAV_GET))
+	{
+		msgbox(format("Oh, hello! Sorry for blocking the road earlier. I'm a really passionate photographer, you see.\pI really wanted to take some nice shots of Starly, since they're just such darlings. Don't you agree?"),MSGBOX_NPC)
+	}
+	else
+	{
+		lock
+		msgbox(format("Okay, now to wait for just the right moment… Almost…\lAgh, it just flew away!\pNow I'll have to wait for another to stop by…"))
+		release
+	}
+}
+
+script Route103_EventScript_SneyderBlock
+{
+	msgbox(format("Sneyder: Hey there, pal! We're real busy shooting another documentary with Professor Spruce.\pCan't really let you through right now. Sorry for stalling you!"),MSGBOX_NPC)
+	applymovement(VAR_LAST_TALKED,Common_Movement_WalkInPlaceFastestUp)
 }
 
 script Route103_EventScript_SurskitGal
 {
 	msgbox(format("There might be Bug Pokémon on this route, but I'd lie if I said I didn't want fifty Surskit!\pMy word, they're just the most precious little things!"),MSGBOX_NPC)
+}
+
+script Route103_MoveStarlyPhotographer
+{
+	if(!flag(FLAG_SYS_DEXNAV_GET))
+	{
+		setobjectxyperm(10,70,14)
+		setobjectmovementtype(10,MOVEMENT_TYPE_FACE_UP)
+	}
 }
 
 raw ` 
@@ -133,6 +157,7 @@ Route103_MapScripts::
 Route103_OnTransition:
 @	call Common_EventScript_SetupRivalGfxId
 @	call ProfBirch_EventScript_UpdateLocation
+	call Route103_MoveStarlyPhotographer
 	end
 
 Route103_OnLoad:
