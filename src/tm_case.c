@@ -588,7 +588,7 @@ static void TMCase_MoveCursor_UpdatePrintedDescription(s32 itemIndex)
     u16 itemId = BagGetItemIdByPocketPosition(POCKET_TM_HM, itemIndex);
     if (itemIndex != -2)
     {
-        str = ItemId_GetDescription(itemId);
+        str = gMoveDescriptionPointers[ItemIdToBattleMoveId(itemId) - 1];
     }
     else
     {

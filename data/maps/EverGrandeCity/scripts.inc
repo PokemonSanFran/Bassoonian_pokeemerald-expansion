@@ -461,6 +461,56 @@ DebugTestScript::
 	additem ITEM_PRETTY_FEATHER
 	additem ITEM_SHINY_CHARM
 	additem ITEM_OVAL_CHARM
+	additem ITEM_TM01
+	additem ITEM_TM02
+	additem ITEM_TM03
+	additem ITEM_TM04
+	additem ITEM_TM05
+	additem ITEM_TM06
+	additem ITEM_TM07
+	additem ITEM_TM08
+	additem ITEM_TM09
+	additem ITEM_TM10
+	additem ITEM_TM11
+	additem ITEM_TM12
+	additem ITEM_TM13
+	additem ITEM_TM14
+	additem ITEM_TM15
+	additem ITEM_TM16
+	additem ITEM_TM17
+	additem ITEM_TM18
+	additem ITEM_TM19
+	additem ITEM_TM20
+	additem ITEM_TM21
+	additem ITEM_TM22
+	additem ITEM_TM23
+	additem ITEM_TM24
+	additem ITEM_TM25
+	additem ITEM_TM26
+	additem ITEM_TM27
+	additem ITEM_TM28
+	additem ITEM_TM29
+	additem ITEM_TM30
+	additem ITEM_TM31
+	additem ITEM_TM32
+	additem ITEM_TM33
+	additem ITEM_TM34
+	additem ITEM_TM35
+	additem ITEM_TM36
+	additem ITEM_TM37
+	additem ITEM_TM38
+	additem ITEM_TM39
+	additem ITEM_TM40
+	additem ITEM_TM41
+	additem ITEM_TM42
+	additem ITEM_TM43
+	additem ITEM_TM44
+	additem ITEM_TM45
+	additem ITEM_TM46
+	additem ITEM_TM47
+	additem ITEM_TM48
+	additem ITEM_TM49
+	additem ITEM_TM50
 	callnative Special_GiveFreePokeblocks
 	msgbox DebugTestScript_Text_4
 	closemessage
