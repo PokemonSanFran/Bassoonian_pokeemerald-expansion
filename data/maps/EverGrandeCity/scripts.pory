@@ -841,8 +841,13 @@ script FamilyEventC
 	applymovement(OBJ_EVENT_ID_CAMERA,Family_Event_CameraMoveE)
 	waitmovement(0)
 	special(RemoveCameraObject)
+	applymovement(4,Common_Movement_WalkInPlaceFastestRight)
+	applymovement(OBJ_EVENT_ID_PLAYER,Common_Movement_WalkInPlaceFastestLeft)
+	waitmovement(0)
 	msgbox(format("Tori: Well, that's that."))
 	closemessage
+	applymovement(3,Common_Movement_WalkInPlaceFastestRight)
+	waitmovement(0)
 	checkplayergender
 	if(var(VAR_RESULT)==MALE)
 	{
@@ -853,7 +858,10 @@ script FamilyEventC
 		msgbox(format("Basil: Yep. Now we're all on our own. I feel things are really getting started now!\pIn fact, I'll go right on ahead! Catch you later!"))
 	}
 	closemessage
-
+	applymovement(3,Family_Event_RivalRunsOff)
+	waitmovement(0)
+	applymovement(4,Family_Event_ToriComesTo)
+	waitmovement(0)
 	if(var(VAR_RESULT)==MALE)
 	{
 		msgbox(format("Tori: Well, she's awfully excited. As always.\pGuess I'll get going, too. Bye, {PLAYER}."))
@@ -863,13 +871,34 @@ script FamilyEventC
 		msgbox(format("Tori: Well, he's awfully excited. As always.\pGuess I'll get going, too. Bye, {PLAYER}."))
 	}
 	closemessage
-
+	applymovement(4,Family_Event_ToriWalksOff)
+	waitmovement(0)
+	removeobject(3)
+	removeobject(4)
 	setvar(VAR_PETALBURG_WOODS_STATE,4)
 	setflag(FLAG_ENABLE_RIVAL_MATCH_CALL)
 	setflag(FLAG_ENABLE_WALLY_MATCH_CALL)
 	setflag(FLAG_GRC_HIDE_FAMILY_BORAGO)
 	setflag(FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS)
 	releaseall
+}
+
+movement Family_Event_RivalRunsOff
+{
+	player_run_up * 4
+	player_run_left * 7
+}
+
+movement Family_Event_ToriWalksOff
+{
+	walk_up * 4
+	walk_left * 7
+}
+
+movement Family_Event_ToriComesTo
+{
+	walk_up
+	walk_in_place_fastest_right
 }
 
 movement Family_Event_CameraMoveA
@@ -900,23 +929,24 @@ movement Family_Event_CameraMoveE
 
 movement FamilyEvent_RivalMove1
 {
-	walk_right
+	walk_down
+	walk_left
 	walk_down * 2
 	walk_in_place_fastest_right
 }
 
 movement FamilyEvent_ToriMove1
 {
-	walk_left
-	walk_down * 3
+	walk_right
+	walk_down * 2
 	walk_in_place_fastest_right
 }
 
 movement FamilyEvent_RivalMove2
 {
-	delay_16 * 3
+	delay_16 * 2
 	walk_down
-	walk_in_place_fastest_right
+	walk_in_place_fastest_up
 }
 
 script SpotByAide1

@@ -78,6 +78,7 @@ EventScript_RockSmash_7:
 	return
 
 EventScript_RockSmash_2:
+	goto EventScript_CantSmashRock
 	goto EventScript_RockSmash_1
 
 EventScript_RockSmash_5:

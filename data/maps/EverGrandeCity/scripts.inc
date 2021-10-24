@@ -795,19 +795,32 @@ FamilyEventC_1:
 	applymovement OBJ_EVENT_ID_CAMERA, Family_Event_CameraMoveE
 	waitmovement 0
 	special RemoveCameraObject
+	applymovement 4, Common_Movement_WalkInPlaceFastestRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
 	msgbox FamilyEventC_Text_22
 	closemessage
+	applymovement 3, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq FamilyEventC_6
 	msgbox FamilyEventC_Text_24
 FamilyEventC_5:
 	closemessage
+	applymovement 3, Family_Event_RivalRunsOff
+	waitmovement 0
+	applymovement 4, Family_Event_ToriComesTo
+	waitmovement 0
 	compare VAR_RESULT, MALE
 	goto_if_eq FamilyEventC_10
 	msgbox FamilyEventC_Text_26
 FamilyEventC_9:
 	closemessage
+	applymovement 4, Family_Event_ToriWalksOff
+	waitmovement 0
+	removeobject 3
+	removeobject 4
 	setvar VAR_PETALBURG_WOODS_STATE, 4
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
 	setflag FLAG_ENABLE_WALLY_MATCH_CALL
@@ -828,6 +841,39 @@ FamilyEventC_10:
 	msgbox FamilyEventC_Text_25
 	goto FamilyEventC_9
 
+
+Family_Event_RivalRunsOff:
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_up
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	player_run_left
+	step_end
+
+Family_Event_ToriWalksOff:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Family_Event_ToriComesTo:
+	walk_up
+	walk_in_place_fastest_right
+	step_end
 
 Family_Event_CameraMoveA:
 	walk_slow_up
@@ -857,15 +903,15 @@ Family_Event_CameraMoveE:
 	step_end
 
 FamilyEvent_RivalMove1:
-	walk_right
+	walk_down
+	walk_left
 	walk_down
 	walk_down
 	walk_in_place_fastest_right
 	step_end
 
 FamilyEvent_ToriMove1:
-	walk_left
-	walk_down
+	walk_right
 	walk_down
 	walk_down
 	walk_in_place_fastest_right
@@ -874,9 +920,8 @@ FamilyEvent_ToriMove1:
 FamilyEvent_RivalMove2:
 	delay_16
 	delay_16
-	delay_16
 	walk_down
-	walk_in_place_fastest_right
+	walk_in_place_fastest_up
 	step_end
 
 SpotByAide1::

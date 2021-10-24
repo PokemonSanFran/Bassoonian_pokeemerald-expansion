@@ -278,7 +278,7 @@ const u8 *const gPyramidBagMenu_ReturnToStrings[] =
     [PYRAMIDBAG_LOC_CHOOSE_TOSS] = gText_TheField
 };
 
-const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
+const u8 gText_ReturnToVar1[] = _("Return to {STR_VAR_1}.");
 const u8 gText_ItemsPocket[] = _("Items");
 const u8 gText_MedicinePocket[] = _("Medicine");
 const u8 gText_PokeBallsPocket[] = _("Poké Balls");

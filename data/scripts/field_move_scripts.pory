@@ -49,7 +49,7 @@ script EventScript_RockSmash
 	lockall
 	if (!flag(FLAG_BADGE02_GET))
 	{
-		//goto(EventScript_CantSmashRock)
+		goto(EventScript_CantSmashRock)
 	}
 	checkitem(ITEM_PONUT_CASE,1)
 	if (var(VAR_RESULT)==FALSE)
