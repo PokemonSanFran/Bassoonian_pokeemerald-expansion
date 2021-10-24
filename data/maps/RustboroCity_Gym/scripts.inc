@@ -1,3 +1,29 @@
+RustboroCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, RustboroCityGym_MoveWhenDone
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCityGym_MoveWhenDone2
+	.byte 0
+
+
+RustboroCityGym_MoveWhenDone::
+	goto_if_set FLAG_BADGE01_GET, RustboroCityGym_MoveWhenDone_1
+	return
+
+RustboroCityGym_MoveWhenDone_1:
+	call PoppyGym_Trigger1
+	call PoppyGym_Trigger2
+	setobjectxyperm 7, 1, 15
+	setobjectxyperm 8, 9, 4
+	return
+
+
+RustboroCityGym_MoveWhenDone2::
+	goto_if_set FLAG_BADGE01_GET, RustboroCityGym_MoveWhenDone2_1
+	return
+
+RustboroCityGym_MoveWhenDone2_1:
+	return
+
+
 PoppyGym_Trigger1::
 	setvar VAR_TEMP_0, 1
 	setmetatile 9, 11, 0x209, 0
@@ -113,10 +139,6 @@ RustboroCity_Gym_Statue::
 	msgbox RustboroCity_Gym_Statue_Text_0, MSGBOX_SIGN
 	return
 
-
- 
-RustboroCity_Gym_MapScripts::
-	.byte 0
 
 @RustboroCity_Gym_EventScript_GymGuide::
 @	lock

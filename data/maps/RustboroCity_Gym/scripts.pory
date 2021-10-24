@@ -1,3 +1,18 @@
+mapscripts RustboroCity_Gym_MapScripts {
+	MAP_SCRIPT_ON_LOAD: RustboroCityGym_MoveWhenDone
+}
+
+script RustboroCityGym_MoveWhenDone
+{
+	if(flag(FLAG_BADGE01_GET))
+	{
+		call(PoppyGym_Trigger1)
+		call(PoppyGym_Trigger2)
+		setobjectxyperm(7,1,15)
+		setobjectxyperm(8,9,4)
+	}
+}
+
 script PoppyGym_Trigger1
 {
 	setvar(VAR_TEMP_0,1)
@@ -118,9 +133,7 @@ script RustboroCity_Gym_Statue {
 	msgbox(format("Poppy Town Pokémon Gym"),MSGBOX_SIGN)
 }
 
-raw ` 
-RustboroCity_Gym_MapScripts::
-	.byte 0
+raw `
 
 @RustboroCity_Gym_EventScript_GymGuide::
 @	lock

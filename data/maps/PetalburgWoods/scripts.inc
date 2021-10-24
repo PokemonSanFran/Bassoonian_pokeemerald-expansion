@@ -196,7 +196,7 @@ BoragoGrove_EventScript_TryRegisterJamesAfterBattle_2:
 
 BoragoGrove_EventScript_RegisterJames::
 	msgbox BoragoGrove_EventScript_RegisterJames_Text_0, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_DAVE_1
+	register_matchcall TRAINER_GRC_WAYNE_1
 	return
 
 
