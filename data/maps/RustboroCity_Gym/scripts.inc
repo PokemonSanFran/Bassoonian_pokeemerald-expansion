@@ -1,6 +1,5 @@
 RustboroCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, RustboroCityGym_MoveWhenDone
-	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCityGym_MoveWhenDone2
 	.byte 0
 
 
@@ -13,14 +12,6 @@ RustboroCityGym_MoveWhenDone_1:
 	call PoppyGym_Trigger2
 	setobjectxyperm 7, 1, 15
 	setobjectxyperm 8, 9, 4
-	return
-
-
-RustboroCityGym_MoveWhenDone2::
-	goto_if_set FLAG_BADGE01_GET, RustboroCityGym_MoveWhenDone2_1
-	return
-
-RustboroCityGym_MoveWhenDone2_1:
 	return
 
 
