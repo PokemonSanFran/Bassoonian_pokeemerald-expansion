@@ -3408,6 +3408,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u8 maxIV = MAX_IV_MASK;
     u8 statIDs[] = {0, 1, 2, 3, 4, 5};
     u8 i;
+    struct SiiRtcInfo rtc;
 
     ZeroBoxMonData(boxMon);
 
@@ -3543,6 +3544,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
+
+    RtcGetDateTime(&rtc);
+    value = ConvertBcdToBinary(rtc.day);
+    SetBoxMonData(boxMon, MON_DATA_DAY_MET, &value);
+    value = ConvertBcdToBinary(rtc.month);
+    SetBoxMonData(boxMon, MON_DATA_MONTH_MET, &value);
+    value = ConvertBcdToBinary(rtc.year);
+    SetBoxMonData(boxMon, MON_DATA_YEAR_MET, &value);
 
     GiveBoxMonInitialMoveset(boxMon);
 }
@@ -4619,8 +4628,8 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
 
-    // Any field greater than MON_DATA_ENCRYPT_SEPARATOR is encrypted and must be treated as such
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
+    // Any field greater than MON_DATA_YEAR_MET is encrypted and must be treated as such
+    if (field > MON_DATA_YEAR_MET && field < MON_DATA_DAY_MET)
     {
         substruct0 = &(GetSubstruct(boxMon, boxMon->personality, 0)->type0);
         substruct1 = &(GetSubstruct(boxMon, boxMon->personality, 1)->type1);
@@ -4714,8 +4723,14 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_CHECKSUM:
         retVal = boxMon->checksum;
         break;
-    case MON_DATA_ENCRYPT_SEPARATOR:
-        retVal = boxMon->unknown;
+    case MON_DATA_YEAR_MET:
+        retVal = boxMon->yearMet;
+        break;
+    case MON_DATA_DAY_MET:
+        retVal = boxMon->dayMet;
+        break;
+    case MON_DATA_MONTH_MET:
+        retVal = boxMon->monthMet;
         break;
     case MON_DATA_SPECIES:
         retVal = boxMon->isBadEgg ? SPECIES_EGG : substruct0->species;
@@ -4955,7 +4970,7 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         break;
     }
 
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
+    if (field > MON_DATA_YEAR_MET && field < MON_DATA_DAY_MET)
         EncryptBoxMon(boxMon);
 
     return retVal;
@@ -5018,7 +5033,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
 
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
+    if (field > MON_DATA_YEAR_MET && field < MON_DATA_DAY_MET)
     {
         substruct0 = &(GetSubstruct(boxMon, boxMon->personality, 0)->type0);
         substruct1 = &(GetSubstruct(boxMon, boxMon->personality, 1)->type1);
@@ -5077,8 +5092,14 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     case MON_DATA_CHECKSUM:
         SET16(boxMon->checksum);
         break;
-    case MON_DATA_ENCRYPT_SEPARATOR:
-        SET16(boxMon->unknown);
+    case MON_DATA_YEAR_MET:
+        SET16(boxMon->yearMet);
+        break;
+    case MON_DATA_MONTH_MET:
+        SET16(boxMon->monthMet);
+        break;
+    case MON_DATA_DAY_MET:
+        SET16(boxMon->dayMet);
         break;
     case MON_DATA_SPECIES:
     {
@@ -5273,7 +5294,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     }
 
-    if (field > MON_DATA_ENCRYPT_SEPARATOR)
+    if (field > MON_DATA_YEAR_MET && field < MON_DATA_DAY_MET)
     {
         boxMon->checksum = CalculateBoxMonChecksum(boxMon);
         EncryptBoxMon(boxMon);

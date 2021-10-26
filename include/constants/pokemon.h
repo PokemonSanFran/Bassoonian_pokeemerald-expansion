@@ -137,7 +137,7 @@
 #define MON_DATA_OT_NAME            7
 #define MON_DATA_MARKINGS           8
 #define MON_DATA_CHECKSUM           9
-#define MON_DATA_ENCRYPT_SEPARATOR 10
+#define MON_DATA_YEAR_MET          10
 #define MON_DATA_SPECIES           11
 #define MON_DATA_HELD_ITEM         12
 #define MON_DATA_MOVE1             13
@@ -216,6 +216,8 @@
 #define MON_DATA_SPEED2            86
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
+#define MON_DATA_DAY_MET           89
+#define MON_DATA_MONTH_MET         90
 
 // Ribbon IDs used by TV and P-Drive
 #define CHAMPION_RIBBON       0
