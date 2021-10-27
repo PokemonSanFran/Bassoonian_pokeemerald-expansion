@@ -128,7 +128,7 @@ Route103_MoveStarlyPhotographer::
 	return
 
 Route103_MoveStarlyPhotographer_1:
-	setobjectxyperm 10, 70, 14
+	setobjectxyperm 10, 70, 16
 	setobjectmovementtype 10, MOVEMENT_TYPE_FACE_UP
 	return
 

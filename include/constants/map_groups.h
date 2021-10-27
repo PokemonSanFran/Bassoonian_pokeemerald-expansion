@@ -566,6 +566,7 @@
 #define MAP_BORAGO_GATE                                 (2 | (27 << 8))
 #define MAP_CALLUNE_GATE                                (3 | (27 << 8))
 #define MAP_BORAGO_GATE_R1                              (4 | (27 << 8))
+#define MAP_BORAGO_GATE_WEST                            (5 | (27 << 8))
 
 // gMapGroup_IndoorRoute109
 #define MAP_ROUTE109_SEASHORE_HOUSE (0 | (28 << 8))

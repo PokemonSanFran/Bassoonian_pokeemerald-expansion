@@ -141,7 +141,7 @@ script Route103_MoveStarlyPhotographer
 {
 	if(!flag(FLAG_SYS_DEXNAV_GET))
 	{
-		setobjectxyperm(10,70,14)
+		setobjectxyperm(10,70,16)
 		setobjectmovementtype(10,MOVEMENT_TYPE_FACE_UP)
 	}
 }
