@@ -133,6 +133,16 @@ Route103_MoveStarlyPhotographer_1:
 	return
 
 
+Route103_Sign_BoragoEast::
+	msgbox Route103_Sign_BoragoEast_Text_0, MSGBOX_SIGN
+	return
+
+
+Route103_Sign_MagnoliaWest::
+	msgbox Route103_Sign_MagnoliaWest_Text_0, MSGBOX_SIGN
+	return
+
+
  
 .set LOCALID_RIVAL, 2
 
@@ -627,3 +637,9 @@ Route103_EventScript_SurskitGal_Text_0:
 	.string "fifty Surskit!\p"
 	.string "My word, they're just the most precious\n"
 	.string "little things!$"
+
+Route103_Sign_BoragoEast_Text_0:
+	.string "{RIGHT_ARROW} Borago City$"
+
+Route103_Sign_MagnoliaWest_Text_0:
+	.string "{LEFT_ARROW} Magnolia Town$"

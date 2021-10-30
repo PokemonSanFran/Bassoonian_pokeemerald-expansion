@@ -358,7 +358,15 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route103_EventScript_RouteSign"
+      "script": "Route103_Sign_MagnoliaWest"
+    },
+    {
+      "type": "sign",
+      "x": 70,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route103_Sign_BoragoEast"
     }
   ]
 }

@@ -146,6 +146,16 @@ script Route103_MoveStarlyPhotographer
 	}
 }
 
+script Route103_Sign_BoragoEast
+{
+	msgbox(format("{RIGHT_ARROW} Borago City"),MSGBOX_SIGN)
+}
+
+script Route103_Sign_MagnoliaWest
+{
+	msgbox(format("{LEFT_ARROW} Magnolia Town"),MSGBOX_SIGN)
+}
+
 raw ` 
 .set LOCALID_RIVAL, 2
 
