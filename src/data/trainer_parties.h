@@ -7154,11 +7154,10 @@ static const struct TrainerMon sParty_GRC_ToriTurpiaTorchic[] = {
 
 static const struct TrainerMon sParty_GRC_ToriR6Mudkip[] = {
     {
-    .iv = 50,
-    .lvl = 17,
-    .species = SPECIES_LUXIO,
-    .ability = ABILITY_SLOT_2,
-    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
+        .iv = 50,
+        .lvl = 17,
+        .species = SPECIES_COMBUSKEN,
+        .moves = {MOVE_SAND_ATTACK, MOVE_PECK, MOVE_EMBER, MOVE_DOUBLE_KICK}
     },
     {
         .iv = 50,
@@ -7168,20 +7167,20 @@ static const struct TrainerMon sParty_GRC_ToriR6Mudkip[] = {
         .moves = {MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_MEGA_DRAIN, MOVE_HEADBUTT}
     },
     {
-        .iv = 50,
-        .lvl = 19,
-        .species = SPECIES_COMBUSKEN,
-        .moves = {MOVE_SAND_ATTACK, MOVE_PECK, MOVE_EMBER, MOVE_DOUBLE_KICK}
+    .iv = 50,
+    .lvl = 19,
+    .species = SPECIES_LUXIO,
+    .ability = ABILITY_SLOT_2,
+    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
     }
 };
 
 static const struct TrainerMon sParty_GRC_ToriR6Treecko[] = {
     {
-    .iv = 50,
-    .lvl = 17,
-    .species = SPECIES_LUXIO,
-    .ability = ABILITY_SLOT_2,
-    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
+        .iv = 50,
+        .lvl = 17,
+        .species = SPECIES_MARSHTOMP,
+        .moves = {MOVE_GROWL, MOVE_ROCK_THROW, MOVE_WATER_GUN, MOVE_MUD_SHOT}
     },
     {
         .iv = 50,
@@ -7191,20 +7190,20 @@ static const struct TrainerMon sParty_GRC_ToriR6Treecko[] = {
         .moves = {MOVE_GROWL, MOVE_EMBER, MOVE_STOMP, MOVE_FLAME_WHEEL}
     },
     {
-        .iv = 50,
-        .lvl = 19,
-        .species = SPECIES_MARSHTOMP,
-        .moves = {MOVE_GROWL, MOVE_ROCK_THROW, MOVE_WATER_GUN, MOVE_MUD_SHOT}
-    }
+    .iv = 50,
+    .lvl = 19,
+    .species = SPECIES_LUXIO,
+    .ability = ABILITY_SLOT_2,
+    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
+    },
 };
 
 static const struct TrainerMon sParty_GRC_ToriR6Torchic[] = {
     {
-    .iv = 50,
-    .lvl = 17,
-    .species = SPECIES_LUXIO,
-    .ability = ABILITY_SLOT_2,
-    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
+        .iv = 50,
+        .lvl = 17,
+        .species = SPECIES_GROVYLE,
+        .moves = {MOVE_LEER, MOVE_PURSUIT, MOVE_QUICK_ATTACK, MOVE_MEGA_DRAIN}
     },
     {
         .iv = 50,
@@ -7214,11 +7213,12 @@ static const struct TrainerMon sParty_GRC_ToriR6Torchic[] = {
         .moves = {MOVE_YAWN, MOVE_GROWL, MOVE_WATER_GUN, MOVE_CONFUSION}
     },
     {
-        .iv = 50,
-        .lvl = 19,
-        .species = SPECIES_GROVYLE,
-        .moves = {MOVE_LEER, MOVE_PURSUIT, MOVE_QUICK_ATTACK, MOVE_MEGA_DRAIN}
-    }
+    .iv = 50,
+    .lvl = 19,
+    .species = SPECIES_LUXIO,
+    .ability = ABILITY_SLOT_2,
+    .moves = {MOVE_CHARGE, MOVE_ICE_FANG, MOVE_BITE, MOVE_SPARK}
+    },
 };
 
 static const struct TrainerMon sParty_Isaac1[] = {
