@@ -1,38 +1,133 @@
+//HELEN SCRIPTS
+script Route116_EventScript_Karen
+{
+	trainerbattle_single(TRAINER_GRC_HELEN_1,format("Oh, such a feisty Trainer. Would you care to lift my boredom for a spell?"),format("Oh, my! How refreshing. Thank you."),Route116_EventScript_RegisterKarenAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch(TRAINER_GRC_HELEN_1,format("Ah, how wonderful to see you again. Would you mind lifting the veil of boredom once more?"),format("Ahahahaha! Such a refreshing feeling. Thank you so much!"))
+		msgbox(format("I was raised in a sheltered environment without much freedom. I was envious of all my less-endowed peers, for they enjoyed what I could not: freedom. Seeing Trainers such as you reminds me of those memories."),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		msgbox(format("When money is abundant, there is much that lies at your fingertips, but excitement can be hard to find…"),MSGBOX_DEFAULT)
+		release
+	}
+}
 
+script Route116_EventScript_RegisterKarenAfterBattle
+{
+	msgbox(format("I would enjoy a little distraction from the mundane things in life now and again. Would you care to add me as a contact?"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_HELEN_1)
+	release
+}
+
+//ZHEN SCRIPT
+script Route116_EventScript_Joey
+{
+	trainerbattle_single(TRAINER_GRC_ZHEN,format("My partner has taught me a new way of training: lifting logs! Allow me to demonstrate!"),format("Oww… Pulled a muscle…"))
+	msgbox(format("The best part about log lifting: Timburr and I can be one with nature as we train! Isn't that fantastic?"),MSGBOX_AUTOCLOSE)
+}
+
+//COREY SCRIPT
+script Route116_EventScript_Jose
+{
+	trainerbattle_single(TRAINER_GRC_COREY,format("When I was little, I loved playing by the waterside. That's how I met my Bug Pokémon!"),format("Sure made a splash, huh?"))
+	msgbox(format("Me, Surskit and Dewpider are the best of pals! I wonder if we can cross the ocean someday…"),MSGBOX_AUTOCLOSE)
+}
+
+//GABRIEL SCRIPT
+script Route116_EventScript_Clark
+{
+	trainerbattle_single(TRAINER_GRC_GABRIEL,format("I can meditate for hours, but then I forget to eat…"),format("Ugh, I'm starving!"))
+	msgbox(format("To meditate is to let go of concerns… although I suppose there's no way around physiological needs."),MSGBOX_AUTOCLOSE)
+}
+
+//BENNY SCRIPT
+script Route116_EventScript_Janice
+{
+	trainerbattle_single(TRAINER_GRC_BENNY,format("Caves, chasms, cliffs and mountains! Those are the thrills we Hikers live for!"),format("Battles? Not so much our thing."))
+	msgbox(format("You're aiming to get all the Badges, aren't you? Good luck on the climb, my friend!"),MSGBOX_AUTOCLOSE)
+}
+
+//RUDY SCRIPT
+script Route116_EventScript_Dawson
+{
+	trainerbattle_single(TRAINER_GRC_RUDY,format("I can't really let my iron steed rip here. Guess I'll compensate by going full throttle this fight!"),format("Whoa, whoa! Easy there!"))
+	msgbox(format("I've heard there's a biker's road not too far from here. I'm gonna check that place out soon!"),MSGBOX_AUTOCLOSE)
+}
+
+//RUDY SCRIPT
+script Route116_EventScript_Devan
+{
+	trainerbattle_single(TRAINER_GRC_PETE,format("I'm about to graduate from the Trainer's School in Poppy Town. I'll show you what I've learned there!"),format("Guess I still have a long way to go."))
+	msgbox(format("Win or lose, what matters is what you learn from every encounter. That's why I'll never be mad about losing."),MSGBOX_AUTOCLOSE)
+}
+
+//RUDY SCRIPT
+script Route116_EventScript_Sarah
+{
+	trainerbattle_single(TRAINER_GRC_VERA,format("My mommy and daddy bought me the best schoolbooks. I've gathered so much knowledge from reading them! Time to test that!"),format("No! Where did I go wrong?"))
+	msgbox(format("I guess there are things books can't teach you… I'll still keep reading them, though!"),MSGBOX_AUTOCLOSE)
+}
+
+//JOHNNY SCRIPTS
+script Route116_EventScript_Jerry
+{
+	trainerbattle_single(TRAINER_GRC_JOHNNY_1,format("Today's a good day! Hehe, I'm feeling good about this! Let's roll!"),format("Ah well! Not gonna let that get me down!"),Route116_EventScript_RegisterJerryAfterBattle)
+	specialvar(VAR_RESULT,ShouldTryRematchBattle)
+	if (var(VAR_RESULT)==TRUE)
+	{
+		trainerbattle_rematch(TRAINER_GRC_JOHNNY_1,format("Guess what?! I got even more energy now than last time! Let's DO this!"),format("Hahahahaha! Great show!"))
+		msgbox(format("Yeah, I prefer to look on the bright side of things! When my spirit's up, there's nothing that can stand in my way!"),MSGBOX_AUTOCLOSE)
+	}
+	else
+	{
+		msgbox(format("People tell me I have a lot of energy. And that's all energy I invest into my training!"),MSGBOX_DEFAULT)
+		release
+	}
+}
+
+script Route116_EventScript_RegisterJerryAfterBattle
+{
+	msgbox(format("It's good to have someone who can keep me on my toes! Let's exchange numbers!"),MSGBOX_DEFAULT)
+	register_matchcall(TRAINER_GRC_JOHNNY_1)
+	release
+}
 
 raw`
 .set LOCALID_BRINEY, 11
 .set LOCALID_WANDAS_BF_OUTSIDE, 21
 
 Route116_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route116_OnFrame
+@	map_script MAP_SCRIPT_ON_TRANSITION, Route116_OnTransition
+@	map_script MAP_SCRIPT_ON_LOAD, Route116_OnLoad
+@	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route116_OnFrame
 	.byte 0
 
 Route116_OnTransition:
-	call_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_SetWandasBoyfriendPos
-	compare VAR_SHOULD_END_ABNORMAL_WEATHER, 1
-	call_if_eq AbnormalWeather_EventScript_HideMapNamePopup
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH
-	call_if_eq AbnormalWeather_StartGroudonWeather
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH
-	call_if_eq AbnormalWeather_StartGroudonWeather
+@	call_if_set FLAG_RECOVERED_DEVON_GOODS, Route116_EventScript_SetWandasBoyfriendPos
+@	compare VAR_SHOULD_END_ABNORMAL_WEATHER, 1
+@	call_if_eq AbnormalWeather_EventScript_HideMapNamePopup
+@	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH
+@	call_if_eq AbnormalWeather_StartGroudonWeather
+@	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH
+@	call_if_eq AbnormalWeather_StartGroudonWeather
 	end
 
 Route116_EventScript_SetWandasBoyfriendPos::
-	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 38, 10
+@	setobjectxyperm LOCALID_WANDAS_BF_OUTSIDE, 38, 10
 	return
 
 Route116_OnLoad:
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH
-	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116North
-	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH
-	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116South
+@	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_NORTH
+@	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116North
+@	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH
+@	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116South
 	end
 
 Route116_OnFrame:
-	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
+@	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
 Route116_EventScript_WandasBoyfriend::
@@ -248,127 +343,6 @@ Route116_Movement_GlassesManExitEast:
 @	walk_left
 @	walk_left
 @	step_end
-
-Route116_EventScript_Joey::
-	trainerbattle_single TRAINER_GRC_ZHEN, Route116_Text_JoeyIntro, Route116_Text_JoeyDefeat
-	msgbox Route116_Text_JoeyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Jose::
-	trainerbattle_single TRAINER_GRC_COREY, Route116_Text_JoseIntro, Route116_Text_JoseDefeat
-	msgbox Route116_Text_JosePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Jerry::
-	trainerbattle_single TRAINER_GRC_JOHNNY_1, Route116_Text_JerryIntro, Route116_Text_JerryDefeat, Route116_EventScript_TryRegisterJerryAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route116_EventScript_RematchJerry
-	setvar VAR_0x8004, TRAINER_GRC_JOHNNY_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route116_EventScript_TryRegisterJerry
-	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route116_EventScript_TryRegisterJerryAfterBattle::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route116_EventScript_RegisterJerryAfterBattle
-	release
-	end
-
-Route116_EventScript_RegisterJerryAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route116_Text_JerryRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JOHNNY_1
-	release
-	end
-
-Route116_EventScript_TryRegisterJerry::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route116_EventScript_RegisterJerry
-	msgbox Route116_Text_JerryPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route116_EventScript_RegisterJerry::
-	msgbox Route116_Text_JerryRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_JOHNNY_1
-	release
-	end
-
-Route116_EventScript_RematchJerry::
-	trainerbattle_rematch TRAINER_GRC_JOHNNY_1, Route116_Text_JerryRematchIntro, Route116_Text_JerryRematchDefeat
-	msgbox Route116_Text_JerryPostRematch, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Clark::
-	trainerbattle_single TRAINER_GRC_GABRIEL, Route116_Text_ClarkIntro, Route116_Text_ClarkDefeat
-	msgbox Route116_Text_ClarkPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Janice::
-	trainerbattle_single TRAINER_GRC_BENNY, Route116_Text_JaniceIntro, Route116_Text_JaniceDefeat
-	msgbox Route116_Text_JanicePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Karen::
-	trainerbattle_single TRAINER_GRC_HELEN_1, Route116_Text_KarenIntro, Route116_Text_KarenDefeat, Route116_EventScript_TryRegisterKarenAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route116_EventScript_RematchKaren
-	setvar VAR_0x8004, TRAINER_GRC_HELEN_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route116_EventScript_TryRegisterKaren
-	msgbox Route116_Text_KarenPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route116_EventScript_TryRegisterKarenAfterBattle::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route116_EventScript_RegisterKarenAfterBattle
-	release
-	end
-
-Route116_EventScript_RegisterKarenAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route116_Text_KarenRegister2, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_HELEN_1
-	release
-	end
-
-Route116_EventScript_TryRegisterKaren::
-	goto_if_set FLAG_SYS_MATCH_CALL_GET, Route116_EventScript_RegisterKaren
-	msgbox Route116_Text_KarenPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route116_EventScript_RegisterKaren::
-	msgbox Route116_Text_KarenRegister1, MSGBOX_DEFAULT
-	register_matchcall TRAINER_GRC_HELEN_1
-	release
-	end
-
-Route116_EventScript_RematchKaren::
-	trainerbattle_rematch TRAINER_GRC_HELEN_1, Route116_Text_KarenRematchIntro, Route116_Text_KarenRematchDefeat
-	msgbox Route116_Text_KarenPostRematch, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Sarah::
-	trainerbattle_single TRAINER_GRC_VERA, Route116_Text_SarahIntro, Route116_Text_SarahDefeat
-	msgbox Route116_Text_SarahPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Dawson::
-	trainerbattle_single TRAINER_GRC_RUDY, Route116_Text_DawsonIntro, Route116_Text_DawsonDefeat
-	msgbox Route116_Text_DawsonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route116_EventScript_Devan::
-	trainerbattle_single TRAINER_GRC_PETE, Route116_Text_DevanIntro, Route116_Text_DevanDefeat
-	msgbox Route116_Text_DevanPostBattle, MSGBOX_AUTOCLOSE
-	end
 
 Route116_EventScript_Johnson::
 	trainerbattle_single TRAINER_JOHNSON, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
