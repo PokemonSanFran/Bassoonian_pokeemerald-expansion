@@ -18,6 +18,7 @@
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item.h"
+#include "item_icon.h"
 #include "link.h"
 #include "m4a.h"
 #include "malloc.h"
@@ -115,6 +116,7 @@ enum
 {
     SPRITE_ARR_ID_MON,
     SPRITE_ARR_ID_BALL,
+    SPRITE_ARR_ID_ITEM,
     SPRITE_ARR_ID_STATUS,
     SPRITE_ARR_ID_TYPE, // 2 for mon types, 5 for move types(4 moves and 1 to learn), used interchangeably, because mon types and move types aren't shown on the same screen
     SPRITE_ARR_ID_MOVE_SELECTOR1 = SPRITE_ARR_ID_TYPE + 5, // 10 sprites that make up the selector
@@ -263,6 +265,7 @@ static void PrintMonOTName(void);
 static void PrintMonDexNo(void);
 static void PrintMonSpeciesName(void);
 static void PrintMonOTID(void);
+static void PrintMonHappiness(void);
 static void PrintMonAbilityName(void);
 static void PrintMonAbilityDescription(void);
 static void BufferMonTrainerMemo(void);
@@ -314,6 +317,7 @@ static void StopPokemonAnimations(void);
 static void CreateMonMarkingsSprite(struct Pokemon *mon);
 static void RemoveAndCreateMonMarkingsSprite(struct Pokemon *mon);
 static void CreateCaughtBallSprite(struct Pokemon *mon);
+static void CreateHeldItemSprite(struct Pokemon *mon);
 static void CreateSetStatusSprite(void);
 static void CreateMoveSelectorSprites(u8 idArrayStart);
 static void SpriteCb_MoveSelector(struct Sprite *sprite);
@@ -620,11 +624,11 @@ static const struct WindowTemplate sPageInfoTemplate[] =
     [PSS_DATA_WINDOW_INFO_ABILITY] = {
         .bg = 0,
         .tilemapLeft = 13,
-        .tilemapTop = 12,
-        .width = 11,
+        .tilemapTop = 17,
+        .width = 7,
         .height = 2,
         .paletteNum = 6,
-        .baseBlock = 461+(17*2*4),
+        .baseBlock = 461+(17*2*6),
     },
     [PSS_DATA_WINDOW_INFO_MEMO] = {
         .bg = 0,
@@ -1352,10 +1356,12 @@ static bool8 LoadGraphics(void)
         break;
     case 18:
         CreateMonMarkingsSprite(&sMonSummaryScreen->currentMon);
+        TryDrawExperienceProgressBar();
         gMain.state++;
         break;
     case 19:
         CreateCaughtBallSprite(&sMonSummaryScreen->currentMon);
+        CreateHeldItemSprite(&sMonSummaryScreen->currentMon);
         gMain.state++;
         break;
     case 20:
@@ -1736,6 +1742,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 2:
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]]);
+        DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]]);
         break;
     case 3:
         CopyMonToSummaryStruct(&sMonSummaryScreen->currentMon);
@@ -1750,6 +1757,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 6:
         CreateCaughtBallSprite(&sMonSummaryScreen->currentMon);
+        CreateHeldItemSprite(&sMonSummaryScreen->currentMon);
         break;
     case 7:
         if (sMonSummaryScreen->summary.ailment != AILMENT_NONE)
@@ -1763,6 +1771,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
             return;
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].data[2] = 1;
         TryDrawExperienceProgressBar();
+        CreateSetStatusSprite();
         data[1] = 0;
         break;
     case 9:
@@ -1972,7 +1981,7 @@ static void PssScrollLeftEnd(u8 taskId) // display left
 
 static void TryDrawExperienceProgressBar(void)
 {
-    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
         DrawExperienceProgressBar(&sMonSummaryScreen->currentMon);
 }
 
@@ -2747,7 +2756,7 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
         numExpProgressBarTicks = 0;
     }
 
-    dst = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][0x255];
+    dst = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][0x215];
     for (i = 0; i < 8; i++)
     {
         if (numExpProgressBarTicks > 7)
@@ -2759,10 +2768,11 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
             numExpProgressBarTicks = 0;
     }
 
-    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
+    ScheduleBgCopyTilemapToVram(1);
+    /*if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
         ScheduleBgCopyTilemapToVram(1);
     else
-        ScheduleBgCopyTilemapToVram(2);
+        ScheduleBgCopyTilemapToVram(2);*/
 }
 
 static void DrawContestMoveHearts(u16 move)
@@ -2966,7 +2976,7 @@ static void PrintPageNamesAndStats(void)
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_Speed2, statsXPos, 33, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_ExpPoints, 6, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_NextLv, 6, 17, 0, 1);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS, gText_Status, 2, 1, 0, 1);
+    //PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS, gText_Status, 2, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, gText_Power, 0, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, gText_Accuracy2, 0, 17, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_APPEAL_JAM, gText_Appeal, 0, 1, 0, 1);
@@ -3133,6 +3143,7 @@ static void PrintInfoPageText(void)
         PrintMonOTName();
         PrintMonOTID();
         PrintExpPointsNextLevel();
+        PrintMonHappiness();
         //PrintMonAbilityName();
         //PrintMonAbilityDescription();
         //BufferMonTrainerMemo();
@@ -3161,6 +3172,9 @@ static void Task_PrintInfoPage(u8 taskId)
         PrintExpPointsNextLevel();
         break;
     case 6:
+        PrintMonHappiness();
+        break;
+    case 7:
         DestroyTask(taskId);
         return;
     }
@@ -3182,7 +3196,7 @@ static void PrintMonSpeciesName(void)
 {
     int xPos, windowId;
     windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES);
-    PrintTextOnWindow(windowId, gText_Events, 0, 1, 0, 1);
+    PrintTextOnWindow(windowId, gPCText_Name, 0, 1, 0, 1);
     StringCopy(gStringVar1,gSpeciesNames[sMonSummaryScreen->summary.species2]);
     xPos = GetStringCenterAlignXOffset(1, gStringVar1, 56) + 72;
     PrintTextOnWindow(windowId, gStringVar1, xPos, 1, 0, 0);
@@ -3214,6 +3228,29 @@ static void PrintMonOTID(void)
         xPos = GetStringCenterAlignXOffset(1, gStringVar1, 56) + 72;
         PrintTextOnWindow(windowId, gStringVar1, xPos, 1, 0, 0);
     }
+}
+
+static void PrintMonHappiness(void)
+{
+    int windowId;
+    u16 *dst;
+    u8 hap, i;
+    windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY);
+    PrintTextOnWindow(windowId, gText_Events, 0, 1, 0, 1);
+    hap = sMonSummaryScreen->summary.friendship;
+
+    //ConvertIntToDecimalStringN(gStringVar1, hap, STR_CONV_MODE_LEADING_ZEROS, 3);
+    //PrintTextOnWindow(windowId, gStringVar1, 0, 1, 0, 1);
+
+    dst = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0][0x255];
+    for(i = 0; i < 5; i++)
+    {
+        if (hap > i*50)
+            dst[i] = 0x4E;
+        else
+            dst[i] = 0x2;
+    }
+    ScheduleBgCopyTilemapToVram(3);
 }
 
 static void PrintMonAbilityName(void)
@@ -4197,6 +4234,17 @@ static void CreateCaughtBallSprite(struct Pokemon *mon)
     sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL] = CreateSprite(&gBallSpriteTemplates[ball], 8, 24, 0);
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]].callback = SpriteCallbackDummy;
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]].oam.priority = 3;
+}
+
+static void CreateHeldItemSprite(struct Pokemon *mon)
+{
+    sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM] = AddItemIconSprite(102, 102, GetMonData(mon, MON_DATA_HELD_ITEM));
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]].x = 88;
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]].y = 136;
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]].callback = SpriteCallbackDummy;
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]].oam.priority = 3;
+    if (GetMonData(mon, MON_DATA_HELD_ITEM) == ITEM_NONE)
+        gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ITEM]].invisible = TRUE;
 }
 
 static void CreateSetStatusSprite(void)
