@@ -972,6 +972,7 @@ extern const u8 gText_Appeal[];
 extern const u8 gText_Jam[];
 extern const u8 gText_OTSlash[];
 extern const u8 gText_Events[];
+extern const u8 gText_Ribbons[];
 extern const u8 gText_EmptyString8[];
 extern const u8 gText_IDNumber2[];
 extern const u8 gText_XNature[];

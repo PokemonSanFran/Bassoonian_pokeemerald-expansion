@@ -493,8 +493,8 @@ static const struct WindowTemplate sSummaryTemplate[] =
     },
     [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT] = {
         .bg = 0,
-        .tilemapLeft = 10,
-        .tilemapTop = 7,
+        .tilemapLeft = 13,
+        .tilemapTop = 2,
         .width = 6,
         .height = 6,
         .paletteNum = 6,
@@ -502,8 +502,8 @@ static const struct WindowTemplate sSummaryTemplate[] =
     },
     [PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT] = {
         .bg = 0,
-        .tilemapLeft = 22,
-        .tilemapTop = 7,
+        .tilemapLeft = 13,
+        .tilemapTop = 8,
         .width = 5,
         .height = 6,
         .paletteNum = 6,
@@ -511,10 +511,10 @@ static const struct WindowTemplate sSummaryTemplate[] =
     },
     [PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP] = {
         .bg = 0,
-        .tilemapLeft = 10,
+        .tilemapLeft = 13,
         .tilemapTop = 14,
-        .width = 11,
-        .height = 4,
+        .width = 7,
+        .height = 2,
         .paletteNum = 6,
         .baseBlock = 275,
     },
@@ -621,7 +621,7 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .paletteNum = 6,
         .baseBlock = 461+(17*2*3),
     },
-    [PSS_DATA_WINDOW_INFO_ABILITY] = {
+    [PSS_DATA_WINDOW_INFO_ABILITY] = { //Friendship
         .bg = 0,
         .tilemapLeft = 13,
         .tilemapTop = 17,
@@ -630,7 +630,7 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .paletteNum = 6,
         .baseBlock = 461+(17*2*6),
     },
-    [PSS_DATA_WINDOW_INFO_MEMO] = {
+    [PSS_DATA_WINDOW_INFO_MEMO] = { //Experience
         .bg = 0,
         .tilemapLeft = 13,
         .tilemapTop = 12,
@@ -644,8 +644,8 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
 {
     [PSS_DATA_WINDOW_SKILLS_HELD_ITEM] = {
         .bg = 0,
-        .tilemapLeft = 10,
-        .tilemapTop = 4,
+        .tilemapLeft = 15,
+        .tilemapTop = 14,
         .width = 10,
         .height = 2,
         .paletteNum = 6,
@@ -653,8 +653,8 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT] = {
         .bg = 0,
-        .tilemapLeft = 20,
-        .tilemapTop = 4,
+        .tilemapLeft = 19,
+        .tilemapTop = 14,
         .width = 10,
         .height = 2,
         .paletteNum = 6,
@@ -662,8 +662,8 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_LEFT] = {
         .bg = 0,
-        .tilemapLeft = 16,
-        .tilemapTop = 7,
+        .tilemapLeft = 22,
+        .tilemapTop = 2,
         .width = 6,
         .height = 6,
         .paletteNum = 6,
@@ -671,21 +671,21 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_RIGHT] = {
         .bg = 0,
-        .tilemapLeft = 27,
-        .tilemapTop = 7,
-        .width = 3,
+        .tilemapLeft = 22,
+        .tilemapTop = 8,
+        .width = 6,
         .height = 6,
         .paletteNum = 6,
         .baseBlock = 525,
     },
-    [PSS_DATA_WINDOW_EXP] = {
+    [PSS_DATA_WINDOW_EXP] = { //Ability description
         .bg = 0,
-        .tilemapLeft = 24,
-        .tilemapTop = 14,
-        .width = 6,
+        .tilemapLeft = 13,
+        .tilemapTop = 16,
+        .width = 17,
         .height = 4,
         .paletteNum = 6,
-        .baseBlock = 543,
+        .baseBlock = 543 + 3*6,
     },
 };
 static const struct WindowTemplate sPageMovesTemplate[] = // This is used for both battle and contest moves
@@ -2962,20 +2962,20 @@ static void PrintPageNamesAndStats(void)
 
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_RENTAL, gText_RentalPkmn, 0, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE, gText_TypeSlash, 0, 1, 0, 1);
-    statsXPos = 6 + GetStringCenterAlignXOffset(1, gText_HP4, 42);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_HP4, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_HP4, statsXPos, 1, 0, 1);
-    statsXPos = 6 + GetStringCenterAlignXOffset(1, gText_Attack3, 42);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_Attack3, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Attack3, statsXPos, 17, 0, 1);
-    statsXPos = 6 + GetStringCenterAlignXOffset(1, gText_Defense3, 42);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_Defense3, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Defense3, statsXPos, 33, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_SpAtk4, 36);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_SpAtk4, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpAtk4, statsXPos, 1, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_SpDef4, 36);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_SpDef4, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_SpDef4, statsXPos, 17, 0, 1);
-    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_Speed2, 36);
+    statsXPos = 2 + GetStringCenterAlignXOffset(1, gText_Speed2, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT, gText_Speed2, statsXPos, 33, 0, 1);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_ExpPoints, 6, 1, 0, 1);
-    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_NextLv, 6, 17, 0, 1);
+    PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_Ribbons, 0, 1, 0, 1);
+    //PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP, gText_NextLv, 6, 17, 0, 1);
     //PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS, gText_Status, 2, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, gText_Power, 0, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, gText_Accuracy2, 0, 17, 0, 1);
@@ -3256,13 +3256,13 @@ static void PrintMonHappiness(void)
 static void PrintMonAbilityName(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityNames[ability], 0, 1, 0, 1);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gAbilityNames[ability], 0, 1, 0, 1);
 }
 
 static void PrintMonAbilityDescription(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityDescriptionPointers[ability], 0, 17, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_EXP), gAbilityDescriptionPointers[ability], 0, 1, 0, 0);
 }
 
 static void BufferMonTrainerMemo(void)
@@ -3486,12 +3486,14 @@ static void PrintEggMemo(void)
 static void PrintSkillsPageText(void)
 {
     //PrintHeldItemName();
-    PrintRibbonCount();
+    //PrintRibbonCount();
     BufferLeftColumnStats();
     PrintLeftColumnStats();
     BufferRightColumnStats();
     PrintRightColumnStats();
     //PrintExpPointsNextLevel();
+    PrintMonAbilityDescription();
+    PrintMonAbilityName();
 }
 
 static void Task_PrintSkillsPage(u8 taskId)
@@ -3502,9 +3504,10 @@ static void Task_PrintSkillsPage(u8 taskId)
     {
     case 1:
         //PrintHeldItemName();
+        PrintMonAbilityName();
         break;
     case 2:
-        PrintRibbonCount();
+        //PrintRibbonCount();
         break;
     case 3:
         BufferLeftColumnStats();
@@ -3520,6 +3523,7 @@ static void Task_PrintSkillsPage(u8 taskId)
         break;
     case 7:
         //PrintExpPointsNextLevel();
+        PrintMonAbilityDescription();
         break;
     case 8:
         DestroyTask(taskId);
@@ -3596,7 +3600,7 @@ static void BufferLeftColumnStats(void)
 
 static void PrintLeftColumnStats(void)
 {
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 1, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 0, 1, 0, 0);
 }
 
 static void BufferRightColumnStats(void)
@@ -3604,15 +3608,15 @@ static void BufferRightColumnStats(void)
     const s8 *natureMod = gNatureStatTable[sMonSummaryScreen->summary.nature];
 
     DynamicPlaceholderTextUtil_Reset();
-	BufferStat(gStringVar1, natureMod[STAT_SPATK - 1], sMonSummaryScreen->summary.spatk, 0, 3);
-	BufferStat(gStringVar2, natureMod[STAT_SPDEF - 1], sMonSummaryScreen->summary.spdef, 1, 3);
-	BufferStat(gStringVar3, natureMod[STAT_SPEED - 1], sMonSummaryScreen->summary.speed, 2, 3);
+	BufferStat(gStringVar1, natureMod[STAT_SPATK - 1], sMonSummaryScreen->summary.spatk, 0, 7);
+	BufferStat(gStringVar2, natureMod[STAT_SPDEF - 1], sMonSummaryScreen->summary.spdef, 1, 7);
+	BufferStat(gStringVar3, natureMod[STAT_SPEED - 1], sMonSummaryScreen->summary.speed, 2, 7);
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
 }
 
 static void PrintRightColumnStats(void)
 {
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, 2, 1, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, 0, 1, 0, 0);
 }
 
 static void PrintExpPointsNextLevel(void)
