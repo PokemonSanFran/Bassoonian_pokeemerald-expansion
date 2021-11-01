@@ -1772,6 +1772,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 5:
         RemoveAndCreateMonMarkingsSprite(&sMonSummaryScreen->currentMon);
+        CreateMoveExtraTypeIcons();
         break;
     case 6:
         CreateCaughtBallSprite(&sMonSummaryScreen->currentMon);
@@ -3903,16 +3904,16 @@ static void PrintNewMoveDetailsOrCancelText(void)
 
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
-        PrintTextOnWindow(windowId1, gText_Cancel, 0, 141, 0, 1);
+        PrintTextOnWindow(windowId1, gText_Cancel, 0, 113, 0, 1);
     }
     else
     {
         u16 move = sMonSummaryScreen->newMove;
 
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 141, 0, 6);
+            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 113, 0, 6);
         else
-            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 141, 0, 5);
+            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 113, 0, 5);
 
         ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
         DynamicPlaceholderTextUtil_Reset();
@@ -3926,20 +3927,20 @@ static void PrintNewMoveDetailsOrCancelText(void)
 static void AddAndFillMoveNamesWindow(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_NAMES);
-    //FillWindowPixelRect(windowId, PIXEL_FILL(0), 0, 66, 72, 16);
+    FillWindowPixelRect(windowId, PIXEL_FILL(0), 0, 113, 119, 16);
     CopyWindowToVram(windowId, 2);
 }
 
 static void SwapMovesNamesPP(u8 moveIndex1, u8 moveIndex2)
 {
     u8 windowId1 = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_NAMES);
-    u8 windowId2 = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_PP);
+    //u8 windowId2 = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_PP);
 
-    FillWindowPixelRect(windowId1, PIXEL_FILL(0), 0, moveIndex1 * 16, 72, 16);
-    FillWindowPixelRect(windowId1, PIXEL_FILL(0), 0, moveIndex2 * 16, 72, 16);
+    FillWindowPixelRect(windowId1, PIXEL_FILL(0), 0, moveIndex1 * 28, 96, 32);
+    FillWindowPixelRect(windowId1, PIXEL_FILL(0), 0, moveIndex2 * 28, 96, 32);
 
-    FillWindowPixelRect(windowId2, PIXEL_FILL(0), 0, moveIndex1 * 16, 48, 16);
-    FillWindowPixelRect(windowId2, PIXEL_FILL(0), 0, moveIndex2 * 16, 48, 16);
+    //FillWindowPixelRect(windowId2, PIXEL_FILL(0), 0, moveIndex1 * 16, 48, 16);
+    //FillWindowPixelRect(windowId2, PIXEL_FILL(0), 0, moveIndex2 * 16, 48, 16);
 
     PrintMoveNameAndPP(moveIndex1);
     PrintMoveNameAndPP(moveIndex2);
@@ -4031,11 +4032,8 @@ static void CreateMoveExtraTypeIcons(void)
     }
 
     i = SPRITE_ARR_ID_SMALLICON;
-    if (sMonSummaryScreen->spriteIds[i] == SPRITE_NONE)
-    {
-        LoadMonIconPalettes();
-        sMonSummaryScreen->spriteIds[i] = CreateMonIcon(summary->species2, SpriteCB_MonIcon, 16, 24, 1, summary->pid);
-    }
+    LoadMonIconPalettes();
+    sMonSummaryScreen->spriteIds[i] = CreateMonIcon(summary->species2, SpriteCB_MonIcon, 16, 24, 1, summary->pid);
     SetSpriteInvisibility(i, TRUE);
 }
 
