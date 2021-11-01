@@ -692,21 +692,21 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
 {
     [PSS_DATA_WINDOW_MOVE_NAMES] = {
         .bg = 0,
-        .tilemapLeft = 15,
-        .tilemapTop = 4,
-        .width = 9,
-        .height = 10,
+        .tilemapLeft = 16,
+        .tilemapTop = 2,
+        .width = 11,
+        .height = 18,
         .paletteNum = 6,
-        .baseBlock = 449,
+        .baseBlock = 469,
     },
-    [PSS_DATA_WINDOW_MOVE_PP] = {
+    [PSS_DATA_WINDOW_MOVE_PP] = { //Unused
         .bg = 0,
         .tilemapLeft = 24,
         .tilemapTop = 4,
-        .width = 6,
-        .height = 10,
+        .width = 1,
+        .height = 1,
         .paletteNum = 8,
-        .baseBlock = 539,
+        .baseBlock = 667,
     },
     [PSS_DATA_WINDOW_MOVE_DESCRIPTION] = {
         .bg = 0,
@@ -715,7 +715,7 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
         .width = 20,
         .height = 4,
         .paletteNum = 6,
-        .baseBlock = 599,
+        .baseBlock = 667,
     },
 };
 static const u8 sTextColors[][3] =
@@ -2760,9 +2760,9 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     for (i = 0; i < 8; i++)
     {
         if (numExpProgressBarTicks > 7)
-            dst[i] = 0x206A;
+            dst[i] = 0x6A; //0x206A
         else
-            dst[i] = 0x2062 + (numExpProgressBarTicks % 8);
+            dst[i] = 0x62 + (numExpProgressBarTicks % 8); //0x2062
         numExpProgressBarTicks -= 8;
         if (numExpProgressBarTicks < 0)
             numExpProgressBarTicks = 0;
@@ -2833,6 +2833,11 @@ static void ResetWindows(void)
 static void PrintTextOnWindow(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId)
 {
     AddTextPrinterParameterized4(windowId, 1, x, y, 0, lineSpacing, sTextColors[colorId], 0, string);
+}
+
+static void PrintTextOnWindowSmall(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId)
+{
+    AddTextPrinterParameterized4(windowId, 2, x, y, 0, lineSpacing, sTextColors[colorId], 0, string);
 }
 
 static void PrintMonInfo(void)
@@ -3717,13 +3722,13 @@ static void PrintMoveNameAndPP(u8 moveIndex)
     const u8 *text;
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u8 moveNameWindowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_NAMES);
-    u8 ppValueWindowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_PP);
+    //u8 ppValueWindowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_PP);
     u16 move = summary->moves[moveIndex];
 
     if (move != 0)
     {
         pp = CalculatePPWithBonus(move, summary->ppBonuses, moveIndex);
-        PrintTextOnWindow(moveNameWindowId, gMoveNames[move], 0, moveIndex * 16 + 1, 0, 1);
+        PrintTextOnWindow(moveNameWindowId, gMoveNames[move], 0, moveIndex * 28 + 1, 0, 1);
         ConvertIntToDecimalStringN(gStringVar1, summary->pp[moveIndex], STR_CONV_MODE_RIGHT_ALIGN, 2);
         ConvertIntToDecimalStringN(gStringVar2, pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
         DynamicPlaceholderTextUtil_Reset();
@@ -3736,13 +3741,13 @@ static void PrintMoveNameAndPP(u8 moveIndex)
     }
     else
     {
-        PrintTextOnWindow(moveNameWindowId, gText_OneDash, 0, moveIndex * 16 + 1, 0, 1);
+        PrintTextOnWindow(moveNameWindowId, gText_OneDash, 0, moveIndex * 28 + 1, 0, 1);
         text = gText_TwoDashes;
         ppState = 12;
         x = GetStringCenterAlignXOffset(1, text, 44);
     }
 
-    PrintTextOnWindow(ppValueWindowId, text, x, moveIndex * 16 + 1, 0, ppState);
+    PrintTextOnWindowSmall(moveNameWindowId, text, x, moveIndex * 28 + 17, 0, ppState);
 }
 
 static void PrintMovePowerAndAccuracy(u16 moveIndex)
@@ -4033,7 +4038,7 @@ static void SetMoveTypeIcons(void)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
-            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 208, 31 + (i * 28), i + SPRITE_ARR_ID_TYPE);
         else
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
     }
