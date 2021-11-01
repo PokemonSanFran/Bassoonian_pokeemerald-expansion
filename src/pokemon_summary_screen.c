@@ -29,6 +29,7 @@
 #include "palette.h"
 #include "pokeball.h"
 #include "pokemon.h"
+#include "pokemon_icon.h"
 #include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "region_map.h"
@@ -110,7 +111,7 @@ enum {
 #define PSS_DATA_WINDOW_MOVE_PP 1
 #define PSS_DATA_WINDOW_MOVE_DESCRIPTION 2
 
-#define MOVE_SELECTOR_SPRITES_COUNT 10
+#define MOVE_SELECTOR_SPRITES_COUNT 1
 // for the spriteIds field in PokemonSummaryScreenData
 enum
 {
@@ -118,6 +119,8 @@ enum
     SPRITE_ARR_ID_BALL,
     SPRITE_ARR_ID_ITEM,
     SPRITE_ARR_ID_STATUS,
+    SPRITE_ARR_ID_EXTRATYPES,
+    SPRITE_ARR_ID_SMALLICON = SPRITE_ARR_ID_EXTRATYPES + 2,
     SPRITE_ARR_ID_TYPE, // 2 for mon types, 5 for move types(4 moves and 1 to learn), used interchangeably, because mon types and move types aren't shown on the same screen
     SPRITE_ARR_ID_MOVE_SELECTOR1 = SPRITE_ARR_ID_TYPE + 5, // 10 sprites that make up the selector
     SPRITE_ARR_ID_MOVE_SELECTOR2 = SPRITE_ARR_ID_MOVE_SELECTOR1 + MOVE_SELECTOR_SPRITES_COUNT,
@@ -305,7 +308,9 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible);
 static void HidePageSpecificSprites(void);
 static void SetTypeIcons(void);
 static void CreateMoveTypeIcons(void);
+static void CreateMoveExtraTypeIcons(void);
 static void SetMonTypeIcons(void);
+static void SetMonTypeIconsExtra(void);
 static void SetMoveTypeIcons(void);
 static void SetContestMoveTypeIcons(void);
 static void SetNewMoveTypeIcon(void);
@@ -392,7 +397,7 @@ static const struct TilemapCtrl sStatusTilemapCtrl2 =
 };
 static const struct TilemapCtrl sBattleMoveTilemapCtrl =
 {
-    gSummaryScreenPowAcc_Tilemap, 0, 10, 7, 0, 45
+    gSummaryScreenPowAcc_Tilemap, 0, 12, 18, 0, 34
 };
 static const struct TilemapCtrl sContestMoveTilemapCtrl =
 {
@@ -530,7 +535,7 @@ static const struct WindowTemplate sSummaryTemplate[] =
     [PSS_LABEL_WINDOW_MOVES_POWER_ACC] = {
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 15,
+        .tilemapTop = 5,
         .width = 9,
         .height = 4,
         .paletteNum = 6,
@@ -710,10 +715,10 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
     },
     [PSS_DATA_WINDOW_MOVE_DESCRIPTION] = {
         .bg = 0,
-        .tilemapLeft = 10,
-        .tilemapTop = 15,
-        .width = 20,
-        .height = 4,
+        .tilemapLeft = 0,
+        .tilemapTop = 9,
+        .width = 12,
+        .height = 13,
         .paletteNum = 6,
         .baseBlock = 667,
     },
@@ -1177,10 +1182,16 @@ static const u16 sSummaryMarkingsPalette[] = INCBIN_U16("graphics/interface/summ
 static u8 ShowSplitIcon(u32 split)
 {
     if (sMonSummaryScreen->splitIconSpriteId == 0xFF)
-        sMonSummaryScreen->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 48, 129, 0);
+        sMonSummaryScreen->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 48, 49, 0);
 
     gSprites[sMonSummaryScreen->splitIconSpriteId].invisible = FALSE;
     StartSpriteAnim(&gSprites[sMonSummaryScreen->splitIconSpriteId], split);
+
+    //Conveniently hijack for other sprite displays
+    SetMonTypeIconsExtra();
+    ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME);
+    ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER);
+
     return sMonSummaryScreen->splitIconSpriteId;
 }
 
@@ -1189,6 +1200,12 @@ static void DestroySplitIcon(void)
     if (sMonSummaryScreen->splitIconSpriteId != 0xFF)
         DestroySprite(&gSprites[sMonSummaryScreen->splitIconSpriteId]);
     sMonSummaryScreen->splitIconSpriteId = 0xFF;
+
+    //Conveniently hijack for other sprite displays
+    SetSpriteInvisibility(SPRITE_ARR_ID_SMALLICON, TRUE);
+    SetSpriteInvisibility(SPRITE_ARR_ID_EXTRATYPES, TRUE);
+    SetSpriteInvisibility(SPRITE_ARR_ID_EXTRATYPES + 1, TRUE);
+    PrintMonInfo();
 }
 
 void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void))
@@ -1343,6 +1360,7 @@ static bool8 LoadGraphics(void)
     case 16:
         ResetSpriteIds();
         CreateMoveTypeIcons();
+        CreateMoveExtraTypeIcons();
         sMonSummaryScreen->switchCounter = 0;
         gMain.state++;
         break;
@@ -2687,23 +2705,25 @@ static void TilemapFiveMovesDisplay(u16 *dst, u16 palette, bool8 remove)
     u16 i, id;
 
     palette *= 0x1000;
-    id = 0x56A;
+    id = 0x60F;
     if (!remove)
     {
-        for (i = 0; i < 20; i++)
+        for (i = 0; i < 15; i++)
         {
             dst[id + i] = gSummaryScreenWindow_Tilemap[i] + palette;
-            dst[id + i + 0x20] = gSummaryScreenWindow_Tilemap[i] + palette;
-            dst[id + i + 0x40] = gSummaryScreenWindow_Tilemap[i + 20] + palette;
+            dst[id + i + 0x20] = gSummaryScreenWindow_Tilemap[i + 15] + palette;
+            dst[id + i + 0x40] = gSummaryScreenWindow_Tilemap[i + 15] + palette;
+            dst[id + i + 0x60] = gSummaryScreenWindow_Tilemap[i + 30] + palette;
         }
     }
     else // Remove
     {
-        for (i = 0; i < 20; i++)
+        for (i = 0; i < 15; i++)
         {
-            dst[id + i] = gSummaryScreenWindow_Tilemap[i + 20] + palette;
-            dst[id + i + 0x20] = gSummaryScreenWindow_Tilemap[i + 40] + palette;
-            dst[id + i + 0x40] = gSummaryScreenWindow_Tilemap[i + 40] + palette;
+            dst[id + i] = gSummaryScreenWindow_Tilemap[i + 45] + palette;
+            dst[id + i + 0x20] = gSummaryScreenWindow_Tilemap[i + 60] + palette;
+            dst[id + i + 0x40] = gSummaryScreenWindow_Tilemap[i + 60] + palette;
+            dst[id + i + 0x60] = gSummaryScreenWindow_Tilemap[i + 60] + palette;
         }
     }
 }
@@ -3267,7 +3287,7 @@ static void PrintMonAbilityName(void)
 static void PrintMonAbilityDescription(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_EXP), gAbilityDescriptionPointers[ability], 0, 1, 0, 0);
+    PrintTextOnWindowSmall(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_EXP), gAbilityDescriptionPointers[ability], 0, 1, 0, 0);
 }
 
 static void BufferMonTrainerMemo(void)
@@ -3860,7 +3880,7 @@ static void PrintMoveDetails(u16 move)
             if (B_SHOW_SPLIT_ICON == TRUE)
                 ShowSplitIcon(GetBattleMoveSplit(move));
             PrintMovePowerAndAccuracy(move);
-            PrintTextOnWindow(windowId, gMoveDescriptionPointers[move - 1], 6, 1, 0, 0);
+            PrintTextOnWindowSmall(windowId, gMoveDescriptionPointers[move - 1], 6, 1, 0, 0);
         }
         else
         {
@@ -3883,16 +3903,16 @@ static void PrintNewMoveDetailsOrCancelText(void)
 
     if (sMonSummaryScreen->newMove == MOVE_NONE)
     {
-        PrintTextOnWindow(windowId1, gText_Cancel, 0, 65, 0, 1);
+        PrintTextOnWindow(windowId1, gText_Cancel, 0, 141, 0, 1);
     }
     else
     {
         u16 move = sMonSummaryScreen->newMove;
 
         if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 65, 0, 6);
+            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 141, 0, 6);
         else
-            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 65, 0, 5);
+            PrintTextOnWindow(windowId1, gMoveNames[move], 0, 141, 0, 5);
 
         ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
         DynamicPlaceholderTextUtil_Reset();
@@ -3906,7 +3926,7 @@ static void PrintNewMoveDetailsOrCancelText(void)
 static void AddAndFillMoveNamesWindow(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageMovesTemplate, PSS_DATA_WINDOW_MOVE_NAMES);
-    FillWindowPixelRect(windowId, PIXEL_FILL(0), 0, 66, 72, 16);
+    //FillWindowPixelRect(windowId, PIXEL_FILL(0), 0, 66, 72, 16);
     CopyWindowToVram(windowId, 2);
 }
 
@@ -3997,6 +4017,28 @@ static void CreateMoveTypeIcons(void)
     }
 }
 
+static void CreateMoveExtraTypeIcons(void)
+{
+    u8 i;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
+
+    for (i = SPRITE_ARR_ID_EXTRATYPES; i < SPRITE_ARR_ID_EXTRATYPES + 2; i++)
+    {
+        if (sMonSummaryScreen->spriteIds[i] == SPRITE_NONE)
+            sMonSummaryScreen->spriteIds[i] = CreateSprite(&gSpriteTemplate_MoveTypes, 0, 0, 2);
+
+        SetSpriteInvisibility(i, TRUE);
+    }
+
+    i = SPRITE_ARR_ID_SMALLICON;
+    if (sMonSummaryScreen->spriteIds[i] == SPRITE_NONE)
+    {
+        LoadMonIconPalettes();
+        sMonSummaryScreen->spriteIds[i] = CreateMonIcon(summary->species2, SpriteCB_MonIcon, 16, 24, 1, summary->pid);
+    }
+    SetSpriteInvisibility(i, TRUE);
+}
+
 static void SetTypeSpritePosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
     struct Sprite *sprite = &gSprites[sMonSummaryScreen->spriteIds[spriteArrayId]];
@@ -4029,6 +4071,24 @@ static void SetMonTypeIcons(void)
             SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 1, TRUE);
         }
     }
+}
+
+static void SetMonTypeIconsExtra(void)
+{
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    SetSpriteInvisibility(SPRITE_ARR_ID_EXTRATYPES, FALSE);
+    if (gBaseStats[summary->species].type1 != gBaseStats[summary->species].type2)
+    {
+        SetTypeSpritePosAndPal(gBaseStats[summary->species].type1, 32, 20, SPRITE_ARR_ID_EXTRATYPES);
+        SetTypeSpritePosAndPal(gBaseStats[summary->species].type2, 64, 20, SPRITE_ARR_ID_EXTRATYPES + 1);
+        SetSpriteInvisibility(SPRITE_ARR_ID_EXTRATYPES + 1, FALSE);
+    }
+    else
+    {
+        SetTypeSpritePosAndPal(gBaseStats[summary->species].type1, 48, 20, SPRITE_ARR_ID_EXTRATYPES);
+        SetSpriteInvisibility(SPRITE_ARR_ID_EXTRATYPES + 1, TRUE);
+    }
+    SetSpriteInvisibility(SPRITE_ARR_ID_SMALLICON, FALSE);
 }
 
 static void SetMoveTypeIcons(void)
@@ -4149,7 +4209,7 @@ static u8 CreateMonSprite(struct Pokemon *unused)
     gSprites[spriteId].data[0] = summary->species2;
     gSprites[spriteId].data[2] = 0;
     gSprites[spriteId].callback = SpriteCB_Pokemon;
-    gSprites[spriteId].oam.priority = 0;
+    gSprites[spriteId].oam.priority = 2;
 
     if (!IsMonSpriteNotFlipped(summary->species2))
         gSprites[spriteId].hFlip = TRUE;
@@ -4224,7 +4284,7 @@ static void CreateMonMarkingsSprite(struct Pokemon *mon)
         StartSpriteAnim(sprite, GetMonData(mon, MON_DATA_MARKINGS));
         sMonSummaryScreen->markingsSprite->x = 80;
         sMonSummaryScreen->markingsSprite->y = 44;
-        sMonSummaryScreen->markingsSprite->oam.priority = 1;
+        sMonSummaryScreen->markingsSprite->oam.priority = 2;
     }
 }
 
@@ -4289,7 +4349,7 @@ static void CreateMoveSelectorSprites(u8 idArrayStart)
 
         for (i = 0; i < MOVE_SELECTOR_SPRITES_COUNT; i++)
         {
-            spriteIds[i] = CreateSprite(&sMoveSelectorSpriteTemplate, i * 16 + 89, 40, subpriority);
+            spriteIds[i] = CreateSprite(&sMoveSelectorSpriteTemplate, i * 16 + 112, 32, subpriority);
             if (i == 0)
                 StartSpriteAnim(&gSprites[spriteIds[i]], 4); // left
             else if (i == 9)
@@ -4321,9 +4381,9 @@ static void SpriteCb_MoveSelector(struct Sprite *sprite)
     }
 
     if (sprite->data[0] == SPRITE_ARR_ID_MOVE_SELECTOR1)
-        sprite->y2 = sMonSummaryScreen->firstMoveIndex * 16;
+        sprite->y2 = sMonSummaryScreen->firstMoveIndex * 28;
     else
-        sprite->y2 = sMonSummaryScreen->secondMoveIndex * 16;
+        sprite->y2 = sMonSummaryScreen->secondMoveIndex * 28;
 }
 
 static void DestroyMoveSelectorSprites(u8 firstArrayId)
