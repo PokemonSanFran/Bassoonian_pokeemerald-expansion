@@ -658,9 +658,9 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT] = {
         .bg = 0,
-        .tilemapLeft = 19,
+        .tilemapLeft = 18,
         .tilemapTop = 14,
-        .width = 10,
+        .width = 12,
         .height = 2,
         .paletteNum = 6,
         .baseBlock = 469,
@@ -672,7 +672,7 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
         .width = 6,
         .height = 6,
         .paletteNum = 6,
-        .baseBlock = 489,
+        .baseBlock = 489 + 4,
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_RIGHT] = {
         .bg = 0,
@@ -681,16 +681,16 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
         .width = 6,
         .height = 6,
         .paletteNum = 6,
-        .baseBlock = 525,
+        .baseBlock = 525 + 4,
     },
     [PSS_DATA_WINDOW_EXP] = { //Ability description
         .bg = 0,
-        .tilemapLeft = 13,
+        .tilemapLeft = 12,
         .tilemapTop = 16,
-        .width = 17,
+        .width = 18,
         .height = 4,
         .paletteNum = 6,
-        .baseBlock = 543 + 3*6,
+        .baseBlock = 543 + 3*6 + 4,
     },
 };
 static const struct WindowTemplate sPageMovesTemplate[] = // This is used for both battle and contest moves
@@ -3282,13 +3282,13 @@ static void PrintMonHappiness(void)
 static void PrintMonAbilityName(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gAbilityNames[ability], 0, 1, 0, 1);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gAbilityNames[ability], 4, 1, 0, 1);
 }
 
 static void PrintMonAbilityDescription(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindowSmall(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_EXP), gAbilityDescriptionPointers[ability], 0, 1, 0, 0);
+    PrintTextOnWindowSmall(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_EXP), gAbilityDescriptionPointers[ability], 4, 1, 0, 0);
 }
 
 static void BufferMonTrainerMemo(void)
