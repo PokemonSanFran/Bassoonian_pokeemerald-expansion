@@ -2326,17 +2326,17 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Tony5},
     },
 
-    [TRAINER_TAKAO] =
+    [TRAINER_GRC_WENDY] =
     {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Takao"),
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerName = _("Wendy"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Takao),
-        .party = {.TrainerMon = sParty_Takao},
+        .partySize = ARRAY_COUNT(sParty_GRC_Wendy),
+        .party = {.TrainerMon = sParty_GRC_Wendy},
     },
 
     [TRAINER_HITOSHI] =
@@ -5524,7 +5524,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Lao5},
     },
 
-    [TRAINER_JOCELYN] =
+    [TRAINER_FREE_FOR_GRC_2] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
@@ -5537,17 +5537,17 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_Jocelyn},
     },
 
-    [TRAINER_LAURA] =
+    [TRAINER_GRC_PETRA] =
     {
-        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .trainerName = _("Laura"),
+        .trainerClass = TRAINER_CLASS_RISING_STAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RISING_STAR_M,
+        .trainerName = _("Petra"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Laura),
-        .party = {.TrainerMon = sParty_Laura},
+        .partySize = ARRAY_COUNT(sParty_GRC_Petra),
+        .party = {.TrainerMon = sParty_GRC_Petra},
     },
 
     [TRAINER_CYNDY_1] =
@@ -7519,43 +7519,43 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_GRC_AndiAndMai},
     },
 
-    [TRAINER_BRENDEN] =
+    [TRAINER_GRC_GRANT] =
     {
-        .trainerClass = TRAINER_CLASS_SAILOR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_SAILOR,
-        .trainerName = _("Brenden"),
+        .trainerClass = TRAINER_CLASS_HIKER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = _("Grant"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Brenden),
-        .party = {.TrainerMon = sParty_Brenden},
+        .partySize = ARRAY_COUNT(sParty_GRC_Grant),
+        .party = {.TrainerMon = sParty_GRC_Grant},
     },
 
-    [TRAINER_LILITH] =
+    [TRAINER_GRC_HAL] =
     {
         .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .trainerName = _("Lilith"),
+        .trainerName = _("Hal"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Lilith),
-        .party = {.TrainerMon = sParty_Lilith},
+        .partySize = ARRAY_COUNT(sParty_GRC_Hal),
+        .party = {.TrainerMon = sParty_GRC_Hal},
     },
 
-    [TRAINER_CRISTIAN] =
+    [TRAINER_GRC_JOSH] =
     {
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Cristian"),
+        .trainerClass = TRAINER_CLASS_SCHOOL_KID,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_M,
+        .trainerName = _("Josh"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Cristian),
-        .party = {.TrainerMon = sParty_Cristian},
+        .partySize = ARRAY_COUNT(sParty_GRC_Josh),
+        .party = {.TrainerMon = sParty_GRC_Josh},
     },
 
     [TRAINER_SYLVIA] =

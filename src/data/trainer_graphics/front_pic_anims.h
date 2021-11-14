@@ -469,4 +469,5 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_POKEFAN_FAMILY] = sAnims_PokefanM,
     [TRAINER_PIC_BIKER] = sAnims_PokefanM,
     [TRAINER_PIC_RISING_STAR_M] = sAnims_PokefanM,
+    [TRAINER_PIC_ENGINEER] = sAnims_PokefanM,
 };

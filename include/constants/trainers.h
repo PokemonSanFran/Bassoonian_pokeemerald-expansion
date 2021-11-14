@@ -114,6 +114,7 @@
 #define TRAINER_PIC_POKEFAN_FAMILY		  94
 #define TRAINER_PIC_BIKER                 95
 #define TRAINER_PIC_RISING_STAR_M         96
+#define TRAINER_PIC_ENGINEER              97
 
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1
@@ -359,6 +360,7 @@
 #define TRAINER_CLASS_POKEFAN_FAMILY 0x43
 #define TRAINER_CLASS_BIKER          0x44
 #define TRAINER_CLASS_RISING_STAR    0x45
+#define TRAINER_CLASS_ENGINEER       0x46
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

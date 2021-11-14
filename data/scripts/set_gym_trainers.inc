@@ -17,12 +17,12 @@ RustboroCity_Gym_SetGymTrainers::
 	return
 
 DewfordTown_Gym_SetGymTrainers::
-	settrainerflag TRAINER_TAKAO
-	settrainerflag TRAINER_JOCELYN
-	settrainerflag TRAINER_LAURA
-	settrainerflag TRAINER_BRENDEN
-	settrainerflag TRAINER_CRISTIAN
-	settrainerflag TRAINER_LILITH
+	settrainerflag TRAINER_GRC_WENDY
+	@ settrainerflag TRAINER_FREE_FOR_GRC_2
+	settrainerflag TRAINER_GRC_PETRA
+	settrainerflag TRAINER_GRC_GRANT
+	settrainerflag TRAINER_GRC_JOSH
+	settrainerflag TRAINER_GRC_HAL
 	return
 
 MauvilleCity_Gym_SetGymTrainers::

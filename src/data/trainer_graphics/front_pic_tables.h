@@ -96,6 +96,8 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 	[TRAINER_PIC_CRUSH_KIN] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_POKEFAN_FAMILY] = {.size = 8, .y_offset = 2},
     [TRAINER_PIC_BIKER] = {.size = 8, .y_offset = 2},
+    [TRAINER_PIC_RISING_STAR_M] = {.size = 8, .y_offset = 2},
+    [TRAINER_PIC_ENGINEER] = {.size = 8, .y_offset = 2},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -197,6 +199,8 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, 0x800),
 	TRAINER_SPRITE(CRUSH_KIN, gTrainerFrontPic_CrushKin, 0x800),
 	TRAINER_SPRITE(POKEFAN_FAMILY, gTrainerFrontPic_PokefanFamily, 0x800),
+    TRAINER_SPRITE(RISING_STAR_M, gTrainerFrontPic_RisingStarM, 0x800),
+    TRAINER_SPRITE(ENGINEER, gTrainerFrontPic_Engineer, 0x800),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -300,4 +304,5 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
 	TRAINER_PAL(POKEFAN_FAMILY, gTrainerPalette_PokefanFamily),
     TRAINER_PAL(BIKER, gTrainerPalette_Biker),
     TRAINER_PAL(RISING_STAR_M, gTrainerPalette_RisingStarM),
+    TRAINER_PAL(ENGINEER, gTrainerPalette_Engineer),
 };

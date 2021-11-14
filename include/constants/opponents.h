@@ -180,7 +180,7 @@
 #define TRAINER_TONY_3                      176
 #define TRAINER_TONY_4                      177
 #define TRAINER_TONY_5                      178
-#define TRAINER_TAKAO                       179
+#define TRAINER_GRC_WENDY                       179
 #define TRAINER_HITOSHI                     180
 #define TRAINER_KIYO                        181
 #define TRAINER_KOICHI                      182
@@ -426,8 +426,8 @@
 #define TRAINER_LAO_3                       422
 #define TRAINER_LAO_4                       423
 #define TRAINER_LAO_5                       424
-#define TRAINER_JOCELYN                     425
-#define TRAINER_LAURA                       426
+#define TRAINER_FREE_FOR_GRC_2                     425
+#define TRAINER_GRC_PETRA                       426
 #define TRAINER_CYNDY_1                     427
 #define TRAINER_CORA                        428
 #define TRAINER_PAULA                       429
@@ -573,9 +573,9 @@
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_GRC_ANDI_AND_MAI                        571
-#define TRAINER_BRENDEN                     572
-#define TRAINER_LILITH                      573
-#define TRAINER_CRISTIAN                    574
+#define TRAINER_GRC_GRANT                     572
+#define TRAINER_GRC_HAL                      573
+#define TRAINER_GRC_JOSH                    574
 #define TRAINER_SYLVIA                      575
 #define TRAINER_LEONARDO                    576
 #define TRAINER_ATHENA                      577

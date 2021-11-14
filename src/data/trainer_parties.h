@@ -2175,11 +2175,16 @@ static const struct TrainerMon sParty_Tony5[] = {
     }
 };
 
-static const struct TrainerMon sParty_Takao[] = {
+static const struct TrainerMon sParty_GRC_Wendy[] = {
     {
     .iv = 127,
-    .lvl = 13,
-    .species = SPECIES_MACHOP,
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = 127,
+    .lvl = 16,
+    .species = SPECIES_MAWILE,
     }
 };
 
@@ -3454,7 +3459,7 @@ static const struct TrainerMon sParty_Brawly1[] = {
     .lvl = 19,
     .species = SPECIES_PAWNIARD,
 	.ability = ABILITY_SLOT_1,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_CHOPLE_BERRY,
     .moves = {MOVE_TORMENT, MOVE_FURY_CUTTER, MOVE_ASSURANCE, MOVE_IRON_HEAD}
     }
 };
@@ -5679,11 +5684,16 @@ static const struct TrainerMon sParty_Jocelyn[] = {
     }
 };
 
-static const struct TrainerMon sParty_Laura[] = {
+static const struct TrainerMon sParty_GRC_Petra[] = {
     {
     .iv = 150,
-    .lvl = 13,
-    .species = SPECIES_MEDITITE,
+    .lvl = 17,
+    .species = SPECIES_ARON,
+    },
+    {
+    .iv = 150,
+    .lvl = 17,
+    .species = SPECIES_MAWILE,
     }
 };
 
@@ -7835,27 +7845,47 @@ static const struct TrainerMon sParty_GRC_AndiAndMai[] = {
     }
 };
 
-static const struct TrainerMon sParty_Brenden[] = {
+static const struct TrainerMon sParty_GRC_Grant[] = {
     {
     .iv = 100,
-    .lvl = 13,
-    .species = SPECIES_MACHOP,
+    .lvl = 16,
+    .species = SPECIES_ARON,
+    },
+    {
+    .iv = 100,
+    .lvl = 16,
+    .species = SPECIES_ARON,
     }
 };
 
-static const struct TrainerMon sParty_Lilith[] = {
+static const struct TrainerMon sParty_GRC_Hal[] = {
     {
     .iv = 150,
-    .lvl = 13,
-    .species = SPECIES_MEDITITE,
+    .lvl = 15,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = 150,
+    .lvl = 15,
+    .species = SPECIES_MAGNEMITE,
+    },
+    {
+    .iv = 150,
+    .lvl = 15,
+    .species = SPECIES_MAGNEMITE,
     }
 };
 
-static const struct TrainerMon sParty_Cristian[] = {
+static const struct TrainerMon sParty_GRC_Josh[] = {
     {
     .iv = 200,
-    .lvl = 13,
-    .species = SPECIES_MAKUHITA,
+    .lvl = 16,
+    .species = SPECIES_ARON,
+    },
+    {
+    .iv = 200,
+    .lvl = 16,
+    .species = SPECIES_MAGNEMITE,
     }
 };
 

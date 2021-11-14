@@ -69,4 +69,5 @@ const u8 gTrainerClassNames[][13] = {
 	[TRAINER_CLASS_POKEFAN_FAMILY] = _("Pokéfamily"),
     [TRAINER_CLASS_BIKER] = _("Biker"),
     [TRAINER_CLASS_RISING_STAR] = _("Rising Star"),
+    [TRAINER_CLASS_ENGINEER] = _("Engineer"),
 };
