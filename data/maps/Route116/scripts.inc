@@ -333,7 +333,7 @@ Route116_Movement_GlassesManExitEast:
 @	step_end
 
 Route116_EventScript_Johnson::
-	trainerbattle_single TRAINER_JOHNSON, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
+	trainerbattle_single TRAINER_FREE_FOR_GRC_1, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
 	msgbox Route116_Text_JohnsonPostBattle, MSGBOX_AUTOCLOSE
 	end
 

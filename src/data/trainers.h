@@ -9885,7 +9885,7 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_GRC_Pete},
     },
 
-    [TRAINER_JOHNSON] =
+    [TRAINER_FREE_FOR_GRC_1] =
     {
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,

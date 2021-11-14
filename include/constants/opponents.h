@@ -755,7 +755,7 @@
 #define TRAINER_HELENE                      751
 #define TRAINER_MARLENE                     752
 #define TRAINER_GRC_PETE                       753
-#define TRAINER_JOHNSON                     754
+#define TRAINER_FREE_FOR_GRC_1                     754
 #define TRAINER_MELINA                      755
 #define TRAINER_BRANDI                      756
 #define TRAINER_AISHA                       757
