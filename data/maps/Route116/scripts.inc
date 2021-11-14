@@ -332,11 +332,6 @@ Route116_Movement_GlassesManExitEast:
 @	walk_left
 @	step_end
 
-Route116_EventScript_Johnson::
-	trainerbattle_single TRAINER_FREE_FOR_GRC_1, Route116_Text_JohnsonIntro, Route116_Text_JohnsonDefeat
-	msgbox Route116_Text_JohnsonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route116_Text_ScoundrelMadeOffWithPeeko:
 @	.string "Ohhh, what am I to do?\p"
 @	.string "We were on our walk, PEEKO and I, when\n"
