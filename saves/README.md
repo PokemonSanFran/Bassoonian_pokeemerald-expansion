@@ -52,7 +52,7 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 There are 16 different branches to test different scenarios. 
 
 branch name|first action|second action|tested 
-
+|---|---|---|---|
 `add_add`|Add new members to the saveblock|Add new members to the saveblock|6
 `add_increase`|Add new members to the saveblock|Change the size of a member of the saveblock|11
 `add_rearrange`|Add new members to the saveblock|Rearrange members of the saveblock|14

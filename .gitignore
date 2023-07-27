@@ -24,7 +24,8 @@ tools/agbcc
 *.ld
 *.bat
 *.dump
-*.sa*
+#*.sa*
+*.vimsess
 Thumbs.db
 build/
 .DS_Store
@@ -41,3 +42,5 @@ prefabs.json
 *.js
 __pycache__/
 log.txt
+rename.sh
+delete.sh

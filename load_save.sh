@@ -6,8 +6,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-# Check if the argument is a valid number between 1 and 8
-if ! [[ "$1" =~ ^[1-20]$ ]]; then
+# Check if the argument is a valid number between 1 and 20
+if ! [[ "$1" =~ ^[1-9]$|^1[0-9]$|^20$ ]]; then
   echo "Error: Invalid argument. Please provide a number between 1 and 20."
   exit 1
 fi
