@@ -16,7 +16,7 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 
 # Save Descriptions
 
-|NUM_SAVE|FOLDER_NAME|Description|
+|NUM_SAVE|save directory|Description|
 |---|---|---|
 1 | [1_rival1](1_rival1) | Defeated Rival on Route 103 |
 2 | [2_roxanne](2_roxanne) | Defeated Roxanne |
@@ -40,12 +40,12 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 20 | [20_wallace](20_wallace) | Defeated Wallace |
 
 # Testing Process
-1) Run make_release to create v0 of a project
+1) Run `make_release` to create v0 of a project
 2) Perform modifications to saveblocks
-3) Run make_release to create v1 of a project
+3) Run `make_release` to create v1 of a project
 4) Play game to test if save data is correct
 5) Perform additional modifications to saveblocks
-6) Run make_release to create v2 of a project
+6) Run `make_release` to create v2 of a project
 7) Play game to test if save data is correct
 
 ## Modifications
