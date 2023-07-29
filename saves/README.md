@@ -41,12 +41,14 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 
 # Testing Process
 1) Run `make_release` to create v0 of a project
-2) Perform modifications to saveblocks
-3) Run `make_release` to create v1 of a project
-4) Play game to test if save data is correct
-5) Perform additional modifications to saveblocks
-6) Run `make_release` to create v2 of a project
-7) Play game to test if save data is correct
+2) Run `make_release` to create v1 of a project
+3) Export saveblock
+4) Perform modifications to saveblocks
+5) Run `make_release` to create v2 of a project
+6) Play game to test if save data is correct
+7) Perform additional modifications to saveblocks
+8) Run `make_release` to create v3 of a project
+9) Play game to test if save data is correct
 
 ## Modifications
 There are 16 different branches to test different scenarios. 
@@ -73,4 +75,4 @@ branch name|first action|second action|save tested|status
 ## Status Key
 ✔ this branch passed the entire testing process
 
-❌x this branch failed on step X
+❌ this branch failed, details are below
