@@ -1066,6 +1066,7 @@ void Task_LinkFullSave(u8 taskId)
 // DO NOT TOUCH THE FOLLOWING BLOCK OF CODE - IT IS AUTOMATICALLY CHANGED AND UPDATED BY MAKE RELEASE
 // START Include old save data
 #include "data/old_saves/save.v0.h"
+#include "data/old_saves/save.v1.h"
 // END Include old save data
 
 u16 DetermineSaveVersion()
@@ -1122,8 +1123,11 @@ bool8 UpdateSaveFile(void)
     // START Attempt to update the save
     switch (version)
     {
-        case 0: // Upgrading from version 0 to version 1
-            result = UpdateSave_v0_v1(gRamSaveSectorLocations);
+        case 0: // Upgrading from version 0 to version 2
+            result = UpdateSave_v0_v2(gRamSaveSectorLocations);
+            break;
+        case 1: // Upgrading from version 1 to version 2
+            result = UpdateSave_v1_v2(gRamSaveSectorLocations);
             break;
         default: // Unsupported version to upgrade
             result = FALSE;
