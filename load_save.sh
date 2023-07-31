@@ -44,10 +44,10 @@ if [ ! -d "$source_directory" ]; then
 fi
 
 # Delete existing files pokeemerald.sav and pokeemerald_modern.sav
-rm -f pokeemerald.sav pokeemerald_modern.sav
+rm -f pokeemerald.sav pokeemerald_modern.sav oldSaveGet newSaveGet
 
 # Copy new saves from the source directory
-cp "$source_directory/pokeemerald.sav" "$source_directory/pokeemerald_modern.sav" .
+cp "$source_directory/pokeemerald.sav" "$source_directory/pokeemerald_modern.sav" "$source_directory/oldSaveGet" "$source_directory/newSaveGet" .
 
 echo "Save files copied successfully."
 

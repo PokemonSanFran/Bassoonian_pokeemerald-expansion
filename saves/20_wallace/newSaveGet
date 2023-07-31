@@ -1,0 +1,7 @@
+set logging off
+set logging on
+set pagination off
+set print repeats 9999999
+set logging file saves/20_wallace/newSave.txt
+print gSaveblock2
+print gSaveblock1

@@ -1,6 +1,0 @@
-set logging off
-set logging on
-set logging file saves/testoutput.log
-set print repeats 9999999
-print *gSaveblock1Ptr
-print *gSaveblock2Ptr

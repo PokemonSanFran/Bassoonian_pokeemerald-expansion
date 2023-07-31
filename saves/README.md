@@ -40,15 +40,14 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 20 | [20_wallace](20_wallace) | Defeated Wallace |
 
 # Testing Process
-1) Run `make_release` to create v0 of a project
-2) Run `make_release` to create v1 of a project
-3) Export saveblock
-4) Perform modifications to saveblocks
-5) Run `make_release` to create v2 of a project
-6) Play game to test if save data is correct
-7) Perform additional modifications to saveblocks
-8) Run `make_release` to create v3 of a project
-9) Play game to test if save data is correct
+1) Run `make_release` to create v1 of a project
+2) Export saveblock
+3) Perform modifications to saveblocks
+4) Run `make_release` to create v2 of a project
+5) Play game to test if save data is correct
+6) Perform additional modifications to saveblocks
+7) Run `make_release` to create v3 of a project
+8) Play game to test if save data is correct
 
 ## Modifications
 There are 16 different branches to test different scenarios. 
