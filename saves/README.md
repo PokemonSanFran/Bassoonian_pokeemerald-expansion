@@ -41,22 +41,22 @@ and then open the game. Replace `NUM_SAVE` with the save file you want to load. 
 
 # Testing Process
 0) Play through game, make a save
-1) Run `make release` to create v1 of a project
-2) Export saveblock using `oldSaveGet`
-3) Perform modifications to saveblocks
-4) Run `make release` to create v2 of a project
-5) Export saveblock using `newGameGet`
-6) Compare old and new saveblock, then proceed if matching
-6) Perform additional modifications to saveblocks
-7) Run `make release` to create v3 of a project
-8) Compare old and new saveblock, then proceed if matching
+1) Run `make release` to create v1 
+2) Run [`oldSaveGet`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/blob/psf_tests/saves/1_rival1/oldSaveGet) from gdb to get the saveblock as [`oldSave.txt`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/blob/psf_tests/saves/1_rival1/oldSave.txt).
+3) Perform first [modification](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/psf_tests/saves#modifications) to saveblocks
+4) Run `make release` to create v2
+5) Run [`newSaveGet`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/blob/psf_tests/saves/1_rival1/newSaveGet) from gdb to get the saveblock as `newSave.txt`.
+6) Compare `oldSave.txt` and `newSavetxt`, then proceed if matching as expected
+7) Perform second [modification](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/psf_tests/saves#modifications) to saveblocks
+8) Run `make release` to create v3
+9) Compare `oldSave.txt` and `newSavetxt`, then proceed if matching as expected
 
 ## Modifications
 There are 16 different branches to test different scenarios. 
 
 branch name|first action|second action|save tested|status
 |---|---|---|---|---|
-[`add_add`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_add)|Add new members to the saveblock|Add new members to the saveblock|[18_glacia](18_glacia)| n/a
+[`add_add`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_add)|Add new members to the saveblock|Add new members to the saveblock|[18_glacia](18_glacia)| ❌
 [`add_increase`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_increase)|Add new members to the saveblock|Change the size of a member of the saveblock|[13_tateandliza](13_tateandliza)| n/a
 [`add_rearrange`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_rearrange)|Add new members to the saveblock|Rearrange members of the saveblock|[19_drake](19_drake)| n/a
 [`add_remove`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_remove)|Add new members to the saveblock|Remove members from the saveblock|[1_rival1](1_rival1)| n/a
@@ -73,7 +73,7 @@ branch name|first action|second action|save tested|status
 [`remove_rearrange`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/remove_rearrange)|Remove members from the saveblock|Rearrange members of the saveblock|[12_maxie2](12_maxie2)| n/a
 [`remove_remove`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/remove_remove)|Remove members from the saveblock|Remove members from the saveblock|[20_wallace](20_wallace)| n/a
 
-## Status Key
-✔ this branch passed the entire testing process
+## Test Status
+###[`add_add`](https://github.com/PokemonSanFran/Bassoonian_pokeemerald-expansion/tree/add_add)
 
-❌ this branch failed, details are below
+This diff [compares](https://www.diffchecker.com/nGlrzt99/) v1 saveblock and v2 saveblock. When resuming the game, things seem fine, but when directly printing the saveblock, it appears to be corrupted.
