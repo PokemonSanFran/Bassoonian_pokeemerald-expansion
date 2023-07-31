@@ -519,6 +519,11 @@ struct SaveBlock2
     /*0x13*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
     /*0x14*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
+                                           #define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(30)
+#define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(20)
+#define QUEST_STATES 5
+u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
+u8 subQuests[SUB_FLAGS_COUNT];
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
