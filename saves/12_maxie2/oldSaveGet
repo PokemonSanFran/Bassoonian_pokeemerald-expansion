@@ -3,5 +3,5 @@ set logging on
 set pagination off
 set print repeats 9999999
 set logging file saves/12_maxie2/oldSave.txt
-print gSaveblock2
-print gSaveblock1
+print *gSaveBlock2Ptr
+print *gSaveBlock1Ptr
