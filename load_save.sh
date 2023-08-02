@@ -51,3 +51,17 @@ cp "$source_directory/pokeemerald.sav" "$source_directory/pokeemerald_modern.sav
 
 echo "Save files copied successfully."
 
+# Run debug_modern_make
+debug_modern_make
+
+# Find all .txt files in saves/ directory and replace ',' with ', '
+find saves/ -type f -name "*.txt" -exec sed -i 's/,/,\ /g' {} +
+
+# Check if firstText.txt exists in $source_directory
+if [ ! -f "$source_directory/firstText.txt" ]; then
+  # If firstText.txt does not exist, run this
+  diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/firstText.txt"
+else
+  # If firstText.txt exists, run this
+  diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/secondText.txt"
+fi
