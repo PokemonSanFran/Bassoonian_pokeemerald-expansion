@@ -43,7 +43,9 @@ if [ ! -d "$source_directory" ]; then
   exit 1
 fi
 
-find saves/ -type f -name "newSave.txt" -exec sed -i 's/,/,\ /g' {} +
+find saves/ -type f -name "newSave.txt" -exec sed -i 's/,/,\
+/g' {} +
+
 
 # Check if firstTest.txt exists in $source_directory
 if [ ! -f "$source_directory/firstTest.txt" ]; then
