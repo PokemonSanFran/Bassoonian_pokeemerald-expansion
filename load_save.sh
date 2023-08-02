@@ -51,8 +51,15 @@ cp "$source_directory/pokeemerald.sav" "$source_directory/pokeemerald_modern.sav
 
 echo "Save files copied successfully."
 
+# Delete the newSave created from the last test
+rm "$source_directory/newSave.txt"
+
+echo "Deleted newSave.txt"
+
 # Run debug_modern_make
 debug_modern_make
+
+find saves/ -type f -name "newSave.txt" -exec sed -i 's/,/,\ /g' {} +
 
 # Check if firstTest.txt exists in $source_directory
 if [ ! -f "$source_directory/firstTest.txt" ]; then
@@ -60,7 +67,6 @@ if [ ! -f "$source_directory/firstTest.txt" ]; then
   diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/firstTest.txt"
 else
   # If firstTest.txt exists, run this
-    find saves/ -type f -name "*.txt" -exec sed -i 's/,/,\ /g' {} +
   diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/secondTest.txt"
     # Find all .txt files in saves/ directory and replace ',' with ', '
 fi
