@@ -1,11 +1,11 @@
 #include "global.h"
 #include "save.h"
 
-// This file contains the backups for the save file of v1.
+// This file contains the backups for the save file of v2.
 // Editing this file may cause unwanted behaviour.
 // Please use make release in case problems arise.
 
-struct BattleFrontier_v1
+struct BattleFrontier_v2
 {
     struct EmeraldBattleTowerRecord towerPlayer;
     struct EmeraldBattleTowerRecord towerRecords[5];
@@ -86,46 +86,10 @@ struct BattleFrontier_v1
     struct DomeMonData domePlayerPartyData[3];
 };
 
-struct SaveBlock2_v1
-{
-    u8 _saveSentinel;
-    u16 saveVersion;
-    u8 playerName[8];
-    u8 playerGender;
-    u8 specialSaveWarpFlags;
-    u8 playerTrainerId[4];
-    u16 playTimeHours;
-    u8 playTimeMinutes;
-    u8 playTimeSeconds;
-    u8 playTimeVBlanks;
-    u8 optionsButtonMode;
-    u16 optionsTextSpeed:3;
-    u16 optionsWindowFrameType:5;
-    u16 optionsSound:1;
-    u16 optionsBattleStyle:1;
-    u16 optionsBattleSceneOff:1;
-    u16 regionMapZoom:1;
-    struct Pokedex pokedex;
-    u8 filler_90[8];
-    struct Time localTimeOffset;
-    struct Time lastBerryTreeUpdate;
-    u32 gcnLinkFlags;
-    u32 encryptionKey;
-    struct PlayersApprentice playerApprentice;
-    struct Apprentice apprentices[4];
-    struct BerryCrush berryCrush;
-    struct PokemonJumpRecords pokeJump;
-    struct BerryPickingResults berryPick;
-    struct RankingHall1P hallRecords1P[9][2][3];
-    struct RankingHall2P hallRecords2P[2][3];
-    u16 contestLinkResults[5][4];
-    struct BattleFrontier_v1 frontier;
-};
 
-
-bool8 UpdateSave_v1_v3(const struct SaveSectorLocation *locations)
+bool8 UpdateSave_v2_v3(const struct SaveSectorLocation *locations)
 {
-    const struct SaveBlock2_v1* sOldSaveBlock2Ptr = (struct SaveBlock2_v1*)(locations[0].data); // SECTOR_ID_SAVEBLOCK2
+    const struct SaveBlock2* sOldSaveBlock2Ptr = (struct SaveBlock2*)(locations[0].data); // SECTOR_ID_SAVEBLOCK2
     const struct SaveBlock1* sOldSaveBlock1Ptr = (struct SaveBlock1*)(locations[1].data); // SECTOR_ID_SAVEBLOCK1_START
     const struct PokemonStorage* sOldPokemonStoragePtr = (struct PokemonStorage*)(locations[5].data); // SECTOR_ID_PKMN_STORAGE_START
     u32 i;
@@ -144,6 +108,8 @@ bool8 UpdateSave_v1_v3(const struct SaveSectorLocation *locations)
     gSaveBlock2Ptr->optionsButtonMode = sOldSaveBlock2Ptr->optionsButtonMode;
     gSaveBlock2Ptr->optionsTextSpeed = sOldSaveBlock2Ptr->optionsTextSpeed;
     gSaveBlock2Ptr->optionsWindowFrameType = sOldSaveBlock2Ptr->optionsWindowFrameType;
+    for(i = 0; i < min(ARRAY_COUNT(gSaveBlock2Ptr->questData), ARRAY_COUNT(sOldSaveBlock2Ptr->questData)); i++) gSaveBlock2Ptr->questData[i] = sOldSaveBlock2Ptr->questData[i];
+    for(i = 0; i < min(ARRAY_COUNT(gSaveBlock2Ptr->subQuests), ARRAY_COUNT(sOldSaveBlock2Ptr->subQuests)); i++) gSaveBlock2Ptr->subQuests[i] = sOldSaveBlock2Ptr->subQuests[i];
     gSaveBlock2Ptr->optionsSound = sOldSaveBlock2Ptr->optionsSound;
     gSaveBlock2Ptr->optionsBattleStyle = sOldSaveBlock2Ptr->optionsBattleStyle;
     gSaveBlock2Ptr->optionsBattleSceneOff = sOldSaveBlock2Ptr->optionsBattleSceneOff;

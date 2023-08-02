@@ -402,6 +402,11 @@ struct BattleFrontier
     /*0xD08*/ u8 domeAttemptedDoublesOpen:1;
     /*0xD08*/ u8 domeHasWonDoubles50:1;
     /*0xD08*/ u8 domeHasWonDoublesOpen:1;
+    #define QUESTY_FLAGS_COUNT ROUND_BITS_TO_BYTES(30)
+#define SUB_FLAGS_COUNTY ROUND_BITS_TO_BYTES(20)
+#define QUESTY_STATES 2
+u8 questyData[QUESTY_FLAGS_COUNT * QUESTY_STATES];
+u8 subQuestys[SUB_FLAGS_COUNTY];
     /*0xD09*/ u8 domeUnused;
     /*0xD0A*/ u8 domeLvlMode;
     /*0xD0B*/ u8 domeBattleMode;

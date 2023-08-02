@@ -1,0 +1,1054 @@
+2c2
+<  saveVersion = 1,
+---
+>  saveVersion = 2,
+9,11c9,10
+<  playTimeSeconds = 2 '\002',
+<  playTimeVBlanks = 44 ',
+< ',
+---
+>  playTimeSeconds = 1 '\001',
+>  playTimeVBlanks = 22 '\026',
+14a14,15
+>  questData = "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000",
+>  subQuests = "\000\000",
+32,33c33,34
+<  lastBerryTreeUpdate = {days = 5,
+<  hours = 18 '\022',
+---
+>  lastBerryTreeUpdate = {days = 6,
+>  hours = 0 '\000',
+35c36
+<  seconds = 8 '\b'},
+---
+>  seconds = 26 '\032'},
+37c38
+<  encryptionKey = 2285722219,
+---
+>  encryptionKey = 1688640319,
+223c224
+<  berryPowderAmount = 2285722219,
+---
+>  berryPowderAmount = 1688640319,
+1760c1761
+<  weatherCycleStage = 1 '\001',
+---
+>  weatherCycleStage = 2 '\002',
+3708,3709c3709,3710
+<  money = 2285755137,
+<  coins = 23147,
+---
+>  money = 1688607317,
+>  coins = 39743,
+3812c3813
+<  quantity = 23145},
+---
+>  quantity = 39741},
+3814c3815
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3816c3817
+<  quantity = 23163},
+---
+>  quantity = 39727},
+3818c3819
+<  quantity = 23166},
+---
+>  quantity = 39722},
+3820c3821
+<  quantity = 23137},
+---
+>  quantity = 39733},
+3822c3823
+<  quantity = 23158},
+---
+>  quantity = 39714},
+3824c3825
+<  quantity = 23161},
+---
+>  quantity = 39725},
+3826c3827
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3828c3829
+<  quantity = 23114},
+---
+>  quantity = 39710},
+3830c3831
+<  quantity = 23142},
+---
+>  quantity = 39730},
+3832c3833
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3834c3835
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3836c3837
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3838c3839
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3840c3841
+<  quantity = 23145},
+---
+>  quantity = 39741},
+3842c3843
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3844c3845
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3846c3847
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3848c3849
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3850c3851
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3852c3853
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3854c3855
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3856c3857
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3858c3859
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3860c3861
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3862c3863
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3864c3865
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3866c3867
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3868c3869
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3870c3871
+<  quantity = 23147}},
+---
+>  quantity = 39743}},
+3872c3873
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3874c3875
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3876c3877
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3878c3879
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3880c3881
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3882c3883
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3884c3885
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3886c3887
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3888c3889
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3890c3891
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3892c3893
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3894c3895
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3896c3897
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3898c3899
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3900c3901
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3902c3903
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3904c3905
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3906c3907
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3908c3909
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3910c3911
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3912c3913
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3914c3915
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3916c3917
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3918c3919
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3920c3921
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3922c3923
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3924c3925
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3926c3927
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3928c3929
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3930c3931
+<  quantity = 23147}},
+---
+>  quantity = 39743}},
+3932c3933
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3934c3935
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3936c3937
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3938c3939
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3940c3941
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3942c3943
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3944c3945
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3946c3947
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3948c3949
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3950c3951
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3952c3953
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3954c3955
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3956c3957
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3958c3959
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3960c3961
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3962c3963
+<  quantity = 23147}},
+---
+>  quantity = 39743}},
+3964c3965
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3966c3967
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3968c3969
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3970c3971
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3972c3973
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3974c3975
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3976c3977
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3978c3979
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3980c3981
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3982c3983
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3984c3985
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3986c3987
+<  quantity = 23146},
+---
+>  quantity = 39742},
+3988c3989
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3990c3991
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3992c3993
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3994c3995
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3996c3997
+<  quantity = 23147},
+---
+>  quantity = 39743},
+3998c3999
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4000c4001
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4002c4003
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4004c4005
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4006c4007
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4008c4009
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4010c4011
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4012c4013
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4014c4015
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4016c4017
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4018c4019
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4020c4021
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4022c4023
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4024c4025
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4026c4027
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4028c4029
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4030c4031
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4032c4033
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4034c4035
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4036c4037
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4038c4039
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4040c4041
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4042c4043
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4044c4045
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4046c4047
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4048c4049
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4050c4051
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4052c4053
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4054c4055
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4056c4057
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4058c4059
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4060c4061
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4062c4063
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4064c4065
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4066c4067
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4068c4069
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4070c4071
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4072c4073
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4074c4075
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4076c4077
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4078c4079
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4080c4081
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4082c4083
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4084c4085
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4086c4087
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4088c4089
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4090c4091
+<  quantity = 23147}},
+---
+>  quantity = 39743}},
+4092c4093
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4094c4095
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4096c4097
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4098c4099
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4100c4101
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4102c4103
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4104c4105
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4106c4107
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4108c4109
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4110c4111
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4112c4113
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4114c4115
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4116c4117
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4118c4119
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4120c4121
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4122c4123
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4124c4125
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4126c4127
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4128c4129
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4130c4131
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4132c4133
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4134c4135
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4136c4137
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4138c4139
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4140c4141
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4142c4143
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4144c4145
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4146c4147
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4148c4149
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4150c4151
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4152c4153
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4154c4155
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4156c4157
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4158c4159
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4160c4161
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4162c4163
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4164c4165
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4166c4167
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4168c4169
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4170c4171
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4172c4173
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4174c4175
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4176c4177
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4178c4179
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4180c4181
+<  quantity = 23147},
+---
+>  quantity = 39743},
+4182c4183
+<  quantity = 23147}},
+---
+>  quantity = 39743}},
+6235,6236c6236,6237
+<  3498,
+<  38645,
+---
+>  49695,
+>  7306,
+6246,6247c6247,6248
+<  5,
+<  5,
+---
+>  6,
+>  6,
+6263c6264
+<  5,
+---
+>  6,
+6272c6273
+<  5,
+---
+>  6,
+6274,6275c6275,6276
+<  15107,
+<  64628,
+---
+>  53821,
+>  12664,
+6399,6462c6400,6463
+<  gameStats = {2285722225,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285705912,
+<  2285722219,
+<  2285722570,
+<  2285722278,
+<  2285722303,
+<  2285722219,
+<  2285722217,
+<  2285722219,
+<  2285722219,
+<  2285722223,
+<  2285722189,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722208,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722213,
+<  2285722219,
+<  2285722218,
+<  2285722217,
+<  2285722219,
+<  2285722193,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722217,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219,
+<  2285722219},
+---
+>  gameStats = {1688640293,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688656876,
+>  1688640319,
+>  1688640158,
+>  1688640498,
+>  1688640491,
+>  1688640319,
+>  1688640317,
+>  1688640319,
+>  1688640319,
+>  1688640315,
+>  1688640281,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640308,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640305,
+>  1688640319,
+>  1688640318,
+>  1688640317,
+>  1688640319,
+>  1688640261,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640317,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319,
+>  1688640319},
+6476c6477
+<  minutesUntilNextStage = 604,
+---
+>  minutesUntilNextStage = 244,
+6486c6487
+<  minutesUntilNextStage = 604,
+---
+>  minutesUntilNextStage = 244,
+6506c6507
+<  minutesUntilNextStage = 605,
+---
+>  minutesUntilNextStage = 245,
+6576c6577
+<  minutesUntilNextStage = 604,
+---
+>  minutesUntilNextStage = 244,
+6596c6597
+<  minutesUntilNextStage = 604,
+---
+>  minutesUntilNextStage = 244,
+6676c6677
+<  minutesUntilNextStage = 621,
+---
+>  minutesUntilNextStage = 261,
+6686c6687
+<  minutesUntilNextStage = 621,
+---
+>  minutesUntilNextStage = 261,
+6696c6697
+<  minutesUntilNextStage = 621,
+---
+>  minutesUntilNextStage = 261,
+6706c6707
+<  minutesUntilNextStage = 621,
+---
+>  minutesUntilNextStage = 261,
+6796c6797
+<  minutesUntilNextStage = 1357,
+---
+>  minutesUntilNextStage = 997,
+6806c6807
+<  minutesUntilNextStage = 640,
+---
+>  minutesUntilNextStage = 280,
+6816c6817
+<  minutesUntilNextStage = 640,
+---
+>  minutesUntilNextStage = 280,
+6826c6827
+<  minutesUntilNextStage = 640,
+---
+>  minutesUntilNextStage = 280,
+6866c6867
+<  minutesUntilNextStage = 644,
+---
+>  minutesUntilNextStage = 284,
+6876c6877
+<  minutesUntilNextStage = 644,
+---
+>  minutesUntilNextStage = 284,
+6886c6887
+<  minutesUntilNextStage = 644,
+---
+>  minutesUntilNextStage = 284,
+7226c7227
+<  minutesUntilNextStage = 605,
+---
+>  minutesUntilNextStage = 245,
+7266c7267
+<  minutesUntilNextStage = 622,
+---
+>  minutesUntilNextStage = 262,
+7276c7277
+<  minutesUntilNextStage = 622,
+---
+>  minutesUntilNextStage = 262,
+7316c7317
+<  minutesUntilNextStage = 1358,
+---
+>  minutesUntilNextStage = 998,
+7324c7325
+<  stage = 5 '\005',
+---
+>  stage = 3 '\003',
+7326,7328c7327,7329
+<  minutesUntilNextStage = 38,
+<  berryYield = 2 '\002',
+<  regrowthCount = 4 '\004',
+---
+>  minutesUntilNextStage = 158,
+>  berryYield = 0 '\000',
+>  regrowthCount = 5 '\005',
+17913c17914
+<  dewfordTrends = {{trendiness = 43,
+---
+>  dewfordTrends = {{trendiness = 38,
+17919c17920
+<  {trendiness = 27,
+---
+>  {trendiness = 22,
+17925c17926
+<  {trendiness = 15,
+---
+>  {trendiness = 10,
+17931c17932
+<  {trendiness = 15,
+---
+>  {trendiness = 10,
+17937c17938
+<  {trendiness = 12,
+---
+>  {trendiness = 7,
