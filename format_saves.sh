@@ -43,15 +43,14 @@ if [ ! -d "$source_directory" ]; then
   exit 1
 fi
 
-# Delete existing files pokeemerald.sav and pokeemerald_modern.sav
-rm -f pokeemerald.sav pokeemerald_modern.sav oldSaveGet newSaveGet
+find saves/ -type f -name "newSave.txt" -exec sed -i 's/,/,\ /g' {} +
 
-# Copy new saves from the source directory
-cp "$source_directory/pokeemerald.sav" "$source_directory/pokeemerald_modern.sav" "$source_directory/oldSaveGet" "$source_directory/newSaveGet" .
-
-echo "Save files copied successfully."
-
-# Delete the newSave created from the last test
-rm "$source_directory/newSave.txt"
-
-echo "Deleted newSave.txt"
+# Check if firstTest.txt exists in $source_directory
+if [ ! -f "$source_directory/firstTest.txt" ]; then
+  # If firstTest.txt does not exist, run this
+  diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/firstTest.txt"
+else
+  # If firstTest.txt exists, run this
+  diff "$source_directory/oldSave.txt" "$source_directory/newSave.txt" > "$source_directory/secondTest.txt"
+    # Find all .txt files in saves/ directory and replace ',' with ', '
+fi
